@@ -1,0 +1,15 @@
+OS_Byte 216  Read/Write length of function key string
+#Parent OS_ByteIndex
+=>	R0 =	216 (&D8)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	previous length
+	R2 =	paged mode line count (see <OS_Byte 217=>OS_Byte217>)
+
+This call reads or sets the count of characters left in the currently active function key definition. If this count is 0, then no current function key string is being read. If this count is non-zero then <OS_ReadC> is reading from a function key definition rather than the current input stream.
+
+Writing a 0 length will cancel the current function key expansion - the effect of writing any other value is indeterminate.
+#Line
+See <PRM 1, page 885=>PRM-1:885>

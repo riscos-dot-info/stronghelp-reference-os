@@ -1,0 +1,24 @@
+Parallel_Op 2
+#Parent Parallel_
+=>	R0 =	2
+	R1 =	EOR mask
+	R2 =	AND mask
+
+<=	R1 =	old contents of register
+	R2 =	new contents of register
+	
+This SWI writes or reads the the <control register=>.bits> sent to the printer port.
+
+To read, use R1=0, R2=&FFFFFFFF.
+#Subpage bits
+Control register bits
+Bit	Meaning
+#Line
+0	Strobe
+1	Auto Feed
+2	Init (Reset)
+3	Select in
+4	IRQ enable
+5	Direction
+6	reserved
+7	reserved

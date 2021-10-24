@@ -1,0 +1,5 @@
+OS_ReadMonotonicTime  (&42)
+#Parent OS_
+<=	R0 =	Number of centi-ceconds since last hard reset.
+#Line
+See <PRM 1, page 434=>PRM-1:434>.

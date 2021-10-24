@@ -1,0 +1,10 @@
+FileCore_FreeSpace64  (&4054B)
+#Parent FileCore_
+=>	R0 =	pointer to disc specifier (name, or :0, etc)
+	R8 =	pointer to FileCore instance private word
+
+<=	R0 =	least significant word of free space
+	R1 =	most significant word of free space
+	R2 =	size of largest object that can be created, or &7FFFFFFF if > 2Gb
+
+This call returns the total free space on given disc with support for 'large' discs.

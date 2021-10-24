@@ -1,0 +1,34 @@
+SCSI
+#Parent !Root
+#Prefix SCSI_
+#fH4:SCSIFS
+#Table Columns 3
+Create
+DescribeDisc
+DiscOp
+Drives
+FloppyStructure
+FreeSpace
+<TestReady>
+#EndTable
+
+#fH4:SCSI
+#Table Columns 3
+<Version>
+<Initialise>
+<Control>
+Op
+Status
+ReadControlLines
+EEProm
+Reserve
+List
+TargetControl
+#EndTable
+
+#fh4:Notes
+#Table Columns 3
+<Device ID and Host ID=>SCSI_devid>
+#EndTable
+#line
+These notes are mostly cribbed from the Power-Tec RISC OS SCSI device driver docs. Actual implementation details may vary in different brands.

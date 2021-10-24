@@ -1,0 +1,12 @@
+BASICTrans_Message  (&42C812)
+#Parent BASICTrans_
+=>	R0 =	message number (0 - 25)
+	R1 =	message dependent value
+	R2 =	message dependent value
+	R3 =	message dependent value
+
+<=	R0,R1 corrupted
+
+This SWI prints a 'miscellaneous' message.
+#Line
+See <PRM 4, page 340=>PRM-4:340>.

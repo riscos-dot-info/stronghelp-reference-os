@@ -1,0 +1,16 @@
+Output stream status
+#Parent OS_Byte003
+Bit	Stream affected
+#Line
+0	Enables serial driver
+1	Disables VDU drivers
+2	Disables VDU printer stream
+3	Enables printer (regardless of VDU state)
+4	Disables spooled output
+5	Calls <VDUXV=>Vector_vduxv> instead of VDU drivers
+6	Disables printer, except for <VDU 1,n=>VDU:1>
+7	Not used
+
+Bit 1 is not the same as <VDU 21=>VDU:21> - with VDU 21 bytes are still sent to the printer if it has been enables with <VDU 2=>VDU:2>.
+
+Bit 3 is not the same as <VDU 2=>VDU:2> - when set (and bits 2 and 6 clear!) *all* bytes except the printer ignore character (see <OS_Byte 6=>OS_Byte006>) are sent to the printer stream.

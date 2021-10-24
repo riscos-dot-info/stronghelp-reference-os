@@ -1,0 +1,9 @@
+Error handler
+#Parent OS_handlers
+This is called after an error is generated (by a non-X SWI, fatal hardware error, {/}etc.{/}), entered in user mode with the workspace in {*}R0{*} (not R12). The buffer contains:
+
+Offset	Contents
+#Line
+0	PC when error occurred
+4	<error number=>swi_errorblock>
+8	error string (up to 252 bytes)

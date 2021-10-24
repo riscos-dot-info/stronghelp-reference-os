@@ -1,0 +1,9 @@
+FSEntry_PutBytes (buffered)
+#Parent FSEntry_
+=>	R1 =	internal file handle returned by <FSEntry_Open>
+	R2 =	pointer to buffer to write from
+	R3 =	length to write
+	R4 =	offset at which to write
+<=	all preserved
+
+This entry point is called when data is written to a file. Memory addresses are *not* guaranteed to be word aligned.

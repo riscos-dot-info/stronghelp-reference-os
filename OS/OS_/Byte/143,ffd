@@ -1,0 +1,12 @@
+OS_Byte 143  Issue module service call
+#Parent OS_ByteIndex
+=>	R0 =	143
+	R1 =	service type
+	R2 =	argument for service
+
+<=	R0,R1 preserved
+	R2 =	possible return argument
+
+This call is provided for BBC compatibilty. Use <OS_ServiceCall> instead.
+#Line
+See <PRM 1, page 223=>PRM-1:223>

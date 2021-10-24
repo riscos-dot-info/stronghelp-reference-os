@@ -1,0 +1,9 @@
+PDumper_StartJob  (&41B04)
+#Parent PDumper_
+=>	R0 =	pointer to anchor word
+	R1 =	0 (flags all reserved)
+	R2 =	filename of palette to load, or 0 for none
+
+This SWI sets up any workspace needed for a job, the support module linking this into the specified chain. If a palette file is specified in R2 it is loaded into a block with a tag of 1.
+#Line
+See <PRM 3, page 686=>PRM-3:686>.

@@ -1,0 +1,13 @@
+OS_Byte 243  Read timer switch state
+#Parent OS_ByteIndex
+=>	R0 =	243 (&F3)
+	R1 =	0
+	R2 =	255
+
+<=	R0 preserved
+	R1 =	switch state
+	R2 corrupted
+
+This call is obsolete - it reads which of the two copies of the centisecond clock is read/written to by <OS_Word 3 and 4=>OS_Word4>, and which is updated on the 100Hz interrupt. In effect it provides a location that changes 100 times per second.
+#Line
+See <PRM 1, page 407=>PRM-1:407>

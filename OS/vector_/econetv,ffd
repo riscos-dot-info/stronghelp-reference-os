@@ -1,0 +1,43 @@
+Econet vector (33)
+#Parent Vector_index
+=>	R0 =	<reason code=>.reasons>
+	R1 =	size of data/data transferred/not used
+<=	R0, R1 preserved
+
+This vector is called when there is Econet activity. The meaning (if any) of R1 depends on the <reason code=>.reasons>. This vector is usually claimed by the NetStatus module to alter the Hourglass to reflect the Econet status.
+#Line
+See <PRM 1, page 84=>PRM-1:84>.
+#SubPage reasons
+EconetV reason codes
+R0	Name				Meaning of R1					NetStatus calls
+#Line
+&10	NetFS_StartLoad			total size of data				<Hourglass_On>
+&11	NetFS_PartLoad			amount of data transferred			<Hourglass_Percentage>
+&12	NetFS_FinishLoad		 						<Hourglass_Off>
+&20	NetFS_StartSave			total size of data				<Hourglass_On>
+&21	NetFS_PartSave			amount of data transferred			<Hourglass_Percentage>
+&22	NetFS_FinishSave		 						<Hourglass_Off>
+&30	NetFS_StartCreate		total size of data				<Hourglass_On>
+&31	NetFS_PartCreate		amount of data transferred			<Hourglass_Percentage>
+&32	NetFS_FinishCreate		 						<Hourglass_Off>
+&40	NetFS_StartGetBytes		total size of data				<Hourglass_On>
+&41	NetFS_PartGetBytes		amount of data transferred			<Hourglass_Percentage>
+&42	NetFS_FinishGetBytes		 						<Hourglass_Off>
+&50	NetFS_StartPutBytes		total size of data				<Hourglass_On>
+&51	NetFS_PartPutBytes		amount of data transferred			<Hourglass_Percentage>
+&52	NetFS_FinishPutBytes		 						<Hourglass_Off>
+&60	NetFS_StartWait			total size of data				<Hourglass_LEDs> (both on)
+&62	NetFS_FinishWait		 						<Hourglass_LEDs> (both off)
+&70	NetFS_StartBroadcastLoad	total size of data				<Hourglass_On> & <Hourglass_Colours> (green/blue)
+&71	NetFS_PartBroadcastLoad		amount of data transferred			<Hourglass_Percentage>
+&72	NetFS_FinishBroadcastLoad	 						<Hourglass_Off>
+&80	NetFS_StartBroadcastSave	total size of data				<Hourglass_On> & <Hourglass_Colours> (red/blue)
+&81	NetFS_PartBroadcastSave		amount of data transferred			<Hourglass_Percentage>
+&82	NetFS_FinishBroadcastSave	 						<Hourglass_Off>
+
+R0	Name				Meaning
+#Line
+&C0	NetFS_StartTransmission		commence waiting for end of transmission	<Hourglass_LEDs> (only top on)
+&C2	NetFS_FinishTransmission	<Econet_DoTransmit> ends			<Hourglass_LEDs> (both off)
+&D0	NetFS_StartReception		commence waiting for end of reception		<Hourglass_LEDs> (only bottom on)
+&D2	NetFS_FinishReception		<Econet_WaitForReception> ends			<Hourglass_LEDs> (both off)

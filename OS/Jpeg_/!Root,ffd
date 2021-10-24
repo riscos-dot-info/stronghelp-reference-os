@@ -1,0 +1,14 @@
+JPEG
+#Parent !Root
+#Prefix JPEG_
+#Table Columns 2
+<Info>
+<FileInfo>
+<PlotScaled>
+<PlotFileScaled>
+<PlotTransformed>
+<PlotFileTransformed>
+<PDriverIntercept>
+#EndTable
+
+These calls are only available when SpriteExtend 0.99 is installed.

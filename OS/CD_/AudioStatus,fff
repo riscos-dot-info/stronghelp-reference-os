@@ -1,0 +1,17 @@
+CD_AudioStatus  (&41254)
+#Parent CD_
+=>	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+<=	R0 =	<audio status=>.status>
+	R7 preserved
+
+Returns current audio status of drive.
+#Subpage status
+Audio status
+R0	Meaning
+#Line
+0	Currently playing audio
+1	Currently paused
+2	Reserved (at present)
+3	Audio play successfully completed
+4	Error occurred during last audio play
+5	Audio play has not been requested

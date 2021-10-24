@@ -1,0 +1,8 @@
+OS_FSControl 48  (&29)
+#Parent OS_FSControl
+=>	R0 =	48 (Write boot options for disc or image)
+	R1 =	pointer to name of object
+	R2 =	new <boot option=>fsys_opt4>
+<=	Registers preserved
+
+Sets the boot option for a disc or image.

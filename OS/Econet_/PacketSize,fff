@@ -1,0 +1,9 @@
+Econet_PacketSize  (&4001AB)
+#Parent Econet_
+=>	R0 =	station number
+	R1 =	net number
+<=	R2 =	maximum permitted packet size
+
+This SWI returns the maximum recommended packet size for the underlying transport to the given station.
+#Line
+See <PRM 2, page 687=>PRM-2:687>.

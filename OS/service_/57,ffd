@@ -1,0 +1,9 @@
+Service_WimpReportError (&57)
+#Parent Service_index
+=>	R0 =	0 (window closing)
+	 	1 (window opening)
+	R1 =	&57 (reason code)
+
+This service is provided so that tasks that usually trap VDU output can suspend trapping while an error window is displayed.
+#Line
+See <PRM 3, page 77=>PRM-3:77>

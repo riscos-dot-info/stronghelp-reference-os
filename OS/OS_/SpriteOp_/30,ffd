@@ -1,0 +1,9 @@
+Remove mask (30)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<30, &1E=>os_spriteop_reason2> (Remove mask)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+
+This removes the mask.
+#Line
+See <PRM 1, page 781=>PRM-1:781>

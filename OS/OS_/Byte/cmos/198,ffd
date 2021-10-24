@@ -1,0 +1,9 @@
+OS_Byte CMOS 198
+Bit(s)	Meaning
+#Line
+0,1	Filer <display format=>os_bytecmosdisplay>
+2,3	Filer <sort format=>os_bytecmossort>
+4	Filer Force enabled
+5	Filer Confirm enabled
+6	Filer Verbose enabled
+7	Filer Newer enabled

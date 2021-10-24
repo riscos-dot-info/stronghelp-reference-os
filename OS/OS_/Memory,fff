@@ -1,0 +1,98 @@
+OS_Memory (&68)
+#Parent OS_
+=>	R0 =	<reason code=>.reasons> (bits 0-7)
+	 	and flags (bits 8-31) which are reason code specific
+
+Peforms miscellaneous operations for memory management.
+
+This call is only available from RISC OS 3.5 onwards.
+#Subpage reasons
+OS_Memory reason codes
+R0	Action
+#Line
+0	<General page block operations=>.0>
+1-5	Reserved for system use
+6	<Read the size of the physical memory arrangement table=>.6>
+7	<Read the physical memory arrangement table=>.7>
+8	<Read the amount of a specified sort of memory available=>.8>
+9	<Read controller presence and base address=>.9>
+#Subpage 0
+OS_Memory 0
+=>	R0 =	0 (reason code)
+	 	and <flags=>.0flags>
+	R1 =	pointer to page block (...)
+	R2 =	number of entries in page block
+
+This call converts between the different memory spaces used to specify addresses in a page block.
+
+(...)
+#Subpage 0flags
+OS_Memory 0 flags
+Bits	Meaning
+#Line
+0-7	0 (reason code)
+8	set => physical page number provided
+9	set => logical address provided
+10	set => physical address provided
+11	set => physical page number will be filled in when set (if bit 8 clear)
+12	set => logical address will be filled in when set (if bit 9 clear)
+13	set => physical address will be filled in when set (if bit 10 clear)
+14-15	cacheability control:
+	0,1 =>	no change
+	2 =>	disable cacheing on all specified pages
+	3 =>	enable cacheing on all specified pages
+16-31	reserved, must be clear
+#Subpage 6
+OS_Memory 6
+=>	R0 =	6 (reason code)
+	 	all flags bits reserved
+=>	R1 =	table size (in bytes)
+	R2 =	page size (in bytes)
+
+This call reads the size of the physical memory arrangement table, as returned by <OS_Memory 7=>.7>
+#Subpage 7
+OS_Memory 7
+=>	R0 =	7 (reason code)
+	 	all flags bits reserved
+	R1 =	pointer to table to be filled in
+
+This call reads the physical memory arrangement table, to get the size of this table, use <OS_Memory 6=>.6>
+
+(...)
+#Subpage 8
+OS_Memory 8
+=>	R0 =	8 (reason code)
+	 	and <flags=>.8flags>
+<=	R1 =	number of pages of specified type of memory
+	R2 =	page size (in bytes)
+
+This call reads the amount of a specified type of memory available in the computer.
+#Subpage 8flags
+OS_Memory 8 flags
+Bits	Meaning
+#Line
+0-7	8 (reason code)
+8-11	type of memory:
+	1 =>	DRAM
+	2 =>	VRAM
+	3 =>	ROM
+	4 =>	I/O (including all I/O, VIDC and EASI space)
+12-31	reserved, must be clear.
+#Subpage 9
+OS_Memory 9
+=>	R0 =	9 (reason code)
+	 	all flags bits reserved
+	R1 =	<controller ID=>.9id>
+<=	R1 =	controller base address, or 0 if not present
+
+This call checks for the presence of a given controller and returns its base address if present.
+#Subpage 9id
+OS_Memory 9 controller ID
+Bit	Meaning
+#Line
+0-7	controller sequence number
+8-31	controller type:
+	 	0 => EASI card access speed control (for internal use only)
+	 	1 => EASI space (for internal use only)
+	 	2 => VIDC1
+	 	3 => VIDC20

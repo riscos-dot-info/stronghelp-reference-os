@@ -1,0 +1,10 @@
+CD_ReadData  (&41241)
+#Parent CD_
+=>	R0 =	<addressing mode=>CD_addresses>
+	R1 =	start address in given mode
+	R2 =	number of blocks to read
+	R3 =	pointer to destination buffer
+	R4 =	length of buffer
+	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+
+This SWI reads data from the CD, using the current mode (see <CD_SetParameters> and <CD_EnquireDataMode>).

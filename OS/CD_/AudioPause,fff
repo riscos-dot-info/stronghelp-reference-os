@@ -1,0 +1,6 @@
+CD_AudioPause  (&4124D)
+#Parent CD_
+=>	R0 =	0 to turn off, 1 to turn on
+	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+
+Controls pausing of audio playing.

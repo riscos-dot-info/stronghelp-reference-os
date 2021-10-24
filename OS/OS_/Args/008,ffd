@@ -1,0 +1,7 @@
+OS_Args 8
+#Parent OS_Args
+=>	R0 =	8
+	R1 =	file handle
+	R2 =	new <image stamp=>FileCore_cycleid>
+
+This SWI is made by an image filing system when it has changed a disc's image stamp. FileSwitch passes this on to the handler of discs, which typically does nothing more than storing the new image stamp in the disc's record.

@@ -1,0 +1,7 @@
+OS_Args 5
+#Parent OS_Args
+=>	R0 =	5
+	R1 =	file handle
+<=	R2 =	0 if not EOF
+
+This SWI returns 0 if not at End of File.

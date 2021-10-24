@@ -1,0 +1,3 @@
+Application space
+#Parent OS_handlers
+This is the amount of read/write memory in application space. Consequently it should always be the case that Application space >= Memory Limit.

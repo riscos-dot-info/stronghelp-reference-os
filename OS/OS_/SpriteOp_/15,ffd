@@ -1,0 +1,14 @@
+Create sprite (15)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<15, &F=>os_spriteop_reason2> (Create sprite)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+	R3 =	0 => Exclude palette
+	 	1 => Include palette
+	R4 =	Width in pixels
+	R5 =	Height in pixels
+	R6 =	Mode number, or <sprite type=>OS_SpriteOp_Type>
+
+This creates a blank sprite.
+#Line
+See <PRM 1, page 773=>PRM-1:773>

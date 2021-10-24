@@ -1,0 +1,3 @@
+Exit handler
+#Parent OS_handlers
+This is called in USR mode whenever <OS_Exit> or <OS_ExitAndDie> is called.

@@ -1,0 +1,13 @@
+ImageEntry_File 6
+#Parent ImageEntry_File
+=>	R0 =	6 (Delete object)
+	R1 =	pointer to filename
+	R6 =	handle of image file
+
+<=	R0 =	<object type=>fsys_objtype>
+	R2 =	<load address=>fsys_loadexec> of file
+	R3 =	<exec address=>fsys_loadexec> of file
+	R4 =	length of file
+	R5 =	<attributes=>fsys_objattr> of file
+
+This call is made to delete a file.

@@ -1,0 +1,9 @@
+Econet_Version  (&40019)
+#Parent Econet_
+=>	R0 =	station number
+	R1 =	net number
+<=	R2 =	version number * 100
+
+This SWI returns the version of software used on the underlying transport to the given station. Setting R0 and R1 to 0 on entry returns the version of the top level Econet software.
+#Line
+See <PRM 2, page 685=>PRM-2:685>.

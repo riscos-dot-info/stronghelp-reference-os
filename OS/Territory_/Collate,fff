@@ -1,0 +1,18 @@
+Territory_Collate  (&4305D)
+#Parent Territory_
+=>	R0 =	<territory number=>Territory_numbers>, or -1 for current
+	R1 =	pointer to string 1 (null terminated)
+	R2 =	pointer to string 2 (null terminated)
+	R3 =	flags:
+	 	bit 0: ignore case
+	 	bit 1: ignore accents
+	 	bits 2-31: reserved (must be zero)
+
+<=	R0 =	\<0 if string1 \< string2
+	 	=0 if string1 = string2
+	 	\>0 if string1 \> string2
+	R1-R3 	preserved
+
+This call compares strings in the given territory's alphabet.
+#Line
+See <PRM 3, page 834=>PRM-3:834>.

@@ -1,0 +1,7 @@
+Hourglass_Percentage  (&406C4)
+#Parent Hourglass_
+=>	R0 =	percentage
+
+This SWI displays a percentage below the hourglass if R0 is in the range 0 to 99, otherwise it turns percentage display off.
+#Line
+See <PRM 2, page 739=>PRM-2:739>.

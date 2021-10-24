@@ -1,0 +1,26 @@
+Font_LookupFont  (&400A8)
+#Parent Font_
+=>	R0 =	font handle (0 for current handle)
+	R1 =	0
+	R2 =	0
+<=	R0 =	preserved
+	R1 =	preserved
+	R2 =	characteristics of font
+	R3 =	corrupted
+	R4 =	corrupted
+	R5 =	corrupted
+	R6 =	corrupted
+	R7 =	corrupted
+
+This SWI returns information about a font as a bitmap in R2.
+
+#tab
+bit	meaning when set
+#line
+0	font is old bitmap format ('x90y45')
+1	font is in ROM
+8	font is monochrome only
+9	font is filled non-zero (rather than even-odd)
+2-7,10-31	ignore (reserved)
+#Line
+See <PRM 3, page 496=>PRM-3:496>.

@@ -1,0 +1,42 @@
+Font thresholds
+Font thresholds are used by the Font Manager to convert from the 16 anti-alias levels in the font definition to the logical colours available. They are read and set using a table of the form:
+
+Offset	Contents
+#Line
+0	Foreground colour offset
+1	1st threshold value
+2	2nd
+3	...
+n	&FF
+
+For example in a 16 colour mode in the Wimp, background is 0, foreground is 1, foreground colour offset is 6, giving the table:
+
+0	6
+1	2
+2	4
+3	6
+4	8
+5	10
+6	12
+7	14
+8	&FF
+#tab
+This causes the mapping from the 16 colours the font is defined in to the 8 available:
+
+	In	Out	Threshold
+	  0	0
+	  1	0
+	  2	1	  2
+	  3	1
+	  4	2	  4
+	  5	2
+	  6	3	  6
+	  7	3
+	  8	4	  8
+	  9	4
+	10	5	10
+	11	5
+	12	6	12
+	13	6
+	14	7	14
+	15	7

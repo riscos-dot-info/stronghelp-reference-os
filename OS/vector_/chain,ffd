@@ -1,0 +1,21 @@
+Software Vectors Chain
+#Parent vector_index
+When OS_Claim adds a routine to a vector, it automatically removes any earlier instances of the same routine from the chain. If you don't want this to happen, use <OS_AddToVector> instead. The routines are called in reverse order to the order in which they called <OS_Claim>.
+
+Let's give a small example for you to imagine how this works roughly (don't count on correct presentation, my (Epic's) own knowledge of the OS is not 100%, yet... ;-)
+
+A program does an SWI "XYZ" (which has been claimed)
+
+RISC OS has a list for this vector, which could be explained like this:
+SWI "XYZ" goes here:	STMFD R13!,\{R14}
+			BL Last_Client
+			BL ...
+			BL Client_#1
+			BL ROM-Routine
+			LDMFD R13!,\{PC}
+
+Your own routine can do one of the following:
+#Tab
+è	Replace the original routine, passing control directly back to the caller: By <intercepting=>vector_rules>.
+è	Do some processing before calling the standard routine, which then passes control back to the caller: By <passing=>vector_rules> on the call.
+è	Call the standard routine, process some of the results it returns, and then pass control back to the caller; by a bit more sophisticated stack pushing. For example, push the address of the part of your routine which will do the post-processing on the stack, then pass on the call. When the next (or the RISC OS) routine on the chain has finished, this post-routine will be called.

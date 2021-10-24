@@ -1,0 +1,10 @@
+Unknown plot vector (25)
+#parent vector_index
+=>	R0 =	plot command code
+<=	R0 preserved
+
+Whenever an unrecognised byte is found following 25 in the VDU stream, or <OS_Plot> is called with an urecognised R0, then this vector is called. R0 contains this unknown plot command code - the current and 3 previous positions of the graphics cursor can be read with <OS_ReadVDUVariables> from variables &8C - &93, allowing custom plot routines to be implemented.
+
+The default owner of this vector does nothing - unknown plot options are ignored.
+#Line
+See <PRM 1, page 83=>PRM-1:83>.

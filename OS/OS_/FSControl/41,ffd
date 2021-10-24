@@ -1,0 +1,10 @@
+OS_FSControl 41  (&29)
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	41 (Return image defect list)
+	R1 =	pointer to name of image (null terminated)
+	R2 =	pointer to buffer
+	R5 =	buffer size
+#Wrap
+
+This SWI fills the buffer with the defect list of an image. The buffer is filled with words giving byte offsets of defects, terminated by &20000000.

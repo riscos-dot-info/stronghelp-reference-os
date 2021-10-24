@@ -1,0 +1,11 @@
+FileCore_DiscOp 0
+#Parent FileCore_DiscOp
+=>	R1 =	0 + <flags=>FileCore_DiscOp_flags>
+	R2 =	<disc address=>FileCore_discaddress>
+	R4 =	size to verify
+
+<=	R2 =	next disc address
+	R4 =	unverified
+
+This call is used to verify sectors.
+Note: For RISC OS 3.6, the value in R2 will be rounded down to be sector aligned.

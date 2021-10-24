@@ -1,0 +1,11 @@
+OS_Byte CMOS 215
+Bit(s)	Meaning
+#Line
+0	Auto-load !Alarm
+1	Auto-load !Calc
+2	Auto-load !Chars
+3	Auto-load !Configure
+4	Auto-load !Draw
+5	Auto-load !Edit
+6	Auto-load !Help
+7	Auto-load !Paint

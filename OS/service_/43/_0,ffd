@@ -1,0 +1,9 @@
+Service_International 0
+#Parent Service_43
+=>	R1 =	&43 (reason code)
+	R2 =	0 (sub reason code)
+	R3 =	pointer to null terminated <country name=>Territory_numbers>
+<=	R1 =	0 to claim, preserved otherwise
+	R4 =	country number, or preserved if unrecognised
+
+This service converts a country name to number. If a module provides additional countries it should check this service - if the name matches (case insensitive, allow abbreviations with ".") one provided by the module it should claim this service.

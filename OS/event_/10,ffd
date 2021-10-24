@@ -1,0 +1,16 @@
+Mouse button event
+#Parent event_index
+=>	R0 =	10 (event number)
+	R1 =	mouse's X-coordinate
+	R2 =	mouse's Y-coordinate
+	R3 =	<button state=>.state>
+	R4 =	4 bytes of monotonic centi-second value
+
+This event is generated when a mouse button is pressed or released.
+#Subpage state
+Mouse button states
+Bit	Meaning
+#Line
+0	Right button (Adjust)
+1	Middle button (Menu)
+2	Left button (Select)

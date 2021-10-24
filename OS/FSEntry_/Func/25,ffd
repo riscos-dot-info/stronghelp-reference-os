@@ -1,0 +1,11 @@
+FSEntry_Func 25
+#Parent FSEntry_Func
+=>	R0 =	25 (Read defect list)
+	R1 =	pointer to name of image
+	R2 =	pointer to buffer
+	R5 =	length of buffer
+	R6 =	pointer to special field, or 0 if not present
+
+This call fills the buffer with the defect list of an image. The buffer is filled with words giving byte offsets of defects, terminated by &20000000. It implements <OS_FSControl 41=>OS_FSControl41>.
+# 
+# This entry point is only called if bit 23 of the filing system <information word=>fsys_infoword> is set.

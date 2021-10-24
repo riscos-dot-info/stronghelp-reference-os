@@ -1,0 +1,25 @@
+OS_Byte 128  Get buffer/mouse status
+#Parent OS_ByteIndex
+=>	R0 =	128
+	R1 =	<reason code=>.reason>
+
+<=	R0 preserved
+	R1 =	bits 0-7 give LSB of answer
+	R2 =	bits 0-23 give bits 8-31 of answer
+
+This call checks the (buffered) mouse position or the free space in system buffers, depending on the reason code passed in R1. It is recommended to use <OS_Mouse> to read the mouse position, as this reads the current (unbuffered) position.
+#Line
+See <PRM 1, page 166=>PRM-1:166>
+#subpage reason
+OS_Byte 128 reason codes
+entry R1	value returned
+#Line
+7		mouse x
+8		mouse y
+246		free bytes in mouse buffer
+252		free bytes in printer buffer
+253		free bytes in serial output buffer
+254		free bytes in serial input buffer
+255		free bytes in keyboard buffer
+
+Note that for reading free space, R1 = 255 - <buffer number=>Buffer_buffers>.

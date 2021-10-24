@@ -1,0 +1,10 @@
+Declare fonts state for DrawFile
+#Parent Service_45541
+Offset	Contents
+#Line
+0	pointer to <object to be rendered=>DrawFile_format>
+# Gerph> Another horrid link
+4	pointer to <DrawFile header=>drawfile_header>
+8	pointer to <font table object=>Drawfile_object0>, or 0 if none found yet
+12	flags passed to <DrawFile_Render>
+16	pointer to <error block=>swi_errorblock>, or 0 if none

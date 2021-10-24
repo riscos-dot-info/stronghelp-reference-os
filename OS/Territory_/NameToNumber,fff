@@ -1,0 +1,8 @@
+Territory_NameToNumber  (&43060)
+#Parent Territory_
+=>	R0 = 	<territory number=>territory_numbers> of name
+	R1 = 	pointer to territory name in alphabet of territory (R0)
+
+<=	R0 = 	<territory number=>territory_numbers>, or 0 if unknown
+#Line
+See <PRM 3, page 841=>PRM-3:841>.

@@ -1,0 +1,22 @@
+Sprite Type Field
+#parent OS_SpriteOp_28
+Bits 27-31	Meaning
+#line
+0	Old format mode word. Mode is in bits 0-6 of the Mode Word
+1	1 bpp
+2	2 bpp
+3	4 bpp
+4	8 bpp
+5	16 bpp
+6	24 bpp
+7	CMYK format allocated to CC
+8	24 bpp format allocated to CC
+9	JPEG format allocated
+10-31	For future expansion
+
+If Type Field is non-zero, then bits 0-26 are:
+Bit(s)	Meaning
+#line
+0	Takes the value 1, to distinguish this from a so-called <mode selector=>Wimp:Wimp_ModeSelect>
+1-13	Horizontal dots per inch of sprite
+14-26	Vertical dots per inch of sprite. Only 90 × 45 and 90 × 90 will initially be supported (corresponding to the low and high vertical resolutions currently in use)

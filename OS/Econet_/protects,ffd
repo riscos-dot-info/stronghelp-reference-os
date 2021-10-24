@@ -1,0 +1,14 @@
+Econet protection bits
+Bit	Disabled if set
+#Line
+0	Peek
+1	Poke
+2	Remote JSR (BL)
+3	User procedure call
+4	OS procedure call
+5	Halt
+6	Continue (0 on RISC OS)
+7	Machine peek (0 on RISC OS)
+8	Get registers
+9-30	reserved (0)
+31	Write value to CMOS (in <Econet_SetProtection>)

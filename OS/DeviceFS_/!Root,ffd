@@ -1,0 +1,13 @@
+DeviceFS
+#Parent !Root
+#Prefix DeviceFS_
+#Table Columns 2
+<CallDevice>
+<Deregister>
+<DeregisterObjects>
+<ReceivedCharacter>
+<Register>
+<RegisterObjects>
+<Threshold>
+<TransmitCharacter>
+#endtable

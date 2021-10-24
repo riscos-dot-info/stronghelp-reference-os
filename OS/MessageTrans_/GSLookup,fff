@@ -1,0 +1,17 @@
+MessageTrans_GSLookup  (&41507)
+#Parent MessageTrans_
+=>	R0 =	pointer to 4-word data structure, or 0 for global messages
+	R1 =	pointer to <Token=>messagetrans_token>
+	R2 =	pointer to buffer
+	R3 =	buffer size
+	R4 =	pointer to parameter 0, or 0 if none
+	R5 =	pointer to parameter 1, or 0 if none
+	R6 =	pointer to parameter 2, or 0 if none
+	R7 =	pointer to parameter 3, or 0 if none
+<=	R1 =	pointer to token-terminator
+	R2 =	pointer to result string
+	R3 =	size of result
+
+This SWI is like <MessageTrans_LookUp> except that the result is then <GSTrans'd=>OS_GSTrans> before return. If R2 = 0 on entry this call is identical to <MessageTrans_LookUp>.
+#Line
+See <PRM 3, page 755=>PRM-3:755>.

@@ -1,0 +1,42 @@
+OS_GBPB  9
+#Parent OS_GBPB
+{f25}Þ{f}	R0 =	9
+	R1 =	pointer to directory name
+	R2 =	pointer to buffer
+	R3 =	number of objects to read
+	R4 =	where to start, 0 for first time
+	R5 =	length of buffer
+	R6 =	wildcarded name to match (if 0 "*" is used)
+{f25}Ü{f}	R3 =	number of objects read
+	R4 =	where to continue, or -1 for no more
+	C flag is clear if R3 = 0, else it is set
+
+This SWI reads filename entries from the specified directory, returning a group of 0-terminated strings in the buffer. The correct code structure to call this SWI is:
+
+#fCode
+repeat
+\{
+  call OS_GBPB 9
+  if (R3 \<> 0)
+  \{
+    process buffer
+  }
+} until (R4 = -1)
+#f
+
+as it is legal to return R3 = 0 before the end of the directory. Also, do *not* assume anything about the value in R4.
+
+Note: The PRM lies when it says that if R6 points to an empty string "*" is used.
+# Gerph> What does actually happen ?
+# N> Odd. It works on 3.7. Reader survey needed to see when they fixed this
+#    (or if I was wrong all along)
+# Gerph> Well, it works on RO3.6. Where did you get your information from in
+#        the first place ? StrongHelp assumes everything is '*'.
+# N> Me! But it may have been me programming RISC OS 2. Someone else on Usenet
+#    remembers something not working as documentation said it should have a long
+#    time ago. I think 2 out of the 3 work, and "" fails. I will have to find a
+#    RISC OS 2 machine to check.
+# Gerph> Ah right. I do remember something like it myself, but it worked on
+#        RO3.1. too, so I'm not really sure what happened here...
+#        If it's in RO2, then there's little point in asking Acorn as they
+#        probably don't have a record of it - it is quite obscure.

@@ -1,0 +1,97 @@
+FileCore_DiscOp error numbers
+#Parent FileCore_DiscOp
+Error	Meaning
+#Line
+0	*Invalid* : VS and R0 = 0 should never be used
+\<&100	Internal filecore error number
+# Gerph> Ok, WTF are the internal filecore error numbers documented ?!
+b31 set	b0-20 :		disc address, shifted down 8 bits
+	b21-23 :	drive number
+	b24-29 :	<disc error number=>.fsspecific>
+	b30 :		0
+#Subpage fsspecific
+FileCore_DiscOp FS specific errors
+# Gerph> Really these should be documented using links to the right part of
+#        the manual, but I can't be bothered right now
+{*}1772 floppy discs:{*}
+#Indent 2
+Bit	Meaning
+#line
+7	Drive was already running
+# I think
+6	Drive is write protected
+5	Write failed
+4	Record not found
+3	CRC error
+2	Lost data
+1	Track 0 found
+0	Drive busy
+# Last two are guesses
+
+#indent
+{*}ST506 hard discs:{*}
+#Indent 2
+Value	Meaning
+#Line
+&1	Abort command accepted
+&2	Invalid command issued
+&3	Invalid command parameter
+&4	Head positioning, disc access, or drive check before SPC issued
+&5	TST command after SPC command
+&6	USELD for a drive has not been returned
+&7	Write fault detected by interface
+&8	Drive not ready
+&9	Seek complete timed out
+&A	SEK, or disc access issued during a seek
+&B	Next cylinder address is too big
+&C	Invalid step rate: highest-speed seek specified in normal mode
+&D	SEK, or disc access issued to drive with seek error
+&E	Data overrun (memory is slower than the drive)
+# the above should not occur, even on A400's to my knowledge
+&F	Head address too high
+&10	Error correction code detected an error
+&11	CRC error in data area
+&12	Error correction code corrected an error
+&13	Error correction code failed in data area
+&14	In CMPD command data mismatched from host and disc
+# is that 'verify failed' then ?
+&15	CRC in ID field (never generated)
+&16	ID search timed out
+&17	ID area has bad address mark
+&18	Missing address mark
+&19	Drive write protected
+
+#indent
+{*}IDE discs:{*}
+#Indent 2
+Value	Meaning
+#Line
+&2	Command aborted by controller
+&7	Write fault
+&8	Drive not ready
+&9	Track 0 not found
+&13	Uncorrected data error
+&16	Sector ID field not found
+&17	Bad block mark detected
+&18	No data address mark
+&20	No DRQ when expected
+&21	Drive busy when commanded
+&22	Drive busy on command completion
+# I don't get that, but there you go...
+&23	Controller did not respond within timeout
+&24	Unknown code in error register
+
+#indent
+{*}710/711 floppy discs:{*}
+#indent 2
+Value	Meaning
+#Line
+&1	Fatal error, controller hardware error
+&2	Fatal error, command timed out; drive problem
+&3	Fatal error, track 0 not found; drive problem
+&10	Critical error, seek failed
+&20	Recoverable error, non specific command error
+&21	Data overrun
+&22	Data CRC error
+&23	Sector or ID not found
+&24	Missing address mark

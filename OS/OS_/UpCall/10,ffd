@@ -1,0 +1,13 @@
+OS_UpCall 10 - Stream Created
+#Parent OS_UpcallReasons
+=>	R0 =	10 (Stream created)
+	R1 =	device driver's handle
+	R2 =	0 if created for reception (else created for transmission)
+	R3 =	file handle for stream
+	R4 =	DeviceFS stream handle, as passed to device driver on initialisation
+   
+<=	All registers preserved
+
+DeviceFS issues this call when a stream is created. It serves as a broadcast, and all registers should be preserved.
+
+This call is never issued under RISC OS 2.

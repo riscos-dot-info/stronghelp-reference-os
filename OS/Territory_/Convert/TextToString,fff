@@ -1,0 +1,5 @@
+Territory_ConvertTextToString  (&73075)
+#Parent Territory_
+Not yet implemented - returns to caller with all registers preserved.
+#Line
+See <PRM 3, page 804=>PRM-3:804>.

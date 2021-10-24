@@ -1,0 +1,8 @@
+OS_FSControl 5  (&29)
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	5 (Catalogue directory)
+	R1 =	pointer to (wildcarded) filename
+#Wrap
+
+This SWI is equivalent to "{fCode}*Cat{f}". If a pointer to "" is used, the current directory is catalogued.

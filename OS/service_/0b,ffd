@@ -1,0 +1,8 @@
+Service_ReleaseFIQ (&B)
+#Parent Service_index
+=>	R1 =	&B (reason code)
+<=	R1 =	0 to claim, preserved to pass on
+
+This service must be issued by a module when it releases the FIQ hardware vector. If you wish to claim the FIQ instead of the default owner (Econet or Kernel) you should claim this service
+#Line
+See <PRM 1, page 135=>PRM-1:135>

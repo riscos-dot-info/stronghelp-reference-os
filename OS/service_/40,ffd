@@ -1,0 +1,8 @@
+Service_FSRedeclare (&40)
+#Parent Service_index
+=>	R1 =	&40 (reason code)
+<=	R1 preserved (do not claim)
+
+This service is called when FileSwitch re-initilised. Filing systems should call <OS_FSControl 12=>OS_FSControl12> to re-declare themselves.
+#Line
+See <PRM 2, page 23=>PRM-2:23>

@@ -1,0 +1,31 @@
+FSEntry_Open
+#Parent FSEntry_
+=>	R0 =	<reason code=>.reason>
+	R1 =	pointer to filename
+	R3 =	FileSwitch file handle which will be allocated
+	R6 =	pointer to special field, or 0 if not present
+
+<=	R0 =	<file information word=>.fileinfo>
+	R1 =	internal file handle, or 0 if unable to open
+	R2 =	buffer for FileSwitch to use, or 0 if unbuffered (powers of 2 from 64 to 1024)
+	R3 =	file extent if buffered
+	R4 =	space allocated to file if buffered (must be a multiple of R2)
+	
+This entry point is called when an attempt is made to access a file inside an image. The internal file handle will be referred to by FileSwitch in subsequent file accesses if the file was successfully opened.
+#
+#Subpage fileinfo
+File information word
+Bit	Meaning
+#Line
+31	Writes are allowed
+30	Reads are allowed
+29	File is a directory
+28	Unbuffered OS_GBPB supported (only if stream-type)
+27	Stream is interactive
+#Subpage reason
+FSEntry_Open reasons
+Reason	Meaning
+#Line
+0	File is opening for read
+1	File is being created and opened for update
+2	File is opening for update

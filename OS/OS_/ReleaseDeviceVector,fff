@@ -1,0 +1,17 @@
+OS_ReleaseDeviceVector  (&4C)
+#Parent OS_
+=>	R0 =	<device number=>OS_systemdevices>
+	R1 =	address of device driver routine
+	R2 =	value to be passed in R12 when driver is called
+	R3 =	address of interrupt status if R0 = 8 or 13 on entry
+	R4 =	interrupt mask to use, if R0 = 8 or 13 on entry
+
+<=	R0-R4 preserved
+
+This removes a driver from the list of claimants of a device vector. The device vector is identified by the contents of the register on entry; R0-R2 (R0-R4 if R0 = 8 or 13 on entry) must be the same as when the vector was claimed.
+
+The previous vector owner is re-installed at the head of the chain. If there is no previous owner, then the IRQs from the corresponding device are disabled.
+
+You must not attempt to disable a device's IRQs within IOC when you release its vector. For expansion card IRQs, you should prevent your device from interrupting again by programming the hardware on your expansion card.
+#Line
+See <PRM 1, page 123=>PRM-1:123>.

@@ -1,0 +1,10 @@
+Font_SetFontColours  (&40092)
+#Parent Font_
+=>	R0 =	font handle (0 for current)
+	R1 =	background colour
+	R2 =	foreground colour
+	R3 =	<foreground colour offset=>font_paint2>
+
+This SWI sets the font colours and, optionally, the font.
+#Line
+See <PRM 3, page 453=>PRM-3:453>.

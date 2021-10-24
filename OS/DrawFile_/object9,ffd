@@ -1,0 +1,13 @@
+Text area object (9)
+#Parent drawfile_format
+First, 1 or more <text columns=>drawfile_object10> and then :
+
+Offset	Len	Contents
+#Line
+0	4	zero to mark end of columns
+4	4	reserved
+8	4	reserved
+12	4	initial foreground col
+16	4	initial background hint
+20	n	zero terminated <body of text=>drawfile_textbody>
+padding

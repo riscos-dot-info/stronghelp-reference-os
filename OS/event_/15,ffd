@@ -1,0 +1,8 @@
+Econet Transmit
+#Parent event_index
+=>	R0 =	15	(event number)
+	R1 =	transmit handle
+	R2 =	<status=>econet_statuses>
+	R3 =	port
+
+This event is generated when the Econet completes a transmission.

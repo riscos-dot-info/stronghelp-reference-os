@@ -1,0 +1,12 @@
+NetPrint_SetPSTimeouts  (&40205)
+#Parent NetPrint_
+=>	R0 =	transmit count
+	R1 =	transmit delay
+	R2 =	machine peek count
+	R3 =	machine peek delay
+	R4 =	receive delay
+	R5 =	broadcast delay
+
+This SWI sets the current communication timeouts. All delays are in centiseconds.
+#Line
+See <PRM 2, page 394=>PRM-2:394>.

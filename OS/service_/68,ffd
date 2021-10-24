@@ -1,0 +1,11 @@
+Service_CloseFile (&68)
+#Parent Service_Index
+=>	R1 =	&68 (reason code)
+	R2 =	canonical filename (null terminated)
+	R3 =	number of files closed (initially 0)
+<=	R1, R2 preserved (do not claim)
+	R3 =	updated number of files closed
+
+This service is issued when the object specified by R2, and all other objects beneath it in the directory tree are to be closed. Your module need not close files if this may potentially cause problems. Do *not* claim this service - pass it on with R3 updated by the number of files you closed.
+#Line
+See <PRM 2, page 24=>PRM-2:24>

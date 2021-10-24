@@ -1,0 +1,8 @@
+Sound pitches
+Pitch		Meaning
+#Line
+0 - 255		BBC style pitch (increase by 4 for one semitone)
+&0100 - &7FFF	Enhanced pitch control : &offf
+		&o000 is octave, &0fff is fraction of octave;
+		&4000 is usually middle C though this depends on the sample
+&8000 - &FFFF	Phase accumulator increment (?)

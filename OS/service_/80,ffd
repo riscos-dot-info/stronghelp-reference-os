@@ -1,0 +1,8 @@
+Service_ShutDownComplete (&80)
+#Parent Service_index
+=>	R1 =	&80 (reason code)
+#Wrap off
+
+"Is is now safe to turn your computer off"
+#Line
+See <PRM 3, page 82=>PRM-3:82>

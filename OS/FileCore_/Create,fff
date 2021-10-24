@@ -1,0 +1,38 @@
+FileCore_Create  (&40541)
+#Parent Filecore_
+{f25}Þ{f}	R0 =	pointer to <descriptor block=>FileCore_fsdescriptor>
+	R1 =	pointer to calling module's base
+	R2 =	pointer to calling module's private word
+	R3 =	<drives configuration=>.drives>
+	R4 =	suggested size fo directory cache
+# (19990616) r5: 1076 -> 1024
+	R5 =	suggested number of 1024 byte buffers or file cache
+# gerph, paraphrased> 1076 is the actual size of memory allocated
+# on previous versions of FileCore and may change without notice.
+	R6 =	hard disc map sizes
+{f25}Ü{f}	R0 =	pointer to FileCore instance private word
+	R1 =	address to call after completing background floppy op
+	R2 =	address to call after completing background hard disc op
+	R3 =	address to call to release FIQ after low level op
+#line
+This call creates a new instantiation of an ADFS like filing system. It must be called on initialisation by any filing system module that is adding itself to FileCore.
+
+The only start up option currently supported is 'No directory state' which is indicated by setting bit 30. All other bits representing start up options must be clear.
+
+If the filing system doesn't support background transfer of data, R5 must be zero.
+
+The hard disc map size are given using 1 byte for each disc, with drive 4 in the low byte, and drive 7 in the high byte. The byte should contain 'map size'/256 (ie 2 for the old map). This is just a good guess and shouldn't involve starting up the drives to read from them. You might store this in the <CMOS RAM=>OS_ByteCmos>.
+
+You must store the FileCore instance private word returned by this SWI in your modules workspace; it's your module's means of identifying itself to FileCore.
+ 
+When your module calls the addresses returned in R1-R3, it must be in SVC mode with R12 holding the value of R0 that this SWI returned. Interrupts need to be disabled. R0, R1, R3-R11 and R13 will be preserved by FileCore over these calls.
+#Line
+See <PRM 2-226=>PRM-2:226>.
+#Subpage drives
+Drives configuration
+Bits	Contents
+#Line
+0-7	number of floppies (0-3)
+8-15	number of harddiscs (0-3)
+16-24	default drive
+25-31	start up options

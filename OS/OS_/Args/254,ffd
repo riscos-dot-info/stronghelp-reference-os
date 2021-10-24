@@ -1,0 +1,22 @@
+OS_Args 254
+#Parent OS_Args
+=>	R0 =	254
+	R1 =	file handle
+<=	R0 =	stream status word
+	R2 =	<filing system info word=>fsys_infoword>
+
+This SWI returns info on the given file handle.
+
+#Tab
+Bits in stream status word :
+3	Stream is interactive
+4	Unbuffered. Directly supports GBPB
+5	Is a directory
+6	Read access
+7	Write access
+8	Have written to it
+9	Next read gives EOF error
+10	Unbuffered
+11	Un-allocated
+12	Critical
+13	Data have been lost

@@ -1,0 +1,11 @@
+Portable_CommandBMU  (&42FC4)
+#Parent Portable_
+=>	R0 =	Reason code
+	 	1	remove power
+	 	4	set autostart
+	R1 =	autostart delay in minutes
+<=	all registers preserved
+
+This call issues a command to the Battery Management Unit. The value of <BMU variables=>Portable_BMUvars> may not immediately be updated.
+#Line
+See <PRM 4, page 205=>PRM-4:205>.

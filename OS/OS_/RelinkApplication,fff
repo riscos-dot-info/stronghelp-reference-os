@@ -1,0 +1,8 @@
+OS_RelinkApplication  (&4E)
+#Parent OS_
+=>	R0 =	pointer to buffer
+<=	R0 preserved
+
+When an application is going to be swapped in, all vectors that it uses must be restored. R0 points to a buffer, which has previously been created using <OS_DelinkApplication>.
+#Line
+See <PRM 1, page 76=>PRM-1:76>.

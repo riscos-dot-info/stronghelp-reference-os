@@ -1,0 +1,7 @@
+CD_Identify  (&41263)
+#Parent CD_
+=>	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+<=	R0,R1 preserved
+	R2 =	drive type, or -1 if not recognised
+
+Identifies the drive type of a CD-ROM drive.

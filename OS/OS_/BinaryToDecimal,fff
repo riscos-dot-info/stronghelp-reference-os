@@ -1,0 +1,10 @@
+OS_BinaryToDecimal  (&28)
+#Parent OS_
+=>	R0 =	integer
+	R1 =	pointer to buffer
+	R2 =	size of buffer
+<=	R2 =	length of string
+
+This SWI converts a 32 bit integer to a string. Why we have this call, is a bit unclear, as <OS_ConvertInteger4=>OS_Convert> should do the same.
+#Line
+See <PRM 1, page 456=>PRM-1:456>.

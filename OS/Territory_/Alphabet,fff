@@ -1,0 +1,7 @@
+Territory_Alphabet  (&43052)
+#Parent Territory_
+=>	R0 =	<territory number=>Territory_numbers>, or -1 for current
+
+<=	R0 =	<alphabet number=>Territory_anumbers> used
+#Line
+See <PRM 3, page 821=>PRM-3:821>.

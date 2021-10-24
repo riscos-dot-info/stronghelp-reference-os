@@ -1,0 +1,8 @@
+Font_SetScaleFactor  (&40090)
+#Parent Font_
+=>	R1 =	x scale factor
+	R2 =	y scale factor
+
+This SWI sets the values used when converting between OS coordinates and millipoints. To read values, use <Font_ReadScaleFactor>.
+#Line
+See <PRM 3, page 449=>PRM-3:449>.

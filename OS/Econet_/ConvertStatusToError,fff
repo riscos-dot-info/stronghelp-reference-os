@@ -1,0 +1,14 @@
+Econet_ConvertStatusToError  (&4000C)
+#Parent Econet_
+=>	R0 =	<status=>Econet_statuses>
+	R1 =	pointer to error buffer
+	R2 =	buffer size
+	R3 =	station number
+	R4 =	net number
+
+<=	R0 =	<buffer=>swi_errorblock>
+	V set
+
+This SWI converts a status result from a prior Econet call to an error block and then generates an error. To prevent the error, call the X version of this SWI and read R0, or set the buffer address to 0 which will leave the string in the workspace.
+#Line
+See <PRM 2, page 666=>PRM-2:666>.

@@ -1,0 +1,6 @@
+MakePSFont
+#Parent !Root
+#Prefix MakePSFont_
+#Table Columns 2
+<MakeFont>
+#EndTable

@@ -1,0 +1,9 @@
+Econet_ReadProtection  (&4000D)
+#Parent Econet_
+<=	R0 =	current <protection=>Econet_protects>
+
+This SWI is used to read the current protection word for immediate operations.
+
+You should use <Econet_SetProtection> instead of this call.
+#Line
+See <PRM 2, page 668=>PRM-2:668>.

@@ -1,0 +1,13 @@
+Expansion Card chunk directory
+#Parent Podule_
+The chunk directory consists of a series of 8 byte entries, terminated by four zero bytes.
+
+Format of a chunk directory entry:
+
+Size	Meaning
+#Line
+1	<Operating system identity byte=>Podule_osid>
+3	size of chunk (bytes)
+4	start (offset from base of card's identity space)
+
+If a chunk directory is present, then it *must* be preceded by 16 bytes of <interrupt status pointers=>Podule_isp>, even if these are not used. The chunk directory is the start of the area of expansion card space where the bit width is set from the <extended ECId=>Podule_eECId>.

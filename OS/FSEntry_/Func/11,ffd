@@ -1,0 +1,22 @@
+FSEntry_Func 11
+#Parent FSEntry_Func
+=>	R0 =	11 (Read name and boot option)
+	R2 =	buffer to write data to
+	R6 =	pointer to special field, or 0 if not present (the PRMs are wrong)
+# <PRM wrong=>#URL RobinWatts.FileSwitch.PRMBugs>)
+# we need a true URL here...
+
+This call should return the disc name for the disc containing the filing systems CSD, and its boot option. The data is to be written <in this format=>.format>.
+
+Beware - the buffer pointed to will not have been validated with <OS_ValidateAddress> (as FileSwitch does not know how big it should be) - you should be preparaed to cope with faulting if writing to invalid memory. If the memory is invalid you should look up the error token 'BadWrt'.
+
+It is unclear how the calling program is to find out how long the buffer should be, short of ensuring that it is at the top of memory so that overruns will cause memory errors.
+#subpage format
+FSEntry_Func 11 buffer format
+#Wrap off
+Size	Value			Value if CSD unset
+#Wrap
+#Line
+1	name length byte	5
+/n/	name (not terminated)	"Unset"
+1	boot option		0

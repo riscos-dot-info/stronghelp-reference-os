@@ -1,0 +1,16 @@
+OS_Word 21,0
+#Parent OS_Word
+=>	R0 =	21
+	R1 =	pointer to block containing :
+		 	0 = 0
+		 	1 = 1-4			shape number 
+		 	2 = 0-8			/w/ - width in bytes
+		 	3 = 0-32		/h/ - height in pixels
+		 	4 = 0-({/}w{/}*4-1)	x active point (in pixels from left)
+		 	5 = 0-({/}h{/}-1)	y active point (in pixels from top)
+		 	6 = LSB of *pointer* to shape data
+		 	7
+		 	8
+		 	9 = MSB of pointer
+
+This OS_Word defines a pointer shape, which may be selected with <OS_Byte 106=>OS_Byte106>. Pointers are always defined in 2 bits per pixels, colour 0 is transparent. The shape data is given from top to bottom, with bits 0,1 in each byte giving the left most pixel. Mouse colours can be set with <VDU 19=>VDU:19>.

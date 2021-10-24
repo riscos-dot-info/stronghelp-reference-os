@@ -1,0 +1,8 @@
+OS_FSControl 4  (&29)
+#Parent OS_FSControl
+=>	R0 =	4 (Run file)
+	R1 =	pointer to (wildcarded) filename
+
+This SWI runs a file. Files with load and exec addresses will be loaded and executed, files of type &FF8 (Absolute) will be loaded and executed at &8000. Utilities (type &FFC) will be loaded into RMA and run. All other filetypes will be searched for in {fCode}Alias$@RunType_{/}xxx{/}{f}.
+
+It is possible that this call will not exit depending on the execution of the file.

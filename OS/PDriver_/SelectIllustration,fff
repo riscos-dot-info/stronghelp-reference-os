@@ -1,0 +1,11 @@
+PDriver_SelectIllustration  (&80153)
+#Parent PDriver_
+=>	R0 =	file handle, or 0 to deselect all jobs
+	R1 =	pointer to title string for job, or 0 if none
+
+<=	R0 =	file handle of previously active job
+	R1 preserved
+
+This SWI is identical to <PDriver_SelectJob>, except when it starts a new print job. It is intended to allow printing of a single page so that it can be used as an illustration in another document. The PostScript driver will generate EPS with this SWI. This SWI will error if the job contains more than one page.
+#Line
+See <PRM 3, page 634=>PRM-3:634>.

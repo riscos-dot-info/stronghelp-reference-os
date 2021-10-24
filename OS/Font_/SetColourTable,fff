@@ -1,0 +1,6 @@
+Font_SetColourTable  (&400A2)
+#Parent Font_
+For internal use by ColourTrans only.
+Use <ColourTrans_SetFontColours> or <Font_Paint> control sequence 19.
+#Line
+See <PRM 3, page 487=>PRM-3:487>.

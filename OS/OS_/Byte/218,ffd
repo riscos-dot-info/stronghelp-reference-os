@@ -1,0 +1,15 @@
+OS_Byte 218  Read/Write bytes in VDU queue
+#Parent OS_ByteIndex
+=>	R0 =	218 (&DA)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	previous count
+	R2 corrupted
+                                                  
+This call reads or sets the count of bytes in the VDU queue. The value of the count is {fCode}-(bytes needed to complete <VDU sequence=>VDU:!Root>){f} held in 1 byte, so if two bytes are needed to complete the current sequence then count will be &FE.
+
+Usually this call is used to set the count to 0, which abandons any current VDU sequence. This stops error messages being garbled by a partially completed VDU sequence.
+#Line
+See <PRM 1, page 669=>PRM-1:669>

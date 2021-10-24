@@ -1,0 +1,6 @@
+CD_CheckDrive  (&41250)
+#Parent CD_
+=>	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+<=	R0 =	0 if CD in drive, error otherwise
+
+This SWI checks the drive for a disc.

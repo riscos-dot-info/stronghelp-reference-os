@@ -1,0 +1,8 @@
+Service_StartedWimp (&4A)
+#Parent service_index
+=>	R1 =	&4A (reason code)
+<=	R1 preserved (do not claim)
+
+This service is issued by the desktop after resident module tasks have started, to allow tasks that have failed to initialise to reset - see <Service_StartWimp=>Service_49> for details of the procedure.
+#Line
+See <PRM 3, page 72=>PRM-3:72>

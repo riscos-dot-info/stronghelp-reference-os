@@ -1,0 +1,15 @@
+Upcall 1 - Media not present
+#Parent OS_UpcallReasons
+=>	R0 =	1
+	R1 =	FS number
+	R2 =	pointer to media name
+	R3 =	device number
+	R4 =	iteration count
+	R5 =	timeout delay
+	R6 =	pointer to media type
+
+<=	R0 =	changed
+
+This Upcall is called when a media change (eg another disc) is required.
+
+#Include OS_UpCall1+2

@@ -1,0 +1,21 @@
+NetFS
+#Parent !Root
+#Prefix NetFS_
+<ConvertDate>
+<DoFSOp>
+<DoFSOpToGivenFS>
+<EnableCache>
+<EnumerateFS>
+<EnumerateFSContexts>
+<EnumerateFSList>
+<GetObjectUID>
+<ReadCurrentContext>
+<ReadFSName>
+<ReadFSNumber>
+<ReadFSTimeouts>
+<ReadUserId>
+<SetCurrentContext>
+<SetFSName>
+<SetFSNumber>
+<SetFSTimeouts>
+<UpdateFSList>

@@ -1,0 +1,14 @@
+OS_Byte 4  Cursor Key Status
+#Parent OS_ByteIndex
+=>	R0 =	4 (&04)
+	R1 =	<new state=>OS_Byte004state>
+
+<=	R0 preserved
+	R1 =	old state
+	R2 corrupted
+
+This call alters the effect of the four arrow keys and the Copy key. The value of R1 determines their state.
+
+<OS_Byte 237=>OS_Byte237> may be used to write and read this state.
+#Line
+See <PRM 1, page 856=>PRM-1:856>

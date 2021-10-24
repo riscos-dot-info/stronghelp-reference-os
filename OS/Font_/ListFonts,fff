@@ -1,0 +1,59 @@
+Font_ListFonts  (&40091)
+#Parent Font_
+=>	R1 =	pointer to 40-byte buffer
+	R2 =	count, or 0 for first call
+	R3 =	path string, or -1 for Font$Path
+
+<=	R2 =	count, or -1 if no more
+
+{*}Or{*} :
+=>	R1 =	pointer to buffer for identifier, or font menu
+	R2 =	counter and <flags=>.flags> {/}[see <notes on RISC OS 2=>.ro2usage>]{/}
+	R3 =	size of buffer in R1
+	R4 =	pointer to buffer for font name, or indirected data
+	R5 =	size of buffer in R4
+	R6 =	pointer to identifier to tick, or 0 for none, or 1 for 'System font'
+<=	R2 =	new counter, or -1 if no more
+	R3 =	required size of buffer in R1 if R1 = 0,
+	 	or 0 if building a menu and the menu is null
+	 	otherwise the length of data placed in the buffer
+	R5 =	required size of buffer in R4 if R4 = 0,
+	 	otherwise the length of data placed in the buffer
+
+This SWI returns, one at a time, the <fonts found with the given path=>.listfonts>, or a <font menu=>.fontmenus>.
+#Line
+See <PRM 3, page 450=>PRM-3:450>.
+#Subpage flags
+Font_ListFonts flags
+bit	meaning if set
+#Line
+0-15	counter, should be 0 on first call
+16	return font identifier in R1
+17	return local name in R4
+18	terminate with 13 rather than 0
+19	return menu definition in R1, and indirected data in R4
+20	place 'System font' at head of menu
+21	tick font in R6, and its parent
+22	return list of encodings rather than fonts
+23-31	reserved, must be 0
+#
+#subpage listfonts
+Font_ListFonts Listing Fonts
+When using <Font_ListFonts> to list fonts or encodings, or local names for fonts:
+è	names are returned alphabetically sorted.
+è	only bits 16-18 and bit 22 of the <flags=>.flags> in R2 should be used. All other bits must be clear.
+è	do not alter R2 between the calls of finding required memory and finding the actual data.
+è	when R2 = -1 on exit, then all fonts have been found and the returned data is invalid.
+#
+#subpage fontmenus
+Font_ListFonts Font Menus
+When using <Font_ListFonts> to create a font menu:
+è	<Font_DecodeMenu> can be used to work out which font was selected.
+è	the returned definition is suitable for opening with <Wimp_CreateMenu=>Wimp:Wimp_CreateMenu>
+è	only bits 19-21 of the <flags=>.flags> in R2 should be used. All other bits must be clear.
+#
+#subpage ro2usage
+Font_ListFonts RISC OS 2 compatibility
+è	RISC OS 2 compatible mode is used if bits 16-31 of the <flags=>.flags> in R2 are clear.
+è	This mode pretends that bits 16 and 18 of R2 were set, bits 17 and 19-31 were clear and that R3 was 40.
+è	Under actual RISC OS 2, R3 is meant to point to the path to search, or -1 for Font$Path

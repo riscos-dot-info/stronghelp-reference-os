@@ -1,0 +1,29 @@
+OS_File 12,14,16 and 255
+#Parent OS_File
+{f25}Ü{f}	R0 =	12,14,16 or 255 (reason code)
+	R1 =	pointer to filename
+	 	if R3 AND &FF = 0 :
+	 	  R2 = load address
+	 	  (if R3 b31 set then the file is code and will be synchronised)
+	 	else :
+	 	  load at file's load address
+	 	if R0 = 255 :	use File$Path
+	 	if R0 = 12 :	R4 = pointer to path string
+	 	if R0 = 14 :	R4 = pointer to path variable
+	 	if R0 = 16 :	use no path
+#Tab
+{f25}Þ{f}	R0 =	<object type=>fsys_objtype>
+	R2 =	<load address=>fsys_loadexec>
+	R3 =	<exec address=>fsys_loadexec>
+	R4 =	object length
+	R5 =	<object attributes=>fsys_objattr>
+
+This SWI is used to load a named file. An error will be generated if not found, is directory, no read access, or a bad load address.
+
+If the file is stamped, and loading at load address (R3 AND &FF \<> 0) the variable '{fCode}Alias$@LoadType_{/}xxx{/}{f}' will be used, and it is possible that (like <OS_FSControl 4=>OS_FSControl4>) this call may not return. The PRMs are incorrect in their statement that this is an error.
+# Gerph> And incorrect in stating (2-15) that the CLI performs the expansion.
+#        All in all, this oversight took a Chris and me about 5 hours to find!
+#        This feature is present in RO3.1 and is still in RO3.6
+
+{*}Note:{*}	R3 b31 is not supported (or necessary) before RO3.7.
+{*}Note 2:{*}	If filetype is Code (&F95), then it will be automatically synchronised, but not in RO{f25}£{f}3.7

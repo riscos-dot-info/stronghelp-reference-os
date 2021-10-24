@@ -1,0 +1,8 @@
+FileCore_DiscOp 5
+#Parent FileCore_DiscOp
+Seek sector
+
+=>	R1 =	5 + <flags=>FileCore_DiscOp_flags>
+	R2 =	<disc address=>FileCore_discaddress>
+
+This call is only used to park the disc.

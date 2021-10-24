@@ -1,0 +1,7 @@
+ColourTrans_SetCalibration  (&40751)
+#Parent ColourTrans_
+=>	R0 =	pointer to <calibration table=>ColourTrans_calibrationtable>
+
+Copies the calibration table into the RMA, for use as the screen calibration table. Experimentation suggests that R0 = 0 restores the default without error.
+#Line
+See <PRM 3, page 370=>PRM-3:370>.

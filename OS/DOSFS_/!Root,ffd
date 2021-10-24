@@ -1,0 +1,5 @@
+DOSFS
+#Parent !Root
+#Prefix DOSFS_
+<DiscFormat>
+<LayoutStructure>

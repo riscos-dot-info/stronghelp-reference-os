@@ -1,0 +1,16 @@
+Get sprite from coords (16)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<16, &10=>os_spriteop_reason2> (Get sprite from coords)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+	R3 =	0 => Exclude palette
+	 	1 => Include palette
+	R4 =	Minimum x coordinate (ic)
+	R5 =	Minimum y coordinate (ic)
+	R6 =	Maximum x coordinate (ic)
+	R7 =	Maximum y coordinate (ic)
+<=	R2 =	Address/Offset of sprite unless in wimp or system area.
+
+This grabs the area of screen defined by R4-R7. Any area outside the present graphics window will be filled in with the present background colour.
+#Line
+See <PRM 1, page 774=>PRM-1:774>

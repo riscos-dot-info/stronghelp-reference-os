@@ -1,0 +1,5 @@
+JPEG info operation flags
+bit	meaning if set
+#Line
+0	return dimensions
+other	reserved (must be 0)

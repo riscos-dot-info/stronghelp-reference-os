@@ -1,0 +1,16 @@
+Load and Exec address
+#Parent OS_File5
+If all 12 upper bits of the load address are set :
+
+Load addr		Exec addr
+#Line
+# N> Hmm. It seems I need 2 {fCode} when I use a tab
+# Gerph> Hmm. That's because each part of a tabbed block 
+# can have its own style, but you can't use it here,
+# because you want the headings in a different style
+{fCode}{*}FFF{*}tttcc{f}	{fCode}dddddddd{f}
+
+{fCode}ttt{f} is <filetype=>Filetypes:!Root>
+{fCode}ccdddddddd{f} is date
+
+otherwise load and exec address are exactly what they claim to be.

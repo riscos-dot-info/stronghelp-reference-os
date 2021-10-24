@@ -1,0 +1,7 @@
+OS_SerialOp 2
+=>	R0 =	2 (reason code)
+	R1 =	length of break in centiseconds
+
+<=	R0,R1 preserved
+
+This call sets the ACIA to transmit a break, then waits R1 centiseconds before resetting it to normal. Any character being transmitted at the time the call is made may be garbled. After sending the break the transmit process is either awakened if the buffer is not empty, or made dormant if the buffer is empty.

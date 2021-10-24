@@ -1,0 +1,15 @@
+PDumperReason_OutputDump (1)
+#Parent PDumperReason_
+=>	R0 =	pointer to strip data giving bitmap for strip
+	R1 =	output file handle
+	R2 =	<strip type=>PDumper_striptypes>
+	R3 =	dump width (pixels)
+	R4 =	strip height (pixels)
+	R5 =	strip width (bytes - add to R1 to descend 1 line)
+	R6 =	<halftoning information=>PDumper_halftoning>
+	R7 =	<config data=>PDumper_configblock>
+	R8 =	job private word (see <PDumperReason_StartJob>)
+	R11 =	1 (reason code)
+	R12 =	private word
+
+This is called when PDriverDP has generated a strip (taking interlacing into account). R0 points at the sprite format data, *not* the header, which will be either 1 or 8 bits-per-pixel.

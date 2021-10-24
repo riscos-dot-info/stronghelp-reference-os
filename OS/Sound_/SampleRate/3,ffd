@@ -1,0 +1,9 @@
+Sound_SampleRate 3  (&40146)
+#Parent Sound_
+=>	R0 =	3 (reason code)
+	R1 =	new sample rate index
+<=	R0 preserved
+	R1 =	previous sample rate index
+	R2 =	previous sample rate value (frequency * 1024)
+
+This SWI sets the current sample rate, given its index.

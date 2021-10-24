@@ -1,0 +1,11 @@
+OS_Release  (&20)
+#Parent OS_
+=>	R0 =	<vector=>vector_index> number
+	R1 =	address of releasing routine
+	R2 =	value given in R2 when claimed.
+
+<=	R0-R2 preserved
+                 
+This removes the routine, which is identified by both its address and workspace pointer, from the list for the specified vector. The routine will no longer be called.
+#Line
+See <PRM 1, page 68=>PRM-1:68>.

@@ -1,0 +1,9 @@
+Service_Error (&06)
+#Parent Service_index
+=>	R0 =	pointer to <error block=>swi_errorblock>
+	R1 =	&06 (reason code)
+<=	R0 & R1 preserved
+
+This service is issued after an error, but before the error handler is called. You should not claim it.
+#Line
+See <PRM 1, page 256=>PRM-1:256>

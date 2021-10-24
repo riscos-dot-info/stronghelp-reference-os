@@ -1,0 +1,14 @@
+CD_DriveStatus  (&41243)
+#Parent CD_
+=>	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+<=	R0 =	<status=>.status>
+
+Returns drive status
+#Subpage status
+Drive status'
+R0	Meaning
+#line
+1	'OK'
+2	'Busy'
+4	'Not Ready' e.g. Drive empty
+8	'Unavailable'

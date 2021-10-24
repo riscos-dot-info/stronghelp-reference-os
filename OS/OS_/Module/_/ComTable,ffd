@@ -1,0 +1,9 @@
+Module command table
+#Parent OS_Module_format
++0	Command, zero terminated, aligned after
++x	<Code offset=>OS_Module_ComCode>, or 0 for none
++x+4	<Information word=>OS_Module_ComFlags>
++x+8	Syntax message offset, or 0 for default
++x+12	Help offset, or 0 for none. Help text, unless bit 29 of the infomation word is set.
+
+Note that the name of first command in the command table need not be word aligned. The syntax and help messages are printed using <OS_PrettyPrint>. The syntax message is printed if OSCLI detects that the parameters are out of range. The default is 'Invalid number of parameters' - <Service_SyntaxError=>Service_8C> is generated before any message is printed.

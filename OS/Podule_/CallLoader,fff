@@ -1,0 +1,10 @@
+Podule_CallLoader  (&40286)
+#Parent Podule_
+=>	R0 =	user data
+	R1 =	user data
+	R2 =	user data
+	R3 =	expansion card number
+
+This SWI calls an expansion card's <loader at offset 12=>Podule_loader>.
+#Line
+See <PRM 4, page 145=>PRM-4:145>.

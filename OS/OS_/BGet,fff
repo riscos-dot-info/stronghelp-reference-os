@@ -1,0 +1,9 @@
+OS_BGet  (&0A)
+#Parent OS_
+=>	R1 =	file handle
+<=	R0 =	byte read
+	C clear if byte read.
+
+This SWI reads a byte from the current sequential file pointer.
+#Line
+See <PRM 2, page 60=>PRM-2:60>.

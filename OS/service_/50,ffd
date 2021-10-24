@@ -1,0 +1,66 @@
+Service_ModeExtension (&50)
+#Parent Service_index
+=>	R1 =	&50 (reason code)
+	R2 =	mode number
+	R3 =	<monitor type=>OS_monitortypes> or -1 for don't care
+<=	R1-R4 preserved to pass on else
+<=	R1 =	0 (to claim service)
+	R2 preserved
+	R3 =	pointer to <VIDC list=>.VIDC>
+	R4 =	pointer to <workspace list=>.workspace>
+
+This service is issued when a mode number that RISC OS does not provide is requested. Mode numbers are allocated by this scheme:
+
+Mode	Use
+#Line
+0-63	<RISC OS=>VDU:22a>
+64-95	Third party applications (allocated by Acorn)
+96-127	User defined modes
+
+VIDC parameters may differ for the same mode depending on monitor type, but workspace parameters *must* be constant.
+#Line
+See <PRM 1, page 620=>PRM-1:620>
+#SubPage VIDC
+VIDC list
+VIDC list format 0:
+
+Size	Value
+#Line
+4	0 (list format)
+4	VIDC base mode (default for parameters not explicitly specified)
+4	VIDC parameter
+	(repeat)
+4	-1 (terminator)
+
+VIDC list format 1 (A540 and later):
+
+Size	Value
+#Line
+4	1 (list format)
+4	VIDC base mode (default for parameters not explicitly specified)
+4	VIDC parameter
+	(repeat)
+4	-1 (terminator)
+4	<extended parameter=>.extend>
+	(repeat)
+4	-1 (terminator)
+#SubPage extend
+VIDC extended parameters
+VIDC extended paramters are encoded as ({/}n{/} << 24 OR {/}value{/})
+
+n	value			bit	meaning when set	default
+#Line
+0	pixel rate (kHz)	 	 			24MHz
+1	sync polarity		0	HSync -ve (else +ve)	+ve
+	 			1	VSync -ve (else +ve)	+ve
+2	VIDC clock rate (kHz)	 
+#Subpage workspace
+VIDC workspace list
+Size	Value
+#Line
+4	0 (list format)
+4	Workspace base mode
+8	<Mode variable index=>OS_ReadModeVariable.variable>
+	Mode variable value
+	(repeat)
+4	-1 (terminator)

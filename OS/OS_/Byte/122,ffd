@@ -1,0 +1,11 @@
+OS_Byte 122  Keyboard scan from 16 decimal
+#Parent OS_ByteIndex
+=>	R0 =	122 (&7A)
+
+<=	R0 preserved
+	R1 =	<key pressed=>os_byte121a>, or &FF if none pressed
+	R2 =	corrupted
+
+This call is equivalent to <OS_Byte 121=>os_byte121> with R1=16. It scans the keyboard ignoring Shift, Control, Alt and mouse buttons.
+#Line
+See <PRM 1, page 865=>PRM-1:865>

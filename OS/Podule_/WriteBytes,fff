@@ -1,0 +1,10 @@
+Podule_WriteBytes  (&40285)
+#Parent Podule_
+=>	R0 =	offset from start of code space
+	R1 =	number of bytes
+	R2 =	pointer to buffer
+	R3 =	expansion card number
+
+This SWI writes bytes to an expansion card's code space, by repeated calls to its <loader=>Podule_loader>. Attempting to write to an <extension ROM=>OS_ModuleROMSections> will return an error.
+#Line
+See <PRM 4, page 144=>PRM-4:144>.

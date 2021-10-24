@@ -1,0 +1,7 @@
+FileCore_MiscOp 2
+#Parent FileCore_MiscOp
+=>	R0 =	2 (reason code)
+	R1 =	floppy drive
+	R8 =	pointer to FileCore instance private word
+
+This call locks a disc in a drive, you can only use it only for a floppy drive. It should at least ensure that the drive light stays on until unlocked. Note that locks are counted, so each 'lock drive' must be matched by an 'unlock drive'. 

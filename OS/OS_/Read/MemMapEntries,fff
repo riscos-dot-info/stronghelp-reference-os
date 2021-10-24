@@ -1,0 +1,10 @@
+OS_ReadMemMapEntries  (&52)
+#Parent OS_
+=>	R0 =	pointer to <request block=>OS_memmaprequest>
+<=	block at R0 updated
+
+This SWI returns the logical page number in which the memory pages specified reside, ie page -> address.
+
+The converse is <OS_FindMemMapEntries>.
+#Line
+See <PRM 1, page 384=>PRM-1:384>.

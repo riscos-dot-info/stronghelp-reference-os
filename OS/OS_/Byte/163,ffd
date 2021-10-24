@@ -1,0 +1,34 @@
+OS_Byte 163  Read general graphics information
+#Parent OS_ByteIndex
+=>	R0 =	163
+	R1 =	242
+	R2 =	<length or action code=>.codes>
+
+<=	R0 preserved
+	R1,R2 depend on entry R2
+
+This call reads, sets or resets the dot-dash pattern length or returns status information dependent on the value of R2.
+#Line
+See <PRM 1, page 654=>PRM-1:654>
+#SubPage codes
+OS_Byte 163 codes
+# This one is going to be a sod to wrap - the defalt behaviour of only wrapping
+# the last column really looks naff, but turning wrap off completely may make
+# the page too wide for some monitors.
+#Wrap off
+R2 Value	Action						return R1		return R2
+#Wrap 
+#Line
+0		reset dot-dash pattern and length to defaults	preserved		preserved
+1-64		set dot-dash pattern repeat length		preserved		preserved
+65		return status information			<packed info=>.info>	system sprite area size (bytes)
+#Wrap off
+66		return information on current sprite		width (pixels)		height (pixels)
+#Wrap 
+#SubPage info
+OS_Byte 163 status information
+Bits	Meaning
+#Line
+0-5	current dot-dash pattern repeat length (0 means 64)
+6	if set flood fill is always active
+7	if set sprites are always active

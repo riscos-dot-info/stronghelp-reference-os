@@ -1,0 +1,13 @@
+Service_UKCommand (&04)
+#Parent Service_index
+=>	R0 =	pointer to command
+	R1 =	&04 (reason code)
+<=	R0 & R1 preserved to pass on else
+	R0 =	0 if command successful, else pointer to error
+	R1 =	0 (to claim service)
+
+This service is issued when a command is unknown, before the filing system us called to attempt to <run=>OS_FSControl4> the command. NetFS uses this service to implement file server commands.
+
+Use the <command table=>OS_Module_ComTable> in a Relocatable Module if possible to implement new * Commands.
+#Line
+See <PRM 1, page 255=>PRM-1:255>

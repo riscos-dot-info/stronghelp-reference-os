@@ -1,0 +1,49 @@
+Colour vector (34)
+#Parent Vector_index
+=>	R8 =	<ColourTrans SWI number=>.swis>
+	Other registers dependant on call
+
+This vector passes /all/ <ColourTrans=>ColourTrans_> calls.
+#
+#SubPage swis
+ColourV SWI numbers
+R8	SWI called
+#Line
+0	<SelectTable=>ColourTrans_SelectTable>
+1	<SelectGCOLTable=>ColourTrans_SelectGCOLTable>
+2	<ReturnGCOL=>ColourTrans_ReturnGCOL>
+3	<SetGCOL=>ColourTrans_SetGCOL>
+4	<ReturnColourNumber=>ColourTrans_ReturnColourNumber>
+5	<ReturnGCOLForMode=>ColourTrans_ReturnGCOLForMode>
+6	<ReturnColourNumberForMode=>ColourTrans_ReturnColourNumberForMode>
+7	<ReturnOppGCOL=>ColourTrans_ReturnOppGCOL>
+8	<SetOppGCOL=>ColourTrans_SetOppGCOL>
+9	<ReturnOppColourNumber=>ColourTrans_ReturnOppColourNumber>
+10	<ReturnOppGCOLForMode=>ColourTrans_ReturnOppGCOLForMode>
+11	<ReturnOppColourNumberForMode=>ColourTrans_ReturnOppColourNumberForMode>
+12	<GCOLToColourNumber=>ColourTrans_GCOLToColourNumber>
+13	<ColourNumberToGCOL=>ColourTrans_ColourNumberToGCOL>
+14	<ReturnFontColours=>ColourTrans_ReturnFontColours>
+15	<SetFontColours=>ColourTrans_SetFontColours>
+16	<InvalidateCache=>ColourTrans_InvalidateCache>
+17	<SetCalibration=>ColourTrans_SetCalibration>
+18	<ReadCalibration=>ColourTrans_ReadCalibration>
+19	<ConvertDeviceColour=>ColourTrans_ConvertDeviceColour>
+20	<ConvertDevicePalette=>ColourTrans_ConvertDevicePalette>
+21	<ConvertRGBToCIE=>ColourTrans_ConvertRGBToCIE>
+22	<ConvertCIEToRGB=>ColourTrans_ConvertCIEToRGB>
+23	<WriteCalibrationToFile=>ColourTrans_WriteCalibrationToFile>
+24	<ConvertRGBToHSV=>ColourTrans_ConvertRGBToHSV>
+25	<ConvertHSVToRGB=>ColourTrans_ConvertHSVToRGB>
+26	<ConvertRGBToCMYK=>ColourTrans_ConvertRGBToCMYK>
+27	<ConvertCMYKToRGB=>ColourTrans_ConvertCMYKToRGB>
+28	<ReadPalette=>ColourTrans_ReadPalette>
+29	<WritePalette=>ColourTrans_WritePalette>
+30	<SetColour=>ColourTrans_SetColour>
+31	<MiscOp=>ColourTrans_MiscOp>
+32	<WriteLoadingsToFile=>ColourTrans_WriteLoadingsToFile>
+33	<SetTextColour=>ColourTrans_SetTextColour>
+34	<SetOppTextColour=>ColourTrans_SetOppTextColour>
+35	<GenerateTable=>ColourTrans_GenerateTable>
+#Line
+See <PRM 1, page 84=>PRM-1:84>.

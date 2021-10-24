@@ -1,0 +1,20 @@
+Econet_StartImmediate  (&40016)
+#Parent Econet_
+=>	R0 =	<operation type=>Econet_immediate>
+	R1 =	remote address, or procedure number
+	R2 =	station number
+	R3 =	net number
+	R4 =	pointer to data buffer
+	R5 =	data size
+	R6 =	repeat count
+	R7 =	delay in cs
+
+<=	R0 =	handle
+	R1 corrupted
+	R2 =	pointer to buffer
+	R3 =	station number
+	R4 =	net number, or 0 if R3 on entry was the local net
+
+This SWI opens a transmission block, and starts an immediate operation. The data buffer should be in RMA or some other permanently available area of memory, due to the way in which the data is read.
+#Line
+See <PRM 2, page 679=>PRM-2:679>.

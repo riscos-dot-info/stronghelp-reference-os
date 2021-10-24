@@ -1,0 +1,41 @@
+Filing System numbers
+#Parent fsys_infoword
+#Table Columns 2
+0   None
+3   ROMFS
+5   NetFS
+8   ADFS
+12  NetPrint
+13  Null
+14  Printer
+15  Serial
+17  VDU
+18  RawVDU
+19  Kbd
+20  RawKbd
+21  DeskFS
+22  C.C. RomFS
+23  RamFS
+24  RISCiXFS
+25  Streamer
+26  SCSI
+27  Digitiser
+28  Scanner
+29  MultiFS
+33  NFS
+37  CDFS
+38  C.C. CFS
+43  DOSFS
+46  ResourceFS
+47  PipeFS
+49  IDEFS
+53  DeviceFS
+54  Parallel
+56  ArcFS
+66  SparkFS
+91  Memphis
+99  ShareFS
+101 C.C. PrintQFS
+118 CacheFS
+142 raFS
+#EndTable

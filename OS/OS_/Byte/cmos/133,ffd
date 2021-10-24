@@ -1,0 +1,27 @@
+OS_Byte CMOS 133
+#Parent OS_Bytecmos
+Bit(s)	Meaning
+#Line
+0 & 7	<Sync=>.sync>
+1	Top bit of mode (RO2 only, other bits in <Byte 10=>OS_ByteCMOS10>)
+2-6	<Monitor type=>.monitors>
+#Subpage sync
+Monitor sync
+Value	Meaning
+#Line
+0	Vertical sync
+1	Composite sync
+&81	Auto select sync mode
+#Subpage monitors
+Monitor types
+Value	Meaning
+#Line
+0	Standard
+1	Multi-frequency
+2	Hi-res mono
+3	VGA
+4	Super VGA
+5	LCD
+&1F	Auto select monitor type
+
+RISC OS 2 only supports values 0-3

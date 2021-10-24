@@ -1,0 +1,12 @@
+OS_Byte 126  Acknowledge escape condition
+#Parent OS_ByteIndex
+=>	R0 =	126 (&7E)
+
+<=	R0 preserved
+	R1 =	0 if no escape condition
+	 	255 if escape condition cleared
+	R2 corrupted
+                                                  
+This call attempts to clear an escape condition. If an escape condition exists, it performs the escape condition side effects if these have been enabled with <OS_Byte 230=>OS_Byte230>, and then calls the <escape handler=>OS_handlers_escape> to indicate that the escape has been cleared.
+#Line
+See <PRM 1, page 868=>PRM-1:868>

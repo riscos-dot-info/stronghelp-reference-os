@@ -1,0 +1,13 @@
+Service_MouseTrap (&52)
+#Parent Service_Index
+=>	R0 =	mouse x coord
+	R1 =	&52 (reason code)
+	R2 =	button state (from <OS_Mouse>)
+	R3 =	time of event (from <OS_ReadMonotonicTime>)
+	R4 =	mouse y coord (as R1 is used for reason code)
+
+This service is issued to report that a program has detected significant mouse movement ({/}e.g.{/} the Wimp detects the pointer moving over a submenu arrow). Mouse logging programs can use this service to ensure that they do not miss these events. Programs that react to mouse movement should issue this service for the benefit of logging programs.
+
+{*}Note:{*} Mouse loggers should also trap <INKEY=>OS_Byte129> (both postive and negative)
+#Line
+See <PRM 3, page 74=>PRM-3:74>

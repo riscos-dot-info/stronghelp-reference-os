@@ -1,0 +1,13 @@
+OS_Byte CMOS 11
+Bit(s)	Meaning
+#Line
+0,1,2	Drive number
+3,4,5	<Caps lock status=>.caps>
+6	Mount discs if set
+#Subpage caps
+Caps Lock status
+Value	Meaning
+#Line;Wrap off
+1	Shift Capitals
+2	No Capitals (Caps off)
+4	Caps Lock

@@ -1,0 +1,37 @@
+PDriver
+#Parent !Root
+#Prefix PDriver_
+#Table Columns 2
+<AbortJob>
+<CancelJob>
+<CancelJobWithError>
+<CheckFeatures>
+<CurrentJob>
+<DeclareDriver>
+<DeclareFont>
+<DrawPage>
+<EndJob>
+<EnumerateDrivers>
+<EnumerateJobs>
+<FontSWI>
+<GetRectangle>
+<GiveRectangle>
+<Info>
+<InsertIllustration>
+JPEGSWI
+<MiscOp>
+<MiscOpForDriver>
+<PageSize>
+<RemoveDriver>
+<Reset>
+<ScreenDump>
+<SelectDriver>
+<SelectIllustration>
+<SelectJob>
+<SetDriver>
+<SetInfo>
+<SetPageSize>
+<SetPrinter>
+#EndTable
+
+<Printer driver numbers=>PDriver_printernumbers>

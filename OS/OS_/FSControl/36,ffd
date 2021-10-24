@@ -1,0 +1,8 @@
+OS_FSControl 36
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	36 (Remove image filing system)
+	R1 =	image filing system's <file type=>FileTypes:!Root>
+#Wrap
+
+This SWI is used to remove an image filing system from FileSwitch.

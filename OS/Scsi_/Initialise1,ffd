@@ -1,0 +1,12 @@
+SCSI_Initialise 1 'Reset Device'
+{f25}Þ{f}	R0 =	1
+ 		R1 =	<device ID=>SCSI_devid>
+ 		R8 =	access key
+{f25}Ü{f}	successful exit: no results
+
+errors:
+#tab
+	&00020105	- Invalid SCSI device ID
+	&0002010E	- SCSI driver reservation error
+#line
+Initiates the reset operation and returns immediately.

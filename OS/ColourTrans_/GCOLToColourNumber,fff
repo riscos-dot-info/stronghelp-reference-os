@@ -1,0 +1,10 @@
+ColourTrans_GCOLToColourNumber  (&4074C)
+#Parent ColourTrans_
+=>	R0 =	GCOL
+<=	R0 =	colour number
+
+This call changes the value passed from GCOL, to a colour number.
+
+Use this and <ColourTrans_ColourNumberToGCOL>, only in 256 colour modes, the results in any other modes will be meaningless.
+#Line
+See <PRM 3, page 363=>PRM-3:363>.

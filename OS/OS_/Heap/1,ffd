@@ -1,0 +1,9 @@
+OS_Heap 1
+#Parent OS_Heap
+#Wrap off
+=>	R0 =	1
+	R1 =	pointer to heap
+<=	R2 =	largest free space
+	R3 =	total free space
+
+This SWI reads the current status of a heap block.

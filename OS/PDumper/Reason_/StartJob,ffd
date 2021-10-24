@@ -1,0 +1,10 @@
+PDumperReason_StartJob (5)
+#Parent PDumperReason_
+=>	R0 =	pointer to job private word
+	R1 =	output file handle
+	R2 =	<strip type=>PDumper_striptypes>
+	R5 =	<config data=>PDumper_configblock>
+	R11 =	5 (reason code)
+	R12 =	private word
+
+This is called at the start of each job. The private word is for the dumper's own use - usually it is used to store a workspace pointer. <PDumper_StartJob> may be useful here.

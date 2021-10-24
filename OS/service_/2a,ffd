@@ -1,0 +1,11 @@
+Service_NewApplication (&2A)
+#parent Service_Index
+=>	R1 =	&2A (reason code)
+<=	R1 =	0 to claim (prevents application starting), preserved otherwise
+
+This service is issued when a new application is about to be started. Usually this occurs after a *Go, *RMRun or *Run operation. If you provide <another means of starting an application=>.another> that does not include one of these you should issue this Service and act accordingly.
+#Line
+See <PRM 1, page 262=>PRM-1:262>
+#Subpage another
+NewApplication: Another means of starting an application
+Whilst this is pretty unlikely, it may in future be possible to trasmit your application to another computer via a network link for execution. As such the code would have been executed directly and not through the 'standard' channels. Such a method would require the use of this Service call.

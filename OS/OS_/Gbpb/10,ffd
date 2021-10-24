@@ -1,0 +1,31 @@
+OS_GBPB  10
+#Parent OS_GBPB
+=>	R0 =	10
+	R1 =	pointer to directory name
+	R2 =	pointer to <buffer=>OS_GBPB10buffer>
+	R3 =	number of objects to read
+	R4 =	where to start, 0 first time
+	R5 =	length of buffer
+	R6 =	wildcarded name to match (if 0 "*" is used)
+<=	R3 =	number of objects read
+	R4 =	where to continue, or -1 for no more
+	C flag is clear if R3 = 0, else it is set
+
+This SWI reads entries from the specified directory. The correct code structure to call this SWI is:
+
+#fCode
+repeat
+\{
+  call OS_GBPB 10
+  if (R3 \<> 0)
+  \{
+    process buffer
+  }
+} until (R4 = -1)
+#f
+
+as it is legal to return R3 = 0 before the end of the directory. Also, do *not* assume anything about the value in R4 - Filer_Action assumes that it increases by one for each entry read and comes horribly unstuck.
+# Nick> Note: The PRM lies when it says that if R6 points to an empty string
+#       "*" is used.
+# Gerph> It's possible that this was the case on RO2. It has not been observed
+#        recently. It might require some testing to find out...

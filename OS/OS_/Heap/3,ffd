@@ -1,0 +1,8 @@
+OS_Heap 3
+#Parent OS_Heap
+#Wrap off
+=>	R0 =	3
+	R1 =	pointer to heap
+	R2 =	pointer to block
+
+This SWI releases a previously claimed section of the heap.

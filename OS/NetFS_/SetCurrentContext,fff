@@ -1,0 +1,7 @@
+NetFS_SetCurrentContext  (&40045)
+#Parent NetFS_
+<=	All registers preserved.
+
+This SWI is unimplemented, and will be removed.
+#Line
+See <PRM 2, page 349=>PRM-2:349>.

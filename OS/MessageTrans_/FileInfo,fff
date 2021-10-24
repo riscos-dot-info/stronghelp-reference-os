@@ -1,0 +1,9 @@
+MessageTrans_FileInfo  (&41500)
+#Parent MessageTrans_
+=>	R1 =	pointer to filename
+<=	R0 =	bit 0 set if held in memory
+	R2 =	size of buffer needed
+	
+Returns information about the size required to hold a message file before <MessageTrans_OpenFile> used.
+#Line
+See <PRM 3, page 742=>PRM-3:742>.

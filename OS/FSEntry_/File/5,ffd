@@ -1,0 +1,16 @@
+FSEntry_File 5
+#Parent FSEntry_File
+=>	R0 =	5 (Read catalogue information)
+	R1 =	pointer to filename
+	R6 =	pointer to special field, or 0 if not present
+
+<=	R0 =	<object type=>fsys_objtype>
+	R2 =	<load address=>fsys_loadexec> of file
+	R3 =	<exec address=>fsys_loadexec> of file
+	R4 =	length of file
+	R5 =	<attributes=>fsys_objattr> of file
+	R6 preserved
+
+This call is made to read the catalogue information about a given file.
+
+The object type 'Image' must not be returned.

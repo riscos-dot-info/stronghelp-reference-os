@@ -1,0 +1,17 @@
+OS_GBPB 3 and 4
+#Parent OS_GBPB
+=>	R0 =	3 or 4
+	R1 =	file handle
+	R2 =	pointer to buffer
+	R3 =	bytes to read
+If R0 = 3 :
+	R4 =	file pointer
+
+<=	R2 =	pointer after data
+	R3 =	number of bytes *not* transferred
+	R4 =	new file pointer
+	C is clear if R3 = 0, else it is set.
+
+The 'EOF-error-on-next-read' flag is cleared.
+
+Error is generated if invalid file handle, or directory, or no read access.

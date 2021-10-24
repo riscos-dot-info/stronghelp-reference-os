@@ -1,0 +1,12 @@
+NetPrint
+#Parent !Root
+#Prefix NetPrint_
+<BindPSName>
+<ConvertStatusToString>
+<ListServers>
+<ReadPSName>
+<ReadPSNumber>
+<ReadPSTimeouts>
+<SetPSName>
+<SetPSNumber>
+<SetPSTimeouts>

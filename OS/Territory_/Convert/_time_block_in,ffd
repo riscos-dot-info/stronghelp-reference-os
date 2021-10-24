@@ -1,0 +1,11 @@
+Usable time block
+#Parent Territory_ConvertTimeToOrdinals
+Offset	Contents		Base value	Notes
+#Line
+0	centisecond
+4	second
+8	minute
+C	hour (out of 24)
+10	day within month	1		ANSI also uses 1
+14	month in year		1		ANSI uses 0
+18	year			0		ANSI uses 1900

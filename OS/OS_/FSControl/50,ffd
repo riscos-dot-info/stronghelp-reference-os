@@ -1,0 +1,8 @@
+OS_FSControl 50  (&29)
+#Parent OS_FSControl
+=>	R0 =	50 (Rename disc of image file)
+	R1 =	pointer to name of object
+	R2 =	new disc name
+<=	all registers preserved
+
+Renames the disc or image file containing the given object.

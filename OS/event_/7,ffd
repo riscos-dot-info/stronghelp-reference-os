@@ -1,0 +1,13 @@
+RS423 error event
+#Parent event_index
+=>	R0 =	7 (event number)
+	R1 =	(pseudo 6850 status register) >> 1
+	R2 =	character received
+
+This event is generated when a serial error is detected. The error is specified by bits in R1:
+
+Bit	Meaining when set
+#Line
+3	Framing error
+4	Over-run error
+5	Parity error

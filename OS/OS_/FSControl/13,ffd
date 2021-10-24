@@ -1,0 +1,16 @@
+OS_FSControl 13  (&29)
+#Parent OS_FSControl
+{f25}Þ{f}	R0 =	13 (Check for presence of FS)
+	R1 =	filing system number or pointer to name
+	R2 =	depends on R1
+{f25}Ü{f}	R0 preserved
+	R1 =	<filing system number=>fsys_ident>
+	R2 =	pointer to filing system control block or 0 if not found
+#line;tab
+The FS name match is case-insensitive. If R2 is 0, the FS name is taken to be terminated with any control character or the characters: "#",":" or "-". If R2 is not 0, then the FS name is terminated by any control character.
+
+The FS control block that is pointed to by R2 on exit is for the internal use of FileSwitch, and you should not use or alter it. You should only test R2 for equality (or not) with 0.
+
+An error is returned if the FS name contains bad chars or is badly terminated.
+#line;tab
+See also:	<PRM2-94=>PRM-2:94>

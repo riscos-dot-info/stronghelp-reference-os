@@ -1,0 +1,13 @@
+OS_Byte 250  Read VDU driver screen bank number
+#Parent OS_ByteIndex
+=>	R0 =	250 (&FA)
+	R1 =	0
+	R2 =	255
+
+<=	R0 preserved
+	R1 =	VDU driver screen bank
+	R2 =	display screen bank (see <OS_Byte 251=>OS_Byte251>)
+
+This call reads the screen bank used by the display, as set with <OS_Byte 112=>OS_Byte112>. This call should not be used to write the value - doing so would only change the value in memory, without affecting the hardware.
+#Line
+See <PRM 1, page 671=>PRM-1:671>

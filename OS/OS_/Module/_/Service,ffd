@@ -1,0 +1,34 @@
+Module service handler code
+#Parent OS_Module_format
+=>	R1 =	service number
+	R12 =	pointer to private word for module instantiation
+	R13 =	pointer to stack
+
+<=	R1 =	0 if service is being claimed, preserved otherwise
+	R0,R2-R8 altered depending on service call if claimed
+	R12 may be corrupted
+	Other registers should be preserved if they are not being used to return values
+
+This entry is called when a <service call=>service_index> is issued. Service call code *must* be reentrant.
+
+Since service calls are made very often they can cause significant slow-downs if not handled in a speed-conscious manner.  It is recommended that you write service handling code so as to be cache-line aligned for cache optimisation, and that on reception of service calls that are not catered for by your module your code returns as soon as possible. This means that the entry point for the service call code should be at 16n-4 from the base of the module (modules are always loaded at offset 4).
+
+<This example code=>.example> shows the recommended way to *rapidly* handle multiple services.
+#Subpage example
+Example code to handle services
+The following code will handle a few services :
+#fCode;Tab fCode,fCode
+]:P%=(P%+15) AND NOT 15:O%=(O%+15) AND NOT 15:[ OPT pass%
+.ServiceCode
+  	TEQ	r1,#Service_One
+	TEQNE	r1,#Service_Two
+	TEQNE	r1,#Service_Three
+	MOVNES	pc,r14
+	STMFD	r13!,\{r0-r3,r14\}
+	TEQ	r1,#Service_Two
+	BEQ	Service_Two_Handler
+	TEQ	r1,#Service_Three
+	BEQ	Service_Three_Handler
+.Service_One_Handler
+	...
+	LDMFD	r13!,\{r0-r3,pc\}^

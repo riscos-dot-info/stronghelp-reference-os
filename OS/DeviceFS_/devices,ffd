@@ -1,0 +1,21 @@
+Device description
+#Parent DeviceFS_Register
+Devices are specified as a list of 24 byte blocks, terminated by a null word.
+
+Offset	Meaning
+#Line
+0	offset to device name from start of the devices block
+4	flags:	bit 0 set for buffered
+	 	bit 1 set to create path variable ({/}e.g.{/} {fCode}Serial$Path{f} for a device {fCode}Serial{f})
+8	default RX <buffer flags=>Buffer_flags>
+12	default RX buffer size
+16	default TX <buffer flags=>Buffer_flags>
+20	default TX buffer size
+24	reserved, must be 0
+
+The device name is used:
+
+#tab
+è	in the DeviceFS directory structure
+è	to create a {fCode}DeviceFS${/}Device{/}$options{f} variable if this does not exist
+è	a path variable (if the flag bit is set)

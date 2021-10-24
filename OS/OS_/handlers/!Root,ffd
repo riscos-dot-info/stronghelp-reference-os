@@ -1,0 +1,21 @@
+System control handlers
+#Parent OS_ChangeEnvironment
+Number	Meaning
+#Line
+0	<Memory limit=>OS_handlers_limit>
+1	<Undefined instruction=>OS_handlers_hardware>
+2	<Prefetch abort=>OS_handlers_hardware>
+3	<Data abort=>OS_handlers_hardware>
+4	<Address exception=>OS_handlers_hardware>
+5	Other exceptions (reserved)
+6	<Error=>OS_handlers_error>
+7	<Call back=>OS_handlers_callback>
+8	<Break point=>OS_handlers_breakpoint>
+9	<Escape=>OS_handlers_escape>
+10	<Event=>OS_handlers_event>
+11	<Exit=>OS_handlers_exit>
+12	<Unused SWI=>OS_handlers_ukswi>
+13	<Exception registers=>OS_handlers_registers>
+14	<Application space=>OS_handlers_appspace>
+15	<Currently active object=>OS_handlers_cao>
+16	<Up Call=>OS_handlers_upcall>

@@ -1,0 +1,6 @@
+FileCore_DiscOp 6
+#Parent FileCore_DiscOp
+Restore ???
+
+=>	R1 =	6 + <flags=>FileCore_DiscOp_flags>
+	R2 =	<disc address=>FileCore_discaddress>

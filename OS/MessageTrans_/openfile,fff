@@ -1,0 +1,25 @@
+MessageTrans_OpenFile  (&41501)
+#Parent MessageTrans_
+=>	R0 =	pointer to 4-word data structure
+	R1 =	pointer to filename
+	R2 =	pointer to buffer for file data, or 0 to use RMA
+
+This SWI opens a message-file. If R2 = 0, then the data-structure in R0 and the filename in R1 both must be in the RMA.
+
+An application may decide that it would like to buffer the file in its own workspace (rather than the RMA) if it needs to be loaded, or use the file directly if it is already in memory.  To do this:
+
+#fCode
+#Indent 4
+#Wrap off
+SYS "<MessageTrans_FileInfo>",,filename$ TO flags%,,size%
+IF flags% AND 1 THEN buffer%=0 ELSE buffer%=FNalloc(size%)
+SYS "<OS_Module>",6,,,17+LENfilename$ TO ,,filedesc%
+$(filedesc%+16)=filename$
+SYS "MessageTrans_OpenFile",filedesc%,filedesc%+16,buffer%
+#Wrap
+#f
+#Indent
+
+where FNalloc() allocates a buffer of a given size, by using the <Wimp_SlotSize=>Wimp:Wimp_SlotSize> or "END=" command.  Note that in fact the filename and file descriptor only need to be in the RMA if R2=0 on entry to MessageTrans_OpenFile.
+#Line
+See <PRM 3, page 743=>PRM-3:743>.

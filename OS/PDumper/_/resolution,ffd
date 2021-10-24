@@ -1,0 +1,5 @@
+PDumper resolution information 
+Bits	Meaning
+#Line
+0-7	horizontal resolution (DPI)
+8-15	vertical resolution (DPI)

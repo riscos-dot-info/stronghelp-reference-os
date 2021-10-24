@@ -1,0 +1,9 @@
+Territory_ValueTable  (&4305B)
+#Parent Territory_
+=>	R0 =	<territory number=>territory_numbers>, or -1 for current
+
+<=	R0 =	pointer to numeric value table
+
+A character property table is a 256 byte table giving the numeric value of each character in the given territory's alphabet. This includes non-decimal numbers, hence F and f have a value of 15, while Z has no value.
+#Line
+See <PRM 3, page 832=>PRM-3:832>.

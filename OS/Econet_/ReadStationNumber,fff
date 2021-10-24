@@ -1,0 +1,11 @@
+Econet_ReadStationNumber  (&4000F)
+#Parent Econet_
+=>	R1 =	pointer to string to read
+<=	R1 =	address of terminating space/control character
+	R2 =	station number (or -1)
+	R3 =	net number (or -1)
+
+This SWI is used extract the station and/or net number from a string expected to be of the form "{/}nnn{/}.{/}sss{/}".
+# ?? or "{/}sss{/}".
+#Line
+See <PRM 2, page 672=>PRM-2:672>.

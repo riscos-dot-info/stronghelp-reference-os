@@ -1,0 +1,19 @@
+Module finalisation code
+#Parent OS_Module_format
+=>	R10	=	fatality indication; 0=non-fatal, 1=fatal
+	R11	=	instantiation number
+	R12	=	pointer to private word for this instantiation
+	R13	=	supervisor stack pointer
+
+<=	Preserve processor mode, interrupt state, V flag and R7-R11,R13
+	Can corrupt R0-R6,R12,R14 and flags (except V)
+
+This entry is called just before killing a module. This can be due to a {fCode}RMTidy{f} (a non-fatal finalisation) or a {fCode}RMKill{f} (fatal).
+
+The default finalise code (called if you have none) frees any workspace pointed to by the private word (and then sets it to 0). If this is all you need, don't waste space with your own finalise entry.
+
+You should set the private word to 0 if you free any workspace it pointed to. For a non-fatal finalisation the system assumes that it can relocate your workspace, hence you *must* signal to it that you have none.
+
+The instantiation number is your current position in the list, hence it may not be the same value passed to your <initialise code=>OS_Module_Init>.
+
+Note that you can corrupt quite a few registers in finalisation code - don't waste time stacking anything that the OS has already taken care of.

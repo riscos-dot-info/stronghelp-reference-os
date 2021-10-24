@@ -1,0 +1,8 @@
+OS_FSControl 32  (&29)
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	32 (Output list of objects)
+	R1 =	(wildcarded) filename
+#Wrap
+
+This SWI is equivalent to {fCode}*FileInfo{f}.

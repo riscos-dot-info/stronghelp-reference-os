@@ -1,0 +1,27 @@
+OS_ReadVarVal  (&23)
+#Parent OS_
+=>	R0 =	pointer to wildcarded name
+	R1 =	pointer to buffer
+	R2 =	length of buffer, or -ve to check existence/read length
+	R3 =	name pointer, or 0 for 1st call
+	R4 =	3 to expand macros and numbers to strings.
+
+if R2 was -ve (read length)
+<=	R0 corrupt (pointer to error)
+	R2 =	NOT (length), or 0 if variable does not exist.
+	R3 =	new name pointer
+	R4 =	<Variable type=>OS_vartypes>
+
+if R2 was +ve (read value)
+<=	R0 preserved
+	R2 =	bytes read
+	R3 =	new name pointer
+	R4 =	<Variable type=>OS_vartypes>
+
+This SWI returns type and value of a variable. To check if it exists or find its length, call with R2 \< 0. If the variable does not exist R2 will be 0. Otherwise the length is given by {fCode}NOT(R2){f}, although for anything other than a string variable (type 0) this is the unexpanded length. For either case an error will be returned.
+
+RISC OS 2 does not let you read the length, it merely returns R2 negative to indicate the variable exists. On RISC OS 2 variables are limited to 256 bytes. Returned strings are not zero terminated (and may contain embedded zero bytes). Code variables seem to be indistinguishable from string variables (type 0). Numeric variables are written as 4 bytes in the buffer if expansion is not requested.
+
+This SWI is marked as being re-entrant, which would allow it to re-enter the same code variable's read code. *No* note is made about this in <OS_SetVarVal> and the <code variable example=>PRM-1:332> in the PRM calls <OS_Byte &87=>OS_Byte135> which has undefined re-entrancy. D'oh.
+#Line
+See <PRM 1, page 309=>PRM-1:309>.

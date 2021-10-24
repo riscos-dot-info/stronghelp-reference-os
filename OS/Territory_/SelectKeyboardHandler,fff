@@ -1,0 +1,5 @@
+Territory_SelectKeyboardHandler  (&43054)
+#Parent Territory_
+=>	R0 =	<territory number=>Territory_numbers>, or -1 to use current territory
+#Line
+See <PRM 3, page 823=>PRM-3:823>.

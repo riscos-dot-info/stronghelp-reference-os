@@ -1,0 +1,6 @@
+User event
+#Parent event_index
+=>	R0 =	9 (event number)
+	R1... user parameters
+
+This event is generated when the user calls <OS_GenerateEvent> with R0=9, and is entered in SVC mode, not IRQ.

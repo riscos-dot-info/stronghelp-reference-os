@@ -1,0 +1,38 @@
+OS_FSControl 11  (&29)
+#Parent OS_FSControl
+=>	R0 =	11 (Set temporary filing system)
+	R1 =	pointer to wildcarded filename
+
+<=	R0 preserved
+	R1 =	updated to point beyond filing system specifier
+	R2 =	-1	no filing system specifier present (call has no effect)
+	 	>= 0	<filing system=>fsys_ident> to restore
+	R3 =	pointer to special field, 0 if not present
+
+This SWI sets the temporary filing system from the prefix string in R1. It is used by <OS_CLI> to set the temporary filing system for the command's duration. After the command the current filing system is restored with <OS_FSControl 19=>OS_FSControl19>
+
+For example:
+# N> Cribbed from Robin Watts' docs
+
+R1 in points to			Registers out
+#line
+{fCode}blah.blah vlsgf{f}	R1 = R1 in
+				R2 = -1
+				R3 = 0
+{fCode}{/}\<FS>{/}:blah{f}	R1 past '{fCode}:{f}'
+				R2 = <number of \<FS\>=>fsys_ident>
+# 				R2 = <number of {/}\<FS\>{/}=>fsys_ident>
+				R3 = 0
+{fCode}{/}\<FS>{/}#fred:blah{f}	R1 past '{fCode}:{f}'
+				R2 = <number of \<FS\>=>fsys_ident>
+# 				R2 = <number of {/}\<FS\>{/}=>fsys_ident>
+				R3 past '{fCode}#{f}'
+{fCode}\<path>:blah{f}		R1 = R1 in
+				R2 = -1
+				R3 = 0
+{fCode}\<path>#fred:blah{f}	R1 = R1 in
+				R2 = -1
+				R3 past '{fCode}#{f}'
+{fCode}\#fred:blah{f}		R1 = R1 in
+				R2 = -1
+				R3 past '{fCode}#{f}'

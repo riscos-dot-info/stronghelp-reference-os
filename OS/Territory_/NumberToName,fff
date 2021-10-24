@@ -1,0 +1,9 @@
+Territory_NumberToName  (&43043)
+#Parent Territory_
+=>	R0 =	<territory number=>territory_numbers>
+	R1 =	pointer to buffer for name
+	R2 =	length of buffer
+	
+Returns the name of given territory in the current territory's language.
+#Line
+See <PRM 3, page 796=>PRM-3:796>.

@@ -1,0 +1,10 @@
+Service_ModeChanging (&89)
+#Parent Service_Index
+=>	R1 =	&89 (reason code)
+	R2 =	<mode number=>VDU:22a>
+	R3 =	<monitor type=>OS_monitortypes>
+<=	R1-R3 preserved (do not claim)
+
+This service is issued when a mode change about to take place (or after <Service_PreReset=>Service_45>). It is intended to be used by modules that which which to claim <PaletteV=>Vector_palettev> for particular combinations of mode and monitor.
+#Line
+See <PRM 1, page 627=>PRM-1:627>

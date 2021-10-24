@@ -1,0 +1,7 @@
+OS_Module 9
+=>	R0 =	9 (reason code)
+<=	R0 preserved
+
+This kills all modules which aren't ROM modules.
+
+{*}Note:{*} This is not recommended.

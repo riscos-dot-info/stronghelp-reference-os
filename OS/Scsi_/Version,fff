@@ -1,0 +1,40 @@
+SCSI_Version (&403C0)
+{f25}Þ{f}	none
+{f25}Ü{f}	R0 =	Bits 0..7	software minor version number, 0 for any release
+	 	Bits 8..31	software major version number eg 100 for 1.00
+	R1 =	Bitset of <software features=>.software>
+	R2 =	Bits 0..7	hardware minor version number, 0 for any release
+	 	Bits 8..31	hardware major version number eg 100 for 1.00
+	R3 =	Bitset of <hardware features=>.hardware>
+	R4 !	null terminated vendor string
+#line
+This SWI is used to determine the version number of the drivers, whether it supports any particular later extension, and what particular hardware implementation is present.
+#
+#subpage software
+Software features
+#wrap off
+{/}Bit(s){/}	/Meaning/
+31	Supports target mode
+30	Supports configuration
+29	Supports reading control lines
+28	Supports device reservation
+27	Supports multiple SCSI cards (and hence SWI <SCSI_List>)
+26	Supports *ScsiBlock
+25..16	Reserved must be 0
+15..7	Reserved must be 1
+6	Supports *Devices
+5	Supports scatter list for SWI <SCSI_Op>
+4	Supports messaging
+3	Supports automatic "Request Sense"
+2	Supports command queueing
+1	Supports background data transfer
+0	Supports target disconnect/reconnect
+#
+#subpage hardware
+Hardware features
+#wrap off
+{/}Bit(s){/}	/Meaning/
+31	Supports configuration
+30..16	Reserved must be 0
+15..1	Reserved must be 1
+0	Supports target mode

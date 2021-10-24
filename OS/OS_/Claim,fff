@@ -1,0 +1,15 @@
+OS_Claim  (&1F)
+#Parent OS_
+=>	R0 =	<vector number=>vector_index>
+	R1 =	pointer to address of claiming routine
+	R2 =	value to be passed in R12 when the routine is called.
+
+<=	R0-R2 preserved
+                 
+This call adds the <routine=>vector_rules> whose address is given in R1 to the <list=>vector_chain> of routines claiming the vector. This becomes the first routine to be used when the vector is called.
+
+Any earlier instances of the same routine are removed. Routines are defined to be the same if the values passed in R0, R1 and R2 are identical. If you wish to add multiple "identical" routines use <OS_AddToVector>.
+
+The R2 value enables the routine to have a workspace pointer set up in R12 when it is called. If the routine using the vector is in a module (as will often be the case), this pointer will usually be the same as its module workspace pointer.
+#Line
+See <PRM 1, page 66=>PRM-1:66>.

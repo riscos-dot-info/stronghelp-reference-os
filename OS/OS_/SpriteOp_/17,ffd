@@ -1,0 +1,9 @@
+Verify sprite area (17)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<17, &11=>os_spriteop_reason2> (Verify sprite area)
+	R1 =	<Sprite area=>os_spriteop_area>
+
+This verifies a sprite area for consistency. 
+
+Note: This SWI is only available with SpriteExtend 0.99 or later.
+# Gerph> Find where this is documented in 5a

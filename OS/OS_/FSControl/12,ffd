@@ -1,0 +1,11 @@
+OS_FSControl 12
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	12 (Add a FS)
+	R1 =	pointer to module base
+	R2 =	offset of filing system <information block=>fsys_infoblock>
+	R3 =	pointer to private word
+#Wrap
+<=	All registers preserved
+
+This SWI is used to make FileSwitch aware of a new a Filing System.

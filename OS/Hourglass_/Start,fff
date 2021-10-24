@@ -1,0 +1,7 @@
+Hourglass_Start  (&406C3)
+#Parent Hourglass_
+=>	R0 =	centi-seconds before startup
+
+This SWI shedules the hourglass to appear after the given delay. To turn off again, use <Hourglass_Off>. A delay of 0 will suppress the hourglass until you call <Hourglass_Off>.
+#Line
+See <PRM 2, page 738=>PRM-2:738>.

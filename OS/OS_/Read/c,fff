@@ -1,0 +1,12 @@
+OS_ReadC  (&04)
+#Parent OS_
+<=	if C flag is 0
+	 	R0 =	ASCII code
+	if C flag is 1
+	 	R0 =	error number, &1B means escape
+
+This call reads a character from the input stream. It waits to get the next character, {/}i.e.{/} you will only get the control back when, for example, a key is pressed. The source for the input stream can be read with <OS_Byte 177=>OS_Byte177>.
+
+If cursor editing is enabled (see <OS_Byte 4=>OS_Byte004>), then pressing a cursor keys will start cursor editing.
+#Line
+See <PRM 1, page 852=>PRM-1:852>.

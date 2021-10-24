@@ -1,0 +1,19 @@
+OS_Word 21,1
+#Parent OS_Word
+=>	R0 =	21
+	R1 =	pointer to block containing :
+		 	0 = 1
+		 	1 = left	LSB
+		 	2 =		MSB
+		 	3 = bottom	LSB
+		 	4 =		MSB
+		 	5 = right	LSB
+		 	6 =		MSB
+		 	7 = top		LSB
+		 	8 =		MSB
+
+This OS_Word defines the mouse coordinate bounding box, relative to the graphics origin. It is ignored if (left > right) or (top > bottom).
+
+left = bottom = &8000, right = top = &7FFF gives an infinite box.
+
+If outside the box, the current mouse position is homed to the nearest point inside. When read all buffered coordinates are similarly moved within the box. The box is set to the size of the screen on mode changes.

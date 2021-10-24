@@ -1,0 +1,45 @@
+NetPrint_ListServers  (&40207)
+#Parent NetPrint_
+=>	R0 =	Format code:
+	 	  0	<names and numbers=>.0>
+	 	  1	<names only=>.1>, sorted with no duplicates
+	 	  2	<names, numbers, status=>.2>
+	R1 =	pointer to buffer
+	R2 =	size of buffer
+	R3 =	time to take before returning (centiseconds)
+<=	R0 =	number of entries returned
+	R3 =	Return code:
+	 	  0	timed out
+	 	  1	buffer full
+
+This SWI returns the names of all printer servers. The format of the data returned in the buffer depends on the code passed in R0.
+#Line
+See <PRM 2, page 396=>PRM-2:396>.
+#SubPage 0
+NetPrint_ListServers 0
+The buffer is filled with entries of the form:
+
+Size	Contents
+#Line
+1	station number
+1	net number
+	null terminated name
+#SubPage 1
+NetPrint_ListServers 1
+The buffer is filled with sorted entries of the form:
+
+Size	Contents
+#Line
+	null terminated name (case insensitve)
+#SubPage 2
+NetPrint_ListServers 2
+The buffer is filled with entries of the form:
+
+Size	Contents
+#Line
+1	station number
+1	net number
+1	<status=>NetPrint_statuses>
+1	station number for status
+1	net number for status
+	null terminated name

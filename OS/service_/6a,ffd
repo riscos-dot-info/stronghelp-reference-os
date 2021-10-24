@@ -1,0 +1,38 @@
+Service_EnumerateFormats (&6A)
+#Parent Service_Index
+=>	R1 =	&6A (reason code)
+	R2 =	pointer to linked list of <format specifications=>.block>
+<=	R1 =	&6A (do not claim)
+	R2 =	pointer to extended linked list
+
+This service is issued to get information about available disc formats from softloaded modules. It should be issued whenever this information is requested, in case new modules mean more formats are now available. The service must not be claimed - rather it should be passed on with an extended list.
+
+The service issuer is responsible for freeing the list and all data from the RMA after use, or if an error occurs during generation.
+#Line
+See <PRM 2, page 494=>PRM-2:494>
+#SubPage block
+Service_EnumerateFormats format block
+Offset	Meaning
+#Line
+0	Pointer to next block, or 0 to terminate list
+4	Pointer to *RMA* block with text for *Format* submenu
+8	Pointer to *RMA* block with help text for *Format* submenu
+12	SWI to call to get raw disc format info
+16	R3 parameter for this SWI
+20	SWI to call to lay down disc structure
+24	R0 parameter for this SWI
+28	Flags:	bit 0 set for native ADFS format.
+	 	other bits 0 (reserved)
+
+The block should be built in this order:
+1	allocate block in RMA
+2	zero offsets 4 and 8 (pointers to text)
+3	link into list
+4	allocate block in RMA for text at offset 4
+5	link this to the block
+6	allocate block in RMA for text at offset 8
+7	link this to the block
+8	*copy* text into the two RMA blocks
+9	fill in the rest of the block
+
+This allows an error to be returned by claiming the service and returning the intact list.

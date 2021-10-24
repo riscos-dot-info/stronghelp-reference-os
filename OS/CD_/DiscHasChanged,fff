@@ -1,0 +1,5 @@
+CD_DiscHasChanged  (&41256)
+#Parent CD_
+=>	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+
+This SWI marks the CD disc as having changed.

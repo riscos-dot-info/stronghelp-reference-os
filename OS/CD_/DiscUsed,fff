@@ -1,0 +1,33 @@
+CD_DiscUsed  (&41253)
+#Parent CD_
+=>	R0 =	addressing mode for returned size in
+	R1 =	pointer to <8-byte block=>.block>
+	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+
+<=	R0 preserved
+	R1 corrupted
+	R7 preserved
+
+Returns size of CD currently in drive in block pointed to by R1.
+#Subpage block
+CD_DiscUsed block
+For mode 0:
+#Indent 2
+Offset	Contents
+#line
+0	Size of CD
+4	Size of blocks on CD
+#indent
+
+For mode 1:
+#indent 2
+Offset	Contents
+#Line
+0	Number of frames
+1	Number of seconds
+2	Number of minutes
+3	0
+4	sector size (always 2048, even for audio discs)
+
+#indent
+{*}Note{*}: (min*60+sec)*75+frames = readable + 151

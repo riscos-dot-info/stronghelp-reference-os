@@ -1,0 +1,11 @@
+OS_Plot  (&45)
+#Parent OS_
+=>	R0 =	<plot command code=>OS_PlotIndex>
+	R1 =	x coord
+	R2 =	y coord
+
+<=	R0,R1,R2 are corrupted
+
+This SWI does a direct VDU call.
+#Line
+See <PRM 1, page 717=>PRM-1:717>.

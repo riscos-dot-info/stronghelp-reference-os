@@ -1,0 +1,5 @@
+Hourglass_Smash  (&406C2)
+#Parent Hourglass_
+This SWI turns the hourglass off immediately. Normally you should use <Hourglass_Off> instead.
+#Line
+See <PRM 2, page 737=>PRM-2:737>.

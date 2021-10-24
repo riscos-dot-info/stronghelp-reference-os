@@ -1,0 +1,7 @@
+CDFS_WhereIsFile  (&41E87)
+#Parent CDFS_
+=>	R0 =	pointer to filename, without preceding 'CDFS:', eg ':0.$.SETUP/EXE'
+<=	R1 =	block number of file start, or -1 if not found
+	R2 =	size in bytes of file
+
+This call returns information about the position of a file on a CD.  It returns -1 if the filename refers to a directory, or cannot be found. 

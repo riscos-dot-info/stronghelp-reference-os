@@ -1,0 +1,11 @@
+Econet_SetProtection  (&4000E)
+#Parent Econet_
+=>	R0 =	EOR mask word
+	R1 =	AND mask word
+<=	R0 =	old value
+
+This SWI is used to modify or read the current <protection word=>Econet_protects> for immediate operations.
+
+You should use R0=0, and R1=-1 to read the word.
+#Line
+See <PRM 2, page 670=>PRM-2:670>.

@@ -1,0 +1,7 @@
+ImageEntry_Args 8
+=>	R0 =	8 (Zero pad file)
+	R1 =	internal file handle returned by <ImageEntry_Open>
+	R2 =	offset at which to write
+	R3 =	number of bytes to write
+
+This call is made to pad a file with zeroes to initialise it.

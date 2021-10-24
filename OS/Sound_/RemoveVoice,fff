@@ -1,0 +1,10 @@
+Sound_RemoveVoice  (&40184)
+#Parent Sound_
+=>	R0 =	voice slot to remove (1-32)
+
+<=	R0 =	pointer to name of previous voice (or error message)
+	R1 =	voice number de-allocated (0 for fail)
+
+This SWI is used to remove a voice from the system, and notifies the Channel Handler. Error handling like in <Sound_InstallVoice>. This call must also be issued before the RMA is tidied, since the module contains absolute pointers to Voice Generators that are likely to exist in RMA.
+#Line
+See <PRM 4, page 34=>PRM-4:34>.

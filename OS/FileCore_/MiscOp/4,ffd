@@ -1,0 +1,12 @@
+FileCore_MiscOp 4
+#Parent FileCore_MiscOp
+=>	R0 =	4 (reason code)
+	R1 =	drive
+	R8 =	pointer to FileCore instance private word
+
+<=	R5 =	minimum polling period (in centiseconds), or -1 if changed doesn't work
+	R6 =	pointer to media type string (eg 'disc' for ADFS
+
+This call informs FileCore of the minimum period between polling for disc insertion under the given filing system. This is so that drive lights don't remain continously illuminated.
+
+The values are re-exported by FileCore in the UpCalls <'Media not present'=>OS_UpCall1> and <'Media not known'=>OS_UpCall2>. The value applies to all drives rather than a particular drive.

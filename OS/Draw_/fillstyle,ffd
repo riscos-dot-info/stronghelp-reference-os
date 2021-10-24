@@ -1,0 +1,13 @@
+Draw fill styles
+Bits	Meaning if set (or of value)
+#Line
+0,1	0	Non-zero winding rule
+	1	Negative winding rule
+	2	Even-odd winding rule
+	3	Positive winding rule
+
+2	Plot non-boundary exterior pixels
+3	Plot boundary exterior pixels
+4	Plot boundary interior pixels
+5	Plot non-boundary interior pixels
+others	Reserved, must be 0

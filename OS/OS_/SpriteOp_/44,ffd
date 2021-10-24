@@ -1,0 +1,13 @@
+Write pixel mask (44)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<44, &2C=>os_spriteop_reason2> (Write pixel mask)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+	R3 =	x coordinate (in pixels)
+	R4 =	y coordinate (in pixels)
+	R5 =	0 =>	Transparant
+	 	1 =>	Solid
+
+This sets the mask's state at the given coordinates.
+#Line
+See <PRM 1, page 795=>PRM-1:795>

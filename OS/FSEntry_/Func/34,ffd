@@ -1,0 +1,16 @@
+FSEntry_Func 34
+#Parent FSEntry_Func
+=>	R0 =	34 (Notification of changed directory)
+	R1 =	pointer to name
+	R2 =	<changed directory=>.what>
+	R6 =	pointer to special field, or 0 if not present
+
+This call informs a filing system when a directory has changed, which may help a filing system to choose which directories to cache.
+#Subpage what
+FSEntry_Func 34 directory codes
+\#	Meaning
+#Line
+0	CSD	Current directory
+1	PSD	Previously selected directory
+2	URD	User root directory
+3	Lib	Library

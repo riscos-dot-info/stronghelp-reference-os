@@ -1,0 +1,18 @@
+OS_UpCall 6 - Sleep
+#Parent OS_UpCallReasons
+=>	R0 =	6 (Sleep)
+	R1 =	pointer to poll word (in a global memory area, eg the RMA)
+
+<=	R0 =	0 if UpCall claimed
+
+This Upcall informs the TaskWindow module that a task wants to sleep until some termination condition is met
+
+This call is made by a task that wants to sleep until some termination condition is met, signalled by the contents of the poll word becoming non zero. It is not available in RISC OS 2.
+
+Control may return to the task before the poll word becomes non zero. While the task is sleeping other tasks will continue to be polled by the Wimp.
+
+If the termination condition can be recognised externally (ie in another Wimp task or under interrupt) hence causing the poll word to be set non zero, the calling task should set the poll word to zero on entry. Otherwise the poll word must be non zero on entry, so that the conrol will return to the calling task after each <Wimp Poll=>Wimp:Wimp_Poll>.
+
+Note that a task musn't use this UpCall if it's not re-entrant.
+
+The calling task must be running in a task window. The task window module intercepts this UpCall; you should not do so yourself. These two restrictions may be removed in future versions of RISC OS.

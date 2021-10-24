@@ -1,0 +1,3 @@
+Sprite object (5)
+#Parent drawfile_format
+This is followed by a <sprite=>os_spriteop_ptr>, which is scaled to fill bounding box.

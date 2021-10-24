@@ -1,0 +1,12 @@
+OS_ReadDefaultHandler  (&55)
+#Parent OS_
+=>	R0 =	<handler number=>os_handlers>
+
+<=	R0 preserved
+	R1 =	address of default handler
+	R2 =	workspace address
+	R3 =	buffer address
+
+This enables you to re-install the handler which is set up after a reset or power on.
+#Line
+See <PRM 1, page 321=>PRM-1:321>.

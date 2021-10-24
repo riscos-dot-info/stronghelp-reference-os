@@ -1,0 +1,7 @@
+OS_FSControl 22
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	22 (Close all open files)
+#Wrap
+
+This SWI flushes and closes all open files on all filing systems. It does not stop if an individual close reports an error, but will only return without error if all individual closes were error free. It is equivalent to {fCode}*Shut{f}.

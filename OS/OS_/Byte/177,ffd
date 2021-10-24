@@ -1,0 +1,13 @@
+OS_Byte 177  Read input source
+#Parent OS_ByteIndex
+=>	R0 =	177
+	R1 =	0
+	R2 =	255
+
+<=	R0 preserved
+	R1 =	<value of stream selection=>OS_Byteinputsources>
+	R2 corrupted
+
+This returns the number of the buffer from which character input gets characters (assuming Exec is not enabled  - see <OS_Byte 198=>OS_Byte198>). You *must not* use any numbers than 0 and 255 for R1 and R2 - to change this variable use <OS_Byte 2=>OS_Byte002>.
+#Line
+See <PRM 1, page 873=>PRM-1:873>

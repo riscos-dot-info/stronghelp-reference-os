@@ -1,0 +1,16 @@
+OS_Byte 71  Read/Write alphabet or keyboard
+#Parent OS_ByteIndex
+=>	R0 =	71 (&47)
+	R1 =	0-126	set <alphabet number=>Territory_anumbers>
+	 	127	read alphabet number
+	 	128-254	set <keyboard number=>OS_keyboardid> as R1 - 128
+	 	255	read keyboard number
+
+<=	R0 =	preserved
+	R1 =	0 if invalid alphabet or keyboard  number passed
+	 	or country/keyboard number before being overwritten
+	R2 corrupted
+                                                  
+This call reads or writes the alphabet or keyboard number used by the international module. Although keyboard numbers are passed in with 128 added, they are returned as the actual value.
+#Line
+See <PRM 3, page 772=>PRM-3:772>

@@ -1,0 +1,13 @@
+OS_Byte 214  Read/Write bell duration
+#Parent OS_ByteIndex
+=>	R0 =	214 (&D6)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	previous duration
+	R2 corrupted
+                                                  
+This call reads or sets the bell duration, in multiples of 5 cs. The default duration is 6.
+#Line
+See <PRM 1, page 666=>PRM-1:666>

@@ -1,0 +1,7 @@
+Service_CalibrationChanged (&5B)
+#Parent Service_Index
+=>	R1 = &5A (reason code)
+
+This service is issued by ColourTrans when the <ColourTrans_SetCalibration> SWI is called.
+#Line
+See <PRM 3, page 344=>PRM-3:344>

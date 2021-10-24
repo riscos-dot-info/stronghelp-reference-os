@@ -1,0 +1,18 @@
+Sound_Stereo  (&40142)
+#Parent Sound_
+=>	R0 =	channel number
+	R1 =	<stereo position=>.positions>
+<=	R0 preserved
+	R1 =	previous position, or -128 if invalid channel
+
+This call sets the stereo position of a particular channel.
+#Line
+See <PRM 4, page 21=>PRM-4:21>.
+#Subpage positions
+Stereo positions
+Value	Meaning
+#Line
+0	Centre
+-127	Left
+127	Right
+-128	Read position (if using <Sound_Stereo>)

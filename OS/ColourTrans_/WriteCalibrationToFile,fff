@@ -1,0 +1,11 @@
+ColourTrans_WriteCalibrationToFile  (&40757)
+#Parent ColourTrans_
+=>	R0 =	flags	bit 0 set	always write calibration
+	 	 	bit 0 clear	write calibration unless it is the default
+		 	other bits reserved
+	R1 =	file handle to write to
+<=	R0 corrupted
+
+Write * Commands to the given file to re-create the current calibration table.
+#Line
+See <PRM 3, page 378=>PRM-3:378>.

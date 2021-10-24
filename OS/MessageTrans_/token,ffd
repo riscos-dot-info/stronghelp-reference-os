@@ -1,0 +1,3 @@
+Token
+Token is terminated by any control char, space, "," or ")".
+It can also be of the form token:default terminated by \\0

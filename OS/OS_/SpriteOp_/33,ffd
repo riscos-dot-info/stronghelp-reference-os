@@ -1,0 +1,9 @@
+Flip about x axis (33)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<33, &21=>os_spriteop_reason2> (Flip about x axis)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+
+This turns the sprite upside down.
+#Line
+See <PRM 1, page 784=>PRM-1:784>

@@ -1,0 +1,13 @@
+MIDI event (17)
+#Parent Event_index
+=>	R0 =	17 (event number)
+	R1 =	<Event reason=>.code>
+
+This event is raised by a MIDI card.
+#Subpage code
+MIDI event reasons
+Code	Meaning
+#Line
+1	byte received into previously empty buffer
+2	background MIDI error occurred
+3	Scheduler queue about to empty - you can schedule more data.

@@ -1,0 +1,63 @@
+SoundFile_IdentifySoundFile  (&80380)
+#Parent Service_index
+=>	R0 =	<reason code=>.reasons>
+	R1 =	&80380 (service number)
+	R2 =	sound stream handle
+	R4 =	pointer to <format block=>.formatblk>
+<=	R0 =	0, or error if failed if recognised; preserved otherwise
+	R1 =	0 if recognised; preserved otherwise
+	R4 =	updated block, if recognised
+
+This service is used to identify the style of sound file passed to it from its header. The service also allows you to provide special decoding routines for it.
+#Subpage reasons
+IdentifySoundFile reasons
+Reason	Meaning
+#Line
+0	File has not been identified
+1	File is a Microsoft WAV file of an unrecognised format
+others	reserved
+#Subpage formatflags
+SoundFile_IdentifySoundFile format flags
+Bit	Meaning if set
+#Line
+0	Data is signed
+1	Data is in stereo
+2	?
+#Subpage formatblk
+SoundFile_IdentifySoundFile block in r4
+Offset	Contents
+#Line
+0	<flags=>.formatflags>
+4	<Filetype=>Filetypes:!Root>
+# &FB1      = wav file
+# &20434F56 = VOC
+# &20205541 = AU
+# &58564328 = 8SVX
+# &6F697350 = Psion
+# These seem to be space passed ASCII versions of the filetype
+8	bits per sample
+9	number of channels
+10	sample period in microseconds
+11	interleave format
+12	<Sound data format=>.soundformats>
+16	Sample rate, shifted up 10
+20	Number of samples
+24	Sound data offset in file
+28	Sound data length
+32	?
+36	?
+40	?
+44	pointer to something?
+128	name for sound format
+152	name for compression style
+172	comments ?
+# #Subpage blockr2
+# SoundFile_Something block in r2
+# Offset	Contents
+# #Line
+# 0	flags
+# 4	current position in file
+# 8	pointer to file buffer
+# 12	buffer length
+# 16	file handle
+# 20	pointer to filename

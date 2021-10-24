@@ -1,0 +1,30 @@
+Font_Paint  (&40086)
+#Parent Font_
+=>	R0 =	Font handle (if applicable)
+	R1 =	<pointer to string=>font_paint1>
+	R2 =	<flags=>font_paintflags>
+	R3 =	x
+	R4 =	y
+	R5 =	pointer to <block=>.block> (if applicable)
+	R6 =	pointer to <transformation matrix=>Font_matrix> (if applicable)
+	R7 =	Length (if applicable)
+
+This SWI paints a string to the screen using the currently selected font, or a specific font if flags indicate so. Any VDU 'origin' previously specified is ignored and absolute co-ordinates are assumed.
+
+Note: Underline and rubout do not work unless transformed x-axis is parallel (not anti-parallel) to output x-axis. (Anti-parallel being parallel, but in the opposite direction to the original).
+#Line
+See <PRM 3, page 429=>PRM-3:429>.
+#subpage block
+Font_Paint block
+Offset	Contents
+#Line
+0	additional x offset for spaces
+4	additional y offset for spaces
+8	additional x offset for each letter
+12	additional y offset for each letter
+16	x coordinate for bottom left of rubout box (inclusive)
+20	y coordinate for bottom left of rubout box (inclusive)
+24	x coordinate for top right of rubout box (exclusive)
+28	y coordinate for top right of rubout box (exclusive)
+
+These values are in millipoints (<bit 4 of R2=>font_paintflags> must be clear)

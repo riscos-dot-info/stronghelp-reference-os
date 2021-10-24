@@ -1,0 +1,17 @@
+OS_Byte 229  Alter Escape key status
+#Parent OS_ByteIndex
+=>	R0 =	229 (&E5)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	state before being overwritten
+	R2 =	escape effects (see <OS_Byte 230=>OS_Byte230>)
+                                                  
+This call allows you to enable or disable the generation of escape conditions, and to read the current setting. Escape conditions may be caused by pressing the current escape character or by inserting it into the input buffer with <OS_Byte 153=>OS_Byte153>.
+
+If the value in R1 passed is zero, which is the default, then escape conditions are enabled. Any non-zero value will disable them. When they're disabled, the current escape character set by <OS_Byte 220=>OS_Byte220> will pass through the input stream unaltered.
+
+<OS_Byte 200=>OS_byte200> can also control the enabling of the escape conditions.
+#Line
+See <PRM 1, page 894=>PRM-1:894>

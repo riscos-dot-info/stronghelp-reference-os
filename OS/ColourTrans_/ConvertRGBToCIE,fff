@@ -1,0 +1,13 @@
+ColourTrans_ConvertRGBToCIE  (&40755)
+#Parent ColourTrans_
+=>	R0 =	<red component=>ColourTrans_fixedpoint>
+	R1 =	<green component=>ColourTrans_fixedpoint>
+	R2 =	<red component=>ColourTrans_fixedpoint>
+
+<=	R0 =	CIE x value
+	R1 =	CIE y value
+	R2 =	CIE z value
+
+This call converts the colour passed as RGB values to CIE values.
+#Line
+See <PRM 3, page 374=>PRM-3:374>.

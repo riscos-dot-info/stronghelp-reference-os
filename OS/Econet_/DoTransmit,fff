@@ -1,0 +1,20 @@
+Econet_DoTransmit  (&40009)
+#Parent Econet_
+=>	R0 =	flag byte
+	R1 =	port number
+	R2 =	station number
+	R3 =	net number
+	R4 =	pointer to data buffer
+	R5 =	buffer size
+	R6 =	retry count
+	R7 =	delay in cs
+
+<=	R0 =	<status=>econet_statuses>
+	R1 corrupted
+	R2 =	pointer to buffer
+	R3 =	station number
+	R4 =	net number, or 0 if R3 on entry was the local net
+
+This SWI creates a block and repeatedly polls until the data is received, or an error at which point the block is abandoned. As this SWI enables interrupts it should not be called from service or event handlers. It will loop in USR mode with IRQs enabled - a side effect is that callbacks may occur.
+#Line
+See <PRM 2, page 661=>PRM-2:661>.

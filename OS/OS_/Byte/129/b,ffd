@@ -1,0 +1,20 @@
+OS_Byte 129 - To read the OS version identifier
+{f25}Þ{f}	R0 =	129
+	R1 =	{*}0{*}
+	R2 =	{*}&FF{*}
+{f25}Ü{f}	R1 =	<value identifying OS=>.identifier>
+	R2 =	0
+#subpage identifier
+OS_Byte 129 Operating System version identifiers
+R1 value	Version
+#Line
+&A0		Arthur	1.20
+&A1		RISC OS	2.00
+&A2		RISC OS	2.01
+&A3		RISC OS	3.00
+&A4		RISC OS	3.10 and 3.11
+&A5		RISC OS	3.50
+&A6		RISC OS	3.60
+&A7		RISC OS	3.70
+&A8		RISC OS	3.80, 4.00
+# Gerph> &a5 is actually unchecked but I'm willing to bet someones life on it.

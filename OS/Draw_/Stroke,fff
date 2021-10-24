@@ -1,0 +1,29 @@
+Draw_Stroke  (&40704)
+#Parent Draw_
+=>	R0 =	pointer to <path block=>draw_pathblock>
+	R1 =	<fill style=>draw_fillstyle>, or 0 for <default=>.fill>
+	 	bit 31 clear to stroke each subpath in turn (can result in pixels being plotted twice)
+	R2 =	pointer to <transformation matrix=>draw_transform>, or 0 for default
+	R3 =	flatness, or 0 for default
+	R4 =	line thickness, or 0 for default
+	R5 =	pointer to <join/cap block=>draw_joincapblock>, or 0 if none
+	R6 =	pointer to <dashing pattern=>draw_dashblock>, or 0 if none
+
+<=	R0 corrupt
+
+This SWI is used to draw a path.
+
+If thickness is zero, fill bits 3,2 must not be 01
+If thickness is non-zero, fill bits 2-5 must not be 0110 - {/}i.e.{/} filling just the boundary pixels.
+# Gerph> it was 5-2 but that looks silly. However 2-5 puts the bits in the wrong
+#        order - I've done this, because the ordering /isn't/ relevant here :-)
+#Line
+See <PRM 3, page 540=>PRM-3:540>.
+#SubPage fill
+Draw_Stroke default fill style
+0 gives the default <fill style=>draw_fillstyle> which depnds on R4 (line thickness):
+
+R4 value	Default fill style
+#Line
+0		&30 - fill to boundary centre, non-zero rule.
+other		&18 - fill only the boundary

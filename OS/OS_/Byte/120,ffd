@@ -1,0 +1,11 @@
+OS_Byte 120  Temporarily lock auto-repeat
+#Parent OS_ByteIndex
+=>	R0 =	120 (&78)
+	R1 =	0
+	R2 =	0
+
+<=	R0 preserved
+	R1,R2 corrupted
+                                                  
+This call is kept for compatibility with the BBC/Master 128. It locks the auto-repeat mechanism for the duration of a key being down (to prevent multiple input).
+# Gerph> This doesn't appear to be in the PRMs

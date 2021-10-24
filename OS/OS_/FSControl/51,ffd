@@ -1,0 +1,13 @@
+OS_FSControl 51  (&29)
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	51 (Request update of image stamp)
+	R1 =	pointer to name of object
+	R2 =	0 (stamp when updated)
+	 	1 (stamp now)
+#Wrap
+
+This SWI is called by a hander of discs (such as FileCore) when it wants an image filing system ({/}e.g.{/} DOSFS) to update the image stamp (a.k.a. <cycle ID=>FileCore_cycleid>).
+# N> OK, why can't the PRM settle on consistent jargon?
+# Gerph> let not thy left hand know what thy right hand doeth
+#           Matthew 5:48

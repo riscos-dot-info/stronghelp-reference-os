@@ -1,0 +1,9 @@
+ImageEntry_Args 6
+=>	R0 =	6 (Flush modified data)
+	R1 =	internal file handle returned by <ImageEntry_Open>
+<=	R2 =	load address of file, or 0 if not possible
+	R3 =	exec address of file, or 0 if not possible
+
+This call is made when FileSwitch wants you to store all cached data. This will only be called if bit 27 of the <information word=>fsys_image_infoword> is set.
+
+The load and exec addresses are used for purposes of date stamping.

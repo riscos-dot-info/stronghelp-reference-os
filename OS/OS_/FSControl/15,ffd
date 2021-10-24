@@ -1,0 +1,7 @@
+OS_FSControl 15  (&29)
+#Parent OS_FSControl
+=>	R0 =	15 (Boot from FS)
+
+<=	R0 preserved - may not return if boot runs an application
+
+This SWI boots from the *current* filing system. The actions taken are dependant on the <boot setting=>OS_Byte255> and <option 4 setting=>fsys_opts> - the latter is set on the *temporary* filing system with <OS_FSControl 10=>OS_FSControl10>.

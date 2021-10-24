@@ -1,0 +1,33 @@
+Disc format block
+Offset	Meaning
+#Line
+0	Sector size
+4	Gap 1 side 0
+8	Gap 1 side 1
+C	Gap 3
+10	Sectors per track
+11	<Density=>FileCore_densities>
+12	<Options=>.options>
+13	Start sector on a track
+14	Sector interleave
+15	Side/side sector skew (signed)
+16	Track/track sector skew (signed)
+17	Sector fill value
+18	Number of tracks to format (ie cylinders/drive: usually 80)
+1C-23	Reserved, must be 0
+24	sector id buffer, 1 word/sector
+	bits	 0-7	Cylinder number mod 256
+	 	 8-15	Head (0 onwards)
+	 	16-23	Sector number
+	 	24-31	log2(sector size)-7
+#subpage options
+Format options
+bit	meaning
+#Line
+0	index mark required
+1	double step
+2-3	0 =	interleaved side
+	1 =	format side 1 only
+	2 =	format side 2 only
+	3 =	sequenced sides
+4-7	reserved, must be 0

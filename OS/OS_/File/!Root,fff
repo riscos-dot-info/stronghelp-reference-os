@@ -1,0 +1,34 @@
+OS_File  (&08)
+#Parent OS_
+=> R0 = reason code
+
+Miscellaneous operations on whole files :
+
+0	<Save block of memory as a file=>OS_File0>
+1	<Write catalogue info for named object=>OS_File1>
+2	<Write load address for named object=>OS_File1>
+3	<Write exec address for named object=>OS_File1>
+4	<Write attributes for named object=>OS_File1>
+5	<Read catalogue info for object=>OS_File5>
+6	<Delete named object=>OS_File6>
+7	<Create empty un-stamped file=>OS_File7>
+8	<Create directory=>OS_File8>
+9	<Date stamp named object=>OS_File1>
+10	<Save block of memory as a typed file=>OS_File0>
+11	<Create empty file=>OS_File11>
+12	<Load named file given path=>OS_File12>
+13	<Read catalogue info for object given path=>OS_File5>
+14	<Load named file given path variable=>OS_File12>
+15	<Read catalogue info for object given path variable=>OS_File5>
+16	<Load named file without path=>OS_File12>
+17	<Read catalogue info for object without path=>OS_File5>
+18	<Set type of named object=>OS_File1>
+19	<Generate error message=>OS_File19>
+20	<Read catalogue info for stamped object=>OS_File20>
+21	<Read catalogue info for stamped object given path=>OS_File20>
+22	<Read catalogue info for stamped object given path variable=>OS_File20>
+23	<Read catalogue info for stamped object without path=>OS_File20>
+24	<Read block size of file=>OS_File24>
+255	<Load named file=>OS_File12>
+#Line
+See <PRM 2, page 30=>PRM-2:30>.

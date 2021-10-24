@@ -1,0 +1,6 @@
+FileCore_DiscOp 15
+#Parent FileCore_DiscOp
+Specify ?
+
+=>	R1 =	15 + <flags=>FileCore_DiscOp_flags>
+	R2 =	<disc address=>FileCore_discaddress>

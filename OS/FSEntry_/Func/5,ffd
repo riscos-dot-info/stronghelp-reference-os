@@ -1,0 +1,7 @@
+FSEntry_Func 5
+#Parent FSEntry_Func
+=>	R0 =	5 (Examine library)
+	R1 =	pointer to (wilcarded) directory name
+	R6 =	pointer to special field, or 0 if not present
+
+This call should print information on objects in a directory  relative to the library - it implements {fCode}*LEx{f}. It is always called by RISC OS 2, or only by later versions of RISC OS when bit 2 of the <extra filing system info word=>fsys_extra_infoword> is set.

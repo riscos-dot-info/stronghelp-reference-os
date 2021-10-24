@@ -1,0 +1,9 @@
+NetFS file server block
+#Parent NetFS_
+Size	Contents
+#Line
+1	Station number
+1	Net number
+1	Driver number
+16	Disc name, space padded
+1	Null byte

@@ -1,0 +1,7 @@
+Squash
+#Parent !Root
+#Prefix Squash_
+<Compress>
+<Decompress>
+
+<File format=>Squash_fileformat>

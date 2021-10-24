@@ -1,0 +1,7 @@
+Sound_Mode  (&40144)
+#Parent Sound_
+=>	R0 =	reason code :
+	 	 0	<Read current state=>Sound_Mode0>
+	 	 1	<Change oversampling=>Sound_Mode1>
+
+This SWI is used to examine and change the state of the 16-bit sound system.

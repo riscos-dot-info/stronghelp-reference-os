@@ -1,0 +1,8 @@
+Service_FilterManagerInstalled (&87)
+#Parent Service_Index
+=>	R0 =	filter manager version * 100
+	R1 =	&87 (reason code)
+
+This service is issued when the <FilterManager=>Wimp:Filter_> starts, to indicate that filters can be registered with it.
+#Line
+See <PRM 3, page 304=>PRM-3:304>

@@ -1,0 +1,13 @@
+OS_Byte 199  Read/Write *Spool file handle
+#Parent OS_ByteIndex
+=>	R0 =	199
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	previous file handle
+	R2 corrupted
+
+This call reads or sets the {fCode}<*Spool=>StarCmds:Spool>{f} file handle. A handle of 0 means that spooling is disabled, a non-zero handle means that spooling is enabled (unless disabled with <OS_Byte 3=>OS_Byte003>). Changing the spool handle to an invalid file handle can really ruin your day (every call to <OS_WriteC> {/}etc.{/} will return an error, including the calls used to report the error to screen...).
+#Line
+See <PRM 1, page 513=>PRM-1:513>

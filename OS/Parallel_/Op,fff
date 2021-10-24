@@ -1,0 +1,14 @@
+Parallel_Op  (&42EC1)
+#Parent Parallel_
+=>	R0 = reason code
+
+Performs direct operations to the parallel hardware.
+
+#Tab
+Reason	Meaning
+#Line
+0	<Read data and status registers=>Parallel_Op0>
+1	<Write data registers=>Parallel_Op1>
+2	<Read/write control register=>Parallel_Op2>
+#Line
+See <PRM 2, page 480=>PRM-2:480>.

@@ -1,0 +1,11 @@
+Buffer_Register  (&42942)
+#Parent Buffer_
+=>	R0 =	buffer's <flag word=>buffer_flags>
+	R1 =	start address of buffer
+	R2 =	byte beyond end of buffer
+	R3 =	preferred handle for the buffer, -1 to get the buffer manager to generate one
+<=	R0 =	buffer handle
+
+This SWI is similar to <Buffer_Create>, but does not claim memory for you - rather it registers your existing memory as a buffer.
+#Line
+See <PRM 4, page 89=>PRM-4:89>.

@@ -1,0 +1,9 @@
+Remove left hand wastage (54)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<54, &36=>os_spriteop_reason2> (Remove lefthand wastage)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+
+This makes the left hand edge of the sprite word aligned. Thus reducing any waste of space.
+#Line
+See <PRM 1, page 805=>PRM-1:805>

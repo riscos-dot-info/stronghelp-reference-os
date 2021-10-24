@@ -1,0 +1,13 @@
+OS_Byte 176  Read/Write 50Hz counter
+#Parent OS_ByteIndex
+=>	R0 =	176 (&B0)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	value before being overwritten
+	R2 corrupted
+                                                  
+This call reads or sets the "50Hz" counter, a 1 byte counter which is decreased every vSync. As a consequence the rate of this counter is actually mode and monitor dependent, and should not be used for accurate timing.
+#Line
+See <PRM 1, page 405=>PRM-1:405>

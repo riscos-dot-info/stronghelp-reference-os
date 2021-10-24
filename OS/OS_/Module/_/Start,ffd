@@ -1,0 +1,11 @@
+Module start code
+#Parent OS_Module_format
+=>	R0 =	pointer to command string, including module name
+	R12 =	pointer to private word for preferred instance
+	R14 =	not a return address
+<=	should not return - call <OS_Exit> or start another application
+
+This entry is called when started using <OS_Module 2=>OS_Module2>. If your module is a module task which requires application space ({/}e.g.{/} it is written in C) then you must claim <Service_Memory=>service_11> to prevent the Wimp setting the application memory for your task to 0. This instantiation *is* the preferred instatiation.
+
+If the value for start code doesn't represent a valid non-zero offset, it is taken to be a literal ARM instruction (which hopefully is a branch to the right place).
+# Gerph> I contest that the command string does NOT contain the module name

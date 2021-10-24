@@ -1,0 +1,16 @@
+PDumper configuration word
+#Parent PDriver_SetDriver
+Bits	Meaning
+#Line
+0-3	<Driver specific features=>.specific>
+24-31	PDriverDP version (currently 3)
+# Sorry that this is a mire of subpages
+#SubPage specific
+PDumper driver specific bits
+#Wrap off
+Bit	Meaning for LJ			Meaning for DM
+#Line
+0	Supports multiple copies	Horizontal output
+1	Supports compression		Roll paper feed
+2	Don't send form feeds
+3	Use PaintJet movement commands

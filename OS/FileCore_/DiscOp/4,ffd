@@ -1,0 +1,12 @@
+FileCore_DiscOp 4
+#Parent FileCore_DiscOp
+=>	R1 =	4 + <flags=>FileCore_DiscOp_flags>
+	R2 =	<disc address=>FileCore_discaddress>
+	R3 =	pointer to block to write or 0 to format
+	R4 =	<format block=>FileCore_format>
+
+This call is used to write or format tracks.
+
+If R3=0, this call formats a track of the specified disc, an error is generated, if the specified format is not possible to generate, or if the track requested is outside the valid range. The tracks are numbered from 0 to (number of tracks)-1. The mapping of the address is controlled by the disc structure record.
+
+If R3\<>0 then the data specified is written to the track.

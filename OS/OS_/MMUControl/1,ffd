@@ -1,0 +1,20 @@
+OS_MMUControl 1
+#Parent OS_MMUControl
+#wrap off
+{f25}Þ{f}	R0 =	1 (cache flush request) + <flags=>.flags>
+	R1 =	logical address, if bit 29 set
+#wrap;line
+This call is used to implement cache and TLB flushing.
+
+Note: Only use this where it is unavoidable.
+#
+#Subpage flags
+MMU Control 1 flags
+Bit	Meaning if set
+#Line
+8-28	reserved (must be 0)
+29	flush one entry (otherwise complete flush)
+30	flush processor TLBs
+31	flush processor caches
+
+Note: bit 29 is currently ignored.

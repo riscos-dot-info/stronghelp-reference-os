@@ -1,0 +1,8 @@
+PDriver_EnumerateJobs  (&80150)
+#Parent PDriver_
+=>	R0 =	previous file handle, 0 to start
+<=	R0 =	next file handle, 0 marks end
+
+This SWI will return the file handles of all print jobs, in no particular order.
+#Line
+See <PRM 3, page 631=>PRM-3:631>.

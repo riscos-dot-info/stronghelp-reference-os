@@ -1,0 +1,20 @@
+ImageEntry_Args
+#Parent ImageEntry_
+=>	R0 =	<reason code=>.reason>
+	R1 =	internal file handle returned by <ImageEntry_Open>
+	others dependant on call
+
+This entry point is called when control operations are performed on open files.
+#
+#Subpage reason
+ImageEntry_Args reason codes
+Reason	Meaning
+#Line
+3	<Write file extent=>ImageEntry_Args3>
+4	<Read size allocated to file=>ImageEntry_Args4>
+6	<Flush modified data=>ImageEntry_Args6>
+7	<Ensure file size=>ImageEntry_Args7>
+8	<Zero pad file=>ImageEntry_Args8>
+9	<Read datastamp=>ImageEntry_Args9>
+
+Other reasons are not used for ImageEntry calls (FSEntry only).

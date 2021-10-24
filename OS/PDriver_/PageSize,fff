@@ -1,0 +1,12 @@
+PDriver_PageSize  (&80143)
+#Parent PDriver_
+<=	R1 =	width of paper
+	R2 =	height of paper
+	R3 =	left edge of printable area
+	R4 =	bottom edge of printable area
+	R5 =	right edge of printable area
+	R6 =	top edge of printable area
+
+This SWI returns the paper size, and the printable area on the paper (measured from bottom left of the paper). All values are in millipoints.
+#Line
+See <PRM 3, page 609=>PRM-3:609>.

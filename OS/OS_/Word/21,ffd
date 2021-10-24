@@ -1,0 +1,12 @@
+OS_Word 21
+#Parent OS_Word
+=>	R0 =	21
+	R1 =	pointer to parameter block
+	R1+0 = reason code :
+	  0 :	<define pointer shape=>OS_Word21,0>
+	  1 :	<define the mouse coordinate bounding box=>OS_Word21,1>
+	  2 :	<set mouse multipliers=>OS_Word21,2>
+	  3 :	<set mouse position=>OS_Word21,3>
+	  4 :	<read unbuffered mouse position=>OS_Word21,4>
+	  5 :	<set pointer position=>OS_Word21,5>
+	  6 :	<read pointer position=>OS_Word21,6>

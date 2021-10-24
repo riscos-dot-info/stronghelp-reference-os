@@ -1,0 +1,8 @@
+Econet_AbandonReceive  (&40003)
+#Parent Econet_
+=>	R0 =	handle
+<=	R0 =	<status=>econet_statuses>
+
+This SWI abandons a receive block. Any data which was in transfer (r0=8 on exit) will be discarded and the block contents will remain the same.
+#Line
+See <PRM 2, page 653=>PRM-2:653>.

@@ -1,0 +1,18 @@
+Create/Remove palette (37)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<37, &25=>os_spriteop_reason2> (Create/remove palette)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+	R3 =	-1 => Read current palette size
+	 	0 => Remove palette
+	 	else => Create palette
+	 	If bit 31 set then use 256 entries. (Not RO2)
+
+<=	All registers preserved unless R3 =-1 on entry:
+	R3 =	Size of palette, or 0 if no palette
+	R4 =	Pointer to palette, or 0 if no palette
+	R5 =	Mode
+
+Note: Do not use this whilst output is switched to the sprite.
+#Line
+See <PRM 1, page 790=>PRM-1:790>

@@ -1,0 +1,9 @@
+OS_ServiceCall  (&30)
+#Parent OS_
+=>	R1 =	<service number=>service_index>
+	others dependant on service call number
+<=	R1 =	0 if service was claimed
+
+This SWI is used to call a module service.
+#Line
+See <PRM 1, page 250=>PRM-1:250>.

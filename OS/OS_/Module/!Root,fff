@@ -1,0 +1,26 @@
+OS_Module  (&1E)
+#Parent OS_
+=> R0 = Reason :
+0	<Run=>OS_Module0>             	Other stuff:
+1	<Load=>OS_Module1>		  <Service calls=>service_index>
+2	<Enter=>OS_Module2>		  <Module format=>os_module_format>
+3	<ReInit=>OS_Module3>
+4	<Delete=>OS_Module4>
+5	<Describe RMA=>OS_Module5>
+6	<Claim=>OS_Module6>
+7	<Free=>OS_Module7>
+8	<Tidy=>OS_Module8>
+9	<Clear=>OS_Module9>
+10	<Insert module from memory=>OS_Module10>
+11	<Insert module from memory and move to RMA=>OS_Module11>
+12	<Extract module info=>OS_Module12>
+13	<Extend block=>OS_Module13>
+14	<Create new instantiation=>OS_Module14>
+15	<Rename instantiation=>OS_Module15>
+16	<Make preferred instantiation=>OS_Module16>
+17	<Add expansion card module=>OS_Module17>
+18	<Lookup module name=>os_module18>
+19	<Enumerate ROM modules=>OS_Module19-20>
+20	<Enumerate ROM modules with version=>OS_Module19-20>
+#Line
+See <PRM 1, page 224=>PRM-1:224>.

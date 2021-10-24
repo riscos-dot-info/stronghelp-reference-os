@@ -1,0 +1,13 @@
+OS_UpCall 7 - Sleep No More
+#Parent OS_UpcallReasons
+=>	R0 =	7 (Sleep no more)
+	R1 =	pointer to poll word (in a global memory area, eg the RMA)
+
+<=	R0 preserved if V flag clear
+	R0 =	pointer to error block if V flag set
+
+This Upcall informs the TaskWindow module that an open pipe has been closed or deleted. It is made by PipeFS if an open pipe is closed or deleted. It's not available in RISC OS 2.
+
+The Task Window module then traps this and objects if any of its tasks are currently waiting for the poll word related to that pipe to become non zero, by returning an error.
+
+This prevents a *Shut command from deleting the workspace which is being accessed by the Task Window, which could potentially cause address exceptions.

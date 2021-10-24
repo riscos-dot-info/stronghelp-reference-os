@@ -1,0 +1,7 @@
+OS_Word 2
+=>	R0 =	2
+	R1 =	five byte block containing new system clock value, LSB first
+
+This SWI writes the system clock. 
+
+The clock is incremented 100 times a second, and reset on a hard break.

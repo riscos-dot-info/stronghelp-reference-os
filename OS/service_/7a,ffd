@@ -1,0 +1,9 @@
+Service_ScreenBlanked (&7A)
+#Parent Service_index
+=>	R0 =	0 for normal restoration
+	 	flags passed in R4 to <ScreenBlanker_Control 2=>ScreenBlanker_Control.2> if screen was flashed.
+	R1 =	&7A (reason code)
+
+This service is issued just after the screen is blanked.
+#Line
+See <PRM 4, page 108=>PRM-4:108>

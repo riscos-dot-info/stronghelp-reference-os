@@ -1,0 +1,17 @@
+OS_Word 22
+#Parent OS_Word
+=>	R0 =	22
+	R1 =	pointer to five-byte buffer:
+	 	  0	<Type=>.types>
+	 	  1	Un-aligned word containing new screen offset.
+
+This SWI sets up a new screen base address. It is given as the offset from the base of the screen. Offset must be divisible by 16.
+
+Note: This does not appear to work on RISC OS 3.6.
+# Gerph> Well, I couldn't get it to...
+#subpage types
+Screen base address types
+Bit	Meaning if set
+#line
+0	Set screen base used by VDU
+1	Set screen base used by hardware

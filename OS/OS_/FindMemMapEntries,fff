@@ -1,0 +1,12 @@
+OS_FindMemMapEntries  (&60)
+#Parent OS_
+=>	R0 =	pointer to <request block=>OS_memmaprequest>, terminated with -1
+<=	block at R0 updated
+
+This SWI returns the logical address to which the requested page numbers are mapped, ie address -> page.
+
+On entry, the logical address field must be set. You may supply probable page numbers, which, if correct will make this call return more quickly than it might otherwise. If you have no idea what the page number might be, you should set the page number to zero on entry. The protection value is ignored on entry. If the page number is -1 on exit, then the memory map entry was not found; in this case, the protection level willl always be 3. Otherwise the request list has been updated with the page number and protection level for the given logical address.
+
+The converse is <OS_ReadMemMapEntries>.
+#Line
+See <PRM 1, page 390=>PRM-1:390>.

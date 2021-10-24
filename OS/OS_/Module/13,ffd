@@ -1,0 +1,8 @@
+OS_Module 13
+#Parent OS_Module
+=>	R0 =	13
+	R2 =	pointer to block
+	R3 =	size increase
+<=	R2 =	new block pointer
+
+This SWI extends or reduces a currently claimed block of RMA. If required it also moves the contents of the area.

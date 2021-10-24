@@ -1,0 +1,16 @@
+Put sprite grey scaled (53)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<53, &35=>os_spriteop_reason2> (Put sprite grey scaled)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+	R3 =	x coordinate
+	R4 =	y coordinate
+	R5 =	0
+	R6 =	<Scale factors=>os_scalefactors>, or 0 for 1:1 scaling
+	R7 =	<Pixel translation table=>colourtrans_pixtrans>, or 0 for no translation
+
+This anti-aliases the sprite as it scales it. The sprite must have been defined in a 16 colour mode whose pixels reflect a linear grey scale. Note this is considerably slower than <OS_SpriteOp 52=>os_spriteop_52>.
+
+Note: This code is not available on SpriteExtend 0.99 and later.
+#Line
+See <PRM 1, page 804=>PRM-1:804>

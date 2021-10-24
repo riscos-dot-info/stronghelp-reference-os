@@ -1,0 +1,21 @@
+ADFS_PowerControl  (&40249)
+#Parent ADFS_
+=>	R0 =	reason code
+	 	0 => read drive spin status
+	 	1 => set drive autospindown
+	 	2 => control drive spin directly without affecting autospindown
+	R1 =	drive
+	R2 =	drive autospindown, if R0 = 1;
+	 	  5 נnumber of seconds
+	 	or action to take, if R0 = 2;
+	 	  0 to spin down immediately
+	 	  otherwise, spin up immediately
+
+<=	R2 =	drive spin status, if R0 = 0;
+	 	  0 if drive isn't spinning
+	 	  non-zero if drive is spinning
+	R3 =	previously value for drive autospindown, if R0 = 1
+
+This call controls the power saving features of the ADFS system. It can be dangerous to use this call on drives that not fully support drive spin control. The controller on at least two drives tested hang up when autospindown is enabled; a reset doesn't recover the situation, althought a power-down reset does.
+#Line
+See <PRM 2, page 291=>PRM-2:291>.

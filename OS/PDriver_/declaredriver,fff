@@ -1,0 +1,26 @@
+PDriver_DeclareDriver  (&80156)
+#Parent PDriver_
+=>	R0 =	pointer to driver's <reason code handler=>.handler>
+	R1 =	pointer to driver's private word
+	R2 =	<printer driver number=>PDriver_printernumbers>
+
+This SWI registers a printer driver with the PDriver sharer module, and should be made by the driver when it starts, or when it receives <Service_PDriverStarting=>Service_65>. Drivers can be selected with <PDriver_SelectDriver>.
+# N> Odd, that.
+#Subpage handler
+PDriver sharer
+The sharer itself handles:
+
+è	<PDriver_DeclareDriver>
+è	<PDriver_RemoveDriver>
+è	<PDriver_SelectDriver>
+è	<PDriver_EnumerateDrivers>
+
+For all other SWIs it sets register as follows and then branches to the driver's reason code handler:
+
+R11	reason code (SWI number - &80140)
+R12	pointer to private word (passed to PDriver_DeclareDriver in R1)
+R14	return address
+
+The handler code should implement SWIs as documented, returning errors by the conventional means (in R0, V set).
+#Line
+See <PRM 3, page 640=>PRM-3:640>.

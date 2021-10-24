@@ -1,0 +1,12 @@
+ColourTrans_ReturnOppColourNumberForMode  (&4074B)
+#Parent ColourTrans_
+=>	R0 =	<palette entry=>colourtrans_paletteentry>
+	R1 =	destination mode, or -1 for current mode
+	R2 =	palette pointer, or -1 for current palette, or 0 for default for the mode
+
+<=	R0 =	colour number
+	R1,R2 preserved 
+
+This call, given a palette entry, a destination mode and palette, returns the furthest colour number.
+#Line
+See <PRM 3, page 362=>PRM-3:362>.

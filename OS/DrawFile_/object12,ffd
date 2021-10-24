@@ -1,0 +1,23 @@
+Transformed text object (12)
+#Parent drawfile_format
+Offset	Len	Contents
+#Line
+24	24	<Transformation matrix=>Font_matrix>
+# Oi Justin - Tekkie disc refers you to Font matrix, not draw matrix! :-)
+# Ah, well I am wrong and it is right... Makes a change :-)
+# I can see the headlines now - "PRM correct for once!"
+48	4	Font flags :
+	 	  bit 0 set : kern text
+	 	  bit 1 set : right to left
+
+Rest are as for normal <text object=>drawfile_object1> :
+
+52	4	Text colour
+56	4	Background hint
+60	4	<Text style=>drawfile_textstyle>
+64	4	x-size (in 1/640's of a point)
+68	4	y-size (ie draw units)
+72	4	x coord of start of baseline
+76	4	y coord of it
+80	n	zero terminated string
+padding

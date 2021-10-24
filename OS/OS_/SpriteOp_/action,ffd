@@ -1,0 +1,22 @@
+Action codes when plotting sprites
+#Parent OS_SpriteOp
+Value	Meaning
+#Line
+0	Overwrite
+1	Disjoin (OR)
+2	Conjoin (AND)
+3	Exclusive Disjoin (EOR)
+4	Invert screen
+5	Identity (No change)
+6	Conjoin Negation (AND with NOT sprite colour)
+7	Disjoin Negation (OR with NOT sprite colour)
+8-15	As 0-7, but with mask
+#Wrap off
+16	Use ECF 1	}
+32	Use ECF 2	} Only one of these may
+48	Use ECF 3	} be used
+64	Use ECF 4	}
+80	Use giant ECF	}
+
+#Wrap on
+In the Acorn Aasm header files I use for reference it also specifies that 32 may be used to mean Use sprite palette, but I cannot reconcile this with the rest of the table nor other literature.

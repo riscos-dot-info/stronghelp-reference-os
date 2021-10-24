@@ -1,0 +1,14 @@
+PDriver_InsertIllustration  (&80154)
+#Parent PDriver_
+=>	R0 =	file handle of illustration
+	R1 =	pointer to <clipping path=>Draw_pathblock>, or 0 for no clipping
+	R2 =	bottom left x coord
+	R3 =	bottom left y coord
+	R4 =	bottom right x coord
+	R5 =	bottom right y coord
+	R6 =	top left x coord
+	R7 =	top left y coord
+
+This SWI inserts the illustration from the file handle into the current print job. Check the <features word=>PDriver_features> to verify that the driver does support it. All co-ordinates are in 1/256 of an OS unit ({/}i.e.{/} Draw units).
+#Line
+See <PRM 3, page 636=>PRM-3:636>.

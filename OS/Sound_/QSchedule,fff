@@ -1,0 +1,23 @@
+Sound_QSchedule  (&401C1)
+#Parent Sound_
+=>	R0 =	schedule period or
+	 	  -1		to synchronise with the previously scheduled event
+	 	  -2		immediately schedule
+	R1 =	0		Schedule <Sound_ControlPacked>
+	 	&F0XXXXXX	Schedule SWI number &XXXXXX
+	R2 =	R0 for SWI
+	R3 =	R1 for SWI
+<=	R0 =	0	success
+	 	\< 0	failure
+
+This call schedules a SWI on the queue. Typically this is <Sound_ControlPacked>, but any SWI may be scheduled provided:
+
+#tab
+è	entry is R0, R1 as specifed, R2-R7 = 0
+è	if R0 or R1 point to buffered parameters, these must be available when the SWI is called
+
+The X form of the SWI is forced, return parameters are discarded.
+
+When the beat counter is enabled the schedule period is measured from the last bar start; when disabled from the time of this SWI call.
+#Line
+See <PRM 4, page 45=>PRM-4:45>.

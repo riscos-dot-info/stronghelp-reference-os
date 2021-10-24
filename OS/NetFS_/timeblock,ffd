@@ -1,0 +1,21 @@
+Filer server date and time block
+#Parent NetFS_ConvertDate
+Offset	Bits	Meaning			Base	Range
+#Line
+0	0-4	Day of Month		 	0-31
+ 	5-7	High bits of year	1980	0-127
+1	0-3	Month of year		 	1-12
+ 	4-7	Low bits of year	1980	0-127
+2	0-4	Hours			 	0-23
+3	0-5	Minutes			 	0-59
+4	0-5	Seconds			 	0-59
+
+NetFS stores the file modification date in bits 8-23 of the file access attributes in the same format:
+
+Offset	Bits	Meaning			Base	Range
+#Line
+0	0-7	Standard <access attributes=>fsys_objattr>	 
+1	0-4	Day of Month		 	0-31
+ 	5-7	High bits of year	1980	0-127
+2	0-3	Month of year		 	1-12
+ 	4-7	Low bits of year	1980	0-127

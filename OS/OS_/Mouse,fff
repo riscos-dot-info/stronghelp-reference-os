@@ -1,0 +1,12 @@
+OS_Mouse  (&1C)
+#Parent OS_
+#Wrap Off
+<=	R0 =	x co-ordinate
+	R1 =	y co-ordinate
+	R2 =	<buttons=>OS_mousebuttons>
+	R3 =	time of button change.
+#Wrap
+
+This SWI returns the current mouse status, either from the mouse buffer, or the current mouse position if the buffer is empty.
+#Line
+See <PRM 1, page 699=>PRM-1:699>.

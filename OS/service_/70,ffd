@@ -1,0 +1,7 @@
+Service_DeviceFSStarting (&70)
+#Parent Service_Index
+=>	R1 =	&70 (reason code)
+
+This service is issued by DeviceFS when it (re)initialises. Unlike <Service_ResourceFSStarting=>service_60>, DevicsFS has the good sense to issue this service on a callback, so its SWIs ({/}e.g.{/} <DeviceFS_Register>) can be called in the normal fashion.
+#Line
+See <PRM 2, page 424=>PRM-2:424>

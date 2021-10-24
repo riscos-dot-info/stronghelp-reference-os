@@ -1,0 +1,15 @@
+Dynamic area handler code
+#Parent OS_DynamicArea
+{f25}Þ{f}	R0 =	reason
+	R12 =	workspace pointer passed to <OS_DynamicArea 0=>OS_DynamicArea0>
+
+Dynamic handler code controls what happens to a dynamic area as it is modified by the system.
+
+#Tab
+Reason	Meaning
+#Line
+0	<PreGrow - the area is about to grow=>OS_DynamicAreaHandler0>
+1	<PostGrow - the area has just grown=>OS_DynamicAreaHandler1>
+2	<PreShrink - the area is about to shrink=>OS_DynamicAreaHandler2>
+3	<PostShrink - the area has just shrunk=>OS_DynamicAreaHandler3>
+4	<TestShrink - can we shrink?=>OS_DynamicAreaHandler4>

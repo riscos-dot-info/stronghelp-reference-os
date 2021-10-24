@@ -1,0 +1,11 @@
+Econet_NetworkState  (&4001A)
+#Parent Econet_
+=>	R0 =	station number
+	R1 =	net number
+<=	R2 =	0 fully functional
+	 	strictly other values tranport dependent:
+	 	1 no clock
+
+This SWI returns the state of the underlying transport to the given station.
+#Line
+See <PRM 2, page 686=>PRM-2:686>.

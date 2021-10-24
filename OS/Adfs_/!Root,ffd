@@ -1,0 +1,22 @@
+ADFS
+#Prefix ADFS_
+#Parent !Root
+#Table Columns 2
+<ControllerType>
+<DescribeDisc>
+<DiscOp>
+<Drives>
+<ECCSAndRetries>
+<FlpProcessDCB>
+<FreeSpace>
+<FreeSpace64>
+<HDC>
+<IDEUserOp>
+<LockIDE>
+<MiscOp>
+<PowerControl>
+<Retries>
+<SectorOp>
+<SetIDEController>
+<VetFormat>
+#EndTable

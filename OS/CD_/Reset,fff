@@ -1,0 +1,5 @@
+CD_Reset  (&4125A)
+#Parent CD_
+=>	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+
+This SWI resets the specified drive.

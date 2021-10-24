@@ -1,0 +1,20 @@
+Linear handler code
+#Parent Sound_LinearHandler
+=>	R0 =	private word
+	R1 =	pointer to buffer for data
+	R2 =	pointer to end of buffer
+	R3 =	<flags=>.flags>
+	R4 =	sample frequency in Hz * 1024
+<=	R0-R10 may be corrupt
+
+You should fill the buffer with stereo 16-bit linear data (32 bit words). The top half of the word should be the left channel, the bottom half the right channel.
+#Subpage flags
+Linear handler code flags
+Bit	Meaning
+#Line
+0-2	Initial content type -
+	  0	Data must be overwritten
+	  1	Data may be mixed or overwritten
+	  2	Data is 0; you may return if you would be silent
+	  3-7	reserved (must not be used)
+Others	reserved (ignored)

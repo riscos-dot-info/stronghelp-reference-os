@@ -1,0 +1,7 @@
+Font_SetFont  (&4008A)
+#Parent Font_
+=>	R0 =	new font handle
+
+This SWI sets the current font.
+#Line
+See <PRM 3, page 440=>PRM-3:440>.

@@ -1,0 +1,14 @@
+OS_UpCall 256 - New Application
+#Parent OS_UpcallReasons
+=>	R0 =	256 (New Application)
+	R2 =	<Currently Active Object pointer=>OS_handlers_cao>
+   
+<=	R0 =	0 to stop application, else R0 is preserved
+
+This upcall warns your program that a new application is going to be started
+
+This call is made just before a new application is going to be started in the current application space - for example due to a *Run or module command. It calls the UpCall vector.
+
+One reason to use this call is so that an application can tidy up itself before a new one is started, eg removing routines from vector.
+
+Another reason to use this UpCall is to prevent an application from starting. If you don't want the application to start, your routine should set R0 to 0, and intercept the call to the vector. This will cause the error 'Unable to start application' to be given. Otherwise, you must pass the call on with all reigsters preserved.

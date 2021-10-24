@@ -1,0 +1,5 @@
+PDumper halftoning information 
+Bits	Meaning
+#Line
+0-7	horizontal resolution (pixels)
+8-15	vertical resolution (pixels)

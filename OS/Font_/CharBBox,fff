@@ -1,0 +1,14 @@
+Font_CharBBox  (&4008E)
+#Parent Font_
+=>	R0 =	font handle
+	R1 =	character
+	R2 =	<flags=>font_paintflags> (only bit 4 matters)
+
+<=	R1 =	min x incl
+	R2 =	min y incl
+	R3 =	max x excl
+	R4 =	max y excl
+
+This SWI returns the bounding box for the given character of the given font. The bounding box is the smallest box neccessary to cover the character.
+#Line
+See <PRM 3, page 446=>PRM-3:446>.

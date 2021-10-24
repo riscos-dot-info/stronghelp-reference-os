@@ -1,0 +1,7 @@
+Character entering buffer event
+#Parent event_index
+=>	R0 =	2 (event number)
+	R1 =	<buffer number=>Buffer_buffers>
+	R2 =	byte being inserted
+
+This event is generated when a byte is inserted into a buffer.

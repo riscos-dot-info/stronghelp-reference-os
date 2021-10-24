@@ -1,0 +1,21 @@
+Expansion Card loader
+#Parent Podule_
+The loader provides a simple interface that lets the Expansion Card manager access the card's code space. The regiser usage is common to the 4 entry points.
+
+=>	R0	user data, or byte to read/write
+	R1	user data, or address
+	R2	user data
+	R11	<combined hardware address=>Podule_combinedhardwareaddress>
+	R13	FD stack
+<=	R2,R3,R10 may be corrupted
+
+Entry points:
+
+Offset	Code 
+#Line
+0	Read a byte
+4	Write a byte
+8	Reset card
+12	<Podule_CallLoader>
+
+Return with BICS pc, lr, #V_bit, or V set and an error in R0. An error pointer of 0 will generate a default error.

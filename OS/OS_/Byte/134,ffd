@@ -1,0 +1,11 @@
+OS_Byte 134  Read text cursor position
+#Parent OS_ByteIndex
+=>	R0 =	134
+
+<=	R0 preserved
+	R1 =	position in x direction
+	R2 =	position in y direction
+
+This call returns the text cursor position unless cursor editing is in progress, in which case the position returned is that of the input cursor. <OS_Byte 165=>OS_Byte165> reads the position of the cursor irrespective of cursor editing mode.
+#Line
+See <PRM 1, page 647=>PRM-1:647>

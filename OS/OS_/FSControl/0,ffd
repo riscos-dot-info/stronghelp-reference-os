@@ -1,0 +1,6 @@
+OS_FSControl 0  (&29)
+#Parent OS_FSControl
+=>	R0 =	0 (Set current directory)
+	R1 =	pointer to (wildcarded) filename
+
+This SWI sets current directory and filing system. If a pointer to "" is used, the directory is set to the User Root Directory.

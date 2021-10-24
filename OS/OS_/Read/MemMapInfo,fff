@@ -1,0 +1,8 @@
+OS_ReadMemMapInfo  (&51)
+#Parent OS_
+<=	R0 =	page size in bytes
+	R1 =	number of pages
+
+This call reads the page size used by MEMC and the number of pages in use. Valid page numbers are 0 to R1-1, and the total memory size is R0*R1.
+#Line
+See <PRM 1, page 383=>PRM-1:383>.

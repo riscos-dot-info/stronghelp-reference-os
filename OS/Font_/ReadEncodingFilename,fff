@@ -1,0 +1,16 @@
+Font_ReadEncodingFilename  (&400A5)
+#Parent Font_
+=>	R0 =	font handle
+	R1 =	pointer to buffer
+	R2 =	length of buffer
+<=	R0 =	pointer to encoding filename (in buffer)
+	R1 =	pointer to terminating 0 in buffer
+	R2 =	free bytes in buffer
+
+This SWI returns the filename of the encoding file, primarily of use to PDriverPS. The font manager only uses public encoding files with names of the form
+    {/}font_prefix.{/}Encodings{/}.encoding{/}
+PDriverPS uses the private encoding files with names of the form
+    {/}font_prefix.font_name{/}Encoding
+to find the PostScript names of the font's characters.
+#Line
+See <PRM 3, page 491=>PRM-3:491>.

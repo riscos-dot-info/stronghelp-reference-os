@@ -1,0 +1,15 @@
+Note on Device ID and Host ID
+The *device ID* is a composite of the SCSI id number, the *logical unit number* (LUN) within the device and the logical slot number of the SCSI card. They are packed into 8 bits as follows:
+
+	Bits 2..0	SCSI device id			(0..7)
+	Bits 4..3	Logical SCSI card number	(0..3)
+	Bits 7..5	Logical unit number		(0..7)
+
+The SCSI card numbering is based on the relative slot positions of any SCSI cards in the machine, thus in a machine with 2 cards, in physical slots 2 and 4 they are refered to as logical SCSI card numbers 0 and 1. In a machine with 1 card it may be placed in any slot refered to as logical SCSI card number 0.
+
+The *host ID* is a similar composite, but of SCSI id number and logical slot number, with no LUN field.
+
+	Bits 2..0	Host device id			(0..7) - Usually 7
+	Bits 4..3	Logical SCSI card number	(0..3)
+
+The Host device id is usually 7 and there must be no other devices on the bus with the same id.

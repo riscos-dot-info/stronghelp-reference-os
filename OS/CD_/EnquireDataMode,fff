@@ -1,0 +1,16 @@
+CD_EnquireDataMode  (&4124A)
+#Parent CD_
+=>	R0 =	address mode
+	R1 =	cd address
+	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+<=	R0 =	<Data mode=>.datamode>
+
+This SWI finds out what kind of data is on the disc.
+#Subpage datamode
+Data mode
+Mode	Meaning
+#Line
+0	Audio
+1	Data Mode 1
+2	Data Mode 2 format 1
+3	Data Mode 2 format 2

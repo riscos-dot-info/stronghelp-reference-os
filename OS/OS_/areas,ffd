@@ -1,0 +1,18 @@
+Dynamic areas
+#Parent OS_ChangeDynamicArea
+# Gerph> That is the most common place to look
+Area	Contents
+#Line
+0	System Heap
+1	RMA
+2	Screen Area
+3	Sprite Area
+4	Font Cache
+5	RAM Filing System
+6	Free pool (RISC OS 3.6)
+7	VRAM rescue (RISC OS 3.8)
+8	Kernel buffers (RISC OS 3.8)
+
+256+	User dynamic area
+
+See <memory map=>Machine:Logical> for location.

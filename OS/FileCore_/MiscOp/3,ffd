@@ -1,0 +1,7 @@
+FileCore_MiscOp 3
+#Parent FileCore_MiscOp
+=>	R0 =	3 (reason code)
+	R1 =	drive
+	R8 =	pointer to FileCore instance private word
+
+This call can only be called for a floppy drive. It reverses a single MiscOp '<Lock drive=>FileCore_MiscOp2>'.

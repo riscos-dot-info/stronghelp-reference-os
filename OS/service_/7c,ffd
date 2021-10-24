@@ -1,0 +1,8 @@
+Service_DesktopWelcome (&7C)
+#Parent Service_index
+=>	R1 =	&7C (reason code)
+<=	R1 =	0 to claim, preserved otherwise
+
+This service is issued by the 'Desktop' module before it displays the startup banner. If the service is claimed then the standard banner will not be displayed.
+#Line
+See <PRM 3, page 80=>PRM-3:80>

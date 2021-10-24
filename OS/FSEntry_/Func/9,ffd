@@ -1,0 +1,8 @@
+FSEntry_Func 9
+#Parent FSEntry_Func
+=>	R0 =	9 (Access objects)
+	R1 =	pointer to (wilcarded) pathname
+	R2 =	<attribute string=>fsys_access_string>
+	R6 =	pointer to special field, or 0 if not present
+
+This call should set the access attributes for all matching files. It implements  {fCode}*Access{f}. It is only made if bit 18 of the filing system <information word=>fsys_infoword> set.

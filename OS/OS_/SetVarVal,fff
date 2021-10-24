@@ -1,0 +1,16 @@
+OS_SetVarVal  (&24)
+#Parent OS_
+=>	R0 =	pointer to name
+	R1 =	pointer to value to set to
+	R2 =	length, or -1 to delete
+	R3 =	name pointer (0 for 1st call)
+	R4 =	<variable type=>OS_vartypes>
+
+<=	R3 =	new name pointer
+	R4 =	variable type
+
+This SWI sets a variable's value to that specified, or deletes the variable. The name may be wildcarded for deletion and update (using '*' and '#'). Code variables will not be deleted unless R4 = 16. Literal strings do not need to be null terminated, as R2 is used for the length.
+
+<OS_ReadVarVal> is marked as being re-entrant, which would allow it to re-enter the same code variable's read code. *No* note is made about this in the PRM and the <code variable example=>PRM-1:332> in the PRM calls <OS_Byte &87=>OS_Byte135> which has undefined re-entrancy. D'oh.
+#Line
+See <PRM 1, page 311=>PRM-1:311>.

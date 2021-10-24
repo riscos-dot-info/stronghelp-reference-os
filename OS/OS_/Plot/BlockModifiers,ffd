@@ -1,0 +1,10 @@
+Block copy/move modifiers
+#Parent OS_PlotIndex
+#Align Centre;Wrap Off
+#f1:Modifiers :
+#Align
+#TAB Align Right, Align Left, Align Right, Align Left
+0	Move relative			4	Move absolute
+1	Relative rectangle move		5	Absolute rectangle move
+2	Relative rectangle copy		6	Absolute rectangle copy
+3	Relative rectangle copy		7	Absolute rectangle copy

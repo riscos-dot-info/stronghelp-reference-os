@@ -1,0 +1,11 @@
+CD_Version  (&41240)
+#Parent CD_
+<=	R0	pointer to <version block=>.block>
+
+Read the version of the CD module installed
+#Subpage block
+CD_Version block
+Offset	Contents
+#Line
+0	Version number
+4...	Version string

@@ -1,0 +1,7 @@
+Service_PDumperDying (&67)
+#Parent Service_Index
+=>	R1 =	&67 (reason code)
+
+This service is issued when <PDumper=>PDumper_> is about to quit.
+#Line
+See <PRM 3, page 677=>PRM-3:677>

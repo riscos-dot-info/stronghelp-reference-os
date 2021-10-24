@@ -1,0 +1,17 @@
+Draw path block
+#Parent Draw_
+Draw path blocks consist of a block of words; code followed by any parameters. The block is terminated by an 'End of path' element.
+
+Code	Parameters	Meaning
+#Line
+0	-		End of path (when writing a path a parameter is used to indicate the remaining length of the block, which is updated as data is written and the end of path marker is moved)
+1	pointer		Continuation of path at pointer
+2	x, y		Move to x,y starting a new sub-path
+3	x, y		Move to x,y without starting a new sub-path (internal use)
+4	-		Close sub-path with move
+5	-		Close sub-path with line
+6	cx1, cy1,
+	cx2, cy2,
+	x, y		Bezier curve to x,y using control points cx1, cy1 and cx2, cy2
+7	x, y		Move to x,y without starting a new sub-path (mostly for internal use)
+8	x, y		Line to x,y

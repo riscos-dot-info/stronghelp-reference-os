@@ -1,0 +1,14 @@
+Buffer_GetInfo  (&42947)
+#Parent Buffer_
+=>	R0 =	<buffer number=>Buffer_buffers>
+<=	R0 =	<flags=>Buffer_flags>
+	R1 =	pointer to buffer start
+	R2 =	pointer to buffer end
+	R3 =	insertion offset
+	R4 =	removal offset
+	R5 =	bytes free
+	R6 =	bytes used
+
+This SWI reads information about a particular buffer. Insertion and removal points wrap around, and the sum of free space and characters may not equal total buffer size.
+#Line
+See <PRM 4, page 97=>PRM-4:97>.

@@ -1,0 +1,12 @@
+OS_GBPB 10 buffer
+#Parent OS_GBPB10
+Offset	Contents
+#line
+0	<Load address=>fsys_loadexec>
+4	<Exec address=>fsys_loadexec>
+8	Length
+12	<Attributes=>fsys_objattr>
+16	<Object type=>fsys_objtype>
+20	name (0-terminated)
+
+Entries are word aligned.

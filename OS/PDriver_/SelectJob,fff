@@ -1,0 +1,12 @@
+PDriver_SelectJob  (&80145)
+#Parent PDriver_
+=>	R0 =	file handle, or 0 to suspend current job
+	R1 =	pointer to title string for job, or 0 if none
+
+<=	R0 =	file handle of previously active job
+
+This SWI starts a new print job, resumes a suspended one, or suspends the current one. The title must only contain characters in the range 32-126, and is terminated by the first out of range character.
+
+If an error occurs the previously selected job will automatically be restored as current job.
+#Line
+See <PRM 3, page 613=>PRM-3:613>.

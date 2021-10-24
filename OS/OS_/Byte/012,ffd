@@ -1,0 +1,12 @@
+OS_Byte 12  Write keyboard auto repeat rate
+#Parent OS_Byte
+=>	R0 =	12 (&0C)
+	R1 =	repeat rate in centiseconds (0 to set repeat delay/rate to default)
+
+<=	R0 preserved
+	R1 =	previous repeat rate
+	R2 corrupted
+
+After the auto-repeat delay specified by <OS_Byte 11=>OS_Byte011>, each key will repeat until released at the rate passed to this call. This enables you to change the initial rate from the default set by <*Configure Repeat=>*Status Repeat>, stored in <CMOS byte 13=>OS_Bytecmos>. This variable may also be set/read by <OS_Byte 197=>OS_Byte197>.
+#Line
+See <PRM 1, page 859=>PRM-1:859>

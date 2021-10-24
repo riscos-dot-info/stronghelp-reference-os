@@ -1,0 +1,9 @@
+OS_Args 7
+#Parent OS_Args
+=>	R0 =	7
+	R1 =	file handle
+	R2 =	pointer to buffer
+	R5 =	length of buffer
+<=	R5 =	free bytes in buffer
+
+This SWI returns the pathname of the file given in R1.

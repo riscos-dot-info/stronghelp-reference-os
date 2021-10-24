@@ -1,0 +1,17 @@
+Cursor key state
+#Parent OS_Byte004
+0 :	Enables cursor editing (default state).
+
+1 :	Disables cursor editing. They return the following ASCII values:
+	  Copy		=> 135
+	  Left arrow	=> 136
+	  Right arrow	=> 137
+	  Down arrow	=> 138
+	  Up arrow	=> 139
+
+2 :	Cursor keys act as function keys. The function key numbers assigned are:
+	  Copy		=> 11
+	  Left arrow	=> 12
+	  Right arrow	=> 13
+	  Down arrow	=> 14
+	  Up arrow	=> 15

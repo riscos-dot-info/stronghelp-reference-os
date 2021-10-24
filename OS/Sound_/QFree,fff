@@ -1,0 +1,8 @@
+Sound_QFree  (&401C3)
+#Parent Sound_
+<=	R0 =	number of slots guaranteed free
+	 	\< 0 means worst case limit exceeded - some free slots may remain
+
+This SWI returns the number of free slots in the Scheduler queue. The value returned is pessimistic - it assumes that the worst possible combination of schedule times will be requested when it calculates free space. Because of this it may possible to successfully schedule more events than the number returned, and it may be possible still to schedule events when the returned value is negative.
+#Line
+See <PRM 4, page 48=>PRM-4:48>.

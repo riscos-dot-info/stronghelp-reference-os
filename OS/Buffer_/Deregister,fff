@@ -1,0 +1,7 @@
+Buffer_Deregister  (&42943)
+#Parent Buffer_
+=>	R0 =	Handle of buffer to be removed
+
+This deregisters the buffer specified by the handle given in R0. You should this to deregister buffers registerd with <Buffer_Register> - for buffers made using <Buffer_Create> you should use <Buffer_Remove> instead.
+#Line
+See <PRM 4, page 91=>PRM-4:91>.

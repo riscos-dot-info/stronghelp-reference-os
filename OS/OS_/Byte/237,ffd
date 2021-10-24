@@ -1,0 +1,13 @@
+OS_Byte 237  Read/Write cursor key status
+#Parent OS_ByteIndex
+=>	R0 =	237
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	previous state
+	R2 =	numeric keypad interpretation (see <OS_Byte 238=>OS_Byte238>)
+
+This call reads or sets the <cursor key status=>OS_Byte004state>. The state may also be written with <OS_Byte 4=>OS_Byte004>.
+#Line
+See <PRM 1, page 898=>PRM-1:898>

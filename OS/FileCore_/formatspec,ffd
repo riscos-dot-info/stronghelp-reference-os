@@ -1,0 +1,7 @@
+Format specifier
+\#	Meaning
+#Line
+&80	L format floppy
+&81	D format floppy
+&82	E format floppy
+&83	F format floppy

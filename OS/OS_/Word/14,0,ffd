@@ -1,0 +1,9 @@
+OS_Word 14,0
+#Parent OS_Word
+=>	R0 =	14
+#Wrap off
+	R1 =	pointer buffer for string, containing :
+#Wrap
+	 	 	0 = 1
+
+This OS_Word reads the time from the soft copy of the CMOS clock. The format of the CR terminated string written to R1 is determined by the current territory.

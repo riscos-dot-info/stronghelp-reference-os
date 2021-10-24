@@ -1,0 +1,8 @@
+Device overrun event
+#Parent event_index
+=>	R0 =	22	(event number)
+	R1 =	device driver's handle
+	R2 =	file handle
+	R3 =	0
+
+This event is generated when <DeviceFS_ReceivedCharacter> is called for an unbuffered stream where the previously received character has not been read. The new character overwrites the previous character.

@@ -1,0 +1,12 @@
+PDriver_MiscOp 0
+#Parent PDriver_MiscOp
+=>	R0 =	0 (reason code)
+	R1 =	pointer to control terminated RISC OS <font name=>Font_identifier>
+	R2 =	pointer to printer's native font name (control terminated) or 0
+	R3 =	<printer code flags=>PDriver_MiscOp0flags>
+	R4 =	overwrite existing entries if bit 0 set, else error
+<=	depends on reason code
+
+This SWI is used by the Printers application to add a font name to the list known for the current printer. If there is no current job it is added to a global list, else it is added to a local list for the current job. Each job's list is initialised as a copy of the global list when it is started.
+
+Native font names are case sensitive, and may be null (for example, a direct driver printer).

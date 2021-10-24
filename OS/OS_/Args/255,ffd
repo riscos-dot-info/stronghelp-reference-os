@@ -1,0 +1,6 @@
+OS_Args 255
+#Parent OS_Args
+=>	R0 =	255
+	R1 =	file handle or 0 for all
+
+This SWI ensures that any buffered data on the given file(s) is written out.

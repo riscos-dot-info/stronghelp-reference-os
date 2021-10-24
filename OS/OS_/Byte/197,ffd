@@ -1,0 +1,13 @@
+OS_Byte 197  Read/Write keyboard auto repeat rate
+#Parent OS_ByteIndex
+=>	R0 =	197
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	value before being overwritten
+	R2 =	corrupted
+
+Note, that *FX 12,0 resets the auto repeat rate/delay to default *FX 197,0 sets the auto repeat rate to zero. See <OS_Byte 12=>OS_Byte012> for more information.
+#Line
+See <PRM 1, page 875=>PRM-1:875>

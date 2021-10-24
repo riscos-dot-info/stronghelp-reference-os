@@ -1,0 +1,14 @@
+Econet_CreateReceive  (&40000)
+#Parent Econet_
+=>	R0 =	port number
+	R1 =	station number
+	R2 =	net number
+	R3 =	pointer to data buffer
+	R4 =	buffer size
+
+<=	R0 =	handle
+	R2 =	0 if local net
+
+This SWI creates a control block to receive data on an econet port. The data buffer should be in RMA or some other permanently available area of memory, due to the way in which the data is read.
+#Line
+See <PRM 2, page 647=>PRM-2:647>.

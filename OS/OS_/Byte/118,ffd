@@ -1,0 +1,10 @@
+OS_Byte 118  Reflect keyboard status in LEDs
+#Parent OS_ByteIndex
+=>	R0 =	118
+
+<=	R0 preserved
+	R1,R2 corrupted
+
+The settings of Caps Lock, Scroll Lock and Num Lock are held in a location referred to as the keyboard status byte. See <OS_Byte 202=>OS_Byte202> for details of this. Under normal circumstances they are shown by the keyboard LEDs which are set into the keycaps. However, if the keyboard status byte is written to using OS_Byte 202, then the LEDs will not update. This call ensures, that the current contents of the keyboard status byte are reflected in the LEDs.
+#Line
+See <PRM 1, page 862=>PRM-1:862>

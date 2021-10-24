@@ -1,0 +1,7 @@
+FSEntry_Func 1
+#Parent FSEntry_Func
+=>	R0 =	1 (Set library directory)
+	R1 =	pointer to (wilcarded) directory name
+	R6 =	pointer to special field, or 0 if not present
+
+This call is only made by RISC OS 2. If the directory name is null you should set the library directory to a filing system default. This call should not make the FS current - you should provide a separate command to do this.

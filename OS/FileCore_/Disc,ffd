@@ -1,0 +1,37 @@
+FileCore disc descriptor
+Offset	Name		Meaning
+#Line
+0	log2secsize	Log2 of sector size (Sector size = 2^x)
+1	secspertrack	number of sectors per track
+2	heads		number of disc heads, if interleaved otherwise -1 (1 for old directories)
+3	density		<disc density=>FileCore_densities>
+4	idlen		length of id field of a map fragment (in bits)
+5	log2bpmp	log2 of number of bytes per map bits
+6	skew		track to track sector skew for random access file allocation
+7	bootoption	boot option (as in *Opt 4,n)
+8	lowsector	lowest numbered sector + <disc flags=>.flags>
+9	nzones		number of zones in the map
+A-B	zone_spare	number of non-allocation bits between zones
+C-F	root		disc address of root directory
+10-13	disc_size	disc size in bytes
+14-15	disc_id		disc <cycle id=>FileCore_cycleid>
+16-1F	disc_name	disc name (spaced to 10 chars, no terminator)
+20-23	disctype	<filetype given to disc=>Filetypes:!Root>
+
+{*}'Small' discs (Pre-RISC OS 3.6) :{*}
+24-3F	 		reserved, must be 0
+
+{*}'Large' discs (RISC OS 3.6 and later) :{*}
+24-27	disc_size2	high word of disc size
+28	share_size	b0-3: log2 share size granularity (in sectors)
+	 		b4-7: reserved, must be 0
+29	big_flag	b0: set if this is a 'large' disc
+	 		b1-7: reserved, must be 0
+2A-3F	 		reserved, must be 0
+#subpage flags
+Disc description flags
+bits	Meaning
+#line
+0-5	lowest numbered sector id on a track
+6	if set, treat sides as a sequence (not interleaved)
+7	if set, disc is 40 track

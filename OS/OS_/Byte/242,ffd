@@ -1,0 +1,45 @@
+OS_Byte 242  Read serial baud rates
+#Parent OS_ByteIndex
+=>	R0 =	242 (&FB)
+	R1 =	0
+	R2 =	255
+
+<=	R0 preserved
+	R1 =	<baud rates=>.baud>
+	R2 =	timer switch state (see <OS_Byte 243=>OS_Byte243>)
+
+This call reads the serial rates in a backwards compatible format. You should use <OS_SerialOp 5=>OS_SerialOp5> and <6=>OS_SerialOp5> in preference
+#Line
+See <PRM 2, page 457=>PRM-2:457>
+#Subpage baud
+OS_Byte 242 baud rate block
+The bits in this block are arranged to extend the block used by the original hardware
+
+Bit	Meaning
+#Line
+0-2	Transmit bits 0-2
+3-5	Receive bits 0-2
+6	Receive bit 3
+7	Transmic bit 3
+
+where the 4 bit values encode the buad rates:
+
+#Tab
+Value	Baud rate
+#Line
+0	19200
+1	1200
+2	4800
+3	150
+4	9600
+5	300
+6	2400
+7	75
+8	7200
+9	134.5
+10	1800
+11	50
+12	3600
+13	110
+14	600
+15	undefined

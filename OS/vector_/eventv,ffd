@@ -1,0 +1,10 @@
+Event vector (16)
+#parent vector_index
+=>	R0 =	<Event number=>event_index>
+	Other registers dependant on call
+
+When called, ALL event numbers are passed to the routine specified if they are enabled. Therefore it is vital that you check whether the event number is the same as that which you wish to receive (an example of not doing this are the Coconizer tune modules which speed up on key presses because Key Transition is enabled)
+
+Events should be enabled with <OS_Byte 14=>os_byte014> and disabled with <OS_Byte 13=>os_byte013>.
+#Line
+See <PRM 1, page 82=>PRM-1:82>.

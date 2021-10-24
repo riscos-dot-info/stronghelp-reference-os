@@ -1,0 +1,22 @@
+Service_UKCompression (&B7)
+#Parent service_index
+=>	R0 =	<sub-reason=>.subreason>
+	R1 =	&B7 (reason code)
+	R2 =	<load address=>fsys_loadexec>
+	R3 =	size
+	R4 =	<execute address=>fsys_loadexec>
+	R5 =	filename (not canonicalised)
+
+<=	R1 =	0 if claimed (all changes have been performed); else preserved
+	R3 =	new size
+	R4 =	new execute address
+
+This service is used to provide patches for RISC OS 3.7 where required. It is called when an <Absolute=>FileTypes:FF8> file is run. Only if the file does not contain an AIF header will sub-reason 0 be called. After patching <OS_SynchroniseCodeAreas> will be called.
+#
+#SubPage subreason
+UKCompression sub-reasons
+Reason	Meaning
+#Line
+0	First pass - unsqueeze
+1	Second pass - patch
+others	reserved

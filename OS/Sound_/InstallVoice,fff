@@ -1,0 +1,57 @@
+Sound_InstallVoice  (&40183)
+#Parent Sound_
+=>	R0 =	pointer to Voice Generator or
+	 	0 to <read current voice's name=>.0>
+	 	1 to <add a voice using a local name=>.1>
+	 	2 to <read current voice's local name=>.2>
+	 	3 to <change current voice's local name=>.3>
+	R1 =	voice slot (1-32) (0 to use next free slot)
+
+<=	R0 =	pointer to name of previous voice (or null terminated error string)
+	R1 =	voice number allocated (0 for failed!)
+
+Use this call to add a Voice Generator to the table of available voices. An error is indicated by R1 set to zero on exit, and R0 pointing to an error string, not the V bit set in the usual manner.
+#Line
+See <PRM 4, page 28=>PRM-4:28>.
+#SubPage 0
+Sound_InstallVoice 0  (&40183)
+=>	R0 =	0
+	R1 =	voice slot (1-32)
+
+<=	R0 =	pointer to name of voice (or null if slot is free)
+	R1 preserved
+
+Reads the name of the voice currently installed in the specified slot.
+#SubPage 1
+Sound_InstallVoice 1  (&40183)
+=>	R0 =	1
+	R1 =	voice slot (1-32)
+	R2 =	pointer to Voice Generator
+	R3 =	voice name in local language (or 0 if no local name)
+
+<=	R0 preserved
+	R1 =	voice number allocated (0 for failed!)
+	R0 =	pointer to name of previous voice (or null terminated error string if R1 = 0)
+	R3 preserved
+
+This bodge allows a voice to be installed with a local name.
+#SubPage 2
+Sound_InstallVoice 2  (&40183)
+=>	R0 =	0
+	R1 =	voice slot (1-32)
+
+<=	R0, R1 preserved
+	R2 =	pointer to name of voice (or null if slot is free)
+	R3 =	pointer to local name of voice
+
+Reads the name of the voice currently installed in the specified slot, and the name in the local language.
+#SubPage 3
+Sound_InstallVoice 3  (&40183)
+=>	R0 =	0
+	R1 =	voice slot (1-32)
+	R2 =	0
+	R3 =	voice name in local language
+
+<=	R0 - R3 preserved
+
+This call sets the name of the voice in the local language. It doesn't matter whether the voice had any local name prior to the call.

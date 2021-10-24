@@ -1,0 +1,7 @@
+GS flags
+#Parent OS_GSInit
+bit	 Meaning when set
+#Line
+29	Space is string terminator
+30	Control codes ('|') not converted
+31	" is not stripped around strings

@@ -1,0 +1,17 @@
+OS_Word 14,2
+#Parent OS_Word
+=>	R0 =	14
+	R1 =	pointer to buffer, starting with 8-byte block  :
+		 	0 = 2
+		 	1 = year		(0-99)
+		 	2 = month		(1-12)
+		 	3 = day of month	(1-31)
+		 	4 = day of week		(1-7, 1=Sunday)
+		 	5 = hour		(0-23)
+		 	6 = minute		(0-59)
+		 	7 = second		(0-59)
+<=	R1 =	pointer to buffer which now contains string
+
+This OS_Word converts the block to a CR terminated string, the format of which is determined by the current territory.
+#line
+*Note*:	This call is liable to have trouble producing Y2K compliant results and as such, you should use <OS_ConvertDateAndTime> in preference to this call.

@@ -1,0 +1,12 @@
+NetFS_EnumerateFSList  (&40049)
+#Parent NetFS_
+=>	R0 =	offset in file server list of first item to read
+	R1 =	pointer to buffer
+	R2 =	size of buffer
+	R3 =	number of items to read
+<=	R0 =	offset of next item to read, or -1 if finished
+	R3 =	number of items read
+
+This SWI is used to list information about file servers held by NetFS - the information returned by the {fCode}*ListFS{f} command. The information is returned as a series of <20 byte blocks=>NetFS_fsblock>, in alphabetical order. To ensure that the list does not change during enumeration the SWI disables the automatic update of the list - you *must* restart this after enumeration by calling <NetFS_EnableCache>.
+#Line
+See <PRM 2, page 354=>PRM-2:354>.

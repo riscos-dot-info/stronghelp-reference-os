@@ -1,0 +1,9 @@
+Service_PostReset (&27)
+#Parent Service_Index
+=>	R1 =	&27 (reason code)
+
+This service is issued at the end of a machine reset. General module tasks and filers should reset their taskhandles as if <Service_StartedWimp=>Service_4A> or <Service_StartedFiler=>Service_4C> had been called, ready for <Service_StartWimp=>Service_49> or <Service_StartFiler=>Service_4B>.
+
+MessageTrans does not close message files on a soft reset - if you do not want your files to remain open this service will be useful.
+#Line
+See <PRM 3, page 69=>PRM-3:69>, <page 72=>PRM-3:72> and <PRM 2, page 492=>PRM-2:492>.

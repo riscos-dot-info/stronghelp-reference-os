@@ -1,0 +1,10 @@
+OS_Byte 125  Set escape condition
+#Parent OS_ByteIndex
+=>	R0 =	125 (&7D)
+
+<=	R0 preserved
+	R1,R2 corrupted
+                                                  
+This call sets an escape condition (calling the <escape handler=>OS_handlers_escape>), but does *not* generate an <escape_event=>event_6>.
+#Line
+See <PRM 1, page 867=>PRM-1:867>

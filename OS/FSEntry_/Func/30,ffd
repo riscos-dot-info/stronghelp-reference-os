@@ -1,0 +1,13 @@
+FSEntry_Func 30
+#Parent FSEntry_Func
+=>	R0 =	30 (Read free space)
+	R1 =	pointer to name of any object on image
+	R6 =	pointer to special field, or 0 if not present
+
+<=	R0 =	free space
+	R1 =	size of largest object that can be created.
+	R2 =	size of disc
+
+This call reads the free space of an image, implementing <OS_FSControl 49=>OS_FSControl49>.
+#
+# This entry point is only called if bit 23 of the filing system <information word=>fsys_infoword> is set.

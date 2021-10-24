@@ -1,0 +1,2 @@
+Colour offset
+This is the number of colours that is used when anti aliasing. The colours used will be from \<foreground> to \<foreground> + \<offset>. The offset can be from -14 to 14. If offset is 0, then no anti-aliasing is done.

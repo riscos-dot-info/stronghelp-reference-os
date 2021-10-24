@@ -1,0 +1,32 @@
+OS_Find  (&0D)
+#Parent OS_
+=>	R0 =	reason code, and <path bits=>.pathbits> if reason\<\>0
+	R1 =	filename for opening files, handle otherwise
+	R2 =	pathname, if 'path used' is 1 or 2)
+
+<=	R0 =	file handle, if opening
+
+This SWI opens and closes files according to the reason code
+
+#tab
+R0	Action
+#Line
+&00	Closes file R1, or all files if R1 = 0
+&40	Open existing file with read-only access
+&80	Create empty file with read/write access
+&C0	Open existing file with read/write access
+#
+#Subpage pathbits
+OS_Find path bits
+Low bits	Meaning
+#Line
+0-1		Path used
+		  0 : File$Path
+		  1 : String pointed to by R2
+		  2 : Variable pointed to by R2
+		  3 : None
+2		If 1 then error if open existing dir
+3		If 1 then error if file doesn't exist
+4-5		0
+#Line
+See <PRM 2, page 72=>PRM-2:72>.

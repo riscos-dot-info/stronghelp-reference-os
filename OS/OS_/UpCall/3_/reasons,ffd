@@ -1,0 +1,17 @@
+OS_UpCall 3 reason codes
+R9	Meaning
+#Line
+0	<Saving memory to file=>OS_UpCall3_0>
+1	<Writing catalogue information=>OS_UpCall3_1>
+2	<Writing load address only=>OS_UpCall3_2>
+3	<Writing execution address only=>OS_UpCall3_3>
+4	<Writing attributes only=>OS_UpCall3_4>
+6	<Deleting file=>OS_UpCall3_6>
+7	<Creating empty file=>OS_UpCall3_7>
+8	<Creating directory=>OS_UpCall3_8>
+257	<Creating and opening for update=>OS_UpCall3_257>
+258	<Opening for update=>OS_UpCall3_258>
+259	<Closing file=>OS_UpCall3_259>
+512	<Ensure file suze=>OS_UpCall3_512>
+520	<Renaming file=>OS_UpCall3_520>
+521	<Setting attributes=>OS_UpCall3_521>

@@ -1,0 +1,9 @@
+Sound_SampleRate  (&40146)
+#Parent Sound_
+=>	R0 =	reason code
+	 	  0	<read number of sample rates=>Sound_SampleRate0>
+	 	  1	<read current sample rate index=>Sound_SampleRate1>
+	 	  2	<convert sample rate index to sample rate=>Sound_SampleRate2>
+	 	  3	<set current sample rate by index=>Sound_SampleRate3>
+
+This SWI is used to read, or change, the 16-bit sound system sample rate.

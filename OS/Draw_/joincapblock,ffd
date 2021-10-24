@@ -1,0 +1,33 @@
+Draw join/cap block
+#Parent Draw_
+Offset	Meaning
+#Line
+0	<Join style=>.joinstyle>
+1	<Start cap=>.endsstyle>
+2	<End cap=>.endsstyle>
+3	reserved, must be 0
+4	mitre limit, in form &ffff.ffff (the same form as a <draw transform unit=>draw_transformunits>); if the distance projected by mitres would be greater than this proportion of the line width then it will be bevelled
+8,9	Additional width of start triangular cap, in 1/256 of line width
+10,11	Extension of start cap from line, in 1/256 of line width
+12,13	Additional width of end triangular cap, in 1/256 of line width
+14,15	Extension of end cap from line, in 1/256 of line width
+
+If mitres and triangles are not used then the block may be 4 bytes long.
+If mitres are used but triangles are not, then the block may be 8 bytes long.
+
+Regrettably triangles cannot be used on thin lines. (It would have been possible to use absolute widths and length on thin paths. Alas, this is not so).
+#subpage joinstyle
+Join style
+Value	Meaning
+#Line
+0	Mitred (edges continue until they meet)
+1	Round (a curve from edge to edge)
+2	Bevelled (a line from edge to edge)
+#subpage endsstyle
+Cap ends style
+Value	Meaning
+#Line
+0	Butt (a line from edge to edge)
+1	Round (a curve from edge to edge)
+2	Squares (a square projects from the end)
+3	Triangle (forming an arrow or similar)

@@ -1,0 +1,5 @@
+OS_FSControl 40  (&29)
+=>	R0 =	40 (Swap current and previous directories)
+<=	Registers preserved
+
+Performs the equivalent of {fCode}*Back{f}, i.e. swaps the previous directory with the current directory.

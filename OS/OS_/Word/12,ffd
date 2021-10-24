@@ -1,0 +1,11 @@
+OS_Word 12
+#Parent OS_WordIndex
+=>	R0 =	12
+	R1 =	buffer:
+	 	 0 logical colour to change
+	 	 1 new physical colour
+	 	 2 red component
+	 	 3 green component
+	 	 4 blue component
+
+This is equivalent to <VDU 19=>VDU:19>, but is faster and may be used in interrupt routines.

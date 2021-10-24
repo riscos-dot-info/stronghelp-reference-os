@@ -1,0 +1,8 @@
+OS_Byte CMOS 16
+#Parent OS_Bytecmos
+Bit(s)	Meaning
+#Line
+1	Loud beep
+3	NoScroll (enable <scroll protection=>VDU:Scroll_Protection>)
+4	Boot from disc
+5,6,7	Serial data format (default for bits 2-4 in <OS_Byte 156=>OS_Byte156>)

@@ -1,0 +1,7 @@
+OS_Byte CMOS 10
+#Parent OS_Bytecmos
+Bit(s)	Meaning
+#Line
+0,1,2,3	Mode (RO2 only, top bit in <Byte 133=>OS_ByteCMOS133>)
+4	Interlace active
+5,6,7	Vertical adjust (signed)

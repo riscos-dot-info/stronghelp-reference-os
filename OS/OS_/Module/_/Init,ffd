@@ -1,0 +1,17 @@
+Module initialisation code
+#Parent OS_Module_format
+=>	R10 =	pointer to environment string (initialisation parameters supplied by caller of <OS_Module>)
+	R11 =	0		module loaded from disc or RAM
+	 	>&03000000	module loaded from expansion card with this  I/O base
+	 	else		new instantiation, this many other instantiations
+	R12 =	pointer to private word for this module instantiation
+	R13 =	supervisor stack pointer
+
+<=	Preserve processor mode, interrupt state, V flag and R7-R11,R13
+	Can corrupt R0-R6,R12,R14 and flags, except V unless error is being returned
+
+This entry is called by RISC OS after the module has been loaded into RMA, before the Start code is called and before the module's SWIs (if it has any) are recognised.  During a module's initialisation code any calls to its own SWIs or *commands will provoke an 'I don't know what you're talking about' reaction from RISC OS.
+
+*Check* your private word is 0 before claiming workspace - if it is non-zero you've already been initialised (and this call is being made after a <non-fatal finalisation=>OS_Module_Final>).
+
+Note that you can corrupt quite a few registers in initialisation code - don't waste time stacking anything that the OS has already taken care of.

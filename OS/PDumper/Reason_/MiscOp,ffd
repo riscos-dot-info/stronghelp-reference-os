@@ -1,0 +1,9 @@
+PDumperReason_MiscOp (7)
+#Parent PDumperReason_
+=>	R0 =	PDriver_MiscOp <reason code=>PDriver_MiscOp.ops>
+	R11 =	7 (reason code)
+	R12 =	private word
+	other registers as for <PDriver_MiscOp> reason
+<=	depends on PDriver_MiscOp reason
+
+This is allows calls to be made direct to the dumper.

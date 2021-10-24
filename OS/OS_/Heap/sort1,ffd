@@ -1,0 +1,11 @@
+Standard sort routines
+#Parent OS_HeapSort
+Type	R1 is array of :
+#line
+0	cardinal
+1	integer
+2	pointer to cardinal
+3	pointer to integer
+4	pointer to chars (case insensitive)
+5	pointer to chars (case sensitive)
+\>5     pointer to custom objects, R2 is address of <comparison routine=>os_heapsort2>

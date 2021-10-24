@@ -1,0 +1,12 @@
+Service_WimpSaveDesktop (&5C)
+#Parent Service_index
+=>	R0 =	0 (flags as in <Message_SaveDesktop=>Wimp:Msg_A> - currently all reserved)
+	R1 =	&5C (reason code)
+	R2 =	file handle of desktop file being written
+<=	R0 =	pointer to <error block=>swi_errorblock>, or preserve if not claimed
+	R1 =	0 to claim, or preserved to pass on
+	R2 preserved
+
+This service is issued before <Message_SaveDesktop=>Wimp:Msg_A> to allow modules to save state to a desktop boot file in the form of *Commands. It should only be claimed if an error occurs.
+#Line
+See <PRM 3, page 78=>PRM-3:78>

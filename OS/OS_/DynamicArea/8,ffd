@@ -1,0 +1,14 @@
+OS_DynamicArea 8 (&66)
+#Parent OS_DynamicArea
+{*}Sets clamps on maximum size for subsequently created dynamic areas{*}
+{f25}Þ{f}	R0 =	8
+	R1 =	clamp on maximum size of (non-Sparse) areas created by <OS_DynamicArea 0=>OS_DynamicArea0> with r5 = -1, or 0 to read only.
+	R2 =	clamp on maximum size of (non-Sparse) areas created by <OS_DynamicArea 0=>OS_DynamicArea0> with r5 > 0, or 0 to read only.
+	R3 =	clamp on maximum size of Sparse areas created by <OS_DynamicArea 0=>OS_DynamicArea0> with r4 bit 10 set, or 0 to read only.
+{f25}Ü{f}	R1 =	previous clamp for <OS_DynamicArea 0=>OS_DynamicArea0> with r5 = -1
+	R2 =	previous clamp for <OS_DynamicArea 0=>OS_DynamicArea0> with r5 > 0
+	R3 =	previous clamp for <OS_DynamicArea 0=>OS_DynamicArea0> with r4 bit 10 set.
+#line
+Specifying -1 in R1 or R2 means that the respective clamp is the RAM limit of the machine (default). Specifying a figure larger than the RAM limit is equivalent to specifying -1.
+
+Specifying -1 for R3 is invalid, since there is no concept of RAM limit for <Sparse=>OS_DynamicAreaSparse> area maximum size. Ergo, the effective limit is then the size of the largest fragment of logical address space free at creation time.

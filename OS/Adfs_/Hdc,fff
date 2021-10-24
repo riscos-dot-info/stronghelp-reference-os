@@ -1,0 +1,19 @@
+ADFS_HDC  (&40241)
+#Parent ADFS_
+=>	R2 =	address of alternative hard disc controller
+	R3 =	address of poll location for IRQ/DRQ
+	R4 =	bits for IRQ/DRQ
+	R5 =	address to enable IRQ/DRQ
+	R6 =	bits to enable IRQ/DRQ
+
+This call sets up the address of the ST5056 hard disc controller to be used by the ADFS. For instance, an expansion card can suplly an alternative controller to the one normally used. The controller must be an HD63463 (or compatible).
+
+The polling and interrupt sense is done using:
+#Indent 2;fcode
+LDRB  <Rn=>Assembly:Rn>,[poll location]
+TST   Rn,[poll bits]
+#Indent;f
+
+The IRQ/DRQ must be 1 when active.
+#Line
+See <PRM 2, page 280=>PRM-2:280>.

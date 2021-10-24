@@ -1,0 +1,8 @@
+Econet_ReadLocalStationAndNet  (&4000A)
+#Parent Econet_
+<=	R0 =	station number
+	R1 =	net number
+
+This call returns the computers station number and network. The net number will be zero if there are no bridges present.
+#Line
+See <PRM 2, page 663=>PRM-2:663>.

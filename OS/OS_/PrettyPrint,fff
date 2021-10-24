@@ -1,0 +1,71 @@
+OS_PrettyPrint  (&44)
+#Parent OS_
+Write an indirected string with some formatting to all of the <active output streams=>OS_Byte003>.
+
+=>	R0 =	pointer to null terminated string to write
+	R1 =	pointer to dictionary (0 = <RISC OS dictionary=>.ROD>)
+	R2 =	pointer to null terminated special string
+<=	R0-R2 preserved
+
+This call acts like <OS_Write0> with several differences:
+#Tab;Indent 2
+è	several characters have special meanings to OS_PrettyPrint
+è	It will break a line at a space if the next word will not fit on the line, it will not do this at hard space
+è	Compacted text is handled
+è	CR causes a newline to be generated
+è	TAB causes a tabulation to the next multiple of eight chars
+è	ASCII 31 is a hard space
+è	ESC (ASCII 27) indicates that a dictionary entry should be substituted
+#Indent
+
+Compacted text uses an escape character in the print string to indicate a dictionary entry. It is followed immediately by a byte which is the dictionary entry number. If this byte is in the range 1-255, then the appropriate string in the dictionary is subsituted. If its 0, then the special string pointed to by R2 is subsituted. (This is used in particular by the *Help command.)
+
+The format of an dictionary is a linear list of entries, which can recursively refer to other dictionary entries; each entry is a length byte followed by a 0 terminated string. This means, that a dictionary doesn't have to have 255 entries - it can be ended at a point with a zero length entry.
+#Line
+See <PRM 1, page 518=>PRM-1:518>.
+#Subpage ROD
+RISC OS default dictionary
+#Parent OS_PrettyPrint
+Token	String
+#Line
+0	R2
+1	"Syntax: *" + R2
+2	" the "
+3	"director"
+4	"filing system"
+5	"current"
+6	" to a variable. Other types of values can be assigned with *"
+7	"file"
+8	"default"
+9	"tion"
+10	"*Configure"
+11	"name"
+12	" server"
+13	"number"
+14	"Syntax *" + R2 + " \<"
+15	" one or more files that match the given wildcard"
+16	" and "
+17	"relocatable module"
+18	CR + "C(onfirm)" + TAB + "prompt for conformation of each"
+19	"sets the"
+20	"Syntax: *" + R2 + " [\<disc spec.>]
+21	")" + CR + "V(erbose)" + TAB + "print information on each file "
+23	"spriteLandscape [\<XScale> [\<YScale> [\<Margin> [\<Treshold>]]]]"
+24	" is used to print a hard copy of the screen on EPSON-"
+25	"." + CR + "Options: (use ~ to force off, eg. ~"
+26	"printe"
+27	"Syntax: *" + R2 + " \<filename>"
+28	"select"
+29	"xpression"
+30	"Syntax: *" + R2 + " ["
+31	"sprite"
+32	" displays"
+33	"free space"
+34	" (off)"
+35	"library"
+36	"parameter"
+37	"object"
+38	" all "
+39	"disc"
+40	" to "
+41	" is "

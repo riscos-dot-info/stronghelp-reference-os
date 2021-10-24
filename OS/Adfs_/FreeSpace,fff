@@ -1,0 +1,5 @@
+ADFS_FreeSpace  (&40243)
+#Parent ADFS_
+This SWI calls <FileCore_FreeSpace>, after first setting R8 to point to the FileCore instance private word for ADFS.
+#Line
+See <PRM 2, page 283=>PRM-2:283>.

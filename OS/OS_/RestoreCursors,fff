@@ -1,0 +1,5 @@
+OS_RestoreCursors  (&37)
+#Parent OS_
+This restores the cursor state previously saved on the internal stack using <OS_RemoveCursors>.
+#Line
+See <PRM 1, page 714=>PRM-1:714>.

@@ -1,0 +1,41 @@
+OS_Byte 160  Read VDU variable number
+#Parent OS_ByteIndex
+=>	R0 =	160 (&A0)
+	R1 =	<VDU variable number=>.numbers>
+
+<=	R0 preserved
+	R1 =	value of variable
+	R2 =	value of next variable (entry R1 + 1)
+
+This call is provided for compatibility with the BBC/Master 128, and reads various VDU variables. Note that it does not use the same numbers for variables as <OS_ReadVDUVariables>, and that that SWI can read many more variables.
+#Line
+See <PRM 1, page 652=>PRM-1:652>
+#SubPage numbers
+OS_Byte 160 VDU variable numbers
+Number	Value
+#Line
+0	LSB of graphics window left column	(<ic=>.ic>)
+1	MSB of graphics window left column	(ic)
+2	LSB of graphics window bottom row	(ic)
+3	MSB of graphics window bottom row	(ic)
+4	LSB of graphics window right column	(ic)
+5	MSB of graphics window right column	(ic)
+6	LSB of graphics window top row	(ic)
+7	MSB of graphics window top row	(ic)
+8	text window left column
+9	text window bottom row
+10	text window right column
+11	text window top row
+12	LSB of graphics origin x coordinate	(<ec=>.ec>)
+13	MSB of graphics origin x coordinate	(ec)
+14	LSB of graphics origin y coordinate	(ec)
+15	MSB of graphics origin y coordinate	(ec)
+#
+#subpage ic
+ic (internal coordinates)
+The origin is always the bottom left of the screen. One unit is one pixel wide and one pixel high.
+#
+#subpage ec
+ec (external coordinates)
+A pixel is (1 \<\< XEigFactor) units wide and (1 \<\< YEigFactor) units high, where XEigFactor and YEigFactor are VDU variables.
+#

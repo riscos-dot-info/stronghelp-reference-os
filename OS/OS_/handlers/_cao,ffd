@@ -1,0 +1,10 @@
+Currently active object pointer
+#Parent OS_handlers
+# Service 11 links here
+# OS_FSControl 2 links here
+# Wimp message 400C2 links here
+This is a pointer to the address of the last
+è	application started
+è	error handler called
+è	exit handler called
+which allows <OS_Module> to determine whether a module can be killed.

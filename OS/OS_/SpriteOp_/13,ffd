@@ -1,0 +1,12 @@
+Return name (13)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<13, &D=>os_spriteop_reason2> (Return name)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Pointer to buffer
+	R3 =	Buffer size
+	R4 =	Sprite number n
+<=	R3 =	Length of name
+
+This returns the name of the n'th sprite in the given sprite area where the first sprite is number 1.
+#Line
+See <PRM 1, page 771=>PRM-1:771>

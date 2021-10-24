@@ -1,0 +1,8 @@
+Bounding box block
+#Parent !Root
+Offset	Contents
+#Line
+0	Left co-ordinate
+4	Bottom co-ordinate
+8	Right co-ordinate
+12	Top co-ordinate

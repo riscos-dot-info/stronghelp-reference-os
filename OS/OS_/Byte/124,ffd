@@ -1,0 +1,10 @@
+OS_Byte 124  Clear escape condition
+#Parent OS_ByteIndex
+=>	R0 =	124 (&7C)
+
+<=	R0 preserved
+	R1,R2 corrupted
+                                                  
+This call clears any escape condition by calling the <escape handler=>OS_handlers_escape> with R11=0, then returns. (Unless you read page 1-848 of the PRM, which says that it doesn't call the escape handler.)
+#Line
+See <PRM 1, page 866=>PRM-1:866>

@@ -1,0 +1,12 @@
+Text object (1)
+#Parent drawfile_format
+Offset	Len	Contents
+#Line
+24	4	Text colour
+28	4	Background hint
+32	4	<Text style=>drawfile_textstyle>
+36	4	x-size (in 1/640's of a point)
+40	4	y-size (ie draw units)
+44	4	x coord of start of baseline
+48	4	y coord of it
+52	n	zero terminated string padding

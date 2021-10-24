@@ -1,0 +1,30 @@
+Service_PreModeChange (&4D)
+#Parent Service_Index
+=>	R1 =	&46 (reason code)
+	R2 =	<mode number=>VDU:22a>
+<=	see below
+
+This service allows a module to object to a mode change, or subsitute a different mode:
+
+{*}Case 1{*} - module has no objection
+
+<=	R1,R2 preserved (pass on)
+
+{*}Case 2{*} - module objects, and takes alternative action
+
+<=	R1 =	0 (claim service)
+	R2 =	0
+
+{*}Case 3{*} - module objects, and returns an error
+
+<=	R0 =	pointer to <error block=>swi_errorblock>
+	R1 =	0 (claim service)
+
+{*}Case 4{*} - module wishes to subsitute an alternative mode
+
+<=	R1 =	&46 (reason code) - pass on
+	R2 =	new <mode number=>VDU:22a>
+
+<Service_ModeTranslation=>Service_51> offers a better method to support new monitor types.
+#Line
+See <PRM 1, page 618=>PRM-1:618>

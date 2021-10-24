@@ -1,0 +1,10 @@
+BASICTrans_Error  (&42C81)
+#Parent BASICTrans_
+=>	R0 =	error number (0 - 112)
+	R1 =	pointer to output buffer
+
+<=	R0,R1,R2,R3 corrupted
+
+This SWI writes an appropriate 0 terminated error message into the buffer.
+#Line
+See <PRM 4, page 339=>PRM-4:339>.

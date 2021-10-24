@@ -1,0 +1,19 @@
+OS_Byte 106  Select pointer/activate mouse
+#Parent OS_ByteIndex
+=>	R0 =	106 (&6A)
+	R1 =	<pointer shape and linkage flag=>.flags>
+# Gerph> [, or -1 to read] This may be a side effect more than anything else
+
+<=	R0 preserved
+	R1 =	shape and linkage flag before overwritten
+	R2 corrupted
+
+You can define four 'pointer buffers' using <OS_Word 21=>OS_Word21>, each holding a different shape definition for the mouse pointer. This call allows you to select one of these definitions for future use, or to turn off the pointer depending on the bottom <seven bits of R1=>.flags>.
+#line
+See <PRM 1, page 637=>PRM-1:637>
+#Subpage flags
+Pointer flags
+Bit	Meaning
+#Line
+0-2	Select pointer number (1 to 4, or 0 to turn off)
+7	Unlink visible pointer from mouse if set

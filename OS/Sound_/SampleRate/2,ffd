@@ -1,0 +1,8 @@
+Sound_SampleRate 2  (&40146)
+#Parent Sound_
+=>	R0 =	2 (reason code)
+	R1 =	index to convert
+<=	R0,R1 preserved
+	R2 =	current sample rate value (frequency * 1024)
+
+This SWI converts a sample rate index to a sample rate value.

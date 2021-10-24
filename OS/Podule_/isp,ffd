@@ -1,0 +1,16 @@
+Expansion Card interrupt status pointers
+#Parent Podule_
+Offset	Size	Meaning
+32	1 byte	FIQ status bit mask
+36	3 bytes	FIQ status bit offset
+48	1 byte	IRQ status bit mask
+52	3 bytes	IRQ status bit offset
+
+The offsets are in the cards identity space, which is only 8 bits wide for the first 16 bytes ({/}i.e.{/} only low byte is used for the first 16 words).
+
+Status offsets are signed 24 bit numbers, offset from &3240000 (base of podules in the <memory map=>Machine:!Root>) - hence access cycle speed is encoded in <bits 19-20=>Machine:IOC>. Bits 14-15 (slot number) should be zero. A negative offset means that the status register is in module space.
+
+The bit mask should have only a single bit set.
+
+If you have to have interrupt status pointers because of a <chunk directory=>Podule_chunkdir> but do not wish to relocate the status bits from the default location (low byte of the <ECId=>Podule_eECId>) you would set both offset fields to point to the low byte, with masks of 4 and 1 for FIQ and IRQ respectively.
+# I think that this would mean both offsets would be 0, but PRM doesn't say this.

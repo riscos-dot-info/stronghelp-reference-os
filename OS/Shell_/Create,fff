@@ -1,0 +1,5 @@
+Shell_Create  (&405C0)
+#Parent Shell_
+For internal use by the ShellCLI module.
+#Line
+See <PRM 3, page 330=>PRM-3:330>.

@@ -1,0 +1,11 @@
+Format of sprite area
+#Parent OS_SpriteOp
+A sprite area consists of a control block followed by an optional extension area, sprites, and free space. Note that a sprite file is simply a sprite area saved without its first word.
+
+Offset	Contents
+#Line
+0	Total size of sprite area
+4	Number of sprites in area
+8	Offset to 1st <sprite=>os_spriteop_ptr>
+12	Offset to 1st free word
+16..	Extension words (usually none)

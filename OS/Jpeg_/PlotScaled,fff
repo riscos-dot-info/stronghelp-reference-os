@@ -1,0 +1,14 @@
+JPEG_PlotScaled  (&49982)
+#Parent JPEG_
+=>	R0 =	pointer to JPEG
+	R1 =	x coordinate at which to plot
+	R2 =	y coordinate at which to plot
+	R3 =	<scale factors=>os_scalefactors>, or 0 for 1:1 scaling
+	R4 =	length of image
+	R5 =	<plotting flags=>JPEG_plotflags>
+
+This SWI decompresses, scales and plots on the screen a JPEG image held in a buffer.
+
+This is similar to <OS_SpriteOp 52=>OS_SpriteOp_52> for sprites in that the scale factors and the coordinates have exactly the same meaning. However, this call only supports a direct plot.
+
+In plotting the JPEG, the SpriteExtend module may claim extra workspace in a dynamic area to store tables etc.  It keeps these cached until either it is asked to plot a different JPEG, or the user decreases the dynamic area's size. This speeds up successive replots of the same JPEG. You can find out how much extra workspace SpriteExtend will require - if any - by first calling <JPEG_Info> or <JPEG_FileInfo>, and hence ensure there is sufficient free memory before making this call.

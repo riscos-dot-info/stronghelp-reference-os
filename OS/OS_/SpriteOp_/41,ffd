@@ -1,0 +1,14 @@
+Read pixel colour (41)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<41, &29=>os_spriteop_reason2> (Read pixel colour)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+	R3 =	x coordinate (in pixels)
+	R4 =	y coordinate (in pixels)
+
+<=	R5 =	Colour
+	R6 =	Tint
+	
+This call reads the colour of a pixel in a sprite.
+#Line
+See <PRM 1, page 792=>PRM-1:792>

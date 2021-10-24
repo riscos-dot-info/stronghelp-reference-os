@@ -1,0 +1,22 @@
+CDFS addressing modes and disc addresses
+#Parent CD_
+Addresses have different meaning depending on the addressing mode:
+
+Mode	Meaning
+#Line
+0	Logical block addressing
+	Offset in blocks from the start of a CD's data area
+
+1	Red Book addressing
+	A time offset from a CD's first frame, in the form:
+
+	 	Byte	Label	Meaning
+	 	0	FF	Frame number (0 - 74)
+	 	 	 	(75 frames in one second)
+	 	1	SS	Seconds (0-59)
+	 	2	MM	Minutes (0-99)
+	 	3	 	Reserved
+
+2	Physical block addressing
+	offset in blocks from the first block on the CD.
+

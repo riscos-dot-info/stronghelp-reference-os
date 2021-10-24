@@ -1,0 +1,9 @@
+Service_ValidateAddress (&6D)
+#Parent Service_Index
+=>	R1 =	&6D (reason code)
+	R2,R3 =	R0,R1 as passed to <OS_ValidateAddress>
+<=	R1 =	0 to indicate area is valid, else &6D to pass on
+
+This service is issued when <OS_ValidateAddress> encounters an unrecognised area. It is *not* called for areas which should be mapped.
+#Line
+See <PRM 1, page 362=>PRM-1:362>

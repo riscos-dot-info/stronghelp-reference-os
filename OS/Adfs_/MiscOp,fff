@@ -1,0 +1,5 @@
+ADFS_MiscOp  (&4024C)
+#Parent ADFS_
+This SWI calls <FileCore_MiscOp>, after first setting R8 to point to the FileCore instance private word for ADFS.
+#Line
+See <PRM 2, page 296=>PRM-2:296>.

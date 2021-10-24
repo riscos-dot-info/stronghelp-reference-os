@@ -1,0 +1,17 @@
+FSEntry_Func 18
+#Parent FSEntry_Func
+=>	R0 =	18 (Set directory contexts)
+#Wrap off
+	R1 =	new current directory	-1 to unset, 0 for no change
+	R2 =	new library		-1 to unset, 0 for no change
+	R3 =	new user root directory	-1 to unset, 0 for no change
+#Wrap
+	R6 =	0, as special field not allowed here
+
+<=	R1 =	old CSD			-1 for unset
+	R2 =	old library		-1 for unset
+	R3 =	old URD			-1 for unset
+
+This FSEntry_Func 18 is now never called.
+
+This call should set (or read) the CSD, library and URD. It was only called for filesystems that had bit 24 of the filing system <information word=>fsys_infoword> set.

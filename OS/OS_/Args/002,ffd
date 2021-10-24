@@ -1,0 +1,7 @@
+OS_Args 2
+#Parent OS_Args
+=>	R0 =	2
+	R1 =	file handle
+<=	R2 =	extent of file
+
+This SWI reads the extent of a file.

@@ -1,0 +1,9 @@
+CD_PlayTrack  (&4124C)
+#Parent CD_
+=>	R0 =	track number at which to start play
+	R1 =	track to finish at, or 255 to play to end of CD, or 254 to play to end of track in R0
+	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+
+<=	R0,R1,R7 preserved
+
+Attempts to play a CD section of audio, specified by track. Returns error if track is non-audio.

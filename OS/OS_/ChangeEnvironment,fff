@@ -1,0 +1,19 @@
+OS_ChangeEnvironment  (&40)
+#Parent OS_
+=>	R0 =	<handler number=>OS_handlers>
+	R1 =	new address, or 0 to read
+	R2 =	value of R12 when code is called
+	R3 =	pointer to buffer if appropriate or 0 to read
+
+<=	R0 preserved
+	R1 =	previous address
+	R2 =	previous R12
+	R3 =	previous buffer pointer
+
+This is a single routine which performs the actions of <OS_Control>, <OS_SetEnv>, <OS_CallBack>, <OS_BreakCtrl> and <OS_UnusedSWI>. In fact all of those routines use this call and are only kept for backwards compatibility, so you should use this call in preference.
+
+Note, OS_ChangeEnvironment vectors through ChangeEnvironmentV. A routine linked into this vector can stop the change from happening by setting R1 to zero and passing the call on.
+
+If you set up any handlers, you *must* provide Error, Exit and UpCall handlers so that you can restore all handlers on any kind of program exit (even X SWIs can generate serious errors).
+#Line
+See <PRM 1, page 315=>PRM-1:315>.

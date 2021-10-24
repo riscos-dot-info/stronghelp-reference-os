@@ -1,0 +1,11 @@
+Unknown VDU 23 vector (23)
+#parent vector_index
+=>	R0 =	VDU 23 option
+	R1 =	pointer to VDU 23 queue
+<=	R0, R1 preserved
+
+Whenever an unrecognised byte (18-25,28-31) is found following 23 in the VDU stream this vector is called. R0 contains this unknown byte - it is also the first of the 9 bytes in the VDU queue, pointed at by R1.
+
+The default owner of this vector does nothing - unknown VDU 23 options are ignored.
+#Line
+See <PRM 1, page 82=>PRM-1:82>.

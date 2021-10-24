@@ -1,0 +1,6 @@
+OS_SerialOp 5
+=>	R0 =	5 (reason code)
+	R1 =	-1 to read, or 0-15 to set to a <value=>OS_SerialOpSpeeds>
+
+<=	R0 preserved
+	R1 =	old receive baud rate

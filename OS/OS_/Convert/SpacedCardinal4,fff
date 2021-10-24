@@ -1,0 +1,13 @@
+OS_ConvertSpacedCardinal4  (&E4)
+#Parent OS_Convert
+=>	R0 =	value to be converted
+	R1 =	pointer to buffer for resulting string
+	R2 =	size of buffer
+
+<=	R0 =	pointer to buffer (R1 on entry)
+	R1 =	pointer to terminator
+	R2 =	free bytes in buffer
+
+This SWI converts a value into an unsigned string of decimal characters. The number can be 0 to 4 294 967 295 (13 characters).
+#Line
+See <PRM 1, page 469=>PRM-1:469>.

@@ -1,0 +1,24 @@
+PDriver_DeclareFont  (&80155)
+#Parent PDriver_
+=>	R0 =	font handle (or 0)
+	R1 =	0 (or font name)
+	R2 =	<flags=>.flags>
+
+This SWI declares the fonts used in a document, and should be called for each <distinct=>.distinct> font, either by handle or by name, after you have called <PDriver_SelectJob> or <PDriver_SelectIllustration>, but before <PDriver_DrawPage>.
+# Could that sentance BE any longer
+Not using this SWI may cause the printer driver to default to downloading a lot of unnecessary font information, or finding that the font you later select is not available on the printer.
+
+Check the <features word=>PDriver_features> to verify that the driver does support this SWI. 
+#Line
+See <PRM 3, page 638=>PRM-3:638>.
+#Subpage flags
+PDriver_DeclareFont flags
+Bit	Meaning if set
+#Line
+0	don't download fonts absent from device (will substitute instead)
+1	download kerning info with font
+#Subpage distinct
+Distinct fonts
+Fonts are "distinct" if they differ in name, encoding or matrix - in other words if their <Font identifiers=>Font_identifier> differ in any way. Size and colour differences do *not* make fonts distinct.
+# Gerph> I'd assume that font identifiers given in different orders, or
+#        cases are the same. However, I have no supporting proof as yet.

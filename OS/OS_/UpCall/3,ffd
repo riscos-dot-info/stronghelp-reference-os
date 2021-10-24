@@ -1,0 +1,28 @@
+OS_UpCall 3 - Modifying file
+#Parent OS_UpcallReasons
+{f25}ﬁ{f}	R0 =	3 (Modifying file)
+	R1-R7 vary, depending on the value of R9
+	R8 =	<filing system information word=>fsys_infoword>
+	R9 =	<Reason code=>OS_UpCall3_reasons>
+
+{f25}‹{f}	All registers preserved
+#line
+Warns your program that a file is being modified. It is made when a program calls one of serveral SWI provided by FileSwitch module:
+#Tab;Indent 2
+è	reason codes 0-8 are caused by calls to <OS_File>
+è	reason codes 257-9 are caused by calls to <OS_Find>
+è	reason codes 520/1 are caused by calls to <OS_FSControl>
+#Indent
+
+You may find it helpful to examine the documentation of the above FileSwitch SWI calls.
+
+The following general points apply:
+#Tab;Indent 2
+è	all strings are 0-terminated except where specified
+è	all object names will already have been expanded by FileSwitch, checked for basic validity, and had filing system prefixes stripped
+è	object names will also be canonicalised, except under RISC OS 2.
+#Indent
+
+This UpCall is made before the operation, which may subsequently fail. For example, you may receive a rename UpCall for a locked file, which will sebsequently fail to rename (because it's locked). If a file name is invalid for a given operation (eg you try to create a file with a wildcarded leafname) FileSwitch will generate an error, and no UpCall will be generated.
+
+The call is used by the desktop filer to maintain its directory displays. It's provided for information only; if you wish to use this UpCall, you must not intercept it, nor must you alter the contents of any of these registers used to pass parameters!

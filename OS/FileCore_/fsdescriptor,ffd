@@ -1,0 +1,22 @@
+Filecore FS descriptor block
+Offset	Contains
+#Line
+0	<disc flags=>.flags>
+3	<filing system number=>fsys_ident>
+4	offset of filing system title from module base
+8	offset of boot text from module base
+12	offset of low level disc op entry from module base
+16	offset of low level miscellaneous entry from module base
+#Subpage flags
+Disc flags
+Bit	Meaning when set
+#Line
+0	Hard disc needs FIQ
+1	Floppy needs FIQ
+2	Reserved must be zero
+3	Use only scratch space when a temporary buffer is needed
+4	Hard disc support mount like floppies do (ie they fill in sector size, heads, sectors per track and density)
+5	Hard disc support poll change (ie the poll change call works for hard discs and returns a sensible value; also locking them gives a sensible result)
+6	Floppies support power eject
+7	Harddiscs support power eject
+9	Sector addressing is possible (RISC OS 3.6 and later)

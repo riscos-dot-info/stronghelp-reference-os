@@ -1,0 +1,6 @@
+CD_Unregister  (&41261)
+#Parent CD_
+=>	R0 =	pointer to a <block=>CD_infoblock>
+	R1 =	pointer to a special tag (&EE50EE50 = 1 word) followed by the handler code.
+
+Removes the soft-loadable driver from the CDFSDriver module.  The block pointed to by R0 on entry must be in RAM, whereas anything else, i.e. the code for each CD _ SWI, can be in the ROM.

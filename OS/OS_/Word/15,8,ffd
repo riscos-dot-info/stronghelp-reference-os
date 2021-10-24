@@ -1,0 +1,10 @@
+OS_Word 15,8
+#Parent OS_Word
+=>	R0 =	15
+	R1 =	pointer to block containing :
+	 	 	0 = 8
+	 	 	1 = time string in local language
+
+This OS_Word sets the time of day in the CMOS clock and its soft copy. The string format is territory dependant - for the UK (and RISC OS 2) it is of the form
+
+  HH:MM:SS

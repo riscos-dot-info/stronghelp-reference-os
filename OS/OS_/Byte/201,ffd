@@ -1,0 +1,13 @@
+OS_Byte 201  Read/Write keyboard disable flag
+#Parent OS_ByteIndex
+=>	R0 =	201 (&C9)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	flag before being overwritten
+	R2 corrupted
+                                                  
+This call enables or disables the keyboard. 0 will enable the keyboard (as normal). Any other value will stop the interrupt routine inserting keypresses into the keyboard buffer.
+#Line
+See <PRM 1, page 881=>PRM-1:881>

@@ -1,0 +1,9 @@
+OS_Word 21,2
+#Parent OS_Word
+=>	R0 =	21
+	R1 =	pointer to block containing :
+		 	0 = 2
+		 	1 = x multiplier
+		 	2 = y multiplier
+
+This OS_Word sets the mouse multipliers. The values given are *signed* 8 bit, and default to the configured MouseStep (<CMOS=>OS_Bytecmos> byte 194).

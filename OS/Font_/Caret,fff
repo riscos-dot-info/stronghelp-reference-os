@@ -1,0 +1,11 @@
+Font_Caret  (&40087)
+#Parent Font_
+=>	R0 =	colour
+	R1 =	height (OS)
+	R2 =	<flags=>font_paintflags>, only bit 4 used
+	R3 =	x coord
+	R4 =	y coord
+
+This SWI draws a caret at the given position. The colour is EORed onto the screen, so to get a specific colour, you have to take the background colour into consideration.
+#Line
+See <PRM 3, page 436=>PRM-3:436>.

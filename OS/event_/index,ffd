@@ -1,0 +1,39 @@
+Event numbers
+#Parent OS_Claim
+\#	Description
+#Line
+0	<Output buffer has become empty=>event_0>
+1	<Input buffer has become full=>event_1>
+2	<Character placed in input buffer=>event_2>
+3	<ADC conversion ended in BBC I/O expansion card=>event_3>
+4	<VSync Event=>event_4>
+5	<Interval timer has crossed zero=>event_5>
+6	<Escape condition has been detected=>event_6>
+7	<Serial RS423 error has been detected=>event_7>
+8	<Econet user remote procedure called=>event_8>
+9	<User has generated an event=>event_9>
+10	<Mouse transition=>event_10>
+11	<Key transition=>event_11>
+12	<Sound system reached start of a bar=>event_12>
+13	PC Emulator event
+14	<Econet receive complete=>event_14>
+15	<Econet transmit complete=>event_15>
+16	<Econet OS remote procedure called=>event_16>
+# this one links to event_8
+17	<MIDI system event=>event_17>
+18	Reserved for external developers
+# Event_BeebugHayesModem  * 18
+19	<Internet event=>InetSocket:event_19>
+20	Reserved for external developers
+# Event_Fax               * 20    ; Computer Concepts Fax/Data modem
+21	Expansion event (sub-reason in r1)
+22	<Device overrun event=>event_22>
+23	Reserved for external developers
+# Event_WatfordPCCard     * 23    ; Watfords scanner driver for scanner activities
+# Gerph> So why does it mention a PC card then ?
+24	Driver recieved frame for Internet (DCI 2 only)
+25	Driver completed Internet transmission request (DCI 2 only)
+# Event_MNS_Rx            * 26    ; Copy of the Econet_Rx
+# Event_MNS_Tx            * 27    ; Copy of the Econet_Tx
+# Gerph> The question 'why?' springs to mind
+28	<Portable Battery Management Unit event=>event_28>

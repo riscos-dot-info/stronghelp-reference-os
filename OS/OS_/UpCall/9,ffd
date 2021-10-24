@@ -1,0 +1,11 @@
+OS_UpCall 9 - Buffer emptying
+#Parent OS_UpcallReasons
+=>	R0 =	9 (Buffer emptying)
+	R1 =	buffer handle
+	R2 =	-1
+
+<=	All registers preserved
+
+This Upcall informs you that a buffer's free space has become greater than or equal to its specified threshold. The Buffer Manager issues this call when data is removed from the specified buffer, and the free space becomes greater than or equal to its current threshold.
+
+This call is never issued under RISC OS 2.

@@ -1,0 +1,8 @@
+Service_DiscDismounted (&7D)
+#Parent Service_Index
+=>	R1 =	&7D (reason code)
+	R2 =	pointer to "filing_system::disc"
+
+This service is issued when a disc is dismounted - this allows the Filer to close open directory displays. Disc name should be used in preference to disc number in the string in R2.
+#Line
+See <PRM 2, page 496=>PRM-2:496>

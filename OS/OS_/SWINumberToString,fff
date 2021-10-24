@@ -1,0 +1,18 @@
+OS_SWINumberToString  (&38)
+#Parent OS_
+=>	R0 =	SWI Number
+	R1 =	pointer to buffer
+	R2 =	buffer length
+
+<=	R0,R1 preserved
+	R2 =	length of string in buffer
+
+This call converts a SWI number to a string containing its SWI name. The returned string is null-terminated, and starts with an X if the SWI number has bit 17 set.
+
+SWI numbers \< &200 have an 'OS_' prefix to the main part, and a SWI-dependent end section (which is 'Undefined' for unkown OS SWIs).
+
+SWI numbers in the range &100 to &1FF are converted in the form OS_WriteI+"A", or OS_WriteI+23 if the character is not a printable one.
+
+SWI numbers >= &200 are looked for in modules. If a suitable name is found, it is given in the form module_name or module_number, eg. Wimp_Initialise, Wimp_32. If no name is found in the modules, the string 'User' is returned.
+#Line
+See <PRM 1, page 459=>PRM-1:459>.

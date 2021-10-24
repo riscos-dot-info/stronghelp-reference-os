@@ -1,0 +1,8 @@
+OS_DynamicArea 3  (&66)
+#Parent OS_DynamicArea
+*Enumerates dynamic areas*
+{f25}Þ{f}	R0 =	3
+	R1 =	area number, -1 to start
+{f25}Ü{f}	R1 =	next area number, or -1 for no more
+#line
+This call enumerates dynamic areas.  This allows an application to find out what dynamic areas are defined. -1 is passed on entry to start the enumeration; the call is then repear until -1 is returned on exit, which indicates the the enumeration has finished.

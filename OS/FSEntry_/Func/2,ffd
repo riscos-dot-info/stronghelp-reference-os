@@ -1,0 +1,7 @@
+FSEntry_Func 2
+#Parent FSEntry_Func
+=>	R0 =	2 (Catalogue directory)
+	R1 =	pointer to (wilcarded) directory name
+	R6 =	pointer to special field, or 0 if not present
+
+This call should catalogue a directory - it implements {fCode}*Cat{f}. It is always called by RISC OS 2, or only by later versions of RISC OS when bit 1 of the <extra filing system info word=>fsys_extra_infoword> is set.

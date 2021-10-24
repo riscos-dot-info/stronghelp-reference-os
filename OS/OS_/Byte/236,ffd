@@ -1,0 +1,13 @@
+OS_Byte 236  Read/Write character destination status
+#Parent OS_ByteIndex
+=>	R0 =	236
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	previous state
+	R2 =	cursor key status (see <OS_Byte 237=>OS_Byte237>)
+
+This call reads or sets the <character destination status=>OS_Byte003state>. The state may also be written with <OS_Byte 3=>OS_Byte003>.
+#Line
+See <PRM 1, page 514=>PRM-1:514>

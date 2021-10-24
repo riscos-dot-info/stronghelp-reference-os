@@ -1,0 +1,13 @@
+ColourTrans_ConvertHSVToRGB  (&40759)
+#Parent ColourTrans_
+=>	R0 =	<hue, 0 to 360=>ColourTrans_fixedpoint>
+	R1 =	<saturation=>ColourTrans_fixedpoint>
+	R2 =	<value=>ColourTrans_fixedpoint>
+
+<=	R0 =	<red component=>ColourTrans_fixedpoint>
+	R1 =	<green component=>ColourTrans_fixedpoint>
+	R2 =	<red component=>ColourTrans_fixedpoint>
+
+This call converts the colour passed as HSV values to RGB values. It will generate an error for hue = staturation = 0.
+#Line
+See <PRM 3, page 381=>PRM-3:381>.

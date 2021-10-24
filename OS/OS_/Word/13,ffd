@@ -1,0 +1,18 @@
+OS_Word 13
+#Parent OS_Word
+=>	R0 =	13
+	R1 =	pointer to 8 byte buffer
+
+This OS_Word fills the <buffer=>.buffer> with the current and previous graphics cursor coordinates. You should use <OS_ReadVDUVariables> instead.
+#subpage buffer
+OS_Word 13 buffer
+Offset	Contents
+#Line
+0	previous	x coord	LSB
+1	 		 	MSB
+2	 		y coord	LSB
+3	 		 	MSB
+4	current		x coord	LSB
+5	 		 	MSB
+6	 		y coord	LSB
+7	 		 	MSB

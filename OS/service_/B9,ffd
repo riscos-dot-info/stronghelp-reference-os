@@ -1,0 +1,8 @@
+Service_ModulePreInit (&B9)
+#Parent Service_Index
+=>	R0 =	module address
+	R1 =	&B9 (reason code)
+	R2 =	module length
+<=	R1 preserved
+
+This service called just before being initialised after being loaded.

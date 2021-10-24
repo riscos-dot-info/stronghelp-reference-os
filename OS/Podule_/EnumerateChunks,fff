@@ -1,0 +1,17 @@
+Podule_EnumerateChunks  (&40282)
+#Parent Podule_
+=>	R0 =	chunk number
+	R3 =	<ROM section=>OS_ModuleROMSections>
+<=	R0 =	0 (no more chunks)
+or
+<=	R0 =	next chunk number (non-zero even for last chunk)
+	R1 =	size (bytes)
+	R2 =	<operating system identity byte=>Podule_osid>
+	R4 =	if a module	pointer to copy of module's name
+	 	else		preserved
+
+This SWI reads information about a chunk from the chunk directory. If the chunk is a loader, RISC OS also loads it. The copy of a module's name string is held in the Expansion Card Manager's workspace, and will become invalid after the next call to the Expansion Card Manager.
+
+Note that the last valid chunk entry will *still* return a non-zero number for the next chunk - when this SWI is called again with R0 >= this number it will return R0 = 0, signifying the end of the chunk directory.
+#Line
+See <PRM 4, page 140=>PRM-4:140>.

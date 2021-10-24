@@ -1,0 +1,5 @@
+CD_CloseDrawer  (&4125B)
+#Parent CD_
+=>	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+
+This SWI closes the CD drawer if supported by the drive.

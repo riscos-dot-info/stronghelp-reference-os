@@ -1,0 +1,36 @@
+Plot mask/sprite transformed (55/56)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<55, &37=>os_spriteop_reason2> (Plot mask) or <56, &38=>os_spriteop_reason2> (Plot sprite)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+	R3 =	<flags=>.flags>
+	R4 =	Pointer to <source rectangle=>.source> within sprite
+	R5 =	<Plot action=>os_spriteop_action>
+	R6 =	If R3 bit 0 clear : pointer to matrix
+	 	 	R6 = pointer to <transformation matrix=>draw_transform>
+	 	If R3 bit 0 set : pointer to destination coords
+	 	 	R6 =	+0,4	= x0,y0 on screen (1/256th OS unit)
+	 	 	 	+8,12	= x1,y1 on screen (1/256th OS unit)
+	 	 	 	+16,20	= x2,y2 on screen (1/256th OS unit)
+	 	 	 	+24,28	= x3,y3 on screen (1/256th OS unit)
+	R7 =	<Pixel translation table=>colourtrans_pixtrans> or 0 for none
+
+RISC OS 3 Only
+#Line
+See <PRM 1, page 806=>PRM-1:806>
+#Subpage flags
+Transformation flags
+Bit	Meaning
+#Line
+0	1=> R6 =	Pointer to destination coords
+	0=> R6 =	Pointer to <transformation matrix=>draw_transform>
+1	1=> R4 =	Pointer to source rectangle within sprite
+2-31	Reserved must be 0
+#Subpage source
+Transformation source
+Offset	Contents
+#Line
+0	x left
+4	y bottom
+8	x right
+12	y top

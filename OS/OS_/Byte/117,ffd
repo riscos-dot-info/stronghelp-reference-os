@@ -1,0 +1,22 @@
+OS_Byte 117  Read VDU status
+#Parent OS_ByteIndex
+=>	R0 =	117
+
+<=	R0 preserved
+	R1 =	<status flags=>.flags>
+
+This call returns the content of the VDU status byte. This byte gives information on the way in which characters are output.
+#Line
+See <PRM 1, page 645=>PRM-1:645>
+#Subpage flags
+VDU Status
+Bit	Status when set
+#Line
+0	Print output enabled by <VDU 2=>VDU:2>
+1	Unused
+2	Paged scrolling selected by <VDU 14=>VDU:14>
+3	Text window in force {/}i.e.{/} software scrolling
+4	In a shadow mode
+5	In <VDU 5=>VDU:5> mode
+6	Cursor editing in progress
+7	Screen disabled with <VDU 21=>VDU:21>

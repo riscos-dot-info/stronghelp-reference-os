@@ -1,0 +1,6 @@
+Image FS information word
+Bit	Meaning
+#Line
+27	Tell FS when flushing buffers
+
+All others reserved and must be 0.

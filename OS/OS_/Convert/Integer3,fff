@@ -1,0 +1,13 @@
+OS_ConvertInteger3  (&DB)
+#Parent OS_Convert
+=>	R0 =	value to be converted
+	R1 =	pointer to buffer for resulting string
+	R2 =	size of buffer
+
+<=	R0 =	pointer to buffer (R1 on entry)
+	R1 =	pointer to terminator
+	R2 =	free bytes in buffer
+
+This SWI converts a value into an signed string of decimal characters. The number can be -8388608 to 8388607 (8 characters).
+#Line
+See <PRM 1, page 469=>PRM-1:469>.

@@ -1,0 +1,9 @@
+Unknown IRQ vector (2)
+#Parent vector_index
+No parameters in registers
+
+This vector is called when an unknown IRQ is detected. It must not be called with <OS_CallAVector>.
+
+It was provided in the Arthur OS to allow hardware expansion to generate IRQs. RISC OS provides a new, more efficient method, and this vector is kept for compatibility.
+#Line
+See <PRM 1, page 80=>PRM-1:80>.

@@ -1,0 +1,16 @@
+CDFS_ConvertDriveToDevice  (&41E80)
+#Parent CDFS_
+=>	R0 =	logical drive number
+<=	R0 preserved
+	R1 =	physical drive number
+
+The call converts a logical drive number to a physical drive number. You can then use the physical drive number to produce a CDFS control block, which you have to pass when calling CDFSDriver SWIs. The call returns an error if the logical drive is not known.
+
+To construct the control block, allocate a 5-word space for it. Then decode the drive_number given in the above call as follows :
+
+#fCode;Indent 2
+block!0 = (drive_number AND &00000007)
+block!4 = ((drive_number >> 3)  AND &00000003) 
+block!8 = ((drive_number >> 5)  AND &00000007)
+block!12 = ((drive_number >> 8)  AND &000000FF)
+block!16 = ((drive_number >> 16) AND &0000FFFF) 

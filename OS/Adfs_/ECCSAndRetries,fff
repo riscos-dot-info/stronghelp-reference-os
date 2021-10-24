@@ -1,0 +1,5 @@
+ADFS_ECCSAndRetries  (&40250)
+#Parent ADFS_
+This call is for internal use only, and not available under RISC OS 2.
+#Line
+See <PRM 2, page 297=>PRM-2:297>.

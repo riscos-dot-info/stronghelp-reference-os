@@ -1,0 +1,10 @@
+FSEntry_Func 31
+#Parent FSEntry_Func
+=>	R0 =	31 (Name image)
+	R1 =	pointer to name of any object on image
+	R2 =	pointer to new *disc name* for image
+	R6 =	pointer to special field, or 0 if not present
+
+This call sets the disc name for an image, implementing <OS_FSControl 50=>OS_FSControl50>.
+#
+# This entry point is only called if bit 23 of the filing system <information word=>fsys_infoword> is set.

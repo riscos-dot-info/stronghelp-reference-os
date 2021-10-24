@@ -1,0 +1,52 @@
+Econet immediate operations
+#Parent Econet_DoImmediate
+Number	Name
+#Line
+1	Peek			Read destination machine's memory
+2	Poke			Write destination machine's memory (!)
+3	JSR			Calls a <subroutine=>.JSR>
+4	UserProcedureCall	Generate <Event 8=>event_8>
+5	OSProcedureCall		Generate <Event 16=>event_16>
+6	Halt			Halt the destination machine (BBC & Master only)
+7	Continue		(BBC & Master only)
+8	MachinePeek		Returns a number identifying the <machine type=>.MPeek>
+9	GetRegisters		Returns R0-R15, R13_irq, R14_irq, R13_svc, R14_svc (80 bytes)
+#SubPage JSR
+Econet JSR
+This will cause a JSR or BL on the destination machine. Entry conditions:
+
+=>	R1 =	<argument buffer=>Econet_immediatebuffer>
+	R2 =	address of the code entered
+	R3 =	sending station
+	R4 =	sending net
+<=	R0-R4 may be corrupted
+
+If the address to call is -1 then the address called is the argument buffer - this allows ARM code to be sent. (Erm, security risk?)
+#SubPage MPeek
+Econet Machine Peek
+Bits	Meaning
+#Line
+0-15	Machine type:
+ 	&0000	Reserved
+ 	&0001	BBC				(OS 1 or 2)
+ 	&0002	Atom
+ 	&0003	System 3 or 4
+ 	&0004	System 5
+ 	&0005	Master 128			(OS 3)
+ 	&0006	Electron			(OS 0)
+ 	&0007	Archimedes			(OS 6)
+ 	&0008	Reserved
+ 	&0009	Acorn Communicator
+ 	&000A	Master 128 Econet Terminal	(OS 4)
+ 	&000B	Acorn Filestore
+ 	&000C	Master 128 Compact		(OS 5)
+ 	&000D	Acorn Ecolink card for Personal Computers
+ 	&000E	Acorn Unix box
+ 	&FFFA	SCSI interface
+ 	&FFFB	SJ Research IBM PC Econet interface
+ 	&FFFC	Nascom 2
+ 	&FFFD	Reseach Machines 480Z
+ 	&FFFE	SJ Research File Server
+ 	&FFFF	Z80 CP/M
+16-23	Software version number (BCD)
+24-31	Software release number (BCD)

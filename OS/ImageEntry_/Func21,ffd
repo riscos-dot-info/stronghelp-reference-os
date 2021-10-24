@@ -1,0 +1,9 @@
+ImageEntry_Func 21
+#Parent ImageEntry_Func
+=>	R0 =	21 (Notification of new image)
+	R1 =	fileswitch handle for the file
+	R2 =	buffer size for file, or 0 if uknown
+
+<=	R1 =	image filing system's handle for image
+
+This call is made to notify your filing system that FileSwitch would like it to handle a new image. The image should be marked as 'stamp on next update' (use <OS_Args 8=>OS_Args008> to inform the host filing system whenever it and its <cycle ID=>FileCore_cycleid> are updated). The buffer size should be treated as a hint to the sector size.

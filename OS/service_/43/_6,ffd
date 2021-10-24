@@ -1,0 +1,9 @@
+Service_International 6
+#Parent Service_43
+=>	R1 =	&43 (reason code)
+	R2 =	6 (sub reason code)
+	R3 =	new <keyboard number=>OS_keyboardid>
+	R4 =	<alphabet number=>Territory_anumbers> for this keyboard
+<=	R1-R4 preserved (do not claim)
+
+This service is generated when the keyboard selection is changed.

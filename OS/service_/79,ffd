@@ -1,0 +1,10 @@
+Service_DeviceDead (&79)
+#Parent Service_Index
+=>	R0 =	0
+	R1 =	&79 (reason code)
+	R2 =	device driver handle
+	R3 =	pointer to device name, or 0 if whole device driver is being deregistered
+
+This service is issued by <DeviceFS=>DeviceFS_> when a specified device has been killed - usually because a second device of the same name has been registered. If the entire driver is being deregistered, then this service is issued for each name in turn, and a final time with R3 = 0.
+#Line
+See <PRM 2, page 426=>PRM-2:426>

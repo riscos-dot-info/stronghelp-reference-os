@@ -1,0 +1,7 @@
+Service_PDumperStarting (&66)
+#Parent Service_Index
+=>	R1 =	&66 (reason code)
+
+This service is issued when the PDriverDP module starts - printer dumpers should call <PDriver_MiscOpForDriver> to declare themselves.
+#Line
+See <PRM 3, page 676=>PRM-3:676>

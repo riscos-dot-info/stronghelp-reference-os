@@ -1,0 +1,6 @@
+CD_SetParameters  (&41246)
+#Parent CD_
+=>	R0 =	pointer to <16 byte buffer=>cd_dataparams>
+	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+
+This SWI sets the current data read parameters.

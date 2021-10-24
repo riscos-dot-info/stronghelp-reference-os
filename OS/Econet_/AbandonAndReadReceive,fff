@@ -1,0 +1,14 @@
+Econet_AbandonAndReadReceive  (&40018)
+#Parent Econet_
+=>	R0 =	handle
+<=	R0 =	<status=>econet_statuses>
+	R1 =	0, or flag byte if r0=9 on exit
+	R2 =	port number
+	R3 =	station number
+	R4 =	net number
+	R5 =	pointer to data buffer
+	R6 =	size of buffer (or size of data received if r0=9 on exit)
+
+This SWI returns information about the control block it abandons.
+#Line
+See <PRM 2, page 683=>PRM-2:683>.

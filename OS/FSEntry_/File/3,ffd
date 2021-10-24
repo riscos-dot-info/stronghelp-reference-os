@@ -1,0 +1,8 @@
+FSEntry_File 3
+#Parent FSEntry_File
+=>	R0 =	3 (Write exec address)
+	R1 =	pointer to wildcarded filename
+	R3 =	<exec address=>fsys_loadexec> of file
+	R6 =	pointer to special field, or 0 if not present
+
+This call is made to set the exec address for a given file.

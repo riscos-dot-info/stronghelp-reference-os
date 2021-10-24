@@ -1,0 +1,23 @@
+Sound Channel handler block
+#Parent Sound_Configure
+Offset	Meaning
+#Line
+0	pointer to <fill code=>.fill>
+4	pointer to <overrun fixup code=>.fixup>
+8	pointer to linear-to-log conversion table
+12	pointer to log volume scale table
+
+The volume scale table can be used to scale samples to the current volume.
+#subpage fill
+Channel handler fill code
+=>	R8 =	sample period?
+	R9 =	pointer to SCCB ?
+	R10 =	pointer to end of DMA buffer?
+	R11 =	number of channels
+	R12 =	pointer to DMA buffer to store data in
+<=	no registers need preserving
+
+These values have been found by example only. It is the job of the channel handler to call the voice generators as required.
+#subpage fixup
+Channel handler overrun fixup
+This code is never called, but for safety you should make this point to {fCode}MOVS pc,link{f} which will return immediately if called.

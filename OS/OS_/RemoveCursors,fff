@@ -1,0 +1,5 @@
+OS_RemoveCursors  (&36)
+#Parent OS_
+This call removes the cursors (output and copy, if active) from the screen, saving the old state on an internal stack for further recovering. This call must be balanced by calling <OS_RestoreCursors> later however, the <exit handler=>OS_handlers_exit> provides this.
+#Line
+See <PRM 1, page 712=>PRM-1:712>.

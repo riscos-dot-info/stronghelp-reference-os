@@ -1,0 +1,10 @@
+Printer driver rectangle block
+#Parent PDriver_
+Offset	Contents
+#Line
+0	x min, inclusive
+4	y min, inclusive
+8	x max, exclusive
+12	y max, exclusive
+
+All values are in OS units.

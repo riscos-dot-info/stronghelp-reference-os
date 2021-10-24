@@ -1,0 +1,4 @@
+Font transformation matrices
+These are standard 'Draw' <transformation matrices=>Draw_transform>.
+
+If a call does not need the translation values specified ({/}e.g.{/} the control code 28 in <Font_Paint>) then it will use 0 for both translation values.

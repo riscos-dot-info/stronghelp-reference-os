@@ -1,0 +1,11 @@
+OS_Byte 7  Write RS232 receive rate
+#Parent OS_ByteIndex
+=>	R0 =	7
+	R1 =	<baud rate code=>OS_SerialOpSpeeds>
+
+<=	R0 preserved
+	R1,R2 corrupted
+
+This call writes the RS232 receive rate - <OS_SerialOp 5=>OS_SerialOp5> should be used instead.
+#Line
+See <PRM 2, page 444=>PRM-2:444>

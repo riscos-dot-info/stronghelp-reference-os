@@ -1,0 +1,11 @@
+PDumperReason_SetDriver (0)
+#Parent PDumperReason_
+=>	R1 =	<printer dumper number=>PDumper_numbers>
+	R2 =	pointer to command to ensure dumper present
+	R3 =	pointer to 256 bytes of dumper configuration data
+	R4 =	pointer to 256 bytes of <PDriverDP and dumper configuration data=>PDumper_configblock>
+	R5 =	<configuration word=>PDumper_configword> for dumper
+	R11 =	0 (reason code)
+	R12 =	private word
+
+This is called by <PDriver_SetDriver>

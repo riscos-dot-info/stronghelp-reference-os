@@ -1,0 +1,6 @@
+Unused SWI handler
+#Parent OS_handlers
+This is called by the default owner of <UKSWIV=>Vector_ukswiv>.
+
+=>	R11 =	SWI number (bit 17 clear)
+<=	R10-R12 may be corrupted

@@ -1,0 +1,23 @@
+OS_Byte CMOS 149-152
+#Parent OS_ByteCMOS
+The 4 BASIC editor bytes should be regarded as a big endian word, MSB in CMOS byte 149.
+
+Bit(s)	Meaning
+#Line
+0-2	Foreground colour
+3	set => Auto indent
+4-6	Background colour
+7	set => Insert
+8-15	Mode (16 colours or less)
+16-21	Tab length
+22,23	?
+# Hmm. Now that I've figured out how the checksum works, maybe I should
+# experiment and see what these two bits do.
+24	set => steady cursor
+27-31	Checksum
+
+Checksum is {fCode}NOT{f} (number of bits set in bits 0-26). If the checksum is invalid the BASIC editor defaults to &C300CF.
+# BASIC Editor as covered by good old RISC OS 2 copyright, so you are allowed
+# to disassemble it. The code to calculate the checksum could be 1 instruction
+# shorter if the EOR #31; MOV is replaced with a MVN. There may be other
+# savings to make.

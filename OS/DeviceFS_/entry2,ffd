@@ -1,0 +1,10 @@
+Device driver Wake up for TX entry point (2)
+#Parent DeviceFS_CallDevice
+=>	R0 =	2
+	R2 =	device driver stream handle
+<=	R0 =	0 if you wish to remain dormant
+	 	2 if you are ready to transmit
+
+This entry point is called when DeviceFS has data ready to transmit. If you wish to wake up transmit data you should call <DeviceFS_TransmitCharacter> to obtain bytes to send.
+#Line
+See <PRM 2, page 600=>PRM-2:600>.

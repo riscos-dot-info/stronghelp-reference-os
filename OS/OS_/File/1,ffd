@@ -1,0 +1,21 @@
+OS_File 1,2,3,4,9 and 18
+#Parent OS_File
+=>	R0 =	1, 2, 3, 4, 9 or 18 (reason codes)
+	R1 =	pointer to filename
+	 	if R0 in (1,2)	: R2 =	<load address=>fsys_loadexec>
+	 	if R0 = 18	: R2 =	<filetype=>Filetypes:!Root>
+	 	if R0 in (1,3)	: R3 =	<exec address=>fsys_loadexec>
+	 	if R0 in (1,4)	: R5 =	<attributes=>fsys_objattr>
+
+<=	registers preserved
+
+This SWI is used to write various catalogue information for a named object.
+
+R0	Info written
+#Line
+1	Load and exec address + object attributes
+2	Load address
+3	Exec address
+4	Object attributes
+9	Date/time stamp + filetype to &FFD if not set.
+18	Filetype, and date/time if not set.

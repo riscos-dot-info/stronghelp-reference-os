@@ -1,0 +1,6 @@
+Mouse types
+Value	Meaning
+#Line
+0	Quadrature
+1	Microsoft serial
+2	MSC serial

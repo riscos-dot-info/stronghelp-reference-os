@@ -1,0 +1,5 @@
+ColourTrans_InvalidateCache  (&40750)
+#Parent ColourTrans_
+This call must be issued whenever the palette has changed since ColourTrans was last called. Note that colour changes due to a mode change are detected. You only need to use this if another of the palette change operations was used.
+#Line
+See <PRM 3, page 369=>PRM-3:369>.

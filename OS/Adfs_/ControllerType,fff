@@ -1,0 +1,12 @@
+ADFS_ControllerType  (&40248)
+=>	R0 =	drive number (0-7)
+<=	R0 =	controller type:
+	 	0 => disc not present
+	 	1 => 1772
+	 	2 => 710/711
+	 	3 => ST506
+	 	4 => IDE
+
+This call returns the controller type of the given drive, and is not available under RISC OS 2.
+#Line
+See <PRM 2, page 290=>PRM-2:290>.

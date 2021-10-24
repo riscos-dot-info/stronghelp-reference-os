@@ -1,0 +1,10 @@
+OS_Byte 19  Wait for VSync
+#Parent OS_ByteIndex
+=>	R0 =	19
+
+<=	R0 preserved
+	R1,R2 corrupted
+
+This call takes the control of the ARM until the electron beam of the monitor has reached its last position and jumps to the top left of the screen.
+#Line
+See <PRM 1, page 631=>PRM-1:631>

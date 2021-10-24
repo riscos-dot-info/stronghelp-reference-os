@@ -1,0 +1,10 @@
+Hourglass
+#Parent !Root
+#Prefix Hourglass_
+<Colours>
+<LEDs>
+<Off>
+<On>
+<Percentage>
+<Smash>
+<Start>

@@ -1,0 +1,7 @@
+Econet_DeAllocatePort  (&40014)
+#Parent Econet_
+=>	R0 =	port number
+
+This SWI releases a port previously claimed using <Econet_AllocatePort>.
+#Line
+See <PRM 2, page 677=>PRM-2:677>.

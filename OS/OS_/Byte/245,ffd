@@ -1,0 +1,15 @@
+OS_Byte 245  Read/Write printer driver type
+#Parent OS_ByteIndex
+=>	R0 =	245 (&F5)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	value before being overwritten
+	R2 corrupted
+                                                  
+This call reads or sets the path to use for printer output. The <type=>OS_Byteprinters> may also be written with <OS_Byte 5=>OS_Byte005>. The default type is set held within <CMOS byte 15=>OS_ByteCMOS15>.
+
+This call does not wait for the printer buffer to empty first. Because of this, it does not enable interrupts, and so may be used to read the printer type from within an interrupt routine.
+#Line
+See <PRM 1, page 515=>PRM-1:515>

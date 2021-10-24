@@ -1,0 +1,9 @@
+Portable_ReadBMUVariable  (&42FC2)
+#Parent Portable_
+=>	R0 =	<BMU variable number=>Portable_BMUvars>
+<=	R0 preserved
+	R1 =	value
+
+This call reads Battery Management Unit Variables
+#Line
+See <PRM 4, page 202=>PRM-4:202>.

@@ -1,0 +1,15 @@
+OS_EvaluateExpression  (&2D)
+#Parent OS_
+=>	R0 =	pointer to string
+	R1 =	pointer to buffer
+	R2 =	length of buffer
+
+<=	R1 =	0 if integer returned, else preserved
+	R2 =	integer if R1=0, else length of string
+
+This SWI takes a string, evaluates it, and places result in given buffer. Type of the result is given in R1 :
+
+	0	Integer returned in R2
+	Not 0	Pointer to string, length in R2
+#Line
+See <PRM 1, page 457=>PRM-1:457>.

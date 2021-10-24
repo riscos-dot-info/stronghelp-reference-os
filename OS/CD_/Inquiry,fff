@@ -1,0 +1,56 @@
+CD_Inquiry  (&41255)
+#Parent CD_
+=>	R0 =	pointer to <36 byte buffer=>.buffer>
+	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+
+This SWI returns the CD-ROM device information - the same as returned by the SCSI Inquiry command.
+#subpage buffer
+CD_Inquiry buffer
+#Parent CD_Inquiry
+Offset	Contents
+#Line
+0	<device type=>.type>
+4	length of block - 4
+5-6	reserved
+7	<interface flags=>.flags>
+8	vendor identification, space padded to 8 characters
+16	product identification, space padded to 16 characters
+32	product revision level, space padded to 4 characters
+#Subpage type
+CD_Inquiry device type
+Bit	Meaning
+#Line
+0-4	Device type
+	  0	Direct access device
+	  5	CD-ROM device
+	  7	Optical memory device
+	  8	Medium changer device
+5-7	Device qualifier
+	  0	Device is connected
+	  1	Device is not connected
+	  3	Target doesn't support any device
+8-14	Device type modifier (should be 0 for SCSI I compatibility)
+15	Device is removable
+16-18	ANSI-approved version supported
+19-21	ECMA version supported
+22-23	ISO version supported
+24-27	Response format
+	  0	Follows SCSI I format
+	  1	Compatible with pre-SCSI I devices
+	  2	Follows SCSI II format
+28-29	reserved
+30	Device supports Terminate I/O process message
+31	Device supports asynchronous event notification
+#Subpage flags
+CD interface flags
+Bit	Meaning
+#Line
+0	Device responds to the reset condition with soft reset
+1	Supports tagged command queuing
+2	reserved
+3	Supports linked commands
+4	Supports synchronous data transfer
+5	Supports 16 bit data transfers
+6	Supports 32 bit data transfers
+7	Supports relative addressing mode
+

@@ -1,0 +1,3 @@
+Callback handler
+#Parent OS_handlers
+This is called whenever the CallBack flag is set, and the system exits to User mode with interrupts enabled (not when the system is idling). The CallBack flag is set either explictly by <OS_SetCallBack>, or implicity by returning with R12=1 from the <escape=>.escape> or <event=>.event> handlers. The callback handler is entered in IRQ or SVC with interrupts disabled, and *must not* allow a second CallBack before the first has completed.

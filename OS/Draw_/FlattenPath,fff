@@ -1,0 +1,12 @@
+Draw_FlattenPath  (&40708)
+#Parent Draw_
+=>	R0 =	pointer to <path block=>draw_pathblock>
+	R1 =	pointer to <output path block=>draw_outpathblock>, or 0 to calcluate size
+	R2 =	flatness, or 0 for default
+
+<=	R0 =	R1 = 0	calulated output buffer size
+	 	else	pointer to end of <path marker=>draw_pathblock> in output path
+
+This SWI is a subset of <Draw_StrokePath>, as it will only flatten a path. This is useful if you want to repeatedly stroke a path, without having to repeately spend time flattening it.
+#Line
+See <PRM 3, page 544=>PRM-3:544>.

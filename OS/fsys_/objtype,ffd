@@ -1,0 +1,12 @@
+Object types
+#Parent OS_File5
+# Gerph> Not sure if this is the world's best parent for this page.
+#        Hmm... I'll live with it :-)
+Type	Meaning
+#Line
+0	Object not found
+1	File
+2	Directory
+3	Image
+
+Image files only exist under RISC OS 3. They are typed files which can be accessed as normal directories, and therefore have qualities of both files and directories. Images may be locked to prevent modification of their entire contents, and deletion will delete the whole tree without checking for locked files within the tree.

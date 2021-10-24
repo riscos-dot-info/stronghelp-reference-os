@@ -1,0 +1,11 @@
+OS_Word 15
+#Parent OS_Word
+=>	R0 =	15
+	R1 =	pointer to parameter block
+	R1+0 = reason code :
+	  8 :	<Write CMOS clock and soft-copy time from string=>OS_Word15,8>
+	  15 :	<Write CMOS clock and soft-copy date from string=>OS_Word15,15>
+	  24 :	<Write CMOS clock and soft-copy time and date from string=>OS_Word15,24>
+
+Nowhere does the PRM say how to determine the correct format of string to pass for the current territory. Presumably it is to be done by inspection from a time read with <OS_Word 14=>OS_Word14>.
+# Well, that's easy to do generically

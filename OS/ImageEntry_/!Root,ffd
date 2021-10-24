@@ -1,0 +1,9 @@
+ImageEntry - Image filing system entry points
+# This page
+#Parent !Root
+Image filing system entry points are defined by the image filing system information block :
+
+#fH4
+#Include fsys_image_infoblock
+
+To create an image filing system, use <OS_FSControl 35=>OS_FSControl35>.

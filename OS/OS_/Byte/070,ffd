@@ -1,0 +1,13 @@
+OS_Byte 70  Read/Write country number
+#Parent OS_ByteIndex
+=>	R0 =	70 (&46)
+	R1 =	<country number=>Territory_numbers>, or 127 to read
+
+<=	R0 =	preserved
+	R1 =	0 if invalid country number passed
+	 	country number before being overwritten
+	R2 corrupted
+                                                  
+This call reads or writes the country number used by the international module. This value can also be read with <OS_Byte 240=>OS_Byte240>.
+#Line
+See <PRM 3, page 771=>PRM-3:771>

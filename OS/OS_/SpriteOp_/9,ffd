@@ -1,0 +1,12 @@
+Initialise area  (9)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<9, &9=>OS_spriteop_reason2> (Initialise area)
+	R1 =	<Sprite area=>OS_SpriteOp_Area>
+
+This SWI clears all sprites from the sprite area specified. To start using a sprite area set the area block :
+0	Size of area
+4	0 (number of sprites)
+8	16 (pointer to first sprite)
+12	16 (pointer to first free word)
+#Line
+See <PRM 1, page 767=>PRM-1:767>

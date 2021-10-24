@@ -1,0 +1,5 @@
+CDFS_GetNumberOfDrives  (&41E84)
+#Parent CDFS_
+<=	R0 =	number of drives
+
+This SWI reads the number of CD-Rom drives configured for CDFS.

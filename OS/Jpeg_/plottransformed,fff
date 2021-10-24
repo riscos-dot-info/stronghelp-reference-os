@@ -1,0 +1,10 @@
+JPEG_PlotTransformed  (&49984)
+#Parent JPEG_
+=>	R0 =	pointer to JPEG
+	R1 =	<transformation flags=>JPEG_transflags>
+	R2 =	pointer to destination coordinate block, or <transformation matrix=>draw_transform>
+	R3 =	length of image
+
+This SWI decompresses, transforms, and plots on the screen a JPEG image held in memory.
+
+This call is similar to <OS_SpriteOp 56=>OS_SpriteOp_56>, in that the destination coordinate block and the transformation matrix have exactly the same meaning.  However, this call only supports a direct plot.

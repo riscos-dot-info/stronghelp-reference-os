@@ -1,0 +1,10 @@
+OS_Word 0
+#Parent OS_Word
+=>	R0 =	0
+	R1 =	buffer:
+	  0 Two byte buffer address
+	  2 Size of buffer
+	  3 Lowest ASCII code
+	  4 Highest ASCII code
+
+Don't use this SWI, use <OS_ReadLine>.

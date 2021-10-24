@@ -1,0 +1,8 @@
+FSEntry_Args 7
+#Parent FSEntry_Args
+=>	R0 =	7 (Ensure file size)
+	R1 =	internal file handle returned by <FSEntry_Open>
+	R2 =	size of file
+<=	R2 =	size actually ensured
+
+This call is made to ensure that a file is of a particular size. Space should be reserved, but it is not required to be initialised. This is meaningless on streams.

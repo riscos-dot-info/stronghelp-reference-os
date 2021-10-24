@@ -1,0 +1,24 @@
+OS_ClaimProcessorVector  (&69) (3.5)
+#Parent OS_
+{*}On claim :{*}
+=>	R0 =	<Vector number=>.vectors> + 256
+	R1 =	Address of replacement routine
+<=	R1 =	Address of original routine
+
+{*}On release :{*}
+=>	R0 =	<Vector number=>.vectors>
+	R1 =	Address of original routine
+	R2 =	Address of our routine (??)
+
+This call is used to allow low-level code to claim the ARM's hardware vectors which are called when interrupts and aborts occur.
+#
+#Subpage vectors
+RO3.5 processor vectors
+\#	Vector
+#line
+0	Branch through zero
+1	Undefined instruction
+2	SWI executed
+3	Prefetch abort
+4	Data abort
+6	IRQ

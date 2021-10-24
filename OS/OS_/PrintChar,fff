@@ -1,0 +1,8 @@
+OS_PrintChar  (&5D)
+#Parent OS_
+=>	R0 =	character to print
+<=	R0 preserved
+
+This call sends a character to the printer. <OS_Byte 3=>OS_Byte003> and <5=>OS_Byte005> control whether there is a printer selected and which device it is. Note that the printer ignore character is not used by this call.
+#Line
+See <PRM 1, page 521=>PRM-1:521>.

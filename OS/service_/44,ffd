@@ -1,0 +1,9 @@
+Service_KeyHandler (&44)
+#Parent Service_index
+=>	R1 =	&44 (reason code)
+	R2 =	<keyboard ID=>OS_keyboardid>
+<=	R0 & R1 preserved (do not claim)
+
+This service is issued after <OS_InstallKeyHandler> is called, or after a reset, to inform keyboard handlers what sort of keyboard is present.
+#Line
+See <PRM 1, page 851=>PRM-1:851>

@@ -1,0 +1,19 @@
+OS_SpriteOp  (&2E)
+#Parent OS_
+=>	R0 =	<reason code=>os_spriteop_Reason>
+
+This SWI controls the sprite system. R1 and R2 is often used to select a sprite. When they are, the following applies :
+
+{f*}R0 bits{f;Tab}
+8 & 9		R1				R2
+#Line
+00 (+  0)	 				sprite name
+01 (+256)	<sprite area=>os_spriteop_Area>	sprite name
+10 (+512)	<sprite area=>os_spriteop_Area>	<sprite ptr=>os_spriteop_ptr>
+
+In the first case, the system sprite area is used. Do not use this.
+# Gerph> and that means /you/ !
+
+This SWI is indirected via <SpriteV=>vector_index>.
+#Line
+See <PRM 1, page 761=>PRM-1:761>.

@@ -1,0 +1,9 @@
+Podule_ReadChunk  (&40283)
+#Parent Podule_
+=>	R0 =	chunk number
+	R2 =	pointer to buffer (assumed large enough)
+	R3 =	<ROM section=>OS_ModuleROMSections>
+
+This SWI reads the specified chunk from an expansion card. Use <Podule_EnumerateChunks> to find the size of the chunk.
+#Line
+See <PRM 4, page 142=>PRM-4:142>.

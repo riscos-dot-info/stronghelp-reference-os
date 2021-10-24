@@ -1,0 +1,10 @@
+OS_FSControl 56 (&38)
+#Parent OS_FSControl
+=>	R0 =	56 (Read defect list for a large disc or image file)
+	R1 =	pointer to name of object
+	R2 =	pointer to buffer
+	R3 =	length of buffer
+<=	R0 preserved
+	R1 =	number of defects placed in the buffer
+
+Reads the defects list for a large disc. The buffer consists of 64bit values (LSW first).

@@ -1,0 +1,5 @@
+RamFS_Drives  (&40782)
+#Parent RamFS_
+This SWI calls <FileCore_Drives>, after first setting R8 to point to the FileCore instance private word for RamFS.
+#Line
+See <PRM 2, page 312=>PRM-2:312>.

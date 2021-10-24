@@ -1,0 +1,8 @@
+Write character vector (3)
+#parent vector_index
+=>	R0 =	character to write to <active output streams=>OS_Byte003>
+<=	R0 preserved
+
+This vector is used to indirect all calls to <OS_WriteC>, and in turn <OS_NewLine>, <OS_PrettyPrint>, <OS_Write0>, <OS_WriteI>, <OS_WriteN> and <OS_WriteS> which call it. In practice these SWIs may not actually call <OS_WriteC> or this vector if there is no reason to do so ({/}i.e.{/} the vector is not claimed, spooling and printer are inactive).
+#Line
+See <PRM 1, page 80=>PRM-1:80>.

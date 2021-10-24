@@ -1,0 +1,11 @@
+PDumper numbers
+#Parent PDriver_MiscOp80000000
+#Wrap off
+Number	Module		Printer
+#Line
+0	PDumperSP	Sprite Device
+1	PDumberDM	Dot matrix
+2	PDumberLJ	LaserJet
+3	PDumberIW	ImageWriter
+4	PDumber24	Dot reducing 24 pin
+5	PDumberDJ	Colour Deskjet

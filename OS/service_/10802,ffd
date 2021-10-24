@@ -1,0 +1,7 @@
+Service_ADFSPoduleDying (&10802)
+#Parent Service_Index
+=>	R1 =	&10802 (reason code)
+
+"This call is issued by an IDE expansion card to warn ADFS of its immenient demise."
+#Line
+See <PRM 4, page 137=>PRM-4:137>

@@ -1,0 +1,13 @@
+OS_Byte 211  Read/Write bell channel
+#Parent OS_ByteIndex
+=>	R0 =	211 (&DC)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	previous channel
+	R2 =	bell volume (see <OS_Byte 212=>OS_Byte212>)
+                                                  
+This call reads or sets the sound channel for the bell (<VDU 7=>VDU:7>). The default channel is 1.
+#Line
+See <PRM 1, page 661=>PRM-1:661>

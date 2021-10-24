@@ -1,0 +1,15 @@
+ImageFS information block
+#f
+# The line above MUST be present to allow ImageEntry_!root to work
+Offset	Contents
+#Line
+&00	ImageFS <information word=>fsys_image_infoword>
+&04	ImageFS <filetype=>Filetypes:!Root>
+&08	Offset of routine to open files		<ImageEntry_Open>
+&0C	Offset of routine to get bytes		<ImageEntry_GetBytes>
+&10	Offset of routine to put bytes		<ImageEntry_PutBytes>
+&14	Offset of routine to control open files	<ImageEntry_Args>
+&18	Offset of routine to close open files	<ImageEntry_Close>
+&1C	Offset of routine to do file operations	<ImageEntry_File>
+&20	(nothing ?)
+&24	Offset of routine to do FS operations	<ImageEntry_Func>

@@ -1,0 +1,11 @@
+ROM Sections
+#Parent OS_Module19-20
+\#	ROM Section
+#Line
+# I have card 8 on my Risc PC
+0-3	Expansion card 0-3
+-1	System ROM
+-2	System ROM 1
+-3	System ROM 2 etc.
+
+The number of system ROMs and expansion cards can be read with <Podule_ReturnNumber>.

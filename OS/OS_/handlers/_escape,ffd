@@ -1,0 +1,8 @@
+Escape handler
+#Parent OS_handlers
+This is called whenever an escape condition is detected and the <escape event=>event_6> is disabled (execept for calls to <OS_Byte 125=>OS_Byte125> which always call the handler). <OS_Byte 124=>OS_Byte124> and <126=>OS_Byte126> suggest that it is also called with R11 bit 6 clear to clear/acknowledge an escape condition.
+
+=>	R11 =	bit 6 set (implies escape condition)
+	R12 =	"workspace" - don't use the value 1
+	R13 =	FD stack
+<=	R12 =	1 sets <callback=>.callback>

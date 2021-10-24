@@ -1,0 +1,9 @@
+Screen save  (2)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<2, &2=>os_spriteop_reason2> (Screen save)
+	R2 =	pointer to filename
+	R3 =	0 for no palette, 1 to include a palette
+
+This SWI saves the current graphics window. Spritename is "screendump".
+#Line
+See <PRM 1, page 764=>PRM-1:764>

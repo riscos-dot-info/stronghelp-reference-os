@@ -1,0 +1,33 @@
+Font_Paint Flags
+#Parent Font_Paint
+bit	meaning
+#Line
+0	1 = justify specifed by graphics cursor, 0 = not justified
+1	1 = rub-out box specifed by graphics cursor, 0 = don't rub-out
+4	1 = x and y are in OS, 0 = millipoints
+5	justify & rub-out specifed by block in R5 (bit 4 must be clear), 0 = use flags in bits 0,1
+6	<Transformation matrix=>Font_matrix> specifed by R6 (bit 4 must be clear)
+7	Given string length
+8	Given font
+9	Kern
+10	Right to left
+11	<Background blending=>.blend> (RISC OS 3.7 or later {*}only{*})
+17	Return caret position
+18	Return bounding box
+19	Return matrix
+20	Return split count
+Others	Reserved, must be zero
+
+RISC OS 2 only recognises flags in bits 0,1,4
+
+To specify justify using the graphics cursor, first move to right side. To specify a rub-out box using the graphics cursor, first move to lower left and then to upper right of box.
+
+If both, then do justify move last.
+#SubPage blend
+Background Blending
+To use background blending you must ensure:
+
+è	You have checked with <Font_CacheAddr> that the Font Manager supports this bit, as versions earlier than 3.35 will complain if the bit is set.
+è	Font colours specify 1 or more anti-aliasing colours, else the Font Manager will use 1bpp (non-aliased) painting.
+
+As blending is slow you should avoid it on known uniform backgrounds.

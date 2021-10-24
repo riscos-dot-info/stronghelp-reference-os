@@ -1,0 +1,8 @@
+PDriver_RemoveDriver  (&80157)
+#Parent PDriver_
+=>	R0 =	<printer driver number=>PDriver_printernumbers>
+
+This SWI deregisters a printer driver from the PDriver sharer module, cancelling all jobs associated with it. This can confuse (and crash) some applications - it is wise for the driver to check that it has no pending jobs before calling this SWI.
+# N> Quite how the *driver* should do this is not mentioned by the PRM!
+#Line
+See <PRM 3, page 642=>PRM-3:642>.

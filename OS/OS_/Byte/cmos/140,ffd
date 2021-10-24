@@ -1,0 +1,9 @@
+OS_Byte CMOS 140
+#Parent OS_Bytecmos
+Bit(s)	Meaning
+#Line
+0	3D Newlook enabled
+2-4	<WimpFont=>OS_Bytecmos140_fonts>
+7	Don't tile
+
+Under RISC OS 2 this byte was used to store PrinterDP settings.

@@ -1,0 +1,12 @@
+OS_Word 10
+#Parent OS_Word
+=>	R0 =	10
+	R1 =	9 byte block :
+	 	  0 character code
+<=	R1 =	buffer containing :
+	 	  1 top row of def.
+	 	  .
+	 	  .
+	 	  8 bottom row of def.
+
+This SWI reads a character definition. Valid values are 32-126 and 128-256. Values 2-5 returns ECF pattern 1-4. Value 6 returns dot-dash pattern.

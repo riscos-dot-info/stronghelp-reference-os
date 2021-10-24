@@ -1,0 +1,6 @@
+Econet_EnumerateTransmit  (&4001F) (3.5)
+#Parent Econet_
+=>	R0 =	index, 1 for first block
+<=	R0 =	handle, or 0 if no more blocks
+
+This SWI enumerates the currently open transmit blocks.

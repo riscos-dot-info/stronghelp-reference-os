@@ -1,0 +1,6 @@
+CD_EjectButton  (&41248)
+#Parent CD_
+=>	R0 =	flag (0 to enable eject, 1 to disable)
+	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+
+This SWI is used to lock or unlock the CD drawer.

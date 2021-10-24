@@ -1,0 +1,10 @@
+FSEntry_Func 28
+#Parent FSEntry_Func
+=>	R0 =	28 (Write boot option)
+	R1 =	pointer to name of any object on image
+	R2 =	new <boot option=>fsys_opt4>
+	R6 =	pointer to special field, or 0 if not present
+
+This call sets the boot option of a disc, implementing <OS_FSControl 48=>OS_FSControl47>.
+#
+# This entry point is only called if bit 23 of the filing system <information word=>fsys_infoword> is set.

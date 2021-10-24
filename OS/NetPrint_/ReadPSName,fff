@@ -1,0 +1,14 @@
+NetPrint_ReadPSName  (&40202)
+#Parent NetPrint_
+=>	R1 =	pointer to buffer for resulting string
+	R2 =	size of buffer
+
+<=	R0 =	pointer to buffer (R1 on entry)
+	R1 =	pointer to terminator
+	R2 =	free bytes in buffer
+
+This SWI reads the name of your current printer server, or returns a null string if your printer server is only stored as a number.
+
+Note: NetPrint prior to 5.26 is buggy, returning R1 one too great, and R2 one too small.
+#Line
+See <PRM 2, page 391=>PRM-2:391>.

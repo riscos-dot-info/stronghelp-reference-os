@@ -1,0 +1,16 @@
+OS_ReadDynamicArea  (&5C)
+#Parent OS_
+{f25}Þ{f}	R0 =	<area=>OS_Areas> to read, bit 7 set to read maximum size to R2
+{f25}Ü{f}	R0 =	pointer to start address of area
+	R1 =	current number of bytes in area
+	R2 =	maximum size of area
+#tab;line
+This SWI reads the size of an area.
+
+#wrap on
+/Virtualise/	If this SWI is used on an area that has virtual memory active this SWI reads the
+logical size of the area, otherwise the behaviour is the same as before.
+In practice this means that this call can be used by the application
+without worrying whether virtual memory is active.
+#Line
+See <PRM 1, page 388=>PRM-1:388>.

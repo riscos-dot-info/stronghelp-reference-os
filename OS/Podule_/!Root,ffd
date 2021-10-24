@@ -1,0 +1,18 @@
+Podule
+#Parent !Root
+#Prefix Podule_
+#Table Columns 2
+<CallLoader>
+<EnumerateChunks>
+<EnumerateChunksWithInfo>
+<HardwareAddress>
+<HardwareAddresses>
+<RawRead>
+<RawWrite>
+<ReadBytes>
+<ReadChunk>
+<ReadHeader>
+<ReadID>
+<ReturnNumber>
+<WriteBytes>
+#EndTable

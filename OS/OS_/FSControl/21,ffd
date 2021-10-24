@@ -1,0 +1,12 @@
+OS_FSControl 21
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	21 (Read FS internal file handle)
+	R1 =	(fileswitch) file handle
+
+<=	R0 preserved
+	R1 =	filing system file handle
+	R2 =	filing system <information word=>fsys_infoword>
+#Wrap
+
+This SWI returns the internal file handle (as returned by <FSEntry_Open>) for a given file handle. If the fileswitch handle is invalid R1=0 on return. This SWI should only be used to implement a filing system.

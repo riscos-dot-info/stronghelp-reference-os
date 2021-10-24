@@ -1,0 +1,20 @@
+OS_GBPB  (&0C)
+#Parent OS_
+This SWI Read/Writes a block from/to an open file
+
+R0	Action
+#Line
+1	<Write bytes to given pointer=>OS_GBPB1>
+2	<Write bytes to current pointer=>OS_GBPB1>
+3	<Read bytes from given pointer=>OS_GBPB3>
+4	<Read bytes from current pointer=>OS_GBPB3>
+5	<Read name & boot options=>OS_GBPB5>
+6	<Read current dir and privilege byte=>OS_GBPB5>
+7	<Read library dir and privilege byte=>OS_GBPB5>
+8	<Read entries from current dir=>OS_GBPB8>
+9	<Read entries from given dir=>OS_GBPB9>
+10	<Read entries and info from given dir=>OS_GBPB10>
+11	<Read entries and full info from given dir=>OS_GBPB11>
+12	<Read entries and full info with filetype from given dir=>OS_GBPB12>
+#Line
+See <PRM 2, page 63=>PRM-2:63>.

@@ -1,0 +1,7 @@
+Ticker vector (28)
+#Parent vector_index
+No parameters in registers
+
+This vector is called every centisecond, and must never be intercepted. If your routine takes > 100µs you may re-enable IRQ, as long as you can cope with/prevent re-entrancy.
+#Line
+See <PRM 1, page 83=>PRM-1:83>.

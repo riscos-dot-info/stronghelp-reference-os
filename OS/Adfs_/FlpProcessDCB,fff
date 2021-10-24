@@ -1,0 +1,4 @@
+ADFS_FlpProcessDCB  (&40247)
+This call is for internal use only, and not available under RISC OS 2.
+#Line
+See <PRM 2, page 289=>PRM-2:289>.

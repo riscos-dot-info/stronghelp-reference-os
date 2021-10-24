@@ -1,0 +1,23 @@
+Extended Expansion Card identity byte
+#Parent Podule_
+A extended ECId is eight bytes long:
+
+Byte	Bit	Value	Meaning
+#Line
+7	7-0	 	<country=>Territory_numbers> (or 0 for UK)
+6,5	15-0	 	manufacturer
+4,3	15-0	 	product type
+2	7-0	0	reserved
+1	7-4	0	reserved
+1	3-2	0	8 bit width
+	 	1	16 bit width
+	 	2	32 bit width
+	1	1	<Interrupt Status Pointers=>Podule_isp> follow ECId (else not present)
+	0	1	<Chunk Directory=>Podule_chunkdir> follows interrupt Status Pointers (else not present)
+0	7	0	Acorn conformant expansion card
+ 	6-3	0	extended ECId
+	2	0	not requesting FIQ (or FIQ relocated)
+	 	1	requesting FIQ
+	1	0	Expansion card present
+	0	0	not requesting IRQ (or IRQ relocated)
+ 	 	1	requesting IRQ

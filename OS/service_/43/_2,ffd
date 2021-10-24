@@ -1,0 +1,12 @@
+Service_International 2
+#Parent Service_43
+=>	R1 =	&43 (reason code)
+	R2 =	2 (sub reason code)
+	R3 =	<country number=>Territory_numbers>
+	R4 =	pointer to buffer
+	R5 =	length of buffer
+<=	R1 =	0 to claim, preserved otherwise
+	R2-R4 preserved
+	R5 =	number of characters put into buffer, or preserved if unrecognised.
+
+This service converts a country name to number. If a module provides additional countries it should check this service - if the number matches one provided by the module it should claim this service.

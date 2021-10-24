@@ -1,0 +1,12 @@
+OS_Byte 127  Check for end of file
+#Parent OS_ByteIndex
+=>	R0 =	127
+	R1 =	file handle
+
+<=	R0 preserved
+	R1 =	non-zero for EOF
+	R2 corrupted
+
+This call checks for end of file. It uses <OS_Args 5=>OS_Args005> - so should you.
+#Line
+See <PRM 2, page 25=>PRM-2:25>

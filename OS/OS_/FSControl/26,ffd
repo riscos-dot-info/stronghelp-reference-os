@@ -1,0 +1,15 @@
+OS_FSControl 26  (&29)
+#Parent OS_FSControl
+=>	R0 =	26 (Copy objects)
+	R1 =	pointer to wildcarded filename of files to copy
+	R2 =	pointer to destination
+	R3 =	<flags=>OS_FSControlFlags>
+	R4 =	<start load=>fsys_loadexec>
+	R5 =	<start exec=>fsys_loadexec>
+	R6 =	<end load=>fsys_loadexec>
+	R7 =	<end exec=>fsys_loadexec>
+	R8 =	<pointer to descriptor=>OS_FSControlDescriptor>
+
+This SWI allows you to copy files from one directory to another or as a new name. The destination leafname may not be wildcarded, unless it is "*" signifying "take destination leafname from source leafname".
+
+It is not possible to choose a combination of flags to perform the same operation as "no confirm" in the desktop, as the desktop *will* overwrite files without confirmation, but won't force the overwriting of locked files, whereas this SWI will only overwrite files if it either has force set, or confirm set and gets positive confirmation.

@@ -1,0 +1,16 @@
+Battery Management Unit Variables
+#Parent Portable_
+Number	Description
+#line
+0	version number and memory map of BMU microcode
+1	battery capacity	(nominal)
+2	 			(measured)
+3	 			(used)
+4	 			(useable)
+5	(reserved)
+6	charge estimate ({*}may{*} be written to)
+7	instantaneous voltage
+8	instantaneous current
+9	instantaneous temperature
+10	<flags=>Portable_BMUflags>
+11	charge rate (in bits 4-7)

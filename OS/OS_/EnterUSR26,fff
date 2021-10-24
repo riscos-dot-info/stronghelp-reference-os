@@ -1,0 +1,7 @@
+OS_EnterUSR26 (&74) [3.8]
+#Parent OS_
+{f25}Þ{f}	no parameters
+{f25}Ü{f}	registers preserved
+ 		Interrupt status unaltered
+#line
+This SWI returns in 26-bit user mode. Behaviour is undefined unless this SWI is called from 32-bit user mode. This SWI cannot be called from an address above 64M.

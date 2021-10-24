@@ -1,0 +1,9 @@
+Flip about y axis (47)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<47, &2F=>os_spriteop_reason2> (Flip about y axis)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+
+This replaces the sprite with its mirror image.
+#Line
+See <PRM 1, page 798=>PRM-1:798>

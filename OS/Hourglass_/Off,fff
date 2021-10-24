@@ -1,0 +1,5 @@
+Hourglass_Off  (&406C1)
+#Parent Hourglass_
+This decreases the count of times the hourglass has been turned on with <Hourglass_On> or <Hourglass_Start>, and turns it off when it reaches zero. To force it off, use <Hourglass_Smash>.
+#Line
+See <PRM 2, page 736=>PRM-2:736>.

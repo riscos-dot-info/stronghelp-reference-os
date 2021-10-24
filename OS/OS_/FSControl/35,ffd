@@ -1,0 +1,10 @@
+OS_FSControl 35  (&29)
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	35 (Add image filing system)
+	R1 =	module base address
+	R2 =	offset of <ImageFS information block=>fsys_image_infoblock>
+	R3 =	value to pass to routines in R12
+#Wrap
+
+This SWI is used to register an image filing system with the OS.

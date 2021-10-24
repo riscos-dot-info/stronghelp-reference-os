@@ -1,0 +1,48 @@
+Service_IdentifyDisc (&69)
+#Parent Service_Index
+=>	R1 =	&69 (reason code)
+	R2 =	pointer to buffer for format name
+	R3 =	buffer length
+	R5 =	pointer to <disc record=>FileCore_Disc>
+	R6 =	sector cache handle
+	R8 =	*pointer to* FileCore instance private word
+
+If format unrecognised
+<=	R1-R5 preserved
+	R6 =	new sector cache handle
+	R8 preserved
+
+else 
+
+<=	R1 =	0 (to claim)
+	R2 =	filetype number for given disc
+	R5 =	pointer to modified <disc record=>FileCore_Disc>
+	R6 =	new sector cache handle
+	R8 preserved
+
+This service is issued to identify a disc format. FileCore claims it for formats it recognises.
+
+The identification procedure is involved:
+
+1	(Unless any of the <4 values are zero=>.harddisc>) check the <disc record=>FileCore_Disc>'s sector size, sectors per track, density and lowest sector ID number
+	Pass on the service if the sector scheme is unrecognised
+2	Update the values in the <disc record=>FileCore_Disc> for disc size, sequence sizes, double step and <heads=>.heads>.
+3	<Read the sector contents=>.read> and check them - if it does not recognise these then pass on the service with R6 updated
+4	Update the values in the <disc record=>FileCore_Disc> for <disc cycle id=>FileCore_cycleid> and disc name
+# Tag buffer
+5	Fill the buffer in R2 with text suitable for the *current format* menu entry
+6	(Finally) claim the service call.
+#Line
+See <PRM 2, page 218=>PRM-2:218>
+#Subpage harddisc
+Sector size etc. zero
+If any of sector size, sectors per track, density and lowest sector ID number are 0 then these were not supplied by <FileCore_MiscOp 0=>FileCore_MiscOp0> - this should only happen for hard discs.
+#Subpage heads
+Updating heads in the disc record
+The heads field of the <disc record=>FileCore_Disc> should be updated in line with the sequence sides bit - if this bit becomes cleared add one to the heads, if this bit becomes set subtract one (but do not reduce heads below 0).
+#Subpage read
+Reading the sector contents
+The sector contents should be read with <FileCore_DiscOp 9=>FileCore_DiscOp9> with
+R1 =	flags 01x0 binary (1 second timeout, ignore escape, no alternative defect list)
+	pointer to the alternative disc record supplied
+R2 =	the disc address given by the root directory address on the <disc record=>FileCore_Disc> supplied

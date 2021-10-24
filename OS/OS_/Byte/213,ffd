@@ -1,0 +1,13 @@
+OS_Byte 213  Read/Write bell frequency
+#Parent OS_ByteIndex
+=>	R0 =	213 (&D5)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	previous pitch
+	R2 =	bell duration (see <OS_Byte 214=>OS_Byte214>)
+                                                  
+This call reads or sets the bell pitch, which is an <BBC style frequency=>Sound_pitches> in the range 0-255. The default pitch is 100.
+#Line
+See <PRM 1, page 664=>PRM-1:664>

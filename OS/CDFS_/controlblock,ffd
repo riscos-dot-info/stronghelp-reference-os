@@ -1,0 +1,9 @@
+CDFS Control block
+#Parent CDFS_
+Offset	Contents
+#Line
+0	device (0-7)
+4	card (0-3)
+8	LUN (0-7)
+12	driver handle (see <CD_Identify>)
+16	currently zero

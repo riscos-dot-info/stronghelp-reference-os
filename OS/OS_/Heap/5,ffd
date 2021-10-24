@@ -1,0 +1,10 @@
+OS_Heap 5
+#Parent OS_Heap
+#Wrap off
+=>	R0 =	5
+	R1 =	pointer to heap
+	R3 =	size increase, or -ve for decrease
+<=	R3 =	actual change in size
+
+#Wrap
+This SWI notifies the OS of a change in the size of the heap. If the heap cannot be shrunk by the required amount an error will be caused.

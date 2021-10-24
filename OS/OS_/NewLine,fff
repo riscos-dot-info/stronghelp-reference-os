@@ -1,0 +1,5 @@
+OS_NewLine  (&03)
+#Parent OS_
+This sends a line feed followed by a carriage return to all <active output streams=>OS_Byte003>.
+#Line
+See <PRM 1, page 505=>PRM-1:505>.

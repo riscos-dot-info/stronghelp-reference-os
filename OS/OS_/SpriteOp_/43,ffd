@@ -1,0 +1,14 @@
+Read pixel mask (43)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<43, &2B=>os_spriteop_reason2> (Read pixel mask)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+	R3 =	x coordinate (in pixels)
+	R4 =	y coordinate (in pixels)
+
+<=	R5 =	0 => Transparant
+	 	1 => Solid
+
+This SWI reads the mask at a point.
+#Line
+See <PRM 1, page 794=>PRM-1:794>

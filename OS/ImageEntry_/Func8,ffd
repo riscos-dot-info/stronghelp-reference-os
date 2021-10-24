@@ -1,0 +1,8 @@
+ImageEntry_Func 8
+#Parent ImageEntry_Func
+=>	R0 =	8 (Rename object)
+	R1 =	pointer to original filename
+	R2 =	pointer to new filename
+	R6 =	<image filing system's handle=>ImageEntry_Func21>
+
+This call is made to rename an object.

@@ -1,0 +1,8 @@
+OS_FSControl 7  (&29)
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	7 (Catalogue library directory)
+	R1 =	pointer to (wildcarded) filename
+#Wrap
+
+This SWI is equivalent to "{fCode}*LCat{f}". If a pointer to "" is used, the library is catalogued.

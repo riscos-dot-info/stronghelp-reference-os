@@ -1,0 +1,8 @@
+Device driver Sleep RX entry point (4)
+#Parent DeviceFS_CallDevice
+=>	R0 =	4
+	R2 =	device driver stream handle
+
+This entry point is called when DeviceFS no longer awaits data from the device. Interrupt-driven buffered device drivers will ignore this call, as they do not sleep.
+#Line
+See <PRM 2, page 601=>PRM-2:601>.

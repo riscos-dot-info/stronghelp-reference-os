@@ -1,0 +1,11 @@
+OS_Byte CMOS 197
+Bit(s)	Meaning
+#Line
+0	Continuous window movement
+1	Continuous window resizing
+2	Continuous horizontal scroll
+3	Continuous vertical scroll
+4	Don't beep when error box appears
+5	Allow windows partly off screen (down right)
+6	Allow windows partly off screen (all directions)
+7	Open submenus automatically

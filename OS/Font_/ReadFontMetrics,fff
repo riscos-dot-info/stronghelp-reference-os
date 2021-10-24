@@ -1,0 +1,86 @@
+Font_ReadFontMetrics  (&4009F)
+#Parent Font_
+=>	R0 =	font handle
+	R1 =	pointer to buffer for <bounding box=>swi_bbox> array, or 0 to read size
+	R2 =	pointer to buffer for x width data, or 0 to read size
+	R3 =	pointer to buffer for y width data, or 0 to read size
+	R4 =	pointer to buffer for misc data, or 0 to read size
+	R5 =	pointer to buffer for kerning data, or 0 to read size
+	R6 =	0
+	R7 =	0
+
+<=	R0 =	<file flags=>.flags>
+	R1 =	size of bounding box data, or 0 if not in file
+	R2 =	size of x width data, or 0 if not in file
+	R3 =	size of y width data, or 0 if not in file
+	R4 =	size of <misc data=>.misc>, or 0 if not in file
+	R5 =	size of <kerning data=>.kern>, or 0 if not in file
+	R6 =	possibly corrupted
+	R7 =	possibly corrupted
+
+This SWI reads information in the font's IntMetrics file. Currently it is not permitted on fonts which have had a transformation matrix applied. All values are signed millipoints, unless specificly stated.
+
+Width data is an array of 256 words, bounding box data an array of 256 * 4 words (x0, y0, x1, y1).
+# Gerph> Is this still true of fonts with > 256 characters in them ?
+#Line
+See <PRM 3, page 477=>PRM-3:477>.
+#Subpage flags
+File flags
+1	kern pairs don't have x offsets
+2	kern pairs don't have y offsets
+3	>255 kern pairs present
+0,4-31	undefined (reserved)
+#Subpage misc
+Miscelaneous IntMetrics data
+Offset	Value
+#Line
+Maximum bounding box
+0	x0
+2	y0
+4	x1
+6	y1
+
+8	default x offset
+10	default y offset
+12	italic h-offset per em (-1000 * TAN (italic angle))
+14	underline position (1/256 em)
+15	underline thickness (1/256 em, unsigned)
+16	cap height
+18	X height
+20	descender
+22	ascender
+24	0 (reserved)
+#Subpage kern
+Kerning data
+Kerning information is found by hash table lookup, using the function
+    hash table index = (first letter) EOR (second letter ROR 4)
+The second letter can be calculated by
+    second letter = (first letter EOR hash table index) ROR 4
+where both rotates are perfomed 8 bits only.
+
+Data is stored as :
+
+Size	Value
+#Line
+256 * 4	hash table of offsets to first kern pair with this hash value
+4	offset of end of all pairs
+4	flags - meaning when bits set:
+	0	no bounding boxes
+	1	no x offsets
+	2	no y offsets
+	31	'short' kern pairs
+	3-30	undefined (reserved)
+?	kern pair data (stored consecutively, in hash function order)
+
+Kern pair data is stored as :
+
+Size	Value
+#Line
+4	first letter of kern pair
+4	x offset (if flag bit 1 clear)
+4	y offset (if flag bit 1 clear)
+
+If bit 31 of the flags is set, the kern data is compressed by combining the first two (or only two) words:
+
+bits 0-7	first letter of kern pair
+bits 8-31	x or y offset

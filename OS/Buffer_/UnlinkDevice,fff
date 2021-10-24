@@ -1,0 +1,7 @@
+Buffer_UnlinkDevice  (&42946)
+#Parent Buffer_
+=>	R0 =	buffer handle
+
+This SWI unlinks routines from a buffer linked with <Buffer_LinkDevice>. It does not call the <owner changed=>buffer_ownerchange> routine.
+#Line
+See <PRM 4, page 96=>PRM-4:96>.

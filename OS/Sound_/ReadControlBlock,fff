@@ -1,0 +1,12 @@
+Sound_ReadControlBlock  (&4018B)
+#Parent Sound_
+=>	R0 =	channel number (1-8)
+	R1 =	offset to read (0-255)
+
+<=	R0 =	preserved, or 0 for fail
+	R1 =	preserved
+	R2 =	word read from offset in R1.
+
+This SWI reads a word from the channel's <control block=>Sound_sccb>.
+#Line
+See <PRM 4, page 42=>PRM-4:42>.

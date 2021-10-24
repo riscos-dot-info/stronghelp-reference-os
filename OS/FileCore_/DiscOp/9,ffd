@@ -1,0 +1,19 @@
+FileCore_DiscOp 9
+#Parent FileCore_DiscOp
+=>	R1 =	9 + <flags=>FileCore_DiscOp_flags>
+	R2 =	<disc address=>FileCore_discaddress>
+	R3 =	pointer to block to read into
+	R4 =	size to read
+	R6 =	cache handle
+
+<=	R2 =	next disc address
+	R3 =	next free address
+	R4 =	unread bytes
+	R6 =	cache handle
+
+This reason code reads sectors via a cache held in RMA, and isn't available under RISC OS 2.
+
+To start a sequence of these operations, set R6 (cache handle) to zero on entry. Its value will be updated on exit, and subsequent calls should use this new values. Bits 4-7 of R1 should be zero, but are ignored if set.
+
+To discard the cache once finished, just call <FileCore_DiscardReadSectorsCache>.
+Note: For RISC OS 3.6, the value in R2 will be rounded down to be sector aligned.

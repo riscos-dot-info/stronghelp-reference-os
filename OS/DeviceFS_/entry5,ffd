@@ -1,0 +1,8 @@
+Device driver Enumerate directory entry point (5)
+#Parent DeviceFS_CallDevice
+=>	R0 =	5
+	R2 =	pointer to path being enumerated (null terminated)
+
+This entry point is called in all devices when the DeviceFS directory structure is about to be read, allowing devices to add and remove non-permanent devices.
+#Line
+See <PRM 2, page 602=>PRM-2:602>.

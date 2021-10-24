@@ -1,0 +1,5 @@
+OS_AddToVector  (&47)
+#Parent OS_
+Identical to <OS_Claim>, except that OS_AddToVector does not remove earlier instances of "identical" routines (ie those which have identical workspace and code addresses).
+#Line
+See <PRM 1, page 72=>PRM-1:72>.

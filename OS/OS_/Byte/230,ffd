@@ -1,0 +1,20 @@
+OS_Byte 230  Read/Write escape effects
+#Parent OS_ByteIndex
+=>	R0 =	230 (&E6)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	state before being overwritten
+	R2 corrupted
+                                                  
+This call reads or sets the escape effects. A non-zero state disables escape effects. A state of 0 (the default) enables escape effects - when <escape is acknowledged=>OS_Byte126>:
+
+è	<active output buffers are flushed=>OS_Byte021>
+è	<current *Exec file closed=>OS_Byte198>
+è	<VDU queue cleared=>OS_Byte218>
+è	<VDU paged line count cleared=>OS_Byte217>
+è	Terminates any sound being produced
+# Hmm. Don't know which SWI does that
+#Line
+See <PRM 1, page 896=>PRM-1:896>

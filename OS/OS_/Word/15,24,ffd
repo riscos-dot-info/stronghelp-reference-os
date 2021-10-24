@@ -1,0 +1,13 @@
+OS_Word 15,24
+#Parent OS_Word
+=>	R0 =	24
+	R1 =	pointer to block containing :
+	 	 	0 = 15
+	 	 	1 = date and time string in local language
+
+This OS_Word sets the date in the CMOS clock and its soft copy. The string format is territory dependant - for the UK (and RISC OS 2) it is of the form
+#tab
+
+#wrap off
+  Day,DD MMM YYYY.HH::MM::SS    {/}e.g.{/} Mon,17 Feb 1992.17:35:04
+#wrap

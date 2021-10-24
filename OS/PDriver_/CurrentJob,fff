@@ -1,0 +1,7 @@
+PDriver_CurrentJob  (&80146)
+#Parent PDriver_
+<=	R0 =	file handle of current job (or 0 if no current job)
+
+This SWI returns the file handle of the current print job.
+#Line
+See <PRM 3, page 615=>PRM-3:615>.

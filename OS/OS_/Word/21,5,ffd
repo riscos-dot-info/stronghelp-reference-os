@@ -1,0 +1,16 @@
+OS_Word 21,5
+#Parent OS_Word
+=>	R0 =	21
+	R1 =	pointer to block containing :
+		 	0 = 5
+		 	1 = x	LSB
+		 	2 =	MSB
+		 	3 = y	LSB
+		 	4 =	MSB
+
+This OS_Word sets the pointer (not mouse) position from the two *signed* 16 bit values. If the mouse and pointer are linked then the pointer position will be updated with the mouse position at next VSync interrupt.
+# As a corrolary, if you find that the pointer no longer moves with the mouse,
+# you know that you're shafted with interrupts off, and are probably going to
+# have to reset the machine
+# The only exception to this rule is if you've called OS_Byte 106 and unlinked
+# the pointer. Press F12 then return as a check. Otherwise you look stupid.

@@ -1,0 +1,11 @@
+OS_FSControl 18  (&29)
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	18 (Convert filetype number to name)
+	R2 =	filetype (bits 0-11)
+#Wrap
+
+<=	R2 =	first four chars
+	R3 =	final four chars
+
+This SWI issues <Service_LookupFiletype=>Service_42>. If unclaimed, it builds a default string. The string is 8 characters long, suffixed with spaces as necessary.

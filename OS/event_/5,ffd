@@ -1,0 +1,5 @@
+Interval timer event (5)
+#Parent Event_index
+=>	R0 =	5 (event number)
+
+This event is raised when the interval timer crosses zero (see <OS_Word 4=>OS_Word4>).

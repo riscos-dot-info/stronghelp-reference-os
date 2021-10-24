@@ -1,0 +1,9 @@
+ImageEntry_Func 27
+#Parent ImageEntry_Func
+=>	R0 =	27 (Read boot option)
+	R1 =	pointer to name of any object on image
+	R6 =	<image filing system's handle=>ImageEntry_Func21>
+
+<=	R2 =	<boot option=>fsys_opt4>
+
+This call reads the boot option of a disc, implementing <OS_FSControl 47=>OS_FSControl47>.

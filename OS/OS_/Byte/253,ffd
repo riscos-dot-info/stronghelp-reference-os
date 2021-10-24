@@ -1,0 +1,20 @@
+OS_Byte 253  Read last reset type
+#Parent OS_ByteIndex
+=>	R0 =	253 (&FD)
+	R1 =	0
+	R2 =	255
+
+<=	R0 preserved
+	R1 =	<break type=>.type>
+	R2 =	effect of shift on keypad (see <OS_Byte 254=>OS_Byte254>)
+                                                  
+This call read the type of the last reset.
+#Line
+See <PRM 1, page 904=>PRM-1:904>
+#subpage type
+Last reset type
+\#	Reset type
+#Line
+0	Soft reset
+1	Power-on reset
+2	Hard reset

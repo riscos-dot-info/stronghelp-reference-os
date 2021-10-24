@@ -1,0 +1,7 @@
+NetFS_EnableCache  (&40051)
+#Parent NetFS_
+
+This SWI restarts the automatic update of the list of fileservers, which is automaticly suspended when <NetFS_EnumerateFSList> is called.
+# Not EnumerateFS, as the 2-369 says.
+#Line
+See <PRM 2, page 369=>PRM-2:369>.

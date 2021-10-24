@@ -1,0 +1,7 @@
+FileCore_DiscardReadSectorsCache  (&40546)
+#Parent FileCore_
+=>	R6 =	cache handle
+
+This call discards the cache of read sectors created by <FileCore_DiscOp 9=>FileCore_DiscOp9>.
+#Line
+See <PRM 2, page 233=>PRM-2:233>.

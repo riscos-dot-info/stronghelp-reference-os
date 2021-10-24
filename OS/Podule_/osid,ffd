@@ -1,0 +1,26 @@
+Expansion Card operating system identity byte
+#Parent Podule_
+The operating system identity byte is the first byte in the Chunk Directory entry. It is formed of two nybbles:
+High Nibble	Low Nibble	Meaning
+(bits 7-4)	(bits 3-0)
+#Line
+ 8		 		Acorn OS 0: Arthur/RISC OS
+ 		0		Loader
+ 		1		<Relocatable Module=>OS_Module>
+ 		2		BBC ROM
+ 		3		<Sprite=>OS_SpriteOP>
+ 10		 		Acorn OS 2: Unix
+ 		0		Loader
+ 14		 		manufacturer defined
+ 		0-15		manufacturer specific
+ 15		 		Device data
+ 		0		link (points to another directory)
+ 		1		serial number		(string)
+ 		2		date of manufacture	(string)
+ 		3		modification status	(string)
+ 		4		place of manufacture	(string)
+ 		5		description		(string)
+ 		6		part number		(string)
+ 		15		empty chunk
+
+It is intended that the string values are for human inspection (rather than for programs to read)

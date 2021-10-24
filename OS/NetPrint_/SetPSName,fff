@@ -1,0 +1,8 @@
+NetPrint_SetPSName  (&40203)
+#Parent NetPrint_
+=>	R0 =	pointer to name
+
+This SWI sets the named printer server as your current printer server.
+# Gerph> I assume it takes a copy of it, but I'll have to check...
+#Line
+See <PRM 2, page 392=>PRM-2:392>.

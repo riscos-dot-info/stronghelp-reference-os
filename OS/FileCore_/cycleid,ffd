@@ -1,0 +1,5 @@
+Disc cycle ID
+#Parent FileCore_disc
+The disc cycle ID should be either:
+è	an ID stored on the disc which changes on each disc update ({/}i.e.{/} filcore's behaviour)
+è	a value calculated from an area of disc likely to change on each disc update ({/}e.g.{/} a CRC of the FAT on a DOS floppy)

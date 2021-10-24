@@ -1,0 +1,11 @@
+Plot mask at coords (49)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<49, &31=>os_spriteop_reason2> (Plot mask at coords)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+	R3 =	x coordinate
+	R4 =	y coordinate
+
+This plots the solid pixels in the background colour with the bottom left corner at the given coordinates. 
+#Line
+See <PRM 1, page 800=>PRM-1:800>

@@ -1,0 +1,8 @@
+ColourTrans_WriteCalibrationToFile  (&40760)
+#Parent ColourTrans_
+=>	R1 =	file handle to write to
+<=	All registers preserved
+
+Write a * Command to the given file to restore the error loadings. This allows desktop saving of the loadings.
+#Line
+See <PRM 3, page 394=>PRM-3:394>.

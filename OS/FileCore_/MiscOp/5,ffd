@@ -1,0 +1,11 @@
+FileCore_MiscOp 5
+#Parent FileCore_MiscOp
+=>	R0 =	5 (reason code)
+	R1 =	drive, bit 31 set if trying to find a dic
+	R4 =	iteration count, if bit 31 of R1 set
+	R5 =	timeout period, if bit 31 of R1 set
+	R8 =	pointer to FileCore instance private word
+
+This call causes a FileCore system to eject a disc.
+
+<'Media not present'=>OS_UpCall1> and <'Media not known'=>OS_UpCall2> will cause bit 31 to be set, indicating that you should choose a suitable drive to eject the disc from.

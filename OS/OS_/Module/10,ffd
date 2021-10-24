@@ -1,0 +1,7 @@
+OS_Module 10
+=>	R0 =	10 (reason code)
+	R1 =	pointer to start of module
+
+<=	R0,R1 preserved
+
+This takes a pointer to a block of memory and links it into the module, without moving it. Header fields are checked for validity. All duplicate modules are killed. If it's successful, then the module is called at its initialiation entry. The word immediately before the module start (ie at address R1-4) must contain the length of the module in bytes.

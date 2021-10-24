@@ -1,0 +1,23 @@
+System Devices
+#Parent OS_ClaimDeviceVector
+All machines after the A3000 have these system device numbers:
+Number	Device
+#Line
+0	Printer interrupt from 82C710/1
+1	Low battery warning
+2	Floppy disc indexer
+3	VSync Pulse
+4	Power on reset
+5	IOC Timer 0
+6	IOC Timer 1
+7	FIQ downgrade - reserved for the current owner of FIQ
+8	Expansion card FIQ downgrade; this should normally be masked off
+9	Sound system buffer change
+10	Serial port interrupt from 82C710/1 also mapped to FIQ device 4
+11	IDE hard disc interrupt
+12	Floppy disc interrupt from 82C710/1
+13	Expansion card interrupt
+14	Keyboard serial transmit register empty
+15	Keyboard serial receive register full
+
+For A3000 and earlier the functionality of each number is equivalent, but with ST506 in place of IDE and separate hardware instead of the 82C710/1 chip.

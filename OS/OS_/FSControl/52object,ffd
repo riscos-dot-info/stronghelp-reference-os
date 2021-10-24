@@ -1,0 +1,8 @@
+Object types for disc address scan
+#Parent OS_FSControl52
+\#	Meaning
+#Line
+0	No object found (offset is free/defect/beyond image end)
+1	No object found (offset used for free space map or other non-file use)
+2	Object found (cannot share offset with other objects)
+3	Object found (can share offset with other objects)

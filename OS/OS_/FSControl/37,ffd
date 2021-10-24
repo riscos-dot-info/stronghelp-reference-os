@@ -1,0 +1,16 @@
+OS_FSControl 37  (&29)
+#Parent OS_FSControl
+=>	R0 =	37 (Canonicalise path)
+	R1 =	pointer to pathname to convert
+	R2 =	pointer to buffer
+	R3 =	pointer to name of path variable, or 0 for none
+	R4 =	pointer to ctrl-terminated comma seperated path string, or 0 for none
+	R5 =	buffer size
+<=	R5 =	number of spare bytes in buffer (inc. term)
+
+This call takes a filename (which may contain wildcards) and converts it into a complete pathmame, including disc and directory name when not provided.
+
+#tab
+*Example*:	{Fcode}fred{f} may convert to {Fcode}SCSI::Gamma.$.Utils.Fred{f}
+
+*Note*:	If you call once with R2 and R5 set to zero, R5 will minus the return the number of bytes needed. Now you can call again having allocated -R5 bytes from somewhere.

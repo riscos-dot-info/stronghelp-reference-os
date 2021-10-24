@@ -1,0 +1,11 @@
+OS_Byte 178  Read/Write keyboard semaphore
+#Parent OS_ByteIndex
+=>	R0 =	178 (&B2)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	value before being overwritten
+	R2 corrupted
+                                                  
+This call is obsolete and should not be used. It is not documented in the RISC OS 3 PRMs.

@@ -1,0 +1,42 @@
+FSEntry_Func 23
+#Parent FSEntry_Func
+=>	R0 =	23 (Canonicalise special field and disc name)
+	R1 =	pointer to special field, or 0 if not present
+	R2 =	pointer to disc name, or 0 if not present
+	R3 =	pointer buffer for canonical special field, or 0 to find length
+	R4 =	pointer buffer for canonical disc name, or 0 to find length
+	R5 =	length of R3 buffer
+	R6 =	length of R4 buffer
+
+<=	R1 =	0, or pointer to canonical special field
+	R2 =	0, or pointer to canoncial disc name
+	R3 =	bytes overflow from special field buffer
+	R4 =	bytes overflow from disc name buffer
+	R5,R6 preserved
+# Leave that one - it makes the calls below clearer
+
+This call is used to convert special field and disc name to canonical forms. It is called twice:
+
+#tab
+=>	R1,R2,R3,R4	= 0
+	R5,R6 don't matter
+
+<=	R1,R2 non zero
+	R3 =	length of buffer for special field (excluding null terminator)
+	R4 =	length of buffer for disc name (excluding null terminator)
+
+alocate buffers
+#tab
+
+=>	R1 =	pointer to special field
+	R2 =	pointer to disc name
+	R3 =	pointer buffer
+	R4 =	pointer buffer
+	R5 =	length of R3 buffer
+	R6 =	length of R4 buffer
+
+<=	R1 =	entry R3
+	R2 =	entry R4
+	R3,R4 =	0 (neither buffer overflowed)
+
+This entry point is only called if bit 23 of the filing system <information word=>fsys_infoword> is set.

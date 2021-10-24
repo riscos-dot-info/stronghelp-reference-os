@@ -1,0 +1,15 @@
+Service_WimpCloseDown (&53)
+#Parent Service_index
+=>	R0 =	0 if closing down, or \> 0 if starting new task
+	R1 =	&53 (reason code)
+	R2 =	task handle
+
+<=	R0 preserved, or set to <error block=>swi_errorblock> to stop start up
+
+This service is called when a task exits using <Wimp_CloseDown=>Wimp:Wimp_CloseDown>, or when <Wimp_Initialise=>Wimp:Wimp_Initialise> is called from within an task that is already initialised. If a task exits without calling Wimp_CloseDown, or if an error occurs and the task does not trap it then the Wimp will call this service so that it still has a chance to shut any jobs it may have active currently.
+
+If the 'starting task' form of this service is called then the usual response is to return an error similar to 'Wimp is currently active' (the command line does this) in R0 when returning.
+
+The DDEUtils module uses this service to trap when a task for which a prefix has been set is exiting.
+#Line
+See <PRM 3, page 75=>PRM-3:75>

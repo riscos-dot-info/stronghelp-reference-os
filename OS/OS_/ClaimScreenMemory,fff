@@ -1,0 +1,16 @@
+OS_ClaimScreenMemory  (&41)
+#Parent OS_
+=>	R0 =	1 for claim, 0 for release
+	R1 =	bytes required
+
+<=	C set : memory not claimed
+	R1 =	bytes available
+	C clear : memory claimed
+	R1 =	bytes available
+	R2 =	start address
+
+Can only be claimed if no other bank than 1 has been used. While claimed you must not cause screen to scroll.
+
+Not very useful, is it?
+#Line
+See <PRM 1, page 380=>PRM-1:380>.

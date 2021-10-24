@@ -1,0 +1,8 @@
+OS_Word 1
+#Parent OS_Word
+=>	R0 =	1
+	R1 =	pointer to five byte block
+
+This SWI reads the system clock. On exit, the buffer contains five byte system clock, with LSB first.
+
+The clock is incremented 100 times a second, and reset on a hard break.

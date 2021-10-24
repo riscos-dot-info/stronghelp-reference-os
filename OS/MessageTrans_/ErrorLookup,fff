@@ -1,0 +1,19 @@
+MessageTrans_ErrorLookup  (&41506)
+#Parent MessageTrans_
+=>	R{*}0{*} =	pointer to <error block=>MessageTrans_errorblock>
+	R{*}1{*} =	pointer to 4-word data structure, or 0 for global messages
+	R2 =	pointer to buffer for result (0 to use internal buffer)
+	R3 =	buffer size
+	R4 =	pointer to parameter 0, or 0 if none
+	R5 =	pointer to parameter 1, or 0 if none
+	R6 =	pointer to parameter 2, or 0 if none
+	R7 =	pointer to parameter 3, or 0 if none
+<=	R0 =	pointer to error buffer used
+	V set
+
+This SWI is like <MessageTrans_Lookup> except that it is passed a token in an error block in {*}R0{*}. The data structure is in {*}R1{*}, not R0. If the token is not found in the message file specified, it will be searched for in the global message file. If R2 = 0 on entry MessageTrans will use an internal buffer. There are 2 for calls from IRQ routines, and 10 for forground processes, which it cycles through.
+
+To check that your error message was looked up (rather than MessageTrans itself reporting an error) verify that the error number in the returned block is the same as that passed in.
+# N> Does this mean that 11 taskwindows can have a race condition?
+#Line
+See <PRM 3, page 753=>PRM-3:753>.

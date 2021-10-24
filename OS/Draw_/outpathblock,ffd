@@ -1,0 +1,10 @@
+Draw output to a path block
+#Parent Draw_
+When writing to a path block the Draw module uses the word after the <end of path marker=>Draw_pathblock> to store the size of the buffer. As data is written and the the end of path marker is moved this value is updated, and the SWI returns a pointer to the new position of the end of path marker. This allows a second SWI to be called to append to the path, with no need for the program to keep track of the free space in the buffer.
+
+Hence before calling any SWIs that write a path to a buffer the first two words should be initialised:
+
+Offset	Value
+#Line
+0	0 (end of path marker)
+4	size of buffer

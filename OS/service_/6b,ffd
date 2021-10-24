@@ -1,0 +1,29 @@
+Service_IdentifyFormat (&6B)
+#Parent Service_Index
+=>	R0 =	pointer to <format name=>.name>
+	R1 =	&69 (reason code)
+
+If format name unrecognised
+<=	R0,R1 preserved to pass on
+
+else 
+=>	R0 =	preserved
+	R1 =	0 (to claim)
+	R2 =	SWI to call to get raw disc format info
+	R3 =	R3 parameter for this SWI
+	R4 =	SWI to call to lay down disc structure
+	R5 =	R0 parameter for this SWI
+
+This service is issued to identify how to layout a disc format. If DOSFS recognised the <format name=>DOSFS_FormatSpec> then R2 would be <DOSFS_DiscFormat> and R4 <DOSFS_LayoutStructure>.
+#subpage name
+Format specification string
+The "Format specification string" is the name of the format, {/}i.e.{/}
+#fCode
+  L
+  D
+  E
+  F
+#f
+or one of the <DOSFS format names=>DOSFS_FormatSpec> would be recongised between ADFS and DOSFS.
+#Line
+See <PRM 2, page 277=>PRM-2:277>

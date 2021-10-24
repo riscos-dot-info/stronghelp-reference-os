@@ -1,0 +1,15 @@
+Switch output to mask (61)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<61, &3D=>os_spriteop_reason2> (Switch output to mask)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer or 0 to switch to screen
+	R3 =	0 => No save area
+	 	1 => System save area
+	 	else => Pointer to save area
+<=	R1-R3 = Previous values
+
+This SWI decrees that all subsequent output should be placed in the sprite mask, rather than to the previous destination. Save areas are only required if you wish to retain the 'state' of the sprite between switches.
+
+You should ensure that errors are handled correctly and switch output back whilst using switched output.
+#Line
+See <PRM 1, page 813=>PRM-1:813>

@@ -1,0 +1,33 @@
+OS_Byte 202  Read/Write keyboard status byte
+#Parent OS_ByteIndex
+=>	R0 =	202
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	<status before being overwritten=>.status>
+	R2 =	serial input threshold (see <OS_Byte 203=>OS_Byte203>)
+
+The keyboard status byte holds information on the current status of the keyboard, such as the setting of Caps Lock. This call enables you to read and change these settings. Note that this call does not update the LEDs. If you don't stamp this state with <OS_Byte 118=>OS_Byte118>, the LEDs won't be switched on or off. The default state of Caps Lock is stored in <CMOS byte 11=>OS_Bytecmos11>.
+#Line
+See <PRM 1, page 883=>PRM-1:883>
+#Subpage status
+Status byte format
+Bit	Value	State	Meaning
+#Line
+0	-	-	Reserved for the keyboard handler, must be preserved when writing
+1	0	off	Scroll lock
+	1	on
+2	0	on	Num Lock
+	1	off
+3	0	off	Shift
+	1	on
+4	0	on	Caps Lock
+	1	off
+5	 	 	Normally set
+6	0	off	Control
+	1	on
+7	0	off	Shift Enable
+	1	on
+
+On means LED on or key pressed, off the opposite. If Caps Lock is on and Shift Enable off, Shift will have no effect on the letters, if Shift enable is on, you'll get lower case.

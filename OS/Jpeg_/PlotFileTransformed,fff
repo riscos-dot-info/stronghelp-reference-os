@@ -1,0 +1,10 @@
+JPEG_PlotFileTransformed  (&49985)
+#Parent JPEG_
+=>	R0 =	pointer to filename of JPEG file
+	R1 =	<transformation flags=>JPEG_transflags>
+	R2 =	pointer to destination coordinate block, or <transformation matrix=>draw_transform>
+	R3 =	length of image
+
+This SWI decompresses, transforms, and plots on the screen a JPEG image held in a file. This call is the same as <JPEG_PlotTransformed>, except that memory is claimed in a Dynamic Area to hold the JPEG before plotting.
+
+You are strongly recommended to use <JPEG_PlotTransformed> in preference to this call.

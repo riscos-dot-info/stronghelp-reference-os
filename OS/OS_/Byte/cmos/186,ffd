@@ -1,0 +1,6 @@
+OS_Byte CMOS 186
+#Parent OS_Bytecmos
+Bit(s)	Meaning
+#Line
+0-7	<Country number=>Territory_numbers>
+	0 for default (read country from keyboard ID)

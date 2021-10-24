@@ -1,0 +1,16 @@
+OS_CRC  (&5B)
+#Parent OS_
+=>	R0 =	CRC continuation value, or 0
+	R1 =	pointer to start of block
+	R2 =	pointer to end of block
+	R3 =	Increment
+
+<=	R0 =	CRC value
+
+Calculate the Cyclic-Redundancy Check for a block of data. The value calculated is only 16 bit.
+
+#tab
+Note:	The SWI adds R3 to R1 until it equals R2, ie if R1 never equals R2 you have an infinite loop.
+Note2:	The byte at R2 is not included in the CRC value.
+#Line
+See <PRM 1, page 942=>PRM-1:942>.

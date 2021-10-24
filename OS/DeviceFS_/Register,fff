@@ -1,0 +1,22 @@
+DeviceFS_Register  (&42740)
+#Parent DeviceFS_
+=>	R0 =	<flags=>.flags>
+	R1 =	pointer to list of <devices to install=>DeviceFS_devices>
+	R2 =	pointer to <device driver entry point=>DeviceFS_entry>
+	R3 =	private word		(passed to entry point in R8)
+	R4 =	workspace pointer	(passed to entry point in R12)
+	R5 =	pointer to <special field validation string=>DeviceFS_special>
+	R6 =	maximium RX devices (0 for none, -1 for unlimited)
+	R7 =	maximium TX devices (0 for none, -1 for unlimited)
+<=	R0 =	device driver's handle
+
+This SWI registers a device driver (the hardware interface code) and associated devices ({/}e.g.{/} buffered and unbuffered) with DeviceFS. If any device in the list fails to register then all are removed.
+#Line
+See <PRM 2, page 428=>PRM-2:428>.
+#subpage flags
+Meaning of bits in R0
+Bit	meaning if clear	if set
+#line
+0	character device	block device (unimplemented)
+1	not full duplex		full duplex
+2-31	0 (reserved)

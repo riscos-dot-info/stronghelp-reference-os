@@ -1,0 +1,7 @@
+OS_BreakPt  (&17)
+#Parent OS_
+When this is executed, all user mode registers are saved into a block and the <BreakPoint handler=>OS_handlers_breakpoint> is called. The saved registers are only guaranteed to be correct for user mode. The default handler displays the message 'Break point at &xxxxx' and calls <OS_Exit>. This SWI would be placed in code by the debugger at required breakpoints.
+
+The handler can be changed with <OS_ChangeEnvironment>.
+#Line
+See <PRM 1, page 305=>PRM-1:305>.

@@ -1,0 +1,7 @@
+Sound duration
+#Parent Sound_Control
+Duration	Meaning
+#Line
+1 - 254		BBC style duration (in 5 cs multiples)
+255		BBC style infinite duration (actually &F0000000)
+256 -...	duration in 5 cs periods

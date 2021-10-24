@@ -1,0 +1,24 @@
+PDriver_GiveRectangle  (&8014B)
+#Parent PDriver_
+=>	R0 =	ID word (chosen by application)
+	R1 =	pointer to <rectangle to print=>PDriver_rectangle>
+	R2 =	pointer to <transformation table=>.table>
+	R3 =	pointer to <plot position=>.position>
+	R4 =	background colour (&BBGGRR00)
+
+This SWI is used to specify a rectangle to be printed. The value in R0 is passed back whenever the application is requested to plot any part of this rectangle. If it is called with overlapping rectangles then <PDriver_GetRectangle> will return these rectangles in the same order. The values in R2 and R3 give the transformation from the application's coordinates to the coordinates of the printed page. (It appears that PDriver implicitly converts from OS units to millipoints as needed.)
+#Line
+See <PRM 3, page 623=>PRM-3:623>.
+#subpage table
+Printer transformation tables
+This 4 word block is just the first 4 words of a standard 'Draw' <transformation matrix=>Draw_transform>.
+#subpage position
+Printer plot position
+This block gives the position on the page of the bottom left corner of the specified rectange.
+
+Offset	Contents
+#Line
+0	x coord of bottom left
+4	y coord of bottom left
+
+Both values are in millipoints.

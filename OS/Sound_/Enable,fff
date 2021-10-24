@@ -1,0 +1,19 @@
+Sound_Enable  (&40141)
+#Parent Sound_
+=>	R0 =	new state:
+	 	  0 for no change (read state)
+	 	  1 for OFF
+	 	  2 for ON
+
+<=	R0 =	previous state:
+	 	  1 for OFF
+	 	  2 for ON
+
+This SWI is used to enable or disable all Sound interrupts and DMA activity.
+# This previously said :
+# 	 	  1 for closedown imminent
+# 	 	  2 for closedown in progress
+# 	 	  3 for active ON
+# where I got these docs from is unclear - ideas ?
+#Line
+See <PRM 4, page 20=>PRM-4:20>.

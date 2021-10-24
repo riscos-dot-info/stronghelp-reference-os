@@ -1,0 +1,34 @@
+OS_Byte 0  Display OS version
+#Parent OS_ByteIndex
+=>	R0 =	0
+	R1 =	0 to display OS version
+	 	1 to return machine info
+
+Display OS version
+<=	R0 =	pointer to OS version string as an error block
+	R1 preserved
+	R2 corrupted
+	V set
+
+Return machine info
+<=	R0 preserved
+	R1 =	<machine type=>.types>
+	R2 corrupted
+
+If R1=0 this call displays the OS version by returning it as an error string, with V set.
+
+If R1=1 this call returns the machine type in R1 - all RISC OS machines return 6.
+#Line
+See <PRM 1, page 936=>PRM-1:936>
+#Subpage types
+OS_Byte 0 OS version return types
+Number	OS
+#Line
+0	Electron
+1	BBC
+2	BBC
+3	Master 128
+4	Master 128 Econet Terminal
+5	Master 128 Compact
+6	Archimedes (Arthur and RISC OS)
+?	Brazil

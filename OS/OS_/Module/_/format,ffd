@@ -1,0 +1,28 @@
+Module format
+#Parent OS_Module
+Offset	Contains
+#Line
+&00	<Start code=>OS_Module_Start>		(usr mode)
+&04	<Initialise code=>OS_Module_Init>	(svc mode)
+&08	<Finalise code=>OS_Module_Final>	(svc mode)
+&0C	<Service handler=>OS_Module_Service>	(svc or irq mode)
+&10	Title String
+&14	<Help String=>OS_Module_Help>
+&18	<Help/Command table=>OS_Module_ComTable>
+&1C	SWI base number
+&20	<SWI handler=>OS_Module_SWIHandler>	(svc mode)
+&24	<SWI decode table=>OS_Module_SWITable>
+&28	<SWI decode code=>OS_Module_SWIDec>	(svc mode)
+&2C	<MessageTrans=>MessageTrans_> file (RISC OS 3.5+)
+
+<All=>.arcane> entries except &1C are offsets from the start of the module. Entries of 0, or those outside the module will be ignored. This means that if the module hasn't got any SWIs, the last five words *could* be used for something else, and if there is no MessageTrans filename, the last value could be used for something else.
+
+# Preach on
+Try not to store data in the body of your module, allocate workspace and store the pointer in the private word. The OS lets module code be re-used (multiply instantiated) to allow several copies of the module to run at once, and several copies would be storing different data in the same locations in the module code. If this causes your module to crash because it has been multiply instantiated, it is *your* module's fault, not the OS' or the user's.
+# Preach off
+
+If the top bit of the initialisation code offset is set then the module is compressed and will be decompressed by the OS.
+If the top bit of the finalisation code offset is set then the module's code area will not be freed after it it quit.
+#Subpage arcane
+Footnote for pedants
+If the value for start code doesn't represent a valid non-zero offset, it is taken to be a literal ARM instruction (which hopefully is a branch to the right place). This can be used to branch to a stub which calls <OS_WriteEnv> before brancing back into the module, which is useful during testing.

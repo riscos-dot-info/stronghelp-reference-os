@@ -1,0 +1,10 @@
+OS_FSControl 46  (&29)
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	46 (Return image used space map)
+	R1 =	pointer to name of image (null terminated)
+	R2 =	pointer to buffer
+	R5 =	buffer size
+#Wrap
+
+This SWI writes the image used space map to the buffer, 1 bits signifying used blocks, 0 bits free blocks. Bit 0 in a byte comes before bit 7. This SWI sets bits up to min( buffer size, file size ÷ block size ). Block size for a file can be read with <OS_File 24=>OS_File24>. For a non-image file the buffer will be filled with ones.

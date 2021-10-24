@@ -1,0 +1,15 @@
+OS_Byte 114  Write shadow/non-shadow state
+#Parent OS_ByteIndex
+=>	R0 =	114
+	R1 =	0	modes will be shadow
+	 	1	modes will be non-shadow
+
+<=	R0 preserved
+	R1 =	previous shadow sate
+	R2 corrupted
+
+This call determines whether future <mode changes=>VDU:22> will be forced to use shadow state. <OS_Byte 112=>OS_Byte112> and <113=>OS_Byte113> control the use of shadow banks.
+
+Shadow state requires twice the amount of RAM than the equivalent non-shadow mode since two copies of the screen are stored in memory.
+#Line
+See <PRM 1, page 643=>PRM-1:643>

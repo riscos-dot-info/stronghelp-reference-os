@@ -1,0 +1,13 @@
+Service_UKByte (&7)
+#Parent Service_Index
+=>	R0 =	pointer to <error block=>swi_errorblock>
+	R1 =	&7 (reason code)
+	R2 =	<OS_Byte> number
+	R3,R4 =	R1,R2 passed to OS_Byte
+<=	preserve all regisers to pass on, else
+	R1 =	0 (claim service)
+	R3,R4 =	R1,R2 to return to caller
+
+This service is issued when an unknown OS_Byte code is given. You should use <ByteV=>Vector_index> in preference to trapping this service.
+#Line
+See <PRM 1, page 257=>PRM-1:257>

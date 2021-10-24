@@ -1,0 +1,10 @@
+FSEntry_GetBytes (unbuffered)
+#Parent FSEntry_
+=>	R1 =	internal file handle returned by <FSEntry_Open>
+#Tab
+<=	If C clear, R0 =	byte read
+	If C set, R0 =		undefined (at end of file)
+
+This entry point is called when data is needed to be read from a file for which FileSwitch has no buffered data. This will not be performed on the initial open, but only on subsequent access to the file. You should update your sequential pointer unless the end of the file has been reached. This will be called in place of a <GBPB=>FSEntry_GBPB> call if it is not available.
+
+Memory addresses are *not* guaranteed to be word aligned.

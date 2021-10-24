@@ -1,0 +1,8 @@
+OS_Args 6
+#Parent OS_Args
+=>	R0 =	6
+	R1 =	file handle
+	R2 =	size to ensure
+<=	R2 =	actual size
+
+This SWI ensures that the size of the file is not less than R2. Note that the extent is not altered.

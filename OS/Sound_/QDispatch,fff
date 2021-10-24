@@ -1,0 +1,3 @@
+Sound_QDispatch  (&401C4)
+#Parent Sound_
+This SWI is for the exclusive use of the scheduler.

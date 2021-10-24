@@ -1,0 +1,14 @@
+OS_Byte 5  Write printer driver type
+#Parent OS_ByteIndex
+=>	R0 =	5
+	R1 =	printer driver <type=>OS_Byteprinters>
+
+<=	R0 preserved
+	R1 =	previous printer driver type
+	R2 corrupted
+
+This call determines the path to use for printer output. The type may be read (and written) with <OS_Byte 245=>OS_Byte245>. The default type is set held within <CMOS byte 15=>OS_ByteCMOS15> and <*Configure Print=>StarCmds:CPrint>.
+
+If a serial printer is in use, setting bit 0 in <OS_Byte 3=>os_byte003> will mean that the characters are printed twice.
+#Line
+See <PRM 1, page 508=>PRM-1:508>

@@ -1,0 +1,13 @@
+Sound_WriteControlBlock  (&4018C)
+#Parent Sound_
+=>	R0 =	channel number (1-8)
+	R1 =	offset to write (0-255)
+	R2 =	word to write
+
+<=	R0 =	preserved, or 0 for fail
+	R1 =	preserved
+	R2 =	previous word at this offset
+
+This SWI writes a word to the channel's <control block=>Sound_sccb>.
+#Line
+See <PRM 4, page 43=>PRM-4:43>.

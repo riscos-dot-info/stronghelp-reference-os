@@ -1,0 +1,12 @@
+Read area control block (8)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<8, &8=>os_spriteop_reason2> (Read area control block)
+	R1 =	<Sprite area=>OS_SpriteOp_Area>
+<=	R2 =	Size of sprite area
+	R3 =	Number of sprites
+	R4 =	Offset to first sprite
+	R5 =	Offset to first free word
+
+This call returns information held in a sprite area's header.
+#Line
+See <PRM 1, page 766=>PRM-1:766>

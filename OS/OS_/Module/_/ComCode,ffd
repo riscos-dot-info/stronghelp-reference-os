@@ -1,0 +1,31 @@
+Command code entry
+#Parent OS_Module_ComTable
+For a conventional command (<Information word=>OS_Module_ComFlags> bit 30 clear)
+
+=>	R0 =	pointer to command tail
+	R1 =	number of parameters
+	R12 =	pointer to private word for this instance
+	R13 =	supervisor stack pointer
+	R14 =	return address
+
+<=	R0 =	error pointer, if V set
+	R7-R11 preserved
+
+OSCLI counts spaces as delimiting parameters, except when they occur within double quoted strings.
+
+For a configuration command (<Information word=>OS_Module_ComFlags> bit 30 set)
+
+=>	R0 =	0	{fCode}*Configure{f} with no options - print your syntax string
+	 	1	{fCode}*Status {/}option{/}{f} - print the status of your option
+	 	other	pointer to command tail
+
+If an error occurs, a configuration command may return a <special error code=>.errors> or a pointer to conventional <error block=>swi_errorblock>.
+#subpage errors
+Configuration command error codes
+Code	Meaning
+#Line
+0	Bad {fCode}*Configure{f} option
+1	Numeric parameter needed
+2	Parameter too large
+3	Too many parameters
+\>3	pointer to <error block=>swi_errorblock>

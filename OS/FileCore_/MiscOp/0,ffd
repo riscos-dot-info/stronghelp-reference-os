@@ -1,0 +1,34 @@
+FileCore_MiscOp 0
+#Parent FileCore_MiscOp
+=>	R0 =	0 (reason code)
+	R1 =	drive
+	R2 =	disc address to read from
+	R3 =	pointer to buffer
+	R4 =	length to read into buffer
+	R5 =	pointer to <disc record=>FileCore_disc> to fill in (floppies and floppy like hard discs only)
+	R8 =	pointer to FileCore instance private word
+
+<=	R1-R5 preserved
+
+This call mounts a disc, reading in the data asked for.
+
+For a floppy disc, and for a hard disc where bit 4 of the descriptor block flags is set, this call asks the given filing system to first identify the disc's format. The suggested density to try first is given in the disc record; if this is not successful, the filing system should then try other densities. The following order is suggested:
+
+#Indent 2
+1. Quad density
+2. Double dendity
+3. Octal density
+4. Single density
+5. Double+ density
+#Indent
+
+Once the filing system has identified the disc's format, it fills in the 'log2secsize', 'secspertrack', 'heads', 'density', 'lowsector' and 'root' values in the disc record.
+
+#Tab
+è	If 'log2secsize'\<=8, then it gives 'heads' the value (actual number of heads -1), and sets bit 6 of 'lowsector', so sides are treated as sequenced. Otherwise (ie when 'log2secsize'>8) it gives 'heads' the value (actual number of heads), and clears bit 6 of low sector, so sides are treated as interleaved.
+   
+è	The filing system clears bit 7 of 'lowsector'; this is used as an initial value, which FileCore subsequently corrects if necessary.
+
+Having filled in the disc record, the filing system then reads in the data asked for.
+
+For hard discs where bit 4 of the <descriptor block=>FileCore_fsdescriptor.flags> flags is clear, this merely asks the given filing system to read in the data asked for. This typically necessitates it reading the boot block of the disc; if the disc doesn't have one, the filing system generates one itself.

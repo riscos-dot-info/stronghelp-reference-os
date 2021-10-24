@@ -1,0 +1,8 @@
+PDumper_Free  (&41B02)
+#Parent PDumper_
+=>	R0 =	pointer to anchor word
+	R2 =	pointer to block to release
+
+This SWI releases a block of memory from the dumper's chain specified by the anchor word passed in R0 (usually the module's private word).
+#Line
+See <PRM 3, page 684=>PRM-3:684>.

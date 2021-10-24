@@ -1,0 +1,48 @@
+OS_ReadArgs  (&49)
+#Parent OS_
+=>	R0 =	pointer to <syntax string=>.syntax>
+	R1 =	pointer to <input string=>.input>
+	R2 =	pointer to <output buffer=>.output>
+	R3 =	size of output buffer
+
+<=	R3 =	bytes left in output buffer
+
+This command scans the input string, and places values in output buffer according to the syntax string.
+#Line
+See <PRM 1, page 465=>PRM-1:465>.
+#Subpage syntax
+Syntax string
+string		= element\{, element\}
+element		= [identifier [=alias] ] \{/qualifier}
+qualifier	=
+  A	:	Keyword must always be given value
+  K	:	Identifier must be used
+  S	:	Switch
+  E	:	Do <OS_EvaluateExpression> on value
+  G	:	Do <OS_GSTrans> on value
+
+Note: An element doesn't have to have a name. "," is a perfectly legal syntax string.
+#
+#Subpage input
+Input-string
+example:
+  Syntax
+    "number=times/e,file/k/a,expand/s"
+
+  These input-strings will match:
+    "-n 10 -file myfile"
+    "-times 1+7 -file myfile -expand"
+    "-file myfile -e"
+
+  These will not:
+    "myfile -number 4"
+    "-number 20 -times 4 -file myfile"
+#
+#Subpage output
+Output buffer
+For identifier x (named or not), word x in output buffer contains :
+
+   switch	(/S)	:	non zero value if switch used
+   GSTransed	(/G)	:	pointer to block (0 if unused) with two-byte length and then string itself (not terminated)
+   Evaluated	(/E)	:	pointer to block (0 if unused) with one byte of type four bytes of value (int if type=0)
+   else		 	:	pointer to 0-terminated string.

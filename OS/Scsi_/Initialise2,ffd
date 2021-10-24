@@ -1,0 +1,49 @@
+SCSI_Initialise 2 'Determine Device'
+{f25}Þ{f}	R0 =	2
+	R1 =	<device ID=>SCSI_devid>
+	R2 !	buffer for description, (16 bytes, word aligned).
+{f25}Ü{f}	success exit: <buffer=>.buffer> filled in
+
+#tab
+errors:
+  &00020105	- Invalid SCSI device ID
+  &0002010A	- Timeout
+#line;wrap on;tab
+Performs an Inquiry command to see what type the device
+is and then performs the appropriate Read-Capacity
+command depending on the device type.
+#
+#subpage buffer
+SCSI_Initialise 2, R2 buffer contents
+/Offset/	/Meaning/
+0	<Type=>.type>
+1	Removable medium Bit (Bit7)/Device-Type Qualifier (Bits 0..6)
+2	ISO (b7..6)/
+	ECMA (b5..3)/
+	ANSI (b2..0) version
+3	Reserved (reserved field returned by inquiry command)
+4	Additional length, extra data that could be obtained by an inquiry command
+5..7	Reserved (by device driver - currently zero) 
+8..11	word highest logical block number	(converted to normal)
+12..15	word block length			(ARM byte sex)
+#line;tab;wrap on
+Bytes 0..4 are the first 5 bytes returned by an inquiry command, byte 5 is
+provided to indicate how much additional data (vendor ID,product ID etc)
+could be obtained by an Inquiry command Bytes 5..7 are reserved by the
+device driver
+
+Bytes 8..11 (word 2) & 12..15 (word 3) are the highest block count and block
+size returned by a Read Capacity command but have had the byte sex reversed
+to suit ARM's LDR instruction.
+#
+#subpage type
+SCSI_Initialise, device type.
+&00	Direct-access			(eg magnetic disk)
+&01	Sequential-access		(eg magnetic tape)
+&02	Printer device
+&03	Processor device
+&04	Write-once read-multiple	(eg some optical discs)
+&05	Read-only			(eg some optical discs)
+&06-7E	Reserved
+&7F	Logical unit not present
+&80-FF	Vendor unique

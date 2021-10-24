@@ -1,0 +1,3 @@
+ADFS_FreeSpace64  (&40252)
+#Parent ADFS_
+This SWI calls <FileCore_FreeSpace64>, after first setting R8 to point to the FileCore instance private word for ADFS.

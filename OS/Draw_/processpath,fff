@@ -1,0 +1,40 @@
+Draw_ProcessPath  (&40700)
+#Parent Draw_
+=>	R0 =	pointer to <path block=>draw_pathblock>
+	R1 =	<fill style=>draw_fillstyle> with <additions=>.extrafill>
+	R2 =	pointer to <transformation matrix=>draw_transform>, or 0 for default
+	R3 =	flatness, or 0 for default
+	R4 =	line thickness, or 0 for default
+	R5 =	pointer to <join/cap block=>draw_joincapblock>, or 0 if none
+	R6 =	pointer to <dashing pattern=>draw_dashblock>, or 0 if none
+	R7 =	pointer to <output path, or special value=>.specials>
+<=	if R7 = 0, 1 or 2 :
+	 	R0 corrupt
+	if R7 = 3 :
+	 	R0 = size of buffer
+	if R7 is a pointer
+	 	R0 = pointer to new end of buffer marker
+
+This SWI is used to perform operations on a Draw path.
+#Line
+See <PRM 3, page 535=>PRM-3:535>.
+#Subpage specials
+ProcessPath Special values
+Value		Meaning
+#Line
+0		Output to the input buffer path
+1		Fill the path in one go
+2		Fill the path, doing one subpath at a time
+3		Calculate output buffer size requirements
+&80000000 + x	Output path's <bounding box=>swi_bbox> to block at x
+x		Output path to <block=>Draw_outpathblock> at x
+		The first item in this buffer should be 0, followed by a word denoting the size of the buffer
+#Subpage extrafill
+Extra fill path options for ProcessPath
+Bit	Meaning if set
+#Line
+27	Open subpaths are to be closed
+28	Path should be flattened
+29	Path should be thickened
+30	Path should be re-flattened after thinkening
+31	Use floating point output (not implemented at present)

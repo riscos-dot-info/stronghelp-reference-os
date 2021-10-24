@@ -1,0 +1,14 @@
+OS_SetEnv  (&12)
+#Parent OS_
+=>	R0 =	address of the handler for <OS_Exit>, 0 to read
+	R1 =	address of the memory limit for <OS_GetEnv>, 0 to read
+	R4 =	address for undefined instructions, 0 to read
+	R5 =	address for prefetch abort, 0 to read
+	R6 =	address for handler for data abort, 0 to read
+	R7 =	address for handler for address exceptions, 0 to read
+
+<=	The used registers contain the previous handlers.
+
+This sets several handlers, better use <OS_ChangeEnvironment>, because this call is obsolete and uses this newer version.
+#Line
+See <PRM 1, page 302=>PRM-1:302>.

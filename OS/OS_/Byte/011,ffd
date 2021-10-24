@@ -1,0 +1,12 @@
+OS_Byte 11  Write keyboard auto repeat delay
+#Parent OS_ByteIndex
+=>	R0 =	11
+	R1 =	delay period in centiseconds
+
+<=	R0 preserved
+	R1 =	previous delay period
+	R2 corrupted
+
+You must hold down each key on the keyboard for a number of centiseconds before it begins to autorepeat. This call enables you to change the initial delay from the default set by <*Configure Delay=>*Status Delay>, stored in <CMOS byte 12=>OS_Bytecmos>. This variable may also be read or set by <OS_Byte196>.
+#Line
+See <PRM 1, page 858=>PRM-1:858>

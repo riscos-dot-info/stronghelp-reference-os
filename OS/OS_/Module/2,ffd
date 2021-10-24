@@ -1,0 +1,7 @@
+OS_Module 2
+#Parent OS_Module
+=>	R0 =	2 (reason code)
+	R1 =	pointer to module name
+	R2 =	pointer to parameters
+
+Doesn't return unless error occurs. If the module has got a <start address=>OS_Module_Start>, it resets the supervisor stack, sets user mode and makes it the current application. Any specified instantiation will become the preferred instantiation.

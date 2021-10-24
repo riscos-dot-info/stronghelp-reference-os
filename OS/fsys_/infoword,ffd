@@ -1,0 +1,22 @@
+Filing system information word
+#parent fsys_infoblock
+Bit	Meaning
+#Line
+31	Special fields supported
+30	Streams are interactive
+29	Null-length filenames supported
+28	File must be opened
+27	Tell FS when flushing
+26	FS supports <FSEntry_File 9=>FSEntry_File9>
+25	FS supports <FSEntry_Func 20=>FSEntry_Func20>
+24	FS supports <FSEntry_Func 18=>FSEntry_Func18>
+23	FS supports image filing system extensions
+22	Pass & and % where appropriate
+21	Directories not required
+20	Use Open/GetBytes/Close instead of <FSEntry_File 255=>FSEntry_File255>
+19	Use Open/PutBytes/Close instead of <FSEntry_File 0=>FSEntry_File0>
+18	Use <FSEntry_Func 9=>FSEntry_Func9> instead of <FSEntry_File>
+17	Extra FS information word present
+16	FS is read-only
+8-15	number of files, or 0 if no limiting factor
+0-7	<FS identification no.=>fsys_ident>

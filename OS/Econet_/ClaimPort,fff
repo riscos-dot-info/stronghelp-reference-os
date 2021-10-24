@@ -1,0 +1,7 @@
+Econet_ClaimPort  (&40015)
+#Parent Econet_
+=>	R0 =	port number
+
+This SWI claims a specific port number. When you have finished with the port, use <Econet_ReleasePort> to release it.
+#Line
+See <PRM 2, page 678=>PRM-2:678>.

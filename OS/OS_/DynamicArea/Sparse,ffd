@@ -1,0 +1,25 @@
+Sparse Dynamic Areas
+{*}Overview of Sparse areas{*}
+
+Sparse areas are created with bit 10 of r4 set. They need not be contiguously mapped upwards from their base address. They may have memory arbitrarily distributed (with a granularity of the machine page size) within their address space, and gaps in the mapping are known as holes. One use of Sparse areas is to support the reclaiming of memory by a garbage collector, without forcing movement of used blocks.
+
+The size of a Sparse area that is returned by <OS_DynamicArea 2=>OS_DynamicArea2> is the total amount of memory currently mapped into the area, whatever the distribution.
+
+If a Sparse area is <created=>OS_dynamicarea0> with a non-0 initial size (r2), the memory is allocated contiguously from the base upwards, but the area is free to behave subsequently in a sparse way (and cannot behave in a non-sparse way).
+
+The 'maximum size' of a Sparse area (r5) is the size of the logical address space within which memory may be distributed, and is not limited to the RAM size of the machine. A requested maximum size of -1 has no meaning. Sparse areas *must* be created with the smallest maximum size that is sensible, to avoid exhausting logical address space.
+
+Growing and shrinking of a Sparse area have no meaning. This means that a Sparse area must not have a handler, and cannot be manipulated with <OS_ChangeDynamicArea>. Moreover, a Sparse area must be created with the following properties:
+
+	*	singly mapped (r4 bit 6 clear)
+	*	not user draggable (r4 bit 7 set)
+	*	no specific pages (r4 bit 8 clear)
+	*	not Shrinkable (r4 bit 9 clear)
+
+The mapping of a Sparse area is controlled through new OS_DynamicArea reason codes <9=>OS_DynamicArea9> and <10=>OS_DynamicArea10>.
+
+{*}Efficiency and Sparse areas{*}
+
+Although the total logical address space assigned to a Sparse area ('maximum size') can be very large, applications should minimise the space requested for two reasons of efficiency. The first reason is that very large address space requests require significant RAM just to support memory management of the space (4k for every 4M of address space on current platforms). The second reason is that <OS_DynamicArea 10=>OS_dynamicarea10> calls to unmap pages scattered over very large address space will be slow (the cost will be dominated by the size of space to check, rather than the number of pages that require unmapping).
+
+In any case, large address space requests should be avoided where possible, just as large maximum sizes for ordinary areas should be avoided, because they will rapidly exhaust logical address space, and prevent the creation of other dynamic areas.

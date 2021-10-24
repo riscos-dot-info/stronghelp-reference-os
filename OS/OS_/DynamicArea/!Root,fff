@@ -1,0 +1,21 @@
+OS_DynamicArea  (&66)
+#Parent OS_
+{f25}Þ{f}	R0 =	reason code
+{f25}Ü{f}	R0 preserved
+
+Performs operations on user dynamic areas.
+
+#Tab
+Code	OS	Action
+#Line
+0	3.5	<Creates a new dynamic area=>OS_DynamicArea0>
+1	3.5	<Removes a previously created dynamic area=>OS_DynamicArea1>
+2	3.5	<Returns information on a dynamic area=>OS_DynamicArea2>
+3	3.5	<Enumerates dynamic areas=>OS_DynamicArea3>
+4	3.5	<Renumbers dynamic areas=>OS_DynamicArea4>
+5	3.8	<Return total free space=>OS_DynamicArea5>
+6	3.8	Reserved.
+7	3.8	Reserved.
+8	3.8	<Set maximum size clamps=>OS_DynamicArea8>
+9	3.8	<Ensure Sparse area is mapped to valid memory=>OS_DynamicArea9>
+10	3.8	<Release a region of a Sparse area=>OS_DynamicArea10>

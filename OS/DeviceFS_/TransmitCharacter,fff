@@ -1,0 +1,13 @@
+DeviceFS_TransmitCharacter  (&42747)
+#Parent DeviceFS_
+=>	R1 =	DevicesFS stream handle
+<=	R0 =	byte to transmit
+	C set if unable to read a character to transmit
+
+This SWI is made by a device when it wants to transmit a character. DeviceFS will try to find character (unbuffer one, or read from a waiting stream).
+
+{*}Note:{*}For speed DeviceFS_TransmitCharacter and <DeviceFS_ReceivedCharacter> do not validate the external handle passed - strange things will happen if bad handles are passed.
+# N> Nasal demons
+# Gerph> They get everywhere, don't they ?
+#Line
+See <PRM 2, page 437=>PRM-2:437>.

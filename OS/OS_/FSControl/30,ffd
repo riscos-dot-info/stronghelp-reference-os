@@ -1,0 +1,11 @@
+OS_FSControl 30
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	20 (Read location of temp FS secondary module)
+
+<=	R0 preserved
+	R1 =	pointer to seconday module base
+	R2 =	pointer to private word
+#Wrap
+
+This SWI reads the location of the secondary module for the temporary filing system. If there is no tempoarary filing system this call will return values for the current filing system. If there is no current filing system, or no secondary module R1=0, R2 is undefined. The primary module values can be read with <OS_FSControl 20=>OS_FSControl20>.

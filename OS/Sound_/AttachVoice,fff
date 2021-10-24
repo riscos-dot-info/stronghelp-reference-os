@@ -1,0 +1,13 @@
+Sound_AttachVoice  (&40185)
+#Parent Sound_
+=>	R0 =	channel number (1-8)
+	R1 =	voice slot to attach (0 to detach and mute)
+
+<=	R0 =	preserved (or 0 if illegal channel number)
+	R1 =	previous voice number (0 for no previous)
+
+The previous voice is shut down and the new one is reset.
+
+Different algorithms have different internal state representations so it is not possible to swap Voice Generators in mid-sound.
+#Line
+See <PRM 4, page 35=>PRM-4:35>.

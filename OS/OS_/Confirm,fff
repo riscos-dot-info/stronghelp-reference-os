@@ -1,0 +1,11 @@
+OS_Confirm  (&59)
+#Parent OS_
+<=	R0 =	result
+	C set if escape pressed
+	Z set if result was in any way Yes.
+
+This call asks the user for confirmation of an action by changing the pointer and waiting until a key or mouse button is pressed. Select returns the value 121 (character y), Menu and Adjust return 110 (character n). Keypresses return the lower-case ascii value.
+
+This should only be used in applications outside the desktop, if ever.
+#Line
+See <PRM 1, page 940=>PRM-1:940>.

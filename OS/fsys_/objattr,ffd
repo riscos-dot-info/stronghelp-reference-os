@@ -1,0 +1,15 @@
+File Attributes
+Bit	Meaning when set
+#Line
+0	Read access for you
+1	Write access for you
+2	-
+3	Locked
+4	Read access for others
+5	Write access for others
+6	Hidden (Filer+)
+7	Application (Filer+)
+
+If both 6 & 7 set then file is super hidden. The top 24 bits are filing system dependant - <NetFS=>NetFS_timeblock> uses them to store the date.
+
+Bit 2 was used for 'Owner execute only' (BBC ADFS), which means that the file could only be run, not loaded. Archimedes ADFS ignores this, and clears the bit on save, which allows this setting to be circumvented. SJ Research fileservers used bit 2 for 'Private'.

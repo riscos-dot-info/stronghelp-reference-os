@@ -1,0 +1,8 @@
+OS_FSControl 1  (&29)
+#Parent OS_FSControl
+=>	R0 =	1 (Set Library)
+	R1 =	pointer to (wildcarded) filename
+
+This SWI sets the library directory and filing system. If a pointer to "" is used, the default for this filing system is used.
+
+On FileCore-based filing systems, the default is to search &.Library, $.Library and @.

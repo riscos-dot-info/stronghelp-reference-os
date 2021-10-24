@@ -1,0 +1,13 @@
+OS_Word 21,4
+#Parent OS_Word
+=>	R0 =	21
+	R1 =	pointer to block containing :
+		 	0 = 4
+
+<=	block updated :
+		 	1 = x	LSB
+		 	2 =	MSB
+		 	3 = y	LSB
+		 	4 =	MSB
+
+This OS_Word reads the *unbuffered* mouse position, which may be significantly out of step with buffered values.

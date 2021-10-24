@@ -1,0 +1,10 @@
+Rename sprite  (26)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<26, &1A=>OS_spriteop_Reason2> (Rename sprite)
+	R1 =	<Sprite area=>OS_SpriteOp_Area>
+	R2 =	Sprite name/pointer
+	R3 =	new name of sprite
+
+This SWI renames the specified sprite.
+#Line
+See <PRM 1, page 777=>PRM-1:777>

@@ -1,0 +1,6 @@
+MessageTrans_ErrorLookup block
+#Parent MessageTrans_ErrorLookup
+Offset	Value
+#line
+0	Error number (as in a <SWI error block=>swi_errorblock>)
+4	null terminated <Token=>messagetrans_token>

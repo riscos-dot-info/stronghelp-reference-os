@@ -1,0 +1,9 @@
+Comparison routine
+#Parent OS_HeapSort
+=>	R0,R1	=	objects from R1 array
+	R12	=	workspace pointer given in R3
+
+<=	R0-R3 may be corrupted
+	flags: LT if R0\<R1, else GE
+
+This routine compares the two objects given by R0 and R1.

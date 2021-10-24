@@ -1,0 +1,10 @@
+NetPrint status values
+Status	Name
+#Line
+0	Status_Ready
+1	Status_Busy
+2	Status_Jammed
+6	Status_Offline
+7	Status_AlreadyOpen
+
+Status_Busy is the only status which uses the optional station and net number in its English message.

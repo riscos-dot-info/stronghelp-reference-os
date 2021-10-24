@@ -1,0 +1,8 @@
+Extra filing system information word
+#Parent FSEntry_
+Bit	Meaning
+#Line
+0	FS supports FSEntry_Func 34
+1	FS should be called to do *Cat
+2	FS should be called to do *Ex
+3-31	Reserved, must be zero

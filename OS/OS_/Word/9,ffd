@@ -1,0 +1,13 @@
+OS_Word 9
+=>	R0 =	9
+	R1 =	pointer to five byte block:
+		  0 Two byte x coord.
+		  2 Two byte y coord.
+<=	R1+4 contains logical colour of specified pixel.
+
+This SWI returns the logical colour at the specified pixel. &FF is returned if :
+  Screen is in a 256-colour mode.
+  Pixel is off screen
+  Mode is non-grapical
+
+Don't use this SWI, use <OS_ReadPoint>

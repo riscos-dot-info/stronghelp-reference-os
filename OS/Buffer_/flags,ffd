@@ -1,0 +1,8 @@
+Buffer flags
+#Parent Buffer_GetInfo
+Bit	Meaning
+#Line
+0	Dormant
+1	Generate <event=>event_0> on empty
+2	Generate <event=>event_1> on full
+3	<UpCall=>OS_UpCallreasons> on threshold

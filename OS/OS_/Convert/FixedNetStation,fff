@@ -1,0 +1,19 @@
+OS_ConvertFixedNetStation  (&E9)
+#Parent OS_Convert
+=>	R0 =	pointer to <net and station number=>OS_Convertnetstationblock>
+	R1 =	pointer to buffer for resulting string
+	R2 =	size of buffer
+<=	R0 =	pointer to buffer (R1 on entry)
+	R1 =	pointer to terminator
+	R2 =	free bytes in buffer
+
+This SWI converts the network and station number to a string of the form "{/}nnn.sss{/}".
+
+If the network is 0
+	the first four characters are spaces
+	leading zeros in the station number are converted to spaces
+otherwise
+	leading zeros in the network number are converted to spaces
+	leading zeros in the station number remain as zeros
+#Line
+See <PRM 1, page 473=>PRM-1:473>.

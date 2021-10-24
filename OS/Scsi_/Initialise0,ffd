@@ -1,0 +1,26 @@
+SCSI_Initialise 0 'Reset Bus'
+{f25}Þ{f}	R0 =	0
+ 		R1 =	<host ID=>SCSI_devid>
+{f25}Ü{f}	successful exit: no results
+
+#tab
+potential errors:
+	&00020100 -	No room for SCSI driver workspace
+	&00020103 -	SCSI bus failed to reset
+	&00020104 -	Invalid SCSI host ID
+#tab;line;wrap on
+This call resets all options set by <SCSI_Control> to their default
+states and removes any device reservations. In addition it sets a new
+host ID and causes a full reset of the SCSI bus by driving the SCSI bus
+RESET line. If the SCSI card supports LED control (<SCSI_Control2>),
+then the LED is switched off.
+
+#wrap
+The default states set for each device are
+Reservation	-	none
+Timeout	-	250ms timeout
+Error response	-	report check condition as an error
+Queue behaviour	-	wait until slot becomes free
+Disconnect	-	allow disconnect/reselect
+Transfer	-	disable sync transfers
+WideSCSI	-	disable WideSCSI

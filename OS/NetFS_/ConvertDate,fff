@@ -1,0 +1,8 @@
+NetFS_ConvertDate  (&4004B)
+#Parent NetFS_
+=>	R0 =	pointer to <file server format date and time=>NetFS_timeblock>
+	R1 =	pointer to 5 byte output buffer
+
+This SWI converts from a 5 byte <file server format date and time=>NetFS_timeblock> to a standard RISC OS 5 byte time block.
+#Line
+See <PRM 2, page 358=>PRM-2:358>.

@@ -1,0 +1,15 @@
+Territory_ConvertStandardDate  (&4304D)
+#Parent Territory_
+=>	R0 =	<territory number=>Territory_numbers>, or -1 for current
+	R1 =	pointer to 5 byte UTC time
+	R2 =	pointer to output buffer
+	R3 =	size of buffer
+
+<=	R0 =	pointer to buffer (R2 on entry)
+	R1 =	pointer to terminating 0
+	R2 =	number of bytes free in buffer
+	R3 =	preserved
+
+Result is in local time, language, and alphabet
+#Line
+See <PRM 3, page 811=>PRM-3:811>.

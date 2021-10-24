@@ -1,0 +1,14 @@
+Alphabet numbers
+#Parent Territory_
+Number	Alphabet
+#Line
+100	BFont
+101	Latin1
+102	Latin2
+103	Latin3
+104	Latin4
+105	Cyrillic
+106	Arabic
+107	Greek
+108	Hebrew
+120	Cyrillic2

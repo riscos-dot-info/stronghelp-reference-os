@@ -1,0 +1,7 @@
+JPEG transformation flags
+bit	meaning if set
+#Line
+0	R2 =	pointer to destination coordinate block, else to matrix
+1	dither output when plotting 24 bit JPEG at 16bpp or below
+2	dithering (if any) is full error diffused when plotting at 8bpp
+other	reserved (must be 0)

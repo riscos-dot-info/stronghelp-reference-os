@@ -1,0 +1,19 @@
+Service_DeviceFSCloseRequest (&81)
+#Parent Service_Index
+=>	R1 =	&81 (reason code)
+	R2 =	file handle
+
+<=	preserve all registers to pass on
+
+else
+
+<=	R1 =	0 (claim, if you were able to close file in R2)
+
+This service is issued by DeviceFS when an open attempt on a device is frustrated because either:
+
+	that device already has its maximum number of streams open
+	a non-full-duplex device has one or more streams open in the conficting direction
+
+Hopefully sufficient blocking streams can be closed, which will allow the open request to be fulfilled. If you opened the stream in R2, and it need no longer be kept open, then you should close it and claim the service. The kernel responds to this service to close the printer and serial devices if it has implicitly opened them.
+#Line
+See <PRM 2, page 427=>PRM-2:427>

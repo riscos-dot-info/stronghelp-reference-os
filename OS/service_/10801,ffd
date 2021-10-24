@@ -1,0 +1,19 @@
+Service_ADFSPoduleIDE (&10801)
+#Parent Service_Index
+=>	R1 =	&10801 (reason code)
+	R2 =	address of current IDE controller
+	R3 =	address of IRQ status register for controller
+	R4 =	AND mask - AND this with IRQ status reqister to give non-zero when IRQs are enabled
+	R5 =	address of IRQ mask register for controller
+	R6 =	OR mask - ORR this with IEQ mask register to enable IRQs.
+<=	preserve all registers to pass on, or
+	R1 =	0 (to claim)
+	R2 =	address of new IDE controller
+	R3 =	address of IRQ status register for controller
+	R4 =	AND mask
+	R5 =	address of IRQ mask register for controller
+	R6 =	OR mask
+
+This service is issued by ADFS to allow a IDE hard disc expansion card to use its hardware in place of the machine's built in hardware.
+#Line
+See <PRM 4, page 136=>PRM-4:136>

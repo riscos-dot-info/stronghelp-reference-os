@@ -1,0 +1,43 @@
+Squash_Decompress  (&42701)
+#Parent Squash_
+If R0 bit 3 is set:
+=>	R0 =	<flags=>.flags>
+	R1 =	input size (-1 means don't return max output size)
+<=	R0 =	required work space size
+	R1 =	maximum output size (-1 means don't know/not asked)
+
+If R0 bit 3 is clear:
+=>	R0 =	<flags=>.flags>
+	R1 =	workspace pointer
+	R2 =	input pointer
+	R3 =	bytes of input available
+	R4 =	output pointer
+	R5 =	bytes of output space available
+<=	R0 =	<status=>.status>
+	R1 preserved
+	R2 =	pointer to first unused input byte
+	R3 =	input bytes unused
+	R4 =	pointer to first unused output byte
+	R5 =	unused output space remaining
+
+Call this SWI initially with R0 = 8 and R1 = input file size, using the sizes it reports to allocate workspace and output buffers as appropriate. Note that the current algorithm always returns R1 = -1, so you must get this size by some other means. Then call repeatedly with R0 bit 3 clear until all the data is processed (as reported via the <status bits=>.status> returned in R0). If the input is exhausted (R3 \< 12, <R0 bit 1 set=>.status>) the unused input must be resupplied.
+
+If all the input data can be presented at once (R0 bits 0,1 clear) and the output buffer is large enough, a faster algorithm is used.
+#Line
+See <PRM 4, page 104=>PRM-4:104>.
+#subpage Flags
+Squash_Decompress flags
+Bit	Meaning if set
+#Line
+0	Continuing existing operation
+1	More input remains after this
+2	Asssume all ouput will fit in buffer (if bits 0,1 clear a faster algorithm is used)
+3	return workspace needed and max output size (all other bits must be 0)
+4-31	0 (reserved)
+#subpage Status
+Squash_Decompress statuses
+Value	Meaning if set
+#Line
+0	Operation complete
+1	Input exhausted		(R3 \< 12)
+2	Output space exhausted	(R5 = 0)

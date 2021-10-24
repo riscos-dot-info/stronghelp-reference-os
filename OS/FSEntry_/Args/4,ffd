@@ -1,0 +1,7 @@
+FSEntry_Args 4
+#Parent FSEntry_Args
+=>	R0 =	4 (Read space allocated)
+	R1 =	internal file handle returned by <FSEntry_Open>
+<=	R2 =	size allocated to the file
+
+This call is made when FileSwitch wishes to find the actual length of a file.

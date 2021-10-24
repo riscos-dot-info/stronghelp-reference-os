@@ -1,0 +1,25 @@
+Service_PDriverGetMessages (&78)
+#Parent Service_Index
+=>	R1 =	&78 (reason code)
+<=	preserve all regisers to pass on, else
+	R1 =	0 (claimed)
+	R3 =	pointer to <20 byte block=>.block>
+
+This service is issued when a PDriver module is about to open Resources:$.Resources.PDrivers.Messages. If another PDriver module has already opened this file, it should claim the service and return the <block=>.block>.
+
+If a PDriver module issues this service and it goes unclaimed, it should allocate 20 bytes with <OS_Module 6=>OS_Module6>, pass the block to <MessageTrans_OpenFile>, and set the last word (usage count) to 1.
+
+If the service is claimed, then the PDriver module should increase the usage count in the <block=>.block> by 1.
+
+Either way, when the PDriver module is finished with the file, it should decrease the usuage count in the <block=>.block> by 1. If this reduces the count to 0, it should call <MessageTrans_CloseFile> and then <OS_Module 7=>OS_Module7> to free the block.
+
+Simple eh?
+# Yeah, right !
+#Line
+See <PRM 3, page 600=>PRM-3:600>
+#Subpage block
+PDriverGetMessages Block
+Size	Meaning
+#Line
+16	MessageTrans block, from <MessageTrans_OpenFile>
+4	usage count

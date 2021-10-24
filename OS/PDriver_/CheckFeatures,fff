@@ -1,0 +1,9 @@
+PDriver_CheckFeatures  (&80142)
+#Parent PDriver_
+=>	R0 =	mask for <features word=>PDriver_features>
+	R1 =	value for <features word=>PDriver_features>
+<=	R0, R1 preserved
+
+This SWI checks the capabilities of the printer. If (R0 AND features word) = (R0 AND R1) then the SWI returns immediately. Otherwise an error is generated *if* the printer does not support the requested features (so *no* error is generated if you request only axis preserving rotations, and the driver can actually perform arbitary rotations).
+#Line
+See <PRM 3, page 608=>PRM-3:608>.

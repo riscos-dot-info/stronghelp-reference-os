@@ -1,0 +1,15 @@
+OS_Byte 182  Read/Write printer NoIgnore state
+#Parent OS_ByteIndex
+=>	R0 =	182 (&B6)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	value before being overwritten
+	R2 corrupted
+                                                  
+This call reads or sets the printer NoIgnore state. If bit 7 is clear then the ignore character set by <OS_Byte 6=>OS_Byte006> or <OS_Byte 246=>OS_Byte246> is filtered from the printer output stream. If bit 7 is set, then the printer stream passes all characters. The default state of this bit is stored in <CMOS byte 15=>OS_Bytecmos15>.
+
+The default setting of this flag is controlled by <*Configure Ignore=>StarCmds:ConfIgnore> and may be changed temporarily using <*Ignore=>StarCmds:Ignore>.
+#Line
+See <PRM 1, page 511=>PRM-1:511>

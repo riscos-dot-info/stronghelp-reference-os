@@ -1,0 +1,15 @@
+OS_Byte 240  Read country number
+#Parent OS_ByteIndex
+=>	R0 =	240 (&F0)
+	R1 =	0
+	R2 =	255
+
+<=	R0 preserved
+	R1 =	<country number=>Territory_numbers>
+	R2 =	user flag (see <OS_Byte 241=>OS_Byte241>)
+# Hmm. Tekkie disk makes this cross reference to 241, even though it doesn't
+# document 241
+                                                  
+This call writes the country number used by the international module. This value can be written (and read) with <OS_Byte 70=>OS_Byte070>.
+#Line
+See <PRM 3, page 774=>PRM-3:774>

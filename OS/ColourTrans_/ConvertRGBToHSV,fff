@@ -1,0 +1,13 @@
+ColourTrans_ConvertRGBToHSV  (&40758)
+#Parent ColourTrans_
+=>	R0 =	<red component=>ColourTrans_fixedpoint>
+	R1 =	<green component=>ColourTrans_fixedpoint>
+	R2 =	<red component=>ColourTrans_fixedpoint>
+
+<=	R0 =	<hue, 0 to 360=>ColourTrans_fixedpoint>
+	R1 =	<saturation=>ColourTrans_fixedpoint>
+	R2 =	<value=>ColourTrans_fixedpoint>
+
+This call converts the colour passed as RGB values to HSV values. Hue is undefined for achromatic colours.
+#Line
+See <PRM 3, page 379=>PRM-3:379>.

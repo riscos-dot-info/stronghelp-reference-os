@@ -1,0 +1,29 @@
+Module help string
+#Parent OS_Module_format
+This should be in the format :
+
+#Wrap off;Indent 2
+{/}Module name{/}	v.vv (DD MMM YYYY)
+#indent
+or
+#indent 2
+{/}Module name{/}	v.vv (DD MMM YYYY) {/}Message{/}
+#Wrap;indent
+
+where /Module name/ may contain spaces, and is followed by one or two tabs to align the version number to column 16.
+
+/Message/ is usually of the form :
+
+#indent 2
+/subset/
+#indent
+or
+#indent 2
+© {/}Author's name{/}
+#indent
+or
+#indent 2
+/subset/ © {/}Author's name{/}
+#indent
+
+where /subset/ is a subset of the available modules describing this particular version, eg 'RO 3.1', 'ß2', 'English', 'Parallel', etc

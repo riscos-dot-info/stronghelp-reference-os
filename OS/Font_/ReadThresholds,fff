@@ -1,0 +1,7 @@
+Font_ReadThresholds  (&40094)
+#Parent Font_
+=>	R1 =	pointer to <result buffer=>Font_thresholds>
+
+This SWI reads the threshold values used by the Font Manager when painting. The length of table required is one byte for each logical colour used ({/}i.e.{/} 3 + ABS(foreground colour offset) which can be read with <Font_CurrentFont>)
+#Line
+See <PRM 3, page 457=>PRM-3:457>.

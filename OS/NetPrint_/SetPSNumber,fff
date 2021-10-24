@@ -1,0 +1,8 @@
+NetPrint_SetPSNumber  (&40201)
+#Parent NetPrint_
+=>	R0 =	station number
+	R1 =	net number
+
+This SWI sets the full station number of your current printer server.
+#Line
+See <PRM 2, page 390=>PRM-2:390>.

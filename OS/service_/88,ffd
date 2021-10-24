@@ -1,0 +1,7 @@
+Service_FilterManagerDying (&88)
+#Parent Service_Index
+=>	R1 =	&88 (reason code)
+
+This service is issued when the FilterManager is quiting, to inform filters that they have been deregistered.
+#Line
+See <PRM 3, page 305=>PRM-3:305>

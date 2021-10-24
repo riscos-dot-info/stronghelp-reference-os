@@ -1,0 +1,17 @@
+OS_Byte 255  Read/Write boot option
+#Parent OS_ByteIndex
+=>	R0 =	255
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	previous state
+	R2 corrupted
+
+This call reads or sets the current auto boot flag in <CMOS=>OS_bytecmos> RAM. Because this call is obsolete, you should use <OS_FSControl 10=>OS_FSControl10> in preference. If NoBoot is set, after a reset the computer isn't automatically booted. If Boot is set, the boot file on the filing system is accessed on reset. To invert this setting, hold Shift down after releasing the reset keys. The bit 3 of R1 indicates the named option. Set means NoBoot, Clear means Boot.
+
+Hum. Yes. This is what the PRM says, and it's utter garbage.
+
+This call reads or sets the *soft* copy, which defaults to the contents of the CMOS ram. But you can change it. And OS_FSControl 10 *sets* the *boot* option, which is something else (even if machine will try to boot, if the boot option on the disc is off, nothing happens.) OS_FSControl 10 cannot *read* anything. It's write only.
+#Line
+See <PRM 2, page 28=>PRM-2:28>

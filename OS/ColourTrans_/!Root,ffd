@@ -1,0 +1,41 @@
+ColourTrans
+#Parent !Root
+#Prefix ColourTrans_
+#Table Columns 3
+<ColourNumberToGCOL>
+<ConvertCIEToRGB>
+<ConvertCMYKToRGB>
+<ConvertDeviceColour>
+<ConvertDevicePalette>
+<ConvertHSVToRGB>
+<ConvertRGBToCIE>
+<ConvertRGBToCMYK>
+<ConvertRGBToHSV>
+<GCOLToColourNumber>
+<GenerateTable>
+<InvalidateCache>
+<MiscOp>
+<ReadCalibration>
+<ReadPalette>
+<ReturnColourNumber>
+<ReturnColourNumberForMode>
+<ReturnFontColours>
+<ReturnGCOL>
+<ReturnGCOLForMode>
+<ReturnOppColourNumber>
+<ReturnOppColourNumberForMode>
+<ReturnOppGCOL>
+<ReturnOppGCOLForMode>
+<SelectGCOLTable>
+<SelectTable>
+<SetCalibration>
+<SetColour>
+<SetFontColours>
+<SetGCOL>
+<SetOppGCOL>
+<SetOppTextColour>
+<SetTextColour>
+<WriteCalibrationToFile>
+<WriteLoadingsToFile>
+<WritePalette>
+#EndTable

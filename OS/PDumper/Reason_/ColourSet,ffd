@@ -1,0 +1,13 @@
+PDumperReason_ColourSet (2)
+#Parent PDumperReason_
+=>	R0 =	physical colour (&BBGGRR00)
+	R2 =	<strip type=>PDumper_striptypes>
+	R3 =	job private word (see <PDumperReason_StartJob>)
+	R4 =	<halftoning information=>PDumper_halftoning>
+	R5 =	<config data=>PDumper_configblock>
+	R11 =	2 (reason code)
+	R12 =	private word
+
+<=	R3 =	colour number (strip type dependent)
+
+This is called when PDriverDP wants to convert a physical colour to colour number - <PDumper_SetColour> may help in impementing this.

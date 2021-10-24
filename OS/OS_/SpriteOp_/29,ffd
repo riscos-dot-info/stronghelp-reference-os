@@ -1,0 +1,9 @@
+Create mask (29)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<29, &1D=>os_spriteop_reason2> (Create mask)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+
+This creates a mask with all pixels defined as solid.
+#Line
+See <PRM 1, page 780=>PRM-1:780>

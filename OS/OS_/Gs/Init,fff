@@ -1,0 +1,12 @@
+OS_GSInit  (&25)
+#Parent OS_
+=>	R0 =	string to translate
+	R2 =	<flags=>os_gs0>
+
+<=	R0 =	value for OS_GSRead
+	R1 =	1st nonblank char
+	R2 =	value for OS_GSRead
+
+This SWI is followed by repeated calls to <OS_GSRead>
+#Line
+See <PRM 1, page 450=>PRM-1:450>.

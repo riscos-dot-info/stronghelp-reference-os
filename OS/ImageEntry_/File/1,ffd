@@ -1,0 +1,10 @@
+ImageEntry_File 1
+#Parent ImageEntry_File
+=>	R0 =	1 (Write catalogue information)
+	R1 =	pointer to filename
+	R2 =	<load address=>fsys_loadexec> of file
+	R3 =	<exec address=>fsys_loadexec> of file
+	R4 =	new <attributes=>fsys_objattr> of file
+	R6 =	handle of image file
+
+This call is made to set the catalogue information about a given file.

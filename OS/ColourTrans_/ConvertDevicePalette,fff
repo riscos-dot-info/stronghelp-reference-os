@@ -1,0 +1,11 @@
+ColourTrans_ConvertDevicePalette  (&40754)
+#Parent ColourTrans_
+=>	R0 =	number of colours to convert
+	R1 =	pointer to table of device colours (in the form &BBGGRR00)
+	R2 =	pointer to table write standard colours (in the form &BBGGRR00)
+	R3 =	pointer to <calibration table=>ColourTrans_calibrationtable>, or 0 to use current screen calibration
+<=	R0 - R3 preserved
+
+This SWI converts a table of device colours to a standard colours.
+#Line
+See <PRM 3, page 373=>PRM-3:373>.

@@ -1,0 +1,9 @@
+PDriver_MiscOp 1
+#Parent PDriver_MiscOp
+=>	R0 =	1 (reason code)
+	R1 =	pointer to control terminated RISC OS <font name=>Font_identifier>, or 0 to delete all fonts
+
+This SWI is used by the Printers application to remove a font name or all fonts  from the list known for the current printer. If there is no current job it is added to a global list, else it is added to a local list for the current job. Each job's list is initialised as a copy of the global list when it is started.
+
+No error is generated if an attempt is made to remove all fonts when there are none, but attempting to remove a specific font that does not exist *is* an error. Not that this matters, as the current implementation ignores R1 and always removes all fonts!
+# Gerph> Not an API that isn't used, surely ?

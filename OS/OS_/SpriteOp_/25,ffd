@@ -1,0 +1,9 @@
+Delete sprite (25)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<25, &19=>os_spriteop_reason2> (Delete sprite)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+
+This deletes the sprite.
+#Line
+See <PRM 1, page 776=>PRM-1:776>

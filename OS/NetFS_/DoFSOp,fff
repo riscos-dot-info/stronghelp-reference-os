@@ -1,0 +1,12 @@
+NetFS_DoFSOp  (&40048)
+#Parent NetFS_
+=>	R0 =	file server function
+	R1 =	buffer
+	R2 =	number of bytes to send from buffer to file server
+	R3 =	total size of buffer
+<=	R0 =	return condition from file server
+	R3 =	number of bytes written to buffer by file server
+
+This SWI commands the file server to perform the function in R0. If an error is returned you should copy it, as its buffer may be overwritten by subsequent use of NetFS.
+#Line
+See <PRM 2, page 352=>PRM-2:352>.

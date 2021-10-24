@@ -1,0 +1,67 @@
+OS_FSControl  (&29)
+#Parent OS_
+This SWI controls the filing system manager and the filing systems themselves. Action taken depends on R0 :
+
+#Indent 1
+#Table Columns 2
+00 &00  <Set current dir=>os_fscontrol0>
+01 &01  <Set library dir=>os_fscontrol1>
+02 &02  <Inform of start of new app=>os_fscontrol2>
+03 &03  Internal (Run Type)
+04 &04  <Run a file=>os_fscontrol4>
+05 &05  <Catalogue a dir=>os_fscontrol5>
+06 &06  <Examine current dir=>os_fscontrol6>
+07 &07  <Catalogue library=>os_fscontrol7>
+08 &08  <Examine library=>os_fscontrol8>
+09 &09  <Examine objects=>os_fscontrol9>
+10 &0A  <Set FS options=>os_fscontrol10>
+11 &0B  <Set temporary FS=>os_fscontrol11>
+12 &0C  <Add a FS=>os_fscontrol12>
+13 &0D  <Check for FS=>os_fscontrol13>
+14 &0E  <Select FS=>os_fscontrol14>
+15 &0F  <Boot from FS=>os_fscontrol15>
+16 &10  <Remove FS=>os_fscontrol16>
+17 &11  <Add secondary module=>os_fscontrol17>
+18 &12  <Convert filetype number to name=>OS_FSControl18>
+19 &13  <Restore current FS=>os_fscontrol19>
+20 &14  <Read location of temp FS=>os_fscontrol20>
+21 &15  <Return a file handle=>os_fscontrol21>
+22 &16  <Close all open files=>os_fscontrol22>
+23 &17  <Shutdown FS=>os_fscontrol23>
+24 &18  <Set attributes of objects=>os_fscontrol24>
+25 &19  <Rename object=>OS_FSControl25>
+26 &1A  <Copy objects=>OS_FSControl26>
+27 &1B  <Wipe objects=>OS_FSControl27>
+28 &1C  <Count objects=>OS_FSControl28>
+29 &1D  Internal (Create Handle)
+30 &1E  <Read location of temporary FS secondary module=>os_fscontrol30>
+31 &1F  <Convert filetype name to number=>OS_FSControl31>
+32 &20  <Output list of object names & info=>OS_FSControl32>
+33 &21  <Convert a filing system number to a name=>OS_FSControl33>
+34 &22  Reserved (Set Contexts)
+35 &23  <Add an image FS=>OS_FSControl35>
+36 &24  <Remove an image FS=>OS_FSControl36>
+37 &25  <Canonicalise path=>OS_FSControl37>
+38 &26  <Extract filetype from file information=>OS_FSControl38>
+39 &27  <Set User Root Directory=>OS_FSControl39>
+40 &28  <Swap current and previous directories=>OS_FSControl40>
+41 &29  <Return defect list for an image file=>OS_FSControl41>
+42 &2A  <Map out defect from an image file=>OS_FSControl42>
+43 &2B  <Unset the Current Directory=>OS_FSControl43>
+44 &2C  <Unset the User Root Directory=>OS_FSControl44>
+45 &2D  <Unset the Library Directory=>OS_FSControl45>
+46 &2E  <Return used space map of image file=>OS_FSControl46>
+47 &2F  <Read boot option for disc or image file=>OS_FSControl47>
+48 &30  <Write boot option for disc or image file=>OS_FSControl48>
+49 &31  <Read free space for disc or image file=>OS_FSControl49>
+50 &32  <Rename disc or image file=>OS_FSControl50>
+51 &33  <Request update of image stamp=>OS_FSControl51>
+52 &34  <Find object at offset within image file=>OS_FSControl52>
+53 &35  <Set given directory to path unchecked=>OS_FSControl53>
+54 &36  <Read path of given directory=>OS_FSControl54>
+55 &37  <Read free space for a large disc or image file=>OS_FSControl55>
+56 &38  <Read defect list for a large disc or image file=>OS_FSControl56>
+57 &39  <Map out defect from large disc or image=>OS_FSControl57>
+#EndTable
+#indent;line;tab
+See also:	<PRM 2-77=>PRM-2:77>, <5a-166=>PRM-5a:166>, <5a-663=>PRM-5a:663>

@@ -1,0 +1,13 @@
+OS_Byte 193  Read/Write flash counter
+#Parent OS_ByteIndex
+=>	R0 =	193 (&C1)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	value before being overwritten
+	R2 corrupted
+
+This call reads or sets the count-down timer for flashing colours. Provided that the flash period is not infinite, the counter is loaded with the duration of the first flash colour and counts down by one every VSync until it reaches zero. At this point the colours are swapped and the counter loaded with the second flash period. /etc/.
+#Line
+See <PRM 1, page 657=>PRM-1:657>

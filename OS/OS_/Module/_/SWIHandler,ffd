@@ -1,0 +1,48 @@
+Module SWI handler code
+#Parent !Root
+=>	R0-R8 = 	passed from the caller of the SWI
+	R11 =	SWI number - base number (ie SWINumber AND 63)
+	R12 =	pointer to private word
+	R13 =	supervisor stack pointer
+	R14 =	return address (including flags and processor mode)
+
+<=	R0-R9 returned to the caller of the SWI
+	R10-R12 may be corrupted
+
+This entry is called when a SWI in your module's SWI chunk is called. SWI numbers outside those supported by your module should cause an error to be returned, as in <this example handler=>.example>.
+#Subpage example
+Example code for SWI handlers
+Recommended code to implement multiple SWIs :
+
+#fCode;Tab fCode,fCode
+.SWIHandler
+  	LDR	r12,[r12]
+	CMP	r11,#(JumpTableEnd-JumpTable)/4
+	ADDLT	pc,pc,r11,LSL #2
+	B	Error_UnknownSWI
+.JumpTable
+	B	SWICode_Zero
+	B	SWICode_One
+	...
+.JumpTable_End
+
+.Error_UnknownSWI
+	ADR	r0,EBlock_UnknownSWI
+	MOV	r1,#0
+	MOV	r2,#0
+	ADR	r4,Module_Title
+# stmfd and ldmfd added by matthew phillips
+# <matthew.phillips@christ-church.oxford.ac.uk>
+	STMFD	r13!,\{r14\}
+	SWI	"<XMessageTrans_ErrorLookup=>MessageTrans_ErrorLookup>"
+	LDMFD	r13!,\{r14\}
+	ORRS	pc,r14,#1<<28
+
+.<EBlock=>swi_errorblock>\_UnknownSWI
+	EQUD	1<<6
+	EQUS	"BadSWI"+CHR$0
+	ALIGN
+#f;tab
+#line
+*Note*:	This is a variation on the example on <PRM 1-219=>PRM-1:219>, however due to a bug in that routine the example in the PRMs doesn't work. It can be fixed by using the technique described on <PRM 1-31=>PRM-1:31> of storing and loading r14 to and from the stack before and after calling the SWI.
+ 	This problem is also mentioned in the <errata for the PRM=>PRM-5a:660>.

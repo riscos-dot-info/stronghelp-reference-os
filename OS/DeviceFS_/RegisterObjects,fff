@@ -1,0 +1,8 @@
+DeviceFS_RegisterObjects  (&42742)
+#Parent DeviceFS_
+=>	R0 =	device driver's handle
+	R1 =	pointer to list of <devices to install=>DeviceFS_devices>
+
+This SWI registers additional devices with an device driver.
+#Line
+See <PRM 2, page 432=>PRM-2:432>.

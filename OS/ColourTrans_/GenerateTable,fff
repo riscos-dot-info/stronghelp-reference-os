@@ -1,0 +1,5 @@
+ColourTrans_GenerateTable  (&40763)
+#Parent ColourTrans_
+Identical to <ColourTrans_SelectTable>, except that it always assumes R5 contains valid flags.
+#Line
+See <PRM 3, page 397=>PRM-3:397>.

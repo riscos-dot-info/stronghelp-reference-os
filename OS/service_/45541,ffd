@@ -1,0 +1,12 @@
+Service_DrawObjectDeclareFonts (&45541)
+#Parent Service_index
+=>	R0 =	<object type=>DrawFile_format>
+# Gerph> This really should go directly to the types page, but for now...
+	R1 =	&45541 (reason code)
+	R2 =	pointer to <declare font state block=>drawfile_declarestate>
+<=	R1 =	0 if recognised, preserved otherwise
+
+# Gerph> You've not documented DeclareFonts, Justin.
+This service is made whenever DrawFile_DeclareFonts encounters an object whose type it doesn't know. Extension modules should recognise the object type, declare the fonts in it and then claim the service. Errors should *only* be reported if there is no error presently known - the Drawfile module will continue after errors, but only report the first one.
+# Gerph> This is stupid. There is no way to include multiple font table objects
+#        unless I've misunderstood completely.

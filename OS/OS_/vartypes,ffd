@@ -1,0 +1,31 @@
+Variable types
+0	String		Pointer to string, which will be <GSTransed=>OS_GS1> now (will not be 0 terminated)
+1	Number		4 byte integer
+2	Macro		Pointer to string, which will be GSTransed each time it is used
+3	Expanded	Expression which will be sent through <OS_EvaluateExpression>
+4	Literal		String that will not be GSTransed
++16	Code		Pointer to a block of <code=>.code>
+#Subpage code
+Variable type Code
+R1 points to a block containing the following :
+
+Offset	Contents
+#Line
+0	This is where the OS jumps when the variable is to be written. Will normally be a branch instruction
+4	This is where the OS jumps when the variable is to be read - your code may start here
+#tab
+
+When the Write entry is called :
+=>	R1 =	value
+	R2 =	length of value
+<=	R1,2,4,10-12 may be corrupted.
+
+When the Read entry is called :
+=>	-
+<=	R0 =	pointer to value
+ 	R1 may be corrupted
+ 	R2 =	len of value
+
+The two entry points are called in SVC mode, so if you call a SWI then R14 will be corrupted.
+
+Note that <OS_ReadVarVal> is marked as being re-entrant, so in theory your code could be called while threaded. However, the PRM makes no mention of this, neither warning that it could happen, nor stating that the kernel makes sure that it does not happen.

@@ -1,0 +1,20 @@
+NetPrint_ConvertStatusToString  (&40208)
+#Parent NetPrint_
+=>	R0 =	pointer to <status block=>.status>
+	R1 =	pointer to buffer for resulting string
+	R2 =	size of buffer
+
+<=	R0 =	pointer to buffer (R1 on entry)
+	R1 =	pointer to terminator
+	R2 =	free bytes in buffer
+
+This SWI converts the given <status=>NetPrint_statuses> to a null terminated string in the supplied buffer.
+#Line
+See <PRM 2, page 398=>PRM-2:398>.
+#SubPage status
+NetPrint_ConvertStatusToString status block
+Offset	Contents
+#Line
+0	<status=>NetPrint_statuses>
+1	optional station number
+2	optional net number

@@ -1,0 +1,30 @@
+OS_Convert<name><number>  (&D0-&E8)
+#Parent OS_
+=>	R0 =	Value to be converted
+	R1 =	Buffer for resulting string
+	R2 =	size of buffer
+
+<=	R0 =	Buffer (R1 on entry)
+	R1 =	pointer to terminating 0 in buffer
+	R2 =	free bytes in buffer
+
+This range of SWIs convert a number into some kind of string.
+
+#Tab
+\<name>		\<number>
+#Line
+Hex		<1=>OS_ConvertHex1>,<2=>OS_ConvertHex2>,<4=>OS_ConvertHex4>,<6=>OS_ConvertHex6>,<8=>OS_ConvertHex8>	(nibbles)
+Cardinal	<1=>OS_ConvertCardinal1>,<2=>OS_ConvertCardinal2>,<3=>OS_ConvertCardinal3>,<4=>OS_ConvertCardinal4>	(bytes) (unsigned)
+Integer		<1=>OS_ConvertInteger1>,<2=>OS_ConvertInteger2>,<3=>OS_ConvertInteger3>,<4=>OS_ConvertInteger4>		(bytes) (signed)
+Binary		<1=>OS_ConvertBinary1>,<2=>OS_ConvertBinary2>,<3=>OS_ConvertBinary3>,<4=>OS_ConvertBinary4>		(bytes)
+SpacedCardinal	<1=>OS_ConvertSpacedCardinal1>,<2=>OS_ConvertSpacedCardinal2>,<3=>OS_ConvertSpacedCardinal3>,<4=>OS_ConvertSpacedCardinal4>		(bytes) (unsigned)
+SpacedInteger	<1=>OS_ConvertSpacedInteger1>,<2=>OS_ConvertSpacedInteger2>,<3=>OS_ConvertSpacedInteger3>,<4=>OS_ConvertSpacedInteger4>			(bytes) (signed)
+
+#Prefix
+In addition we have :
+  <OS_ConvertFixedNetStation>
+  <OS_ConvertNetStation>
+  <OS_ConvertFixedFileSize>
+  <OS_ConvertFileSize>
+  <OS_ConvertDateAndTime>
+  <OS_ConvertStandardDateAndTime>

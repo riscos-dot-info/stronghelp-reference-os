@@ -1,0 +1,23 @@
+OS_Byte 25  Reset groups of font definition
+#Parent OS_ByteIndex
+=>	R0 =	25
+	R1 =	<group to restore=>.groups>
+
+<=	R0 preserved
+	R1,R2 corrupted
+
+This call restores the characters eventually redefined by the <VDU 23,32-355=>VDU:23,32-255> command in the range of 32-255. Which characters are to be reset is given in R1.
+#Line
+See <PRM 1, page 635=>PRM-1:635>
+#Subpage groups
+Character groups
+Value	Range of keys to be restored
+#Line
+0	32-255
+1	32-63
+2	64-95
+3	96-127
+4	128-159
+5	160-191
+6	192-223
+7	224-255

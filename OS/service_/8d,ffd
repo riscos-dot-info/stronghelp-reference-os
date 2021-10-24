@@ -1,0 +1,84 @@
+Service_EnumerateScreenModes (&8D)
+#parent Service_Index
+=>	R1 =	&8D (reason code)
+	R2 =	number of modes to skip
+	R3 =	monitor type
+	R4 =	memory bandwidth available (in bytes/sec)
+	R5 =	total amount of video RAM in system (in bytes)
+	R6 =	pointer to <block to return data=>.block>, or 0 to just count entries
+	R7 =	size of block (in bytes) if R6\<>0, or 0 if R6=0
+
+<=	R1 =	0 if claimed (further valid modes are available, but would not fit in the block); else preserved
+	R2 =	-(number of modes filled in)
+	R3 - R5 preserved
+	R6 =	pointer to byte after last one filled in, or preserved if 0 on entry
+	R7 =	amount of unused space in block, or -(amount of space need in block) if counting
+
+This service enumerates the available screen modes. Modules return information on all modes they provide that work on the specified monitor type and which require no more than the specified memory bandwidth and video memory.
+
+<OS_ScreenMode 2=>os_screenmode2> provides a front-end for applications; you should use it rather than issuing this service call yourself.
+
+By setting R6 and R7 to zero, clients can find the amount of space required to hold all the returned modes; they can then issue the call again to actually read the information. Alternatively, clients can use a fixed size buffer, and repeatedly issue the call until it is no longer claimed.
+When using this method, R2 on entry - the number of modes to skip this iteration - should be set to: (previous R2 on entry) - (R2 on exit)
+
+Click <here=>.coding> for details about writing extension modules.
+#
+#subpage block
+Enumerate screen modes block
+Offset	Value
+#Line
+0	size of entry in bytes (24 for this format)
+4	<mode provider flags=>.providerflags>
+8	x-resolution (in pixels)
+12	y-resolution (in pixels)
+16	<pixel depth=>Wimp:Wimp_PixelDepth>
+20	frame rate (in Hz, to nearest integer)
+24	mode name, null terminated, and then padded with nulls until it is word aligned. (For unnamed modes this will simply be a single word whose value is 0).
+#
+#Subpage providerflags
+Mode provider flags
+Bit	Contents
+#line
+0	1
+1-7	mode info format specifier (zero for this format)
+8-31	additional mode info flags (must be zero)
+
+Future modules may use different mode info formats, therefore callers should check bits 0-7 of the mode provider flags before extracting the other information in this block. If the caller doesn't recognise the mode info format for an entry, then it can skip the entry by using the size field at offset 0. For format checking purposes, bits 8-31 should be ignored.
+#
+#Subpage coding
+Providing extension screen modes
+Mode-providing modules that wish to respond to this service call should use this algorithm:
+
+#fCode
+For each mode that they want to return
+#Indent 2
+If R2 > 0 Then
+#Indent 4
+do nothing, i.e. skip it
+#Indent 2
+Else
+#Indent 4
+If R6\<>0 Then
+#Indent 6
+(enumeration case - filling in block)
+If R7 >= entrysize Then
+#Indent 8
+store entry at R6
+R6 += entrysize
+#Indent 6
+Else
+#Indent 8
+(not enough space for next mode)
+R1 = 0 (Service_Serviced)
+Return (service call claimed)
+#Indent 6
+EndIf
+#Indent 4
+EndIf
+R7 -= entrysize
+#Indent 2
+EndIf
+R2 -= 1
+#Indent 0
+Next
+Return (service call passed on)

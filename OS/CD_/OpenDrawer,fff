@@ -1,0 +1,5 @@
+CD_OpenDrawer  (&41247)
+#Parent CD_
+=>	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+
+This SWI stops the CD spinning, opens drawer and ejects caddy.

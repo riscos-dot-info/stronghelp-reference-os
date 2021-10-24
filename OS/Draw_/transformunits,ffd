@@ -1,0 +1,9 @@
+Draw Transform Units
+#Parent Draw_
+Draw transform units are fixed point numbers, with the bit between bits 15 and 16. In essence this means that the numbers are :
+
+#Indent 4;fCode
+&XXXX·XXXX
+#Indent;f
+
+That is, the top two bytes contains the whole part of the fraction, the bottom two bytes the fractional part.

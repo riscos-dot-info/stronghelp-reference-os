@@ -1,0 +1,47 @@
+Palette vector (35)
+#Parent Vector_index
+=>	R4 =	reason code:
+	 	1	<read palette=>.1>
+	 	2	<set palette=>.2>
+	 	3	<set first flash state=>.3>
+	 	4	<set second flash state=>.3>
+	 	5	<set default palette=>.5>
+	 	6	<blank screen=>.6>
+	Other registers dependent on call
+
+This vector is called whenever the palette is read or written. Set R4 = 0 to claim the call, and prevent RISC OS from performing the default action. It is used to indirect <VDU 19=>VDU:19>, <OS_Word 12=>OS_Word12>, <OS_ReadPalette>, <ColourTrans_ReadPalette> and <ColourTrans_WritePalette>. <PRM 1-105=>PRM-1:105> suggests that there may be other calls it indirects.
+#Line
+See <PRM 1, page 84=>PRM-1:84>.
+#Subpage 1
+Read Palette
+#Wrap Off
+=>	R0 =	logical colour
+	R1 =	<type of colour=>VDU:19a> (16,17,18,24,25)
+	R4 =	1 (reason code)
+<=	R2 =	1st flash colour (&BBGGRRxx) - <device colour=>ColourTrans_ConvertDeviceColour>
+	R3 =	2nd flash colour (&BBGGRRxx) - <device colour=>ColourTrans_ConvertDeviceColour>
+	R4 =	0 if operation complete
+#Subpage 2
+Set Palette
+#wrap off
+=>	R0 =	logical colour
+	R1 =	<type of colour=>VDU:19a> (16,17,18,24,25)
+	R2 =	1st flash colour (&BBGGRRxx) - <device colour=>ColourTrans_ConvertDeviceColour>
+	R3 =	2nd flash colour (&BBGGRRxx) - <device colour=>ColourTrans_ConvertDeviceColour>
+	R4 =	2 (reason code)
+<=	R4 =	0 if operation complete
+#Subpage 3
+Set Flash state
+=>	R4 =	3 (set first flash state)
+	 	4 (set second flash state)
+<=	R4 =	0 if operation complete
+#Subpage 5
+Set default palette
+=>	R4 =	5 (reason code)
+<=	R4 =	0 if operation complete
+#Subpage 6
+Blank screen
+=>	R0 =	0 to unblank, 1 to blank
+	R4 =	6 (reason code)
+
+This call is used by the <ScreenBlanker=>ScreenBlanker_> module to blank and unblank the screen.

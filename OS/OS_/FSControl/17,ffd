@@ -1,0 +1,11 @@
+OS_FSControl 17
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	17 (Add secondary module)
+	R1 =	pointer to filing system name
+	R2 =	pointer to secondary system name
+	R3 =	secondary system private word
+#Wrap
+<=	All registers preserved
+
+This SWI is used add secondary modules which provide additional <filing system commands=>OS_Module_Comflags>. For example, this allows filecore to add the commands provided by ADFS.

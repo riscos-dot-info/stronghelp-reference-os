@@ -1,0 +1,8 @@
+Territory_ReadCurrentTimeZone  (&43048)
+#Parent Territory_
+<=	R0 =	pointer to name of the current time zone
+	R1 =	offset from UTC to current time zone in centi-seconds
+	
+Returns information on the current timezone.
+#Line
+See <PRM 3, page 801=>PRM-3:801>.

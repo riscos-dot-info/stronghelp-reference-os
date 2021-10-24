@@ -1,0 +1,142 @@
+OS_Byte CMOS settings
+0	&00	Econet station number
+1	&01	Econet fileserver station number, 0 for name
+2	&02	Econet fileserver network number/name
+3	&03	Econet printer server station number, 0 for name
+4	&04	Econet printer server network number/name
+5	&05	Default <filing system number=>fsys_ident>
+6	&06	Unplugged modules byte 0
+7	&07	Unplugged modules byte 1
+10	&0A	<Misc mode data=>os_bytecmos10>
+11	&0B	<Drive/Caps/Mount=>os_bytecmos11>
+12	&0C	Keyboard auto-repeat delay
+13	&0D	Keyboard auto-repeat time
+14	&0E	Printer ignore character
+15	&0F	<Misc printer/Serial data=>os_bytecmos15>
+16	&10	<Loud/NoScroll/Boot/Serial format=>os_bytecmos16>
+17	&11	<NetFiler flags=>os_bytecmos17>
+18	&12	Unplugged modules byte 2
+19	&13	Unplugged modules byte 3
+20	&14	Unplugged extension modules byte 0
+21	&15	Unplugged extension modules byte 1
+22	&16	Wimp double click move
+23	&17	Wimp auto menu delay
+24	&18	<Territory=>os_bytecmos24>
+25	&19	Printer buffer size
+26	&1A	ADFS spindown (in 5 seconds)
+27	&1B	Wimp menu drag delay
+28	&1C	<Truncate/DragASprite/FilerAction/Dither=>os_bytecmos28>
+29	&1D	<Mouse type=>os_bytecmos29>
+30	&1E
+|	|	Reserved for the user
+45	&2D
+46	&2E
+|	|	Reserved for applications
+79	&4F
+80	&50
+|	|	Reserved for RISC iX (Other Unix flavours also use these bytes)
+111	&6F
+112	&70
+|	|	Reserved for expansion cards
+127	&7F
+128	&80	Year byte 0
+129	&81	Year byte 1
+132	&84	<DumpFormat/Misc data=>os_bytecmos132>
+133	&85	<Monitor data=>os_bytecmos133>
+134	&86	Font size in 4k units
+135	&87	<Number of drives=>os_bytecmos135>
+136	&88	<Floppy step rates=>os_bytecmos136>
+137	&89	ADFS buffers
+138	&8A	CDFS flags
+139	&8B	Time zone (15 mins as signed)
+140	&8C	<NewLook flags=>os_bytecmos140>
+141	&8D	Printer destination
+142	&8E	Twin flags
+143	&8F	Screen size
+144	&90	RAMFS size
+145	&91	System heap size
+146	&92	RMA size
+147	&93	Sprite size
+148	&94	<SoundDefault=>os_bytecmos148>
+149	&95	Basic editor flags <byte 0=>os_bytecmos149>
+150	&96	Basic editor flags <byte 1=>os_bytecmos149>
+151	&97	Basic editor flags <byte 2=>os_bytecmos149>
+152	&98	Basic editor flags <byte 3=>os_bytecmos149>
+153	&99	Econet printer server name byte 1
+154	&9A	Econet printer server name byte 2
+155	&9B	Econet printer server name byte 3
+156	&9C	Econet printer server name byte 4
+157	&9D	Econet printer server name byte 5
+158	&9E	Econet fileserver name byte 1
+159	&9F	Econet fileserver name byte 2
+160	&A0	Econet fileserver name byte 3
+161	&A1	Econet fileserver name byte 4
+162	&A2	Econet fileserver name byte 5
+163	&A3	Econet fileserver name byte 6
+164	&A4	Econet fileserver name byte 7
+165	&A5	Econet fileserver name byte 8
+166	&A6	Econet fileserver name byte 9
+167	&A7	Econet fileserver name byte 10
+168	&A8	Econet fileserver name byte 11
+169	&A9	Econet fileserver name byte 12
+170	&AA	Econet fileserver name byte 13
+171	&AB	Econet fileserver name byte 14
+172	&AC	Econet fileserver name byte 15
+173	&AD	Unplugged modules byte 4
+174	&AE	Unplugged modules byte 5
+175	&AF	Unplugged modules byte 6
+176	&B0	Unplugged modules byte 7
+177	&B1	Unplugged extension card 0
+178	&B2	Unplugged extension card 1
+179	&B3	Unplugged extension card 2
+180	&B4	Unplugged extension card 3
+181	&B5	Basic editor wild card 0 (single character)
+182	&B6	Basic editor wild card 1 (multiple characters)
+183	&B7	Basic editor wild card 2 (case sensitivity off)
+184	&B8	Basic editor wild card 3 (case sensitivity on)
+185	&B9	Language (number of module in ROM run if boot disabled)
+186	&BA	<Country=>os_bytecmos186>
+187	&BB	VFS ?
+188	&BC	<Blanker/Misc data=>os_bytecmos188>
+189	&BD	ADFS disc size 0
+190	&BE	ADFS disc size 1
+191	&BF	ADFS disc size 2
+192	&C0	ADFS disc size 3
+193	&C1	<Protection flags=>os_bytecmos193>
+194	&C2	Mouse step
+195	&C3	<Broadcast/Cache/AutoWimp/Misc data=>os_bytecmos195>
+196	&C4	Wimp mode
+197	&C5	<Wimp flags=>os_bytecmos197>
+198	&C6	<Filer flags=>os_bytecmos198>
+199	&C7	ADFS directory cache
+200	&C8	FontMax
+201	&C9	FontMax1
+202	&CA	FontMax2
+203	&CB	FontMax3
+204	&CC	FontMax4
+205	&CD	FontMax5
+206	&CE	FontMax6
+207	&CF	FontMax7
+208	&D0	<SCSIFS drives=>os_bytecmos208>
+209	&D1	SCSIFS buffers
+210	&D2	SCSIFS directory cache
+211	&D3	SCSIFS disc size 0
+212	&D4	SCSIFS disc size 1
+213	&D5	SCSIFS disc size 2
+214	&D6	SCSIFS disc size 3
+215	&D7	<Auto load applications=>os_bytecmos215>
+216	&D8	<Auto load applications=>os_bytecmos216>
+217	&D9
+|	|	Reserved for RISC iX (Other Unix flavours also use these bytes)
+219	&DB
+220	&DC	<Alarm flags/DST=>os_bytecmos220>
+221	&DD	Wimp drag click delay
+222	&DE	<Wimp drag move delay and iconise widget=>os_bytecmos222>
+223	&DF	Wimp double click delay
+233	&E9	<FSLock=>FSLock_> password byte 0
+234	&EA	<FSLock=>FSLock_> password byte 1
+235	&EB	<FSLock=>FSLock_> password byte 2
+236	&EC	<FSLock=>FSLock_> password byte 3
+237	&ED	<FSLock=>FSLock_> password byte 4
+238	&EE	<FSLock=>FSLock_> password byte 5
+239	&EF	Checksum

@@ -1,0 +1,9 @@
+ColourTrans_ConvertDeviceColour  (&40753)
+#Parent ColourTrans_
+=>	R0 =	device colour (&BBGGRR00)
+	R1 =	pointer to <calibration table=>ColourTrans_calibrationtable>, or 0 to use current screen calibration
+<=	R2 =	standard colour (&BBGGRR00)
+
+This SWI converts a device colour to a standard colour.
+#Line
+See <PRM 3, page 372=>PRM-3:372>.

@@ -1,0 +1,12 @@
+Insert/delete rows (57)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<57, &39=>os_spriteop_reason2> (Insert/delete rows)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+	R3 =	Row number
+	R4 =	+ve : Number of rows to insert
+	 	-ve : Number of rows to delete
+
+Insert or delete rows from the sprite specified.
+#Line
+See <PRM 1, page 809=>PRM-1:809>

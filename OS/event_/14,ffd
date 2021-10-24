@@ -1,0 +1,8 @@
+Econet Receive
+#Parent event_index
+=>	R0 =	14 (event number)
+	R1 =	receive handle
+	R2 =	9 (<status Received=>econet_statuses>)
+	R3 =	port
+
+This event is generated when the Econet completes a reception.

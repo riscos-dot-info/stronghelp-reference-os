@@ -1,0 +1,8 @@
+Podule_HardwareAddress  (&40289)
+#Parent Podule_
+=>	R3 =	<ROM section=>OS_ModuleROMSections>
+<=	R3 =	<combined hardware address=>Podule_combinedhardwareaddress>
+
+This SWI reads the expansion cards or extension ROM's <combined hardware address=>Podule_combinedhardwareaddress>. Not that this information is very useful for an extension ROM. Use <Podule_HardwareAddresses> if you also require the base address.
+#Line
+See <PRM 4, page 150=>PRM-4:150>.

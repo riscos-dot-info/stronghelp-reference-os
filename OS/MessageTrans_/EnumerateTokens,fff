@@ -1,0 +1,19 @@
+MessageTrans_EnumerateTokens  (&41505)
+#Parent MessageTrans_
+=>	R0 =	pointer to 4-word data structure (not 0)
+	R1 =	pointer to token (possibly <wildcarded=>.wildcard>)
+	R2 =	pointer to buffer for result
+	R3 =	size of buffer
+	R4 =	index (0 for first time)
+<=	R0, R1 preserved
+	R2 =	0 if no more matching tokens, else preserved
+	R3 =	length of result excluding terminator
+	R4 =	next index
+
+This SWI looks up *tokens* that match the given wildcarded token specification. The token returned in the buffer has the same terminator as the wildcard in R1.
+#Line
+See <PRM 3, page 751=>PRM-3:751>.
+#subpage wildcard
+MessageTrans token wildcards
+?	match 1 character
+*	match 0 or more characters

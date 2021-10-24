@@ -1,0 +1,12 @@
+Get sprite (14)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<14, &E=>os_spriteop_reason2> (Get sprite)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+	R3 =	0 => Exclude palette
+	 	1 => Include palette
+<=	R2 =	Address/Offset of sprite unless in wimp or system area.
+
+This grabs the area of screen defined by the current and old graphic cursor coordinates. Any area outside the present graphics window will be filled in with the present background colour.
+#Line
+See <PRM 1, page 772=>PRM-1:772>

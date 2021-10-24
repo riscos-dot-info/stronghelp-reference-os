@@ -1,0 +1,10 @@
+Sound scheduler handler block
+Offset	Meaning
+#Line
+0	pointer to <schedule code=>.schedule>
+
+The sound scheduler is called every centi-second to schedule more sounds.
+#subpage schedule
+Schedule handler code
+=>	unknown
+<=	unknown

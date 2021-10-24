@@ -1,0 +1,12 @@
+OS_GSTrans  (&27)
+#Parent OS_
+{f25}Þ{f}	R0 =	pointer to string, terminated by 10, 13, or 0
+	R1 =	pointer to destination buffer
+	R2 =	buffer size + <flags=>os_gs0>
+{f25}Ü{f}	R0 =	pointer to terminator+1
+	R2 =	characters converted
+	C set if buffer overflow
+#line
+This SWI is equivalent to a call to <OS_GSInit>, followed by repeated calls to <OS_GSRead>. It reads and <translates=>os_gs1> a whole string.
+#Line
+See <PRM 1-454=>PRM-1:454>.

@@ -1,0 +1,4 @@
+Parameters to pass to OS_SpriteOp
+reason+0	Use system area
+reason+256	Use user <sprite area=>OS_SpriteOp_Area> pointed to by R1
+reason+512	Use user <sprite area=>OS_SpriteOp_Area> pointed to by R1. R2 contains <pointer to sprite=>OS_SpriteOp_ptr>, rather than sprite name.

@@ -1,0 +1,8 @@
+OS_FSControl 9  (&29)
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	9 (Examine objects)
+	R1 =	pointer to (wildcarded) filename
+#Wrap
+
+This SWI is equivalent to {fCode}*Info{f}.

@@ -1,0 +1,7 @@
+OS_FSControl 25  (&29)
+#Parent OS_FSControl
+=>	R0 =	25 (Rename object)
+	R1 =	pointer to original filename
+	R2 =	pointer to new filename
+
+This SWI allows you to rename a file. It can only rename objects to new names on the same filing system and disc - otherwise use <move=>OS_FSControl26> (copy with delete). There is no SWI to discover which disc a given file is on - hence it is impossible to ascertain whether this SWI will fail without actually calling it.

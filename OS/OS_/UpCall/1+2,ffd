@@ -1,0 +1,24 @@
+Any routines on this vector should :
+# This file works but will have given an 'inaccessible' warning - ignore it
+#Tab;Indent 2
+è	Prompt you to supply the medium with a string built up using:
+	  1	the medium type string (passed in R6)
+	  2	the filing system name (obtained by calling <XOS_FSControl 33=>OS_FSControl> acting on the value of R1)
+	  3	the medium name (passed in R2)
+	for example:
+	'Please insert disc ADFS:XYZ and press Space (Escape to abort)'
+è	give you a way of indicating that you have either supplied the medium, or wish to cancel the operation
+è	intercept the vector with R0 = -1 if you wish to cancel the operation
+è	intercept the vector with R0 = 0 if the time limit is reached, or if you say you have supplied the medium
+#Indent
+
+When you intercept the call to the vector, control passes back to the filing
+system routine that called <OS_UpCall>...
+#Indent 2
+è	If R0 = -1, then the routine calls <OS_UpCall 4=>OS_UpCall4>; it then returns an error to say that the medium wasn't found.
+è	If R0 = 0, then the routine checks for you that the medium has been changed and the correct one supplied. If so, it calls OS_UpCall 4; otherwise it just calls OS_UpCall 1 or 2 again, after incrementing R4
+#Indent
+
+The timeout period in R5 is set to a small value for media that can detect when the medium has been changed (such a floppy disc drives) and to a large value (typically &FFFFFFFF) for other media. In the former case, this means that RISC OS will automatically detect that new medium has been supplied, and check that it is the correct one.
+
+The most common use of OS_UpCall 1 and 2 is to request that a floppy disc is inserted.

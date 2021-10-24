@@ -1,0 +1,9 @@
+ImageEntry_Func 32
+#Parent ImageEntry_Func
+=>	R0 =	32 (Stamp image)
+	R1 =	pointer to name of any object on image
+	R2 =	0 (stamp when updated)
+	 	1 (stamp now)
+	R6 =	<image filing system's handle=>ImageEntry_Func21>
+
+This call requests that the <cycle ID=>FileCore_cycleid> of the image be updated, implementing <OS_FSControl 51=>OS_FSControl51>.

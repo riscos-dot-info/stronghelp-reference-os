@@ -1,0 +1,10 @@
+Font_FutureFont  (&4008C)
+#Parent Font_
+<=	R0 =	font handle
+	R1 =	background colour
+	R2 =	foreground colour
+	R3 =	<foreground colour offset=>font_paint2>
+
+This SWI returns what the state after the next call to <Font_Paint> would be. You must first have called <Font_StringWidth>.
+#Line
+See <PRM 3, page 443=>PRM-3:443>.

@@ -1,0 +1,9 @@
+OS_Word 14
+#Parent OS_Word
+=>	R0 =	14
+	R1 =	pointer to parameter block
+	R1+0 = reason code :
+	  0 :	<Read soft-copy of CMOS clock as string=>OS_Word14,0>
+	  1 :	<Read CMOS clock as BCD=>OS_Word14,1>
+	  2 :	<Convert BCD to string=>OS_Word14,2>
+	  3 :	<Read soft-copy of CMOS clock as 5-byte integer=>OS_Word14,3>

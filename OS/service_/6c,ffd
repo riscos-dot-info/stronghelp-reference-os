@@ -1,0 +1,25 @@
+Service_DisplayFormatHelp (&6C)
+#Parent Service_Index
+=>	R0 =	0
+	R1 =	&69 (reason code)
+
+If no error then
+<=	R0,R1 preserved to pass on
+
+else 
+=>	R0 =	pointer to <error block=>swi_errorblock>
+	R1 =	0 (to claim)
+
+This service is issued by {fcode}*Help Format{f}. For each of your formats you should display one line of the form
+
+   {/}format - description{/}
+
+{/}e.g.{/}
+
+#fCode
+L - 640K, 47 entry directories, old map, all ADFS.
+#f
+
+Only claim this service if there is an error while displaying the help text.
+#Line
+See <PRM 2, page 278=>PRM-2:278>

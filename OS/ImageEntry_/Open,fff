@@ -1,0 +1,20 @@
+ImageEntry_Open
+#Parent ImageEntry_
+=>	R1 =	pointer to filename
+	R3 =	FileSwitch file handle which will be allocated
+	R6 =	file handle of image containing object
+
+<=	R0 =	<file information word=>.fileinfo>
+	R1 =	internal file handle, or 0 if unable to open
+	R2 =	buffer for FileSwitch to use (powers of 2 from 64 to 1024)
+	R3 =	file extent
+	R4 =	space allocated to file (multiple of R2)
+	
+This entry point is called when an attempt is made to access a file inside an image. The internal file handle will be referred to by FileSwitch in subsequent file accesses if the file was successfully opened.
+#
+#Subpage fileinfo
+File information word (images)
+Bit	Meaning
+#Line
+31	Writes are allowed
+30	Reads are allowed

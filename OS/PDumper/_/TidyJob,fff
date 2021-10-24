@@ -1,0 +1,9 @@
+PDumper_TidyJob  (&41B05)
+#Parent PDumper_
+=>	R0 =	pointer to anchor word
+	R1 =	0, or pointer to list of tags terminated by 0 word.
+	R2 =	0 for end of page, else end of document
+
+This SWI releases any workspace used for a job, the support module unlinking this from the specified chain. Any tags specifed via R1, and any per page or per document resources are released.
+#Line
+See <PRM 3, page 688=>PRM-3:688>.

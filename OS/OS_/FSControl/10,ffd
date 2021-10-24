@@ -1,0 +1,9 @@
+OS_FSControl 10
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	10 (Set FS options)
+	R1 =	<option=>fsys_opts>
+#Wrap
+	R2 =	value
+
+This SWI sets the options on the temporary filing system. See <OS_FSControl 48=>OS_FSControl48> to set the boot option (4) for a given disc.

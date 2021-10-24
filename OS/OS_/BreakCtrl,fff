@@ -1,0 +1,12 @@
+OS_BreakCtrl  (&18)
+#Parent OS_
+=>	R0 =	address of the register save block, 0 to read
+	R1 =	address of the control routine, 0 to read
+
+<=	R0 =	address of previous register save block
+	R1 =	address of previous control routine
+	V is always clear
+
+This sets up the address of the BreakPoint handler and the register save block, zero for either value meaning no change - hence you can read the current value. This call is obsolete, <OS_ChangeEnvironment> provides the same, in fact OS_BreakCtrl calls this and should therefore be used in preference.
+#Line
+See <PRM 1, page 306=>PRM-1:306>.

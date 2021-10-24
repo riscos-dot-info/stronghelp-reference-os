@@ -1,0 +1,5 @@
+FileCore_DiscOp 7,8
+#Parent FileCore_DiscOp
+=>	R1 =	7 or 8 + <flags=>FileCore_DiscOp_flags>
+
+This call is used to step in or out by a track. These are only supported by 1772 disc controllers, eg those found in pre-A5000 machines, and should not be used so as to maintain compatibility.

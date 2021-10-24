@@ -1,0 +1,12 @@
+OS_Byte 152  Examine status of a buffer
+#Parent OS_ByteIndex
+=>	R0 =	152 (&98)
+	R1 =	<buffer number=>Buffer_buffers>
+
+<=	R0, R1 preserved
+	R2 =	next byte in buffer, corrupted if buffer empty
+	C flag	set if buffer is empty, otherwise clear
+                                                  
+This call checks whether a given buffer is empty, and if a byte is available returns it without removing it from the buffer. The buffer number is *not* validated - undefined results (rather than an error) occur if a bad buffer number is passed.
+#Line
+See <PRM 1, page 171=>PRM-1:171>

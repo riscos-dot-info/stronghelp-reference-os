@@ -1,0 +1,12 @@
+NetFS_ReadFSName  (&40042)
+#Parent NetFS_
+=>	R1 =	pointer to buffer for resulting string
+	R2 =	size of buffer
+
+<=	R0 =	pointer to buffer (R1 on entry)
+	R1 =	pointer to terminator
+	R2 =	free bytes in buffer
+
+This SWI reads the name of your current file server, or returns a null string if your are not logged on.
+#Line
+See <PRM 2, page 346=>PRM-2:346>.

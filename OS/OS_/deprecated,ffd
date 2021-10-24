@@ -1,0 +1,17 @@
+Deprecated calls
+The following calls are deprecated in RISC OS 3.1 and higher :
+
+#Table Columns 2
+<OS_BreakCtrl>
+<OS_CallBack>
+<OS_Control>
+<OS_SetEnv>
+<OS_UnusedSWI>
+<CDFS_GiveFileType>
+#EndTable
+
+In order to be Y2K compliant, the following call should also be considered deprecated:
+
+#Table Columns 1
+<OS_Word 14,1=>OS_Word.14,1>
+#EndTable

@@ -1,0 +1,10 @@
+Service_DrawObjectRender (&45540)
+#Parent Service_index
+=>	R0 =	<object type=>DrawFile_format>
+# Gerph> This really should go directly to the types page, but for now...
+	R1 =	&45540 (reason code)
+	R2 =	pointer to the <render state=>Drawfile_renderstate>
+<=	R1 =	0 if recognised, preserved otherwise
+
+This service is made whenever <DrawFile_Render> encounters an object whose type it doesn't know. Extension modules should recognise the object type, process it and then claim the service. Errors should *only* be reported if there is no error presently known - the Drawfile module will continue after errors, but only report the first one.
+# Gerph> /why/ should it continue ?

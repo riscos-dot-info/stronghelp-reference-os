@@ -1,0 +1,14 @@
+DeviceFS_ReceivedCharacter  (&42746)
+#Parent DeviceFS_
+=>	R0 =	byte recieved
+	R1 =	DevicesFS stream handle
+<=	C clear if byte transferred
+	C set if not transferred
+
+This SWI is made by a device when it recieves a character. DeviceFS will then process the character (buffer it, or unblock a waiting stream).
+
+{*}Note:{*}For speed DeviceFS_ReceivedCharacter and <DeviceFS_TransmitCharacter> do not validate the external handle passed - strange things will happen if bad handles are passed.
+# N> Nasal demons
+# Gerph> Really ?
+#Line
+See <PRM 2, page 436=>PRM-2:436>.

@@ -1,0 +1,21 @@
+ImageEntry_File
+#Parent ImageEntry_
+=>	R0 =	<reason code=>.reason>
+	R1 =	pointer to filename
+	others dependant on call
+
+This entry point is called for operations on whole files.
+#
+#Subpage reason
+ImageEntry_File reason codes
+Reason	Meaning
+#Line
+0	<Save file=>ImageEntry_File0>
+1	<Write catalogue information=>ImageEntry_File1>
+5	<Read catalogue information=>ImageEntry_File5>
+6	<Delete object=>ImageEntry_File6>
+7	<Create file=>ImageEntry_File7>
+8	<Create directory=>ImageEntry_File8>
+10	<Read block size=>ImageEntry_File10>
+
+Other reasons are not used for ImageEntry calls (FSEntry only).

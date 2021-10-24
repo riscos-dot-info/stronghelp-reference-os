@@ -1,0 +1,10 @@
+Select sprite (24)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<24, &18=>os_spriteop_reason2> (Select sprite)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+<=	R2 =	Address/Offset of sprite unless in wimp or system area.
+
+This SWI is meant for selecting the given sprite for subsequent plotting with VDU 25,232-239. This usage is not recommended, but the side effect of returning the address is more useful.
+#Line
+See <PRM 1, page 775=>PRM-1:775>

@@ -1,0 +1,12 @@
+Cache
+#Parent !Root
+#Prefix Cache_
+#Table Columns 2
+Control
+Cacheable
+Updateable
+Disruptive
+Flush
+#EndTable
+
+Not available from RISC OS 3.5 onwards.

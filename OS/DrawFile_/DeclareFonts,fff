@@ -1,0 +1,15 @@
+DrawFile_DeclareFonts  (&45542)
+#Parent DrawFile_
+=>	R0 =	<flags=>.flags>
+	R1 =	pointer to <drawfile block=>Drawfile_format>
+	R2 =	length of block
+<=	All preserved
+
+This SWI should be called between <PDriver_SelectJob> and <PDriver_DrawPage> if the printer requires that fonts be declared with <PDriver_DeclareFont>.
+#Subpage flags
+DrawFile_Render flags
+Bit	Meaning if set
+#Line
+0	do not download font (passed in R2 to <PDriver_DeclareFont>)
+
+Kerning info is always downloaded (as this includes the non-kerned case).

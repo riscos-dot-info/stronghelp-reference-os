@@ -1,0 +1,7 @@
+Sound_QInit  (&401C0)
+#Parent Sound_
+<=	R0 =	0 (success)
+
+This call flushes and re-initialises the queue. The beat counter is reset and disabled, the tempo is set to a default value (see <Sound_QTempo>), the bar length is set to zero.
+#Line
+See <PRM 4, page 44=>PRM-4:44>.

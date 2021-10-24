@@ -1,0 +1,6 @@
+JPEG plotting flags
+bit	meaning if set
+#Line
+0	dither output when plotting 24 bit JPEG at 16bpp or below
+1	dithering (if any) is full error diffused when plotting at 8bpp
+other	reserved (must be 0)

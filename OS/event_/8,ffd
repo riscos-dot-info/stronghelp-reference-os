@@ -1,0 +1,26 @@
+Econet UserRPC / OSProc events
+#Parent event_index
+=>	R0 =	8	(User procedure call)
+	 	16	(OS procedure call)
+	R1 =	<argument buffer=>Econet_immediatebuffer>
+	R2 =	<RPC number=>.RPC>
+	R3 =	sending station
+	R4 =	sending station's network
+<=	R0-R4 may be corrupted.
+
+These events are generated when the Econet recieves a UserRPC or OS Procedure call sent by another station calling <Econet_DoImmediate>.
+#SubPage RPC
+Econet OS Procedure Calls
+Number	Name
+#Wrap off
+#Line
+0	<OSCharacterFromNotify=>.Notify>
+1	OSInitialiseRemote	Unimplemented on RISC OS
+2	OSGetViewParameters	Unimplemented on RISC OS
+3	OSCauseFatalError	Calls <OS_GenerateError>. Ouch!
+4	OSCharacterFromRemote	Unimplemented on RISC OS
+#SubPage Notify
+OSCharacterFromNotify
+Outside the desktop the character is inserted into the keyboard buffer.
+
+Inside the desktop, characters are collated by station, and at a pause, a <Message Notify=>Wimp:Msg_40040> is broadcast.

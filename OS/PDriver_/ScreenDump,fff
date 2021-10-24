@@ -1,0 +1,8 @@
+PDriver_ScreenDump  (&8014F)
+#Parent PDriver_
+=>	R0 =	file handle to recieve dump
+
+This SWI makes the printer generate a screen dump to the specified file handle. Check the <features word=>PDriver_features> first - no current Acorn printer driver supports it!
+# Gerph> Another useful feature there then
+#Line
+See <PRM 3, page 630=>PRM-3:630>.

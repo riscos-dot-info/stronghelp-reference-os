@@ -1,0 +1,8 @@
+PDriver_CancelJobWithError  (&80152)
+#Parent PDriver_
+=>	R0 =	file handle of job
+	R1 =	poiner to <error block=>swi_errorblock>
+
+This SWI will make any further attempt to output to the specified print job return the specifed error.
+#Line
+See <PRM 3, page 633=>PRM-3:633>.

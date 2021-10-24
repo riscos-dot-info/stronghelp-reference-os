@@ -1,0 +1,13 @@
+OS_Byte 196  Read/Write keyboard auto repeat delay
+#Parent OS_ByteIndex
+=>	R0 =	196
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	value before being overwritten
+	R2 =	keyboard auto repeat rate (see <OS_Byte 197=>OS_Byte197>)
+
+See <OS_Byte 11=>OS_Byte011> for more information.
+#Line
+See <PRM 1, page 874=>PRM-1:874>

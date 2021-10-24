@@ -1,0 +1,18 @@
+Menu definition
+0	Token for menu title, or null for no more
+
+n	6 bytes :
+	  menu title foreground and frame colour
+	  menu title background colour
+	  menu work area foreground colour
+	  menu work area background colour
+	  height of menu items
+	  gap between items
+
+n+6	m menu items :
+	  Token for menu item
+	  Word-align
+	  3 Words :
+	    Menu flags (bit 7 set for last item)
+	    Offset to submenu ( 0 for none)
+	    Icon flags

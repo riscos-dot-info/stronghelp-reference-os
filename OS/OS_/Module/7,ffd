@@ -1,0 +1,6 @@
+OS_Module 7
+#Parent OS_Module
+=>	R0 =	7
+	R2 =	block
+
+This SWI frees a previously claimed area of RMA.

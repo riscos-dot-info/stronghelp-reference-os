@@ -1,0 +1,16 @@
+Draw_StrokePath  (&40706)
+#Parent Draw_
+=>	R0 =	pointer to <path block=>draw_pathblock>
+	R1 =	pointer to <output path block=>draw_outpathblock>, or 0 to calcluate size
+	R2 =	pointer to <transformation matrix=>draw_transform>, or 0 for default
+	R3 =	flatness, or 0 for default
+	R4 =	line thickness, or 0 for default
+	R5 =	pointer to <join/cap block=>draw_joincapblock>, or 0 if none
+	R6 =	pointer to <dashing pattern=>draw_dashblock>, or 0 if none
+
+<=	R0 =	R1 = 0	calulated output buffer size
+	 	else	pointer to end of <path marker=>draw_pathblock> in output path
+
+This SWI is like a call to <Draw_Stroke>, except that it writes it output as a path in the block, rather than to the VDU drivers.
+#Line
+See <PRM 3, page 542=>PRM-3:542>.

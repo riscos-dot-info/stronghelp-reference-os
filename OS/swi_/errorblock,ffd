@@ -1,0 +1,52 @@
+SWI Error block:
+0	Error number
+4..	Error string. Zero terminated.
+
+Bits in Error number
+#Line; tab
+0-7	Basic error number
+8-23	'Owner'/<Generator of error=>.generators>
+24-29	Reserved. Must be 0
+30	Defined to be 0
+31	Error is serious (hardware). Owner is then
+	  0 Machine
+	  1 Co-Processor
+	  2 Floating point
+	  3 Econet
+
+Note:	Even *X* SWIs are allowed to *generate* (rather than return) serious errors.
+#Subpage generators
+Error generators
+&000 - &0FF	Operating system - BBC compatible error
+&100 - &11F	<OS_Module> errors
+&120 - &13F	<OS_ReadVarVal>/<OS_SetVarVal> errors
+&140 - &15F	Redirection manager errors
+&160 - &17F	<OS_EvaluateExpression> errors
+&180 - &19F	<OS_Heap> errors
+&1A0 - &1AF	<OS_Claim>/<OS_Release> errors
+&1B0 - &1BF	<OS_ChangeEnvironment> errors
+&1C0 - &1DF	<OS_ChangeDynamicArea> errors
+&1E0 - &1EF	<OS_CLI>/miscellaneous errors
+&200 - &27F	<Font manager=>Font_> errors
+&280 - &2BF	<Wimp=>Wimp:Wimp_> errors
+&2C0 - &2FF	Date/time conversion error
+&300 - &3FF	<Econet=>Econet_> errors
+&400 - &4FF	FileSwitch errors
+&500 - &5BF	<Podule=>Podule_> errors
+&5C0 - &5FF	<Printer driver=>PDriver_> errors
+&600 - &63F	General OS errors
+&640 - &6FF	International module errors
+&700 - &7FF	<Sprite=>OS_SpriteOp> errors
+&800 - &87F	<Debugger=>Debugger_> errors
+&880 - &8FF	BBC I/O Podule errors
+&900 - &97F	Shell CLI errors, and miscellaneous others
+&980 - &9FF	<Draw=>Draw_> errors
+&A00 - &A3F	<ColourTrans=>ColourTrans_> errors
+&A40 - &A7F	<ARM3=>Cache_> errors
+&A80 - &ABF	<TaskWindow=>Wimp:TaskWindow_> errors
+&AC0 - &AFF	<MessageTrans=>MessageTrans_> errors
+&B00 - &B3F	Pinboard errors
+&B40 - &B4F	Portable module errors
+&1XX00 - &1XXFF	Errors from <filing system number &XX=>fsys_ident>
+&20000 - &200FF	<Sound=>Sound_> errors
+&20200 - &200FF	More podule errors

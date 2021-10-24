@@ -1,0 +1,12 @@
+Hourglass_Colours  (&406C6)
+#Parent Hourglass_
+=>	R0 =	new colour 1
+	R1 =	new colour 3
+<=	R0 =	old/current colour 1
+	R1 =	old/current colour 3
+
+This SWI sets or reads the colours of the hourglass. To read the existing value without changing it, specify the colour as -1. To change the colour, specify it as &00BBGGRR (it's *different* to the ColourTrans palette entries).
+
+Colour 1 default is cyan, colour 3 blue.
+#Line
+See <PRM 2, page 742=>PRM-2:742>.

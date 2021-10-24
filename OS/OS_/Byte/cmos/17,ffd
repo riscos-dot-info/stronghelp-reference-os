@@ -1,0 +1,7 @@
+OS_Byte CMOS 17
+Bit(s)	Meaning
+#Line
+#Wrap off
+0,1	NetFiler FS <sort format=>os_bytecmossort>
+2	Use ArthurLib for library on Logon
+3,4	NetFiler <display format=>os_bytecmosdisplay>

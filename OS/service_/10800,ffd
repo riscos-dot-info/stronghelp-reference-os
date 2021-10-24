@@ -1,0 +1,19 @@
+Service_ADFSPodule (&10800)
+#Parent Service_Index
+=>	R1 =	&10800 (reason code)
+	R2 =	address of current ST506 controller
+	R3 =	address of IRQ status register for controller
+	R4 =	AND mask - AND this with IRQ status reqister to give non-zero when IRQs are enabled
+	R5 =	address of IRQ mask register for controller
+	R6 =	OR mask - ORR this with IEQ mask register to enable IRQs.
+<=	preserve all registers to pass on, or
+	R1 =	0 (to claim)
+	R2 =	address of new ST506 controller
+	R3 =	address of IRQ status register for controller
+	R4 =	AND mask
+	R5 =	address of IRQ mask register for controller
+	R6 =	OR mask
+
+This service is issued by ADFS to allow a ST506 hard disc expansion card to use its hardware in place of the machine's built in hardware.
+#Line
+See <PRM 4, page 135=>PRM-4:135>

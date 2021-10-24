@@ -1,0 +1,11 @@
+ImageEntry_File 7
+#Parent ImageEntry_File
+=>	R0 =	7 (Create file)
+	R1 =	pointer to filename
+	R2 =	<load address=>fsys_loadexec> of file
+	R3 =	<exec address=>fsys_loadexec> of file
+	R4 =	start address in memory
+	R5 =	byte after end address in memory
+	R6 =	handle of image file
+
+This call is made to create a file. R4 and R5 are used to calculate the length of the file and no data is stored.

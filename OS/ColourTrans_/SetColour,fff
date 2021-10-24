@@ -1,0 +1,11 @@
+ColourTrans_SetColour  (&4075E)
+#Parent ColourTrans_
+=>	R0 =	GCOL number
+	R3 =	flags :
+	 	  bit 7 set for background, else foreground
+	 	  bit 9 set for text colour, else graphics
+	R4 =	GCOL action
+
+This SWI is used to change the current plotting colours.
+#Line
+See <PRM 3, page 391=>PRM-3:391>.

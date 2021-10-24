@@ -1,0 +1,6 @@
+ImageEntry_Func 22
+#Parent ImageEntry_Func
+=>	R0 =	22 (Notification of image closure)
+	R1 =	<image filing system's handle=>ImageEntry_Func21>
+
+This call is made to notify your filing system that FileSwitch is about to close the image. All files will already be closed - this call is made to allow you to write out cached data.

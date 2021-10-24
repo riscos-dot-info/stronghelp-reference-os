@@ -1,0 +1,7 @@
+OS_File 8
+#Parent OS_File
+=>	R0 =	8 (reason code)
+	R1 =	pointer to non-wildcarded filename
+	R4 =	number of entries, or 0 for default
+
+This SWI is used to create a directory. It is not an error if the directory already exists.

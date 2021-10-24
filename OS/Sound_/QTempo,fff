@@ -1,0 +1,8 @@
+Sound_QTempo  (&401C5)
+#Parent Sound_
+=>	R0 =	new tempo (0 to read)
+<=	R0 =	previous tempo
+
+This call sets the Scheduler tempo. The default tempo of &1000 gives 1 beat per centisecond - tempo is linear so &2000 will give 2 beats per centisecond.
+#Line
+See <PRM 4, page 50=>PRM-4:50>.

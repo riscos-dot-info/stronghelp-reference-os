@@ -1,0 +1,13 @@
+OS_File 6
+#Parent OS_File
+=>	R0 =	6 (reason code)
+	R1 =	pointer to non-wildcarded object name
+
+<=	R0 =	<object type=>fsys_objtype>
+	R2 =	<load address=>fsys_loadexec>
+	R3 =	<exec address=>fsys_loadexec>
+	R4 =	object length
+	R5 =	<object attributes=>fsys_objattr>
+	R2-R5 corrupted if object not found
+
+This SWI deletes a named object. It is not an error if the object does not exist. An error is generated if object is locked, open or non-empty directory.

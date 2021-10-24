@@ -1,0 +1,11 @@
+FileCore_Drives  (&40542)
+#Parent FileCore_
+=>	R8 =	pointer to FileCore instance private word
+
+<=	R0 =	default drive
+	R1 =	number of floppy drives
+	R2 =	number of hard disc drives
+
+This call returns informations on the filing system's drives.
+#Line
+See <PRM 2, page 228=>PRM-2:228>.

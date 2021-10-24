@@ -1,0 +1,9 @@
+Territory_AlphabetNumberToName  (&43045)
+#Parent Territory_
+=>	R0 =	<alphabet number=>Territory_anumbers>
+	R1 =	pointer to buffer to hold name
+	R2 =	length of buffer
+	
+Returns the name of the alphabet in the current territory's language.
+#Line
+See <PRM 3, page 798=>PRM-3:798>.

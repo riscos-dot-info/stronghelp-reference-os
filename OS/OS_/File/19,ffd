@@ -1,0 +1,17 @@
+OS_File 19
+#Parent OS_File
+=>	R0 =	19 (reason code)
+	R1 =	pointer to filename
+	R2 =	<object type=>.type>
+<=	R0 =	pointer to <error block=>swi_errorblock>
+
+This SWI will generate error based on filename.
+#
+#Subpage type
+OS_File Generate errror messages
+R2	Error message
+#line
+0	File '{/}wibble{/}' not found
+1	'{/}wibble{/}' is a file
+2	'{/}wibble{/}' is a directory
+&100	Directory '{/}wibble{/}' not found

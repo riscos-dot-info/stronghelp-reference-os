@@ -1,0 +1,13 @@
+OS_CLI  (&05)
+#Parent OS_
+{f25}ﬁ{f}	R0 =	pointer to string terminated by Null, Linefeed or Return
+{f25}‹{f}	R0 preserved
+
+This executes a string passed to it as if it has been typed in the CLI. When it is called, it performs the following actions:
+#Tab;Indent 2
+è	it checks the stack space, if there's not enough free memory to establish the stack the error 'No room for supervisor stack' is returned.
+è	it checks the command line length. On pre-RO3.8, a CLI-command has to be less than 257 bytes long, including the terminator. If it's longer, the call is ignored without returning an error.
+# 	On RO3.8 or later, the command line length has been expanded to 1024 bytes, included the terminator.
+è	it then executes the command as any other *Command typed in CLI
+#indent;Line
+See <PRM 1, page 929=>PRM-1:929>.

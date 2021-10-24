@@ -1,0 +1,46 @@
+Font_DecodeMenu (&400A0) [3.1+]
+{f25}Þ{f}	R0	=	<flags=>.flags>
+	R1	!	menu definition, as per <Font_ListFonts>
+	R2	!	menu selections, as per <Wimp_Poll=>Wimp:Wimp_Poll>
+	R3	!	buffer to contain result
+	 	 	or 0 to return size
+	R4	=	size of buffer (if R3 != 0)
+
+#tab
+{f25}Ü{f}	R0, R1, R3	 	preserved.
+	R2	!	rest of menu selections
+	R4	=	size of buffer required.
+			or 0 for no font selection.
+#tab;line
+This SWI decodes the font or encoding menu, returning <a string with a format=>.results> dependent on whether the font/encoding names were specifed in a Messages{/}n{/} file in the font directory. If no Messages{/}n{/} file was found (and hence the font manager has found the font names by scanning the directory tree) the name field is absent.
+
+Experimentation suggests that passing in a selection block pointing at System Font will generate an error, rather than set R4 = 0
+#line
+*Note*:	Only available on RISC OS 3.1 or higher.
+See <PRM 3-481=>PRM-3:481>.
+#
+#subpage flags
+Font_DecodeMenu R0 Flags
+*bit*	*meaning*
+0	one is decoding an encoding menu, else a font menu.
+all other bits reserved (ie. zero)
+#
+#subpage results
+Font_DecodeMenu result form
+Results from the call are of the form:
+#fCode;wrap off
+	{*}\\Ffont_id{*}{/}[\\fterritory fontname][{*}\\Eencoding_id{*}[\\eterritory encoding_name]]{/}
+#wrap on;f
+where [] indicate optional sections. The string shall be terminated by a Ctrl-character.
+
+*Examples*
+#fCode;wrap off
+	\\FEquasor\\f1 Bob
+	\\FPembroke.Bold
+	\\FTrinity.Medium\\ELatin1
+	\\ELatin5\\e1 Gleep
+	\\EWelsh
+	\\FCorpus.Medium\\ELatin1\\e1 Gleep
+#f;wrap on
+
+*Note*:	{/}the above examples have actually been obtained, they weren't just made up.{/}

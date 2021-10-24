@@ -1,0 +1,19 @@
+OS_GenerateError  (&2B)
+#Parent OS_
+=>	R0 =	pointer to <error block=>swi_errorblock>
+<=	only returns (with V flag on) if X was set
+
+This generates an error and invokes the error handler. The X form may appear to be completely useless as it is effectively
+
+=>	no parameters passed in registers
+<=	all registers preserved
+	V flag set
+
+however, it has at least 3 uses
+
+1	0 terminated string conversion in BASIC
+2	detecting whether <OS_CallASWI> is available
+3	force a callback to occur
+# Gerph> I think someone in the Newsgroups mentioned that. I forget who.
+#Line
+See <PRM 1, page 45=>PRM-1:45>.

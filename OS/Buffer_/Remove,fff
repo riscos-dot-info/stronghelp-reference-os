@@ -1,0 +1,9 @@
+Buffer_Remove  (&42941)
+#Parent Buffer_
+=>	R0 =	Handle of buffer to be removed
+
+This removes the buffer specified the handle given in R0. It releases the workspace in the RMA reserved for this buffer. You should this to remove buffers created with <Buffer_Create> - for buffers made using <Buffer_Register> you should use <Buffer_Deregister> instead.
+
+Any data in the buffer will be purged, and an access via <InsV=>vector_InsV>, <RemV=>vector_RemV> and <CnpV=>vector_CnpV> will be ignored.
+#Line
+See <PRM 4, page 88=>PRM-4:88>.

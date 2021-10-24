@@ -1,0 +1,14 @@
+ColourTrans_SetGCOL  (&40743)
+#Parent ColourTrans_
+=>	R0 =	<palette entry=>colourtrans_paletteentry>
+	R3 =	<flags=>ColourTrans_GCOLflags>
+	R4 =	GCOL action
+   
+<=	R0 =	GCOL
+	R2 =	log2 of bits-per-pixel for current mode
+	R3 =	initial value AND &80
+	R4 preserved
+
+This call, given a palette entry, works out the closest GCOL in the current mode and palette, and sets it.
+#Line
+See <PRM 3, page 351=>PRM-3:351>.

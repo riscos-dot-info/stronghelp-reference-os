@@ -1,0 +1,6 @@
+OS_Module 1
+#Parent OS_Module
+=>	R0 =	1
+	R1 =	pointer to filename (and optional parameters)
+
+This SWI loads a module. It is equivilent to the *{fCode}RMLoad{f} command.

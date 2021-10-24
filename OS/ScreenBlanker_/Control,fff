@@ -1,0 +1,36 @@
+ScreenBlanker_Control  (&43100)
+#Parent ScreenBlanker_
+=>	R0 =	<reason code=>.reasons>
+
+This SWI controls screen blanking.
+#Line
+See <PRM 4, page 110=>PRM-4:110>.
+#
+#Subpage reasons
+ScreenBlanker reason codes
+Reason	Meaning
+#Line
+0	Blank screen immediately
+1	Unblank screen immediately
+2	<Flash screen=>.2>
+3	<Set blanking delay=>.3>
+4	<Get blanking delay=>.4>
+#
+#Subpage 2
+ScreenBlanker_Control 2
+=>	R0 =	2 (Flash screen)
+	R1 =	time to turn on in centi-seconds
+	R2 =	time to turn off in centi-seconds
+	R3 =	maximum number of flashes
+	R4 =	flags (not documented, see <Service_ScreenRestored=>Service_7B> and <Service_ScreenBlanked=>Service_7A>)
+#
+#Subpage 3
+ScreenBlanker_Control 3
+=>	R0 =	3 (Set blanking delay)
+	R1 =	delay in centi-seconds, or 0 to disable
+#
+#Subpage 4
+ScreenBlanker_Control 4
+=>	R0 =	4 (Get blanking delay)
+<=	R0 =	internal blanking time
+	R1 =	delay in centi-seconds, or 0 if disabled

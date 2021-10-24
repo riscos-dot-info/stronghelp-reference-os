@@ -1,0 +1,35 @@
+Econet
+#Parent !Root
+#Prefix Econet_
+#Table Columns 3
+<AbandonAndReadReceive>
+<AbandonReceive>
+<AbandonTransmit>
+<AllocatePort>
+<ClaimPort>
+<ConvertStatusToError>
+<ConvertStatusToString>
+<CreateReceive>
+<DeAllocatePort>
+<DoImmediate>
+<DoTransmit>
+<EnumerateReceive>
+<EnumerateTransmit>
+<ExamineReceive>
+<NetworkState>
+<PacketSize>
+<PollTransmit>
+<PrintBanner>
+<ReadLocalStationAndNet>
+<ReadProtection>
+<ReadReceive>
+<ReadStationNumber>
+<ReadTransportName>
+<ReadTransportType>
+<ReleasePort>
+<SetProtection>
+<StartImmediate>
+<StartTransmit>
+<WaitForReception>
+<Version>
+#EndTable

@@ -1,0 +1,8 @@
+OS_BPut  (&0B)
+#Parent OS_
+=>	R0 =	byte
+	R1 =	file handle
+
+This SWI writes a byte to the current sequential file pointer.
+#Line
+See <PRM 2, page 62=>PRM-2:62>.

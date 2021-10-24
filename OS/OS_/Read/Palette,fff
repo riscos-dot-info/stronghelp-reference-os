@@ -1,0 +1,29 @@
+OS_ReadPalette  (&2F)
+#Parent OS_
+=>	R0 =	logical colour
+	R1 =	type of colour
+
+<=	R2 =	setting of first flashing colour
+	R3 =	setting of second flashing colour
+
+This reads the setting of a particular colour that is sent to the hardware. R1 selects whether the normal colour (16), border colour (24) or pointer colour (25) is read. If R2 = R3 on exit the colour requested is a non flashing colour. The values are to interpret as follows:
+
+#Tab
+Bits	Meaning
+#Line
+0-6	Value showing how colour was programmed
+7	Supremacy bit
+8-15	Amount of red
+16-23	Amount of green
+24-31	Amount of blue  
+
+The bottom byte returns the second parameter to the <VDU 19=>VDU:19> command. For example:
+
+#Tab
+Value	Meaning
+#Line
+0-15	Actual colour (BBC compatible)
+16	Defined by giving amounts of R, G and B
+17-18	Flashing colour defined by giving amounts of red, green and blue
+#Line
+See <PRM 1, page 701=>PRM-1:701>.

@@ -1,0 +1,19 @@
+ColourTrans_WritePalette  (&4075D)
+#Parent ColourTrans_
+=>	R0 =	-1 for current mode or pointer to sprite area
+	R1 =	(if R0 = -1)	-1 to write current palette else ignored
+	 	(if R0 >= 0)	pointer to sprite name/sprite in area pointed to by R0 (as specified by R4)
+	R2 =	pointer to palette to write
+	R3 =	0 (reserved)
+	R4 =	<flags=>.flags> (only used if R0 >= 0)
+
+This call write the screen's palette or a sprite's palette. If possible 256 colour palettes are compacted to the 16 used by VIDC 1, else all 256 colours are written.
+#Line
+See <PRM 3, page 389=>PRM-3:389>.
+#Subpage flags
+Write Palette flags
+Bit	Meaning if set
+#Line
+0	R1 =	pointer to sprite (otherwise sprite name)
+1	flashing colours in table (default is no flashing colours)
+other bits reserved (must be zero)

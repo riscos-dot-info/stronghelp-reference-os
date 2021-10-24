@@ -1,0 +1,10 @@
+Filing system Option 4
+#Parent fsys_opts
+Option 4 is set separately for each disc. The boot "file" (it can be an application) is falled "!Boot" on most filing systems.
+
+Value	Boot option
+#Line
+0	no boot
+1	*Load boot file
+2	*Run boot file
+3	*Exec boot file

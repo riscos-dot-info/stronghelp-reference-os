@@ -1,0 +1,28 @@
+ADFS_IDEUserOp  (&4024B)
+#Parent ADFS_
+=>	R0 =	<flags=>.flags>
+	R2 =	pointer to parameter block for command and results
+	R3 =	pointer to buffer
+	R4 =	length to transfer
+	R5 =	timeout in centiseconds (0 => use default)
+	R12 =	pointer to static work space
+
+<=	R0 =	command status (0 or a disc error number)
+	R2 preserved
+	R3,R4 updated
+	R5 corrupted
+
+This call provides the direct use interface for low-level IDE commands. It must not be called in background.
+#Line
+See <PRM 2, page 294=>PRM-2:294>.
+#Subpage flags
+IDE Controller flags
+Bit	Meaning
+#line
+0	set : reset controller
+	clr : process command
+24-25	transfer direction:
+	00 : no transfer
+	01 : read (ie bit 24 set)
+	10 : write (ie bit 25 set)
+	11 : reserved

@@ -1,0 +1,8 @@
+OS_FSControl 47  (&29)
+#Parent OS_FSControl
+=>	R0 =	47 (Read boot option for disc or image)
+	R1 =	pointer to name of object
+<=	R0,R1 preserved
+	R2 =	<boot option=>fsys_opt4>
+
+Reads the boot option for a disc or image.

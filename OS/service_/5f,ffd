@@ -1,0 +1,7 @@
+Service_NetFSDying (&5F)
+#Parent Service_Index
+=>	R1 =	&5F (reason code)
+
+This service is issued when NetFS is about to quit.
+#Line
+See <PRM 2, page 343=>PRM-2:343>

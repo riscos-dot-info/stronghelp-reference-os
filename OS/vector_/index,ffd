@@ -1,0 +1,38 @@
+List of Software Vectors
+#Parent OS_Claim
+Vector				No	Description of vector
+#Line
+UserV				00	User (reserved)
+ErrorV				01	Error (<OS_GenerateError>)
+<IrqV=>vector_irqv>		02	Unknown interrupt
+<WrchV=>vector_wrchv>		03	Write character (<OS_WriteC>)
+ReadCV				04	Read character (<OS_ReadC>)
+CLIV				05	Command line interpreter (<OS_CLI>)
+ByteV				06	OS_Byte indirection (<OS_Byte>)
+WordV				07	OS_Word indirection (<OS_Word>)
+FileV				08	File read/write (<OS_File>)
+ArgsV				09	File arguments read/write (<OS_Args>)
+BGetV				0A	File byte read (<OS_BGet>)
+BPutV				0B	File byte put (<OS_BPut>)
+GBPBV				0C	File byte block get/put (<OS_GBPB>)
+FindV				0D	File open (<OS_Find>)
+ReadLineV			0E	Read a line of text (<OS_ReadLine>)
+FSControlV			0F	Filing system control (<OS_FSControl>)
+<EventV=>vector_eventv>		10	Event vector (<OS_GenerateEvent>)
+<InsV=>vector_insv>		14	Buffer insert (<OS_Byte 138=>OS_Byte138>)
+<RemV=>vector_remv>		15	Buffer remove (<OS_Byte 145=>OS_Byte145>)
+<CnpV=>vector_cnpv>		16	Count/Purge Buffer (OS_Byte <21=>OS_Byte021> & <152=>OS_Byte152>)
+<UKVDU23V=>vector_ukvdu23v>	17	Unknown VDU23 (<OS_WriteC etc.=>vector_wrchv>)
+<UKSWIV=>vector_ukswiv>		18	Unknown SWI (SWI)
+<UKPLOTV=>vector_ukplotv>	19	Unknown VDU25 (<OS_Plot>)
+MouseV				1A	Mouse (<OS_Mouse>)
+<VDUXV=>vector_vduxv>		1B	VDU extension vector (<OS_WriteC etc.=>vector_wrchv>)
+<TickerV=>vector_tickerv>	1C	100Hz pacemaker
+<UpCallV=>vector_upcallv>	1D	Warning vector
+ChangeEnvironmentV		1E	Environment change (<OS_ChangeEnvironment>)
+SpriteV				1F	<OS_SpriteOp> indirection
+DrawV				20	Draw SWI (<Draw_xx=>Draw_>)
+<EconetV=>vector_econetv>	21	Econet activity (<Econet_xx=>Econet_>)
+<ColourV=>vector_colourv>	22	ColourTrans SWI (<ColourTrans_xx=>ColourTrans_>)
+<PaletteV=>vector_palettev>	23	Read/Write palette vector
+Serial				24	Serial operation (<OS_SerialOp>)

@@ -1,0 +1,9 @@
+Service_Help (&9)
+#Parent Service_index
+=>	R0 =	pointer to command line
+	R1 =	&09 (reason code)
+<=	R1 =	0 to claim, preserved otherwise
+
+This service is issued when a *Help command is issued. You should not claim this unless you wish to augment or replace the *Help command.
+#Line
+See <PRM 1, page 259=>PRM-1:259>

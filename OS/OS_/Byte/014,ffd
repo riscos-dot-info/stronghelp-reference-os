@@ -1,0 +1,11 @@
+OS_Byte 14  Enable event
+#Parent OS_ByteIndex
+=>	R0 =	14 (&0E)
+	R1 =	<event number=>event_index>
+<=	R0 preserved
+	R1 =	old enable state (0 means previously disabled)
+	R2 corrupted
+
+This call enables a particular event so that it is being called through the <Event Vector=>vector_eventv>. A count is maintained of the number of enables and disables set so that multiple routines enabling and disabling events are handled correctly. An event will only be disabled after equal numbers of <disable event=>OS_Byte013> and enable event calls have been made.
+#Line
+See <PRM 1, page 150=>PRM-1:150>

@@ -1,0 +1,26 @@
+Format of Draw file (filetype aff)
+#Parent Drawfile_
+Draw files consist of :
+
+<File header=>DrawFile_header>, followed by 0 or more objects :
+
+Offset	Len	Contents
+#Line
+0	4	Object type
+	 	  0	<Font table=>drawfile_object0>
+	 	  1	<Text object=>drawfile_object1>
+	 	  2	<Path object=>drawfile_object2>
+	 	  3	(unimplemented Rectangle object)
+	 	  4	(unimplemented Ellipse object)
+	 	  5	<Sprite object=>drawfile_object5>
+	 	  6	<Group object=>drawfile_object6>
+	 	  7	<Tagged object=>drawfile_object7>
+	 	  9	<Text area object=>drawfile_object9>
+	 	  10	<Text column object=>drawfile_object10>
+	 	  11	<Options object=>drawfile_object11>
+	 	  12	<Transformed text object=>drawfile_object12>
+	 	  13	<Transformed sprite object=>drawfile_object13>
+	 	  16	<JPEG object=>drawfile_object16>
+4	4	Word aligned size, including header
+8	16	Bounding box (not all types have this)
+n	n	Object specific data, if any

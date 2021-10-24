@@ -1,0 +1,24 @@
+ColourTrans_ReadPalette  (&4075C)
+#Parent ColourTrans_
+=>	R0 =	-1 for current mode
+	 	(if \< 256)	source mode
+	 	(if >= 256)	pointer to sprite area
+	R1 =	(if R0 \< 256)	source palette pointer, or -1 for current palette
+	 	(if R0 >= 256)	pointer to sprite name/sprite in area pointed to by R0 (as specified by R4)
+	R2 =	pointer to buffer, or 0 to return size needed in R3
+	R3 =	size of buffer (if R2 is nonzero)
+	R4 =	<flags=>.flags> (only used if R0 >= 256)
+
+<=	R2 =	incremented by words written
+	R3 =	remaining size of buffer
+
+This call reads the screen's palette or a sprite's palette. All entries are returned as *true* 24 bit RGB, calibrated if required. In 256 colour modes the full 256 palette entries are returned, rather than the 16 used by VIDC 1.
+#Line
+See <PRM 3, page 387=>PRM-3:387>.
+#Subpage flags
+Read Palette flags
+Bit	Meaning if set
+#Line
+0	R1 =	pointer to sprite (otherwise sprite name)
+1	return flashing colours (default is not to return flashing colours)
+other bits reserved (must be zero)

@@ -1,0 +1,6 @@
+Flags
+Bit	Meaning when set
+#Line
+29	Use R6 as workspace
+30	Build word array in R1 from R4+R5
+31	Sort R4 array after sorting pointers

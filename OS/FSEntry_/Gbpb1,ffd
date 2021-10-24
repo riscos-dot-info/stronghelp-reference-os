@@ -1,0 +1,17 @@
+FSEntry_GBPB 1 and 2
+#Parent FSEntry_GBPB
+#Wrap off
+=>	R0 =	1 (put bytes to specified pointer)
+	 	2 (put bytes to current pointer)
+	R1 =	internal file handle returned by <FSEntry_Open>
+	R2 =	pointer to buffer
+	R3 =	bytes to transfer
+if R0 = 1
+	R4 =	file pointer
+#Wrap
+
+<=	R2 =	pointer after end of data
+	R3 =	number of bytes *not* transferred
+	R4 =	new file pointer
+
+This entry point is called to perform multiple byte writes on unbuffered files. If the specified pointer is beyond the current end of the file, then the area between the two must be filled with 0 bytes before the data is transferred. The file handle is guaranteed not to be a directory, and to have had write access at time of opening.

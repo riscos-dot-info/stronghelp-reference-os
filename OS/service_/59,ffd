@@ -1,0 +1,8 @@
+Service_ResourceFSStarted (&59)
+#Parent Service_Index
+=>	R1 =	&59 (reason code)
+<=	R1 =	&59 (do not claim)
+
+This service is issued whenever files are added or removed from ResourceFS. It allows programs using files in ResourceFS to check if things have changed.
+#Line
+See <PRM 2, page 411=>PRM-2:411>

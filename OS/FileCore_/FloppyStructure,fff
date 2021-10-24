@@ -1,0 +1,15 @@
+FileCore_FloppyStructure  (&40544)
+#Parent FileCore_
+=>	R0 =	pointer to buffer (must be >= 4k long)
+	R1 =	pointer to <disc record=>FileCore_disc> describing shape and format
+	R2	bit 7 set : old directory structure
+	 	bit 6 set : old map
+	R3 =	pointer to <list of defects=>FileCore_defectlist>
+
+<=	R3 =	total size of structure created
+
+This call creates a RAM image of a floppy disc map and root directory entry.
+
+The pointer to a list of defects is only needed for new map discs. You don't need to know a FileCore instance private word to use this call; instead the disc record tells FileCore which filing system is involved.
+#Line
+See <PRM 2, page 230=>PRM-2:230>.

@@ -1,0 +1,23 @@
+SCSI_Initialise 2 'Enumerate Device'
+{f25}Þ{f}	R0 =	3
+	R1 =	<device ID=>SCSI_devid>
+	R2 !	buffer for description (word aligned).
+	R3 =	buffer size
+#line;tab;wrap on
+Performs an Inquiry command to see what type the device
+is and then performs the appropriate Read-Capacity
+Data returned as formatted text.
+
+The data returned is a zero terminated string of the same form as that
+printed by {fCode}*devices{f}, ie
+
+#fCode;wrap off
+"ddd    ttttttttttttttttt cccc Mbytes vvvvvvvv pppppppppppppppp rrrr ssssss"
+#wrap;f
+
+where the fields are device number, type, capacity, vendor, product, revision
+number and SCSI implementation level.
+
+If a device doesn't respond, a string containing just the device number is
+returned, if the device responds, but the 'read-capacity' call fails, the
+capacity field will be set to unknown.

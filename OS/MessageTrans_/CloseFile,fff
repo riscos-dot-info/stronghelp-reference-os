@@ -1,0 +1,7 @@
+MessageTrans_CloseFile  (&41504)
+#Parent MessageTrans_
+=>	R0 =	pointer to 4-word data structure
+
+This SWI closes the file previously opened with <MessageTrans_OpenFile>.
+#Line
+See <PRM 3, page 750=>PRM-3:750>.

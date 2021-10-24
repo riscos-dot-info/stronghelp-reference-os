@@ -1,0 +1,15 @@
+OS_ChangeDynamicArea  (&2A)
+#Parent OS_
+=>	R0 =	<area=>OS_Areas> to alter
+	R1 =	amount to move in bytes (signed integer)
+
+<=	R0 preserved
+	R1 =	amount the area has changed by ({*}unsigned{*})
+
+Let you enlarge (R1 positive) or shrink (R1 negative) the selected area.
+
+If you need to release as much space as possible from an area, try to reduce its size by 16 MBytes.
+
+Note, that normally this cannot be used while the application work area is being used; main purpose is for the OS, modules and utilities. This SWI issues <upcall Memory moving (257)=>OS_UpCall257>; if the upcall is claimed when an application is running in the application workspace then the memory movement is allowed.
+#Line
+See <PRM 1, page 377=>PRM-1:377>.

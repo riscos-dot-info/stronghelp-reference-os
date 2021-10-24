@@ -1,0 +1,8 @@
+OS_ReadRAMFsLimits  (&4A)
+#Parent OS_
+=>	R0 =	start of RAM disc
+	R1 =	end of RAM disc
+
+Reads where in memory the RAM disc resides. This is not really all that useful as for the majority of the time the RAM disc is set as inaccessable to user programs.
+#Line
+See <PRM 1, page 382=>PRM-1:382>.

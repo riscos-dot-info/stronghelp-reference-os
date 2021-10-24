@@ -1,0 +1,17 @@
+Econet_ConvertStatusToString  (&4000B)
+#Parent Econet_
+=>	R0 =	<status=>Econet_statuses>
+# PRM 2-664 says R0 has range 0-14 (not 11, not 12)
+	R1 =	pointer to buffer for string
+	R2 =	buffer size
+	R3 =	station number
+	R4 =	net number
+
+<=	R0 =	pointer to buffer
+	R1 =	pointer to end address in buffer
+	R2 =	space in buffer
+
+This SWI converts a status result from a prior Econet call to a string. If the station or net is invalid then station information is not given. If R0 is out of range (PRM says 0-14) this call will Data Abort/Address exception. D'oh.
+# Gerph> That's good.
+#Line
+See <PRM 2, page 664=>PRM-2:664>.

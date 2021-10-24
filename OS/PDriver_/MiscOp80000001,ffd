@@ -1,0 +1,6 @@
+PDriver_MiscOp &80000000
+#Parent PDriver_MiscOpForDriver
+=>	R0 =	&80000001 (reason code)
+	R1 =	<number of driver=>PDumper_numbers>
+
+A printer dumper should call the <PDriver_MiscOpForDriver> form of this SWI when it dies. If the dumper is in use then this call will return and error, and the dumper in turn should report the error and refuse to die.

@@ -1,0 +1,5 @@
+RamFS_DescribeDisc  (&40785)
+#Parent RamFS_
+This SWI calls <FileCore_DescribeDisc>, after first setting R8 to point to the FileCore instance private word for RamFS. 
+#Line
+See <PRM 2, page 314=>PRM-2:314>.

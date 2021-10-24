@@ -1,0 +1,12 @@
+Font identifier strings
+#Parent Font_FindFont
+If the string does not start with '\\' it is assumed to be a font name ({/}i.e.{/} \\F is implicitly prepended). The identifer string consists of a series of qualifiers/value pairs:
+
+#tab
+Qualifier	Meaning
+#Line
+\\F		font identifier (RISC OS 2 old style font name) space/control terminated
+\\f		territory number, space, font name (in the current territory's language and alphabet) control terminated
+\\E		encoding identifier control terminated
+\\e		territory number, space, encoding name control terminated
+\\M		<transformation matrix=>font_matrix>, 6 1/1000th em values as *decimal* signed integers, all {*}6{*} followed by a space. The first 4 are actually interpreted as fixed point fractions of the form &XXXX·XXXX.

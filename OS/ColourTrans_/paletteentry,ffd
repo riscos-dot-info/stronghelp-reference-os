@@ -1,0 +1,8 @@
+ColourTrans palette entry
+#Parent ColourTrans_SetGCOL
+A palette entry is a 24-bit descriptor of the colour to be used. It is of the form :
+#Indent 2;fCode
+&BBGGRRXX
+#f;Indent
+
+Where BB is the blue component, GG is the green component, and RR is the red component. XX is undefined, and may be used to indicate the actual colour number, a masking value or some other arbitrary flag.

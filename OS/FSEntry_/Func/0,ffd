@@ -1,0 +1,7 @@
+FSEntry_Func 0
+#Parent FSEntry_Func
+=>	R0 =	0 (Set current directory)
+	R1 =	pointer to (wilcarded) directory name
+	R6 =	pointer to special field, or 0 if not present
+
+This call is only made by RISC OS 2 (or to perform {fCode}*Opt 1{f} when bit 23 of the filing system <information word=>fsys_infoword> is clear. Not that the PRM says how). If the directory name is null you should set the current directory to the user root directory. This call should not make the FS current - you should provide a separate command to do this.

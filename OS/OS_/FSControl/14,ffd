@@ -1,0 +1,7 @@
+OS_FSControl 14  (&29)
+#Parent OS_FSControl
+=>	R0 =	14 (Select FS)
+	R1 =	<filing system number=>fsys_ident> or pointer to name, or 0 for none
+<=	all preserved
+
+Selects a filing system as both current and temporary filing system.

@@ -1,0 +1,8 @@
+Service_PostInit (&73)
+#Parent Service_Index
+=>	R1 =	&73 (reason code)
+<=	R1 preserved (should never be claimed)
+
+This service is issued after all the ROM modules have been initialised. It is unlikely that you will be able to use this service unless you are part of the OS or live on a Podule.
+#Line
+See <PRM 1, page 264=>PRM-1:264>

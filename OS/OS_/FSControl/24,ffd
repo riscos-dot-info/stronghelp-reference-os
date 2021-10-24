@@ -1,0 +1,9 @@
+OS_FSControl 24  (&29)
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	24 (Set attributes)
+	R1 =	pointer to (wildcarded) filename
+	R2 =	<attribute string=>fsys_access_string>
+#Wrap
+
+This SWI sets the access attributes for all leaf objects that match the filename. It is equivalent to {fCode}*Access{f}.

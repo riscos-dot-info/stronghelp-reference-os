@@ -1,0 +1,7 @@
+OS_UpCall 3 subreason code 520
+Renaming file
+#line
+{f25}Þ{f}	R1 !	current object name
+	R2 !	desired object name
+	R6 !	current special field
+	R7 !	desired special field

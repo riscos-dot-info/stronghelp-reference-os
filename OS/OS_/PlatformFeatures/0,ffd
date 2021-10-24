@@ -1,0 +1,21 @@
+OS_PlatformFeatures 0 (&6D)
+#Parent OS_
+=>	R0 =	0 (Read code features) + flags (reserved)
+<=	R0 =	<flags=>.flags>
+	R1 =	pointer to IRQ routine (if b1 set)
+
+This reason is used to determine what is required to run code on the current platform.
+
+StrongARM will return bits 0-4 set.
+ARM 6 and 7 with return bits 0-4 clear.
+Earlier machines will raise an error.
+#
+#Subpage flags
+PlatformFeatures 0 flags
+Bit	Meaning if set
+#Line
+0	You must tell the OS when a code area changes (<OS_SynchroniseCodeAreas>)
+1	Enabling then disabling interrupts does *not* allow them a chance to occur
+2	Hardware vectors are only readable in 32 bit mode
+3	When storing PC, PC+8 is stored (not PC+12)
+4	Data aborts occur with 'full early' timing

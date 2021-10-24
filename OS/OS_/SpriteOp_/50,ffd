@@ -1,0 +1,12 @@
+Plot mask scaled (50)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<50, &32=>os_spriteop_reason2> (Plot mask scaled)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+	R3 =	x coordinate
+	R4 =	y coordinate
+	R6 =	<Scale factors=>os_scalefactors>, or 0 for 1:1 scaling
+
+This plots the solid pixels in the background colour (using the given scaling factors) with the bottom left corner at the given coordinates.
+#Line
+See <PRM 1, page 801=>PRM-1:801>

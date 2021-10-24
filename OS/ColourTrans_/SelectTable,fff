@@ -1,0 +1,38 @@
+ColourTrans_SelectTable  (&40740)
+#Parent ColourTrans_
+=>	R0 =	-1 for current mode
+	 	(if \< 256)	source mode
+	 	(if >= 256)	pointer to <sprite area=>os_spriteop_area>
+	R1 =	(if R0 \< 256)	source palette pointer, or -1 for current palette
+	 	(if R0 >= 256)	pointer to sprite name/<sprite=>os_spriteop_ptr> in area pointed to by R0 (as specified by R5)
+	R2 =	destination mode, or -1 for current mode
+	R3 =	destination palette pointer, or -1 for current palette, or 0 for default for the mode
+	R4 =	pointer to <buffer=>colourtrans_pixtrans>, or 0 to return length
+	R5 =	<flags=>.flags> (only used if R0 >= 256)
+	R6 =	pointer to <transfer function=>.transferfunction> (if R0 => 256 and flags bit 2)
+	R7 =	pointer to transfer function workspace (R12) (if R0 => 256 and flags bit 2)
+
+<=	R4 =	required buffer size if 0 on entry, else preserved
+	All other registers preserved
+
+This call sets up a translation table in a buffer - that is, a set of colour numbers as used by scaled sprite plotting.
+#Line
+See <PRM 3, page 346=>PRM-3:346>.
+#Subpage flags
+Select Table flags
+Bit	Meaning if set
+#Line
+0	R1 = pointer to sprite (otherwise sprite name)
+1	use current palette if sprite doesn't have one (otherwise default palette)
+2	R6, R7 specify transfer function
+24-31	Format of returned table :
+	 	0 =>	<pixtrans table=>colourtrans_pixtrans>
+	 	1 =>	physical palette table
+other bits reserved (must be zero)
+#Subpage transferfunction
+ColourTrans transfer function
+By setting bit 2 of the flags, ColourTrans will call the transfer function specified in R6 to pre-process each pallete entry
+=>	R0 =	palette entry
+	R12 =	workspace (as specifed in R7)
+<=	R0 =	processed palette entry
+	Preserve all other registers

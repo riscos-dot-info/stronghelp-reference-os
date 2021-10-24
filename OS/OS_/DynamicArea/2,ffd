@@ -1,0 +1,17 @@
+OS_DynamicArea 2  (&66)
+#Parent OS_DynamicArea
+*Returns information on a dynamic area*
+{f25}Þ{f}	R0 =	2
+	R1 =	area number
+{f25}Ü{f}	R0, R1 preserved
+	R2 =	current size of area, in bytes
+	R3 =	base logical address of area
+	R4 =	<area flags=>OS_DynamicAreaFlags>
+	R5 =	maximum size of area, in bytes
+	R6 =	pointer to <dynamic area handler=>OS_DynamicAreaHandler>, or 0 if no routine
+	R7 =	pointer to workspace for handler
+	R8 =	pointer to name of area
+#line
+This call returns information on a dynamic area.
+
+For doubly-mapped areas, R3 on exit from this call returns the address of the boundary between the first and second copies of the area, whereas <OS_ReadDynamicArea> returns the start address of the first copy (for backwards compatibility).

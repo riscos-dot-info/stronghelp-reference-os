@@ -1,0 +1,15 @@
+Font_ReadDefn  (&40083)
+#Parent Font_
+=>	R0 =	font handle
+	R1 =	pointer to buffer for font name
+
+<=	R2 =	x points * 16
+	R3 =	y points * 16
+	R4 =	x dpi
+	R5 =	y dpi
+	R6 =	age of font
+	R7 =	usage count
+
+This SWI returns information about the given font.
+#Line
+See <PRM 3, page 424=>PRM-3:424>.

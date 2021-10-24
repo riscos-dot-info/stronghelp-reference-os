@@ -1,0 +1,8 @@
+Service_SwitchingOutputToSprite (&72)
+#Parent Service_index
+=>	R1 =	&72 (reason code)
+	R2-R5 =	values passed in R0-R3 to <OS_SpriteOp>
+
+This service is issued immediately after output has been switched to/from a sprite or mask by <OS_SpriteOp 60=>OS_SpriteOp_60> or <61=>OS_SpriteOp_61>.
+#Line
+See <PRM 1, page 760=>PRM-1:760>

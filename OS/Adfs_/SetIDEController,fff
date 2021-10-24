@@ -1,0 +1,16 @@
+ADFS_SetIDEController  (&4024A)
+#Parent ADFS_
+=>	R2 =	pointer to IDE controller
+	R3 =	pointer to interrupt status of controller
+	R4 =	AND with status, NE => IRQ
+	R5 =	pointer to interrupt mask
+	R6 =	OR into mask enables IRQ
+	R7 =	pointer to data read routine (0 for default)
+	R8 =	pointer to data write routine (0 for default)
+	R12 =	pointer to static work space
+
+<=	All registers preserved
+
+This call gives the IDE driver the details of an alternative controller.
+#Line
+See <PRM 2, page 293=>PRM-2:293>.

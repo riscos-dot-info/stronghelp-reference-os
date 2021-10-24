@@ -1,0 +1,15 @@
+PDumper
+#Parent !Root
+#Prefix PDumper_
+#table columns 2
+<Claim>
+<CopyFilename>
+<Find>
+<Free>
+<Info>
+<LookupError>
+<PrepareStrip>
+<SetColour>
+<StartJob>
+<TidyJob>
+#endtable

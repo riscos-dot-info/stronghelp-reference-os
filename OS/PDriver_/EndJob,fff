@@ -1,0 +1,7 @@
+PDriver_EndJob  (&80148)
+#Parent PDriver_
+=>	R0 =	file handle of job
+
+This SWI ends a print job normally, which may still result in further output ({/}e.g.{/} PostScript trailer comments). If the job in R0 is the currently active job then there will be no current print job after this call - hence plotting calls will no longer be intercepted. Otherwise there is no effect on the current job (if any) and the state of plotting interception.
+#Line
+See <PRM 3, page 617=>PRM-3:617>.

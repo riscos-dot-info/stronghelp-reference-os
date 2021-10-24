@@ -1,0 +1,11 @@
+OS_CallAVector  (&34)
+#Parent OS_
+=>	R0-R8 =	vector routine parameters
+	R9 =	<vector number=>vector_index>
+	V and C flag are passed on to the vector
+
+<=	dependent on vector called
+
+This calls the vector given in R9. This is used for calling vectored routines which don't have any other entry point such as some calls to <RemV=>vector_remv> or <CnpV=>vector_CnpV>. Don't use this to call ByteV or some others, as the vector handler expects entry conditions you may not provide.
+#Line
+See <PRM 1, page 70=>PRM-1:70>.

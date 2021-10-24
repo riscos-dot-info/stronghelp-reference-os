@@ -1,0 +1,20 @@
+Service_UKConfig (&28)
+#Parent Service_index
+=>	R0 =	pointer to command tail, or 0 for syntax line
+	R1 =	&28 (reason code)
+<=	R0 =	<error code=>.errors>
+	R1 =	0 to claim (option recognised), preserved otherwise
+
+This service is issued when a *Configure command is issued with an unknown parameter. You should use the <module command table=>OS_Module_ComTable> to trap specific configure options in preference to this service.
+#Line
+See <PRM 1, page 260=>PRM-1:260>
+#Subpage errors
+UKConfig error codes
+Code	Meaning
+#Line
+\<0	no error
+0	Bad {fCode}*Configure{f} option
+1	Numeric parameter needed
+2	Parameter too large
+3	Too many parameters
+\>3	pointer to <error block=>swi_errorblock>

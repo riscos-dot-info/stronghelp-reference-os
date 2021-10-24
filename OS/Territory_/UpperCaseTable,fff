@@ -1,0 +1,9 @@
+Territory_UpperCaseTable  (&43058)
+#Parent Territory_
+=>	R0 =	<territory number=>Territory_numbers>, or -1 for current
+
+<=	R0 =	pointer to upper case table
+
+A character property table is a 256 byte table with the upper case version of each character in the alphabet.
+#Line
+See <PRM 3, page 829=>PRM-3:829>.

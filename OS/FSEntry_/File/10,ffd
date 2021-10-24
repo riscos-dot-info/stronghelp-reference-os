@@ -1,0 +1,8 @@
+FSEntry_File 10
+#Parent FSEntry_File
+=>	R0 =	10 (Read block size)
+	R1 =	pointer to filename
+	R6 =	pointer to special field, or 0 if not present
+<=	R2 =	natural block size of file
+
+This call is made to read the natural block size of a file, see <FSEntry_Open>.

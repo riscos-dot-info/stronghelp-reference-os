@@ -1,0 +1,9 @@
+Buffer_Threshold  (&42949)
+#Parent Buffer_
+=>	R0 =	buffer handle
+	R1 =	threshold (-1 to read, 0 for none)
+<=	R1 =	previous value
+
+OS_UpCall <8=>OS_UpCall8> and <9=>OS_UpCall9> are issued if bit 3 of the <buffer flags=>buffer_flags> is set, and the buffer free space crosses the threshold.
+#Line
+See <PRM 4, page 99=>PRM-4:99>.

@@ -1,0 +1,20 @@
+OS_File 20, 21, 22 and 23
+#Parent OS_File
+Read catalogue info for named stamped object
+
+=>	R0 =	20, 21, 22 or 23
+	R1 =	pointer to filename
+	 	if R0 = 20 :	use File$Path
+	 	if R0 = 21 :	R4 = pointer to path string
+	 	if R0 = 22 :	R4 = pointer to path variable
+	 	if R0 = 23 :	use no path
+
+<=	R0 =	<object type=>fsys_objtype>
+	R2 =	<load address=>fsys_loadexec>, without top three bytes /if/ file is typed
+	R3 =	<exec address=>fsys_loadexec>
+	R4 =	object length
+	R5 =	<object attributes=>fsys_objattr>
+	R6 =	<filetype=>Filetypes:!Root>	(images and directories report as 4096,
+	 	 				 applications as 8192)
+
+PRM doesn't say so, but it would be wise to assume R2-R6 corrupted if object not found.

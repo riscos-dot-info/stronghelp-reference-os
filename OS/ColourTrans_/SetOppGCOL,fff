@@ -1,0 +1,16 @@
+ColourTrans_SetOppGCOL  (&40748)
+#Parent ColourTrans_
+=>	R0 =	<palette entry=>colourtrans_paletteentry>
+	R3 =	0 for foreground or 128 for background
+	R4 =	GCOL action
+
+<=	R0 =	GCOL
+	R2 =	log2 of bits-per-pixel for current mode
+	R3 =	initial value AND &80
+	R4 preserved 
+
+This call, given a palette entry, works out the furthest GCOL in the current mode and palette, and sets it.
+
+The top three bits of R3 and R4 should be zero to allow for future expansion.
+#Line
+See <PRM 3, page 357=>PRM-3:357>.

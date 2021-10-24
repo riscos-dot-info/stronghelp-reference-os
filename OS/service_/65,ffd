@@ -1,0 +1,7 @@
+Service_PDriverStarting (&65)
+#Parent Service_Index
+=>	R1 =	&65 (reason code)
+
+This service is issued when the PDriver module starts - printer drivers should call <PDriver_DeclareDriver> to declare themselves.
+#Line
+See <PRM 3, page 599=>PRM-3:599>

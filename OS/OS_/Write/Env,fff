@@ -1,0 +1,10 @@
+OS_WriteEnv  (&48)
+#Parent OS_
+=>	R0 =	pointer to environment string
+	R1 =	pointer to real time the program was started (5 bytes)
+
+<=	R0, R1 preserved
+
+This SWI is used to set the environment string as read by <OS_GetEnv>.
+#Line
+See <PRM 1, page 317=>PRM-1:317>.

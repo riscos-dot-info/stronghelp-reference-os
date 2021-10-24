@@ -1,0 +1,8 @@
+FSEntry_Args 8
+#Parent FSEntry_Args
+=>	R0 =	8 (Zero pad file)
+	R1 =	internal file handle returned by <FSEntry_Open>
+	R2 =	offset at which to write
+	R3 =	number of bytes to write
+
+This call is made to pad a file with zeroes to initialise it.

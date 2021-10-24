@@ -1,0 +1,8 @@
+FSEntry_Args 10
+#Parent FSEntry_Args
+=>	R0 =	10 (Update image stamp)
+	R1 =	internal file handle returned by <FSEntry_Open>
+	R2 =	new image stamp
+
+This call is made to notify the filing system of a new image stamp associated
+with this image. This is only applicable if the object within which the filehandle exists is an image.

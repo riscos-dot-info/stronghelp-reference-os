@@ -1,0 +1,8 @@
+OS_SerialOp 1
+=>	R0 =	1 (reason code)
+	R1 =	-1 to read, or new <format=>OS_SerialOpFormat> value
+
+<=	R0 preserved
+	R1 =	old format value
+
+This call sets the encoding of characters when sent and received on the serial line.

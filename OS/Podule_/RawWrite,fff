@@ -1,0 +1,12 @@
+Podule_RawWrite  (&40288)
+#Parent Podule_
+=>	R0 =	offset (0 - &FFF) from podule's address space base.
+	R1 =	number of bytes
+	R2 =	pointer to buffer
+	R3 =	expansion card number
+
+This SWI writes bytes directly to an expansion card's address space, typically to write hardware registers. Use <Podule_WriteBytes> to write to an expansion card's code space.
+
+Do *not* try to write to an <extension ROM=>OS_ModuleROMSections> - this will probably result in the memory or video controllers being reprogrammed.
+#Line
+See <PRM 4, page 148=>PRM-4:148>.

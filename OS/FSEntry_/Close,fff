@@ -1,0 +1,7 @@
+FSEntry_Close
+#Parent FSEntry_
+=>	R1 =	internal file handle returned by <FSEntry_Open>
+	R2 =	new load address of file
+	R3 =	new exec address of file
+
+This entry point is called when files are being closed.

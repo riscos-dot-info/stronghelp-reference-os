@@ -1,0 +1,12 @@
+OS_Byte CMOS 216
+Bit(s)	Meaning
+#Line
+0	!BatMan :-)
+
+No, it really says that :
+
+#Wrap off
+{fCode}OSByte_ConfigureROMBatMan       *       216
+OSByte_ConfigureROMBatManMask   *       &1{f}
+
+So there!!!

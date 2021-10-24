@@ -1,0 +1,55 @@
+Plot commands
+#Parent OS_Plot
+#Align Centre
+#f1:Plot Commands :
+
+#Align
+#TAB Align Right, Align Left, Align Right, Align Left
+0	Solid <line=>.line> incl end pts	8	excl end pt
+16	Dotted <line=>.line> incl end pts	24	excl end pt
+32	Solid <line=>.line> excl first pt	40	excl both end pts
+48	Dotted <line=>.line> excl first pt,	56	excl both end pts
+	pattern continued
+	 					 	Horizontal linefill:
+64	Point plot				72	  (left&right) to non backgr
+80	<Triangle=>.triangle> fill		88	  (to right) to backgr
+96	<Rectangle=>.rectangle> fill		104	  (left&right) to foregr
+112	<Parallelogram=>.parallelogram> fill	120	  (to right) to non foregr
+128	Flood to non-background			136	Flood to foreground
+144	<Circle=>.circle> outline		152	<Circle=>.Circle> fill
+160	Circular <arc=>.arc/segment/sector>	168	<Segment=>.arc/segment/sector>
+176	<Sector=>.arc/segment/sector>		184	<Block copy/move=>.copy/move>
+192	<Ellipse=>.ellipse> outline		200	<Ellipse=>.ellipse> fill
+208	Font printing (don't use)		232	Sprite Plot
+
+The base commands are specified in the top 5 bits, modified by the <value in the bottom 3 bits =>OS_PlotModifiers>. Block copy/move uses a <special set of modifiers =>OS_PlotBlockModifiers>.
+
+Some shapes need to be defined by a sequence of points. The VDU drivers use the previous positions of the graphics cursor to define these. These can be specified by a sequence of absolute or relative moves (commands 64 or 68) - the points to visit to define a particular shape is given as a link in the table above.
+
+Unknown plot codes (216-231,240-255) are sent to the <unknown plot vector=>vector_ukplotv>, which by default does nothing.
+
+The dash pattern is set with <VDU 23,6=>VDU:23,6> and can be read with <OS_Word 10,6=>OS_Word10>. Its length is set and read with <OS_Byte 163=>OS_Byte163>.
+#SubPage line
+Line Moves
+To plot a line, move to one endpoint, then plot line to other endpoint
+#SubPage triangle
+Triangle Moves
+To plot a triangle, move to vertex, move to next vertex, then plot triangle to third vertex.
+#SubPage rectangle
+Rectangle Moves
+To plot a rectangle, move to one corner, then plot rectangle to diagonally opposite corner.
+#SubPage parallelogram
+Parallelogram Moves
+To plot a parallelogram, move to vertex, move to next vertex, then plot parallelogram to third vertex. Fourth vertex will be opposite second.
+#SubPage circle
+Circle Moves
+To plot a circle, move to centre, then plot circle to a point on the circumference.
+#SubPage arc/segment/sector
+Arc/Segment/Sector Moves
+To plot an arc/segment/sector, move to centre, move to start, then plot arc/segment/sector to a point on the line joining centre to end. Arc/segment/sector will be plotted anticlockwise.
+#SubPage copy/move
+Block Copy/Move Moves
+First define the source rectangle: move to one corner, then move to diagonally opposite corner. Then plot bottom left corner of destination.
+#SubPage ellipse
+Ellipse Moves
+To plot a ellipse, move to centre, move to point on circumference with same Y coord as centre, then plot ellipse to the lowest or highest point on the circumference.

@@ -1,0 +1,7 @@
+RamFS
+#Prefix RamFS_
+#Parent !Root
+<DescribeDisc>
+<DiscOp>
+<Drives>
+<FreeSpace>

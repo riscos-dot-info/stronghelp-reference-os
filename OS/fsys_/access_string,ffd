@@ -1,0 +1,14 @@
+Access Attribute String
+# Was OS_access_string
+#Parent FSEntry_Func9
+This string is the same as used by the {fCode}*Access{f} command, of the form
+
+  LWR/wr
+
+L	locked against deletion
+W	owner write permission
+R	owner read permission
+w	public write permission
+r	public read permission
+
+Case and order within sections is insignificant - owner permissions occur before the '/', public permissions after it.

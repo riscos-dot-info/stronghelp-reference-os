@@ -1,0 +1,21 @@
+OS_SerialOp  (&57)
+#Parent OS_
+=>	R0 =	<reason code=>.reasons>
+	other entry conditions depend on reason code
+
+<=	R0 preserved
+	other exit conditions depend on reason code
+
+This call is like <OS_Byte> in that it is a single call with many operations within it. The operation required, or reason code, is passed in R0. OS_SerialOp is vectored via <SerialV=>vector_index>.
+#Line
+See <PRM 2, page 459=>PRM-2:459>.
+#Subpage reasons
+OS_SerialOp reason codes
+#Parent OS_
+R0 =	<0 Read/write serial states=>OS_SerialOp0>
+	<1 Read/write data format=>OS_SerialOp1>
+	<2 Send break=>OS_SerialOp2>
+	<3 Send byte=>OS_SerialOp3>
+	<4 Get byte=>OS_SerialOp4>
+	<5 Read/write receive baud rate=>OS_SerialOp5>
+	<6 Read/write transmit baud rate=>OS_SerialOp6>

@@ -1,0 +1,10 @@
+Filing system Option 1
+#Parent fsys_opts
+Option 1 is set separately for each filing system. It doesn't work well under RISC OS 3.
+
+Value	Items printed
+#Line
+0	nothing
+1	filename
+2	filename, hex address and length
+3	filename, (datestamp and length) or (load and exec addresses)

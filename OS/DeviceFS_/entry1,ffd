@@ -1,0 +1,8 @@
+Device driver finalise entry point (1)
+#Parent DeviceFS_CallDevice
+=>	R0 =	1
+	R2 =	device driver stream handle, or 0 for all streams
+
+This entry point is called when DeviceFS closes a stream on the device driver, or when the device driver is being removed (R2=0).
+#Line
+See <PRM 2, page 600=>PRM-2:600>.

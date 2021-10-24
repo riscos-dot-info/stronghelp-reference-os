@@ -1,0 +1,24 @@
+ADFS_Retries  (&40244)
+#Parent ADFS_
+=>	R0 =	mask of bits to change
+	R1 =	new values of bits to change
+
+<=	R0 preserved
+	R1 =	R0 AND entry value of R1
+	R2 =	old value of retry word
+	R3 =	new value of retry word
+
+This call sets up the number of retries used by writing to the retry word. The format of the word is:
+
+#Tab
+Byte	Number of retries for
+#Line
+0	hard disc read/write sector
+1	floppy disc read/write sector
+2	floppy disc mount (per copy of the disc map)
+3	verify after *Format, before sector is considered a defect
+
+The new value is calculated as follows:
+  (old value AND NOT R0) EOR (R1 AND R0)
+#Line
+See <PRM 2, page 284=>PRM-2:284>.

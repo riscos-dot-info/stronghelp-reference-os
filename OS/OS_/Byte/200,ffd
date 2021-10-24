@@ -1,0 +1,23 @@
+OS_Byte 200  Alter Break and Escape effect
+#Parent OS_ByteIndex
+=>	R0 =	200 (&C8)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 =	preserved
+	R1 =	state before being overwritten
+	R2 =	keyboard disable flag (see <OS_Byte 201=>OS_Byte201>)
+                                                  
+This call can read, or change, the effects of a reset (including resets caused by Break) and of Escape.
+
+The bottom two bits of R1 have the following significance:
+
+#Tab
+Bit	Value	Effect
+#line
+0	0	Normal escape action
+	1	Escape disabled unless caused by <OS_Byte 125=>OS_Byte125>
+1	0	Normal reset action
+	1	Power on reset (only if bits 2-7 of R1 are zero) This means a value of %00000001x causes a memory clear (no matter what kind of reset was pressed)
+#Line
+See <PRM 1, page 879=>PRM-1:879>

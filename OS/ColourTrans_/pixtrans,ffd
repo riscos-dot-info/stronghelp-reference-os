@@ -1,0 +1,7 @@
+Colour translation table
+#Parent ColourTrans_SelectTable
+0	Colour to use instead of sprite colour 0
+1	Colour to use instead of sprite colour 1
+.
+.
+15	Colour to use instead of sprite colour 15

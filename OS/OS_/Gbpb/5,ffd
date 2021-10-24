@@ -1,0 +1,27 @@
+OS_GBPB 5, 6 and 7
+#Parent OS_GBPB
+=>	R0 =	5, 6 or 7
+	R2 =	buffer
+
+<=	R0, R2 preserved
+	C flag corrupted
+
+These calls read information on the temporary filing system (normally the current) to the buffer pointed to by R2.
+If R0 = 5 :
+#Indent 2
+\<name length byte>\<disc name>\<boot option byte>
+of disc containing the current directory
+#Indent
+
+If R0 = 6 :
+#Indent 2
+\<0>\<name length byte>\<current directory name>\<priviliged byte>
+of the currently selected directory. The priviliged byte is either &00 ie allowance to create or delete objects in the directory &FF ie prohibition of creating or deleting objects; in ADFS or other FileCore based systems, you always got &00
+#Indent
+If R0 = 7 :
+#Indent 2
+\<0>\<name length byte>\<library directory name>\<priviliged byte>
+of the library directory
+#Indent
+
+The names are stored without termination byte.

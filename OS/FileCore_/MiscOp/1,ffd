@@ -1,0 +1,29 @@
+FileCore_MiscOp 1
+#Parent FileCore_MiscOp
+=>	R0 =	1 (reason code)
+	R1 =	drive
+	R2 =	sequence number
+	R8 =	pointer to FileCore private instance word
+
+<=	R2 =	sequence number
+	R3 =	<result flag=>.flags>
+
+The sequence number is to ensure no changes are lost due to reset being pressed. Both the given filing system and the FileCore incarnation should start with a sequence number of 0 for each drive. The filing system increments the sequence number with each change of state. If the filing system finds the entry sequence number doesn't match its copy it should return changed/maybe changed, depending on whether the disc changed line works/doesn't work.
+#Subpage flags
+MiscOp 3 result flags
+Bit   Meaning when set
+#Line
+0	not changed
+1	maybe changed
+2	changed
+3	empty
+4	ready
+5	drive is 40 track
+6	empty works
+7	changed works
+8	disc in drive is high density
+9	density sensing works
+10	ready works
+11-31	reserved must be zero
+
+Exactly one of the bits 0-3 must be set. Once bit 6 or 7 is returned set for a given drive, they must always be so.

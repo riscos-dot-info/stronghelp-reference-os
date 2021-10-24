@@ -1,0 +1,17 @@
+OS_WriteC  (&00)
+#Parent OS_
+=>	R0 =	character to write
+
+This SWI sends the byte in R0 to all <active output streams=>OS_Byte003>. Do *not* assume that this SWI will never generate an error - it can and occasionally does.
+# N> never say never :-)
+# Gerph> ... again ?
+
+Consider the case where output is redirected to a file on a filing system which has no space. This is the most common example.
+
+A less common, but possible case is where an application displays a string in its exit handler. Under a <TaskWindow=>Wimp:TaskWindow_>, if you close the window before the task has exited, its exit handler is called. This should tidy up and exit. If it prints strings using non-X versions of the SWIs an error will be generated. This will call the Error handler. Which will either, a) display a message, or b) call the exit handler. In the former case, if X SWIs are used the exit h is usually called.
+
+The outcome of this is that a TaskWindow can hog 99% of the processor time as it switches in and out of SVC mode incredibly quickly in an infinite sequence of errors. Avoid this by using X SWIs.
+# Gerph> Fancy tarting that up and putting it sensibly in ChangeEnvironment
+#        and the TaskWindow things ? Or a seperate page for all to refer to.
+#Line
+See <PRM 1, page 501=>PRM-1:501>.

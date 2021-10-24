@@ -1,0 +1,8 @@
+OS_Byte CMOS 222
+Bit(s)	Meaning
+#Line;wrap off
+0..6	Wimp drag move delay
+	Range is 0..7 on Wimp 3.98 or earlier.
+7	Iconise button	{/}(Wimp 3.99 or later){/}
+	0 = off
+	1 = on

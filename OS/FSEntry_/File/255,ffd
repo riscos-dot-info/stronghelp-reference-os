@@ -1,0 +1,15 @@
+FSEntry_File 255
+#Parent FSEntry_File
+=>	R0 =	255 (Load file)
+	R1 =	pointer to wildcarded filename
+	R2 =	address to load at
+	R6 =	pointer to special field, or 0 if not present
+
+<=	R0 corrupted
+	R2 =	<load address=>fsys_loadexec> of file
+	R3 =	<exec address=>fsys_loadexec> of file
+	R4 =	file length
+	R5 =	<attributes=>fsys_objattr> of file
+	R6 =	pointer to filename for *OPT 1 info
+
+This call is made to load a file into memory.

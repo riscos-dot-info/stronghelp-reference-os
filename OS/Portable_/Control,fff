@@ -1,0 +1,39 @@
+Portable_Control  (&42FC1)
+#Parent Portable_
+=>	R0 =	EOR mask
+	R1 =	AND mask
+<=	R0 =	old control value
+	R1 =	new control value
+
+This call controls power and miscallaneous features:
+
+   New value = (Old value AND R2) EOR R1
+
+Value is a bitfield specifying:
+
+#tab
+bit	meaning when set
+#line
+0	Econet power enabled
+1	LCD display power enabled
+2	external video display power enabled
+3	serial buffer and oscillator power enabled
+4	dual panel mode
+5,6	video clock control:
+ 	0	external clock
+ 	1	crystal ÷ 2
+ 	2	crystal
+ 	3	reserved
+7	invert video clock
+8	enable back light
+9	display has 2 extra lines (else 1 extra)
+10	2 DRAMs used for dual panel (else 1)
+14	FDC oscillator power enabled
+16	LCD palette set for inverse video
+11-13,15,17-31	0 (reserved)
+
+Changing bits 0, 3, 14 will generate <Service_Portable=>service_8a>.
+
+The 82C711 shares one oscillator - this will only be powered down if bits 3 & 14 are both clear. On some machines the oscillator is used by other parts of the system and can never be powered down.
+#Line
+See <PRM 4, page 200=>PRM-4:200>.

@@ -1,0 +1,24 @@
+Font_SwitchOutputToBuffer  (&4009E)
+#Parent Font_
+=>	R0 =	<flags=>.flags> if R1 >0, else 0
+	R1 =	pointer to word aligned buffer or
+	 	8	to count buffer space needed
+	 	0	to switch to normal output
+	 	-1	to read state
+<=	R0 =	previous flags
+	R1 =	previous buffer pointer + size needed by Draw file structure.
+
+This SWI allows calls to <Font_Paint> to be redirected to build <Draw file=>DrawFile_format> objects in the supplied buffer. R1 returned points at the 0 terminator (it and the new size remaining are not counted in the data generated). Each letter is converted to a filled path object, as are rubout box(es) and underlining. Before calling the buffer should be :
+
+Offset	Contents
+#Line
+0	0
+4	size remaining (bytes)
+#Line
+See <PRM 3, page 475=>PRM-3:475>.
+#Subpage flags
+Meaning of bits in R0 when set
+0	Update R1 but don't actually store anything
+1	Apply hints
+4	Generate error if bitmapped characters found
+2,3,5-31	0 (reserved)

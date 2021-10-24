@@ -1,0 +1,8 @@
+Sound_LogScale  (&40182)
+#Parent Sound_
+=>	R0 =	8-bit signed logarithm
+<=	R0 =	8-bit signed volume-scaled logarithm (LSB)
+
+This call converts a signed logarithm byte in VIDC lower sign bit format to a byte scaled for the current volume setting (via a lookup table).
+#Line
+See <PRM 4, page 27=>PRM-4:27>.

@@ -1,0 +1,23 @@
+DOSFS_LayoutStructure  (&41AC1)
+#Parent DOSFS_
+=>	R0 =	<structure specifier=>DOSFS_FormatSpec>
+	R1 =	pointer to bad block list (terminated by -1)
+	R2 =	pointer to null terminated disc name
+	R3 =	image file handle
+
+<= R0-R3 preserved
+
+This call lays out in the specified image all necessary structures to have a valid, empty disc. It can be used:
+
+#Indent 2
+ to layout a structure on a black, formatted disc (in which case the specified image should be the whole disc image)
+ to layout a partition in a file on a disc that has already been formatted (for example for the PC emulator).
+#Indent
+
+If the given image format has no option to store a disc name then this parameter should be ignored.
+
+The bad block list should be presented as an array of bad block addresses. Each address is 4 bytes long. The array is terminated by a -1 entry.
+
+It's assumed that R0 gives enough information for the format - it may be that R0 contains many bit fields or points to a block of informations - the choice is up to the image filing system module. The value in R0 is used to pass enough information to specify the disc structure DOSFS uses a simple table index for this; other image filing systems may pass different informations (using a pointer if necessary) for their LayoutStructure SWI.
+#Line
+See <PRM 2, page 332=>PRM-2:332>.

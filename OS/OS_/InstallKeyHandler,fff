@@ -1,0 +1,11 @@
+OS_InstallKeyHandler  (&3E)
+#Parent OS_
+=>	R0 =	0	read address of current keyboard handler
+	 	1	read keyboard ID from keyboard (1 for UK)
+	 	>1	set address of new keyboard handler
+
+<=	R0 =	address of new/old keyboard handler, or <keyboard ID=>OS_keyboardid>
+
+This installs the keyboard handler to replace the default code.
+#Line
+See <PRM 1, page 914=>PRM-1:914>.

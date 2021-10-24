@@ -1,0 +1,20 @@
+Sound_Mode 0  (&40144)
+#Parent Sound_
+=>	R0 =	0 (reason code)
+<=	R0 =	0 if 16 bit sound supported
+	 	1 if 16 bit sound not supported
+	R1 preserved if R0 = 0
+	R1 =	<flags=>.flags>, if R0 = 1
+
+This SWI reads the sound system type. In 16-bit mode, <Sound_LinearHandler> and <Sound_SampleRate> are available.
+#Subpage flags
+Sound_Mode flags
+Bit	Meaning
+#Line
+0-3	Sound format type
+	  0	never used
+	  1	16 bit output with variable rates (44.1kHz, 22.05kHz and 11.025kHz supported)
+	  2	16 bit output with only old sound rates supported
+	  3-15	reserved
+4	Oversampling flag (if set, oversampling is enabled)
+5-31	reserved

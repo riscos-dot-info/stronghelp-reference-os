@@ -1,0 +1,9 @@
+Plot mask (48)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<48, &30=>os_spriteop_reason2> (Plot mask)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+
+This plots the solid pixels in the background colour with the bottom left corner at the present graphics cursor.
+#Line
+See <PRM 1, page 799=>PRM-1:799>

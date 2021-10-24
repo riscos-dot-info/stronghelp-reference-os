@@ -1,0 +1,10 @@
+Podule_RawRead  (&40287)
+#Parent Podule_
+=>	R0 =	offset (0 - &FFF) from podule's address space base.
+	R1 =	number of bytes
+	R2 =	pointer to buffer
+	R3 =	<ROM section=>OS_ModuleROMSections>
+
+This SWI reads bytes directly from an expansion card or extension ROM's address space, typically to read hardware registers. Use <Podule_ReadBytes> to read from an expansion card's code space.
+#Line
+See <PRM 4, page 147=>PRM-4:147>.

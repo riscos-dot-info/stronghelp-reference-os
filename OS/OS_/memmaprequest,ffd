@@ -1,0 +1,22 @@
+Memory map request block
+#Parent OS_ReadMemMapEntries
+The request_ block is a list of 3 word entries, terminated by a single -1 word.
+
+offset	contents
+#Line
+0	page number
+4	base address of mapping
+8	<access to page=>.access>
+#Subpage access
+Page access
+Value	Meaning
+#Line
+0	Read/Write
+1	Read only
+2	Inaccessible in user mode
+3	Mapped out
+10	Not bufferable ?
+20	Not cacheable ?
+40	Doubly mapped ?
+80	No user drag (for dynamic areas)
+100	Needs given pages ?

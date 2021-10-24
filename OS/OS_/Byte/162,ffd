@@ -1,0 +1,11 @@
+OS_Byte 162  Write CMOS RAM
+#Parent OS_ByteIndex
+=>	R0 =	162 (&A2)
+	R1 =	<byte number=>os_bytecmos>
+	R2 =	value
+
+This call writes to the battery backed RAM used to store configuration information.
+
+Note: If the byte you are setting contains multiple bits then you must *only* modify those bits you require to alter.
+#Line
+See <PRM 1, page 365=>PRM-1:365>

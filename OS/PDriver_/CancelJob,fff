@@ -1,0 +1,7 @@
+PDriver_CancelJob  (&8014E)
+#Parent PDriver_
+=>	R0 =	file handle of job
+
+This SWI will make any further attempt to output to the specified print job return the error "Print cancelled".
+#Line
+See <PRM 3, page 629=>PRM-3:629>.

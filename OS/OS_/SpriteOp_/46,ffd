@@ -1,0 +1,10 @@
+Delete column (46)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<46, &2E=>os_spriteop_reason2> (Delete column)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+	R3 =	Column number
+
+This deletes a column. All columns to the right are shifted left a pixel.
+#Line
+See <PRM 1, page 797=>PRM-1:797>

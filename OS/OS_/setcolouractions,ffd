@@ -1,0 +1,13 @@
+Graphic plotting actions
+Bits 0-3	Action
+#Line
+0		Replace colour on screen
+1		OR the colour on screen
+2		AND the colour on screen
+3		EOR the colour on screen
+4		NOT the colour on screen
+5		Leave colour on screen
+6		BIC the colour on screen
+7		OR NOT colour on screen
+
+If bit 3 is set, ie the range from 8 to 15, the lower bits mean the same, but background colour is transparent.

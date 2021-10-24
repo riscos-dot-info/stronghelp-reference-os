@@ -1,0 +1,10 @@
+Modifiers
+#Parent OS_PlotIndex
+#Align Centre;Wrap Off
+#f1:Modifiers :
+#Align
+#TAB Align Right, Align Left, Align Right, Align Left
+0	Move relative			4	Move absolute
+1	Plot relative, foreground	5	Plot absolute, foreground
+2	Plot relative, inverse		6	Plot absolute, inverse
+3	Plot relative, background	7	Plot absolute, background

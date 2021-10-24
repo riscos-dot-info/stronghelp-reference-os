@@ -1,0 +1,10 @@
+NetFS_SetFSNumber  (&40041)
+#Parent NetFS_
+=>	R0 =	station number
+	R1 =	net number
+<=	R0,R1 corrupted
+
+This SWI sets the full station number used by NetFS as the current file server. It restores contex ({/}e.g.{/} the current directory).
+
+#Line
+See <PRM 2, page 345=>PRM-2:345>.

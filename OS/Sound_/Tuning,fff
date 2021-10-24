@@ -1,0 +1,8 @@
+Sound_Tuning  (&40187)
+#Parent Sound_
+=>	R0 =	new tuning value (0 to read)
+<=	R0 =	previous tuning value
+
+This call sets the sound system tuning, in 1/4096ths of an octave.
+#Line
+See <PRM 4, page 37=>PRM-4:37>.

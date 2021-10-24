@@ -1,0 +1,7 @@
+File descriptor blocks
+#Parent OS_FSControl26
+#Wrap off
+Offset	Contents
+#Line
+0	Address of workspace
+4	Length of workspace

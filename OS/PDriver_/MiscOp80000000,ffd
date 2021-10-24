@@ -1,0 +1,32 @@
+PDriver_MiscOp &80000000
+#Parent PDriver_MiscOpForDriver
+=>	R0 =	&80000000 (reason code)
+	R1 =	<number of driver=>PDumper_numbers>
+	R2 =	required version of PDriverDP (* 100)
+	R3 =	pointer to dumper's private word (passed in as R12)
+	R4 =	pointer to <dumper reason code handler=>PDumper_code>
+	R5 =	<bit mask=>.codes> of supported calls
+	R6 =	<bit mask=>.strips> of supported strip types
+
+A printer dumper should call the <PDriver_MiscOpForDriver> form of this SWI to register itself with PDriverDP when it starts, or when it receives <Service_PDumperStarting=>Service_66>.
+
+Dumpers must support strip types 0-2 and reason codes 0-7 ({/}i.e.{/} all that are currently defined).
+#Subpage strips
+Bitmask for strip types
+Bit	When set supports
+#Line
+0	monochrome
+1	grey scale
+2	256 colour
+#Subpage codes
+Bitmask for reason codes
+Bit	When set supports
+#Line
+0	<PDumperReason_SetDriver>
+1	<PDumperReason_OutputDump>
+2	<PDumperReason_ColourSet>
+3	<PDumperReason_StartPage>
+4	<PDumperReason_EndPage>
+5	<PDumperReason_StartJob>
+6	<PDumperReason_AbortJob>
+7	<PDumperReason_MiscOp>

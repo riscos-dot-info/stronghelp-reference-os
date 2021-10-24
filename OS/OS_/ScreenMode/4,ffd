@@ -1,0 +1,34 @@
+OS_ScreenMode 4 (&65) (4.0)
+{*}Screen cache and screen cleaning{*}
+{f25}Þ{f}	R0 =	4
+	R1 =	-1, to read current control flags, or
+	 	new control flags
+	 	 	bit 0	cached screen suspended for this mode if set
+	 	 	bit 0	screen cleaning suspended for this mode if set
+	 	 	bits 2 to 30	{/}reserved (should be 0){/}
+	 	 	bit 31	must be zero to set flags
+	R2 =	-1, to read current VSync cleaner laziness
+	 	1	VSync cleaner laziness 1 (clean on first available VSync)
+	 	2	VSync cleaner laziness 2 (clean on second VSync)
+	 	3	VSync cleaner laziness 3 (clean on third VSync)
+	 	/other values undefined/
+
+{f25}Ü{f}	R1 =	current control flags (either read or newly set)
+	R2 =	current VSync laziness (either read or newly set)
+#line
+	<[Notes 1]=>.Notes>
+	<[Notes 2]=>.notes2>
+#subpage Notes
+OS_ScreenMode 4 notes
+When the screen is cached, cleaning of the processor data cache may be needed to avoid visual artifacts ('screen cleaning'). There are two types of cleaning; foreground cleaning, requested via <OS_ScreenMode 5=>OS_screenmode5>; background cleaning that may be initiated by the kernel on a VSync. The VSync laziness allows background screen cleaning to be often averted; eg. the kernel must clean the data cache for other reasons, and so cancels the VSync clean.
+
+It is strongly recommended that this reason code is only used for non-desktop applications (probably only for games). Manipulation of these screen properties by a desktop application is extremely bad practice. The most likely use for games is to turn off screen cleaning, in order to avoid the small overhead of VSync cleaning by the kernel. Another possible use is to turn off the cached screen, where cacheing does not help game performance.
+
+Games software should note that, because of problems with processor cache coherency, the cached screen is not supported with hardware scroll; any hardware scrolling will automatically suspend the cached screen until the next mode change.
+#subpage notes2
+OS_ScreenMode 4 notes 2
+Suspension of cached screen or screen cleaning are for the duration of the current mode only.
+
+If the platform does not support a cached screen, the current control flags and current VSync laziness returned on exit will be restricted accordingly (but no error occurs).
+
+R1 bit 1 on entry controls suspension of both VSync cleaning and foreground cleaning via <OS_ScreenMode 5=>OS_screenmode5>; forced cleaning through <OS_ScreenMode 6=>OS_screenmode6> is unaffected.

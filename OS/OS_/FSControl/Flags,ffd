@@ -1,0 +1,29 @@
+Flags for file operations
+Bit	Use	Meaning
+#Line
+0	CWN	{_}R{_}ecurse
+1	CW	{_}F{_}orce
+2	CWN	Given times in block
+3	CWN	{_}C{_}onfirm operation
+4	CWN	{_}V{_}erbose
+5	C	{_}Q{_}uick (use application area - not really safe)
+6	C	{_}P{_}rompt for new disc
+7	C	{_}D{_}elete after copy
+8	CWN	Allow printing of progress
+9	C	{_}A{_}ccess attributes as in source
+10	C	{_}S{_}tamp files
+11	C	S{_}t{_}ructure copy only
+12	C	{_}N{_}ewer than destination
+13	C	<Use descriptor block=>OS_FSControlDescriptor> as workspace
+14	C	{_}L{_}ook at destination first
+
+Usages :
+C	Copy
+W	Wipe
+N	Count (Number)
+
+Verbose will list every file it performs an operation on.
+Allow printing will print a summary of every directory it acts upon.
+Underlined letters show the equivalent *Command option letters.
+# N> Doesn't work as well with bold or italic.
+# Gerph> Ok, I'll let you off - I agree :-)

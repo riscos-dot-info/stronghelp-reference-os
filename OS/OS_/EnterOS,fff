@@ -1,0 +1,20 @@
+OS_EnterOS  (&16)
+#Parent OS_
+<=	R13 =	R13_svc
+	R14 =	R14_svc
+
+This SWI sets the processor to Supervisor mode. Interrupt and Fast Interrupt status is unaltered.
+
+To return to UserMode:
+#tab ,fCode
+	TEQP  PC,#0		;	Set Usermode, enable interrups
+	MOV   R0,R0		;	Anything that doesn't use 8-14
+or	
+	BIC   R14,PC,#%11	;	Only sets usermode.
+	TEQP  R14,#0		;	Interrupts & flags
+	MOV   R0,R0		;	are not affected.
+
+#tab
+Note:	SWI calls while in SVC, will alter R14, and will use R13 as stack.
+#Line
+See <PRM 1, page 140=>PRM-1:140>.

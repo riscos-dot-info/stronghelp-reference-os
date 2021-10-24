@@ -1,0 +1,12 @@
+Font_ReadFontPrefix  (&4009D)
+#Parent Font_
+=>	R0 =	font handle
+	R1 =	pointer to buffer
+	R2 =	length of buffer
+<=	R0 =	preserved
+	R1 =	pointer to terminating 0 in buffer
+	R2 =	free bytes in buffer
+
+This SWI returns the full path to the font data.
+#Line
+See <PRM 3, page 473=>PRM-3:473>.

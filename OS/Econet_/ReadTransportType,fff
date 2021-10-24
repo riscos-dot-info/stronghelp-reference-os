@@ -1,0 +1,19 @@
+Econet_ReadTransportType  (&40011)
+#Parent Econet_
+=>	R0 =	station number
+	R1 =	net number
+	R2 =	2 (why ?)
+	
+<=	R2 =	<transport type=>.transports>
+
+This SWI returns the actual form in which the data will be sent so that the transmission type used can be changed accordingly.
+#Line
+See <PRM 2, page 674=>PRM-2:674>.
+#Subpage transports
+Econet transport types
+Type	Meaning
+#Line
+0	Not known
+1	Internet
+2	Econet
+3	Nexus

@@ -1,0 +1,14 @@
+Append sprite (35)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<35, &23=>os_spriteop_reason2> (Append sprite)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite 1 name/pointer
+	R3 =	Sprite 2 name/pointer		{fCode}   __ __{f}
+	R4 =	0 => Merge horizontally		{fCode}  |__|__|{f}
+	 	1 => Merge vertically		{fCode}.--.{f}
+	 	 				{fCode}|--|{f}
+	 	 				{fCode}'--'{f}
+
+This merges two sprites of the same height or width together. The result is stored as sprite 1 and sprite 2 is deleted, hence no extra memory is needed.
+#Line
+See <PRM 1, page 786=>PRM-1:786>

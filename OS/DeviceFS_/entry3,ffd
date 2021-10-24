@@ -1,0 +1,8 @@
+Device driver Wake up for RX entry point (3)
+#Parent DeviceFS_CallDevice
+=>	R0 =	3
+	R2 =	device driver stream handle
+
+This entry point is called when DeviceFS wants data from the device. You should call <DeviceFS_ReceivedCharacter> as bytes become available.
+#Line
+See <PRM 2, page 601=>PRM-2:601>.

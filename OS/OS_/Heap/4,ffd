@@ -1,0 +1,10 @@
+OS_Heap 4
+#Parent OS_Heap
+#Wrap off
+=>	R0 =	4
+	R1 =	pointer to heap
+	R2 =	pointer to block
+	R3 =	size increase, or -ve for decrease
+<=	R2 =	pointer to new block
+
+This SWI changes the size of a claimed section of the heap.

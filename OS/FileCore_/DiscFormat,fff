@@ -1,0 +1,13 @@
+FileCore_DiscFormat  (&40547)
+#Parent FileCore_
+=>	R0 =	pointer to <disc format structure=>FileCore_format> to be filled in
+	R1 =	SWI number to call to vet disc format (eg <ADFS_VetFormat>)
+	R2 =	parameter in R1 to use when calling vetting SWI
+	R3 =	<format specifier=>FileCore_formatspec>
+
+<=	R0-R3 preserved
+
+This call fills in the disc format structure pointed to by R0 with the 'prefect' parameters for the specified format, taking no account of the abilities of the available hardware that will have to perform the format. Once filled in, this SWI calls the vetting SWI to check the formay structure for achievability on the available hardware. The vetting SWI may generate an error if the format differs widely from what can be achieved; alternatively it may alter the format structure to the closest match that can be achieved. The vetting SWI then returns to this
+SWI, which checks whether the format block - as updated by the vetting SWI - is still an adequate match for the desired format. If it is, this SWI returns to its caller; otherwise it generates an error.
+#Line
+See <PRM 2, page 234=>PRM-2:234>.

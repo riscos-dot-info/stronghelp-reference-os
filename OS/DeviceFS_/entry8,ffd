@@ -1,0 +1,8 @@
+Device driver Halt entry point (8)
+#Parent DeviceFS_CallDevice
+=>	R0 =	8
+	R2 =	device driver stream handle
+
+This entry point is called when the free space falls below the threshold (set on creation, or modified by <DeviceFS_Threshold>). It allows the driver to attempt to stop incoming data ({/}e.g.{/} a serial device could perform handshaking).
+#Line
+See <PRM 2, page 603=>PRM-2:603>.

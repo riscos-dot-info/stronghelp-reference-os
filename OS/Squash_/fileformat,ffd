@@ -1,0 +1,15 @@
+Format of Squash file (filetype fca)
+#Parent Squash_
+File header
+
+Offset	Len	Contents
+#Line
+0	4	"SQSH"
+4	4	length of data when uncompressed
+8	4	<load address=>fsys_loadexec>	typically these hold
+12	4	<exec address=>fsys_loadexec>	filetype and datestamp.
+16	4	0 (reserved)
+
+This is followed by compressed data from <Squash_Compress>, which is currently identical to the output from Unix {fCode}compress{f} in 12 bit mode. ({/}i.e.{/} remove the 20 byte header and the resulting file can be passed to {fCode}uncompress{f} or {fCode}gunzip{f}!)
+# N> Not a lot of people know that. :-)
+# Gerph> WHAT ! Coo, so it does - how cool!

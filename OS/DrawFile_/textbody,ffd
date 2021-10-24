@@ -1,0 +1,20 @@
+Escape sequences in Draw text area
+#Parent drawfile_format
+Sequence		Meaning
+#Line
+\\!\<version>/		Version must be 1
+\\A\<code>		Alignment: L, R, C, D
+\\B\<R> \<G> \<B>/	Set background hint
+\\C\<R> \<G> \<B>/	Set foreground colour
+\\D\<number>/		Number of columns
+\\F\<digit>\<name> \<size> [\<width>]/	Declare a font
+\\\<digit>		Select a font
+\\L\<value>/		Leading
+\\M\<left> \<right>/	Sets margins
+\\P\<value>/		Paragraph leading
+\\U\<pos> \<thickness>/	Turn on underline
+\\V[-]\<digit>		Vertical move
+\\-			Soft hypen
+\\\<newline>		Force line break
+\\\\			"\\"
+\\;\<text> \<newline>	comment

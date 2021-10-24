@@ -1,0 +1,19 @@
+Portable_Speed  (&42FC0)
+#Parent Portable_
+=>	R0 =	EOR mask
+	R1 =	AND mask
+<=	R0 =	old speed
+	R1 =	new speed
+
+This call sets the processor speed. The new speed is set as:
+
+   New speed = (Old speed AND R2) EOR R1
+
+Currently supported speed settings are:
+# N> What a bewildering range
+# Gerph> Probably does more than the 'turbo' buttons on PC's nowadays...
+#tab
+ 	0	fast
+ 	1	slow
+#Line
+See <PRM 4, page 198=>PRM-4:198>.

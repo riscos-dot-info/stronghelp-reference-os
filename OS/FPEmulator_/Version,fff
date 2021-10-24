@@ -1,0 +1,10 @@
+FPEmulator_Version  (&40480)
+#Parent FPEmulator_
+<=	R0 =	version of FPEmulator * 100
+
+This SWI returns the version of the floating point emulator in use.
+
+#tab
+Note:	The PRMs incorrectly claim this to be in BCD.
+#Line
+See <PRM 4, page 184=>PRM-4:184>.

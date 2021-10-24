@@ -1,0 +1,9 @@
+OS_Heap 2
+#Parent OS_Heap
+=>	R0 =	2
+	R1 =	pointer to heap
+	R3 =	size to claim
+
+<=	R2 =	pointer to block, or 0 if failed
+
+This SWI claims a section of the heap.

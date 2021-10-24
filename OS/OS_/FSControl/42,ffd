@@ -1,0 +1,9 @@
+OS_FSControl 42  (&29)
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	42 (Map out defect from image)
+	R1 =	pointer to name of image (null terminated)
+	R2 =	byte offsets of defect start
+#Wrap
+
+This SWI maps out a defect from the image.

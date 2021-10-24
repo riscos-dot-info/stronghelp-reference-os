@@ -1,0 +1,12 @@
+Territory_ReadTimeZones  (&4304A)
+#Parent Territory_
+=>	R0 =	<territory number=>Territory_numbers>, or -1 to use current territory
+
+<=	R0 =	pointer to name of standard time zone for territory
+	R1 =	pointer to name of summer time
+	R2 =	offset from UTC to standard time, in cs (signed 32-bit)
+	R3 =	offset from UTC to summer time, in cs (signed 32-bit)
+
+Returns information on the time zones for a territory.
+#Line
+See <PRM 3, page 806=>PRM-3:806>.

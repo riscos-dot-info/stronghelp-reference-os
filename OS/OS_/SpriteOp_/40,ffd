@@ -1,0 +1,15 @@
+Read sprite info  (40)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<40, &28=>OS_SpriteOp_Reason2> (Read sprite info)
+	R1 =	<Sprite area=>OS_SpriteOp_Area>
+	R2 =	Sprite name/pointer
+
+<=	R3 =	width in pixels
+	R4 =	height in pixels
+	R5 =	0,1 for mask no,yes
+	R6 =	Mode, or <sprite type=>OS_SpriteOp_Type>
+
+This SWI returns info about the given sprite.
+To find OS width and height, read <mode variables=>OS_ReadModeVariable> 4 and 5.
+#Line
+See <PRM 1, page 791=>PRM-1:791>

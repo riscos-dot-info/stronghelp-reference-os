@@ -1,0 +1,20 @@
+PDriver_DrawPage  (&8014C)
+#Parent PDriver_
+=>	R0 =	number of copies to print
+	R1 =	pointer to 4 word block to receive <rectangle to print=>PDriver_rectangle>
+	R2 =	page number within the document (for user information) or 0
+	R3 =	pointer to <page number string=>.number> (or 0 for none)
+
+<=	R0 =	0 if finished
+	R1 preserved
+	R2 =	ID word for this rectangle
+	R3 preserved 
+
+This SWI is called after all rectangles have been specified with <PDriver_GiveRectangle>, and returns the first rectange to print. Subsequent rectangles are retrieved with <PDriver_GetRectangle>.
+
+If R0 is 0 on return then R2 and the buffer pointed to by R1 are undefined. Otherwise R0 gives the number of copies still to print - this is intended for display to users only, as it may not decrease smoothly.
+#Line
+See <PRM 3, page 626=>PRM-3:626>.
+#subpage number
+Printer page number strings
+The page number string should only contain characters in the range {*}33{*}-126 ({/}i.e.{/} no spaces), and is used by some printer drivers for commenting the output. It is acceptable to have no page number string - use a 0 pointer.

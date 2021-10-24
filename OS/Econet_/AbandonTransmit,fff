@@ -1,0 +1,8 @@
+Econet_AbandonTransmit  (&40008)
+#Parent Econet_
+=>	R0 =	handle
+<=	R0 =	<status=>econet_statuses>
+
+This SWI abandons a transmit block.
+#Line
+See <PRM 2, page 660=>PRM-2:660>.

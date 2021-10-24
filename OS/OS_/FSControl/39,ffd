@@ -1,0 +1,7 @@
+OS_FSControl 39  (&29)
+#Parent OS_FSControl
+=>	R0 =	39 (Set URD)
+	R1 =	pointer to pathname
+<=	all registers preserved
+
+Sets the User Root Directory (URD) to the given pathname.

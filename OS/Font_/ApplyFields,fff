@@ -1,0 +1,13 @@
+Font_ApplyFields  (&400A7)
+#Parent Font_
+=>	R0 =	pointer to original <font identifier=>Font_identifier>
+	R1 =	pointer to fields to add (in font identifier format)
+	R2 =	pointer to ouput buffer (0 to return size)
+	R3 =	size of output buffer
+
+<=	R0-R2 preserved
+	R3 =	free space remaining in output buffer or size of buffer needed
+
+This SWI merges new fields into an font identifier, replacing the values of any existing fields also defined in the fields to add. By adding null fields you can delete an existing field. Fields not present in original identifier are placed in the result after fields present in the original identifier.
+#Line
+See <PRM 3, page 494=>PRM-3:494>.

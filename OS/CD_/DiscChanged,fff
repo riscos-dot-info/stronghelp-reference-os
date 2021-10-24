@@ -1,0 +1,6 @@
+CD_DiscChanged  (&41251)
+#Parent CD_
+=>	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+<=	R0 =	changed flag (0 if unchanged, 1 if changed)
+
+This SWI checks if the CD drive has changed or not since the last call to this SWI.

@@ -1,0 +1,12 @@
+OS_ExitAndDie  (&50)
+#Parent OS_
+=>	R0 =	pointer to <error block=>swi_errorblock>
+	R1 =	"ABEX" (&58454241) if return code
+	R2 =	return code
+	R3 =	pointer to module name
+
+<=	Never returns
+
+This SWI does exactly what <OS_Exit> does, but in addition it kills the module in R3.
+#Line
+See <PRM 1, page 318=>PRM-1:318>.

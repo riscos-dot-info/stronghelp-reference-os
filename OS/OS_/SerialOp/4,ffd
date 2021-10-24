@@ -1,0 +1,7 @@
+OS_SerialOp 4
+=>	R0 =	4 (reason code)
+
+<=	R0 preseved
+	R1 =	character received (if C flag cleared), or preserved (if C flag set - ie no character available in buffer to read)
+
+This call removes a character from the serial input buffer if one is present. If removing a character leaves the input buffer with more free space than are specified by OS_Byte 203, then the transmitting device is re-enabled in the way specified by the serial port state (as set by <OS_SerialOp 0=>OS_SerialOp0>).

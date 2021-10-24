@@ -1,0 +1,13 @@
+OS_File 0 and 10
+#Parent OS_File
+=>	R0 =	0 or 10 (reason codes)
+	R1 =	pointer to filename
+	 	if R0 =  0 :	R2 = <load address=>fsys_loadexec>
+	 	 		R3 = <exec address=>fsys_loadexec>
+	 	if R0 = 10 :	R2 = <filetype=>Filetypes:!Root>
+	R4 =	pointer to start address
+	R5 =	pointer to end address
+
+<=	all registers preserved
+
+This SWI is used to save a block of memory as a file. An error is returned if object is locked, is open or is a directory.

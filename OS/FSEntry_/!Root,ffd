@@ -1,0 +1,10 @@
+FSEntry - Filing system entry points
+# This page is included from other pages I think.
+#Parent !Root
+Filing system entry points are defined by the filing system information block :
+
+#fH4
+#Include fsys_infoblock
+
+To create a filing system, use <OS_FSControl 12=>OS_FSControl12>.
+To remove a filing system, use <OS_FSControl 14=>OS_FSControl16>.

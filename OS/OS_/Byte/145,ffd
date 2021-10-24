@@ -1,0 +1,13 @@
+OS_Byte 145  Get char from buffer
+#Parent OS_ByteIndex
+=>	R0 =	145 (&91)
+	R1 =	<buffer number=>Buffer_buffers>
+
+<=	R0, R1 preserved
+	R2 =	byte removed
+	C flag	set if buffer was empty on entry
+	 	clear if byte was successfully removed
+                                                  
+This call extracts the next byte from the given buffer. The buffer number is *not* validated - undefined results (rather than an error) occur if a bad buffer number is passed.
+#Line
+See <PRM 1, page 170=>PRM-1:170>

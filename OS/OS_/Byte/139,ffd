@@ -1,0 +1,12 @@
+OS_Byte 139  Write filing system options
+#Parent OS_ByteIndex
+=>	R0 =	139
+	R1 =	<option=>fsys_opts>
+	R2 =	value
+
+<=	R0 preserved
+	R1, R2 corrupted
+
+This call uses <OS_FSControl 10=>OS_FSControl10> to set filing system options.
+#Line
+See <PRM 2, page 27=>PRM-2:27>

@@ -1,0 +1,6 @@
+ImageEntry_Args 3
+=>	R0 =	3 (Write file extent)
+	R1 =	internal file handle returned by <ImageEntry_Open>
+	R2 =	new file extent
+
+This call is made when FileSwitch needs to extend a file beyond its current length. On systems with no concept of extents (eg streams) this should *not* return an error.

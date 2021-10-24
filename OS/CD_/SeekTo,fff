@@ -1,0 +1,9 @@
+CD_SeekTo  (&41242)
+#Parent CD_
+=>	R0 =	<addressing mode=>CD_addresses>
+	R1 =	address to seek to
+	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+
+This SWI seeks the CD drive head to a given position.
+
+{*}Note:{*} The drive may not perform this physical action, at its discretion, but should behave as if it did.

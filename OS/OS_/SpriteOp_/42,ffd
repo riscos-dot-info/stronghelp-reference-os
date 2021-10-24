@@ -1,0 +1,13 @@
+Write pixel colour (42)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<42, &2A=>os_spriteop_reason2> (Write pixel colour)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+	R3 =	x coordinate (in pixels)
+	R4 =	y coordinate (in pixels)
+	R5 =	Colour
+	R6 =	Tint
+
+This sets the pixel to the given colour. 
+#Line
+See <PRM 1, page 793=>PRM-1:793>

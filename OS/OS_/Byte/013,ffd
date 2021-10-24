@@ -1,0 +1,11 @@
+OS_Byte 13  Disable event
+#Parent OS_ByteIndex
+=>	R0 =	13 (&0D)
+	R1 =	<event number=>event_index>
+<=	R0 preserved
+	R1 =	old enable state (0 means was already disabled)
+	R2 corrupted
+
+This call decreases the count of enable requests for a particular event being called though the <Event Vector=>vector_eventv>. When the count reaches 0 the event is actually disabled.
+#Line
+See <PRM 1, page 148=>PRM-1:148>

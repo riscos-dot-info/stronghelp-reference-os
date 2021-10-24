@@ -1,0 +1,17 @@
+Econet_WaitForReception  (&40004)
+#Parent Econet_
+=>	R0 =	handle
+	R1 =	timeout in cs
+	R2 =	0 if escape should *not* abort
+
+<=	R0 =	<status=>econet_statuses>
+	R1 =	0, or flag byte if r0=9 on exit
+	R2 =	port number
+	R3 =	station number
+	R4 =	net number
+	R5 =	pointer to data buffer
+	R6 =	size of buffer, or size of data received if r0=9 on exit
+
+This SWI checks the port repeatedly until either aborted, or the data is received. The block will be abandoned after it has been received. As this SWI enables interrupts it should not be called from service or event handlers.
+#Line
+See <PRM 2, page 654=>PRM-2:654>.

@@ -1,0 +1,8 @@
+FSEntry_File 4
+#Parent FSEntry_File
+=>	R0 =	4 (Write attributes)
+	R1 =	pointer to wildcarded filename
+	R5 =	new <attributes=>fsys_objattr> of file
+	R6 =	pointer to special field, or 0 if not present
+
+This call is made to set the attributes of a given file.

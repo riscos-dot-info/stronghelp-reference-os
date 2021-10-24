@@ -1,0 +1,22 @@
+Count/Purge vector (22)
+#Parent vector_index
+=>	R1 =	<buffer number=>Buffer_buffers>
+	R9 =	22, &16 (vector number)
+	flags	V set	 	to flush buffer
+	 	V clear	C set	to return free space
+	 	V clear	C clear	to return entries
+
+
+<=	R0 corrupt
+
+	If purge:
+	R1 preserved
+	R2 preserved
+
+	If count:
+	R1 =	count AND &FF
+	R2 =	count >> 8
+
+If called via <OS_CallAVector> then interrupts must be disabled first.
+#Line
+See <PRM 1, page 82=>PRM-1:82>.

@@ -1,0 +1,10 @@
+Service_ModeChange (&46)
+#Parent Service_Index
+=>	R1 =	&46 (reason code)
+	R2 =	<mode number=>VDU:22a>
+	R3 =	<monitor type=>OS_monitortypes>
+<=	R1-R3 preserved (do not claim)
+
+This service is issued when a mode change has taken place.
+#Line
+See <PRM 1, page 617=>PRM-1:617>

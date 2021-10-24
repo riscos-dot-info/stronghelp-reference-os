@@ -1,0 +1,7 @@
+Service_MessageFileClosed (&5E)
+#Parent Service_Index
+=>	R1 =	&5E (reason code)
+
+This service is issued by MessageTrans to warn that all files have been closed. It is *only* needed by applications which use direct pointers into message files - they must re-open message files with <MessageTrans_OpenFile> and recache pointers. If applications are using direct pointers ({/}e.g.{/} indirected icons) with <MessageTrans_MakeMenus> then they will need to close menus and re-make them if this service is issued. Use <Wimp_GetMenuState=>Wimp:Wimp_GetMenuState> to check whether your own application's menu is open - close it if it is.
+#Line
+See <PRM 3, page 741=>PRM-3:741>

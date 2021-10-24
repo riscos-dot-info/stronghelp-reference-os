@@ -1,0 +1,7 @@
+NetFS_ReadCurrentContext  (&40044)
+#Parent NetFS_
+<=	R0-R2 corrupted
+
+This SWI is unimplemented, and will be removed.
+#Line
+See <PRM 2, page 348=>PRM-2:348>.

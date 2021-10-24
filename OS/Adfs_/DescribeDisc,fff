@@ -1,0 +1,5 @@
+ADFS_DescribeDisc  (&40245)
+#Parent ADFS_
+This SWI calls <FileCore_DescribeDisc>, after first setting R8 to point to the FileCore instance private word for ADFS.
+#Line
+See <PRM 2, page 286=>PRM-2:286>.

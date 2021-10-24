@@ -1,0 +1,6 @@
+CD_Control  (&41257)
+#Parent CD_
+=>	R0 =	1
+	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+
+This SWI initialises the drive.

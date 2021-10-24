@@ -1,0 +1,11 @@
+OS_CallEvery  (&3C)
+#Parent OS_
+=>	R0 =	time to call in cs
+	R1 =	pointer to address to call
+	R2 =	value of R12 to be called with
+
+<=	R0,R1 preserved
+                 
+Sets a CallBack routine to be triggered every time a specified delay has elapsed. See <OS_AddCallBack> for more details. To remove use <OS_RemoveTickerEvent>.
+#Line
+See <PRM 1, page 431=>PRM-1:431>.

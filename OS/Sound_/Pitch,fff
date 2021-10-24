@@ -1,0 +1,11 @@
+Sound_Pitch  (&40188)
+#Parent Sound_
+=>	R0 =	pitch value
+	 	14-12	3 bit octave number
+	 	11-0	12 bit octave fraction (1/4096ths of an octave.)
+<=	R0 =	(entry R0 \< &8000)	32 bit phase accumulator value
+	 	(entry R0 => &8000)	preserved
+
+This SWI maps a 15 bit pitch value to an internal format.
+#Line
+See <PRM 4, page 38=>PRM-4:38>.

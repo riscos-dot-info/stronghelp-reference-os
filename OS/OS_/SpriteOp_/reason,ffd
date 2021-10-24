@@ -1,0 +1,55 @@
+OS_SpriteOp reason codes
+#Parent OS_SpriteOp
+#Table Columns 2
+2  2  <Screen save=>os_spriteop_2>
+3  3  <Screen load=>os_spriteop_3>
+8  8  <Read area control block=>os_spriteop_8>
+9  9  <Initialise sprite area=>os_spriteop_9>
+A  10 <Load sprite file=>OS_SpriteOp_10>
+B  11 <Merge sprite file=>OS_SpriteOp_11>
+C  12 <Save sprite file=>OS_SpriteOp_12>
+D  13 <Return name=>OS_SpriteOp_13>
+E  14 <Get sprite from cursor=>OS_SpriteOp_14>
+F  15 <Create sprite=>OS_SpriteOp_15>
+10 16 <Get sprite from user coords=>OS_SpriteOp_16>
+11 17 <Verify sprite area=>OS_SpriteOp_17>
+18 24 <Select sprite/Get address=>OS_SpriteOp_24>
+19 25 <Delete sprite=>OS_SpriteOp_25>
+1A 26 <Rename sprite=>OS_SpriteOp_26>
+1B 27 <Copy sprite=>OS_SpriteOp_27>
+1C 28 <Put sprite to screen=>OS_SpriteOp_28>
+1D 29 <Create mask=>OS_SpriteOp_29>
+1E 30 <Remove mask=>OS_SpriteOp_30>
+1F 31 <Insert row=>OS_SpriteOp_31>
+20 32 <Delete row=>OS_SpriteOp_32>
+21 33 <Flip about x axis=>OS_SpriteOp_33>
+22 34 <Put sprite at user coords=>OS_SpriteOp_34>
+23 35 <Append sprite=>OS_SpriteOp_35> *
+24 36 <Set pointer shape=>os_spriteop_36> *
+25 37 <Create/remove palette=>os_spriteop_37> *
+28 40 <Read sprite info=>os_spriteop_40>
+29 41 <Read pixel colour=>os_spriteop_41>
+2A 42 <Write pixel colour=>os_spriteop_42>
+2B 43 <Read pixel mask=>os_spriteop_43>
+2C 44 <Write pixel mask=>os_spriteop_44>
+2D 45 <Insert column=>os_spriteop_45>
+2E 46 <Delete column=>os_spriteop_46>
+2F 47 <Flip about y axis=>os_spriteop_47>
+30 48 <Plot sprite mask=>os_spriteop_48>
+31 49 <Plot mask at user coords=>os_spriteop_49>
+32 50 <Plot mask scaled=>os_spriteop_50> *
+33 51 <Paint char scaled=>os_spriteop_51> *
+34 52 <Paint sprite scaled=>os_spriteop_52> *
+35 53 <Put sprite grey scaled=>os_spriteop_53> *
+36 54 <Remove lefthand wastage=>os_spriteop_54>
+37 55 <Plot mask transformed=>os_spriteop_55> %*
+38 56 <Plot sprite transformed=>os_spriteop_56> %*
+39 57 <Insert/delete rows=>os_spriteop_57> %*
+3A 58 <Insert/delete columns=>os_spriteop_58> %*
+3C 60 <Switch output to sprite=>os_spriteop_60>
+3D 61 <Switch output to mask=>os_spriteop_61>
+3E 62 <Read save area size=>os_spriteop_62>
+#EndTable
+#line;tab
+*Note*:	Items marked with a \* require SpriteExtend to be loaded for them to work.
+	Items marked with a % are not available on RISC OS 2.

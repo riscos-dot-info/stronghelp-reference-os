@@ -1,0 +1,9 @@
+Merge sprite file  (11)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<11, &B=>os_spriteop_reason2> (Merge sprite file)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Pointer to filename
+
+This loads the sprites in the given sprite file into the specified area. If a sprite already exists it will be replaced. There must be enough memory in the sprite area to hold both set of sprites as replacements are made after the whole file has been loaded.
+#Line
+See <PRM 1, page 769=>PRM-1:769>

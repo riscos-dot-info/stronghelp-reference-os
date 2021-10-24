@@ -1,0 +1,10 @@
+PDumper_Claim  (&41B01)
+#Parent PDumper_
+=>	R0 =	pointer to anchor word
+	R3 =	size to claim
+	R4 =	tag for block
+<=	R2 =	pointer to word aligned block allocated
+
+This SWI allocates a block of memory (size need not be a multiple of four) and links into the dumper's chain specified by the anchor word passed in R0 (usually the module's private word). The tag is stored after the link point - it is not advised to claim more than one block with the same tag (see <PDumper_Find>). Use <PDumper_Free> to free the block.
+#Line
+See <PRM 3, page 682=>PRM-3:682>.

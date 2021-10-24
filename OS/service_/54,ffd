@@ -1,0 +1,13 @@
+Service_Sound (&54)
+#Parent Service_Index
+=>	R0 =	0	DMA Handler starting
+	 	1	DMA Handler dying
+	 	2	Channel Handler starting
+	 	3	Channel Handler dying
+	 	4	Scheduler starting
+	 	5	Scheduler dying
+	R1 =	&54 (reason code)
+
+This service is issued to report when a part of the Sound system is starting or finishing.
+#Line
+See <PRM 4, page 17=>PRM-4:17>

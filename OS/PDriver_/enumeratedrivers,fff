@@ -1,0 +1,14 @@
+PDriver_EnumerateDrivers  (&80159)
+#Parent PDriver_
+=>	R0 =	previous handle, 0 to start
+
+<=	R0 =	next handle, 0 marks end
+	R1 =	<printer driver number=>PDriver_printernumbers>
+
+This SWI will return the numbers of all printer drivers present. Experimentation reveals that the last valid R1 occurs with R0 \<> 0; when R0 = 0 on exit R1 is garbage.
+# N> PRMs, they're /so/ helpful
+#    /so/ to be pronounced as in G.B.H. "He's /so/ easy"
+# Gerph> Hmm... Maybe I should watch that again just to find the reference
+# Gerph> And in light of that maybe this reference shouldn't be here...
+#Line
+See <PRM 3, page 644=>PRM-3:644>.

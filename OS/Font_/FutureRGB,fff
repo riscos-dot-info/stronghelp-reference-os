@@ -1,0 +1,10 @@
+Font_FutureRGB  (&400A4)
+#Parent Font_
+<=	R0 =	font handle
+	R1 =	background colour	(&BBGGRR00)
+	R2 =	foreground colour	(&BBGGRR00)
+	R3 =	maximum colour offset (0 -> mono, otherwise anti-aliased)
+
+This SWI returns the current colour settings ater calling <Font_ScanString>, <Font_StringWidth>, <Font_StringBBox>, <Font_FindCaret>, <Font_FindCaretJ>. If the colours were not set using RGB values it will generate the error 'Undefined RGB font colours'
+#Line
+See <PRM 3, page 489=>PRM-3:489>.

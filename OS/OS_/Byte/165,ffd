@@ -1,0 +1,11 @@
+OS_Byte 165  Read output cursor position
+#Parent OS_ByteIndex
+=>	R0 =	165
+
+<=	R0 preserved
+	R1 =	position in x direction
+	R2 =	position in y direction
+
+This call returns the position of the output cursor, even whilst cursor editing is in progress.
+#Line
+See <PRM 1, page 656=>PRM-1:656>

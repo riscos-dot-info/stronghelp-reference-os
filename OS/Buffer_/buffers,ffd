@@ -1,0 +1,13 @@
+Buffer numbers
+\#	Buffer name
+#Line
+0	Keyboard
+1	Serial input
+2	Serial output
+3	Printer
+4	Sound channel 0
+5	Sound channel 1
+6	Sound channel 2
+7	Sound channel 3
+8	Speech
+9	Mouse

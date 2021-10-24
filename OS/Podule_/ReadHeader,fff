@@ -1,0 +1,8 @@
+Podule_ReadHeader  (&40281)
+#Parent Podule_
+=>	R2 =	pointer to buffer (8 or 16 bytes)
+	R3 =	<ROM section=>OS_ModuleROMSections>
+
+This SWI reads the <extended Expansion Card Identity=>Podule_eECId> (8 bytes) into the buffer. If the card also has <interrupt status pointers=>Podule_isp> (further 8 bytes) then these are also read - hence if unsure use a 16 byte buffer.
+#Line
+See <PRM 4, page 139=>PRM-4:139>.

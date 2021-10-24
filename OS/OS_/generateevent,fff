@@ -1,0 +1,10 @@
+OS_GenerateEvent  (&22)
+#Parent OS_
+=>	R0 =	<event number=>Event_index>
+	R1... event parameters
+
+<=	all registers preserved
+
+Note that, as usual, the event vector will only be called if the event number given in R0 has previously been enabled using <OS_Byte 14=>os_byte014>.
+#Line
+See <PRM 1, page 152=>PRM-1:152>.

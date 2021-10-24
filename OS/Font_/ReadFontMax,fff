@@ -1,0 +1,15 @@
+Font_ReadFontMax  (&4009C)
+#Parent Font_
+<=	R0 =	FontMax		in bytes
+	R1 =	FontMax1	in points
+	R2 =	FontMax2	in points
+	R3 =	FontMax3	in points
+	R4 =	FontMax4	in points
+	R5 =	FontMax5	in points
+	R6 =	possibly corrupted
+	R7 =	possibly corrupted
+
+This SWI reads the current FontMax and FontMax1 - FontMax5 (not the configured values). The values in R1-R5 should be in pixels * 72 * 16 for RISC OS 2.
+# Gerph> Oh no, more pixies!
+#Line
+See <PRM 3, page 472=>PRM-3:472>.

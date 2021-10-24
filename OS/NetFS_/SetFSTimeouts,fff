@@ -1,0 +1,12 @@
+NetFS_SetFSTimeouts  (&40047)
+#Parent NetFS_
+=>	R0 =	transmit count
+	R1 =	transmit delay
+	R2 =	machine peek count
+	R3 =	machine peek delay
+	R4 =	receive delay
+	R5 =	broadcast delay
+
+This SWI sets the current communication timeouts. All delays are in centiseconds.
+#Line
+See <PRM 2, page 351=>PRM-2:351>.

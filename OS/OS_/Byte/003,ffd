@@ -1,0 +1,14 @@
+OS_Byte 3  Specify output stream
+#Parent OS_ByteIndex
+=>	R0 =	3 (&03)
+	R1 =	<bit mask for output streams=>OS_Byte003state>
+
+<=	R0 preserved
+	R1 =	value before being overwritten
+	R2 corrupted
+
+This call select the device(s) to which all subsequent output from <OS_WriteC etc.=>vector_wrchv> is sent. The state of this variable can be read and written with <OS_Byte 236=>OS_Byte236>.
+
+Enabling the serial device and printer with this OS_Byte *and* setting the printer to the serial device with <OS_Byte 5=>OS_Byte005> causes characters to be placed in both serial and printer buffers, which both are then fed to the serial port.
+#Line
+See <PRM 1, page 506=>PRM-1:506>

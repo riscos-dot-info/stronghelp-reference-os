@@ -1,0 +1,7 @@
+OS_File 24  (&08)
+#Parent OS_File
+=>	R0 =	24 (reason code)
+	R1 =	pointer to filename
+<=	R2 =	natural block size in bytes
+
+This call allows you to find the /natural block size/ of a given file. When you create or extend a file, disc space can only be allocated in chunks of a minimum size (512 bytes, for example). If your file is just 1 byte long for example, 511 bytes of disc space may have to be wasted after it if the natural block size is 512.

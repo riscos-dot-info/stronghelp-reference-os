@@ -1,0 +1,13 @@
+OS_DelinkApplication  (&4D)
+#Parent OS_
+=>	R0 =	pointer to buffer
+	R1 =	buffer size in bytes
+
+<=	R0 preserved
+	R1 =	number of bytes left in buffer
+
+When an application running at &8000 is going to be swapped out, it must remove all vectors that it uses. Otherwise, if kernel tried to call the vector it would jump into whatever happened to be at this memory address in whatever application was running at the time, probably with disastrous results.
+
+The buffer is used to store details of the vectors used, so they can be restored afterwards with <OS_RelinkApplication>. Each vector requires 12 bytes of storage and the list is terminated by a single byte. If the space left is 0, you are to allocate another buffer and repeat the call; the first buffer is still valid, only the vectors which didn't fit into it are placed into the second buffer. When relinking you must pass all buffers used by this call.
+#Line
+See <PRM 1, page 74=>PRM-1:74>.

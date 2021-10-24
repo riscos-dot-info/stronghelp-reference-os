@@ -1,0 +1,14 @@
+Printer driver numbers
+#Parent PDriver_
+Number	Printer
+#Line
+0	PostScript
+1	Epson FX80 (or compatible)
+2	HP LaserJet  (or compatible)
+3	Integrex ColourJet
+4	FAX modem
+5	Direct driver laser
+6	Caspel graphics language
+# What?
+7	PDumper interface
+99	Ace Computing Epson JX/Star LC10 driver or PaintJet driver

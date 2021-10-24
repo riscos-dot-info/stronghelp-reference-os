@@ -1,0 +1,3 @@
+ColourTrans fixed point values
+#Parent ColourTrans_
+Values passed as fixed point numbers have the point between bits 15 and 16, so 1 is &10000, 0.01 is around &28F and 0.1 is around &1999.

@@ -1,0 +1,21 @@
+Insert vector (20)
+#Parent vector_index
+=>	R1 =	<buffer number=>Buffer_buffers>, bit 31 set for block insert
+	R9 =	20, &14 (vector number)
+
+	If single byte :
+	R0 =	byte
+<=	R2 corrupt
+	C flag	set if insertion failed
+
+	If block insert :
+	R2 =	pointer to data
+	R3 =	length of data
+<=	R2 =	pointer to data still to insert
+	R3 =	number of bytes left to insert
+	C flag	set if insertion failed
+
+All characters inserted into buffers are sent through this vector.
+If called via <OS_CallAVector> then interrupts must be disabled first.
+#Line
+See <PRM 1, page 82=>PRM-1:82>.

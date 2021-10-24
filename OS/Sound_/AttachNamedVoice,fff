@@ -1,0 +1,11 @@
+Sound_AttachNamedVoice  (&4018A)
+#Parent Sound_
+=>	R0 =	channel number (1-8)
+	R1 =	pointer to voice name (null terminated ASCII)
+
+<=	R0 =	preserved, or 0 for fail
+	R1 =	preserved
+
+See <Sound_AttachVoice> for more details.
+#Line
+See <PRM 4, page 41=>PRM-4:41>.

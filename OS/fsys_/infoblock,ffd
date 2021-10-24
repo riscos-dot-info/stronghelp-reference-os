@@ -1,0 +1,17 @@
+FS information block
+#f
+# The line above MUST be present to allow FSEntry_!root to work
+Offset	Contents
+#Line
+&00	Offset of filing system name
+&04	Offset of filing system startup text, or -1 to use <FSEntry_Func 17=>FSEntry_Func17>
+&08	Offset of routine to open files		<FSEntry_Open>
+&0C	Offset of routine to get bytes		<FSEntry_GetBytes>
+&10	Offset of routine to put bytes		<FSEntry_PutBytes>
+&14	Offset of routine to control open files	<FSEntry_Args>
+&18	Offset of routine to close open files	<FSEntry_Close>
+&1C	Offset of routine to do file operations	<FSEntry_File>
+&20	FS <information word=>fsys_infoword>
+&24	Offset of routine to do FS operations	<FSEntry_Func>
+&28	Offset of routine to do GBPB operations	<FSEntry_GBPB>
+&2C	Extra FS <information word=>fsys_extra_infoword>

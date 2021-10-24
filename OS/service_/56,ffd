@@ -1,0 +1,7 @@
+Service_EconetDying (&56)
+#Parent Service_Index
+=>	R1 =	&56 (reason code)
+
+This service is issued when Econet is about to quit.
+#Line
+See <PRM 2, page 643=>PRM-2:643>

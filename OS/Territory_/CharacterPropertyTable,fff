@@ -1,0 +1,25 @@
+Territory_CharacterPropertyTable  (&43056)
+#Parent Territory_
+=>	R0 =	<territory number=>Territory_numbers>, or -1 for current
+	R1 =	code for required character property table
+<=	R0 =	pointer to character property table
+
+A character property table is a 256 bittable indicating whether or not each
+character in the given territory's alphabet has a particular property.
+
+#Tab
+Code	Meaning when set
+#line
+0	Control code
+1	Uppercase
+2	Lowercase
+3	Alphabetic
+4	Punctuation
+5	White space
+6	Digit
+7	Hex digit
+8	Accent
+9	Flows in same direction as territory write direction
+10	Flows in reverse direction
+#Line
+See <PRM 3, page 826=>PRM-3:826>.

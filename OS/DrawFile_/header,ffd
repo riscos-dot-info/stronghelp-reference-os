@@ -1,0 +1,13 @@
+Drawfile header block
+#Parent DrawFile_Format
+Offset	Len	Contents
+#Line
+0	4	"Draw"
+4	4	Major version, 201 at present
+8	4	Minor version
+12	12	Name of producing program, padded with *spaces*
+# Hey, let's just stress that. It's stupid.
+24	4	x low
+28	4	y low   Bounding box
+32	4	x high
+36	4	y high

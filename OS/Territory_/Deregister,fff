@@ -1,0 +1,7 @@
+Territory_Deregister  (&43042)
+#Parent Territory_
+=>	R0 =	<territory number=>Territory_numbers>
+
+Removes a territory from the list of active territories.
+#Line
+See <PRM 3, page 795=>PRM-3:795>.

@@ -1,0 +1,8 @@
+ResourceFS_RegisterFiles  (&41B40)
+#Parent ResourceFS_
+=>	R0 =	pointer to <resource file block=>ResourceFS_fileblock>
+<=	R0 corrupted
+
+This SWI allows a module to add files to the ResourceFS structure. ResourceFS links the files into Resources:, and then issues <Service_ResourceFSStarting=>service_59> to announce to programs that the ResourceFS structure has changed.
+#Line
+See <PRM 2, page 414=>PRM-2:414>.

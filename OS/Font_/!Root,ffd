@@ -1,0 +1,46 @@
+Font
+#Parent !Root
+#Prefix Font_
+#Table Columns 3
+<ApplyFields>
+<CacheAddr>
+<Caret>
+<CharBBox>
+<ConverttoOS>
+<Converttopoints>
+<CurrentFont>
+<CurrentRGB>
+<DecodeMenu>
+<FindCaret>
+<FindCaretJ>
+<FindField>
+<FindFont>
+<FutureFont>
+<FutureRGB>
+<ListFonts>
+<LookupFont>
+<LoseFont>
+<MakeBitmap>
+<Paint>
+<ReadColourTable>
+<ReadDefn>
+<ReadEncodingFilename>
+<ReadFontMax>
+<ReadFontMetrics>
+<ReadFontPrefix>
+<ReadInfo>
+<ReadScaleFactor>
+<ReadThresholds>
+<ScanString>
+<SetColourTable>
+<SetFont>
+<SetFontColours>
+<SetFontMax>
+<SetPalette>
+<SetScaleFactor>
+<SetThresholds>
+<StringBBox>
+<StringWidth>
+<SwitchOutputToBuffer>
+<UnCacheFile>
+#EndTable

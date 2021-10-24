@@ -1,0 +1,45 @@
+PDumper config block
+#Parent PDumperReason_
+All byte valus are unsigned, all words are signed. String are stored as *byte* offsets to a <string structure=>.string>. An offset of 0 means there is no string. When <PDriver_SetDriver> copies this block it makes <these additions=>PDriver_SetDriverblock>.
+
+Offset	Type	PrintEdit name		Note
+#Line
+12	byte	data length multiplier	 
+13	byte	data length added
+14	byte	dump height
+15	string	page start
+16	string	page end
+17	string	line return
+18	string	line skip
+19	string	line end 1
+20	string	line end 2
+21	string	line end 3
+22	string	zero skip
+23	string	line start 1
+24	string	line start 2
+25	string	line pass 1
+26	string	line pass 1b
+27	string	line pass 2
+28	string	line pass 2b
+29	string	line pass 3
+30	string	line pass 3b
+31	string	line pass 4
+32	string	line pass 4b
+33	string	set lines
+34	byte	(from page height)	line per page
+35	byte	(always 1/6")		leading zeros to leave
+36	word	(from skip resolution)	multiplier from output DPI to skip
+40	word	(from skip resolution)	divider from output DPI to skip
+44	word	(always 1")		short advance for roll paper (pixels)
+48	string	form feed
+49	byte	 			0 (reserved)
+50	byte	 			0 (reserved)
+51	byte	 			0 (reserved)
+52	word	paper x offset
+56	word	paper y offset
+#Subpage string
+String structure
+Offset	Contents
+#Line
+0	length of string
+1	string ({*}un{*}terminated)

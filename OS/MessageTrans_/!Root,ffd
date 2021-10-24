@@ -1,0 +1,14 @@
+MessageTrans
+#Parent !Root
+#Prefix MessageTrans_
+#table columns 3
+<CloseFile>
+<CopyError>
+<EnumerateTokens>
+<ErrorLookup>
+<FileInfo>
+<GSLookup>
+<Lookup>
+<MakeMenus>
+<OpenFile>
+#endtable

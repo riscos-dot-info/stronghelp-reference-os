@@ -1,0 +1,7 @@
+Service_ReAlloctePorts (&48)
+#Parent Service_Index
+=>	R1 =	&48 (reason code)
+
+This service is issued when Econet restarts.
+#Line
+See <PRM 2, page 642=>PRM-2:642>

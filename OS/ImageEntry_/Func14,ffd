@@ -1,0 +1,22 @@
+ImageEntry_Func 14
+#Parent ImageEntry_Func
+=>	R0 =	14 (Read directory entries)
+	R1 =	pointer to (wilcarded) directory name
+	R2 =	pointer to buffer
+	R3 =	number of objects to read
+	R4 =	where to start, 0 for first time
+	R5 =	length of buffer
+	R6 =	<image filing system's handle=>ImageEntry_Func21>
+
+<=	R3 =	number of objects read
+	R4 =	where to continue, or -1 for no more
+
+This call should fill the buffer in R2 with null terminated leaf names of entries in the specified directory, or the current directory if the name is null. The length of the buffer validated depends on which OS_GBPB SWI causes this call:
+
+#Tab
+<OS_GBPB 8=>OS_GBPB8>	11 * R3 bytes
+<OS_GBPB 9=>OS_GBPB9>	R5 bytes
+
+and there is no way to tell which is the case. :-(
+
+Only count leaf names that fit completely into the buffer. Return an error if the cataloged object is not found or a file, but return valid with R3=0, R4\<>1 for buffer overflow or more names to read, R3=0,R4=-1 if the previous call didn't detect the end but you now find that there are no more names.

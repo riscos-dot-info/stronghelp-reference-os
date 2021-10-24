@@ -1,0 +1,45 @@
+FSEntry_Func
+#Parent FSEntry_
+=>	R0 =	<reason code=>.reason>
+	R1 =	pointer to filename
+	others dependant on call
+
+This entry point is called for operations on the filing system in general.
+#
+#Subpage reason
+FSEntry_Func reason codes
+Reason	Meaning
+#Line
+0	<Set current directory (RO2)=>FSEntry_Func0>
+1	<Set library directory (RO2)=>FSEntry_Func1>
+2	<Catalogue directory (*Cat)=>FSEntry_Func2>
+3	<Examine directory (*Ex)=>FSEntry_Func3>
+4	<Catalogue library (*LCat)=>FSEntry_Func4>
+5	<Examine library (*LEx)=>FSEntry_Func5>
+6	<Examine objects (*Info)=>FSEntry_Func6>
+7	<Set FS Options (*Opt)=>FSEntry_Func7>
+8	<Rename object=>FSEntry_Func8>
+9	<Access objects=>FSEntry_Func9>
+10	<Boot from filing system=>FSEntry_func10>
+11	<Read name and boot option=>FSEntry_func11>
+12	<Read CSD and privilege byte=>FSEntry_func12>
+13	<Read library and privilege byte=>FSEntry_func12>
+14	<Read directory entries=>FSEntry_func14>
+15	<Read directory entries and info=>FSEntry_func15>
+16	<Shutdown filing system=>FSEntry_func16>
+17	<Print startup banner=>FSEntry_func17>
+18	<Set directory contexts (never called)=>FSEntry_func18>
+19	<Read directory entries and information=>FSEntry_func19>
+20	<Output full information on objects=>FSEntry_func20>
+23	<Canonicalise special field and disc name=>FSEntry_func23>
+24	<Resolve wildcard=>FSEntry_func24>
+25	<Read defect list=>FSEntry_func25>
+26	<Add a defect=>FSEntry_func26>
+27	<Read boot option=>FSEntry_func27>
+28	<Write boot option=>FSEntry_func28>
+29	<Read used space map=>FSEntry_func29>
+30	<Read free space map=>FSEntry_func30>
+31	<Name image=>FSEntry_func31>
+32	<Stamp image=>FSEntry_func32>
+33	<Get usage of offset=>FSEntry_func33>
+34	<Notification of changed directory=>FSEntry_func34>

@@ -1,0 +1,10 @@
+Service_International 5
+#Parent Service_43
+=>	R1 =	&43 (reason code)
+	R2 =	5 (sub reason code)
+	R3 =	<alphabet number=>Territory_anumbers>
+	R4 =	ASCII code of first character
+	R5 =	ASCII code of last character
+<=	R1 =	0 to claim, preserved otherwise
+
+This service defines a range of characters for a given alphabet number. If a module provides additional countries it should check this service - if the number matches one provided by the module it should claim this service, and call <VDU 23=>VDU:23,32-255> to define any characters in the range (R4-R5) inclusive defined in this alphabet.

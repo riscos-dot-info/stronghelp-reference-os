@@ -1,0 +1,10 @@
+OS_FSControl 33  (&29)
+#Parent OS_FSControl
+=>	R0 =	33 (Convert FS number to name)
+	R1 =	<filing system number=>fsys_ident>
+	R2 =	pointer to buffer
+	R3 =	length of buffer
+
+<=	Registers preserved
+
+This call converts the filing system number passed in R1 to a filing system name. The name is stored in the buffer pointed to by R2, and is null-terminated. If FileSwitch does not know of the filing system number you pass it, a null string is returned.

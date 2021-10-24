@@ -1,0 +1,12 @@
+FileCore_DiscOp 2
+#Parent FileCore_DiscOp
+=>	R1 =	2 + <flags=>FileCore_DiscOp_flags>
+	R2 =	<disc address=>FileCore_discaddress>
+	R3 =	pointer to block to write from
+	R4 =	size to write
+	
+<=	R2 =	next disc address
+	R3 =	next free address
+	R4 =	unwritten bytes
+
+This call is used to write sectors to disc.

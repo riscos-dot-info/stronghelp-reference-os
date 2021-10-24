@@ -1,0 +1,17 @@
+UpCall reasons
+#Parent OS_Upcall
+R0	Description
+#Line
+1	<Media not present=>os_upcall1>
+2	<Media not known=>os_upcall2>
+3	<Misc file changed information=>os_upcall3>
+4	<Media search end=>os_upcall4>
+6	<Taskwindow Sleep=>os_upcall6>
+7	<PipeFS sleep no more=>os_upcall7>
+8	<Buffer filling=>os_upcall8>
+9	<Buffer emptying=>os_upcall9>
+A	<DeviceFS stream created=>os_upcall10>
+B	<DeviceFS stream closed=>os_upcall11>
+C	<Freeway=>InetSWIs:upcall_Freeway>
+100	<New application=>os_upcall256>
+101	<Move memory request=>os_upcall257>

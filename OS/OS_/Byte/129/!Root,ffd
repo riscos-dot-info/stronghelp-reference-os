@@ -1,0 +1,14 @@
+OS_Byte 129  Get buffer/mouse status
+#Parent OS_ByteIndex
+{f25}Þ{f}	R0 =	129 (&81)
+		R1,R2	vary depending upon operation
+#line;tab
+This call provides four distinct operations, distinguished by the values in *both* R1 and R2. These operations are:
+#wrap off
+{f24}g{f}	<To read a key within a time limit=>OS_Byte129a>
+{f24}g{f}	<To read the OS version identifier=>OS_Byte129b>
+{f24}g{f}	<To scan the keyboard for a range of keys=>OS_Byte129c>
+{f24}g{f}	<To scan the keyboard for a single key=>OS_Byte129d>
+#wrap
+#Line
+See <PRM 1, page 870=>PRM-1:870>

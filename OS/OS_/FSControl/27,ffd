@@ -1,0 +1,11 @@
+OS_FSControl 27  (&29)
+#Parent OS_FSControl
+=>	R0 =	27 (Wipe objects)
+	R1 =	pointer to wildcarded filename of files to wipe
+	R3 =	<flags=>OS_FSControlFlags>
+	R4 =	<start load=>fsys_loadexec>
+	R5 =	<start exec=>fsys_loadexec>
+	R6 =	<end load=>fsys_loadexec>
+	R7 =	<end exec=>fsys_loadexec>
+
+This SWI allows you to wipe files as in the {fCode}*Wipe{f} command.

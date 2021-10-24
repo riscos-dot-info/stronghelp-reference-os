@@ -1,0 +1,12 @@
+PDumperReason_AbortJob (6)
+#Parent PDumperReason_
+=>	R0 =	pointer to job private word
+	R1 =	output file handle
+	R2 =	<strip type=>PDumper_striptypes>
+	R3 =	0 for end of page, else end of document
+	R11 =	6 (reason code)
+	R12 =	private word
+
+This is called at the end of each page, and at the end of the job. If an error occurs during printing this will be called as "end of job".
+
+<PDumper_TidyJob> may be useful here.

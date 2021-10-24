@@ -1,0 +1,7 @@
+Service_ProtocolDying (&83)
+#Parent Service_Index
+=>	R1 = &83 (reason code)
+
+This service is part of the AUN Driver Control Interface.
+#Line
+See <PRM 2, page 644=>PRM-2:644>

@@ -1,0 +1,12 @@
+OS_FSControl 52 (&29)
+#Parent OS_FSControl
+=>	R0 =	52 (Find object at offset within image file)
+	R1 =	pointer to name of image file or disc
+	R2 =	offset into image file or disc
+	R3 =	pointer to buffer to receive object name
+	R4 =	buffer length
+<=	Buffer contains object name (may be corrupted if not found)
+	R2 =	<Object type=>OS_FSControl52object>
+	Other registers preserved
+
+This call scans a disc or image file to find which object occupies a particular disc address. This is useful in trying to recover files, or map out a defect.

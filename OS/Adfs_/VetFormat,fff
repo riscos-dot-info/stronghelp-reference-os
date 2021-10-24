@@ -1,0 +1,16 @@
+ADFS_VetFormat  (&40246)
+#Parent ADFS_
+=>	R0 =	pointer to disc format structure to be vetted
+	R1 =	parameters previously passed by ADFS in R2 to 'Image'FS_DiscFormat (ie drive number)
+
+<=	R0,R1 preserved
+
+This call vets the given disc format structure for achievability with the available hardware. ADFS updates the disc format structures with values that it can actually achieve with the hardware available. For example the only fill byte value available when formatting might be 0, but the requested value may be &4E, hence 0 would be filled in as the fill byte value.
+
+If ADFS can't sensibly downgrade the parameters structure, it will generate an error.
+
+This call is typically made by FileCore or by the image filing system 'ImageFS', in response to ADFS calling <FileCore_DiscFormat> or 'ImageFS'_DiscFormat (eg <DOSFS_DiscFormat>) respectively.
+
+The value in R1 is used to pass enough information on the hardware on which the format is to take place for the disc format structure to be vetted. ADFS uses the drive number for this; other handlers of discs may pass different information if they implement a VetFormat SWI.
+#Line
+See <PRM 2, page 287=>PRM-2:287>.

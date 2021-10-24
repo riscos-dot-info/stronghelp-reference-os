@@ -1,0 +1,11 @@
+CD_ConvertToMSF  (&41265)
+#Parent CD_
+=>	R0 =	<addressing mode=>CD_addresses>
+	R1 =	address in given mode
+	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+
+<=	R1 =	returned 32-bit value of MSF address
+
+This SWI converts a block address to MSF, in the form &00MMSSFF.
+ 
+Note: Before use with PlayAudio should have a value added to it to allow for lead-in time of audio CDs. (e.g. 512=2 sec).

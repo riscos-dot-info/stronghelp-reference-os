@@ -1,0 +1,7 @@
+OS_Byte CMOS 136
+Bit(s)	Meaning
+#Line
+0,1	Floppy 0 step rate
+2,3	Floppy 1 step rate
+4,5	Floppy 2 step rate
+6,7	Floppy 3 step rate

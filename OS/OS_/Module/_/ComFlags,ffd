@@ -1,0 +1,12 @@
+Module command flags
+#Parent OS_Module_ComTable
+Bits	Contents
+#Line
+0-7	Minimum number of parameters
+8-15	GSTrans map for first 8 parameters (if bit is 1 parameter will be passed through GSTrans)
+16-23	Maximum number of parameters
+24-27	reserved, should be zero
+28	Help and Syntax text should be looked up as tokens in the Messages file
+29	Help offset is <code to call=>OS_Module_ComHelpCode> to return help text
+30	Command is a configuration option (will be matched in *Status and *Configure parameters)
+31	Command is a filing system command (will be matched after 'normal' commands)

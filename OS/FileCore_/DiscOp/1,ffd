@@ -1,0 +1,13 @@
+FileCore_DiscOp 1
+#Parent FileCore_DiscOp
+=>	R1 =	1 + <flags=>FileCore_DiscOp_flags>
+	R2 =	<disc address=>FileCore_discaddress>
+	R3 =	pointer to block to read into
+	R4 =	size
+
+<=	R2 =	next disc address
+	R3 =	next free address
+	R4 =	unread
+
+This call will read sectors from disc.
+Note: For RISC OS 3.6, the value in R2 will be rounded down to be sector aligned.

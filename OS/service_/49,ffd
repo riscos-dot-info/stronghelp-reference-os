@@ -1,0 +1,21 @@
+Service_StartWimp (&49)
+#Parent Service_index
+=>	R1 =	&49 (reason code)
+<=	R0 & R1 preserved to pass on else
+	R0 =	pointer to command to start module
+	R1 =	0 (to claim service)
+
+This service is issued by the Wimp to start up resident module tasks by passing the returned command to <Wimp_StartTask=>Wimp:Wimp_StartTask>. Module tasks which wish to start should claim this service, passing their start command in R0. The Wimp will re-issue this service until no more modules claim it.
+
+Filer module tasks should wait for <Service_StartFiler=>Service_4B> instead. 
+
+To prevent infinite loops if an error occurs in starting a task, modules should:
+
+1	set their taskhandle to 0 on <initialise=>OS_Module_init>, <Service_Reset=>Service_27> or <Service_StartedWimp=>Service_4A>
+2	only claim this service if their taskhandle is zero ({/}i.e.{/} they are not already running, and not attempting to re-start)
+3	set their taskhandle to a flag value (-1) when they claim this service
+4a	set their taskhandle based on the return result of <Wimp_Initialise=>Wimp:Wimp_Initialise> if their command is called
+4b	or set their taskhandle back to 0 on <Service_StartedWimp=>Service_4A> (failed to initialise)
+5	set their taskhandle back to 0 when they quit using <Wimp_CloseDown=>Wimp:Wimp_CloseDown>
+#Line
+See <PRM 3, page 70=>PRM-3:70>

@@ -1,0 +1,16 @@
+Module SWI decoding code
+=>	R0 =	any number less than 0 for text->number
+	 	0-63 for number->text
+	R1 =	pointer to control-terminated string for text->number
+	 	pointer to output buffer for number->text
+	R2 =	offset within output buffer to place the text at for number->text
+	R3 =	size of buffer for number->text
+	R12 =	pointer to private word
+	R13 =	Supervisor stack
+	R14 =	Return address
+
+<=	R0 =	SWI number AND 63 if SWI recognised, \<0 otherwise for text->number
+	R2 =	length of text, for number->text (RISC OS will write "\\0" here)
+	unused registers should be preserved
+
+This entry is used as a alternative method of finding SWI numbers from names and vice versa. This code does not need to be re-entrant.

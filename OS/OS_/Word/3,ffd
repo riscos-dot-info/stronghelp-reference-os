@@ -1,0 +1,8 @@
+OS_Word 3
+#Parent OS_Word
+=>	R0 =	3
+	R1 =	pointer to five byte block
+
+This SWI reads the interval timer. On exit, the buffer contains five byte interval timer, with LSB first.
+
+The timer is incremented 100 times a second, and generates <event 5=>event_5> when it reaches 0. (You must enable the event with <OS_Byte 14=>OS_Byte014>). To generate repeating events you would have to reload the timer on each event. The timer is obsolecent - use <OS_CallAfter> or <OS_CallEvery> instead.

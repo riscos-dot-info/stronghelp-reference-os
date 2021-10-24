@@ -1,0 +1,9 @@
+Disc densities
+\#	Meaning
+#line
+0	hard disc
+1	single density (125 Kbps FM)
+2	double density (250 Kbps FM)
+3	double+ density (300 Kbps FM) (ie higher rotation speed DD)
+4	quad density (500 Kbps FM)
+8	octal density (1000 Kbps FM)

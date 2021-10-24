@@ -1,0 +1,7 @@
+Service_TerritoryManagerLoaded (&64)
+#Parent Service_Index
+=>	R1 =	&64 (reason code)
+
+This service is issued when the territory manager starts, to indicate that territory modules should register themselves with <Territory_Register>.
+#Line
+See <PRM 3, page 790=>PRM-3:790>

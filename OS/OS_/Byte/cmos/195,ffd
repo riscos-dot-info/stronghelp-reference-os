@@ -1,0 +1,11 @@
+OS_Byte CMOS 195
+Bit(s)	Meaning
+#Line
+0	Use BootNet
+1	Dynamic station
+2	CMOS reset last reset
+3	Power save enabled
+4	Auto select Wimp mode
+5	Disable processor cache
+6	Disable broadcast loader
+7	Enable hourglass colour changing by broadcast loader

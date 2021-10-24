@@ -1,0 +1,32 @@
+OS_Byte 247  Alter Break key actions
+#Parent OS_ByteIndex
+=>	R0 =	247 (&F7)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	value before being overwritten
+	R2 corrupted
+                                                  
+This call reads and changes the result of pressing Break. The value byte alters Break and modifiers of it as follows:
+
+#Tab
+Bits	Key combination
+#Line
+0,1	Break
+2,3	Shift Break
+4,5	Ctrl Break
+6,7	Ctrl Shift Break
+
+Each two bit numbers can mean one of these:
+
+Value	Meaning
+#Line
+00	Act as reset
+01	Act as escape key
+10	No effect
+11	undefined
+
+The default is %00000001, so Break causes an escape condition, together with Shift and/or Ctrl it acts like the reset button. Please note that this SWI also alters the CMOS when writing a new status.
+#Line
+See <PRM 1, page 902=>PRM-1:902>

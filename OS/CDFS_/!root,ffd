@@ -1,0 +1,15 @@
+CDFS_
+#Parent !Root
+#Prefix CDFS_
+#spriteFile cddisc
+#SPRITE 0,f CDDISC
+#indent 7
+<ConvertDriveToDevice> 
+SetBufferSize        
+GetBufferSize        
+<SetNumberOfDrives>
+<GetNumberOfDrives>
+<GiveFileType>
+DescribeDisc
+<WhereIsFile>
+<Truncation>

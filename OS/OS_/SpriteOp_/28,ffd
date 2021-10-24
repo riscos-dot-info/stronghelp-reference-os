@@ -1,0 +1,10 @@
+Put sprite (28)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<28, &1C=>os_spriteop_reason2> (Put sprite)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+	R5 =	<Plot action=>os_spriteop_action>
+
+This plots the sprite with its bottom left hand corner at the graphics cursor. It uses the plot action specified by R5.
+#Line
+See <PRM 1, page 779=>PRM-1:779>

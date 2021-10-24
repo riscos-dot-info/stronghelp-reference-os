@@ -1,0 +1,21 @@
+OS_Byte 181  Read/Write serial input interpretation status
+#Parent OS_ByteIndex
+=>	R0 =	181 (&B5)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	status before being overwritten
+	R2 =	NoIgnore state (see <OS_Byte 182=>OS_Byte182>)
+                                                  
+This call reads or sets the state of serial interpretation
+
+Status	Meaining
+#Line
+0	Characters read from the serial buffer are given the same interpretation as those read from the keyboard buffer:
+		è	Current escape character generates an escape condition
+		è	Function keys are expanded
+		è	<Escape=>event_6> and <character entering buffer=>event_2> events are generated
+1 (default)	No keyboard interpretation is performed
+#Line
+See <PRM 2, page 449=>PRM-2:449>

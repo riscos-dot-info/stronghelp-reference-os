@@ -1,0 +1,5 @@
+ResourceFS
+#Parent !Root
+#Prefix ResourceFS_
+<DeregisterFiles>
+<RegisterFiles>

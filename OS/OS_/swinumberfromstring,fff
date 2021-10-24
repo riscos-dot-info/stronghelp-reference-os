@@ -1,0 +1,17 @@
+OS_SWINumberFromString  (&39)
+#Parent OS_
+=>	R1 =	pointer to name, control terminated
+
+<=	R0 =	SWI number
+	R1 =	preserved
+
+This call converts a SWI name string to a SWI number. An error is given if the SWI name is not recognized.
+
+#tab
+The conversion is as follows:
+	A leading X is stripped. If present, it will cause &20000 to be added to the number returned (bit 17).
+	System names are checked for. Note that the conversion of SWIs isn't very bidirectional: the name OS_WriteI+" " can be produced, but only OS_WriteI is recognized.
+	Modules are scanned. If the module prefix matches the one given, and the suffix to the name is a number, then that number is added to the module's SWI 'chunk' base, and the sum returned. For example, Wimp_&23 returns &400E3, as the Wimp's chunk number is &400C0.
+	If the suffix is a name, and this can be matched by the module, the appropriate number is returned. For example, <Wimp_Poll=>Wimp:Wimp_Poll> returns &400C7.
+#Line
+See <PRM 1, page 461=>PRM-1:461>.

@@ -1,0 +1,7 @@
+Service_PreReset (&45)
+#Parent Service_Index
+=>	R1 =	&45 (reason code)
+
+This service is issued when Break is released, just before a software generated reset occurs. This allows expansion card software to reset devices, as there is no hardware reset signal on the expansion card bus.
+#Line
+See <PRM 4, page 134=>PRM-4:134>

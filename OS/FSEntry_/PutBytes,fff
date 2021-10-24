@@ -1,0 +1,9 @@
+FSEntry_PutBytes
+#Parent FSEntry_
+=>	R1 =	internal handle returned by <FSEntry_Open>
+	others dependant on buffering
+
+This is called to wrote data from a file. There are two forms of the call used, depending on whether the filing system uses system buffered files or not :
+#Indent 2
+è	<FSEntry_PutBytes=>FSEntry_PutBytesB> (buffered)
+è	<FSEntry_PutBytes=>FSEntry_PutBytesU> (unbuffered)

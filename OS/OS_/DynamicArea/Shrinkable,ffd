@@ -1,0 +1,6 @@
+Shrinkable Dynamic Areas
+Shrinkable areas are <created=>OS_dynamicarea0> with bit 9 of r4 set. They may be shrunk by the kernel when free memory is about to be exhausted. Shrinkable areas must have a handler routine. A new handler reason code is used for Shrinkable areas: <TestShrink=>OS_DynamicareaHandler4>.
+
+{*}Efficiency and Shrinkable areas{*}
+
+Shrinkable areas should be used sparingly due to the load on the kernel whenever free memory must be calculated (e.g. for every <Wimp_SlotSize=>Wimp:Wimp_SlotSize> call).

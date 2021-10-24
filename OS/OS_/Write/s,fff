@@ -1,0 +1,8 @@
+OS_WriteS  (&01)
+#Parent OS_
+This SWI writes the null terminated string following this SWI in memory using <OS_WriteC>. It uses the value in R14 to find the string, and updates R14 to point after string.
+This SWI can not be conditionally executed [unless the string you wish to write out also happens to be valid ARM code for the condition failed case :-) ].
+# Gerph> Ok, I'd like to see someone write a piece of code that actually did
+#        something useful using a conditional OS_WriteS. Any takers ?
+#Line
+See <PRM 1, page 503=>PRM-1:503>.

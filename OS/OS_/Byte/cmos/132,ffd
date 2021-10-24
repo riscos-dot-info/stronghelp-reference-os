@@ -1,0 +1,31 @@
+OS_Byte CMOS 132
+Bit(s)	Meaning
+#Line
+0-4	<Dump format=>.dump>
+5	Tube expansion card enabled
+6,7	Tube expansion podule
+
+Post RISC OS 3.5, bits 5-7 change their meaning:
+7	Quality bit (do interpolation to maximise quality)
+5,6	16-Bit sound control, on VIDC20 machines including Risc PC.
+	0	no 16-bit sound output, use standard mu-law (default)
+	1	DAC clock is slave: 11.2896MHz ext clock: standard VIDC20 rates or 44.1 KHz × 4/(4..45) can be used (as on ESP sound card).
+	2	DAC clock is slave: no ext clock: standard VIDC20 rates only
+	3	DAC clock is master: ext clock must be used for 16-bit sound (suitable sound clock driver must be installed)
+#Subpage dump
+Dump format
+Bit(s)	Meaning
+#Line
+0,1	<Invalid character format=>.invalid>
+2	Treat top bit characters as valid
+3	AND characters with &7F in *Dump
+4	Tabs expand to 8 spaces
+#Subpage invalid
+Invalid character codes
+#Wrap off
+Value	Meaning for invalid characters
+#Line
+0	GSTrans format
+1	Dots
+2	Decimal in \<>'s
+3	Hexadecimal in \<>'s

@@ -1,0 +1,5 @@
+ADFS_LockIDE  (&40251)
+#Parent ADFS_
+=>	R0 =	flag, b0 set to lock, clear to unlock
+
+This is used to lock the IDE bus.

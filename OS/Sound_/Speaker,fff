@@ -1,0 +1,14 @@
+Sound_Speaker  (&40143)
+#Parent Sound_
+=>	R0 =	new state:
+	 	  0 for no change (read state)
+	 	  1 for OFF
+	 	  2 for ON
+
+<=	R0 =	previous state:
+	 	  1 for OFF
+	 	  2 for ON
+
+This SWI is used to enable or disable the internal speaker(s). The default state is stored within <CMOS byte 148=>OS_ByteCMOS148>.
+#Line
+See <PRM 4, page 23=>PRM-4:23>.

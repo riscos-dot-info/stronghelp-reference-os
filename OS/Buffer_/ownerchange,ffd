@@ -1,0 +1,7 @@
+Buffer owner change routine
+#Parent Buffer_LinkDevice
+=>	R0 =	buffer handle
+	R8 =	private word
+	R12 =	workspace
+
+On entry processor may be in any state (mode, interrupts). On exit you must restore everything, unless you wish to return an error (in R0, V set). This routine is called whenever a buffer's owner is changing - {/}i.e.{/} removing/deregistering the buffer, a call to <Buffer_LinkDevice> for this buffer, or killing the buffer manager.

@@ -1,0 +1,7 @@
+Start of bar event
+#Parent event_index
+=>	R0 =	12 (event number)
+	R1 =	2
+	R2 =	0
+
+This event is generated when the sound beat counter is reset. In future R2 may contain the invocation number of the task causing the event.

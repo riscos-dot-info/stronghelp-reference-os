@@ -1,0 +1,15 @@
+OS_FSControl 38  (&29)
+#Parent OS_FSControl
+=>	R0 =	38 (Extract filetype from file information)
+	R1 =	pointer to pathname
+	R2 =	<load address=>fsys_loadexec>
+	R3 =	<exec address=>fsys_loadexec>
+	R4 =	length
+	R5 =	<Attributes=>fsys_objattr>
+	R6 =	<Object type=>fsys_objtype>
+<=	R2 =	<File type=>FileTypes:!Root> or
+	 	-1	untyped
+	 	&1000	directory
+	 	&2000	application
+
+Supply the relevant information on entry and this call will return the file type of the object.

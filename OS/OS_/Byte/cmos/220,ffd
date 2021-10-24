@@ -1,0 +1,9 @@
+OS_Byte CMOS 220
+Bit(s)	Meaning
+#Line
+0-2	Alarm format
+3	Alarm confirm deletions
+4	Alarm auto save after changes
+5	Alarm keep to working week
+6	Alarm silent unless urgent
+7	DST active

@@ -1,0 +1,25 @@
+FSEntry_Args
+#Parent FSEntry_
+#Wrap off
+=>	R0 =	<reason code=>.reason>
+	R1 =	internal file handle returned by <FSEntry_Open>
+	others dependant on call
+#Wrap
+
+This entry point is called when control operations are performed on open files.
+#
+#Subpage reason
+FSEntry_Args reason codes
+Reason	Meaning
+#Line
+0	<Read sequential pointer=>FSEntry_Args0>
+1	<Write sequential pointer=>FSEntry_Args1>
+2	<Read file extent=>FSEntry_Args2>
+3	<Write file extent=>FSEntry_Args3>
+4	<Read size allocated to file=>FSEntry_Args4>
+5	<Check for EOF=>FSEntry_Args5>
+6	<Flush modified data=>FSEntry_Args6>
+7	<Ensure file size=>FSEntry_Args7>
+8	<Zero pad file=>FSEntry_Args8>
+9	<Read datastamp=>FSEntry_Args9>
+10	<Update image stamp=>FSEntry_Args10>

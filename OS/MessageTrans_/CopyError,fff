@@ -1,0 +1,8 @@
+MessageTrans_CopyError  (&41508)
+#Parent MessageTrans_
+=>	R0 =	pointer to <error block=>swi_errorblock>
+<=	R0 =	pointer to error buffer used
+
+This call copies an error message to one of the internal buffers used by <MessageTrans_ErrorLookup>.
+#Line
+See <PRM 3, page 757=>PRM-3:757>.

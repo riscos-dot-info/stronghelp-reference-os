@@ -1,0 +1,30 @@
+CD_EnquireTrack  (&4124E)
+#Parent CD_
+=>	R0 =	0 to return track range, or a valid track number
+	R1 =	pointer to <5-byte buffer=>.buffer>
+	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+
+<=	R0,R1,R7 preserved
+
+Returns track range, or info on a specified track.
+#Subpage buffer
+CDFS Track block
+Track range (R0 = 0):
+#Indent 2
+Offset	Contents
+#Line
+0	number of first track on CD
+1	number of last track on CD
+2-4	corrupt
+#indent
+
+Specfic track (R0 = track):
+#Indent 2
+Offset	Contents
+#Line
+0	logical block address of track start (ie mode 0 addr)
+4	bits as follows :
+	 b0	=0 audio	=1 data
+	 b1	=0 4-channel	=1 2-channel
+	 b2-7	reserved 
+#indent

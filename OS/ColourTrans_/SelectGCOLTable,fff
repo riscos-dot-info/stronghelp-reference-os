@@ -1,0 +1,24 @@
+ColourTrans_SelectGCOLTable  (&40741)
+#Parent ColourTrans_
+=>	R0 =	-1 for current mode
+	 	(if \< 256)	source mode
+	 	(if >= 256)	pointer to sprite area
+	R1 =	(if R0 \< 256)	source palette pointer or -1 for current palette
+	 	(if R0 >= 256)	pointer to sprite name/sprite in area pointed to by R0 (as specified by R5)
+	R2 =	destination mode, or -1 for current mode
+	R3 =	destination palette pointer, or -1 for current palette, or 0 for default for the mode
+	R4 =	pointer to <buffer=>colourtrans_pixtrans>
+	R5 =	<flags=>.flags> (only used if R0 >= 256)
+
+<=	All registers preserved
+
+This call, given a source mode and palette, a destination mode and palette, and a buffer, sets up a list of GCOLs in the buffer. The values can subsequently be used by passing them to <GCOL=>BASIC:GCOL> and <TINT=>BASIC:TINT>.
+#Line
+See <PRM 3, page 348=>PRM-3:348>.
+#Subpage flags
+Select Table flags
+Bit	Meaning if set
+#Line
+0	R1 = pointer to sprite (otherwise sprite name)
+1	use current palette if sprite doesn't have one (otherwise default palette)
+other bits reserved (must be zero)

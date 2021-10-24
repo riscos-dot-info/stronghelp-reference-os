@@ -1,0 +1,27 @@
+OS_GBPB  11
+#Parent OS_GBPB
+=>	R0 =	11
+	R1 =	pointer to directory name
+	R2 =	pointer to <buffer=>OS_GBPB11buffer>
+	R3 =	number of objects to read
+	R4 =	where to start, 0 for first time
+	R5 =	length of buffer
+	R6 =	wildcarded name to match (if 0 "*" is used)
+<=	R3 =	number of objects read
+	R4 =	where to continue, or -1 for no more
+	C flag is clear if R3 = 0, else it is set
+
+This SWI reads entries from the specified directory. The correct code structure to call this SWI is:
+
+repeat
+\{
+  call OS_GBPB 11
+  if (R3 \<> 0)
+  \{
+    process buffer
+  }
+} until (R4 \<> -1)
+
+as it is legal to return R3 = 0 before the end of the directory. Also, do *not* assume anything about the value in R4.
+
+Note: The PRM lies when it says that if R6 points to an empty string "*" is used.

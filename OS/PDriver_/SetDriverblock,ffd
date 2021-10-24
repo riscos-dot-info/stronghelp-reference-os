@@ -1,0 +1,21 @@
+PDriver_SetDriver R4 block
+#Parent PDriver_SetDriver
+PDriverDP copies the 256 byte <config block=>PDumper_configblock> into a 272 byte buffer, and overwrites certain locations as follows:
+
+Offset	Size	Meaning
+#Line
+0	byte	height in dots of a strip	(PrintEdit's DumpDepth)
+1	byte	vertical interlace passes	(PrintEdit's x interlace)
+2	byte	horizontal interlace passes	(PrintEdit's y interlace)
+3	byte	passes over line - 1
+4	byte	<strip type=>PDumper_striptypes>
+5	byte	output depth:		1 => monchrome
+	 	 			8 => greyscale or colour
+6	byte	passes per strip	0 => 1 pass
+7	byte	number of current pass
+8	word	PDriverDP's copy of dumper's private word
+
+256	word	dumper <configuration word=>PDumper_configword> (passed in R5)
+260	word	pointer to active dumper
+264	word	<printer dumper number=>PDumper_numbers>
+268	word	left margin (pixels)

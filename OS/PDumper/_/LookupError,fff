@@ -1,0 +1,10 @@
+PDumper_LookupError  (&41B08)
+#Parent PDumper_
+=>	R0 =	pointer to <error block=>MessageTrans_errorblock> with message token
+	R1 =	0, or string to substitute for "%0"
+<=	R0 =	resolved error block
+	V set
+
+This SWI looks up the token passed in via R0 in Resources:$.Resources.PDrivers.Messages, and performs <MessageTrans=>MessageTrans_> style substitution. This saves the overhead of MessageTrans routines within the printer dumper.
+#Line
+See <PRM 3, page 693=>PRM-3:693>.

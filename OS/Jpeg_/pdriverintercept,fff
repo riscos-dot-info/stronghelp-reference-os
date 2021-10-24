@@ -1,0 +1,15 @@
+JPEG_PDriverIntercept  (&49986)
+#Parent JPEG_
+=>	R0 =	<flags=>.flags>
+<=	R0 =	previous intercept state
+
+This SWI is used by the printer drivers to request that SpriteExtend passes on all calls to JPEG plotting SWIs by itself calling PDriver_JPEGSWI.  When SpriteExtend passes on these calls, it ignores them itself.
+
+You must not make this call from your own applications.
+#subpage flags
+JPEG_PDriverIntercept flags
+bit	meaning if set
+#Line
+0	pass on plotting calls
+1	use translation tables
+others  reserved (must be 0)

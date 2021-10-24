@@ -1,0 +1,13 @@
+OS_Byte 212  Read/Write bell volume
+#Parent OS_ByteIndex
+=>	R0 =	212 (&D4)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	previous volume
+	R2 =	bell frequency (see <OS_Byte 213=>OS_Byte213>)
+                                                  
+This call reads or sets the bell volume, the range 128 (loud) - 248 (soft). The default volume is &90 for {fCode}<*Configure Loud=>StarCmds:Loud>{f}, &D0 for {fCode}<*Configure Quiet=>StarCmds:Quiet>{f}.
+#Line
+See <PRM 1, page 662=>PRM-1:662>

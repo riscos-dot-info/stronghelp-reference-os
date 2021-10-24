@@ -1,0 +1,9 @@
+PDriver_AbortJob  (&80149)
+#Parent PDriver_
+=>	R0 =	file handle of job
+
+This SWI ends a print job abnormally, and will result in *no* further output ({/}e.g.{/} no PostScript trailer comments). It should be called immediately you recieve an error while printing, before you attempt to display the error message.
+
+If the job in R0 is the currently active job then there will be no current print job after this call - hence plotting calls will no longer be intercepted. Otherwise there is no effect on the current job (if any) and the state of plotting interception.
+#Line
+See <PRM 3, page 619=>PRM-3:619>.

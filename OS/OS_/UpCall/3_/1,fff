@@ -1,0 +1,8 @@
+OS_UpCall 3 subreason code 1
+Writing catalogue information
+#line
+{f25}Þ{f}	R1 !	filename
+	R2 =	load address
+	R3 =	execution address
+	R5 =	attributes
+	R6 !	special field (or 0)

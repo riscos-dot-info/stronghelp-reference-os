@@ -1,0 +1,12 @@
+OS_Module 18
+#Parent OS_Module
+=>	R0 =	18
+	R1 =	name[%instantiation]
+
+<=	R1 =	module number
+	R2 =	instantiation number
+	R3 =	<module code=>os_module_format>
+	R4 =	private word
+	R5 =	postfix string
+
+This SWI returns information about a named module. The name used, is the same as you see with <*Modules>

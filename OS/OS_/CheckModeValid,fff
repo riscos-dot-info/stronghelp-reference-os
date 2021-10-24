@@ -1,0 +1,14 @@
+OS_CheckModeValid  (&3F)
+#Parent !Root
+=>	R0 =	<mode number=>VDU:22a> to check
+
+<=	if C flag unset mode is valid and R0 preserved
+	if C flag set the mode is invalid
+	R0 =	-1 if mode is non-existent
+	 	-2 if not enough memory
+	R1 =	mode that would be used
+	 	-2 if unable to select alternative mode
+
+This finds out, whether you may change to a given mode or its invalid, either because the monitor type forbids it, R1 then is the alternative mode, or there's not enough memory in this case R1 = -2.
+#Line
+See <PRM 1, page 715=>PRM-1:715>.

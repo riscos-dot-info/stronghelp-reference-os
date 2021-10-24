@@ -1,0 +1,13 @@
+Buffer_LinkDevice  (&42945)
+#Parent Buffer_
+=>	R0 =	buffer handle
+	R1 =	pointer to <wake up routine=>buffer_wakeup>
+	 	0 for none
+	R2 =	pointer to <owner change routine=>buffer_ownerchange>
+	 	0 if the owner cannot be changed
+	R3 =	routines' private word (R8)
+	R4 =	workspace (R12)
+
+This SWI links routines to a buffer.
+#Line
+See <PRM 4, page 94=>PRM-4:94>.

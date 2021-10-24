@@ -1,0 +1,14 @@
+Font_SetPalette  (&40093)
+#Parent Font_
+=>	R1 =	background logical colour
+	R2 =	foreground logical colour
+	R3 =	foreground colour offset
+	R4 =	background physical colour
+	R5 =	foreground physical colour
+	R6 =	&65757254 ('True') to use 24 bit colours in R4,R5
+
+This SWI is used to set the anti-alias palette. You should *not* use this if you're running in the desktop. Instead you should use <Wimp_SetFontColours=>Wimp:Wimp_SetFontColours> or <ColourTrans_SetFontColours>.
+
+On RISC OS 3 and later, if R6 != 'True' then R4,R5 have their top nibbles copied to their bottom nibbles, so &12345678 becomes &11335500.
+#Line
+See <PRM 3, page 455=>PRM-3:455>.

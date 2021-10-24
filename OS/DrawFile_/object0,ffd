@@ -1,0 +1,9 @@
+Font table object (0)
+#Parent drawfile_format
+This object has no bounding box. It should only appear once, and before any text objects.
+
+It consists of a series of :
+#Indent 2
+1 byte font number
+zero terminated fontname
+0 to 3 zeros to pad to word

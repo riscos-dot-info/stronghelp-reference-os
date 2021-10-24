@@ -1,0 +1,8 @@
+Service_ResourceFSDying (&5A)
+#Parent Service_Index
+=>	R1 =	&5A
+<=	R1 =	&5A (do not claim)
+
+This service is issued by ResourceFS just before it removes itself as a filing system.
+#Line
+See <PRM 2, page 412=>PRM-2:412>

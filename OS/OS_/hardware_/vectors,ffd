@@ -1,0 +1,13 @@
+Hardware vectors
+Address	Contents
+#Line
+&00	Reset (produces 'Branch through zero')
+&04	Undefined instruction
+&08	<SWI=>os_hardware_swiv>
+&0C	Prefetch abort
+&10	Data abort
+&14	Address exception
+&18	Interrupt (IRQ)
+&1C	Fast interrupt (FIQ)*
+
+* {/}Note:{/} This consists of the actual code and not a branch instruction.

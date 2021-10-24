@@ -1,0 +1,9 @@
+OS_FSControl 31  (&29)
+#Parent OS_FSControl
+=>	R0 =	31 (Filetype name to number)
+	R1 =	pointer to filetype string
+<=	R2 =	<filetype=>Filetypes:!Root>
+
+This SWI converts string to a filetype number. The string is control terminated, and can be a filetype-name ("Obey"), or a filetype-number ("FEB").
+
+An error is generated if conversion impossible.

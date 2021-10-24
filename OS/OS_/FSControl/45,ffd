@@ -1,0 +1,5 @@
+OS_FSControl 45  (&29)
+=>	R0 =	45 (Unset Library)
+<=	Registers preserved
+
+Unsets the Library Directory

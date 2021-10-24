@@ -1,0 +1,7 @@
+OS_DynamicArea 5 (&66)
+#Parent OS_DynamicArea
+{*}Return total free space{*}
+{f25}Þ{f}	R0 =	5
+	R1 =	number of single <Shrinkable=>OS_Dynamicareashrinkable> area to exclude from sum, or -1 to include all Shrinkable areas
+
+{f25}Ü{f}	R2 =	total amount of free space (bytes)

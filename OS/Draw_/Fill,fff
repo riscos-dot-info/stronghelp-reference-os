@@ -1,0 +1,15 @@
+Draw_Fill  (&40702)
+#Parent Draw_
+=>	R0 =	pointer to <path block=>draw_pathblock>
+	R1 =	<fill style=>draw_fillstyle>, or 0 for <default=>.fill>
+	R2 =	pointer to <transformation matrix=>draw_transform>, or 0 for default
+	R3 =	flatness, or 0 for default
+
+<=	R0 corrupt
+
+This SWI is used to draw a path and fill its inside.
+#Line
+See <PRM 3, page 538=>PRM-3:538>.
+#SubPage fill
+Draw_Fill default fill style
+0 gives the default <fill style=>draw_fillstyle> - &30 - fill to boundary centre, non-zero rule.

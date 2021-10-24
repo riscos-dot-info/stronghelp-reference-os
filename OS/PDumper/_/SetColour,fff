@@ -1,0 +1,19 @@
+PDumper_SetColour  (&41B06)
+#Parent PDumper_
+=>	R0 =	pointer to anchor word
+	R1 =	physical colour (&BBGGRR00)
+	R2 =	<strip information=>.strip>
+	R4 =	<halftoning information=>PDumper_halftoning>
+<=	R3 =	strip type dependant colour number
+
+This SWI processes the colour setting, scans the chain for any palette block, returning a suitable colour number.
+
+Note: R3 may become corrupted on error.
+#Line
+See <PRM 3, page 689=>PRM-3:689>.
+#Subpage strip
+PDumper strip information 
+Bits	Meaning
+#Line
+0-7	<strip type=>PDumper_striptypes>
+24-31	pass number

@@ -1,0 +1,6 @@
+Tagged object (7)
+#Parent drawfile_format
+This consists of
+è	1 word of tag id (allocated from acorn)
+è	an object
+è	optional extra data (word aligned)

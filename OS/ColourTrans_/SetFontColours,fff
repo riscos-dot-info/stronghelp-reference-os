@@ -1,0 +1,15 @@
+ColourTrans_SetFontColours  (&4074F)
+#Parent ColourTrans_
+=>	R0 =	font handle, or 0 for current font
+	R1 =	background <palette entry=>colourtrans_paletteentry>
+	R2 =	foreground <palette entry=>colourtrans_paletteentry>
+	R3 =	maximum foreground colour offset (0-14)
+
+<=	R0 preserved
+	R1 =	background logical colour (preserved if in 256 colour mode)
+	R2 =	foreground logical colour
+	R3 =	maximum sensible colour offset (up to R3 on entry)
+
+This call, given a pair of palette entries, finds the best available range of anti-aliasing colours in the current palette, and sets the font manager to use these colours.
+#Line
+See <PRM 3, page 367=>PRM-3:367>.

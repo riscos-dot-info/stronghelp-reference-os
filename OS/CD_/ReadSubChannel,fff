@@ -1,0 +1,18 @@
+CD_ReadSubChannel  (&4124F)
+#Parent CD_
+=>	R0 =	&40
+# Gerph> Theo says 'why?'
+	R1 =	pointer to <subchannel block=>.block>
+	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+<=	All registers preserved
+#Subpage block
+CD_ReadSubChannel block
+Offset	Contents
+#Line
+0	LBA address of current head position relative to track start
+4	Absolute LBA address
+8	Audio flags:
+	  bit 0: 0=audio, 1=data
+	  bit 1: 0=4 channel, 1=2 channel
+9	Track number
+10	Index number

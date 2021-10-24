@@ -1,0 +1,8 @@
+Service_ShutDown (&7E)
+#Parent Service_index
+=>	R1 =	&7E (reason code)
+<=	R1 =	0 to claim, preserved otherwise
+
+This service is issued by the Task manager when it is asked to perform a shutdown - if it is claimed then the shutdown will not happen. RamFS will claim this service to warn the user of a non-empty RAM disc.
+#Line
+See <PRM 3, page 81=>PRM-3:81>

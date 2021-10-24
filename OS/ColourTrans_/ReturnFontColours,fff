@@ -1,0 +1,21 @@
+ColourTrans_ReturnFontColours  (&4074E)
+#Parent ColourTrans_
+=>	R0 =	font handle, or 0 for current font
+	R1 =	backgorund <palette entry=>colourtrans_paletteentry>
+	R2 =	foreground <palette entry=>colourtrans_paletteentry>
+	R3 =	maximum foreground colour offset (0-14)
+
+<=	R0 preserved
+	R1 =	background logical colour (preserved if in 256 colour mode)
+	R2 =	foreground logical colour
+	R3 =	maximum sensible colour offset (up to R3 on entry)
+
+This call, given background and foreground colours and the number of anti-aliasing colours desired, finds the maximum range of colour that can sensibly be used. So for the given palette entries, it finds the best fit in the current palette, and then inspects the other available colours to deduce the maximum possible amount of anti-aliasing up to the limit in R3.
+
+If anti-aliasing is desirable, you should set R3=14 on entry; otherwise set R3=0 for monochrome.
+
+The values in R1-R3 on exit are suitable for passing to <Font_SetFontColours>, or including in a font string in a command (18) sequence.
+
+In 256 colour modes you can only set 16 colours before previously returned information becomes invalid - this is the source of the 16 colourchange limitation in <Font_Paint>.
+#Line
+See <PRM 3, page 365=>PRM-3:365>.

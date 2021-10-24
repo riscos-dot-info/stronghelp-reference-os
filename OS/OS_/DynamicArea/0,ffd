@@ -1,0 +1,21 @@
+OS_DynamicArea 0  (&66)
+#Parent OS_DynamicArea
+*Creates a new dynamic area*
+{f25}Þ{f}	R0 =	0
+	R1 =	-1 (or new area number 128-255; reserved for Acorn)
+	R2 =	initial size of area, in bytes
+	R3 =	-1 (or base of area; reserved for Acorn)
+	R4 =	<area flags=>OS_DynamicAreaFlags>
+	R5 =	maximum size of area, in bytes <(-1 for unlimited)=>.deprec>
+	R6 =	<handler routine=>OS_DynamicAreaHandler>
+	R7 =	pointer to workspace for handler, or -1 for base of area
+	R8 =	pointer to name of area {/}[limited to 31-chars in RO3.8+]{/}
+{f25}Ü{f}	R0, R2, R4, R6-R8 = preserved
+	R1 =	allocated area number
+	R3 =	base of area
+	R5 =	maximum size of area
+#line
+This call creates a new dynamic area. Area numbers allocated are greater than or equal to 256.
+#subpage deprec
+Ill advised setting of r5 as -1
+Setting r5 as -1 is *strongly* deprecated due to the problems of address space exhaustion on large memory machines. Also, a maximum size of -1 has no valid meaning for <Sparse=>OS_dynamicareaSparse> areas. New code should set the smallest maximum size that is sensible for the use required. Because old code may often use -1, a clamp may be set via <OS_DynamicArea 8=>OS_dynamicarea8> to limit the problem.

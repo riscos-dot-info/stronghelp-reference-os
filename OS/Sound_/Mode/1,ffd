@@ -1,0 +1,9 @@
+Sound_Mode 1  (&40144)
+#Parent Sound_
+=>	R0 =	1 (reason code)
+	R1 =	0 to disable oversampling
+	 	1 to enable oversampling
+<=	R0 preserved
+	R1 =	old state
+
+This SWI changes the oversampling flag. When oversampling, double the sample rate will be used and values between those returned from the handler will be averaged to interpollate between the two.

@@ -1,0 +1,10 @@
+Monitor types
+#Parent Service_46
+Value	Meaning
+#Line
+0	Standard
+1	Multi-frequency
+2	Hi-res mono
+3	VGA
+4	Super VGA
+5	LCD

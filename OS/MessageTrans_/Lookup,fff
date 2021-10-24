@@ -1,0 +1,19 @@
+MessageTrans_Lookup  (&41502)
+#Parent MessageTrans_
+=>	R0 =	pointer to 4-word data structure, or 0 for global messages
+	R1 =	pointer to <Token=>messagetrans_token>
+	R2 =	pointer to buffer
+	R3 =	buffer size
+	R4 =	pointer to parameter 0, or 0 if none
+	R5 =	pointer to parameter 1, or 0 if none
+	R6 =	pointer to parameter 2, or 0 if none
+	R7 =	pointer to parameter 3, or 0 if none
+<=	R1 =	pointer to token-terminator
+	R2 =	result string
+	R3 =	size of result
+
+This SWI looks up the token on the message file. If R2 = 0 on entry, you'll get a pointer to a read-only string, and no parameter substitution will be done, also the string will be terminated by 10, and not 0. If R2 != 0, %0 to %3 in the string will be replaced by the strings in R4 to R7. Prior to this call, you must have called <MessageTrans_OpenFile>.
+
+If the token is not found in the message file specified, it will be searched for in the global message file. If R2 = 0 on entry and the file is not stored in your own workspace, then the pointer will become invalid after <Service_MessageFileClosed=>service_5E> is issued - your application must trap this service call so it can re-read pointers.
+#Line
+See <PRM 3, page 745=>PRM-3:745>.

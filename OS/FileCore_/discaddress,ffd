@@ -1,0 +1,5 @@
+FileCore_DiscOp address
+Bit	Meaning
+#Line
+0-28	Disc address offset in bytes
+29-31	Drive number

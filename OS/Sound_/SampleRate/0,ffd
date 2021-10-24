@@ -1,0 +1,7 @@
+Sound_SampleRate 0  (&40146)
+#Parent Sound_
+=>	R0 =	0 (reason code)
+<=	R0 preserved
+	R1 =	number of rates available
+
+This SWI reads the number of sample rates supported by the sound system. These will be indexed from 1 to the number returned in future calls to <Sound_SampleRate>.

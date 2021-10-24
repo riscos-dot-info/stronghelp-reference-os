@@ -1,0 +1,11 @@
+Draw
+#Parent !Root
+#Prefix Draw_
+<Fill>
+<FlattenPath>
+<ProcessPath>
+<Stroke>
+<StrokePath>
+<TransformPath>
+#line
+<File format=>DrawFile_format>

@@ -1,0 +1,8 @@
+Sound_SampleRate 1  (&40146)
+#Parent Sound_
+=>	R0 =	1 (reason code)
+<=	R0 preserved
+	R1 =	current sample rate index
+	R2 =	current sample rate value (frequency * 1024)
+
+This SWI reads the current sample rate index.

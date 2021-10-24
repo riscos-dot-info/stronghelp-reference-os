@@ -1,0 +1,9 @@
+FileCore_MiscOp 7
+#Parent FileCore_MiscOp
+=>	R0 =	7 (reason code)
+	R1 =	drive number
+	R8 =	pointer to FileCore instance private word
+
+<=	R0 =	flag, b0 set: drive locked
+
+This call read flags about the drive.

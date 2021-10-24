@@ -1,0 +1,12 @@
+OS_Byte 241  Read/Write user flag
+#Parent OS_ByteIndex
+=>	R0 =	241 (&F1)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	value before being overwritten
+	R2 corrupted
+                                                  
+This call alters a location that is unused by the OS, which can be used to pass results between programs. The location may be also be written with <OS_Byte 1=>OS_Byte001>. System variables now provide a much better way of passing results.
+# Gerph> This does not appear to be in the PRMs

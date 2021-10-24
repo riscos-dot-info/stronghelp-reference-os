@@ -1,0 +1,8 @@
+Service_PDriverChanged (&7F)
+#Parent Service_Index
+=>	R1 =	&7F (reason code)
+	R2 =	<printer driver number=>PDriver_printernumbers>
+
+This service is issued when PDriver changes the currently selected printer. !Printers will issue <Message_SetPrinter=>Wimp:Msg_80147> when the printer is changed.
+#Line
+See <PRM 3, page 601=>PRM-3:601>

@@ -1,0 +1,12 @@
+OS_Module 8
+=>	R0 =	8 (reason code)
+
+<=	R0 preserved
+
+This gives each instantiation of all modules in turn, from the end of the module list and working backwards, a non-fatal finalisation call.
+
+Instantiations of a particular module are killed in the order they appear on the current instantiation list.
+
+If it succeeds, it collects the RMA together into one large unfragmented block and reinitialises the modules again. Any private words containing pointer to workspace blocks in RMA are relocated.
+
+{*}Note:{*} This is NOT recommended.

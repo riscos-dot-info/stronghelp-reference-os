@@ -1,0 +1,5 @@
+Sound_QRemove  (&401C2)
+#Parent Sound_
+This SWI is for the exclusive use of the scheduler.
+#Line
+See <PRM 4, page 47=>PRM-4:47>.

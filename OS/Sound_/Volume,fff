@@ -1,0 +1,8 @@
+Sound_Volume  (&40180)
+#Parent Sound_
+=>	R0 =	sound volume (1-127) (0 to read setting)
+<=	R0 =	previous volume
+
+This call sets the maximum overall volume of the Sound system. A change of 16 will halve or double the volume. The command also scales the internal volume lookup tables of the Voice Generators, which involves a large amount of calculation behind the scenes. The default volume is stored within <CMOS byte 148=>OS_ByteCMOS148>.
+#Line
+See <PRM 4, page 25=>PRM-4:25>.

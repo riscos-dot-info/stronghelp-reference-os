@@ -1,0 +1,8 @@
+DeviceFS_Deregister  (&42741)
+#Parent DeviceFS_
+=>	R0 =	device driver's handle
+<=	R0 preserved
+
+This SWI deregisters a device driver and associated devices, and removes any system variables associated with the device, except {fCode}DeviceFS${/}Device{/}$options{f}.
+#Line
+See <PRM 2, page 431=>PRM-2:431>.

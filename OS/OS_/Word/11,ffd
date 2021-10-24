@@ -1,0 +1,14 @@
+OS_Word 11
+#Parent OS_Word
+=>	R0 =	11
+	R1 =	buffer:
+	 	 0 logical colour to read
+
+<=	R0 preserved
+	R1 preserved:
+	 1	physical colour associated with the logical colour
+	 2	red component
+	 3	green component
+	 4	blue component
+
+Preferable is <OS_ReadPalette>.

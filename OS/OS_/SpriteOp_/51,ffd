@@ -1,0 +1,11 @@
+Paint character scaled (51)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<51, &33=>os_spriteop_reason2> (Paint character scaled)
+	R1 =	Character code
+	R3 =	x coordinate
+	R4 =	y coordinate
+	R6 =	<Scale factors=>os_scalefactors>, or 0 for 1:1 scaling
+
+This plots the specified colour in the forground colour (using the given scaling factors) with the bottom left corner at the given coordinates. 
+#Line
+See <PRM 1, page 802=>PRM-1:802>

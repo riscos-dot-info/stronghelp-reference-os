@@ -1,0 +1,122 @@
+Service calls
+#Parent OS_
+# Gerph> I'd like to take this opportunity to thank Nicholas Clark for a
+#        large number of these service definitions.
+#Table Columns 3
+00 Call claimed
+04 <Unknown command=>Service_04>
+06 <Error has occured=>Service_06>
+07 <Unknown OS_Byte=>Service_07>
+08 <Unknown OS_Word=>Service_08>
+09 <*Help called=>Service_09>
+0B <Release FIQ=>Service_0B>
+0C <Claim FIQ=>Service_0C>
+11 <MEMC remap warning=>Service_11>
+12 <Start a FS (old)=>Service_12>
+18 Service_PostHelp
+27 <Post-Reset=>Service_27>
+28 <Unknown *Configure=>Service_28>
+29 <Unknown *Status=>Service_29>
+2A <New application=>Service_2A>
+40 <FS re-init=>Service_40>
+41 <PDriver print=>Service_41>
+42 <Lookup filetype=>Service_42>
+43 <International service=>Service_43>
+44 <Keyboard handler=>Service_44>
+45 <Pre-Reset=>Service_45>
+46 <Post-mode change=>Service_46>
+47 <Claim background FIQ=>Service_47>
+48 <Econet reallocate ports=>Service_48>
+49 <Start Wimp=>Service_49>
+4A <Started Wimp=>Service_4A>
+4B <Start Filer=>Service_4B>
+4C <Started Filer=>Service_4C>
+4D <Pre-mode change=>Service_4D>
+4E <Memory Moved=>Service_4E>
+4F <Filer is dying=>Service_4F>
+50 <Mode extension=>Service_50>
+51 <Mode translation=>Service_51>
+52 <Mouse trap=>Service_52>
+53 <Wimp_Closedown=>Service_53>
+54 <Sound=>Service_54>
+55 <*Logon/*Bye (NetFS)=>Service_55>
+56 <Econet dying=>Service_56>
+57 <Wimp ReportError=>Service_57>
+58 Service_MIDI
+59 <ResourceFS started=>Service_59>
+5A <ResourceFS dying=>Service_5A>
+5B <ColourTrans calibration changed=>Service_5B>
+5C <Wimp SaveDesktop=>Service_5C>
+5D <Wimp Palette=>Service_5D>
+5E <MessageTrans file closed=>Service_5E>
+5F <NetFS dying=>Service_5F>
+60 <ResourceFS starting=>Service_60>
+61 Service_NFS
+62 Service_DBoxModuleDying
+63 Service_DBoxModuleStarting
+64 <TerritoryManager Loaded=>Service_64>
+65 <PDriver starting=>Service_65>
+66 <PDumper starting=>Service_66>
+67 <PDumper dying=>Service_67>
+68 <Closing files=>Service_68>
+69 <Identify disc=>Service_69>
+6A <Filer enumerate formats=>Service_6A>
+6B <Identify format=>Service_6B>
+6C <Display format help=>Service_6C>
+6D <Validate Address=>Service_6D>
+6E <Fonts changed=>Service_6e>
+6F <Buffer starting=>Service_6f>
+70 <DeviceFS starting=>Service_70>
+71 <DeviceFS dying=>Service_71>
+72 <Switching output to sprite=>Service_72>
+73 <PostInit=>Service_73>
+75 <Territory started=>Service_75>
+76 <Monitor lead translation=>Service_76>
+77 Service_SerialDevice
+78 <PDriver GetMessages=>Service_78>
+79 <DeviceFS device dead=>Service_79>
+7A <Screen blanked=>Service_7A>
+7B <Screen restored=>Service_7B>
+7C <Desktop welcome message=>Service_7C>
+7D <Disc dismounted=>Service_7D>
+7E <Shutdown=>Service_7E>
+7F <PDriver changed=>Service_7F>
+80 <Shutdown Complete=>Service_80>
+81 <DeviceFS close request=>Service_81>
+82 <ColourTrans invalidate cache=>Service_82>
+83 <Econet protocol dying=>Service_83>
+84 <Econet find network driver=>Service_84>
+85 <Wimp SpritesMoved=>Service_85>
+86 <Wimp RegisterFilters=>Service_86>
+87 <FilterManager installed=>Service_87>
+88 <FilterManager dying=>Service_88>
+89 <Mode changing=>Service_89>
+8A <Portable=>Service_8A>
+8B <Network driver status (DCI2)=>Service_8B>
+8C <Syntax error=>Service_8C>
+8D <Enumerate screen modes=>Service_8D>
+8E Pages unsafe
+90 Created dynamic area
+91 Remove dynamic area
+92 Renumber dynamic area
+93 <Colour picker loaded=>Wimp:Service_93>
+95 <Freeway starting=>InetSWIs:Service_95>
+96 <Freeway terminating=>InetSWIs:Service_96>
+9B <Enumerate network drivers=>InetSWIs:Service_9B>
+9D <DCI driver status=>InetSWIs:Service_9D>
+9E <DCI frame type freed=>InetSWIs:Service_9E>
+9F DCI Protocol status
+A7 <URI operation=>InetSWIs:Service_A7>
+B7 <UKCompression=>Service_B7>
+B9 <ModulePreInit=>Service_B9>
+10800 <ADFSPodule=>Service_10800>
+10801 <ADFSPodule IDE=>Service_10801>
+10802 <ADFSPodule IDE dying=>Service_10802>
+400C0 Wimp ErrorStarting
+400C1 Wimp ErrorButtonPressed
+400C2 Wimp ErrorEnding
+45540 <DrawFile ObjectRender=>Service_45540>
+45541 <DrawFile DeclareFonts=>Service_45541>
+80380 <SoundFile Identify Sound File=>Service_80380>
+#EndTable
+# 74 Service_BASICHelp

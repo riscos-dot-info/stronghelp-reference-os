@@ -1,0 +1,19 @@
+Special characters
+#Parent Font_Paint
+Some control characters have special meanings :
+
+ 9	dx low,middle,high		:	Move print position horizontally
+ 11	dy low,middle,high		:	Move print position vertically
+ 17	colour				:	Set font colour (+&80 for background)
+ 18	background, foreground, offset	:	See <Font_SetFontColours>
+ 19	background, foreground, offset	:	See <ColourTrans_SetFontColours>
+ 21	comment string, control terminated
+ 25	underline pos, thickness	:	Turn underline on/off
+ 26	font handle			:	See <Font_SetFont>
+ 27	ALIGN; a, b, c, d, e, f		:	Full <transform matrix=>font_matrix>
+ 28	ALIGN; a, b, c, d		:	<Transform matrix=>font_matrix> with 0 translation
+ 
+#tab align right
+9,11	The 3 byte print-position is given in millipoints
+25	pos & thickness is given in 1/256th of current font size - pos is sign extended, thickness is unsigned. Set thickness to 0 to turn off underlining. 
+27,28	The code must be followed by 0-3 null bytes to word align the <transformation matrix=>Font_matrix>.

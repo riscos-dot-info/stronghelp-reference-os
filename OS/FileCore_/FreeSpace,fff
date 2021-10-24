@@ -1,0 +1,12 @@
+FileCore_FreeSpace  (&40543)
+#Parent FileCore_
+=>	R0 =	pointer to disc specifier (name, or :0, etc)
+	R8 =	pointer to FileCore instance private word
+
+<=	R0 =	total free space on disc
+	R1 =	size of largest object that can be created
+
+This call returns the total free space on given disc, and the largest object that can be created on it. Values of &7FFFFFFF should be treated as 'at least 2Gb' - you might represent this casually as 'lots'.
+# Gerph> Or as Pine writes it '(BIG!)'
+#Line
+See <PRM 2, page 229=>PRM-2:229>.

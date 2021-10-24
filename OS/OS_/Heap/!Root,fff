@@ -1,0 +1,15 @@
+OS_Heap  (&1D)
+#Parent OS_
+=>	R0 =	Reason :
+	 	  0	<Initialise heap=>OS_Heap0>
+	 	  1	<Describe heap=>OS_Heap1>
+	 	  2	<Claim block=>OS_Heap2>
+	 	  3	<Release block=>OS_Heap3>
+	 	  4	<Change size of block=>OS_Heap4>
+	 	  5	<Change size of heap=>OS_Heap5>
+	 	  6	<Read block size=>OS_Heap6>
+	R1 =	Pointer to heap
+
+These calls control a user heap block and the allocation of space with in it. Note that no code is provided to compact the heap.
+#Line
+See <PRM 1, page 368=>PRM-1:368>.

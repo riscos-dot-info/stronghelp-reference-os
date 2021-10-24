@@ -1,0 +1,5 @@
+OS_FSControl 19  (&29)
+#Parent OS_FSControl
+=>	R0 =	19 (Restore current FS)
+
+This SWI sets the temporary filing system back to the current filing system. It is called by <OS_CLI> after a command has run, and by the kernel before the <error handler=>OS_handlers_error> is called.

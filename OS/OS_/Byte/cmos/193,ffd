@@ -1,0 +1,10 @@
+OS_Byte CMOS 193
+Bit(s)	Meaning
+#Line
+0	Protection Peek
+1	Protection Poke
+2	Protection JSR
+3	Protection UserRPC
+4	Protection OSProc
+5	Protection Halt
+6	Protection GetRegs

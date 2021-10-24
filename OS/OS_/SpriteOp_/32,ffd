@@ -1,0 +1,10 @@
+Delete row (32)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<32, &20=>os_spriteop_reason2> (Delete row)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+	R3 =	Row number
+
+This deletes the given row, moving all rows above it down a row. The bottom row is number 0.
+#Line
+See <PRM 1, page 783=>PRM-1:783>

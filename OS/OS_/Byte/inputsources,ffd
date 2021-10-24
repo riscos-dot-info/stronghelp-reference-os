@@ -1,0 +1,8 @@
+Input sources
+#Parent OS_Byte177
+Number	Stream
+#Line
+#Wrap off
+0	Keyboard buffer
+1	Serial input buffer
+#Wrap

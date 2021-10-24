@@ -1,0 +1,13 @@
+Font_StringBBox  (&40097)
+#Parent Font_
+=>	R1 =	pointer to string
+<=	R1 =	min x, inclusive
+	R2 =	min y, inclusive
+	R3 =	max x, exclusive
+	R4 =	max y, exclusive
+
+This SWI returns the smallest possible box that covers the whole string. The box is returned in millipoints. This call can not, due to rounding and anti-aliasing, be used to find size on screen.
+
+In RISC OS 3 and later it is recommended to use <Font_ScanString>.
+#Line
+See <PRM 3, page 463=>PRM-3:463>.

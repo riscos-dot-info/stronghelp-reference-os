@@ -1,0 +1,40 @@
+Territory
+#Prefix Territory_
+#Parent !Root
+#Table Columns 2
+<Alphabet>
+<AlphabetIdentifier>
+<AlphabetNumberToName>
+<CharacterPropertyTable>
+<Collate>
+<ControlTable>
+<ConvertDateAndTime>
+<ConvertOrdinalsToTime>
+<ConvertStandardDate>
+<ConvertStandardDateAndTime>
+<ConvertStandardTime>
+<ConvertTextToString>
+<ConvertTimeStringToOrdinals>
+<ConvertTimeToOrdinals>
+<ConvertTimeToUTCOrdinals>
+<Deregister>
+<Exists>
+<LowerCaseTable>
+<NameToNumber>
+<Number>
+<NumberToName>
+<PlainTable>
+<ReadCalendarInformation>
+<ReadCurrentTimeZone>
+<ReadSymbols>
+<ReadTimeZones>
+<Register>
+<RepresentationTable>
+<SelectAlphabet>
+<SelectKeyboardHandler>
+<SetTime>
+<TransformString>
+<UpperCaseTable>
+<ValueTable>
+<WriteDirection>
+#EndTable

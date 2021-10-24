@@ -1,0 +1,10 @@
+Insert row (31)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<31, &1F=>os_spriteop_reason2> (Insert row)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+	R3 =	Row number
+
+This inserts a row of transparant colour 0 pixels at the given row, moving all rows above it up a row. The bottom row is number 0.
+#Line
+See <PRM 1, page 782=>PRM-1:782>

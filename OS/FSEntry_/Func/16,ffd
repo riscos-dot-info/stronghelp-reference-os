@@ -1,0 +1,5 @@
+FSEntry_Func 16
+#Parent FSEntry_Func
+=>	R0 =	16 (Shutdown)
+
+This call requests the filesystem to shut down ({/}e.g.{/} park disc heads). All files will have been closed before this call is made.

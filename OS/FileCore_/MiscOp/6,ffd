@@ -1,0 +1,8 @@
+FileCore_MiscOp 6
+#Parent FileCore_MiscOp
+=>	R0 =	6 (reason code)
+	R8 =	pointer to FileCore instance private word
+
+<=	R0 =	pointer to <FileCore_Create> block, with addresses in place of offsets
+
+This call reads the FileCore_Create block used to initialise this filing system.

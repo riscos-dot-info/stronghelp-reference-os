@@ -1,0 +1,6 @@
+OS_ScreenMode 0 (&65) (3.5)
+#Parent OS_ScreenMode
+=>	R0 =	0
+	R1 =	Old style mode number or a <mode specifier block=>Wimp:Wimp_ModeSelect>
+
+This SWI will select a given screen mode, returning an error if the mode is invalid.

@@ -1,0 +1,5 @@
+CDFS_SetNumberOfDrives  (&41E83)
+#Parent CDFS_
+=>	R0 =	number of drives
+
+This SWI configures the number of CD-Rom drives controlled by CDFS.

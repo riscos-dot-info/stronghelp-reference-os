@@ -1,0 +1,27 @@
+ImageEntry_Func
+#Parent ImageEntry_
+=>	R0 =	<reason code=>.reason>
+	R1 =	pointer to filename
+	others dependant on call
+
+This entry point is called for operations on the filing system in general.
+#
+#Subpage reason
+ImageEntry_Func reason codes
+Reason	Meaning
+#Line
+8	<Rename object=>ImageEntry_Func8>
+14	<Read directory entries=>ImageEntry_Func14>
+15	<Read directory entries and info=>ImageEntry_Func15>
+21	<Notification of a new image=>ImageEntry_Func21>
+22	<Notification of image file closing=>ImageEntry_Func22>
+25	<Read defect list=>ImageEntry_Func25>
+26	<Add a defect=>ImageEntry_Func26>
+27	<Read boot option=>ImageEntry_Func27>
+28	<Write boot option=>ImageEntry_Func28>
+29	<Read used space map=>ImageEntry_Func29>
+30	<Read free space map=>ImageEntry_Func30>
+31	<Name image=>ImageEntry_Func31>
+32	<Stamp image=>ImageEntry_Func32>
+
+Other reasons are not used for ImageEntry calls (FSEntry only).

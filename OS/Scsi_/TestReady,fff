@@ -1,0 +1,7 @@
+SCSI_TestReady  (?)
+#Parent SCSI_
+=>	R1 =	drive number
+<=	R0 =	1 if spun down, 2 if spun up
+
+This SWI will check for the 'readiness' of a SCSI drive. If a SCSI disc is not spun up, the first access will give the error 'SCSI disc not ready', and the disc will be spun up.
+# Gerph> Found by experimentation.

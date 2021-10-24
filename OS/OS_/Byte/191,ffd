@@ -1,0 +1,13 @@
+OS_Byte 191  Read/Write serial busy flag
+#Parent OS_ByteIndex
+=>	R0 =	191 (&BF)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	value before being overwritten
+	R2 =	serial port state (see <OS_Byte 192=>OS_Byte192>)
+                                                  
+This call is obsolete - on the BBC/Master 128 the cassette interface and RS423 serial port shared hardware. It performs no useful function under RiscOS.
+#Line
+See <PRM 2, page 451=>PRM-2:451>

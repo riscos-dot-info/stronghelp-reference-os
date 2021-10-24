@@ -1,0 +1,10 @@
+Econet_ExamineReceive  (&40001)
+#Parent Econet_
+=>	R0 =	handle
+<=	R0 =	<status=>econet_statuses>
+
+This SWI reads the status of a receive block. For more information about the block you should use <Econet_ReadReceive>.
+
+This is the receive counterpart of <Econet_PollTransmit>.
+#Line
+See <PRM 2, page 649=>PRM-2:649>.

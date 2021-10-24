@@ -1,0 +1,62 @@
+Territory_ReadSymbols  (&4304E)
+#Parent Territory_
+=>	R0 =	<territory number=>Territory_numbers>, or -1 to use current territory
+	R1 =	reason code
+
+<=	R0 =	requested value
+
+#Tab
+Code	Meaning (strings are null terminated)
+#Line
+0	Pointer to decimal point string
+1	Pointer to thousands separator
+2	Pointer to byte list containing size of each group of digits
+	in formatted non-monetary quantities (least significant first).
+	 	255	no further grouping
+	 	0	repeat last grouping for rest of number
+	 	other	size of current group; next byte contains size
+	 	 	of next more significant grup of digits.
+3	Pointer to international currency symbol
+4	Pointer to local currency symbol
+5	Pointer to monetary decimal point string
+6	Pointer to monetary thousands separator
+7	Pointer to byte list containing size of each group of digits
+	in formatted monetary quantities (least significant first).
+	 	255	no further grouping
+	 	0	repeat last grouping for rest of number
+	 	other	size of current group; next byte contains size
+	 	 	of next more significant grup of digits.
+8	Pointer to positive sign used for monetary quantities
+9	Pointer to negative sign used for monetary quantities
+10	Number of fractional digits to be displayed in a formatted
+	international monetary quantity
+11	Number of fractional digits to be displayed in a formatted
+	monetary quantity
+12	Return for a non-negative formatted monetary quantity
+	 	0 if currency symbol precedes value
+	 	1 if currency symbol follows value
+13	Return for a non-negative formatted monetary quantity
+	 	0 if a space separates currency symbol and value
+	 	1 if symbol and value not separated
+14	Return for a negative formatted monetary quantity
+	 	0 if currency symbol precedes value
+	 	1 if currency symbol follows value
+15	Return for a negative formatted monetary quantity
+	 	0 if a space separates currency symbol and value
+	 	1 if symbol and value not separated
+16	Return for a non-negative formatted monetary quantity
+	 	0 if parentheses surround symbol and value
+	 	1 if the sign string precedes value and symbol
+	 	2 if the sign string follows value and symbol
+	 	3 if the sign string immediately precedes the symbol
+	 	4 if the sign string immediately follows the symbol
+17	Return for a negative formatted monetary quantity
+	 	0 if parentheses surround symbol and value
+	 	1 if the sign string precedes value and symbol
+	 	2 if the sign string follows value and symbol
+	 	3 if the sign string immediately precedes the symbol
+	 	4 if the sign string immediately follows the symbol
+18	Return pointer to list separator
+
+#Line
+See <PRM 3, page 836=>PRM-3:836>.

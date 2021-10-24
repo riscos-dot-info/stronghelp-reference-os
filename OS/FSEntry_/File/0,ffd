@@ -1,0 +1,12 @@
+FSEntry_File 0
+#Parent FSEntry_File
+=>	R0 =	0 (Save file)
+	R1 =	pointer to filename
+	R2 =	<load address=>fsys_loadexec> of file
+	R3 =	<exec address=>fsys_loadexec> of file
+	R4 =	pointer to start of buffer
+	R5 =	pointer to byte after end of buffer
+	R6 =	pointer to special field, or 0 if not present
+<=	R6 =	pointer to leafname for printing *OPT 1 info
+
+This call is made to save a block of memory as a file. The buffer in which R6 exists need not exist for long.

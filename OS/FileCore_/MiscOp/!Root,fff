@@ -1,0 +1,19 @@
+FileCore_MiscOp  (&40549)
+#Parent FileCore_
+=>	R0 =	reason code
+	 	  0	<Mount=>FileCore_MiscOp0>
+	 	  1	<Poll changed=>FileCore_MiscOp1>
+	 	  2	<Lock drive=>FileCore_MiscOp2>
+	 	  3	<Unlock drive=>FileCore_MiscOp3>
+	 	  4	<Poll period=>FileCore_MiscOp4>
+	 	  5	<Eject disc=>FileCore_MiscOp5>
+	 	  6	<Read processed FileCore_Create block=>FileCore_MiscOp6>
+	 	  7	<Read drive flags=>FileCore_MiscOp7>
+
+	R1 =	drive number
+	R2-R5 dependant on reason code
+	R8 =	pointer to FileCore instance private word
+
+This call performs miscellaneous functions for accessing drives depending on the reason code in R0.
+#Line
+See <PRM 2, page 238=>PRM-2:238>.

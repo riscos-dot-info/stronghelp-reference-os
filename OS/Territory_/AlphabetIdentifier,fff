@@ -1,0 +1,7 @@
+Territory_AlphabetIdentifier  (&43053)
+#Parent Territory_
+=>	R0 =	<territory number=>Territory_numbers>, or -1 for current
+
+<=	R0 =	pointer to identifier string for alphabet used
+#Line
+See <PRM 3, page 822=>PRM-3:822>.

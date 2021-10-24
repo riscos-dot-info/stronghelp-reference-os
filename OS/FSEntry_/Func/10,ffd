@@ -1,0 +1,7 @@
+FSEntry_Func 10
+#Parent FSEntry_Func
+=>	R0 =	10 (Boot from filing system)
+
+<=	may not return if it runs an application
+
+This call should boot your filing system.

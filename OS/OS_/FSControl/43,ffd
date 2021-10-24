@@ -1,0 +1,5 @@
+OS_FSControl 43  (&29)
+=>	R0 =	43 (Unset CSD)
+<=	Registers preserved
+
+Unsets the Currently Selected Directory.

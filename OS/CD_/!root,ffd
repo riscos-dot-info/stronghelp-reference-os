@@ -1,0 +1,46 @@
+CD_
+#Parent !Root
+#Prefix CD_
+# Gerph> Many many thanks to Theo Markettos for most of this information,
+#        although ISTR that Eddie Edwards filled in a lot of the gaps
+#table Columns 3
+AudioControl
+AudioLevel
+<AudioPause>
+<AudioStatus>
+<ByteCopy>
+<CheckDrive>
+<CloseDrawer>
+<Control>
+<ConvertToLBA>
+<ConvertToMSF>
+<DiscChanged>
+<DiscHasChanged>
+<DiscUsed>
+<DriveReady>
+<DriveStatus>
+<EjectButton>
+<EnquireAddress>
+<EnquireDataMode>
+<EnquireTrack>
+<GetParameters>
+<Identify>
+<Inquiry>
+<IsDrawerLocked>
+<LastError>
+<OpenDrawer>
+<PlayAudio>
+<PlayTrack>
+<Prefetch>
+<ReadAudio>
+<ReadData>
+<ReadSubChannel>
+<Register>
+<Reset>
+<SeekTo>
+<SetParameters>
+<StopDisc>
+<Supported>
+<Unregister>
+<Version>
+#EndTable

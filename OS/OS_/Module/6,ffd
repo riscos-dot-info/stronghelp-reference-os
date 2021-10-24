@@ -1,0 +1,7 @@
+OS_Module 6
+#Parent OS_Module
+=>	R0 =	6
+	R3 =	size of area
+<=	R2 =	block
+
+This SWI returns an area of free RMA claimed for use.

@@ -1,0 +1,12 @@
+Put sprite at coords  (34)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<34, &22=>OS_spriteop_Reason2> (Put sprite at coords)
+	R1 =	<Sprite area=>OS_SpriteOp_Area>
+	R2 =	Sprite name/pointer
+	R3 =	x
+	R4 =	y
+	R5 =	<action=>OS_SpriteOp_Action>
+
+This SWI plots the sprite specified at the co-ordinates given. Do not use if not in the same mode style (colours/resolution) as the sprite.
+#Line
+See <PRM 1, page 785=>PRM-1:785>

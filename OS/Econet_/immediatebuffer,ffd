@@ -1,0 +1,5 @@
+Econet procedure call argument buffer
+Offset	Meaning
+#Line
+0	Size of buffer
+4	Data

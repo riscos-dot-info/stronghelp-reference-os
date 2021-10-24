@@ -1,0 +1,20 @@
+FSEntry_Func 33
+#Parent FSEntry_Func
+=>	R0 =	33 (Get usage of offset)
+	R1 =	pointer to name of any object on image
+	R2 =	offset into image file or disc
+	R3 =	pointer to buffer to receive object name
+	R4 =	buffer length
+	R6 =	pointer to special field, or 0 if not present
+
+<=	Buffer contains object name (may be corrupted if not found)
+	R2 =	<Object type=>OS_FSControl52object>
+	Other registers preserved
+
+This call scans a disc or image file to find which object occupies a particular disc address, implementing <OS_FSControl 52=>OS_FSControl52>.
+#
+# N> This entry point is only called if bit 23 of the filing system <information word=>fsys_infoword> is set.
+# Gerph> Hmm? Is that not true ?
+# N> Well, I'd've thought it to be true (which is why I left the text in) but
+#    that font of all (accurate) knowledge PRM 2-578 doesn't say so (but does
+#    say so explicitly for FSEntry_Func24). D'oh

@@ -1,0 +1,7 @@
+Territory_SelectAlphabet  (&43046)
+#Parent Territory_
+=>	R0 =	<territory number=>Territory_numbers>, or -1 to use current territory
+	
+Selects the correct alphabet for a given territoty.
+#Line
+See <PRM 3, page 799=>PRM-3:799>.

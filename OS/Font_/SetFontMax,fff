@@ -1,0 +1,16 @@
+Font_SetFontMax  (&4009B)
+#Parent Font_
+=>	R0 =	new FontMax	in bytes
+	R1 =	new FontMax1	in points
+	R2 =	new FontMax2	in points
+	R3 =	new FontMax3	in points
+	R4 =	new FontMax4	in points
+	R5 =	new FontMax5	in points
+	R6 =	0		reserved
+	R7 =	0		reserved
+
+This SWI sets the current FontMax and FontMax1 - FontMax5 (but not the configured values). The values in R1-R5 should be in pixels * 72 * 16 for RISC OS 2.
+# Gerph> This did say pixes. I had the strangest vision of a monitor with
+#        lots of pixies behind the screen painting the picture...
+#Line
+See <PRM 3, page 470=>PRM-3:470>.

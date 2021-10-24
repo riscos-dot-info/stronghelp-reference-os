@@ -1,0 +1,27 @@
+FSEntry_Func 12 / 13
+#Parent FSEntry_Func
+=>	R0 =	12 (Read CSD and privilege byte)
+	 	13 (Read library and privilege byte)
+	R2 =	buffer to write data to
+	R6 =	0, as special field not allowed here
+
+This call should return the current directory name and privilege byte <in this format=>.format> - it is only called by RISC OS 2
+
+Beware - the buffer pointed to will not have been validated with <OS_ValidateAddress> (as FileSwitch does not know how big it should be) - you should be prepared to cope with faulting if writing to invalid memory. If the memory is invalid you should look up the error token 'BadWrt'.
+
+It is unclear how the calling program is to find out how long the buffer should be, short of ensuring that it is at the top of memory so that overruns will cause memory errors.
+#subpage format
+FSEntry_Func 12 / 13 buffer format
+#Wrap off
+Size	Value			Value if CSD / Library unset
+#Wrap
+#Line
+1	0			0
+1	name length byte	5
+/n/	name (not terminated)	"Unset"
+1	privilege byte		0
+
+#tab
+The privilege byte is:
+0	if you own the directory (and hence may create objects in it)
+255	you do not own the directory (to you it is public)

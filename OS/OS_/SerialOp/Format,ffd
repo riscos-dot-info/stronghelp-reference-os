@@ -1,0 +1,22 @@
+Serial data transfer word
+Bit	Access	Value	Meaning
+#line
+0,1	R/W	0	8 bit word
+	 	1	7 bit word
+	 	2	6 bit word
+	 	3	5 bit word
+
+2	R/W	0	1 stop bit
+	 	1	2 stop bits in most cases.
+	 	 	1 stop bit if 8 bit word with parity.
+	 	 	1.5 stop bits if 5 bit word without parity
+
+3	R/W	0	parity disabled.
+	 	1	parity enabled.
+
+4,5	R/W	0	odd  parity
+	 	1	even parity
+	 	2	parity always 1 on TX and ignored on RX
+	 	3	parity always 0 on TX and ignored on RX
+
+6-31	 	 	reserved must be set to zero

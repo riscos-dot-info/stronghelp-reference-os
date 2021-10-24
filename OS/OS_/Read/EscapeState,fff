@@ -1,0 +1,11 @@
+OS_ReadEscapeState  (&2C)
+#Parent OS_
+This sets or clears the carry flag depending on whether the escape key is pressed or not.
+
+Once an escape condition has been detected, (either through this or for example, with <OS_ReadC>), it should be acknowledged with <OS_Byte 126=>OS_Byte126> or cleared using <OS_Byte 124=>OS_Byte124>.
+
+This call is useful if a program is executing in a loop which the user may want to escape from, but isn't performing any input operations which would let it know about the escape.
+
+Note that this may be called from an interrupt routine. However, <OS_Byte 126=>OS_Byte126> may not be, so if an escape is detected under interrupts, the interrupt routine must set a flag which is checked by the foreground task rather than try to acknowledge the escape itself.
+#Line
+See <PRM 1, page 912=>PRM-1:912>.

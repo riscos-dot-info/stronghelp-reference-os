@@ -1,0 +1,10 @@
+Service_UKStatus (&29)
+#Parent Service_index
+=>	R0 =	pointer to command tail, or 0 if none given
+	R1 =	&29 (reason code)
+<=	R0 preserved
+	R1 =	0 to claim (option recognised), preserved otherwise
+
+This service is issued when a *Status command is issued. You should use the <module command table=>OS_Module_ComTable> to trap specific status options in preference to this service.
+#Line
+See <PRM 1, page 261=>PRM-1:261>

@@ -1,0 +1,4 @@
+Group object (6)
+#Parent drawfile_format
+# More faffing with spaces...
+This consists of a 12 byte name (padded with {*}spaces{*}), and then a sequence of objects. These will all lie within the bounding box of this.

@@ -1,0 +1,15 @@
+OS_FSControl 54  (&29)
+#Parent OS_FSControl
+=>	R0 =	54 (Read path of given directory)
+	R1 =	pointer to buffer to hold pathname
+	R2 =	<directory to read=>OS_FSControl53.dirtype>
+	R3 =	pointer to name of filing system
+	R5 =	size of buffer (or 0 to read required size)
+<=	Buffer is filled with pathname
+	R1 =	pointer to rest of path, or 0 if directory is not set
+	R5 =	(buffer length) minus (length of string (with terminator))
+	R6 =	pointer to special field, terminated with null or "," (or 0 for none)
+
+This call reads the path of the specified directory.
+
+*Notes*:	Like other OS_FSControl calls, use this call twice: after the first call (r5 = 0), and on exit r5 = -(bytes needed).

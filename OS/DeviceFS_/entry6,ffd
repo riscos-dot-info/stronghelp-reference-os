@@ -1,0 +1,13 @@
+Device driver Create buffer entry points (6 & 7)
+#Parent DeviceFS_CallDevice
+=>	R0 =	6 (TX buffer) or 7 (RX buffer)
+	R2 =	device driver stream handle
+	R3 =	suggested <buffer flags=>Buffer_flags>
+	R4 =	suggested buffer size (non-zero)
+	R5 =	suggested buffer handle, or -1 to generate unique handle
+	R6 =	suggested buffer threshold (when <halt event=>DeviceFS_entry8> is called)
+<=	R3-R6 modified to driver's requirements
+
+This entry point is called just before the buffer is created, to allow the driver to modify parameters as desired. The suggested buffer flags are those given when the <device was registered=>DeviceFS_devices>. R5 will default to -1 (generate unique handle) but you may specify the number of a buffer to link to.
+#Line
+See <PRM 2, page 602=>PRM-2:602>.

@@ -1,0 +1,14 @@
+Unknown SWI vector (24)
+#parent vector_index
+=>	R0 - R8 =	register parameters for SWI
+# Why not R0 - R8 - is this the OS bug rearing its ugly head?
+	R11 =	SWI number
+#tab
+
+When an SWI is called RISC OS
+1	Checks if the SWI number is \< 512 - if so it calls the appropriate kernel SWI
+2	Checks whether any relocatable module defines that SWI via its SWI table
+3	If no module claims the SWI it is passed to this vector, where it may be claimed
+4	Any SWIs still unrecognised is passed to the unknown SWI handler, set up by <OS_ChangeEnvironment>
+#Line
+See <PRM 1, page 83=>PRM-1:83>.

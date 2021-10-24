@@ -1,0 +1,13 @@
+OS_Byte 194  Read duration of second flash colour
+#Parent OS_ByteIndex
+=>	R0 =	194 (&C2)
+	R1 =	0
+	R2 =	255
+
+<=	R0 =	preserved
+	R1 =	duration (video frames)
+	R2 corrupted
+                                                  
+This call reads the duration of the second flash colour, as set with <OS_Byte 10=>OS_Byte010> or <VDU 23,10=>VDU:23,10>. This call should not be used to write the value - doing so would only change the value in memory, without affecting the hardware.
+#Line
+See <PRM 1, page 659=>PRM-1:659>

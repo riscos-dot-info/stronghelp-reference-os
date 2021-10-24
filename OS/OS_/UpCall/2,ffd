@@ -1,0 +1,15 @@
+Upcall 2 - Media not known
+#Parent OS_UpcallReasons
+=>	R0 =	2
+	R1 =	<FS number=>fsys_ident>
+	R2 =	pointer to media name
+	R3 =	device number
+	R4 =	iteration count
+	R5 =	timeout delay
+	R6 =	pointer to media type
+
+<=	R0 =	0 if changed, -1 if no longer required
+
+This Upcall is called when a media has never been seen before, but has been requested.
+
+#Include OS_UpCall1+2

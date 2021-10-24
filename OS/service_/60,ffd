@@ -1,0 +1,24 @@
+Service_ResourceFSStarting (&60)
+#Parent Service_Index
+=>	R1 =	&60 (reason code)
+	R2 =	address to call
+	R3 =	workspace for ResourceFS
+<=	R1 - R3 preserved (do not claim)
+
+This service is issued by ResourceFS when it (re)initialises. As it is not linked into the module chain at this point, its SWIs cannot be called, so programs should call the code addressed by R2 directly:
+
+#wrap off
+#fCode
+STMFD   sp!, \{r0, lr}
+ADR     r0, files       ; pointer to <resource file block=>ResourceFS_fileblock>
+MOV     lr, pc          ; emulate BL
+MOV     pc, r2          ; call ResourceFS code
+LDMFD   sp!, \{r0, pc}^
+#wrap
+#f
+
+Unlike <ResourceFS_RegisterFiles>, the routine addressed by R2 does not issue <Service_ResourceFSStarted=>service_59> for each block registered. Instead it issues one <Service_ResourceFSStarted=>service_59> after all modules have recieved this service call.
+# yeah. StudleyCaps RuleOK
+# Exactly how many hedgehogs have you been smoking today, sir ?
+#Line
+See <PRM 2, page 413=>PRM-2:413>

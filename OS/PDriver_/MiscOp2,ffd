@@ -1,0 +1,34 @@
+PDriver_MiscOp 2
+#Parent PDriver_MiscOp
+To find size of buffer
+=>	R0 =	2 (reason code)
+	R1 =	0 to return required size of buffer
+	R2 =	0
+	R3 =	header size to add to buffer size
+	R4 =	0 (flags, all reserved)
+
+<=	R1,R3,R4 preserved
+	R2 =	size of buffer + size in R3
+
+To enumerate
+=>	R0 =	2 (reason code)
+	R1 =	pointer to <buffer=>.buffer>
+	R2 =	size of buffer
+	R3 =	previous handle, 0 to start
+	R4 =	0 (flags, all reserved)
+
+<=	R1 =	pointer to first free byte in buffer
+	R2 =	free bytes in buffer
+	R3 =	updated handle (0 means end)
+	R4 preserved
+
+This SWI is used by the Printers application to list the fonts known by the current printer. If there is no current job it is added to a global list, else it is added to a local list for the current job. Each job's list is initialised as a copy of the global list when it is started.
+#Subpage buffer
+PDriver_MiscOp list fonts block
+Offset	Contents
+#Line
+0	pointer to control terminated RISC OS <font name=>Font_identifier>
+4	pointer to printer's native font name (control terminated)
+8	<printer code flags=>PDriver_MiscOp0flags>
+
+The pointed-to strings will become invalid if the relevent font is deleted by a call to <PDriver_MiscOp 1=>PDriver_MiscOp1>.

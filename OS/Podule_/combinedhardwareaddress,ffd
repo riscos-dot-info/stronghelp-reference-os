@@ -1,0 +1,8 @@
+Expansion Card Combined Hardware Address
+#Parent Podule_
+Bits	Meaning
+#Line
+0-11	base address of CMOS RAM (4 bytes)
+12-25	bits 12-25 of base address of expansion card (or extension ROM)
+
+Extension ROMs do not have CMOS RAM allocated. For an expansion card the masked value can be passed to <OS_Byte 161=>OS_Byte161> and <OS_Byte 162=>OS_Byte162>.

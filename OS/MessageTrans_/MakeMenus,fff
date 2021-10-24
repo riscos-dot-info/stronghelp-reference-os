@@ -1,0 +1,13 @@
+MessageTrans_MakeMenus  (&41503)
+#Parent MessageTrans_
+=>	R0 =	pointer to data structure
+	R1 =	<menu definition=>messagetrans_menudef>
+	R2 =	pointer to destination buffer
+	R3 =	Size of buffer
+<=	R1 =	pointer to menu data
+	R2 =	pointer updated to end of data in buffer
+	R3 =	bytes remaining in buffer
+
+This SWI creates a menu structure from a skeleton menu of tokens. If the menu item is writeable and indirected, the corresponding 3 words in the destination buffer should be set to correct values *before* calling this SWI. If the menu item is indirected and not writeable then a pointer into the message file will be stored in the menu structure created. If the message file is held in RMA this pointer (and hence the menu structure) will become invalid after <Service_MessageFileClosed=>service_5E> is issued - your application must trap this service call and delete the menu if it is issued.
+#Line
+See <PRM 3, page 747=>PRM-3:747>.

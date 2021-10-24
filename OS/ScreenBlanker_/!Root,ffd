@@ -1,0 +1,4 @@
+ScreenBlanker
+#Parent !Root
+#Prefix ScreenBlanker_
+<Control>

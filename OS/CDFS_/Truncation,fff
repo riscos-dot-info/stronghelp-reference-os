@@ -1,0 +1,11 @@
+CDFS_Truncation  (&41E88)
+#Parent CDFS_
+=>	R0 =	0 to read, 1 to write
+	R1 =	new value, if writing
+	 	 0	From right
+	 	 1	From left
+	 	 2	None
+	 	 -1	Default
+<=	R1 =	current or previous value
+
+This SWI set the truncation method CDFS applies to filenames.

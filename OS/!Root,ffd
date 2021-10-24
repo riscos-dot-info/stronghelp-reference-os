@@ -1,0 +1,74 @@
+OS SWIs
+#Parent StrongHelp:!Menu
+#Postfix _
+#Table Columns 3
+<ADFS>
+<ATAPI>
+<BasicTrans>
+<Buffer>
+<Cache>
+<CD>
+<CDFS>
+<ColourTrans>
+<ColourPicker=>Wimp:ColourPicker_>
+<Debugger>
+<DeviceFS>
+<DMA>
+<DOSFS>
+<DragASprite=>Wimp:DragASprite_>
+<Draw>
+<DrawFile>
+<Econet>
+<FileCore>
+<FilerAction=>Wimp:FilerAction_>
+<Filter=>Wimp:Filter_>
+<Font>
+<FPEmulator>
+<Free=>Wimp:Free_>
+<FSLock>
+<Hourglass>
+<IIC>
+<Joystick>
+<JPEG>
+<MakePSFont>
+<MessageTrans>
+<NetFS>
+<NetPrint>
+<OS>
+<Parallel>
+<PDriver>
+<PDumper>
+<Podule>
+<Portable>
+<RamFS>
+<ResourceFS>
+<RemotePrinterSupport>
+<SCSI>
+<ScreenBlanker>
+<ScreenModes>
+<SharedCLibrary>
+<Shell>
+<Sound>
+<Squash>
+<Super>
+<TaskManager=>Wimp:TaskManager_>
+<TaskWindow=>Wimp:TaskWindow_>
+<Territory>
+<Wimp=>Wimp:Wimp_>
+#EndTable
+#Line
+#Table Columns 3
+<Error block=>swi_errorblock>
+<Dynamic area caveats=>da>
+<OS_Byte values=>OS_ByteIndex>
+<CMOS RAM bytes=>OS_ByteCMOS>
+<Service Calls=>Service_Index>
+<Vectors=>vector_index>
+<Images=>ImageEntry_>
+<FileSystems=>FSEntry_>
+<Hardware vectors=>os_hardware_vectors>
+<Deprecated calls=>OS_deprecated>
+#EndTable
+#Line
+#align centre
+{/}<Operating System SWIs manual=>about>, v3.07 16-Jun-1999{/}

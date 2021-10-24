@@ -1,0 +1,13 @@
+Module SWI decoding table
+#Parent OS_Module_format
+This is the normal method used to provide names for SWIs. It allows RISC OS to convert SWI number to names, and vice versa. The following is an assembler description of a typical SWI decoding table:
+
+#indent 2;tab fCode,fCode,fCode
+ 	EQUS	"Squash"+CHR$0
+	EQUS	"Compress"+CHR$0
+	EQUS	"Decompress"+CHR$0
+	EQUB	0
+	ALIGN
+#indent
+
+This defines two SWIs, named '<Squash_Compress>' and '<Squash_Decompress>'.  They are assigned values of \<SWI chunk\>+0 and \<SWI chunk\>+1.

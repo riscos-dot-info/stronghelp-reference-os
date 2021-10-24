@@ -1,0 +1,12 @@
+DMA
+#Parent !Root
+#Prefix DMA_
+#Table Columns 2
+RegisterChannel
+DeregisterChannel
+QueueTransfer
+TerminateTransfer
+SuspendTransfer
+ResumeTransfer
+ExamineTransfer
+#EndTable

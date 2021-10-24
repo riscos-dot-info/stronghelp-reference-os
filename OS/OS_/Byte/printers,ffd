@@ -1,0 +1,12 @@
+OS_Byte Printer driver types
+#Parent OS_Byte245
+The value of the printer driver, /n/, selects which {fCode}PrinterType${/}n{/}{f} variable is used as the path of the printer. The default values are:
+
+/n/	Printer			Note
+#Line
+0	Null:			(printer sink)
+1	Parallel device
+2	Serial device
+3	{fCode}PrinterType$3{f}	reserved for user printer driver
+4	Network printer
+5-255	/n/ for {fCode}PrinterType${/}n{/}{f} variable

@@ -1,0 +1,11 @@
+OS_Byte 21  Flush specified buffer
+#Parent OS_ByteIndex
+=>	R0 =	21
+	R1 =	<buffer number=>Buffer_buffers>
+
+<=	R0,R1 preserved
+	R2 corrupted
+
+This call flushes the specified buffer.
+#Line
+See <PRM 1, page 165=>PRM-1:165>

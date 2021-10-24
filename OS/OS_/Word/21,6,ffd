@@ -1,0 +1,13 @@
+OS_Word 21,6
+#Parent OS_Word
+=>	R0 =	21
+	R1 =	pointer to block containing :
+		 	0 = 6
+
+<=	block updated :
+		 	1 = x	LSB
+		 	2 =	MSB
+		 	3 = y	LSB
+		 	4 =	MSB
+
+This OS_Word reads the pointer position. If the mouse and pointer are linked then the pointer position will be updated with the mouse position each VSync interrupt.

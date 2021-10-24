@@ -1,0 +1,7 @@
+Territory_Number  (&43040)
+#Parent Territory_
+<=	R0 =	<Current territory number=>Territory_numbers>
+
+Reads the current territory number.
+#Line
+See <PRM 3, page 792=>PRM-3:792>.

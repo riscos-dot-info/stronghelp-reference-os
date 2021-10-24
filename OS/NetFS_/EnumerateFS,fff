@@ -1,0 +1,12 @@
+NetFS_EnumerateFS  (&4004A)
+#Parent NetFS_
+=>	R0 =	offset in file server list of first item to read
+	R1 =	pointer to buffer
+	R2 =	size of buffer
+	R3 =	number of items to read
+<=	R0 =	offset of next item to read, or -1 if finished
+	R3 =	number of items read
+
+This SWI is used to list information about file servers which NetFS is currently logged on to - similar the information returned by the {fCode}*FS{f} command with no parameters. The information is returned as a series of <20 byte blocks=>NetFS_fsblock> - if you are logged on to your current file server it will be returned last. Apart from this the order is undefined. To return user ID information in the list use <NetFS_EnumerateFSContexts>.
+#Line
+See <PRM 2, page 356=>PRM-2:356>.

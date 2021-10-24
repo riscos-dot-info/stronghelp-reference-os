@@ -1,0 +1,16 @@
+ResourceFS file block
+#Parent ResourceFS_
+Size	Contents
+#line
+4	Offset to next file, or 0 for end list
+4	<load address=>fsys_loadexec>
+4	<exec address=>fsys_loadexec>
+4	size
+4	<attributes=>fsys_objattr>
+x	null terminated pathname from '$.' (do not include the '$.')
+1-3	0s to word align
+4	size of file + 4
+y	file data
+1-3	0s to word align
+
+File blocks must be contiguous. If necessary make more than one set of contiguous file blocks, and <ResourceFS_RegisterFiles> each set in turn. Directories are not specified - directory structure is deduced from filenames.

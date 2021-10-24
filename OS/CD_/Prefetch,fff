@@ -1,0 +1,7 @@
+CD_Prefetch  (&41259)
+#Parent CD_
+=>	R0 =	<addressing mode=>CD_addresses>
+	R1 =	address
+	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+
+This SWI causes caching on drives where this is supported.

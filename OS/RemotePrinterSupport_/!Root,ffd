@@ -1,0 +1,12 @@
+RemotePrinterSupport
+#Parent !Root
+#Prefix RemotePrinterSupport_
+#Table Columns 2
+ReadPollwordLocation
+GetNextEvent
+ReadUniqueAddress
+Enable
+Disable
+EnableUpcalls
+DisableUpcalls
+#EndTable

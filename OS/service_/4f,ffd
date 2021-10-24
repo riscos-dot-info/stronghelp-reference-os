@@ -1,0 +1,7 @@
+Service_FilerDying (&4F)
+#Parent Service_Index
+=>	R1 =	&4F (reason code)
+
+This service is issued when the Filer task is closed down. Filer module tasks should close down in sympathy when they recieve this service (see <Service_FilerStarted=>Service_4B>).
+#Line
+See <PRM 2, page 493=>PRM-2:493>

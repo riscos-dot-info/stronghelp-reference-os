@@ -1,0 +1,15 @@
+OS_FSControl 28  (&29)
+#Parent OS_FSControl
+=>	R0 =	28 (Count objects)
+	R1 =	pointer to wildcarded filename of files to count
+	R3 =	<flags=>OS_FSControlFlags>
+	R4 =	<start load=>fsys_loadexec>
+	R5 =	<start exec=>fsys_loadexec>
+	R6 =	<end load=>fsys_loadexec>
+	R7 =	<end exec=>fsys_loadexec>
+	R8 =	<pointer to descriptor=>OS_FSControlDescriptor>
+
+<=	R2 =	total length
+	R3 =	number of files
+
+This SWI allows you to count files as in the {fCode}*Count{f} command.

@@ -1,0 +1,9 @@
+Input buffer full event (1)
+#Parent Event_index
+=>	R0 =	1 (event number)
+	R1 =	<buffer number=>Buffer_buffers>, bit 31 set for block operation.
+	R2 =	byte that could not be inserted (if single byte operation)
+	 	pointer to data (if block operation)
+	R3 =	number of bytes not inserted (if block operation)
+
+This event is raised when an attempt is made to insert a character into a full input buffer which has <event generation enabled=>Buffer_ModifyFlags>.

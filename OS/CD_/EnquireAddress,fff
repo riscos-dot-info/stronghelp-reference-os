@@ -1,0 +1,8 @@
+CD_EnquireAddress  (&41249)
+#Parent CD_
+=>	R0 =	addressing mode, for returned head location
+	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+<=	R0 =	head address
+	R7 preserved
+
+Gives current address of head. Can be used while playing.

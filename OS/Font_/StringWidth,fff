@@ -1,0 +1,17 @@
+Font_StringWidth  (&40085)
+#Parent Font_
+=>	R1 =	pointer to <string=>font_paint1>
+	R2 =	max width in millipoints
+	R3 =	max height in millipoints
+	R4 =	split character, or -1 for none
+	R5 =	max string length
+
+<=	R1 =	pointer to where scan ended.
+	R2 =	width of scanned string.
+	R3 =	height of scanned string.
+	R4 =	number of split chars found
+	R5 =	length of scanned string.
+
+This SWI calculates how wide a string would be under the given limits. After this SWI, you can call <Font_FutureFont> to find out what the current font would be after a call to <Font_Paint> with this string.
+#Line
+See <PRM 3, page 427=>PRM-3:427>.

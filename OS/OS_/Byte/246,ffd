@@ -1,0 +1,15 @@
+OS_Byte 246  Read/Write printer ignore character
+#Parent OS_ByteIndex
+=>	R0 =	246 (&F6)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	value before being overwritten
+	R2 corrupted
+                                                  
+This call reads or set the printer ignore character. It may also be written with <OS_Byte 6=>OS_Byte006>. To unset the ignore character (NoIgnore) you cannot use this call, you need to use <OS_Byte 182=>OS_Byte182>. The default ignore character is stored in <CMOS byte 14=>OS_Bytecmos>, the NoIgnore state in <CMOS byte 15=>OS_Bytecmos15> and can be set with <*Configure Ignore=>StarCmds:ConfIgnore>.
+
+This is equivilent to <*Ignore n=>StarCmds:Ignore>.
+#Line
+See <PRM 1, page 517=>PRM-1:517>

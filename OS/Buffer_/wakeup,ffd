@@ -1,0 +1,7 @@
+Buffer wakeup routine
+#Parent Buffer_LinkDevice
+=>	R0 =	buffer handle
+	R8 =	private word
+	R12 =	workspace
+
+Before calling bit 0 is set in the <flags word=>buffer_flags>. On entry processor may be in any state (mode, interrupts). On exit you must restore everything. This routine is called to allow you to wake up dormant hardware.

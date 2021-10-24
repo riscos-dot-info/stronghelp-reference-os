@@ -1,0 +1,65 @@
+Font_ScanString  (&400A1)
+#Parent Font_
+=>	R0 =	initial font handle, or 0 for current
+	R1 =	pointer to string
+	R2 =	<flags=>.flags>
+	R3,4 =	(x,y) of mouse click, or max w,h of string
+	R5 =	pointer to <block holding spacing, split & bounding box=>.block>
+	R6 =	pointer to <transformation matrix=>Font_matrix>
+	R7 =	length of string
+
+<=	R1 =	pointer to where the scan ended
+	R3,4 =	(x,y) of where the scan ended
+	R7 =	number of split chars in scanned part of string.
+
+This SWI is used to find various info on a string :
+
+#Tab
+		How wide is a string?
+	 	Use large values for R3, R4 and no split character
+		Given a width, how much of a string will fit?
+AND		Address of a mouse click?
+	 	Use correct width in R3, large value in R4 and (if needed) a split char in the buffer at R5
+		Graphical position of a caret?
+	 	Set R7 to offset into string, use huge values for R3,4, and no split
+
+Registers 0,5,6 and 7 are only used if bits 8,5,6 and 7 are set in R2
+
+If bit 8 of R2 is clear then the current font will be assumed. This call *does not* alter current font, so if you are scanning several sequential lines, and these can contain font shifts, you should call <Font_FutureFont> to find which font handle to pass in R0 the next time.
+
+If bit 20 of R2 is set but there is no split character, then R7 will be used to return the number of non-control characters (codes 32 or greater and not within a control sequence)
+
+Unlike <Font_Paint>, this call only allows millipoints for all coordinates. Convert to/from OS units by dividing/multiplying by 400. (Instead of dividing, you can multiply by (1\<\<18 / 400) and then shift down 18 to get an approximate answer)
+#Line
+See <PRM 3, page 483=>PRM-3:483>.
+#
+#Subpage flags
+Font_ScanString flags
+Bit	Meaning if set
+#Line
+0-4	0 (reserved)
+5	R5 is pointer to <block=>.block>
+6	R6 is pointer to <transformation matrix=>Font_matrix>
+7	R7 is length of string
+8	R0 is initial font handle
+9	perform kerning
+10	writing direction is Right to Left
+11-16	0 (reserved)
+17	return nearest caret position (If x offset is less than half way through a char, we don't include this char)
+18	return bounding box in R5 (bit 5 must also be set)
+19	return updated matrix in R6 (bit 6 must also be set)
+20	return number of split chars in R7 (bit 7 must also be set)
+21-31	0 (reserved)
+#subpage block
+Font_ScanString block
+Offset	Contents
+#Line
+0	additional x offset for spaces
+4	additional y offset for spaces
+8	additional x offset for each letter
+12	additional y offset for each letter
+16	split character (or -1 for none)
+20	returns left of bounding box (if b18 set)
+24	returns bottom of bounding box (if b18 set)
+28	returns right of bounding box (if b18 set)
+32	returns top of bounding box (if b18 set)

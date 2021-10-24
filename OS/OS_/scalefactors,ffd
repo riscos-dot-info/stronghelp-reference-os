@@ -1,0 +1,8 @@
+Scale factors
+#Wrap off
+Offset	Contents
+#Line
+0	x multiplication factor
+4	y multiplication factor
+8	x division factor
+12	y division factor

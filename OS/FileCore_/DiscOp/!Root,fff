@@ -1,0 +1,23 @@
+FileCore_DiscOp  (&40540)
+#Prefix FileCore_DiscOp_
+#Parent FileCore_
+# Gerph> I've reorganised this page, 'cos it looked 'awkward' before
+=>	R1 =	reasons and <flags>
+	 	  0	<Verify=>FileCore_DiscOp0>
+	 	  1	<Read sectors=>FileCore_DiscOp1>
+	 	  2	<Write sectors=>FileCore_DiscOp2>
+	 	  3	<Read track/Id=>FileCore_DiscOp3>
+	 	  4	<Write/format track=>FileCore_DiscOp4>
+	 	  5	<Seek=>FileCore_DiscOp5>
+	 	  6	<Restore=>FileCore_DiscOp6>
+	 	  7	<Step in=>FileCore_DiscOp7-8>
+	 	  8	<Step out=>FileCore_DiscOp7-8>
+	 	  9	<Read sectors via cache=>FileCore_DiscOp9>
+	 	  15	<Specify ?=>FileCore_DiscOp15>
+
+<=	R0 =	0 if no error, <error number=>FileCore_Errors> and VS otherwise
+	N, Z and C preserved
+
+This SWI performs various low-level accesses on a disc.
+#Line
+See <PRM 2, page 221=>PRM-2:221>.

@@ -1,0 +1,10 @@
+OS_Byte 161  Read CMOS RAM
+#Parent OS_ByteIndex
+=>	R0 =	161 (&A1)
+	R1 =	<byte number=>os_bytecmos>
+
+<=	R2 =	value
+
+This call reads the battery backed RAM used to store configuration information.
+#Line
+See <PRM 1, page 363=>PRM-1:363>

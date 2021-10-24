@@ -1,0 +1,24 @@
+FileCore_DiscOp 3
+#Parent FileCore_DiscOp
+Read track (from floppy) or id (from hard disc)
+
+=>	R1 =	3 + <flags=>FileCore_DiscOp_flags>
+	R2 =	<disc address=>FileCore_discaddress>
+	R3 =	pointer to block to read into
+
+If the alternate defect list option bit (bit 4) is set in R1 on entry when reading a track/ID, then a whole track's worth of ID fields is read. This usage isn't available under RISC OS 2.
+
+The call reads 4 bytes of sector ID information into the buffer pointed to by R3 for every sector on the track. The order of data is:
+
+#indent 2
+Cylinder
+Head
+Sector number
+Sector size (0 = 128;1 = 256, etc)
+#indent
+
+The operation is terminated after 200 mS (1 revolution)
+
+The first sector ID transferred will normally be that following the index mark (it may be the second if there is abnormal interrupt latency from the index pulse interrupt). The first two ID's read may also be duplicated at the buffer end due to interrupt latency. Consequently the buffer should be at least 16 bytes longer than the maximum number of ID's expected (512 bytes at most).
+
+The disc record provided is updated to return the actual number of sectors per track found (at offset 1). Note to use this option you MUST provide a valid defect list, which at a minimum is a word of &20000000 following after the disc record.

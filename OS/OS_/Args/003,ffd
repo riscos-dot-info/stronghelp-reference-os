@@ -1,0 +1,7 @@
+OS_Args 3
+#Parent OS_Args
+=>	R0 =	3
+	R1 =	file handle
+	R2 =	extent
+
+This SWI sets the extent of a file. New space is filled with zeros.

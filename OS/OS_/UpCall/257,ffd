@@ -1,0 +1,13 @@
+OS_UpCall 257 - Moving memory
+#Parent OS_UpcallReasons
+=>	R0 =	257 (Moving memory)
+	R1 =	amount that application space is going to change by
+              
+<=	R0 =	0 to permit memory moved, else preserved
+	R1 preserved
+
+This Upcall informs your program that RISC OS would like to move memory
+
+This call is made just before <OS_ChangeDynamicArea> tries to move memory. The call is only made if the currently active object is in the application space. It calls the UpCall vector. By default (if you don't claim the vector) the memory isn't moved.
+
+Your routine must shuffle your application's workspace so that the memory can go ahead. It must then set R0 = 0, and pass on the call to the vector.

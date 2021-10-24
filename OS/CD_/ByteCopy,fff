@@ -1,0 +1,10 @@
+CD_ByteCopy  (&41262)
+#Parent CD_
+=>	R1 =	pointer to source
+	R2 =	pointer to destination
+	R3 =	number of bytes to copy
+<=	All registers preserved
+
+Fast memory copy routine, providing efficient way of copying any number of bytes, word-aligned or not.
+
+{*}Note{*}: It is recommended that you do not use this, as the overhead for calling the SWI is probably greater than any possibly gain.

@@ -1,0 +1,17 @@
+OS_DynamicArea 1  (&66)
+#Parent OS_DynamicArea
+*Removes a previously created dynamic area*
+{f25}Þ{f}	R0 =	1
+	R1 =	area number
+{f25}Ü{f}	all preserved
+#line
+This call removes a previously created dynamic area. Before the area is removed, RISC OS attempts to shrink it to zero size.  This is done using <OS_ChangeDynamicArea>.
+
+If OS_ChangeDynamicArea returns an error, then the area will be grown back to its original size using OS_ChangeDynamicArea, and this call will return with an error.
+If <OS_ChangeDynamicArea> successfully reduced the area to zero size, then it will be removed.
+
+Once the area has been removed Service_DynamicAreaRemove is issued to inform the rest of the system about this change.
+
+An error is returned if the area was not removed for any reason.
+
+<Sparse=>OS_DynamicAreaSparse> areas shall be released via <OS_DynamicArea 10=>OS_DynamicArea10> before removal. If the attempt fails, the area is not removed, but no attempt is made to restore the mapping distribution as before the removal.

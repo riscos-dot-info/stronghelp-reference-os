@@ -1,0 +1,9 @@
+FSEntry_GetBytes
+#Parent FSEntry_
+=>	R1 =	internal handle returned by <FSEntry_Open>
+	others dependant on buffering
+
+This is called to read data from a file. There are two forms of the call used, depending on whether the filing system uses system buffered files or not :
+#Indent 2
+è	<FSEntry_GetBytes=>FSEntry_GetBytesB> (buffered)
+è	<FSEntry_GetBytes=>FSEntry_GetBytesU> (unbuffered)

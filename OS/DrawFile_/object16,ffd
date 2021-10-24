@@ -1,0 +1,14 @@
+JPEG object (16)
+#Parent drawfile_format
+Offset	Len	Contents
+#Line
+24	4	height	(draw units)
+28	4	width
+32	4	x DPI	(90 for a normal square pixel mode)
+36	4	y DPI
+40	24	<transformation matrix=>draw_transform>
+64	4	length of JPEG data
+68	 	embedded JPEG (strictly JFIF) file
+padding to next word
+
+Currently it seems that the 6 word transformation matrix is used only to scale the JPEG image and translate it from (0,0),(height,width) to the required position on the page. It is not known whether this object can contain JPEG data in any format other than a JFIF file.

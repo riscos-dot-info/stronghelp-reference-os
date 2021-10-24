@@ -1,0 +1,15 @@
+OS_EnterUSR32 (&73) [3.8]
+#Parent OS_
+{f25}Þ{f}	no parameters
+{f25}Ü{f}	registers preserved
+ 		Interrupt status unaltered
+#line
+This SWI returns in 32-bit user mode. Behaviour is undefined unless this SWI is called from 26-bit user mode (normal RISC OS mode). This SWI cannot be called from an address above 64M. This SWI does not use the normal SWI exit code, and does not check for callbacks.
+
+Once in 32-bit user mode, all code is subject to the restrictions of the ARM 32-bit instruction set. Beware of instructions that are illegal in 32-bit mode, and of instructions that behave differently.
+
+Because 32-bit user mode is not the normal RISC OS user mode, there are additional restrictions:
+ 	*	32-bit user mode code must not call any SWIs, except SWI <OS_EnterUSR26> to return to normal RISC OS user mode
+ 	*	32-bit user mode code can jump to addresses above 64M (code in dynamic areas), but must jump back below 64M before calling SWI OS_EnterUSR26.
+ 	*	Although transient callbacks can occur (via interrupt returns, the current callback handler is not called because the API for callback handlers is not 32-bit aware.
+ 	*	If an abort occurs in 32-bit mode code, the register dump information will be as if from 26-bit mode; an abort address above 64M cannot be reported properly. Instead, you should use SWI <OS_ReadSysInfo 7=>OS_ReadSysInfo7> to read the 32-bit PC and PSR for the last abort.

@@ -1,0 +1,20 @@
+Path object (2)
+#Parent drawfile_format
+Offset
+#Line
+24	4	Fill colour (-1 for none)
+28	4	Outline col (-1 for none)
+32	4	Outline width
+36	4	<path style=>drawfile_pathstyle>
+40	n	<Optional dash pattern=>Draw_dashblock>
+	n	Path components :
+
++0	4	Tag id	Meaning
+	 	0	End of path
+	 	2	Move, one point
+	 	5	Close sub-path
+	 	6	Bezier, three points
+	 	8	Line, one point
+
++4	n	0-3 sets of (x,y) dependant on tag
+...

@@ -1,0 +1,8 @@
+NetPrint_ReadPSNumber  (&40200)
+#Parent NetPrint_
+<=	R0 =	station number
+	R1 =	net number
+
+This SWI returns the full station number of your current printer server, or R0 = R1 = 0 if your current printer server is stored only as a name.
+#Line
+See <PRM 2, page 389=>PRM-2:389>.

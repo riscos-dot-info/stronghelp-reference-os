@@ -1,0 +1,5 @@
+CD_StopDisc  (&41252)
+#Parent CD_
+=>	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+
+This SWI stops a CD playing, and waits until the CD stops spinning.

@@ -1,0 +1,14 @@
+OS_UpdateMEMC  (&1A)
+#Parent OS_
+=>	R0 =	New bits
+	R1 =	Mask
+
+<=	R0 =	Old register value
+
+This SWI programs individual bits in the <MEMC control register=>Machine:MEMC1>. Since the MEMC is write-only, this is done via a software copy, maintained by the OS.
+
+Reg = (RegCopy AND NOT R1) OR (R0 AND R1)
+
+To read: R0,R1 = 0
+#Line
+See <PRM 1, page 366=>PRM-1:366>.

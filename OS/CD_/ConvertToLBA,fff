@@ -1,0 +1,9 @@
+CD_ConvertToLBA  (&41264)
+#Parent CD_
+=>	R0 =	<addressing mode=>CD_addresses>
+	R1 =	address to convert
+	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+
+<=	R1 =	address in LBA format
+
+This SWI converts an address in the addressing mode supplied to logical block addressing (LBA, mode 0) form.

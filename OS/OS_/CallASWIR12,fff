@@ -1,0 +1,10 @@
+OS_CallASWIR12 (&6F) [3.7]
+{f25}Þ{f}	R0-R9 =	as required for target SWI
+	R12 =	target SWI number
+
+{f25}Ü{f}	dependent on SWI called
+#line
+#indent 4
+This call is identical to <OS_CallASWI>, except that it uses R12 to specify the target SWI. This may be more convenient in some environments. In particular under APCS-R, R10 is the stack limit pointer, which must be preserved at all times; if a SWI called using <OS_CallASWI> were to abort or generate an error the run-time library would usually examine R10 and decide that it had no stack to handle the abort or error. Therefore APCS-R libraries must use OS_CallASWIR12 (R12 being a scratch register under APCS-R).
+#indent;line;indent 4
+Provided by RISC OS 3.7+, and also the CallSWI module for earlier versions of RISC OS.

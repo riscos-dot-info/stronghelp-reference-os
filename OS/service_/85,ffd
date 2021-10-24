@@ -1,0 +1,9 @@
+Service_WimpSpritesMoved (&85)
+#Parent Service_index
+=>	R1 =	&85 (reason code)
+	R2 =	pointer to ROM area
+	R3 =	pointer to RAM area
+
+This service is issued if the sprite pools have to move.
+#Line
+See <PRM 3, page 77=>PRM-3:77>

@@ -1,0 +1,39 @@
+OS_Byte 156  Read/Write serial port state
+#Parent OS_ByteIndex
+=>	R0 =	156 (&9C)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 =	preserved
+	R1 =	state before being overwritten
+	R2 =	keyboard disable flag (see <OS_Byte 201=>OS_Byte201>)
+                                                  
+This call reads or writes the serial port state. It is provided for backwards compatibility - use <OS_SerialOp 0 and 1=>OS_SerialOp> instead, and <OS_Byte 2=>OS_Byte002> to change the receive interrupt/control bit.
+
+When writing the effects depend on R1:
+
+#Tab
+Bits	Value	Effect
+#line
+0-1	0-2	No effect
+	3	Reset transmit, receive, control registers
+2-4	0	7 bit, even parity, 2 stop bits (7E2)
+	1	7 bit, odd parity, 2 stop bits (7O2)
+	2	7 bit, even parity, 1 stop bits (7E1)
+	3	7 bit, odd parity, 1 stop bit (7O1)
+	4	8 bit, no parity, 2 stop bits (8N2)
+	5	8 bit, no parity, 1 stop bits (8N1)
+	6	8 bit, even parity, 1 stop bits (8E1)
+	7	8 bit, odd parity, 1 stop bit (8O1)
+5-6	0	RTS low, transmit interrupt disabled
+	1	RTS low, transmit interrupt enabled
+	2	RTS high, transmit interrupt disabled
+	3	RTS low, transmit interrupt disabled, break level on transmit data
+7	0	Receive interrupt disabled
+	1	Receive interrupt enabled
+
+You should only write bit 7 with this call (and really should be using <OS_Byte 2=>OS_Byte002>). The value can also be read with <OS_Byte 192=>OS_Byte192>.
+
+The default value for bits 2-4 is stored in <CMOS byte 16=>OS_Bytecmos16>.
+#Line
+See <PRM 2, page 446=>PRM-2:446>

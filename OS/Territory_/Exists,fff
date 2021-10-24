@@ -1,0 +1,8 @@
+Territory_Exists  (&43044)
+#Parent Territory_
+=>	R0 =	<territory number=>Territory_numbers>
+<=	Z flag set if the territory is loaded (ie is EQ)
+
+Checks to see if the given territory is present.
+#Line
+See <PRM 3, page 797=>PRM-3:797>.

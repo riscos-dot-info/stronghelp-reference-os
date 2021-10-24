@@ -1,0 +1,15 @@
+PDriver_Info  (&80140)
+#Parent PDriver_
+<=	R0 =	bits 0-15	driver's version number * 100
+	 	bits 16-31	<printer number=>PDriver_printernumbers>
+	R1 =	x resolution of driven printer (DPI)
+	R2 =	y resolution of driven printer (DPI)
+	R3 =	<features word=>PDriver_features>
+	R4 =	pointer to printer name (max 20 chars, null terminated)
+	R5 =	x halftone resolution in repeats/inch
+	R6 =	y halftone resolution in repeats/inch
+	R7 =	printer driver specific number (as set by <PDriver_SetInfo>, defult is 0)
+
+This SWI describes the capabilities of the printer. If a job is selected they ae the values in force from when it was first selected, else they are the values that would be used on a new job. If halftoning is not used then R5=R2,R6=R3.
+#Line
+See <PRM 3, page 602=>PRM-3:602>.

@@ -1,0 +1,9 @@
+Hourglass_LEDs  (&406C5)
+#Parent Hourglass_
+=>	R0 =	EOR word
+	R1 =	AND word
+<=	R0 =	old LED word
+
+This SWI controls the appearance of two LEDs. Bit 0 controls the LED above the hourglass, and bit 1 the one below.
+#Line
+See <PRM 2, page 741=>PRM-2:741>.

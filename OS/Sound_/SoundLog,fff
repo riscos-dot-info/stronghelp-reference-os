@@ -1,0 +1,8 @@
+Sound_SoundLog  (&40181)
+#Parent Sound_
+=>	R0 =	32-bit signed integer
+<=	R0 =	8-bit signed volume-scaled logarithm (LSB)
+
+This call converts a signed integer longword to a signed logarithm byte in VIDC lower sign bit format via table lookup (ie the current volume setting!).
+#Line
+See <PRM 4, page 26=>PRM-4:26>.

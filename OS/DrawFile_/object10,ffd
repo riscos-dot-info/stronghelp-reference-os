@@ -1,0 +1,3 @@
+Text column object (10)
+#Parent drawfile_format
+No data other than the standard 6 word header - the bounding box in the header gives the location of the column. Text column objects can only occur in <Text area objects=>drawfile_object9>.

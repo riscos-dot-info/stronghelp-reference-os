@@ -1,0 +1,9 @@
+OS_Byte CMOS 148
+#Parent OS_ByteCMOS
+Bit(s)	Meaning
+#Line
+0-3	Channel 0 voice
+4-6	Sound volume
+7	Speaker enabled
+
+Volume (1-127) is given as 1 + 18{/}n{/}.

@@ -1,0 +1,54 @@
+Transformation matrix
+Offset	Var	Contents
+#Line
+0	{/}a{/}	<x multiplier=>draw_transformunits>, for new x
+4	{/}b{/}	<x multiplier=>draw_transformunits>, for new y
+8	{/}c{/}	<y multiplier=>draw_transformunits>, for new x
+12	{/}d{/}	<y multiplier=>draw_transformunits>, for new y
+16	{/}e{/}	x translation, in draw units
+20	{/}f{/}	y translation, in draw units
+
+The new co-ordinates are calculated :
+#Tab;Indent 2
+newx =	{/}a{/}x + {/}c{/}y + {/}e{/}
+newy =	{/}b{/}x + {/}d{/}y + {/}f{/}
+#Indent
+
+#Tab
+Or, in matrix form :	{f25}é{f}	{/}a{/}	{/}b{/}	0	{f25}ù{f}
+			{f25}ê{f}	{/}c{/}	{/}d{/}	0	{f25}ú{f}
+			{f25}ë{f}	{/}e{/}	{/}f{/}	1	{f25}û{f}
+
+<Standard examples=>.examples>
+#Subpage examples
+Transformation examples
+Rotation can be performed by using :
+#Tab;Indent 2
+{/}a{/}	= cos( {/}angle{/} )	{/}b{/}	= sin ( {/}angle{/} )
+{/}c{/}	= - sin( {/}angle{/} )	{/}d{/}	= cos ( {/}angle{/} )
+#Indent
+
+Scaling can be performed by using :
+#Indent 2
+{/}a{/}	= {/}scale{/}		{/}b{/}	= 0
+{/}c{/}	= 0			{/}d{/}	= {/}scale{/}
+#Indent
+
+Translation can be performed by using :
+#Tab;Indent 2
+{/}e{/}	= {/}x translation{/}	{/}f{/}	= {/}y translation{/}
+#Indent
+
+So to render a non-rotated 1:1 Draw file at ({/}x{/}, {/}y{/}) (screen coordinates in OS units) the transformation matrix is :
+
+#Indent 2;Tab
+{f25}é{f}	1 << 16		0		0	{f25}ù{f}
+{f25}ê{f}	0		1 << 16		0	{f25}ú{f}
+{f25}ë{f}	256 * {/}x{/}	256 * {/}y{/}	1	{f25}û{f}
+#Indent
+
+and thus
+#Indent 2;Tab
+{/}a{/}	= 1 << 16		{/}b{/}	= 0
+{/}c{/}	= 0			{/}d{/}	= 1 << 16
+{/}e{/}	= 256 * {/}x{/}		{/}f{/}	= 256 * {/}y{/}

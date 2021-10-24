@@ -1,0 +1,8 @@
+Service_DeviceFSDying (&71)
+#Parent Service_Index
+=>	R0 =	0
+	R1 =	&71 (reason code)
+
+This service is issued by DeviceFS when it is about to be killed. All devices will have already been issued with <Service_DeviceDead=>service_79>.
+#Line
+See <PRM 2, page 425=>PRM-2:425>

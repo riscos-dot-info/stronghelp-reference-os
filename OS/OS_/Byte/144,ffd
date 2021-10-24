@@ -1,0 +1,13 @@
+OS_Byte 144  Set vertical shift and interlace
+#Parent OS_ByteIndex
+=>	R0 =	144
+	R1 =	vertical screen shift (as a signed 8 bit number)
+	R2 =	interlace flag, 0=on, 1=off
+
+<=	R0 preserved
+	R1 =	previous vertical screen shift
+	R2 =	previous interlace flag
+
+This call specifies the vertical screen alignment and interlace options after the next mode change. This is equivalent to <*TV=>*Help TV>.
+#Line
+See <PRM 1, page 650=>PRM-1:650>

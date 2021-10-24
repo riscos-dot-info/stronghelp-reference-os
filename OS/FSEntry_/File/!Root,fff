@@ -1,0 +1,24 @@
+FSEntry_File
+#Parent FSEntry_
+=>	R0 =	<reason code=>.reason>
+	R1 =	pointer to filename
+	others dependant on call
+
+This entry point is called for operations on whole files.
+#
+#Subpage reason
+FSEntry_File reason codes
+Reason	Meaning
+#Line
+0	<Save file=>FSEntry_File0>
+1	<Write catalogue information=>FSEntry_File1>
+2	<Write load address=>FSEntry_File2>
+3	<Write exec address=>FSEntry_File3>
+4	<Write attributes=>FSEntry_File4>
+5	<Read catalogue information=>FSEntry_File5>
+6	<Delete object=>FSEntry_File6>
+7	<Create file=>FSEntry_File7>
+8	<Create directory=>FSEntry_File8>
+9	<Read catalogue information without length=>FSEntry_File9>
+10	<Read block size=>FSEntry_File10>
+255	<Load file=>FSEntry_File255>

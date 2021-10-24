@@ -1,0 +1,11 @@
+Debugger_Disassemble  (&40380)
+#Parent Debugger_
+=>	R0 =	instruction
+	R1 =	address it came from
+
+<=	R1 =	pointer to zero terminated string
+	R2 =	length, including terminator
+
+This SWI disassembles an instruction. The address in R1 is needed for PC relative instructions (like B, BL, LDR x,[PC,#..] )
+#Line
+See <PRM 4, page 215=>PRM-4:215>.

@@ -1,0 +1,21 @@
+WimpFont values
+#Parent OS_Bytecmos140
+Value	Font
+#Line
+0	Read from {fCode}Wimp$Font{f}
+1	System Font
+2	Corpus.Bold
+3	Corpus.Bold.Oblique
+4	Corpus.Medium
+5	Corpus.Medium.Oblique
+6	Homerton.Bold
+7	Homerton.Bold.Oblique
+8	Homerton.Medium
+9	Homerton.Medium.Oblique
+10	Trinity.Bold
+11	Trinity.Bold.Italic
+12	Trinity.Medium
+13	Trinity.Medium.Italic
+14	WIMPSymbol
+
+!Configure arranges for {fCode}Wimp$Font{f} to be set in {fCode}PreDesk.Configure.VRAM{f}.

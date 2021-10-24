@@ -1,0 +1,11 @@
+OS_Word 21,3
+#Parent OS_Word
+=>	R0 =	21
+	R1 =	pointer to block containing :
+		 	0 = 3
+		 	1 = x	LSB
+		 	2 =	MSB
+		 	3 = y	LSB
+		 	4 =	MSB
+
+This OS_Word sets the mouse position from the two *signed* 16 bit values. It is ignored if the position is outside the mouse bounding box. If the mouse and pointer are unlinked then the screen position will not be altered.

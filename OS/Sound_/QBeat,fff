@@ -1,0 +1,12 @@
+Sound_QBeat  (&401C6)
+#Parent Sound_
+=>	R0 =	\< -1	disable beat counter, set bar length to 0
+	 	-1	read current bar length
+	 	0	read current beat number
+	 	> 0	enable beat counter, set bar length to R0
+<=	R0 =	(entry R0 = 0)	current beat number
+	 	else		previous bar length
+
+This call sets and reads the beat counter or bar length. When enabled the beat counter counts from 0 to (bar length - 1). Disabling the beat counter causes <Sound_QSchedule> to schedule relative to the time of the SWI calls.
+#Line
+See <PRM 4, page 51=>PRM-4:51>.

@@ -1,0 +1,11 @@
+OS_UpCall 8 - Buffer filling
+#Parent OS_UpcallReasons
+=>	R0 =	8 (Buffer filling)
+	R1 =	buffer handle
+	R2 =	0
+
+<=	All registers preserved
+
+This Upcall informs you that a buffer's free space has become less than its specified threshold. The Buffer Manager issues this call when data is inserted into the specified buffer, and the free space becomes less than its current threshold.
+
+This call is never issued under RISC OS 2.

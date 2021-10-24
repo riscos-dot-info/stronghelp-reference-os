@@ -1,0 +1,21 @@
+OS_Byte CMOS 188
+Bit(s)	Meaning
+#Line
+0,1	ROMFS <opt 4=>fsys_opt4> state
+# Gerph> Anyone ever actually seen/used ROMFS ?
+2	Cache icon enable state
+3-5	<Blank time=>.times>
+6	Unblank screen on write
+7	Disable long system test
+#Subpage times
+Screen blank times
+Value	Meaning
+#Line
+0	Off
+1	30 seconds
+2	1 minute
+3	2 minutes
+4	5 minutes
+5	10 minutes
+6	15 minutes
+7	30 minutes

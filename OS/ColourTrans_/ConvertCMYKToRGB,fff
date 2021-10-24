@@ -1,0 +1,14 @@
+ColourTrans_ConvertCMYKToRGB  (&4075B)
+#Parent ColourTrans_
+=>	R0 =	<cyan component=>ColourTrans_fixedpoint>
+	R1 =	<magenta component=>ColourTrans_fixedpoint>
+	R2 =	<yellow component=>ColourTrans_fixedpoint>
+	R3 =	<key component=>ColourTrans_fixedpoint>
+
+<=	R0 =	<red component=>ColourTrans_fixedpoint>
+	R1 =	<green component=>ColourTrans_fixedpoint>
+	R2 =	<blue component=>ColourTrans_fixedpoint>
+
+This call converts the colour passed as CMYK values to RGB values.
+#Line
+See <PRM 3-385=>PRM-3:385>.

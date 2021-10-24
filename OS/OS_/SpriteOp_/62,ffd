@@ -1,0 +1,12 @@
+Read save area size (62)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<62, &3E=>os_spriteop_reason2> (Read save area size)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer, or 0 for the screen
+<=	R3 =	Size of required save area in bytes
+
+This calculates the size of a save area for the given sprite. It is constant for a particular release of RISC OS but may change in the future.
+
+For the first use you should set the first word of the save area to 0 so that the area can be initialised; subsequently it will be updated by the OS.
+#Line
+See <PRM 1, page 815=>PRM-1:815>

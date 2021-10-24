@@ -1,0 +1,17 @@
+OS_SetColour  (&61)
+#Parent OS_
+=>	R0 =	<flag word=>.flags>
+	R1 =	pointer to ECF pattern if R0's bit 5 = 1
+	 	colour number if R0's bit 5 = 0
+
+This call sets the fore and backgound text colour. Depending on R0's bits 0-3, this colour on the screen is changed.
+#Line
+See <PRM 1, page 726=>PRM-1:726>.
+#Subpage flags
+Bit(s)	Meaning
+0-3	<Graphic plot action=>os_setcolouractions>
+4	Set:	alter background colour
+	Clear:	alter foreground colour
+5	Set:	R1 is pointer to ECF pattern
+	Clr:	R1 is colour number
+6-31	reserved, must be zero

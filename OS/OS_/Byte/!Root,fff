@@ -1,0 +1,14 @@
+OS_Byte  (&06)
+#Parent OS_
+=>	R0 =	<reason code=>os_byteindex>
+
+This SWI does a bewildering amount of different things, based on the reason code in R0.
+
+For calls with R0 between 166 and 255:
+   NewVal = (OldVal AND R2) EOR R1
+
+#tab
+To read:	R1 = 0		R2 = &FF
+To set:		R1 = new value	R2 = 0
+#Line
+See <PRM 1, page 54=>PRM-1:54>.

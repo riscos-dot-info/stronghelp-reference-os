@@ -1,0 +1,8 @@
+OS_FSControl 8  (&29)
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	8 (Examine library)
+	R1 =	pointer to (wildcarded) filename
+#Wrap
+
+This SWI is equivalent to "{fCode}*LEx{f}". If a pointer to "" is used, the library is examined.

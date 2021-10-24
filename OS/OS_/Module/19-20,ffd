@@ -1,0 +1,27 @@
+OS_Module 19/20
+#Parent OS_Module
+# N> Intersting display bug with this in place
+# Tab Align Left, Align Left, Align Right
+# Gerph> Yes, I've mentioned it to Guttorm (since v2.02 I think!) and IIRC
+#        he said it was a very tricky thing to track down
+=>	R0 =	19/20 (reason code)
+	R1 =	module number, or 0 to start
+	R2 =	<ROM section=>OS_ModuleROMSections>
+
+<=	R0 preserved
+	R1 =	module number of found module +1
+	R2 =	<ROM section=>OS_ModuleROMsections> of found module
+	R3 =	pointer to module name
+	R4 =	-1	unplugged
+	 	0	inserted but not in the module chain
+	 	1	active
+	 	2	running
+	R5 =	chunk number of expansion card module
+	R6 =	<BCD versions number=>.BCD> for OS_Module 20
+
+This call returns information on one module that is currently in ROM along with its status. The module found is the given number of modules on from start of the given ROM section. If there are insufficient modules in the ROM section then the search continues with the next section; so the fifth module in a four module section would in fact be the first module of the next section. The ROM sections are scanned in <this order=>OS_ModuleROMsections>. The values in R0-R2 are the correct ones to use this call to enumerate the next module; hence repeated calls will give a full enumeration of all ROM modules.
+#Subpage BCD
+BCD version number
+The top 16 bits contain the integer part of the version number, the botton 16 bits the fractional part.
+
+({/}e.g.{/} If version = 2.12 then BCD = &00021200)

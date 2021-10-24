@@ -1,0 +1,18 @@
+PDumper_Info  (&41B00)
+#Parent PDumper_
+#Wrap off
+<=	R0 =	version number * 100
+	R1 =	<options supported=>.options>
+#Wrap on
+
+This SWI returns information about the PDumper support module.
+#Line
+See <PRM 3, page 680=>PRM-3:680>.
+#Subpage options
+PDumper options
+Bit set	Option supported
+#Line
+0	halftone grey
+1	error diffuse grey
+2	halftone colour
+3	error diffuse colour

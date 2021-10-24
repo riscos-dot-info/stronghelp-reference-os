@@ -1,0 +1,12 @@
+BASICTrans_Help  (&42C80)
+#Parent BASICTrans_
+=>	R0 =	pointer to help text (lexically analysed and CR terminated)
+	R1 =	pointer to name ('BASIC' or 'BASIC64')
+	R2 =	pointer to lexical analyser tables
+
+<=	R0,R2 corrupted
+	R1 =	non zero instructs BASIC to print the default (English) text
+
+BASIC tokenises the help text and then calls this SWI to print the appropriate help text.
+#Line
+See <PRM 4, page 338=>PRM-4:338>.

@@ -1,0 +1,36 @@
+OS_Byte 238  Read/Write numeric keypad interpretation
+#Parent OS_ByteIndex
+=>	R0 =	238
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	previous base number
+	R2 corrupted
+
+This call reads or sets the numeric keypad interpretation. Keypad keys generate offsets from this base value, which with the default base number of 48 give the key presses shown:
+
+Key	Offset		Key code	Offset with	Key Code
+Pressed	from base	Generated 	NumLock		generated
+#Line
+0	±0		"0"		+157		Insert
+1	+1		"1"		+91		Copy
+2	+2		"2"		+94		Down
+3	+3		"3"		+110		Page Down
+4	+4		"4"		+92		Left
+5	+5		"5"		(ignored)
+6	+6		"6"		+93		Right
+7	+7		"7"		-18		Home
+8	+8		"8"		+95		Up
+9	+9		"9"		+111		Page Up
+.	-2		"."		+79		Delete
+/	-1		"/"		unchanged
+*	-6		"*"		unchanged
+\#	-13		"\"		unchanged
+-	-3		"-"		unchanged
++	-5		"+"		unchanged
+Enter	-35		Return		unchanged
+
+The effects of shift and control are set with <OS_Byte 254=>OS_Byte254>.
+#Line
+See <PRM 1, page 900=>PRM-1:900>

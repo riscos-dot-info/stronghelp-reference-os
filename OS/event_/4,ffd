@@ -1,0 +1,7 @@
+Vertical sync event (4)
+#Parent Event_index
+=>	R0 =	4 (event number)
+
+This event is raised when the electron beam reaches the bottom of the display area and is about to start displaying border colour. This corresponds to the time that <OS_Byte 19=>OS_Byte019> returns. The frequency of this event depends on the scan rate of the monitor.
+
+If you wish to synchronise music, you should probably use <TickerV=>Vector_TickerV> rather than this event.

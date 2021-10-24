@@ -1,0 +1,16 @@
+Dynamic area PreGrow
+#Parent OS_DynamicAreaHandler
+{f25}Þ{f}	R0 =	0
+	R1 =	pointer to page block
+	R2 =	number of entries in the block
+	R3 =	amount the area is growing by
+	R4 =	current size of area, in bytes
+	R5 =	page size, in bytes
+	R12 =	workspace pointer passed to <OS_DynamicArea 0=>OS_DynamicArea0> or base of area.
+{f25}Ü{f}	all preserved, unless grow is disallowed
+#line
+This handler is called when a call to <OS_ChangeDynamicArea> results in an area growing, before any pages are actually moved. It is issued just before the pages themselves are allocated to the block.
+
+You can request that specific pages be used for growing the area by filling in their page numbers in the page block. If you do so, you must specify all the pages. The first entry in the page block corresponds to the lowest memory address of the extension, and the last entry in the page block the highest memory address.
+
+You can prevent the area changing size by returning an error. R0 should point to a standard <error block=>swi_errorblock>, or be set to zero for a generic error message to be used. You should then return with the V flag set.

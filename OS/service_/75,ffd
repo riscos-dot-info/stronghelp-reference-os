@@ -1,0 +1,7 @@
+Service_TerritoryStarted (&75)
+#Parent Service_Index
+=>	R1 =	&75 (reason code)
+
+This service is issued when the machine's territory is changed. (ROM modules will re-open their messages files - RAM modules can ignore this service).
+#Line
+See <PRM 3, page 791=>PRM-3:791>

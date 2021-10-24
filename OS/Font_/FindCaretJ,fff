@@ -1,0 +1,19 @@
+Font_FindCaretJ  (&40096)
+#Parent Font_
+=>	R1 =	pointer to string
+	R2 =	x offset in millipoints
+	R3 =	y offset in millipoints
+	R4 =	x justification offset
+	R5 =	y justification offset
+
+<=	R1 =	pointer to closest char
+	R2 =	width of string
+	R3 =	height of string
+	R4 =	length of string
+	R5 =	index of closest char
+
+This SWI returns info about which char is closest to the given offset. The supplied justification is divided on all spaces in the string.
+
+In RISC OS 3 and later it is recommended to use <Font_ScanString>.
+#Line
+See <PRM 3, page 461=>PRM-3:461>.

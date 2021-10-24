@@ -1,0 +1,7 @@
+Econet_AllocatePort  (&40013)
+#Parent Econet_
+<=	R0 =	port number
+
+This SWI asks the software for a unique port number which has not been claimed or allocated. When you have finished with the port, use <Econet_DeAllocatePort> to release it.
+#Line
+See <PRM 2, page 676=>PRM-2:676>.

@@ -1,0 +1,7 @@
+Service_WimpPalette (&5D)
+#Parent Service_index
+=>	R1 =	&5D (reason code)
+
+This service is issued when <Wimp_SetPalette=>Wimp:Wimp_SetPalette> is called.
+#Line
+See <PRM 3, page 79=>PRM-3:79>

@@ -1,0 +1,21 @@
+OS_Byte 2  Specify input stream
+#Parent OS_ByteIndex
+=>	R0 =	2 (&02)
+	R1 =	<stream selection=>.streams>
+
+<=	R0 preserved
+	R1 =	value before being overwritten
+	R2 corrupted
+
+This call select the device from which all subsequent input is taken by <OS_ReadC>. Note that on exit only 0 or 1 can be returned, so 0 may also mean 2. The state of this variable can be read with <OS_Byte 177=>OS_Byte177>. If Exec is enabled (see <OS_Byte 198=>OS_Byte198>) then the Exec file handle is used as the current input stream.
+#Line
+See <PRM 1, page 854=>PRM-1:854>
+#subpage streams
+Input streams
+Value	Meaning
+#line
+0	Keyboard input with serial input buffer disabled
+1	Serial input
+2	Keyboard input with serial input buffer enabled
+
+The difference between 0 and 2 is that the latter allows characters to be recieved into the serial buffer under interrupts as the same time as the keyboard is being used as the primary input. If the input streams are subsequently switched to the serial device, then those characters can then be read.

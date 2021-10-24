@@ -1,0 +1,13 @@
+OS_Byte 8  Write RS232 transmit rate
+#Parent OS_ByteIndex
+=>	R0 =	8
+	R1 =	<baud rate code=>OS_SerialOpSpeeds>
+
+<=	R0 preserved
+	R1,R2 corrupted
+
+This call writes the RS232 transmit rate - <OS_SerialOp 6=>OS_SerialOp6> should be used instead.
+
+The default rate can be set by <*Configure Baud=>StarCmds:Baud>.
+#Line
+See <PRM 2, page 445=>PRM-2:445>

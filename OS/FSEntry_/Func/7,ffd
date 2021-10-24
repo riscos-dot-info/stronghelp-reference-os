@@ -1,0 +1,14 @@
+FSEntry_Func 7
+#Parent FSEntry_Func
+=>	R0 =	7 (Set FS Options)
+	R1 =	<option number=>fsys_opts>
+	R2 =	parameter
+	R6 =	0, as special field not allowed here
+
+entry R1	Action
+#Line
+0		this call should reset all filing system options.
+1		never called - FileSwitch maintains settings
+4		set <boot file action=>fsys_opt4>
+
+Other options may be used, but should be allocated by Acorn.

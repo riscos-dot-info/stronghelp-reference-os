@@ -1,0 +1,15 @@
+Sound_Configure  (&40140)
+#Parent Sound_
+=>	R0 =	number of channels; rounded to 1,2,4 or 8, or 0 to read
+	R1 =	DMA buffer size, in bytes for one channel, or 0 to read
+	R2 =	sample period in µs (overall), or 0 to read
+	R3 =	pointer to <Channel Handler block=>Sound_handler_channel> (0 to preserve)
+	R4 =	pointer to <Scheduler=>Sound_handler_scheduler> (0 to preserve)
+
+<=	R0-R4 =	previous values
+                 
+Please note that R2 sets the sample period for all channels, so a call with R0=4 and R2=48 gives a sample period of 48/4 = 12 µs per channel, while the period of the sound system is 48 µs. Use the formula f=1/T to compute the sample rate (here 20.833 kHz). R1 specifies the DMA swap buffer length for one channel, the entire memory area has R1*R0 bytes.
+
+All current settings may be read by using zero input parameters.
+#Line
+See <PRM 4, page 18=>PRM-4:18>.

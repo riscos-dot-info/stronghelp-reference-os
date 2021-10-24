@@ -1,0 +1,11 @@
+DeviceFS_Threshold  (&42745)
+#Parent DeviceFS_
+=>	R1 =	DeviceFS <stream handle=>DeviceFS_entry0>
+	R2 =	threshold to use, "or -1 to read"
+<=	"R1, R2 preserved"
+# Gerph> How bizarre... I believe it's lying... Hmm... Maybe I should
+#        mail the oracle ? (Dave Walker)
+
+This SWI sets the threshold at which <halt=>DeviceFS_entry8> and <resume=>DeviceFS_entry9> are called.
+#Line
+See <PRM 2, page 435=>PRM-2:435>.

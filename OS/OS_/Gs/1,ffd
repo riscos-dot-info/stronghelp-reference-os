@@ -1,0 +1,13 @@
+Translations
+#Parent OS_GSInit
+Token	Replaced by
+#Line
+|"	"
+|\<	\<
+|!	forces top bit of next char to be set.
+|char	CTRL( ASCII(uppercase(char) - 64 )
+"str"	str
+\<num>	CTRL(num)
+\<str>	system variable str
+
+Example: <\<7\>Date: \<Sys$Date\>|M|JTime: \<Sys$Time\>=>*ECHO <7\>Date: <Sys$Date\>|M|JTime: <Sys$Time\>>

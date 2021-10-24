@@ -1,0 +1,54 @@
+Service_MonitorLeadTranslation (&76)
+#Parent Service_index
+=>	R1 =	&76 (reason code)
+	R2 =	<monitor lead ID=>.leadID>
+<=	R1-R5 preserved to pass on
+else
+<=	R1 =	0 (to claim service)
+	R2 preserved
+	R3 =	default screen mode for this monitor type
+	R4 =	<monitor type=>OS_monitortypes>
+	R5 =	0 => separate syncs
+	 	1 => composite sync
+
+This service is issued by <OS_ReadSysInfo 1=>OS_ReadSysInfo.1> if the configured value for any of Mode, Monitor Type or Sync is "auto", to determine these parameters from the monitor lead. Older machines ({/}e.g.{/} A400 series vintage) cannot read monitor lead IDs
+# I presume that "older machines" have 9 pin D plugs, not 15 pin sub-Ds
+#Line
+See <PRM 1, page 625=>PRM-1:625>
+#SubPage leadid
+Monitor lead IDs
+The monitor conector has 4 ID pins (0 to 3). The connection of each pin is reported as a value:
+
+Value	ID pin is tied to
+#Line
+0	0v
+1	+5v
+2	Hsync
+3	indeterminate
+#Tab
+
+The connections of the 4 pins are reported in a bitfield:
+
+Pin	Bits
+#Line
+ID0	0,1
+ID1	2,3
+ID2	4,5
+ID3	6,7
+#Tab
+
+For example the portable module recognises that 1,1,1,1 occurs when no lead is connected, and sets mode 27, type 5, sync 0.
+
+If the service is unclaimed RISC OS recognises the following values:
+
+ID0	ID1	ID2	Type		Sync		Mode
+#Line
+H	+5v	+5v	0 (TV)		composite	12
++5v	+5v	H	1 (Multisync)	composite	27
++5v	0v	+5v	3 (Mono VGA)	separate	27
+0v	+5v	+5v	3 (Colour VGA)	separate	27
+0v	+5v	0v	4 (SVGA)	separate	27
+
+(Value of ID3 is not used)
+
+If even this fails, RISC OS assumes type 0 - TV standard.

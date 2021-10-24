@@ -1,0 +1,5 @@
+OS_IntOff  (&14)
+#Parent OS_
+This call disables interrupts and returns to caller with processor mode and registers unchanged. It does this by switching the corresponding bits in the <PSR=>Assembly:PC> off.
+#Line
+See <PRM 1, page 139=>PRM-1:139>.

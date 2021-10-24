@@ -1,0 +1,24 @@
+Territory_ReadCalendarInformation  (&4305F)
+#Parent Territory_
+=>	R0 =	<territory number=>Territory_numbers>, or -1 to use current territory
+	R1 =	pointer to 5 byte UTC time
+	R2 =	pointer to 12 word buffer
+
+<=	R0-R2 preserved
+
+Offset	Value
+#Line
+0	Number of first working day in the week
+4	Number of last working day in the week
+8	Number of months in the current year
+12	Number of days in the current month
+16	Maximum length of AM/PM string
+20	Maximum length of WE string
+24	Maximum length of W3 string
+28	Maximum length of DY string
+32	Maximum length of ST string (may be zero)
+36	Maximum length of MO string
+40	Maximum length of M3 string
+44	Maximum length of TZ string
+#Line
+See <PRM 3, page 839=>PRM-3:839>.

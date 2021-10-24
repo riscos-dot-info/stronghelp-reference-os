@@ -1,0 +1,17 @@
+OS_Exit  (&11)
+#Parent OS_
+=>	R0 =	Pointer to <error block=>swi_errorblock>
+	R1 =	"ABEX" (&58454241) If Return code
+	R2 =	Return code
+   
+<=	Never returns
+
+This SWI passes control over to the most recent <exit handler=>OS_handlers_exit>.
+
+If R1 = "ABEX", and 0 \<= R2 \<= Sys$RCLimit, then Sys$ReturnCode is set to R2.
+
+If R1 = "ABEX" and R2 is outside this range, then Sys$ReturnCode is still set to R2, and a garbled error message issued (0 is used at the pointer to an error block). This is a very long lived OS bug.
+
+See also <OS_ExitAndDie>
+#Line
+See <PRM 1, page 300=>PRM-1:300>.

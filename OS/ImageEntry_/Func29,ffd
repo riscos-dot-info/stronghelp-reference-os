@@ -1,0 +1,9 @@
+ImageEntry_Func 29
+#Parent ImageEntry_Func
+=>	R0 =	29 (Read used space map)
+	R1 =	pointer to name of any object on image
+	R2 =	pointer to buffer
+	R5 =	size of buffer
+	R6 =	<image filing system's handle=>ImageEntry_Func21>
+
+This call reads the used space map of an image, implementing <OS_FSControl 46=>OS_FSControl46>. The buffer is pre-filled with 0s - you must fill it with 1s for used blocks, to the limit of the image/the buffer.

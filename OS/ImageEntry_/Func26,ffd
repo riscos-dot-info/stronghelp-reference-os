@@ -1,0 +1,7 @@
+ImageEntry_Func 26
+#Parent ImageEntry_Func
+=>	R0 =	26 (Add a defect)
+	R2 =	byte offset to start of defect
+	R6 =	<image filing system's handle=>ImageEntry_Func21>
+
+This call implements <OS_FSControl 42=>OS_FSControl42>.

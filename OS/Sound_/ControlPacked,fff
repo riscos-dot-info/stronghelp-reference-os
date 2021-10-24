@@ -1,0 +1,11 @@
+Sound_ControlPacked  (&40186)
+#Parent Sound_
+=>	R0 =	&AAAACCCC	<amplitude=>sound_volumes>	channel (1-8)
+	R1 =	&DDDDPPPP	<duration=>sound_durations>	<pitch=>sound_pitches>
+<=	R0, R1 preserved
+
+This SWI is identical to <Sound_Control>, except that the parameters are packed as pairs of 16 bit values into R0 and R1. It is provided for BBC compatibility and the scheduler. Use <Sound_Control> instead if possible.
+
+The advantage of this SWI is that it may be used with <Sound_QSchedule>.
+#Line
+See <PRM 4, page 36=>PRM-4:36>.

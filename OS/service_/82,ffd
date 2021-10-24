@@ -1,0 +1,7 @@
+Service_Invalidate Cache (&82)
+#Parent Service_Index
+=>	R1 = &82 (reason code)
+
+This service is issued by ColourTrans when the cache is flushed by ColourTrans. I'm not sure when you might need to know this.
+#Line
+See <PRM 3, page 345=>PRM-3:345>

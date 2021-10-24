@@ -1,0 +1,6 @@
+Output buffer empty event (0)
+#Parent Event_index
+=>	R0 =	0 (event number)
+	R1 =	<buffer number=>Buffer_buffers>
+
+This event is raised when an output buffer which has <event generation enabled=>Buffer_ModifyFlags> is emptied, or an attempt is made to remove a another byte when empty.

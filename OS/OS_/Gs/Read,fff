@@ -1,0 +1,10 @@
+OS_GSRead  (&26)
+#Parent OS_
+=>	R0,R2 from last call, or from OS_GSInit
+
+<=	R1 =	translated char
+	C set if end-of-string
+
+This SWI reads & <translates=>os_gs1> a string, one char at a time. Before first call, <OS_GSInit> must be called. To do whole string, use <OS_GSTrans>.
+#Line
+See <PRM 1, page 452=>PRM-1:452>.

@@ -1,0 +1,5 @@
+Text style
+#Parent drawfile_format
+First (lowest) byte is fontnumber, and refers to font in font table.
+
+The rest of word is reserved, and should be zero.

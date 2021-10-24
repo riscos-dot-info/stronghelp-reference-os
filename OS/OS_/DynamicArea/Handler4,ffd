@@ -1,0 +1,10 @@
+Dynamic area TestShrink
+#Parent OS_DynamicAreaHandler
+{f25}Þ{f}	R0 =	4
+	R4 =	current size of area (bytes)
+	R5 =	page size (bytes)
+	R12 =	workspace pointer passed to <OS_DynamicArea 0=>OS_DynamicArea0> or base of area.
+
+{f25}Ü{f}	r3 = maximum amount area could shrink by, in bytes
+#line
+Controls how much of the area's current size may be regarded as free by the kernel, and reclaimed if necessary via a normal shrink.

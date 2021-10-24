@@ -1,0 +1,6 @@
+Binding Areas to Applications
+{*}Overview of binding areas to applications{*}
+
+Bit 11 of r4 tells the kernel that the dynamic area is bound to the client application (ie. the area is only meaningful as part of the application that creates the area, and is not accessed by other software). Most areas created by typical applications can be bound to the application. It is strongly recommended that all new applications do create such areas with bit 11 set. *Note* that setting bit 11 is backward compatible with kernels on RISC OS 3.5, 3.6 and 3.7. Behaviour is undefined if a client that is not an application (eg. a module) creates an area with bit 11 set.
+
+If bit 11 of r4 is set, the kernel is free (but not required) to do both of the following: remove the dynamic area when the application dies (if the application fails to do so); swap out the dynamic area with the application slot. The main advantage of binding areas to applications is that the kernel can make more efficient use of address space by overlaying bound areas.

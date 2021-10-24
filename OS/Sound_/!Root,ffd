@@ -1,0 +1,33 @@
+Sound
+#Parent !Root
+#Prefix Sound_
+#Table Columns 2
+<AttachNamedVoice>
+<AttachVoice>
+<Configure>
+<Control>
+<ControlPacked>
+<Enable>
+<InstallVoice>
+<LinearHandler>
+<LogScale>
+<Mode>
+<Pitch>
+<QBeat>
+<QFree>
+<QInit>
+<QInterface>
+<QRemove>
+<QSchedule>
+<QDispatch>
+<QTempo>
+<ReadControlBlock>
+<RemoveVoice>
+<SampleRate>
+<SoundLog>
+<Speaker>
+<Stereo>
+<Tuning>
+<Volume>
+<WriteControlBlock>
+#EndTable

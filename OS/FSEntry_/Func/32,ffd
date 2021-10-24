@@ -1,0 +1,11 @@
+FSEntry_Func 32
+#Parent FSEntry_Func
+=>	R0 =	32 (Stamp image)
+	R1 =	pointer to name of any object on image
+	R2 =	0 (stamp when updated)
+	 	1 (stamp now)
+	R6 =	pointer to special field, or 0 if not present
+
+This call requests that the <cycle ID=>FileCore_cycleid> of the image be updated, implementing <OS_FSControl 51=>OS_FSControl51>.
+#
+# This entry point is only called if bit 23 of the filing system <information word=>fsys_infoword> is set.

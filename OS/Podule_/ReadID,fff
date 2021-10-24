@@ -1,0 +1,8 @@
+Podule_ReadID  (&40280)
+#Parent Podule_
+=>	R3 =	<ROM section=>OS_ModuleROMSections>
+<=	R0 =	<expansion card identity byte (ECId)=>Podule_ECId>
+
+This SWI reads the <Expansion Card identity byte=>Podule_ECId>, or the low byte of an <extended Expansion Card Identity=>Podule_eECId>.
+#Line
+See <PRM 4, page 138=>PRM-4:138>.

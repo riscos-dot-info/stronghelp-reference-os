@@ -1,0 +1,9 @@
+NetPrint_BindPSName  (&40206)
+#Parent NetPrint_
+=>	R0 =	pointer to name
+<=	R0 =	station number
+	R1 =	net number
+
+This SWI attempts to find a printer server with the given name that is not busy. If none can be found an error is returned.
+#Line
+See <PRM 2, page 395=>PRM-2:395>.

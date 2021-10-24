@@ -1,0 +1,5 @@
+PDriver_Reset  (&8014A)
+#Parent PDriver_
+This SWI ends all print jobs abnormally. It should only be called as an emergency measure during application development. It is issued if the printer driver mdule is killed.
+#Line
+See <PRM 3, page 621=>PRM-3:621>.

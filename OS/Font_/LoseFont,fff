@@ -1,0 +1,7 @@
+Font_LoseFont  (&40082)
+#Parent Font_
+=>	R0 =	font handle
+
+This SWI tells the font manager that the font is no longer needed by your program.
+#Line
+See <PRM 3, page 423=>PRM-3:423>.

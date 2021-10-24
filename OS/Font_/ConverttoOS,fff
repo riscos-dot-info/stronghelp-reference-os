@@ -1,0 +1,11 @@
+Font_ConverttoOS  (&40088)
+#Parent Font_
+=>	R1 =	x millipoints
+	R2 =	y millipoints
+
+<=	R1 =	x OS
+	R2 =	y OS
+
+This SWI converts the coordinates from millipoints to OS units.
+#Line
+See <PRM 3, page 438=>PRM-3:438>.

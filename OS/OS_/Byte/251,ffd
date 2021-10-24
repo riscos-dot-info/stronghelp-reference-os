@@ -1,0 +1,13 @@
+OS_Byte 251  Read display screen bank number
+#Parent OS_ByteIndex
+=>	R0 =	251 (&FB)
+	R1 =	0
+	R2 =	255
+
+<=	R0 preserved
+	R1 =	display screen bank
+	R2 corrupted
+
+This call reads the screen bank used by the display, as set with <OS_Byte 113=>OS_Byte113>. This call should not be used to write the value - doing so would only change the value in memory, without affecting the hardware.
+#line
+See <PRM 1, page 672=>PRM-1:672>

@@ -1,0 +1,13 @@
+OS_ConvertStandardDateAndTime  (&C0)
+#Parent OS_Convert
+=>	R0 =	pointer to 5-byte time block
+	R1 =	pointer to buffer for resulting string
+	R2 =	size of buffer
+
+<=	R0 =	pointer to buffer (R1 on entry)
+	R1 =	pointer to terminator
+	R2 =	free bytes in buffer
+
+This SWI converts a five-byte value representing centiseconds since 1900, into a string. It uses {fCode}Sys$DateFormat{f}.
+#Line
+See <PRM 1, page 435=>PRM-1:435>.

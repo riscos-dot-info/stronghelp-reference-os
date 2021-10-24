@@ -1,0 +1,21 @@
+PDumperReason_StartPage (3)
+#Parent PDumperReason_
+=>	R0 =	copies
+	R1 =	output file handle
+	R2 =	<strip type=>PDumper_striptypes>
+	R3 =	blank pixel rows to skip before the data
+	R4 =	job private word (see <PDumperReason_StartJob>)
+	R5 =	<config data=>PDumper_configblock>
+	R6 =	left margin (pixels)
+	R7 =	<resolution=>PDumper_resolution>
+	R11 =	3 (reason code)
+	R12 =	private word
+
+<=	R0 =	number of copies to be performed
+	R3 =	blank pixel rows still to skip
+
+This is called at the start of each page. R0 should return the number of copies that will actually be printed, and etnry R3 should be reduced by the number of blank rows actually skipped - PDriverDP will skip the rest.
+
+# Does a Sinclar ZX printer count for this one? :-)
+Generic dot matrix with roll paper (<config block=>PDriver_SetDriverblock> <offset 256, bit 1 set=>PDumper_ConfigWord>) should ignore R3, and skip [<config block=>PDumper_configblock> offset 44 ({*}not{*} 32, as PRMs say)] pixels (returning number of unskippable pixels in R3 as above)
+# Confused - you will be!

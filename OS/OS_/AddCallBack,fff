@@ -1,0 +1,14 @@
+OS_AddCallBack  (&54)
+#Parent OS_
+=>	R0 =	pointer to address to call
+	R1 =	value of R12 to be called with
+
+<=	R0, R1 preserved
+                 
+A transient callback is placed on a list of tasks who want to be called as soon as RISC OS is not busy. And this SWI will place a transient routine on that list. It is usually used by an interrupt routine that needs to do complex processing that would take too long in an interrupt, or that needs to call a non-re-entrant SWI. OS_AddCallBack tells RISC OS that the interrupt routine wishes to be 'called back'. This can happen when RISC OS is being threaded out of - that is, when it enters User mode with interrupts enabled and the SVC stack empty (either after a SWI is called, or after an interrupt). It can also happen when RO is idling, for example, while it is waiting in <OS_ReadC>.
+
+Transient CallBacks can safely be used by many clients.
+
+A routine called by this mechanism must preserve ALL registers and return by MOV PC,R14.
+#Line
+See <PRM 1, page 319=>PRM-1:319>.

@@ -1,0 +1,26 @@
+DrawFile_Render  (&45540)
+#Parent DrawFile_
+=>	R0 =	<flags=>.flags>
+	R1 =	pointer to <drawfile block=>Drawfile_format>
+	R2 =	length of block
+	R3 =	pointer to <transformation matrix=>Draw_transform>, or 0 to use identity matrix
+	R4 =	pointer to <clipping rectangle=>swi_bbox> in OS units, or 0 for none
+	R5 =	flatness if bit 2 of R0 set
+<=	All preserved
+
+This SWI renders a draw file at a given screen position where that position is defined as screen position 0, 0 with the x- and y-translations as specified in the transformation matrix. Hence, to render a non-rotated 1:1 draw file at (x, y) (screen coordinates in OS units) the transformation matrix is :
+#Indent 2;Tab
+(	1 << 16	0	)
+(	0	1 << 16	)
+(	256*x	256*y	)
+#Indent
+
+The clipping rectangle is typically a redraw rectangle returned by the Wimp on a redraw window request.  If R4 = 0, then the whole draw file is rendered. If non-zero, only objects which intersect the clipping rectangle are rendered.
+#
+#Subpage flags
+DrawFile_Render flags
+Bit	Meaning if set
+#Line
+0	render bounding boxes (as dotted red rectangles)
+1	do not render the objects themselves
+2	use R5 as flatness

@@ -1,0 +1,11 @@
+Service_LookupFiletype (&42)
+#Parent Service_Index
+=>	R1 =	&42 (reason code)
+	R2 =	<filetype=>Filetypes:!Root>
+<=	R1 =	0 to claim (filetype known), preserved otherwise
+	R2 =	first four characters, if known
+	R3 =	last found characters, if known
+
+This service is issued when a filetype lookup in the File$Type_### variable fails. You probably shouldn't be using this service as the system variables are more useful.
+#Line
+See <PRM 1, page 263=>PRM-1:263>

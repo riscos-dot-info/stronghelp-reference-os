@@ -1,0 +1,6 @@
+Joystick
+#Parent !Root
+#Prefix Joystick_
+<Read>
+
+This is only available on machines with the proper hardware.

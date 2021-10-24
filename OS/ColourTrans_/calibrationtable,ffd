@@ -1,0 +1,63 @@
+ColourTrans calibration tables
+#Parent ColourTrans_
+# PRM 3-342
+Tables are specified as
+
+Size	Content
+#Line
+4	number of entries for component one
+4	number of entries for component two
+4	number of entries for component three
+number * 4	entries for component one (in ascending device component order)
+number * 4	entries for component two
+number * 4	entries for component three
+#Tab
+
+An entry is packed in the form
+
+	&BBGGRRDD
+
+where	&BBGGRR	is the "standard" colour for
+either	&0000DD	device component one
+or	&00DD00	device component two
+or	&DD0000	device component three
+
+({/}i.e.{/} the table gives a mapping for a single pure device component to the standard RGB colour)
+
+#Tab
+To convert a device colour into a standard colour ColourTrans
+è	splits the device colour into its 3 components
+è	looks up each component in the calibration table
+è	for entries not in the table performs linear interpolation on the two bounding values
+è	sums the 3 standard colours derived from each of the 3 components
+
+#Tab
+
+For an interesting effect try the table
+
+&00000002
+&00000002
+&00000002
+&00000000
+&7F7F00FF
+&00000000
+&7F007FFF
+&00000000
+&007F7FFF
+
+Normality can be restored with
+
+&00000002
+&00000002
+&00000002
+&00000000
+&0000FFFF
+&00000000
+&00FF00FF
+&00000000
+&FF0000FF
+
+or by passing an invalid table to <ColourTrans_SetCalibration>, generating an error and restoring the default calibrartion.
+
+The default calibration for the screen is linear - screen device colours are assumed to be standard colours.
+

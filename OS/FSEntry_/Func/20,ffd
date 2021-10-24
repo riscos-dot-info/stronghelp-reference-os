@@ -1,0 +1,9 @@
+FSEntry_Func 20
+#Parent FSEntry_Func
+=>	R0 =	20 (Output full information on objects)
+	R1 =	pointer to pathname
+	R6 =	pointer to special field, or 0 if not present
+
+If bit 25 of the filing system <information word=>fsys_infoword> is clear this call is not made - repeated calls to <FS_EntryFunc 6=>FSEntry_Func6> are used.
+
+This call should print information on the object matching the pathname - it implements {fCode}*FileInfo{f}. On RISC OS 2 this may be wildcarded, and all objects which match should be printed.

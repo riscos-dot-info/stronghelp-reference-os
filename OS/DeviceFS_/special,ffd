@@ -1,0 +1,64 @@
+Device driver special fields
+#Parent DeviceFS_Register
+(This is probably /the/ most poorly explained part of the entire PRM)
+# Gerph> I contest that maybe the Sound drivers might be.
+#        Or the section on filecore documenting the formula required to
+#        actually find the disc map.
+#        Although, to be fair, this bit is pretty awful
+Special fields can be used to pass extra parameters to a device, and DeviceFS provides a mechanism to pass them, using a validation string. If a device does not want to use the DeviceFS mechanism, it should pass 0 as the validation string pointer, and be prepared to ignore unknown parameters in the special field.
+
+Validation strings consist of keywords and escapes of the form
+
+  {fCode}keyword[,keyword]/escape[/escape][;keyword[,keyword]/escape[/escape]]{f}
+
+escape is permitted two values:
+
+/N	number
+/S	switch
+
+Within the actual special field itself, I have not been able to assign
+The special field itself is passed according to the validation string, and the results placed in a buffer. The buffer has one word per escape, which is set to &DEADDEAD if the keyword is absent from the special field. "<Parameters=>.parameters>" are terminated by a comma, or an out of place character ({/}e.g.{/} letter in a numeric field). Numbers are read with <OS_ReadUnsigned> and stored in the word. Switches store the state of the keyword - so a validation string of
+
+#Indent 2;fCode
+mike,dennis/S
+#indent;f
+
+will store 0 if "mike" is present in the special field, 1 if "dennis" is present.
+
+This means that :
+
+#indent 2;fCode
+mike;dennis/S/N
+#indent;f
+
+will store
+
+Offset	Value
+#Line
+0	7
+4	&DEADDEAD
+  for "mike=7"
+
+and
+
+0	&DEADDEAD
+4	16
+  for "dennis=16"
+
+The {*}special field control block{*} of the <Initialise entry point=>DeviceFS_entry0> is a pointer to this block. It is not possible to read the original string.
+#Subpage parameters
+"Parameters"
+"Parameters are separated by commas", "keywords separated by semicolons" gives the impression that the system was intended to support string parameters in addition. Block devices are in the API, yet are unimplemented - was DeviceFS only partially implemented?
+# Gerph> I've always wondered about this... You're probably right
+#        /If/ it were implemented correctly, it would make an excellent
+#        medium for Socket-like transfers.
+#        How about a HTML->Text conversion, running as it receives data ?
+#        Or a streaming graphic ? (outputs RGB values as they are processed
+#        in the background.
+#        ok, so they are stupid ideas, but at present they are not sensibly
+#        possible because of certain 'failings' in DeviceFS.
+#        It appears that I cannot do anything useful at all with special
+#        fields because the documentation is do downright awful.
+#        I've mailed Mr Walker, so maybe I can get this cleared up.
+#        Empirical tests have resulted in not a lot of useful info.
+#        Hacking has resulted in nothing useful whatsoever.

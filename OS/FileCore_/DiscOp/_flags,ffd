@@ -1,0 +1,18 @@
+FileCore_DiscOp flags
+#Parent FileCore_DiscOp
+Bit	Meaning
+#Line
+4	Given alternative defect list
+5	Given <sector list=>.seclist>
+6	Ignore escape
+7	Ignore timeout
+8-31	Pointer to <alternative record=>FileCore_Disc> (shifted down twice)
+
+Note that the alternative record is ÷ 4 so that its LSB is actually bit 6, but because it must be word aligned the real LSB is bit 8.
+#Subpage seclist
+Use sector list
+When bit 5 is set, the meaning of R3 (memory address) is altered. It doesn't point to the area of RAM to or from which the disc data is to be transferred. Instead, it points to a word-aligned list of memory address/length pairs. All but the last of these lengths must be a multiple of the sector size. These word-pairs are used for the transfer until the total number of bytes given in R4 has been transferred.
+
+On exit, R3 points to the first pair which wasn't fully used, and this pair is updated to reflect the new start address/bytes remaining, so that a subsequent call would continue from where this call has finished.
+
+This bit may only be set for reasom codes 0-2.

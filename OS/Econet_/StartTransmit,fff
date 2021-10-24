@@ -1,0 +1,20 @@
+Econet_StartTransmit  (&40006)
+#Parent Econet_
+=>	R0 =	flag byte
+	R1 =	port number
+	R2 =	station number
+	R3 =	net number
+	R4 =	pointer to data buffer
+	R5 =	buffer size
+	R6 =	retry count
+	R7 =	delay in cs
+
+<=	R0 =	handle
+	R1 corrupted
+	R2 =	buffer address
+	R3 =	station number
+	R4 =	net number, or 0 if R3 on entry was the local net
+
+This SWI creates a control block to transmit data on an econet port. The data buffer should be in RMA or some other permanently available area of memory, due to the way in which the data is read.
+#Line
+See <PRM 2, page 657=>PRM-2:657>.

@@ -1,0 +1,9 @@
+NetFS_UpdateFSList  (&4004D)
+#Parent NetFS_
+=>	R0 =	station number
+	R1 =	net number
+<=	R0, R1 corrupted
+
+This SWI fetches the names of discs on the given file server (or all servers if R0 = R1 = 0), to ensure that the list from <NetFS_EnumerateFS> is current.
+#Line
+See <PRM 2, page 362=>PRM-2:362>.

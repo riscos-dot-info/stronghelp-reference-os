@@ -1,0 +1,17 @@
+FileCore
+#Parent !Root
+#Prefix Filecore_
+#Table Columns 3
+<Create>
+<DescribeDisc>
+<DiscardReadSectorsCache>
+<DiscFormat>
+<DiscOp>
+<Drives>
+<FloppyStructure>
+<FreeSpace>
+<LayoutStructure>
+<MiscOp>
+<SectorOp>
+<FreeSpace64>
+#EndTable

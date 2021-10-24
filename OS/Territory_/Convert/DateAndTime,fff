@@ -1,0 +1,17 @@
+Territory_ConvertDateAndTime  (&4304B)
+#Parent Territory_
+=>	R0 =	<territory number=>Territory_numbers>, or -1 for current
+	R1 =	pointer to 5 byte UTC time
+	R2 =	pointer to output buffer
+	R3 =	size of buffer
+	R4 =	pointer to null terminated <format string=>swi_dateformat>
+
+<=	R0 =	pointer to buffer (R2 on entry)
+	R1 =	pointer to terminating 0
+	R2 =	number of bytes free in buffer
+	R3 =	pointer to format string (R4 on entry)
+	R4 =	preserved
+
+Result is in local time, language, and alphabet.
+#Line
+See <PRM 3, page 807=>PRM-3:807>.

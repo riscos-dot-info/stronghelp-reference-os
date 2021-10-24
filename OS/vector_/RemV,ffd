@@ -1,0 +1,32 @@
+Remove vector (21)
+#Parent vector_index
+=>	R1 =	<buffer number=>Buffer_buffers>, bit 31 set for block remove
+	R9 =	&15
+	V flag	set if examine only
+	 	clear to remove data from buffer
+
+	If single byte examine:
+<=	R0 =	next byte that will be removed
+	R1 preserved
+	R2 corrupt
+	C flag	set if buffer is empty
+
+	If single byte remove:
+<=	R0 corrupt
+	R1 preserved
+	R2 =	byte removed
+	C flag	set if buffer was empty on entry
+
+	If block remove/examine :
+	R2 =	pointer to buffer
+	R3 =	length of buffer
+<=	R0 preserved
+	R1 preserved
+	R2 =	pointer updated
+	R3 =	number of bytes still to remove
+	C flag	set if buffer was empty on entry
+
+All characters removed from buffers are sent through this vector.
+If called via <OS_CallAVector> then interrupts must be disabled first.
+#Line
+See <PRM 1, page 82=>PRM-1:82>.

@@ -1,0 +1,10 @@
+DrawFile_BBox  (&45541)
+#Parent DrawFile_
+=>	R0 =	flags (must be 0)
+	R1 =	pointer to drawfile block
+	R2 =	length of block
+	R3 =	<transformation matrix=>Draw_transform>, or 0 to use identity
+	R4 =	pointer to 4 word buffer for <bounding box=>swi_bbox> in draw units
+<=	All preserved
+
+This SWI is used to determine the bounding box (in draw units) of the given draw file, as if it were plotted with the transformation given.

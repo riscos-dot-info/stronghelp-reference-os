@@ -1,0 +1,6 @@
+Portable BMU event
+#Parent event_index
+=>	R0 =	2 (event number)
+	R1 =	<BMU flags=>Portable_BMUflags>
+
+This event is generated when an interrupts is received from the battery management unit.

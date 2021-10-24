@@ -1,0 +1,11 @@
+OS_SerialOp 0
+=>	R0 =	0 (reason code)
+	R1 =	EOR mask
+	R2 =	AND mask
+
+<=	R0 preserved
+	R1 =	old value of state
+	R2 =	new value of state
+
+The structure of this call is very similar to that of OS_Byte's between &A6 and &FF the new state is determined by:
+  <New State=>OS_SerialOpStatus> = (Old state AND R2) EOR R1

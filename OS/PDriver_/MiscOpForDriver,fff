@@ -1,0 +1,11 @@
+PDriver_MiscOpForDriver  (&8015B)
+#Parent PDriver_
+=>	R0 =	<Reason code=>PDriver_MiscOp.ops>
+	R8 =	<printer driver number=>PDriver_printernumbers>
+	other registers depend on reason code
+
+<=	depends on reason code
+
+This SWI is identical to <PDriver_MiscOp>, except that it passes the operation to the driver specifed in R8, which need not be the current driver.
+#Line
+See <PRM 3, page 655=>PRM-3:655>.

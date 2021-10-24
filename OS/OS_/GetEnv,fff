@@ -1,0 +1,9 @@
+OS_GetEnv  (&10)
+#Parent OS_
+{f25}Ü{f}	R0 =	address of *command {/}[readonly]{/}
+	R1 =	RAM limit
+	R2 =	pointer to 5-byte time of prog start
+
+The values returned by this SWI in R0 and R2 can be set with <OS_WriteEnv>, the RAM limit is set with <OS_ChangeEnvironment 0=>OS_ChangeEnvironment>.
+#Line
+See <PRM 1, page 298=>PRM-1:298>.

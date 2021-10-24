@@ -1,0 +1,8 @@
+OS_RemoveTickerEvent  (&3D)
+#Parent OS_
+=>	R0 =	pointer to code called
+	R1 =	value of R12 called with
+
+Removes a ticker timer event, such as <OS_CallEvery> or <OS_CallAfter>.
+#Line
+See <PRM 1, page 433=>PRM-1:433>.

@@ -1,0 +1,8 @@
+Service_NetFS (&55)
+#Parent Service_Index
+=>	R1 =	&55 (reason code)
+
+This service is issued by NetFS to inform NetFiler that things may have changed ({/}i.e.{/} *Logon, *Bye or *Sdisc/*Mount has occurred).
+
+#Line
+See <PRM 2, page 342=>PRM-2:342>

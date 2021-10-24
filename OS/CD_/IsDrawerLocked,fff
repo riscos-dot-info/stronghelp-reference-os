@@ -1,0 +1,6 @@
+CD_IsDrawerLocked  (&4125C)
+#Parent CD_
+=>	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+<=	R0 =	0 if not locked, 1 if locked, or an error if not supported
+
+This SWI checks whether the draw is locked.

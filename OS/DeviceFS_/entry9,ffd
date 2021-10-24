@@ -1,0 +1,8 @@
+Device driver Resume entry point (9)
+#Parent DeviceFS_CallDevice
+=>	R0 =	9
+	R2 =	device driver stream handle
+
+This entry point is called when the free space rises above the threshold (set on creation, or modified by <DeviceFS_Threshold>). It allows the driver to attempt to restart incoming data ({/}e.g.{/} a serial device could perform handshaking).
+#Line
+See <PRM 2, page 604=>PRM-2:604>.

@@ -1,0 +1,7 @@
+PDumper strip types
+#Parent PDumper_
+Value	Meaning
+#Line
+0	monochrome
+1	grey scale
+2	256 colour

@@ -1,0 +1,11 @@
+OS_FSControl 16
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	16 (Remove FS)
+	R1 =	pointer to filing system name
+#Wrap
+<=	All registers preserved
+
+This SWI is used to remove a Filing System from FileSwitch. The name is control character terminated.
+
+If the FS is current then the current and temporary filing system numbers are set to 0, and the old FS number is stored. If it is added again before a new current FS is selected then it will be reselected as current. If the FS is the temporary FS (but not the current FS) then the temporary FS is set to the current FS.

@@ -1,0 +1,6 @@
+User  (Unknown SWI)
+# This page can only be viewed with, say, Zap or StrongHelp
+# It is not an error
+This is the name given by the OS to any SWI call which it does not recognise as belonging to itself or any of the currently installed extension modules.
+
+Usually you will come across this if you are viewing code for which a support module is not installed, or in data segments.

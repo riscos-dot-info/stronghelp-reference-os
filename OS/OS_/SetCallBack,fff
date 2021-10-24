@@ -1,0 +1,12 @@
+OS_SetCallBack  (&1B)
+#Parent OS_
+This sets the callback flag and so causes entry to the <callback handler=>OS_handlers_callback> when the system next exits to user mode code with interrupts enabled (apart, of course, from the exit from this SWI). This SWI may be used if the code linked into the the system (via vector or as a SWI handler, etc) is required to do things on exit from the system. The callback handler is set with <OS_ChangeEnvironment>, and is distinct from transient callbacks set with <OS_AddCallBack>.
+# N> are you sure that the callback wont happen when this SWI exits if the
+#    supervisor stack is empty and the processor is returning to USR mode?
+#    <FX> - checks PRM
+#    Hmm. it's what the PRM says.
+#    I don't believe the PRM
+# Gerph> ISTR there was some discussion in the newsgroups about this one
+#        what was the outcome ?
+#Line
+See <PRM 1, page 308=>PRM-1:308>.

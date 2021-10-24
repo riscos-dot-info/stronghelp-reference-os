@@ -1,0 +1,7 @@
+ImageEntry_File 10
+#Parent ImageEntry_File
+=>	R0 =	10 (Read block size)
+	R1 =	pointer to filename
+<=	R2 =	natural block size of file
+
+This call is made to read the natural block size of a file, see <ImageEntry_Open>.

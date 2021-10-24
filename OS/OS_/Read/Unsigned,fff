@@ -1,0 +1,22 @@
+OS_ReadUnsigned  (&21)
+#Parent OS_
+=>	R0 =	base (2-36 Default 10) + <flags=>.flags>
+	R1 =	pointer to string to convert
+	R2 =	maximum value, if bit 29 set
+
+<=	R1 =	pointer to terminator char
+	R2 =	value converted
+
+This SWI converts a string into an integer. If string starts with &, base 16 is assumed. If string starts with base_, this base is used. If no base is given in string, the base in R0 is used, or 10 if that base is invalid.
+
+The terminating character in the string to convert is the first character that is inconsistent with the base being used. e.g. F in base 10, 2 in base 2, etc.
+#Line
+See <PRM 1, page 448=>PRM-1:448>.
+#Subpage flags
+Flag bits in R0
+#wrap off
+Bit	Meaning
+#Line
+31	Must terminate with control,space
+30	Must be in the range [0,255]
+29	Must be in the range [0,R2]

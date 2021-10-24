@@ -1,0 +1,3 @@
+Exception registers
+#Parent OS_handlers
+This is the address of the area in memory where the registers are dumped, when one of the exceptions occurs, if the default handlers are used.

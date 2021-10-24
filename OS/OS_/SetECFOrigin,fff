@@ -1,0 +1,10 @@
+OS_SetECFOrigin  (&56)
+#Parent OS_
+=>	R0 =	x
+	R1 =	y
+
+This SWI sets the point with which to align the bottom left of ECF patterns with.
+
+You can also use <VDU 23,17,6=>VDU:23,17,6>.
+#Line
+See <PRM 1, page 718=>PRM-1:718>.

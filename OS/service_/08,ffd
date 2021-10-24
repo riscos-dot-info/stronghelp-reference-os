@@ -1,0 +1,10 @@
+Service_UKWord (&8)
+#Parent Service_index
+=>	R1 =	&8 (reason code)
+	R2 =	<OS_Word> number
+	R3 =	pointer to OS_Word data block
+<=	R1 =	0 to claim, preserved otherwise
+
+This service is issued when an unknown OS_Word code is given. You should use <WordV=>Vector_index> in preference to trapping this service.
+#Line
+See <PRM 1, page 258=>PRM-1:258>

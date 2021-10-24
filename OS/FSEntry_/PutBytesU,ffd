@@ -1,0 +1,9 @@
+FSEntry_PutBytes (unbuffered)
+#Parent FSEntry_
+=>	R0 =	byte to put to file (will have top bits clear)
+	R1 =	internal file handle returned by <FSEntry_Open>
+<=	all preserved
+
+This entry point is called when data is written to a file. It will be used in place of a <GBPB=>FSEntry_GBPB> call if this is not available.
+
+Memory addresses are *not* guaranteed to be word aligned.

@@ -1,0 +1,9 @@
+FSEntry_Args 3
+#Parent FSEntry_Args
+=>	R0 =	3 (Write file extent)
+	R1 =	internal file handle returned by <FSEntry_Open>
+	R2 =	new file extent
+
+This call is made when FileSwitch needs to extend a file beyond its current length. For buffered files this is only called when the file is closed. On unbuffered files this is called whenever the user requests it.
+
+On systems with no concept of extents (eg streams) this should *not* return an error.

@@ -1,0 +1,13 @@
+Service_ModeTranslation (&51)
+#Parent Service_index
+=>	R1 =	&51 (reason code)
+	R2 =	mode number
+	R3 =	<monitor type=>OS_monitortypes>
+<=	R1-R3 preserved to pass on else
+	R1 =	0 (to claim service)
+	R2 =	substitute mode
+	R3 preserved
+
+This service is issued by <OS_CheckModeValid> or a mode change when the monitor type is unknown by RISC OS, and the mode is not available with the current monitor type (as already ascertained by <Service_ModeExtension=>Service_50>).
+#Line
+See <PRM 1, page 624=>PRM-1:624>

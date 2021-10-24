@@ -1,0 +1,10 @@
+Copy sprite (27)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<27, &1B=>os_spriteop_reason2> (Copy sprite)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+	R3 =	New name
+
+This copies the sprite unless a sprite already exists under the new name, in which case an error will be generated. 
+#Line
+See <PRM 1, page 778=>PRM-1:778>

@@ -1,0 +1,5 @@
+Econet_PrintBanner  (&40010)
+#Parent Econet_
+This SWI displays the econet banner. This is usually "Acorn Econet", but could be "Acorn Econet, no clock" if no clock is running.
+#Line
+See <PRM 2, page 673=>PRM-2:673>.

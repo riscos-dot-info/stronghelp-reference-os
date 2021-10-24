@@ -1,0 +1,10 @@
+FSEntry_Func 26
+#Parent FSEntry_Func
+=>	R0 =	26 (Add a defect)
+	R1 =	pointer to name of image
+	R2 =	byte offset to start of defect
+	R6 =	pointer to special field, or 0 if not present
+
+This call implements <OS_FSControl 42=>OS_FSControl42>.
+#
+# This entry point is only called if bit 23 of the filing system <information word=>fsys_infoword> is set.

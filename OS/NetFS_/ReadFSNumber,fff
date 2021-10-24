@@ -1,0 +1,8 @@
+NetFS_ReadFSNumber  (&40040)
+#Parent NetFS_
+<=	R0 =	station number
+	R1 =	net number
+
+This SWI returns the full station number of your current file server, or R0 = R1 = 0 if your current file server is not set.
+#Line
+See <PRM 2, page 344=>PRM-2:344>.

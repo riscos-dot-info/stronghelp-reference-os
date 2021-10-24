@@ -1,0 +1,11 @@
+OS_Byte 1  Write user flag
+#Parent OS_ByteIndex
+=>	R0 =	1
+	R1 =	new value
+
+<=	R0 preserved
+	R1 =	machine type
+	R2 corrupted
+
+This call writes a location that is unused by the OS, which can be used to pass results between programs. The location may be read (and written) with <OS_Byte 241=>OS_Byte241>. System variables now provide a much better way of passing results.
+# Gerph> This doesn't appear to be in the PRMs - is it ?

@@ -1,0 +1,14 @@
+OS_Word 14,3
+#Parent OS_Word
+=>	R0 =	14
+	R1 =	pointer to 5-byte block containing :
+	 	 	0 = 3
+
+<=	R1 =	pointer to block containing :
+		 	0 = LSB of time
+		 	1
+		 	2
+		 	3
+		 	4 = MSB of time
+
+This OS_Word reads the time from the CMOS clock as a standard RISC OS 5 byte time block (centiseconds from 1900/01/01 00:00:00). On RISC OS 2 the clock is assumed to be set to local time, later RISC OS assumes UTC.

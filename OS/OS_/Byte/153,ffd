@@ -1,0 +1,19 @@
+OS_Byte 153  Insert char into input buffer
+#Parent OS_ByteIndex
+=>	R0 =	153 (&99)
+	R1 =	<input buffer number=>OS_Byteinputsources>
+	R2 =	byte to insert
+
+<=	R0 preserved
+	R1, R2 corrupted
+	C flag	set if buffer was full, otherwise clear
+                                                  
+This call inserts a character into either the keyboard or serial buffer.
+
+If	the current escape character (set with <OS_Byte 220=>OS_Byte220>) is inserted and escape generation is not disabled (see <OS_Byte 229=>OS_Byte229> *and* <OS_Byte 200=>OS_Byte200>)
+then	an escape condition occurs
+	either	an <escape event=>event_6> is generated (if enabled with <OS_Byte 14,6=>OS_Byte014>)
+	or	the <escape handler=>OS_handlers_escape> is called.
+	The effects set by <OS_Byte 230=>OS_Byte230> occur when the escape condition is acknowledged with <OS_Byte 126=>OS_Byte126>.
+#Line
+See <PRM 1, page 172=>PRM-1:172>

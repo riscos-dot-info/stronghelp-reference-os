@@ -1,0 +1,12 @@
+OS_Byte 15  Flush buffer
+#Parent OS_ByteIndex
+=>	R0 =	15 (reason code)
+	R1 =	0 to flush all buffers
+	 	1 to flush the current input buffer
+
+<=	R0 preserved
+	R1,R2 corrupted
+
+The contents of either all buffers or only the current input buffer are discarded, depending on R1. Individual buffers may be flushed using <OS_Byte 21=>os_byte021>.
+#Line
+See <PRM 1, page 164=>PRM-1:164>

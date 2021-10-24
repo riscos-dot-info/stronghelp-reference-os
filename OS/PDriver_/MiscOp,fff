@@ -1,0 +1,20 @@
+PDriver_MiscOp  (&8015A)
+#Parent PDriver_
+=>	R0 =	<Reason code=>.ops>
+	other registers depend on reason code
+
+<=	depends on reason code
+
+This SWI performs miscellaneous operations, dependant on the reason code in R0.
+#Line
+See <PRM 3, page 645=>PRM-3:645>.
+#subpage ops
+PDriver_MiscOp reasons
+R0			Action
+#Line;Wrap off
+0			<Add a font name to the list of known fonts=>PDriver_MiscOp0>
+1			<Remove font(s) from the list of known fonts=>PDriver_MiscOp1>
+2			<Enumerate the list of known fonts=>PDriver_MiscOp2>
+&80000000		<Register a dumper with PDriverDP=>PDriver_MiscOp80000000>
+&80000001		<Deregister a dumper with PDriverDP=>PDriver_MiscOp80000001>
+&80000100 - &80000FFF	direct control extension.

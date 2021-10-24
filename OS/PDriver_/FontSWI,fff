@@ -1,0 +1,5 @@
+PDriver_FontSWI  (&80147)
+#Parent PDriver_
+This SWI is for internal communication between printer driver and font system only.
+#Line
+See <PRM 3, page 616=>PRM-3:616>.

@@ -1,0 +1,11 @@
+OS_Byte 135  Read char at cursor position and screen mode
+#Parent OS_ByteIndex
+=>	R0 =	135
+
+<=	R0 preserved
+	R1 =	ASCII value of character (0 if unreadable)
+	R2 =	Mode number or pointer to a <mode specifier block=>Wimp:Wimp_ModeSelect>
+
+This call returns the screen mode and the ASCII code of the character at the text cursor position. If cursor editing is in progress, it returns the character code returned by the character at the input cursors position ({/}i.e.{/} the character would be copied as input the next time copy is pressed.) Note that the screen mode never has bit 7 set, even if it's a shadow mode.
+#Line
+See <PRM 1, page 649=>PRM-1:649>

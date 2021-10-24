@@ -1,0 +1,14 @@
+PDriver_SetInfo  (&80141)
+#Parent PDriver_
+<=	R1 =	x resolution of driven printer (DPI)
+	R2 =	y resolution of driven printer (DPI)
+	R3 =	features word:	bit 0 set for colour, else black and white
+	 	 		bits 1-31 0 (reserved)
+	R4 =	pointer to new printer name (max 20 chars, null terminated)
+	R5 =	x halftone resolution in repeats/inch
+	R6 =	y halftone resolution in repeats/inch
+	R7 =	printer driver specific number
+
+This SWI is used by the Printer application to configure a printer driver. The new values are only used on new jobs. If halftoning is not to be used then R5=R2,R6=R3.
+#Line
+See <PRM 3, page 606=>PRM-3:606>.

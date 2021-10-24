@@ -1,0 +1,7 @@
+Printer dependant font flags
+#Parent PDriver_MiscOp0
+Bit	Meaning when set
+#Line
+0	font is resident
+1	font is to be downloaded at job start
+2	font has been downloaded

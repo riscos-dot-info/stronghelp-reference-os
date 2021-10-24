@@ -1,0 +1,7 @@
+Territory_SetTime  (&43047)
+#Parent Territory_
+=>	R0 =	pointer to a 5-byte UTC time
+	
+Sets the internal clock to a given time.
+#Line
+See <PRM 3, page 800=>PRM-3:800>.

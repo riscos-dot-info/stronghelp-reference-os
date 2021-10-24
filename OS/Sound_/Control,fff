@@ -1,0 +1,10 @@
+Sound_Control  (&40189)
+#Parent Sound_
+=>	R0 =	channel (1-8)
+	R1 =	<volume=>sound_volumes>
+	R2 =	<pitch=>sound_pitches>
+	R3 =	<duration=>sound_durations>
+
+This SWI will play a sound on a given channel. If any of the parameters are incorrect then no error is raised and no operation will be performed.
+#Line
+See <PRM 4, page 39=>PRM-4:39>.

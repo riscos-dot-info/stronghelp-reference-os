@@ -1,0 +1,13 @@
+OS_FSControl 23
+#Parent OS_FSControl
+#Wrap off
+=>	R0 =	23 (Shutdown all filing systems)
+#Wrap
+
+This SWI flushes and closes all open files on all filing systems. It does not stop if an individual close reports an error, but will only return without error if all individual closes were error free. It informs all filing systems of the shutdown - this means that:
+
+è	NetFS logs off from all file servers
+è	FileCore dismounts all discs
+è	disc heads are parked
+
+It is equivalent to {fCode}*Shutdown{f}.

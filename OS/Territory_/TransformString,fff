@@ -1,0 +1,12 @@
+Territory_ConvertTextToString  (&43061)
+#Parent Territory_
+=>	R0 =	<territory number=>Territory_numbers>, or -1 for current
+	R1 =	pointer to buffer to hold transformed string
+	R2 =	pointer to source string
+	R3 =	length of buffer
+
+<=	R0 =	length of transformed string (excl. null)
+
+Transforms a string to allow a direct territory independent comparison.
+#Line
+See <PRM 3, page 841=>PRM-3:841>.

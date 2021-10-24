@@ -1,0 +1,7 @@
+ColourTrans_SetGCOL flags for R3
+Bit	Meaning if set
+#Line
+7	set background colour (otherwise foreground)
+8	use ECF's to give a better approximation to the colour
+
+The remaining bits of R3 and the top three bytes of R4 are reserved, and should be set to zero to allow for future expansion

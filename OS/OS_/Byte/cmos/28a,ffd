@@ -1,0 +1,7 @@
+Shutdown types
+Value	Meaning
+#Line
+0	Unknown
+1	Failed
+2	Power lost
+3	Undefined

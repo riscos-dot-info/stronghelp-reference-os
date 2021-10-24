@@ -1,0 +1,12 @@
+VDU extension vector (27)
+#parent vector_index
+=>	R0 =	byte send to the VDU
+<=	R0 preserved
+	C set if byte is to be sent to printer
+
+If bit 5 of the <output stream flag=>OS_Byte003> has been set then characters which would have been sent to the display are routed to this vector instead. Characters sent to other output streams ({/}e.g.{/} *Spool file, printer) are unaffected.
+
+If the C flag is set on return, then the character (unless it is the printer ignore character (see <OS_Byte 6=>OS_Byte006>)) is sent to the VDU printer stream (if bits 2 and 6 are clear in the <output stream flag=>OS_Byte003>). This is indepentent of the setting of bit 3 in the output stream flag. The PRM is not clear as to whether this can send the byte twice if bit 3 is set (printer enabled). Confused? :-)
+# You will be, after Soap.
+#Line
+See <PRM 1, page 83=>PRM-1:83>.

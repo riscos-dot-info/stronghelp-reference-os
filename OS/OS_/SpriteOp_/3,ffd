@@ -1,0 +1,10 @@
+Screen load  (3)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<3, &3=>os_spriteop_reason2> (Screen load)
+	R2 =	pointer to filename
+
+This SWI plots the first sprite in the file in the bottom left of the graphics window. Changes mode if neccessary, and sets palette if there is any.
+
+Note: On RO3.5 and later, this call will load the image at the bottom left of the screen. Earlier versions of RISC OS will load the image to the screen origin.
+#Line
+See <PRM 1, page 765=>PRM-1:765>

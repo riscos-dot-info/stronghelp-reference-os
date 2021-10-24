@@ -1,0 +1,11 @@
+OS_Byte 18  Reset function key definitions
+#Parent OS_ByteIndex
+=>	R0 =	18 (reason code)
+
+<=	R0 preserved
+	R1,R2 corrupted
+
+The contents unsets the system variables {fCode}Key$0{f} to {fCode}Key$15{f} and cancels any current function key expansion. Function key expansion can also be cancelled with <OS_Byte 216=>OS_Byte216>.
+# And the PRM doesn't make this cross reference!
+#Line
+See <PRM 1, page 861=>PRM-1:861>

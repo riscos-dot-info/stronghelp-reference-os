@@ -1,0 +1,8 @@
+ImageEntry_Func 25
+#Parent ImageEntry_Func
+=>	R0 =	25 (Read defect list)
+	R2 =	pointer to buffer
+	R5 =	length of buffer
+	R6 =	<image filing system's handle=>ImageEntry_Func21>
+
+This call fills the buffer with the defect list of an image. The buffer is filled with words giving byte offsets of defects, terminated by &20000000. It implements <OS_FSControl 41=>OS_FSControl41>.

@@ -1,0 +1,23 @@
+Econet status values
+Status	Valid	Meaning
+#Line
+0	T	Transmitted
+1	T	Line jammed
+2	T	Net error
+3	T	Not listening
+4	T	No clock
+5	T	Transmit ready (awaiting connect)
+6	T	Transmitting
+7	R	Receive ready (awaiting data)
+8	RW	Receiving
+9	RW	Received (complete)
+10	W	No reply
+11	W	Escape pressed
+12	?	Station not present
+
+Meanings:
+#Tab
+R	Receive blocks
+W	<Econet_WaitForReception>
+T	Trasmit blocks
+?	No call is documented as returning this status

@@ -1,0 +1,64 @@
+OS_ReadSysInfo  (&58)
+#Parent OS_
+=> R0 =	variable :
+	  0	<Screen size=>.0>
+	  1	<Mode=>.1>
+	  2	<Machine Id=>.2>
+	  3	<82C71x features=>.3>
+# 	  7	<Read info about last unexpected abort (data or prefetch)=>OS_ReadSysInfo7>
+
+These calls read information about the current system.
+#Line
+See <PRM 1, page 719=>PRM-1:719>.
+#
+#Subpage 0
+OS_ReadSysInfo 0
+=>	R0 =	0
+<=	R0 =	screen size
+
+This call reads the size of screen memory.
+#
+#Subpage 1
+OS_ReadSysInfo 1
+=>	R0 =	1
+<=	R0 =	mode
+	R1 =	monitor type
+	R2 =	sync
+
+This call reads information about the current screen.
+#
+#Subpage 2
+OS_ReadSysInfo 2
+=>	R0 =	2
+<=	R0 =	IOEB ASIC presence flag
+	R1 =	82C710 presence flag
+	R2 =	LCD ASIC presence flag
+	R3 =	low half of Id
+	R4 =	high half of Id
+
+This call checks for the presence of various chips, returning flags. It also reads the unique machine ID if a suitable chip is fitted to the computer; if none is, a ID of zero is returned.
+#
+#Subpage 3
+OS_ReadSysInfo 3
+=>	R0 =	3
+<=	R0 =	<82C710/82C711 basic features=>.main>
+	R1 =	82C710/82C711 extra features mask (reserved for upwards compatible additional functionality)
+	R2 =	extended features 1
+	R3 =	extended features 2
+	R4 =	extended features 3
+
+This call reads features available in the 82C71x chip.
+#Subpage main
+82C710/82C711 basic features mask
+The 82C710 chip family are composed of several sub units. Future chips in the family may have some sub units which are incompatible with earlier versions, while leaving the functionality of other sub units unchanged. This call returns a feature mask, sub fields within which show the 'compatibility level' of each sub unit. Differing values of a sub field indicate incompatible versions of the corresponding sub unit. A sub field of zero indicates that the sub unit is not present.
+
+The values are:
+Bits	Sub unit		710	711
+#Line
+0-3	IDE hard disc interface	1	1
+4-7	floppy disc interface	1	1
+8-11	parallel port		1	1
+12-15	1st serial port		1	1
+16-19	2nd serial port		0	1
+20-23	chip configuration	1	2
+24-31	reserved		0	0

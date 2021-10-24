@@ -1,0 +1,27 @@
+Joystick_Read  (&43F40)
+#Parent Joystick_
+=>	R0 =	joystick number
+<=	R0 =	joystick state
+
+This SWI reads the current state of the joystick. The returned state is in the form &SSHHVV.
+
+{*}Analogue joysticks{*}
+#Tab
+Byte	Value
+#Line
+0	Signed Y value in the range -127 to 127
+1	Signed X value in the range -127 to 127
+2	Switches (eg fire buttons), unimplemented switches return 0
+3	reserved
+
+{*}Digital joysticks{*}
+#Tab
+Value	Meaning
+#Line
+&40	up
+&C0	down
+&4000	right
+&C000	left
+&10000	fire
+#Line
+See <PRM 4, page 208=>PRM-4:208>.

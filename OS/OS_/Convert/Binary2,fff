@@ -1,0 +1,13 @@
+OS_ConvertBinary2  (&DE)
+#Parent OS_Convert
+=>	R0 =	value to be converted
+	R1 =	pointer to buffer for resulting string
+	R2 =	size of buffer
+
+<=	R0 =	pointer to buffer (R1 on entry)
+	R1 =	pointer to terminator
+	R2 =	free bytes in buffer
+
+This SWI converts a value into a string of 16 binary characters.
+#Line
+See <PRM 1, page 469=>PRM-1:469>.

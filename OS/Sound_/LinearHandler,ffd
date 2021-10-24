@@ -1,0 +1,10 @@
+Sound_LinearHandler  (&40145)
+#Parent Sound_
+=>	R0 =	reason code (0 to read, 1 to install)
+	R1 =	pointer to <handler code=>Sound_Handler_linear>, or 0 to remove
+	R2 =	handler private word
+<=	R0 preserved
+	R1 =	pointer to previous handler code, or 0 if none installed
+	R2 =	handler private word, or -1 if none installed
+
+This SWI reads, or changes, the current 16-bit linear handler. Do not call this SWI unless you have already determined that 16-bit sound is supported.

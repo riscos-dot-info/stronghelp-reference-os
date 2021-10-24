@@ -1,0 +1,8 @@
+ColourTrans_ReturnColourNumber  (&40744)
+#Parent ColourTrans_
+=>	R0 =	<palette entry=>colourtrans_paletteentry>
+<=	R0 =	colour number
+
+This call, given a palette entry, returns the closest colour number in the current mode and palette.
+#Line
+See <PRM 3, page 353=>PRM-3:353>.

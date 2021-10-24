@@ -1,0 +1,9 @@
+Save sprite area  (12)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<12, &C=>OS_spriteop_Reason2> (Save sprite area)
+	R1 =	<Sprite area=>OS_SpriteOp_Area>
+	R2 =	pointer to filename
+
+This call saves the entire sprite area to a file.
+#Line
+See <PRM 1, page 770=>PRM-1:770>

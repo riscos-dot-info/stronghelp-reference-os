@@ -1,0 +1,17 @@
+FSEntry_GBPB 3 and 4
+#Parent FSEntry_GBPB
+#Wrap off
+=>	R0 =	3 (get bytes from specified pointer)
+	 	4 (get bytes from current pointer)
+	R1 =	internal file handle returned by <FSEntry_Open>
+	R2 =	pointer to buffer
+	R3 =	bytes to transfer
+if R0 = 1
+	R4 =	file pointer
+#Wrap
+
+<=	R2 =	pointer after end of data
+	R3 =	number of bytes *not* transferred
+	R4 =	new file pointer
+
+This entry point is called to perform multiple byte reads on unbuffered files. If the specified pointer is beyond the current end of the file, then you must not update the pointer, and must not return an error. The file handle is guaranteed not to be a directory, and to have had read access at time of opening. You must not try to keep your own 'EOF-error-on-next-read' flag - this is FileSwitch's job. FileSwitch will set the C flag if R3=0 on return - you do not need to.

@@ -1,0 +1,8 @@
+OS_ScreenMode 5 (&65) (4.0)
+{*}Request a foreground screen clean{*}
+{f25}Þ{f}	R0 =	5
+{f25}Ü{f}	/Preserved/
+#line
+If cleaning is not suspended via <OS_ScreenMode 4=>OS_screenmode4>, and a clean is needed, cleans the screen immediately, and cancels any pending VSync clean. Other, does nothing.
+
+Applications are unlikely to need to use this reason code. The Ursula Window Manager automatically deals with screen cleaning at the end of standard redraw transactions.

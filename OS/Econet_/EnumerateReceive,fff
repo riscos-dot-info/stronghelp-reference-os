@@ -1,0 +1,8 @@
+Econet_EnumerateReceive  (&40005)
+#Parent Econet_
+=>	R0 =	index, 1 for first block
+<=	R0 =	handle, or 0 if no more blocks
+
+This SWI enumerates the currently open receive blocks.
+#Line
+See <PRM 2, page 656=>PRM-2:656>.

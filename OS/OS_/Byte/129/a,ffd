@@ -1,0 +1,10 @@
+OS_Byte 129 - To read a key within a time limit
+{f25}Þ{f}	R0 = 129
+	R1 =	0-255		time limit low byte
+	R2 =	{*}&00 - &7F{*}	time limit high byte
+{f25}Ü{f}	R1 =	ASCII code of character read, undefined if not read
+	R2 =	0		character read
+	 	27		escape condition
+	 	255		timeout
+#line
+This call will extract a character from the keyboard buffer/current function key expansion if one is available, else will wait for (R2 * 256 + R1) centiseconds, where the maximum wait is 327.67 seconds, as R2 <= 127. Cursor edit mode will operate if enabled with <OS_Byte 4=>OS_Byte004>. If an escape condition is detected the application should either acknowledge it with <OS_Byte 126=>OS_Byte126> or clear it with <OS_Byte 124=>OS_Byte124>.

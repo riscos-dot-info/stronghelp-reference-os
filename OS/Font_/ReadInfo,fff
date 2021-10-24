@@ -1,0 +1,11 @@
+Font_ReadInfo  (&40084)
+#Parent Font_
+=>	R0 =	font handle
+<=	R1 =	min x, inclusive
+	R2 =	min y, inclusive
+	R3 =	max x, exclusive
+	R4 =	max y, exclusive
+
+This SWI returns, in OS units, the smallest possible box needed to cover any character in the given font.
+#Line
+See <PRM 3, page 426=>PRM-3:426>.

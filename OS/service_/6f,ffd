@@ -1,0 +1,7 @@
+Service_BufferStarting (&6F)
+#Parent Service_Index
+=>	R1 =	&6F (reason code)
+
+This service is issued when the buffer manager starts.
+#Line
+See <PRM 4, page 85=>PRM-4:85>

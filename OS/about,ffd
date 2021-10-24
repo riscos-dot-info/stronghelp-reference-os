@@ -1,0 +1,261 @@
+OS SWIs manual
+#Align Centre
+{fh3}OS SWIs manual{f}
+{align centre;/}With additional notes from the wise and learned{/;align}
+# Gerph> You've got to have a giggle sometimes :-)
+#Line
+#Align Left
+This manual is part of a collection comprising the main public domain programming reference. The other manuals in the series are :
+#Indent 2
+#Postfix :!Root
+<OS>		The base operating system stuff
+<Wimp>		The desktop part of the operating system
+<InetSWIs>	Internet based SWIs
+<InetSocket>	Internet socket calls
+<MiscSWIs>	Miscellaneous SWIs
+<VDU>		VDU commands
+<Toolbox>	Toolbox (by Neil Bingham)
+#Indent
+
+Thanks go to those mentioned in the <contributors=>OS:contributions> list.
+
+For comments, suggestions and submissions for these, please mail iain truskett <\<koschei@eh.org\>=>#URL mailto:koschei@eh.org> who is currently moderating the collection. The primary location for these manuals will be <http://eh.org/~koschei/manuals/=>#url>, with another copy at <http://freenet.barnet.ac.uk/manuals/=>#URL>.
+#line
+<This page=>.hist307> gives history and credits.
+#Subpage notes
+Notes on how the manual is structured
+These are some very incomplete notes on how the manual should be structured. If any part of it isn't then it will eventually be updated, or I'll change this specification. It's mostly here to remind me anyhow.
+
+The major driving principle in these manuals is that they should be free to everyone. This means that anyone capable of running RISC OS 3.1 or higher should be able to use them, providing they have a copy of StrongHelp. It it designed to be a quick reference for programmers. Anything more is a bonus. To be such it should present the information in the most easily readable form. Each page, even indexes, should be completely visible on a Mode 31 (800x600) screen, and the majority should take under º of the screen so that editing and reference is easily possible. Version 2.53 of StrongHelp is assumed for the most part. This means that you may use sprite links if you wish.
+
+Each SWI should be documented in the form :
+
+#Indent 2
+\<title\> (\<hex swi number\>)
+\#Parent \<something\>
+=>\<tab\>	R# =\<tab\>	\<contents\>
+\<tab\>		R# =\<tab\>	\<contents\>
+[etc]
+<=		R#-R# preserved
+		R# corrupted
+\<tab\>		R# =\<tab\>	\<contents\>
+[etc]
+
+This SWI does x, y and z. Short examples may be given here.
+
+\{*\}Note:\{*\} something important.
+#Indent
+
+The input or output parameters may be omitted if none are required. It is assumed that the registers are preserved, but this may be explicitly be stated. Registers should be listed it ascending order, unless a discontinuous range is being given in which case it should appear at the top of the return parameters list.
+
+If a register or other entry may consist of multiple entries it should be listed in a subpage, with a descriptive reference to it as the link. If more than one SWI may use that set of values then the subpage should be a data file in a sensible location (usually the same directory).
+
+The \<contents\> entry should be a single sentance, with clarification or alternatives in a comma seperated list, and only using brackets to indicate ranges. Where long blocks of alternatives are listed, consider using a table or split lines and use tabbing to align; the former is preferable.
+
+Tables should consist of :
+
+#Indent 2
+Offset\<tab\>	Meaning
+\#Line
+x\<tab\>	y
+[etc]
+others\<tab\>	reserved, must be zero
+#Indent
+
+Others may be omitted if not relevant, offsets should be given in decimal, unless otherwise stated on the page. Bit masks are described as 'Meaning if set', and should be inversely true if unset. If this is not the case then a seperate description may be required.
+
+Examples may be included on the page if short enough, but for preference should be on a page of their own. Examples should, if possible, be given in pseudo-code or BASIC. Proficient coders should be able to translate to whatever language they are using easily. Assembly examples should only be used where they are strictly relevant.
+
+For services, upcalls, events, etc the reason code need not be given in the input parameters, but is it is it should be given as a number and followed by "(reason code)" or similar. For most such reasons it would be useful if the hex and decimal values were given. This has not been applied across the manuals.
+
+If PRM references are included they should be and the bottom of the page and of the form :
+#Indent 2;fCode
+\#Line
+See \<PRM {/}\<manual\>{/}, page {/}\<page\>{/}=\>PRM-{/}\<manual\>{/}:{/}\<page\>{/}\>.
+#f;Indent
+
+This is to allow for a possible future release of a StrongHelp version of the PRMs. The correct names for manuals will be : PRM-1, PRM-2, PRM-3, PRM-4, PRM-Index, PRM-5, PRM-5a. Subsequent releases of the PRMs will include their release number, eg if Ursula has volumes 1-5, it's manuals would be PRM2-1 to PRM2-5 and PRM2-Index, etc.
+# Gerph> We all know the SH version already exists, but is 'unreleasable'
+#        (and cack).
+
+When highlighting words it is recommended you use Bold ('{fCode}\{*\}{f}') to stress words, Italic ('{fCode}\{/\}{f}') to indicate variables, and Code ('{fCode}\{fCode\}{f}') to indicate sections of literal text, code or other such text. This has not yet been applied to the entire manual.
+
+Current 'normal' cross-referencable objects are :
+
+#Tab
+Page				Contents
+#Line
+<swi_dateformat>		Date format string tokens
+<swi_errorblock>		Error block format
+<swi_bbox>			Generic bounding box
+<fsys_ident>			List of Filing System numbers
+<fsys_objattr>			File attribute bits
+<fsys_loadexec>			File Load/Exec word meaning
+<os_mousebuttons>		Mouse button bit mapping
+<os_scalefactors>		Standard scaler block
+<os_setcolouractions>		GCOL actions
+<os_spriteop_area>		Sprite area block
+<os_spriteop_ptr>		Sprite block
+<buffer_buffers>		List of buffer numbers
+<colourtrans_paletteentry>	Palette entry meaning
+<colourtrans_pixtrans>		Pixel translation table format
+<colourtrans_fixedpoint>	Fixed point values (like draw_transformunits)
+<territory_anumbers>		List of alphabet numbers
+<territory_numbers>		List of territory numbers
+<drawfile_format>		Drawfile format
+<drawfile_header>		Drawfile header
+<draw_transform>		Draw transformation matrix block
+<draw_transformunits>		Draw transform units (&XXXX.XXXX)
+
+Many thanks to Nicholas Clark for helping develop the style used through out this manual.
+#Subpage hist235
+SWIs History v2.35
+è	Masses of extra entries
+è	Most of the RISC OS 3.6 SWIs added
+è	A few new wimp messages added
+è	Some RISC OS 3.7 SWIs added, a notable exception is CallASWI
+è	Window Manager 3.8 Wimp documentation added (Well, Wimp_OpenWindow, Wimp_CloseWindow, Wimp_GetWindowState - as I decrypt any others I'll add them...)
+è	Some ProFiler SWIs added
+è	NewsBase messages updated from 0.56 documentation
+è	ImageEntry added
+
+<Next history=>.hist300>
+#Subpage hist300
+OS History v3.00
+è	The name ! This is now the OS manual, most of this section should remain pretty static, the other sections, Wimp, Misc and Inet should be updated more regularly than the main operating system (hopefully)
+è	A large number of new services and other little things added
+è	Reformatting of some pages more in line with the rest of the manual
+è	SpriteOps updated to include hex number, and new calls
+è	Added a few more services
+è	FileEntry added, incomplete at present; needs FileEntry_Func updating, and FileEntry_GBPB adding
+è	Removed obsolete '\\\<=' usage, expanded 'ptr', 'no' and added more descriptions
+è	Moved some blocks from OS to Wimp as it seems more appropriate.
+
+#Tab
+<Previous history=>.hist235>	<Next history=>.hist302>
+#Subpage hist302
+OS History v3.02
+#Align Right
+{/}15 Nov 1997-10 Jan 1998{/}
+#Align Left
+è	KeyV updated with reference to the keyboard ID
+è	Updates to CD section (Dave Thomas)
+è	More updates to CD section (Eddie Edwards)
+è	Moved Service_A7 to InetSWIs as it's more logical; more similar changes may follow.
+è	Territory module completely documented (J.B.Blaukopf)
+è	Removed spurious ScreenModes documentation
+
+#Tab
+<Previous history=>.hist300>	<Next history=>.hist303>
+#Subpage hist303
+OS History v3.03
+#Align Right
+{/}22 Jan 1998{/}
+#Align Left
+è	Font routines now completely documented (Nicholas Clark)
+è	Modifications to various swis (Nicholas Clark)
+è	FPEmulator, Hourglass_Colours, IIC, MakePSFont, Super documented (Nicholas Clark)
+è	OS_FSControl 37 fixed, miscellaneous Territory calls modified.
+è	DrawFile format moved into DrawFile from Draw
+è	ColourTrans now completely documented, additional vectors added (various)
+è	Sound SWIs documented (Nicholas Clark)
+è	Started making some notes on the structure
+è	Transformation matrix added, along with font 24 for the Sidney font so that we can use the matrix blocks
+è	Reorganisation of certain parts of the manual, updates to services
+è	Released on ftp://freenet.barnet.ac.uk/manuals/j.fletcher/
+	Note: This /should/ have been a beta release, but I needed to release something on the manuals site.
+
+#Tab
+<Previous history=>.hist302>	<Next history=>.hist304>
+#Subpage hist304
+OS History v3.04
+#Align Right
+{/}09 Feb 1998-24 Mar 1998{/}
+#Align Left
+è	Many changes (Econet, Service, Event, Vector, Portable, etc) by Nicholas Clark
+è	More changes (NetFS, ResourceFS, Squash) by Nicholas Clark
+è	Finally plucked up courage to run StrongTst across it again. Most of the links should now be valid.
+è	OS_ConvertBinary/SpacedCardinal/SpacedInteger added.
+è	Many service calls added, a few other changes.
+è	Far, far too many changes made to even think about - it's all Nick's doing.
+è	Updated FileCore entries to be a little more helpful.
+è	Generic bounding box added, and linked from other entries
+è	More Byte, Vector, Service, etc calls by Nick.
+è	DrawFile services added
+è	Serious note in OS_File about non-return of 'load', and expansion of variable.
+è	NetPrint documented, updates to various OS SWIs and RPC keyboard diagram added (Nicholas Clark)
+è	Reformatted, links checked and clean copied for release (phew!)
+
+#Tab
+<Previous history=>.hist303>	<Next history=>.hist305>
+#Subpage hist305
+OS History v3.05
+#Align Right
+{/}25 Mar 1998-?{/}
+#Align Left
+è	Succombed to public pressure and added PRM references to some pages (OS_Bytes, Services and Vectors at present).
+è	Spelling corrections and a few minor updates to pages.
+è	Numerous additions of SWI and reason code numbers to page titles
+è	Added PRM references to all SWIs. Apologies to those without the manuals. This will aid those with, and when the StrongHelp version becomes available it will help everyone.
+è	Updated SWIs to include Dynamic Area references, and fixed DrawFile bugs.
+è	DeviceFS calls updated
+è	Service_IdentifyDisc fixed (Phil Norman)
+è	ClaimSWI/ReleaseSWI added (but not documented)
+è	OS_Memory added, changes to OS_MMUControl (Dave Thomas)
+è	ScreenBlanker updated, PaletteV updated (James Larcombe)
+è	Service_FilterManagerInstalled updated
+# Beta 1
+è	ColourTrans palette entry data added
+è	Minor additions, spelling mistakes fixed.
+è	Changes added (Nicholas Clark)
+è	Added 'notfound_{/}manual{/}' pages, for StrongHelp 2.60.
+è	Added 16-bit sound system details (Alex Thoukydides)
+è	HTML-ification identified some parental problems
+#tab
+
+<Previous history=>.hist304>	<Next history=>.hist306>
+#Subpage hist306
+OS History v3.06
+#Align Right
+{/}24th April - 17th May, 1999{/}
+#Align Left
+è	Moderator now iain truskett
+è	<FSLock=>FSLock_> details updated.
+è	CMOS byte 132 updated to reflect 16-bit audio (David Thomas and Thomas Olsson)
+è	String termination in <OS_ReadUnsigned> modified (Daniel Silverstone)
+è	Virtualise added to <OS_DynamicArea> and <OS_ReadDynamicArea> (Alexander Thoukydides)
+è	various minor differences (Justin Fletcher aka gerph)
+# beta 1
+è	!Configure file added and Draw documentation changed appropriately.
+è	Services for <Freeway=>InetSWIs:Freeway_> added.
+è	UpCall for <Freeway=>InetSWIs:Freeway_> added.
+# beta 2
+è	Example <OS_Module SWI handler code=>OS_Module_SWIHandler> bug fixed. (Matthew Phillips)
+è	<IIC_Control> extended (Andrew Macfarlane Smith)
+è	Notfound pages revised.
+è	Introduction of some <SCSI=>SCSI_> documentation.
+è	Some Y2K compliance revisions.
+è	Various minor amendments.
+#tab
+<Previous=>.hist305>	<Next history=>.hist307>
+#
+#subpage hist307
+History for OS v.3.07
+#align right
+{/}16th June, 1999{/}
+#align left
+#line
+è	<CDFS_GiveFileType> page changed to mention deprecation.
+è	<OS_DynamicAreaHandler2> error fixed.
+è	<OS_SetMemMapEntries> typo fixed.
+è	<OS_ReadDynamicArea> reformatted.
+è	<OS_GSTrans> flag information updated and corrected.
+è	<OS_UpCall> 3 pages reformatted.
+è	<OS_SpriteOp> reason code list made more useful by including the versions required for various calls.
+è	<OS_FSControl> 13 updated.
+è	<CMOS Byte 222=>OS_Byte_cmos222> updated for Wimp 3.99+
+è	IDEFS added to <the filing systems list=>OS_fsys_ident>
+è	<FileCore_Create> r5 parameter corrected from 1076 to 1024.
+è	<ColourTrans_ConvertCMYKToRGB> exit r2 corrected to 'blue' from 'red'
+#tab;line
+<Previous history=>.hist306>

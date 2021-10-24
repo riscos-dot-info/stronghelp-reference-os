@@ -1,0 +1,9 @@
+Draw dash block
+#parent Draw_ProcessPath
+Size	Meaning
+#Line
+4		distance into dash pattern to start (user coordinates)
+4		/n/ - number of elements in pattern
+4{/}n{/}	dash elements - each is a length in user coords
+
+Each element gives a length of dash, starting with an on dash, aternating on - off, looping round the list of elements. Hence if /n/ is odd the second time round elements which were on first time round will now be off, and vica versa.

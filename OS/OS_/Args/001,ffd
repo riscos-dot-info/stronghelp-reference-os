@@ -1,0 +1,7 @@
+OS_Args 1
+#Parent OS_Args
+=>	R0 =	1
+	R1 =	file handle
+	R2 =	new pointer
+
+This SWI sets the files sequential pointer. If it is outside current extent, more space is allocated.

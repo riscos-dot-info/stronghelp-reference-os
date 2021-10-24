@@ -1,0 +1,11 @@
+Defect lists
+#Parent FileCore_
+{*}For 'small' discs (without big_flag set) :{*}
+#Indent 2
+A list of defects in byte addresses, giving the start address of each defective sector and terminated by &20000000.
+#Indent
+
+{*}For '' discs (with big_flag set) :{*}
+#Indent 2
+A list of defects in byte addresses, giving the start address of each defective sector and terminated by &20000000. Followed by a second list with the defect addresses in sectors, terminated by &40000000.
+#Indent

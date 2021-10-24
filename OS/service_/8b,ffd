@@ -1,0 +1,7 @@
+Service_NetworkDriverStatus (&8B)
+#Parent Service_Index
+=>	R1 = &8B (reason code)
+
+This service is part of the AUN Driver Control Interface.
+#Line
+See <PRM 2, page 646=>PRM-2:646>

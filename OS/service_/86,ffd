@@ -1,0 +1,7 @@
+Service_WimpRegisterFilers (&86)
+#Parent Service_index
+=>	R1 =	&86 (reason code)
+
+This service is issued when the Wimp resets the filter table to its default state. You should register any filters with <Wimp:Wimp_RegisterFilter>. It should only be used if you are a replacement to the Filter Manager.
+#Line
+See <PRM 3, page 77=>PRM-3:77>

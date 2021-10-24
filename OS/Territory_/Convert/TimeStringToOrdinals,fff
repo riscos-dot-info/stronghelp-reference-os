@@ -1,0 +1,13 @@
+Territory_ConvertTimeStringToOrdinals  (&43050)
+#Parent Territory_
+=>	R0 =	<territory number=>Territory_numbers>, or -1 for current
+	R1 =	reason code of format string:
+	 	1 => %24:%MI:%SE
+	 	2 => %W3, %DY-%M3-%CE%YR
+	 	3 => %W3, %DY-%M3-%CE%YR.%24:%MI:%SE
+	R2 =	pointer to time string
+	R3 =	pointer to buffer to hold <result=>Territory_Convert_time_block_in>
+
+This SWI returns the time block as a set of useful numbers. Values not passed in the string are assigned -1 in the block.
+#Line
+See <PRM 3, page 817=>PRM-3:817>.

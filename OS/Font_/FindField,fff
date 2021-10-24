@@ -1,0 +1,10 @@
+Font_FindField  (&400A6)
+#Parent Font_
+=>	R1 =	pointer to <font identifier=>Font_identifier>
+	R2 =	character code of required qualifer
+<=	R1 =	pointer to value following qualifer within string (if present, else preserved)
+	R2 =	0 if field not present, otherwise preserved
+
+This SWI returns a pointer to the specifed field with the font string. Note that the F field is space terminated, all others are control-char terminated.
+#Line
+See <PRM 3, page 493=>PRM-3:493>.

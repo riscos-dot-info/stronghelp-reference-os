@@ -1,0 +1,18 @@
+OS_FSControl 53  (&29)
+#Parent OS_FSControl
+=>	R0 =	53 (Set given directory to path - unchecked)
+	R1 =	pointer to new path
+	R2 =	<directory to set=>.dirtype>
+	R3 =	pointer to name of filing system
+	R6 =	pointer to special field (or 0 for none)
+<=	all registers preserved
+
+This call sets a directory to a given path without checking if the path is okay.
+#Subpage dirtype
+Directory types
+\#	Meaning
+#line
+0	CSD (Currently Selected Directory)
+1	PSD (Previously Selected Directory)
+2	URD (User Root Directory)
+3	Library Directory

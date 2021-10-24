@@ -1,0 +1,13 @@
+OS_Module 12
+#Parent OS_Module
+=>	R0 =	12
+	R1 =	module number
+	R2 =	instance number
+
+<=	R1 =	next module number
+	R2 =	next instance number
+	R3 =	pointer to <module=>OS_Module_Format>
+	R4 =	private word (usually pointer to workspace)
+	R5 =	pointer to postfix string (the instantiation's name)
+
+This SWI returns information about a module, given its number. If a module is not multiply instantiated R5 will be returned pointing to the string "Base".

@@ -1,0 +1,8 @@
+OS_RemoveCallBack  (&5F)
+#Parent OS_
+=>	R0 =	pointer to code called
+	R1 =	value of R12 called with
+
+Removes a call back event, such as <OS_CallBack>.
+#Line
+See <PRM 1, page 322=>PRM-1:322>.

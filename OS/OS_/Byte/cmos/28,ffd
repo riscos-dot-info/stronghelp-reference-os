@@ -1,0 +1,9 @@
+OS_Byte CMOS 28
+Bit(s)	Meaning
+#Line
+0	Truncate filenames
+1	DragASprite enabled
+2	Don't use FilerAction
+3	Dither in 4 colour modes
+4	Don't obscure icon bar
+6,7	<Last shutdown type=>os_bytecmos28a>

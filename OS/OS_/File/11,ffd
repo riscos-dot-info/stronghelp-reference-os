@@ -1,0 +1,9 @@
+OS_File 11
+#Parent OS_File
+=>	R0 =	11 (reason code)
+	R1 =	pointer to non-wildcarded object name
+	R2 =	<file type=>FileTypes:!Root>
+	R4 =	0
+	R5 =	size of file
+	
+This SWI attempts to create a stamped file of a given size with a particular file type.

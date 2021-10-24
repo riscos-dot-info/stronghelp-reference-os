@@ -1,0 +1,16 @@
+Territory_WriteDirection  (&43055)
+#Parent Territory_
+=>	R0 = <territory number=>territory_numbers>, or -1 for current
+
+<=	R0 = bit field giving write direction
+	 	Bit	Value	Meaning
+	 	0	0	Left to right
+	 	 	1	Right to left
+	 	1	0	Top to bottom
+	 	 	1	Bottom to top
+	 	2	0	Lines are horizontal
+	 	 	1	Lines are vertical
+
+This SWI is used to read the direction that writing appears in a particular territory.
+#Line
+See <PRM 3, page 824=>PRM-3:824>.

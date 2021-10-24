@@ -1,0 +1,5 @@
+RamFS_FreeSpace  (&40783)
+#Parent RamFS_
+This SWI calls <FileCore_FreeSpace>, after first setting R8 to point to the FileCore instance private word for RamFS.
+#Line
+See <PRM 2, page 313=>PRM-2:313>.

@@ -1,0 +1,14 @@
+FileCore_LayoutStructure  (&40548)
+#Parent FileCore_
+=>	R0 =	<identifier=>FileCore_Disc> of particular format
+	R1 =	pointer to bad block list (terminated by -1)
+	R2 =	pointer to null terminated disc name
+	R3 =	image file handle
+
+<=	R0-R3 preserved
+
+This call lays out into the specified file a set of structure corresponding to the identified format. The format identifier is a pointer to a disc record. An error is returned if the specified format can't map out defects, and there were defects in the defect list.
+
+This call isn't available under RISC OS 2.
+#Line
+See <PRM 2, page 237=>PRM-2:237>.

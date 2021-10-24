@@ -1,0 +1,7 @@
+Service_MemoryMoved (&4E)
+#Parent Service_Index
+=>	R1 = &4E (reason code)
+
+This service is issued when <OS_ChangeDynamicArea> has just finished, and is used by the Wimp to tidy up.
+#Line
+See <PRM 1, page 361=>PRM-1:361>

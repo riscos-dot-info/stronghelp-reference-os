@@ -1,0 +1,10 @@
+Service_International 4
+#Parent Service_43
+=>	R1 =	&43 (reason code)
+	R2 =	4 (sub reason code)
+	R3 =	<country number=>Territory_numbers>
+<=	R1 =	0 to claim, preserved otherwise
+	R2-R3 preserved
+	R5 =	<alphabet number=>Territory_anumbers>, or preserved if unrecognised.
+
+This service converts a country number to alphabet number. If a module provides additional countries it should check this service - if the number matches one provided by the module it should claim this service.

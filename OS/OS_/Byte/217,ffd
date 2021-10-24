@@ -1,0 +1,13 @@
+OS_Byte 217  Read/Write paged mode line count
+#Parent OS_ByteIndex
+=>	R0 =	217 (&D9)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	previous count
+	R2 corrupted
+                                                  
+This call reads or sets the count of lines displayed since the last page halt when in <paged mode=>VDU:14>. Usually this call is used to set the count to 0, before requesting user input - <OS_ReadLine> makes this call automatically.
+#Line
+See <PRM 1, page 667=>PRM-1:667>

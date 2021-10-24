@@ -1,0 +1,12 @@
+Insert/delete columns (58)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<58, &3A=>os_spriteop_reason2> (Insert or delete columns)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+	R3 =	Column number
+	R4 =	+ve : Number of columns to insert
+	 	-ve : Number of columns to delete
+
+Insert or delete columns from the sprite specified.
+#Line
+See <PRM 1, page 809=>PRM-1:809>

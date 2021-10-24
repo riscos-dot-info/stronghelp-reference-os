@@ -1,0 +1,11 @@
+Battery Management Unit Flags
+#Parent Portable_BMUvars
+Bit	Meaning when set
+#line
+1	lid open
+2	threshold 2 reached
+3	threshold 1 reached
+4	fault in charging system
+5	charge state known
+6	battery present
+7	charger connected

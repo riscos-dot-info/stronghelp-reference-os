@@ -1,0 +1,13 @@
+OS_Byte 204  Read/Write serial ignore flag
+#Parent OS_ByteIndex
+=>	R0 =	204 (&CC)
+	R1 =	EOR value
+	R2 =	AND value
+
+<=	R0 preserved
+	R1 =	flag before being overwritten
+	R2 corrupted
+                                                  
+This call enables or disables serial input buffering. 0 will enable buffering of recieved data. Any other value will prevent buffering, but errors will still generate <events=>event_7> if enabled with <OS_Byte 14=>OS_Byte014>.
+#Line
+See <PRM 2, page 455=>PRM-2:455>

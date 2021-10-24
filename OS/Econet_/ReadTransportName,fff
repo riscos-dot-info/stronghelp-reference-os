@@ -1,0 +1,9 @@
+Econet_ReadTransportName  (&4001C)
+#Parent Econet_
+=>	R0 =	station number
+	R1 =	net number
+<=	R2 =	transport name
+
+This SWI returns the name of the underlying transport to the given station.
+#Line
+See <PRM 2, page 689=>PRM-2:689>.

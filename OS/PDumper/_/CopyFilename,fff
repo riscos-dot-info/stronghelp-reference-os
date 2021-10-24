@@ -1,0 +1,11 @@
+PDumper_CopyFilename  (&41B09)
+#Parent PDumper_
+=>	R0 =	pointer to buffer for resulting string
+	R1 =	size of buffer
+	R2 =	string to be copied (control or space terminated)
+<=	R0 =	pointer to byte *after* terminating zero in buffer
+	R2 =	pointer to last character copied from string
+
+This SWI copies a filename into a buffer.
+#Line
+See <PRM 3, page 695=>PRM-3:695>.

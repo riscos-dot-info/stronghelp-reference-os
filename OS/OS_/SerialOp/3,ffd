@@ -1,0 +1,8 @@
+OS_SerialOp 3
+=>	R0 =	3 (reason code)
+	R1 =	character to be sent
+
+<=	R0,R1 preserved
+	C clear if character was sent, or set if character was not sent (ie the buffer was full)
+
+This call puts a character in the serial output buffer, and re-enables the transmit interrupt if it had been disabled by RISC OS. If the serial output buffer is full, the call returns immediately with the C flag set.

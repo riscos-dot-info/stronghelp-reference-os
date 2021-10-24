@@ -1,0 +1,7 @@
+NetFS_SetFSName  (&40043)
+#Parent NetFS_
+=>	R0 =	pointer to name
+
+This SWI sets the named file server as the NetFS current file server, or generates an error if you are not logged onto the specified file server. It restores contex ({/}e.g.{/} the current directory).
+#Line
+See <PRM 2, page 347=>PRM-2:347>.

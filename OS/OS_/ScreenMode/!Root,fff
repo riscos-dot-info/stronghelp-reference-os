@@ -1,0 +1,18 @@
+OS_ScreenMode  (&65) (3.5)
+#Parent OS_
+=>	R0 =	<reason code=>.reasons>
+	other registers dependant on call
+	
+This call is used to change or read the screen mode. See also <Wimp_SetMode=>Wimp:Wimp_SetMode>.
+#
+#Subpage reasons
+ScreenMode reasons
+Reason	Meaning
+#Line;Wrap off
+0	<Select screen mode=>OS_screenmode0>
+1	<Return current screen mode=>OS_screenmode1>
+2	<Enumerate screen modes=>OS_screenmode2>
+3	(for internal use)
+# 4	<Screen cache and screen cleaning=>OS_screenmode4>
+# 5	<Request a foreground screen clean=>OS_screenmode5>
+# 6	<Force a screen clean, if needed=>OS_screenmode6>

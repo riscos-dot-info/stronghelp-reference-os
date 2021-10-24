@@ -1,0 +1,12 @@
+Buffer_Create  (&42940)
+#Parent Buffer_
+=>	R0 =	buffer's <flag word=>buffer_flags>
+	R1 =	size of buffer to be created
+	R2 =	preferred handle for the buffer, -1 to get the buffer manager to generate one
+<=	R0 =	buffer handle
+
+This claims an area of the RMA and registers it as a buffer. It can at most hold R1-1 bytes.
+If R2 \<>-1, the given number is checked for uniqueness, if it already exists, a new one is generated.
+Note that you do not need any complicated calculations to write data into the buffer - it's a simply a block of memory. Get the address with <Buffer_GetInfo> and write to the buffer.
+#Line
+See <PRM 4, page 86=>PRM-4:86>.

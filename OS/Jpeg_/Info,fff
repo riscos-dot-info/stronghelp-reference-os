@@ -1,0 +1,14 @@
+JPEG_Info  (&49980)
+#Parent JPEG_
+=>	R0 =	<operation flags=>JPEG_info_opflags>
+	R1 =	pointer to JPEG
+	R2 =	length of image
+	
+<=	R0 =	<info flags=>JPEG_info_infoflags>
+	R2 =	width (in pixels)
+	R3 =	height (in pixels)
+	R4 =	x pixel density
+	R5 =	y pixel density
+	R6 =	workspace that would be required to plot (0=none)
+
+This SWI returns information about a JPEG held in a buffer in memory. It checks the header enough to return the width and height, and does a partial validation of the data.  It returns an error if the image appears to be invalid; if no error is returned you may assume the data is a JPEG image.

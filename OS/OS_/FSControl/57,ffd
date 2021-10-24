@@ -1,0 +1,8 @@
+OS_FSControl 57 (&39)
+#Parent OS_FSControl
+=>	R0 =	57 (map out defect from large disc or image)
+	R1 =	pointer to name of object
+	R2 =	least significant word of defect address
+	R3 =	most significant word of defect address
+
+Maps out a defect from a large disc or image. This call is only supported on RISC OS 3.6 and later, prior to that <OS_FSControl 42=>OS_FSControl42> should be used.

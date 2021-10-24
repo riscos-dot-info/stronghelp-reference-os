@@ -1,0 +1,8 @@
+OS_ScreenMode 6 (&65) (4.0)
+{*}Force a screen clean, if needed{*}
+{f25}Þ{f}	R0 =	6
+{f25}Ü{f}	/Preserved/
+#line
+If a clean is needed, cleans the screen immediately and cancels any pending VSync clean. Otherwise, does nothing. The clean happens even if cleaning is suspended via  <OS_ScreenMode 4=>OS_screenmode4>.
+
+Non-desktop applications such as games may find this reason code useful. Typically, they would suspend screen cleaning via <OS_ScreenMode 4=>OS_screenmode4> to stop kernel background cleaning on VSyncs, while retaining the performance of a cached screen. They can then use <OS_ScreenMode 6=>OS_screenmode6> to clean the screen as necessary.

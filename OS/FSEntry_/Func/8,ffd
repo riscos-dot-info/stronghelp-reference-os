@@ -1,0 +1,10 @@
+FSEntry_Func 8
+#Parent FSEntry_Func
+=>	R0 =	8 (Rename object)
+	R1 =	pointer to original filename
+	R2 =	pointer to new filename
+	R6 =	pointer to first special field, or 0 if not present
+	R7 =	pointer to second special field, or 0 if not present
+<=	R1 =	0 if renamed, any other value otherwise
+
+This call is made to rename an object.

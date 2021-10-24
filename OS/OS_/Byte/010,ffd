@@ -1,0 +1,12 @@
+OS_Byte 10  Write duration of second flash colour
+#Parent OS_ByteIndex
+=>	R0 =	10
+	R1 =	new duration (in video frames, or 0 for 'forever')
+
+<=	R0 preserved
+	R1 =	previous duration
+	R2 corrupted
+
+This call sets the duration of the second flash colour. A duration of 0 means display the second colour constantly. The current duration may be read with <OS_Byte 194=>OS_Byte194>, and may also be set with <VDU 23,10=>VDU:23,10>.
+#Line
+See <PRM 1, page 630=>PRM-1:630>

@@ -1,0 +1,7 @@
+Sound volumes
+Volume		Meaning
+#Line
+-15 - 0		BBC style volume
+&FFF1 - &FFFF	ditto
+&100 - &17F	Gate on, logarithmic volume (cuts current note and plays new one)
+&180 - &1FF	Smooth update, logarithmic volume (changes current note parameters)

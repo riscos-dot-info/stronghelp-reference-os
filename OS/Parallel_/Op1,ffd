@@ -1,0 +1,6 @@
+Parallel_Op 1
+#Parent Parallel_
+=>	R0 =	1
+	R1 =	data to write
+	
+This SWI writes to the data register for output on the printer port. A copy of this data will be returned on the next <read=>Parallel_Op0>.

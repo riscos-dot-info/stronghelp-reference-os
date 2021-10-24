@@ -1,0 +1,35 @@
+Territory numbers
+#Parent Territory_
+Number	Territory
+#Line
+1	UK
+2	Master
+3	Compact
+4	Italy
+5	Spain
+6	France
+7	Germany
+8	Portugal
+9	Esperanto
+10	Greece
+11	Sweden
+12	Finland
+13	Unused
+14	Denmark
+15	Norway
+16	Iceland
+17	Canada1
+18	Canada2
+19	Canada
+20	Turkey
+21	Arabic
+22	Ireland
+23	Hong Kong
+24	Russia
+25	Russia2
+26	Israel
+27	Mexico
+28	LatinAm
+48	USA
+
+It appears that territory and country numbers share the same sequence.

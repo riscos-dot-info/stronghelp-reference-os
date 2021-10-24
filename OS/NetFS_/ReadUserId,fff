@@ -1,0 +1,12 @@
+NetFS_ReadUserId  (&4004F)
+#Parent NetFS_
+=>	R1 =	pointer to buffer for resulting string
+	R2 =	size of buffer
+
+<=	R0 corrupted
+	R1 =	pointer to terminator
+	R2 =	free bytes in buffer (including terminator)
+
+This SWI reads the user ID if logged onto the current file server, or returns a null string (single zero) if your are not logged on.
+#Line
+See <PRM 2, page 366=>PRM-2:366>.

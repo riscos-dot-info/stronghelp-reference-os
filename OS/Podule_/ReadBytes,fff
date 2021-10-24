@@ -1,0 +1,10 @@
+Podule_ReadBytes  (&40284)
+#Parent Podule_
+=>	R0 =	offset from start of code space
+	R1 =	number of bytes
+	R2 =	pointer to buffer
+	R3 =	expansion card number
+
+This SWI reads bytes from an expansion card's code space, by repeated calls to its <loader=>Podule_loader>. Attempting to read from an <extension ROM=>OS_ModuleROMSections> will return an error.
+#Line
+See <PRM 4, page 143=>PRM-4:143>.

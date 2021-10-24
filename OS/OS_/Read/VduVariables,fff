@@ -1,0 +1,110 @@
+OS_ReadVduVariables  (&31)
+#Parent OS_
+=>	R0 =	pointer to input block
+	R1 =	pointer to output block (can be same as R0)
+
+The input block is a list of <variable numbers=>.variables> (words) terminated by -1. Each variable is read, and its value is written as a word into the output block.
+
+Note: You can also read the <mode variables=>OS_ReadModeVariables> with this call.
+#Line
+See <PRM 1, page 703=>PRM-1:703>.
+#Subpage variables
+VDU Variables
+#wrap off
+&	#	Name		Meaning
+#Line
+80	128	GWLCol		Graphics Window	Lefthand Column		(ic)
+81	129	GWBRow		 		Bottom Row		(ic)
+82	130	GWRCol		 		Righthand Column	(ic)
+83	131	GWTRow		 		Top Row			(ic)
+
+84	132	TWLCol		Text Window	Lefthand Column
+85	133	TWBRow		 		Bottom Row
+86	134	TWRCol		 		Righthand Column
+87	135	TWTRow		 		Top Row
+
+88	136	OrgX		x coord of graphics Origin	 	(ec)
+89	137	OrgY		y coord of graphics Origin	 	(ec)
+
+8A	138	GCsX		Graphics Cursor X coord		 	(ec)
+8B	139	GCsY		Graphics Cursor Y coord		 	(ec)
+8C	140	OlderCsX	Oldest gr. Cursor X coord	 	(ic)
+8D	141	OlderCsY	Oldest gr. Cursor Y coord	 	(ic)
+8E	142	OldCsX		Previous gr. Cursor X coord	 	(ic)
+8F	143	OldCsY		Previous gr. Cursor Y coord	 	(ic)
+90	144	GCsIX		Graphics Cursor X coord		 	(ic)
+91	145	GCsIY		Graphics Cursor Y coord		 	(ic)
+92	146	NewPtX		New point X coord		 	(ic)
+93	147	NewPtY		New point Y coord		 	(ic)
+
+94	148	ScreenStart	As used by VDU drivers
+95	149	DisplayStart	As used by display hardware
+96	150	TotalScreenSize	Memory allocated to screen
+
+97	151	GPLFMD		GCOL action for foreground col
+98	152	GPLBMD		GCOL action for background col
+99	153	GFCOL		Graphics foreground col
+9A	154	GBCOL		Graphics background col
+9B	155	TForeCol	Text foreground col
+9C	156	TBackCol	Text background col
+9D	157	GFTint		Graphics foreground tint
+9E	158	GBTint		Graphics background tint
+9F	159	TFTint		Text foreground tint
+A0	160	TBTint		Text background tint
+
+A1	161	MaxMode		Highest (standard) mode available
+
+A2	162	GCharSizeX	X size of VDU5 chars (pixels)
+A3	163	GCharSizeY	Y size of VDU5 chars (pixels)
+A4	164	GCharSpaceX	X spacing of VDU5 chars (pixels)
+A5	165	GCharSpaceY	Y spacing of VDU5 chars (pixels)
+
+A6	166	HLineAddr	Address of <horizontal line-draw routine=>.hlineaddr>
+
+A7	167	TCharSizeX	X size of VDU4 chars (pixels)
+A8	168	TCharSizeY	Y size of VDU4 chars (pixels)
+A9	169	TCharSpaceX	X spacing of VDU4 chars (pixels)
+AA	170	TCharSpaceY	Y spacing of VDU4 chars (pixels)
+
+AB	171	GcolOraEorAddr	Addr of <colour blocks=>.gcoloraeoraddr> for current GCOLs
+
+AC	172	VIDCClockSpeed	VIDC clock speed in kHz (not RISC OS 2)
+
+100	256	WindowWidth	Width of text window in chars
+101	257	WindowHeight	Height of text window in chars
+#Subpage hlineaddr
+Fast horizontal line draw routine
+=>	R0 =	left x coordinate of end of line
+	R1 =	y coodinade of line
+	R2 =	right x coordinate of end of line
+	R3 =	0	plot with no action (do nothing!)
+	 	1	plot with foreground colour and action
+	 	2	invert current screen colour
+	 	3	plot with background colour and action
+	 	>3	pointer to <aligned ECF block=>.ecfblock>
+	R14 =	return address
+<=	all registers preserved
+
+This must be called in SVC mode. The caller should <OS_RemoveCursors> before calling, and <OS_RestoreCursors> afterwards. All coordinates are internal coordinates, and the line is plotted as specified by R3, clipped to the current graphics window.
+#subpage gcoloraeoraddr
+GCol OR and EOR address
+The returned value is a pointer to 3 <colour blocks=>.ecfblock>, which are updated whenever GCOL or TINT are issued, or the ECF origin is changed.
+
+Offset	Contents
+#Line
+0	Colour block for current foreground colour and action
+64	Colour block for current background colour and action
+128	Colour block for current background colour with store action
+#subpage ecfblock
+ECF block
+This block should be on a 64 byte boundary
+
+Offset	Value
+#Line
+0	OR mask for top ECF line
+4	EOR mask for top ECF line
+8	OR mask for next ECF line
+12	EOR mask for next ECF line
+
+56	OR mask for bottom ECF line
+60	EOR mask for bottom ECF line

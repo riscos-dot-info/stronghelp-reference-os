@@ -1,0 +1,23 @@
+FSEntry_GBPB
+#Parent FSEntry_
+#Wrap off
+=>	R0 =	<reason code=>.reason>
+	R1 =	internal file handle returned by <FSEntry_Open>
+	R2 =	pointer to buffer
+	R3 =	bytes to transfer
+if R0 = 1 or 3
+	R4 =	file pointer
+#Wrap
+
+This entry point is called to perform multiple byte operations on unbuffered files. It is only called if bit 28 of the information word returned by FSEntry_Open is set. (Otherwise fileswitch uses multiple <FSEntry_GetBytes=>FSEntry_GetBytesU> or <FSEntry_PutBytes=>FSEntry_PutBytesU> calls).
+#
+#Subpage reason
+FSEntry_GBPB reason codes
+Reason	Meaning
+#Line
+#Wrap off
+1	<Put bytes to specified pointer=>FSEntry_GBPB1>
+2	<Put bytes to current pointer=>FSEntry_GBPB1>
+3	<Get bytes from specified pointer=>FSEntry_GBPB3>
+4	<Get bytes from current pointer=>FSEntry_GBPB3>
+#Wrap

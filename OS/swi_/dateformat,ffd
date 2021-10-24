@@ -1,0 +1,27 @@
+Date format string tokens
+Token	Meaning
+#Line
+%0	ASCII zero value
+%DY	Date (08)
+%ST	st, th or nd by date
+%MN	Month as number (04)
+%MO	Month as long entry (April)
+%M3	Month as 3 letters (Apr)
+%WK	Week of year
+%DN	Day with in year (098)
+%WN	Week day as number (7 = Saturday)
+%W3	Week day as 3 letters (Sat)
+%WE	Week day as long (Saturday)
+%CE	Century as 2 digits (19)
+%YR	Year as 2 digits (95)
+%24	Hour as 24 hour (15)
+%12	Hour as 12 hour (03)
+%AM	am or pm
+%PM	am or pm
+%MI	Minute as 2 digits (25)
+%SE	Second as 2 digits (50)
+%CS	Centisecond as 2 digits (87)
+%TZ	Time zone (BST/DST/+01:00, etc)
+%%	A % symbol
+
+All numbers may be preceded by Z to suppress leading zeros.

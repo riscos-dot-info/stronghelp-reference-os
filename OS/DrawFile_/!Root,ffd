@@ -1,0 +1,16 @@
+DrawFile
+#Parent !Root
+#Prefix DrawFile_
+#Table Columns 2
+<Render>
+<BBox>
+<DeclareFonts>
+#EndTable
+
+Services:
+#Indent 2;wrap off
+45540 <Service_DrawObjectRender=>service_45540>
+45541 <Service_DrawObjectDeclareFonts=>service_45541>
+#indent
+
+<File format=>DrawFile_format>

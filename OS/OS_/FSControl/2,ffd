@@ -1,0 +1,19 @@
+OS_FSControl 2  (&29)
+#Parent OS_FSControl
+=>	R0 =	2 (Start new app)
+	R1 =	pointer to command tail
+	R2 =	<currently active object pointer=>OS_handlers_cao> to write
+	R3 =	pointer to command name
+
+<=	registers preserved, but may not return
+
+#tab
+This SWI allows you to fake starting an application. It
+
+1	issues <UpCall 256=>OS_UpCall256> to inform the current application - if the upcall is claimed then the error "Unable to start application"
+
+2	issues <Service_NewApplication=>Service_2A> to inform modules. If the service is claimed, then the error cannot be returned to you (as your application will now have been killed) so the error "Unable to start application" is passed to <OS_GenerateError>, which results in the error being sent to your parent's <error handler=>OS_handlers_error>.
+
+3	if the <exit handler=>OS_handlers_exit> is below <memory limit=>OS_handlers_limit> then all handlers below memory limit are reset to their <defaults=>OS_ReadDefaultHandler>
+
+4	the <CAO=>OS_handlers_cao> is set; the current time and command tail <are set=>OS_WriteEnv>

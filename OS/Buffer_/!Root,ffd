@@ -1,0 +1,13 @@
+Buffer
+#Parent !Root
+#Prefix Buffer_
+<Create>
+<Deregister>
+<GetInfo>
+InternalInfo
+<LinkDevice>
+<ModifyFlags>
+<Remove>
+<Register>
+<Threshold>
+<UnlinkDevice>

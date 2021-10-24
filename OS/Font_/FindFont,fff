@@ -1,0 +1,15 @@
+Font_FindFont  (&40081)
+#Parent Font_
+=>	R1 =	pointer to control terminated font name.
+	R2 =	x points * 16
+	R3 =	y points * 16
+	R4 =	x dpi, or 0 for default
+	R5 =	y dpi, or 0 for default
+
+<=	R0 =	font handle
+	R4 =	x dpi
+	R5 =	y dpi
+
+This SWI returns a handle for the given font name. The font is also set as current font. When you no longer need the font, use <Font_LoseFont>. If R1 points to a string containing no '\\' characters it is assumed to be a font name. Otherwise it is treated as a <font identifier=>Font_identifier>.
+#Line
+See <PRM 3, page 419=>PRM-3:419>.

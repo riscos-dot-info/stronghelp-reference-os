@@ -1,0 +1,23 @@
+OS_Byte CMOS 15
+#Parent OS_Bytecmos
+Bit(s)	Meaning
+#Line
+1	No printer ignore character
+2,3,4	<Serial port baud rate=>.speeds>
+5,6,7	Printer destination
+
+The printer destination is the default for the value set by <OS_Byte 5=>OS_Byte005>.
+#subpage speeds
+OS_Byte CMOS 15 Baud rate codes
+Value	Baud rate
+#Line
+0	75 
+1	150 
+2	300 
+3	1200 
+4	2400 
+5	4800 
+6	9600
+7	19200
+
+{fCode}*Configure baud {/}n{/}{f} stores /n/ - 1 in CMOS. The default is 1200 baud.

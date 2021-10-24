@@ -1,0 +1,10 @@
+Portable
+#Parent !Root
+#Prefix Portable_
+#Table Columns 2
+<Speed>
+<Control>
+<ReadBMUVariable>
+<WriteBMUVariable>
+<CommandBMU>
+#EndTable

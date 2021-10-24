@@ -1,0 +1,3 @@
+Transformed sprite object (13)
+#Parent drawfile_format
+This is followed by a 24 byte <transformation matrix=>draw_transform>, and then a <sprite=>os_spriteop_ptr>. This is scaled to fill the bounding box.

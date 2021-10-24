@@ -1,0 +1,22 @@
+Device driver entry point
+#Parent DeviceFS_CallDevice
+=>	R0 =	reason code :
+	 	 	0	<Initialise=>DeviceFS_entry0>
+	 	 	1	<Finalise=>DeviceFS_entry1>
+	 	 	2	<Wake up for TX=>DeviceFS_entry2>
+	 	 	3	<Wake up for RX=>DeviceFS_entry3>
+	 	 	4	<Sleep RX=>DeviceFS_entry4>
+	 	 	5	<Enumerate directory=>DeviceFS_entry5>
+	 	 	6	<Create buffer for TX=>DeviceFS_entry6>
+	 	 	7	<Create buffer for RX=>DeviceFS_entry6>
+	 	 	8	<Halt=>DeviceFS_entry8>
+	 	 	9	<Resume=>DeviceFS_entry9>
+	 	 	10	<End of data=>DeviceFS_entry10>
+	 	 	11	<Stream created=>DeviceFS_entry11>
+
+	R8 =	private word
+	R12 =	workspace pointer
+	other registers as given in calls
+<=	R0 preserved, or V set and R0 pointing to an <error block=>swi_errorblock>
+	R1 preserved
+	All named registers preserved

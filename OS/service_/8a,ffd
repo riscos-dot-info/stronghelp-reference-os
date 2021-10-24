@@ -1,0 +1,23 @@
+Service_Portable (&8A)
+#Parent Service_index
+=>	R1 =	&8A (reason code)
+	R2 =	0	power up
+	 	1	power down
+# 	 	2	tidy up
+# N> Issued by Econet if it can't powerdown because of outstanding RxCBs
+# Gerph> Is this something that we can document then, or just a vague one ?
+	R3 =	<bitmask=>.bitmask> of ports which will be powered down/have been powered up
+<=	R1 =	&8A (don't claim, unless R3 = 0)
+	R2 preserved
+	R3 =	<bitmask=>.bitmask> - set bits mean no objection to power up/down
+
+This service is issued before powering down, or after powering up certain hardware. If a module wishes to prevent power down it should clear the appropriate bits for that hardware. If this results in R3 = 0, the service should be claimed to prevent it being needlessly passed round remaining modules.
+#Line
+See <PRM 4, page 197=>PRM-4:197>
+#SubPage bitmask
+Bitmask of ports
+Bit	Hardware
+#Line
+0	Econet
+3	Serial oscillator and buffer
+14	Floppy Disc Controller oscillator

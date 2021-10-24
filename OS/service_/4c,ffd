@@ -1,0 +1,8 @@
+Service_StartedFiler (&4C)
+#Parent Service_index
+=>	R1 =	&4C (reason code)
+<=	R1 preserved (do not claim)
+
+This service is issued by the Filer after resident Filer module tasks have started, to allow tasks that have failed to initialise to reset - see <Service_StartFiler=>Service_4B> for details of the procedure.
+#Line
+See <PRM 2, page 492=>PRM-2:492>

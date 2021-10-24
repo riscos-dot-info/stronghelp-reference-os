@@ -1,0 +1,13 @@
+OS_Byte 192  Read serial port state
+#Parent OS_ByteIndex
+=>	R0 =	192 (&C0)
+	R1 =	0
+	R2 =	255
+
+<=	R0 =	preserved
+	R1 =	communications state
+	R2 =	flash counter (see <OS_Byte 193=>OS_Byte193>)
+                                                  
+This call reads the serial port state - equivalent to a read operation with <OS_Byte 156=>OS_Byte156>. It is provided for backwards compatibility - use <OS_SerialOp 0 and 1=>OS_SerialOp> instead. This call should not be used to write the value - doing so would make the value in memory inconsistent with the hardware.
+#Line
+See <PRM 2, page 452=>PRM-2:452>

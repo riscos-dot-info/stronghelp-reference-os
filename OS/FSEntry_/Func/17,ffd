@@ -1,0 +1,6 @@
+FSEntry_Func 17
+#Parent FSEntry_Func
+=>	R0 =	17 (Print startup banner)
+	R6 =	0, as special field not allowed here
+
+This call is made to request a filesystem to print a banner to show that it is selected if the startup text offset in the filing system <information block=>FSEntry_> is -1. If an error during printing occurs it should be returned to the caller.

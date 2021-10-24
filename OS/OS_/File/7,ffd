@@ -1,0 +1,10 @@
+OS_File 7
+#Parent OS_File
+=>	R0 =	7 (reason code)
+	R1 =	pointer to non-wildcarded object name
+	R2 =	<load address=>fsys_loadexec>
+	R3 =	<exec address=>fsys_loadexec>
+	R4 =	0
+	R5 =	size of file
+	
+This SWI attempts to create an un-stamped file of a given size with a particular file type.

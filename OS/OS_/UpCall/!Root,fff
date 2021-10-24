@@ -1,0 +1,20 @@
+OS_UpCall  (&33)
+#Parent OS_
+=>	R0 =	<reason code=>OS_UpCallReasons>
+	All other registers depend on reason code
+   
+<=	R0 preserved
+	All other registers depend on reason code
+   
+This SWI calls the <vector UpCallV=>vector_UpCallV>. To use UpCalls, you must either claim the vector and install a routine on it, or install an UpCall handler.
+
+They are called UpCalls because they are calls that RISC OS makes up to an application makes down to RISC OS. They generally occur in the foreground, and are hence different to Events, which occur in the background.
+
+<This page=>.code> gives information on writing UpCall code.
+#Line
+See <PRM 1, page 177=>PRM-1:177>.
+#Subpage code
+Writing code to handle UpCalls
+Routines that deal with UpCalls should be viewed as system extensions, and so should only call error-returning SWI's ('X'+SWI).
+
+If a routine installed on the vector deals with the situation it should intercept the call to the vector, as there is no longer any point informing any other routines or the UpCall handler of the situation. If it can't deal with the situation it must pass the call on, as another one may be able to do so.

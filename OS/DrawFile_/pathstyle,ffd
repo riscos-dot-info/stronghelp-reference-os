@@ -1,0 +1,25 @@
+Path style
+#Parent drawfile_format
+Bits	Meaning
+#Line
+0-1	Join style :
+	  0  mitred
+	  1  round
+	  2  bevelled
+2-3	Start cap :
+	  0  butt
+	  1  round
+	  2  sqare
+	  3  triangle
+4-5	End cap
+6	Winding rule :
+	  0  non-zero
+	  1  even-odd
+7	dash pattern :
+	  0  none
+	  1  present
+16-23	triangle cap width
+24-31	triangle cap length
+
+Note that the PRM has the start cap and end cap the wrong way round (but cross-references *back* from the start to end, making the PRM layout appear to be illogical but correct)
+Note also that the values for the <winding rule in Draw SWIs=>Draw_fillstyle> are respectively 0 and {*}2{*} for non-zero and even-odd.

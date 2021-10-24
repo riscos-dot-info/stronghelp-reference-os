@@ -1,0 +1,12 @@
+OS_Byte 121  Keyboard scan
+#Parent OS_ByteIndex
+=>	R0 =	121 (&79)
+	R1 =	<key=>os_byte121a> to start at, or key EOR &80 for single key
+
+<=	R1 =	for range check :	key pressed, or &FF if none pressed
+	 	for single key :	&FF if key pressed, or other if not
+	R2 =	corrupted
+
+This checks which keys are being pressed.
+#Line
+See <PRM 1, page 863=>PRM-1:863>

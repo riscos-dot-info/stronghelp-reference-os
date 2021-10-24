@@ -1,0 +1,6 @@
+ADC conversion ended event (3)
+#Parent Event_index
+=>	R0 =	3 (event number)
+	R1 =	channel that just converted
+
+This event is raised by a BBC I/O card when an analogue-to-digital conversion is completed.

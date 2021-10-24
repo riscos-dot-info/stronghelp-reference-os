@@ -1,0 +1,56 @@
+Serial status word
+Bit	Type	Value	Meaning
+#Line
+0	R/W	0	No software control. Use RTS handshaking if bit 5 is clear
+	 	1	Use XON/XOFF protocol. Bit 5 is ignored. The hardware will still do CTS handshaking (ie if CTS goes low, then transmission will stop), but RTS is forced to go low.
+	 	
+1	R/W	0	Use the ~DCD bit. If the ~DCD bit in the status register goes high, then cause a serial event, and do not enter the char into the buffer.
+	 	1	Ignore the ~DCD bit. Note that some serial chips (GTE and CMD) have reception and transmission problems when this bit is 1
+                 
+2	R/W	0	Use the ~DSR bit. If the ~DSR bit in the status register is high, then do not transmit characters.
+	 	1	Ignore the state of the ~DSR bit
+                 
+3	R/W	0	DTR on (normal operation)
+	 	1	DTR off (on 6551 serial chips, cannot use serial port in this state)
+                 
+4	R/W	0	Use the ~CTS bit. If the ~CTS bit in the status register is high, then do not transmit characters.
+	 	1	Ignore the ~CTS bit (not supported by the 6551 serial chips)
+
+5	R/W	 	This bit is ignored, if bit 0 set:
+	 	0	Use RTS handshaking.
+	 	1	Do not use RTS handshaking.
+                 
+6	R/W	0	Input is suppressed.
+	 	1	Input is not suppressed.
+                 
+7	R/W	 	Users should only modify this bit if RTS handshaking is not in use:
+	 	0	RTS controlled by handshaking system (low if no RTS handshaking)
+	 	1	RTS high
+                 
+8-15	RO	 	These bits are reserved for future expansions; do not modify them.
+
+16	RO	0	XOFF not received.
+	 	1	XOFF has been received. Transmission is stopped by this occurence.
+                 
+17	RO	0	The other end is intended to be in XON state.
+	 	1	The other end is intended to be in XOFF state. When this bit is set, then it means that an XOFF character has been sent and it will be cleared when an XON is sent by the buffering software. Note that the fact that this bit is set doesn't imply that the other end has received an XOFF yet.
+                 
+18	RO	0	The ~DCD bit is low, ie carrier present.
+	 	1	The ~DCD bit is high, ie no carrier.
+                 
+19	RO	0	The ~DSR bit is low, ie 'ready' state.
+	 	1	The ~DSR bit is high, ie 'not ready' state.
+                 
+20	RO	0	The ring indicator bit is low.
+	 	1	The ring indicator bit is high.
+                 
+21	RO	0	Do not send break.
+	 	1	Send break.
+                 
+22	RO	0	User has not manually sent an XOFF.
+	 	1	User has manually sent an XOFF.
+                 
+23	RO	0	Space in receive buffer above treshold.
+	 	1	Space in receive buffer below treshold.
+
+24-31	RO	 	These bits are reserved for future expansions; do not modify them.

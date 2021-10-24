@@ -1,0 +1,9 @@
+Options
+#Parent OS_FSControl10
+Option	Set per		Meaning
+#Line
+0	whole machine	reset all filing systems to defaults
+1	filing system	<Filing system messages=>fsys_opt1> on loading, saving, creating
+4	disc		<Boot action=>fsys_opt4>
+
+Options 2 & 3 relate to the BBC micro, repectively action to take on detecting tape errors, and setting the tape interblock gap.

@@ -1,0 +1,20 @@
+Sound Channel Control Block
+#Parent Sound_
+For each channel a *SCCB* (Sound Channel Control Block) is maintained by the channel handler. The first 9 words are usually stored in R0-R8.
+
+Offset	Value
+#Line
+0	gate bit, channel amplitude (7 bit log)
+1	voice table index
+2	attached voice instance number
+3	control/status flags
+4	phase accumulator pitch oscillator
+8	phase accumulator timbre oscillator
+12	counter of remaining buffer fills
+16	working R4
+20	working R5
+24	working R6
+28	working R7
+32	working R8
+36-63	reserved (Acorn)
+64-255	for user use

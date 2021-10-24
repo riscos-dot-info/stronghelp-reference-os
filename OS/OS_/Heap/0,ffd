@@ -1,0 +1,8 @@
+OS_Heap 0
+#Parent OS_Heap
+#Wrap off
+=>	R0 =	0
+	R1 =	pointer to heap (word aligned)
+	R3 =	size of heap (multiple of 4)
+
+This SWI sets up a heap of a particular size.

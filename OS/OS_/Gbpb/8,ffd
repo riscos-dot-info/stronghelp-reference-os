@@ -1,0 +1,22 @@
+OS_GBPB 8
+#Parent OS_GBPB
+=>	R0 =	8
+	R2 =	buffer address
+	R3 =	number of object names to read from directory
+	R4 =	offset of first item to be read in directory, or 0 to start
+
+<=	R0, R2 preserved
+	R3 =	number of objects asked for but not read
+	R4 =	next offset into directory
+	C Flag clear if R3 = 0, else set
+
+This call reads entries from the current directory on the temporary filing system. You can also do it using <OS_GBPB 9=>OS_GBPB9>. File names are returned in the area of memory specified in R2. The format of the returned data is:
+#Indent 2;Tab
+length of first object name	(one byte)
+first object name in ASCII	(as specified)
+... repeated as specified in R3
+#Indent
+
+On exit R4 contains the value which should be used on the next call. There is no guarantee that the number of objects you asked for will be read. This is because of the external constraints some filing systems may impose. To ensure reading all the entries you want to, this call should be repeated until R4 = -1.
+
+This call is only provided for backward compatibility.

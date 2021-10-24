@@ -1,0 +1,6 @@
+CD_DriveReady  (&41244)
+#Parent CD_
+=>	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
+<=	R0 =	drive state (0 if ready, otherwise not ready)
+
+This SWI returns the current state of drive, saying whether the drive is ready to accept commands or not.

@@ -1,0 +1,9 @@
+PDumper_Find  (&41B03)
+#Parent PDumper_
+=>	R0 =	pointer to anchor word
+	R2 =	tag of block to find
+<=	R2 =	pointer to found block
+
+This SWI scans the dumper's chain specified by the anchor word passed in R0 (usually the module's private word) for a block that matches the specified tag. The first matching tag found is returned - if none are found an error is generated.
+#Line
+See <PRM 3, page 685=>PRM-3:685>.
