@@ -1,0 +1,11 @@
+SharedSound_SampleRate (&4B446)
+#parent SharedSound_
+#prefix SharedSound_
+=>	R0 =	>0	handler number
+	 	0	to set the overall system rate for the current output driver
+	R1 =	sample frequency required
+\<=	R1 =	current sample frequency
+	R2 =	current sample period
+	R3 =	fractional step required to achieve this rate in 8.24 fixed point
+#line
+This SWI is used to set the sample rate used by a particular handler.  Information is returned to indicate whether Shared Sound can provide this rate and if not what is the nearest rate it can provide. Along with this is a fractional step value to suggest how the handler can achieve it's required rate. Sample frequency is always supplied in 1/1024 Hz.

@@ -1,0 +1,9 @@
+Audio_Loop (&452C7)
+#parent Audio_
+=>	R0 =	Boolean for loop on or off
+	 	-1	read current value
+	 	0	loop off
+	 	1	loop on
+\<=	R0 =	current value
+#line
+Loop playback

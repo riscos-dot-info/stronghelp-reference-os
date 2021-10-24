@@ -1,0 +1,11 @@
+SharedSound_HandlerVolume (&4B443)
+#parent SharedSound_
+#prefix SharedSound_
+=>	R0 =	Handler number
+	R1 =	volume (bits 0-15 left channel, 16-31 right channel) 
+\<=	If successful V flag is clear and
+	 	R0 is preserved
+	 	R1 =	current volume
+	If unsuccessful V flag is set and R0 points to a SWI error block.
+#line
+This is to set the volume level for a particular handler. Shared sound can use this information to provide internal mixing or pass it on to the handler at each buffer fill.

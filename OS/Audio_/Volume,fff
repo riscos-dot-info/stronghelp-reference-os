@@ -1,0 +1,9 @@
+Audio_Volume (&452C5)
+#parent Audio_
+=>	R0 =	volume level
+	 	-1	read current volume
+	 	0-128	set volume level
+\<=	R0 =	previous volume level
+#line
+Set the volume level for playback.
+This has immediate effect and can take place during playback.

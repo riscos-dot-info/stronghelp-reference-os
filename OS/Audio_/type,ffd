@@ -1,0 +1,6 @@
+Sample Types
+#parent Audio_
+1	Signed linear
+2	Unsigned linear
+3 	Archimedes log
+4	ADPCM

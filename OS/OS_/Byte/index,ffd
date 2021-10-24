@@ -22,7 +22,7 @@ OS_Byte Index
 21	&15	<Flush selected buffer=>os_byte021>
 25	&19	<Reset group of font definitions=>os_byte025>
 70	&46	<Read/Write country number=>os_byte070>
-71	&47	<Read/Write alphabet number=>os_byte071>
+71	&47	<Read/Write alphabet or keyboard number=>os_byte071>
 106	&6A	<Select pointer / Activate mouse=>os_byte106>
 112	&70	<Write VDU driver screen bank=>os_byte112>
 113	&71	<Write display hardware screen bank=>os_byte113>

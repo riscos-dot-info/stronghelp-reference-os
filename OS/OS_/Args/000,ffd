@@ -7,4 +7,4 @@ OS_Args 0
 	R2 =	file pointer			(if R1 \<> 0)
 #Wrap on
 
-This SWI returns the temporary filing system no, or filing pointer.
+This SWI returns the temporary filing system no, or file pointer.

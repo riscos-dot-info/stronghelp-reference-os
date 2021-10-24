@@ -1,0 +1,23 @@
+SharedSound
+#prefix SharedSound_
+#Table Columns 3
+<InstallHandler>
+<RemoveHandler>
+<HandlerInfo>
+<HandlerVolume>
+HandlerSampleType
+HandlerPause
+<SampleRate>
+InstallDriver
+RemoveDriver
+DriverInfo
+DriverVolume
+DriverMixer
+<CheckDriver>
+ControlWord
+<HandlerType>
+Test
+Info
+#Endtable
+#line
+<About>

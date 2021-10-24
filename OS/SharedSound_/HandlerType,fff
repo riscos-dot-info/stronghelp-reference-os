@@ -1,0 +1,8 @@
+SharedSound_HandlerType (&4B44E)
+#parent SharedSound_
+#prefix SharedSound_
+=>	R0 =	handler number
+	R1 =	handler <type>
+\<=	none
+#line
+This is used to change the <type> of a handler from for example, an immediate handler to a call back handler.

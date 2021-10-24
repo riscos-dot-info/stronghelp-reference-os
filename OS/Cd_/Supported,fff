@@ -9,9 +9,9 @@ CD_Supported flags
 Value	Meaning
 #line
 &7	(supports Audio Control ?)
-&8	Supports CD_Prefetch
+&8	Supports <CD_Prefetch>
 &10	Supports <CD_CloseDrawer>
-&20	Supports CD_AudioLevel
+&20	Supports <CD_AudioLevel>
 &40	CD ROM speed - in multiples up to 255 x speed
-&4000	Supports CD_ReadAudio
+&4000	Supports <CD_ReadAudio>
 &8000	(supports Audio params)

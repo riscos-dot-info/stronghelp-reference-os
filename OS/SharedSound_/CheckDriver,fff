@@ -1,0 +1,7 @@
+SharedSound_CheckDriver (&4B44C)
+#parent SharedSound_
+#prefix SharedSound_
+=>	none
+\<=	none
+#line
+This is used to force SharedSound to make sure that current driver is still active. It is needed for situations where another application has taken control of the output Linear handler and has not returned the control to SharedSound.

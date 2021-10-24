@@ -19,15 +19,22 @@ Bit	Type	Value	Meaning
 5	R/W	 	This bit is ignored, if bit 0 set:
 	 	0	Use RTS handshaking.
 	 	1	Do not use RTS handshaking.
-                 
-6	R/W	0	Input is suppressed.
-	 	1	Input is not suppressed.
+
+# Neil Walker <neil@denbridgebootle.demon.co.uk>
+# and R P Sprowson <rpsprowson@argonet.co.uk>
+# found a bug in the PRM =) Bit 6 means as follows and *not* what the PRM says
+6	R/W	0	Input is not suppressed.
+	 	1	Input is suppressed.
                  
 7	R/W	 	Users should only modify this bit if RTS handshaking is not in use:
 	 	0	RTS controlled by handshaking system (low if no RTS handshaking)
 	 	1	RTS high
-                 
-8-15	RO	 	These bits are reserved for future expansions; do not modify them.
+
+8	R/W	 	RISC OS 3.50 + only
+	 	0	Disable the serial FIFOs, if present
+	 	1	Enable the serial FIFOs, if present
+                
+9-15	RO	 	These bits are reserved for future expansions; do not modify them.
 
 16	RO	0	XOFF not received.
 	 	1	XOFF has been received. Transmission is stopped by this occurence.

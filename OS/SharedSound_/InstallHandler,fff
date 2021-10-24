@@ -1,0 +1,43 @@
+SharedSound_InstallHandler (&4B440)
+#parent SharedSound_
+#prefix SharedSound_
+=>	R0 =	<handler=>.handler> address
+	R1 =	parameter to pass
+	R2 =	<flags>
+	R3 =	name of handler
+	R4 =	<type>
+\<=	If successful V flag is clear and R0 holds a handler number
+	If unsuccessful V flag is set and R0 points to a SWI error block.
+#line
+This SWI is used to install multiple Sound <Handlers=>.handler> into the system.
+#
+#subpage handler
+SharedSound handlers
+Each handler is called with when the current driver is called if the handler is an immediate handler or on call back if the handler is either a call back or process handler. The handlers in each type are called in the order in which they were installed. Process handlers are called after call back handlers.
+
+Each handler is passed a buffer to fill with the registers set as follows:
+
+=>	R0 =	parameter
+	R1 =	base address of buffer to fill
+	R2 =	end of buffer
+	R3 =	<flags=>.flags2>
+	R4 =	sample frequency
+	R5 =	sample period
+	R6 =	fractional step as specified by <SharedSound_SampleRate>
+	R7 =	LR volume
+	R4, R5 and R6 are updated at the start of a buffer fill to represent the current sample frequency etc.
+<=	R3 contains flags as above, modified according to the action of the handler
+#
+#subpage flags2
+SharedSound Handler flags
+/Bits/	/Meaning/
+0	Mix. If set then data must be mixed otherwise overwrite.
+1	Quality. If set then use highest quality e.g. oversampling.
+3-7	0	No overrun
+ 	1˜30	times buffer has been overrun
+ 	31	Buffer overrun > 30
+29	Stereo. Reverse stereo if set.
+30	Set if to use volume in R7, otherwise use max volume
+31	Mute if set.
+#line
+Only bit 0 of the above flags is implemented by SharedSound. The other flags are currently used by the Sound16 drivers.

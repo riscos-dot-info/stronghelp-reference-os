@@ -1,0 +1,7 @@
+SharedSound Handler Types
+#parent SharedSound_
+#prefix SharedSound_
+The handler types are defined as follows:
+	0	Immediate handler
+	1	Call back handler
+	2	Process handler

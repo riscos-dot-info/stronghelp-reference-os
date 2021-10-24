@@ -1,0 +1,121 @@
+Low-level internal key numbers
+#Table Columns 4
+0   Escape
+1   F1
+2   F2
+3   F3
+4   F4
+5   F5
+6   F6
+7   F7
+8   F8
+9   F9
+10  F10
+11  F11
+12  F12
+13  Print
+14  Scroll Lock
+15  Break
+16  ~
+17  1
+18  2
+19  3
+20  4
+21  5
+22  6
+23  7
+24  8
+25  9
+26  0
+27  -
+28  =
+29  £
+30  \<-|
+31  Insert
+32  Home
+33  Page Up
+34  Num Lock
+35  K /
+36  K *
+37  K #
+38  Tab
+39  Q
+40  W
+41  E
+42  R
+43  T
+44  Y
+45  U
+46  I
+47  O
+48  P
+49  [/\{
+50  ]/}
+51  \\
+52  Delete
+53  Copy
+54  Page down
+55  K 7
+56  K 8
+57  K 9
+58  K -
+59  L Ctrl
+60  A
+61  S
+62  D
+63  F
+64  G
+65  H
+66  J
+67  K
+68  L
+69  ;/:
+70  '/"
+71  Return
+72  K 4
+73  K 5
+74  K 6
+75  K +
+76  L Shift
+77  (<extra key=>.extra>)
+78  Z
+79  X
+80  C
+81  V
+82  B
+83  N
+84  M
+85  ,/\<
+86  ./\>
+87  //?
+88  R Shift
+89  Up
+90  K 1
+91  K 2
+92  K 3
+93  Caps Lock
+94  L Alt
+95  Space
+96  R Alt
+97  R Ctrl
+98  Left
+99  Down
+100 Right
+101 K 0
+102 K .
+103 Enter
+112 Select
+113 Menu
+114 Adjust
+#EndTable
+
+Risc PC:	Key {fCode}'/@{f} is where {fCode}'/"{f} would be
+		Key {fCode}#/~{f} gives 51
+		Key {fCode}\\/|{f} gives 77 (extra key)
+#line;tab
+See	<PRM 1-156=>PRM-1:156>
+#subpage extra
+Key number 77
+Some national keyboards have an extra key between left shift and Z, which gives key number 77. This key is not present on the standard UK Archimedes keyboard, although a contact area for it is visible on the keyboard PCB.
+
+On Risc PC keyboards this is the \\/| key

@@ -2,7 +2,7 @@ SWIs that should be used with care with dynamic areas
 #Parent OS_
 Some SWIs use some bits 31-27 for flags. With the introduction of dynamic areas into the memory map on RISC OS 3.5 or later, it is now possible for RAM to be located at addresses with these bits set. Thus some SWIs are limited in the range of memory to which pointers can be passed, and will fail mysteriously (possibly overwriting other areas of memory) if a pointer to memory with these bits sets is unwittingly passed.
 
-This list is incomplete, please mail addtions to <the moderator=>#URL mailto:gerph@innocent.com>:
+This list is incomplete, please mail additions to <the moderator=>#URL mailto:koschei@eh.org>:
 
 SWI					Register	Flag Bits
 #Line
@@ -11,12 +11,12 @@ SWI					Register	Flag Bits
 <ADFS_SectorOp>				R1		as FileCore_DiscOp
 <FileCore_DiscOp>			R1		0-7 (word aligned address is encoded in 26 bits)
 <FileCore_SectorOp>			R1		0-7 (word aligned address is encoded in 26 bits)
-<OS_File 12,14,16,255=>OS_File12>	R2		31
 <OS_HeapSort>				R1		29,30,31
 <OS_ReadLine>				R0		30,31
 <OS_SubstituteArgs>			R0		31
 <RAMFS_DiscOp>				R1		as ADFS_DiscOp
 # Gerph> This doesn't exist ?
+# Koschei> apparently not.
 # <RAMFS_SectorOp>			R1		as ADFS_SectorOp
 <Wimp_SendMessage=>Wimp:Wimp_SendMessage>	R1	 (see SWI documentation)
 <PlugIn string_value=>Wimp:Msg_PlugIn_string_value>	N/A	Checks must be (\>0 AND \< 256)

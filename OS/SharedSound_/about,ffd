@@ -1,0 +1,24 @@
+SharedSound
+#parent SharedSound_
+The purpose of this module is summarised as follows:
+è	Shared use of digital sound output
+è	16 bit linear facility independently from the hardware used
+è	Software support to potential users of digital sound output.
+è	A call back facility for CPU intensive handlers allowing the hardware drivers to operate with interrupts disabled.
+è	Provision for effects and other processes to act on the sound
+
+SharedSound allows multiple sound handlers to output through one sound source. SharedSound can potentially provide a number of useful functions such as mixing, sample rate interpolation and volume scaling, however, current versions of the module simply pass these values onto the handlers to make use of.  Values are passed to the Handler fill routine which indicate the current state of play, in particular the current sample rate, along with associated values, as well as the current volume setting. The volume for a handler is calculated from the current system volume and the volume requested for the handler as well as scaling depending on the number of currently active handlers. This is passed as a Left and Right (Stereo) volume as two 16 bit words packed into a 32 bit word.
+
+SharedSound acts as a universal interface to any supported hardware.  This currently includes support for the Acorn 16 bit sound system and the Audio Dynamics DMI50/S card.
+
+<Implementation=>.implementation>
+#
+#subpage implementation
+Implementation
+The current version of SharedSound provides three levels of handler activity. The first is an immediate handler.  This is called with interrupts disabled and must return as quickly as possible.  Such handlers are likely to be simple 'fill buffer' handlers that do not require to process any data or a timing device that is using the Sound interrupt as a timer.
+
+The second type of handler is a call back handler.  This is called on a call back and can therefore operate with interrupts enabled and take more time to execute.
+
+The third is a process handler.  This is called in the same way as a call back handler but is called at the end of the call back process to allow it to add effects or process the current buffer in some way.
+
+SharedSound is currently used by the the Sound16 codecs for Replay, the PCSound support module and the MIDI Synthesiser.

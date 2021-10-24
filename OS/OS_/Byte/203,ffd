@@ -10,4 +10,4 @@ OS_Byte 203  Read/Write serial buffer threshold
                                                   
 This call reads or sets the serial buffer threshold. While the free space is below this value the serial harware will attempt to halt incoming data. <OS_SerialOp 0=>OS_SerialOp0> controls the handshaking method. The default threshold is 9 characters.
 #Line
-See <PRM 2, page 453=>PRM-2:453>
+See <PRM 2-453=>PRM-2:453>

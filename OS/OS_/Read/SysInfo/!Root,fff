@@ -6,7 +6,8 @@ OS_ReadSysInfo  (&58)
 	  2	<Machine Id=>.2>
 	  3	<82C71x features=>.3>
 # 	  7	<Read info about last unexpected abort (data or prefetch)=>OS_ReadSysInfo7>
-
+	  9	<Read version information=>.9>
+#line
 These calls read information about the current system.
 #Line
 See <PRM 1, page 719=>PRM-1:719>.
@@ -62,3 +63,20 @@ Bits	Sub unit		710	711
 16-19	2nd serial port		0	1
 20-23	chip configuration	1	2
 24-31	reserved		0	0
+#
+#subpage 9
+OS_ReadSysInfo 9
+*Read version information*
+=>	R0 =	9
+	R1 =	<subreason code=>.9c>
+<=	R0 =	relevant information
+#line
+Reads information about which version of RISC OS is installed.
+#line;tab
+*Note*:	RISC OS 4+ only.
+#
+#subpage 9c
+OS_ReadSysInfo 9 reason codes
+/Value/	/Meaning/
+#line
+1	Read part number

@@ -1,0 +1,11 @@
+Joystick_CalibrateTopRight (&43F41)
+#Parent Joystick_
+=>	None
+<=	None
+#line
+This call calibrates analogue joysticks to return the full range of values. You sould make this call with all joysticks held in the top right position.
+
+For full calibration, you must call both this SWI and <Joystick_CalibrateBottomLeft>. Once either of the calls has been called <Joystick_Read> and <ADVAL=>Basic:Adval> shall both return an error until the other calibration SWI has been called. After calibration the read calls will then return their full range of values.
+#Line
+See	<Joystick_CalibrateBottomLeft>
+	<PRM 5a-642=>PRM-5a:642>

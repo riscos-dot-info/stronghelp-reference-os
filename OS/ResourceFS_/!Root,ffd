@@ -1,5 +1,10 @@
 ResourceFS
 #Parent !Root
 #Prefix ResourceFS_
-<DeregisterFiles>
-<RegisterFiles>
+*SWIs*	<DeregisterFiles>
+	<RegisterFiles>
+#line
+*Service calls*
+	59	<ResourceFS started=>Service_59>
+	5A	<ResourceFS dying=>Service_5A>
+	60	<ResourceFS starting=>Service_60>

@@ -4,7 +4,7 @@ FileCore_Create  (&40541)
 	R1 =	pointer to calling module's base
 	R2 =	pointer to calling module's private word
 	R3 =	<drives configuration=>.drives>
-	R4 =	suggested size fo directory cache
+	R4 =	suggested size for directory cache
 # (19990616) r5: 1076 -> 1024
 	R5 =	suggested number of 1024 byte buffers or file cache
 # gerph, paraphrased> 1076 is the actual size of memory allocated

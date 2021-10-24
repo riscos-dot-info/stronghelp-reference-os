@@ -20,6 +20,6 @@ Bits	Meaning
 	  1  present
 16-23	triangle cap width
 24-31	triangle cap length
-
-Note that the PRM has the start cap and end cap the wrong way round (but cross-references *back* from the start to end, making the PRM layout appear to be illogical but correct)
-Note also that the values for the <winding rule in Draw SWIs=>Draw_fillstyle> are respectively 0 and {*}2{*} for non-zero and even-odd.
+#line;tab;wrap on
+*Note*:	that the PRM has the start cap and end cap the wrong way round (but cross-references *back* from the start to end, making the PRM layout appear to be illogical but correct)
+*Note*:	that the values for the <winding rule in Draw SWIs=>Draw_fillstyle> are respectively 0 and {*}2{*} for non-zero and even-odd.

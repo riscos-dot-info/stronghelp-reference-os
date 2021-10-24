@@ -1,5 +1,5 @@
 FileCore disc descriptor
-Offset	Name		Meaning
+/Offset/	/Name/		/Meaning/
 #Line
 0	log2secsize	Log2 of sector size (Sector size = 2^x)
 1	secspertrack	number of sectors per track
@@ -30,7 +30,7 @@ C-F	root		disc address of root directory
 2A-3F	 		reserved, must be 0
 #subpage flags
 Disc description flags
-bits	Meaning
+/bits/	/Meaning/
 #line
 0-5	lowest numbered sector id on a track
 6	if set, treat sides as a sequence (not interleaved)

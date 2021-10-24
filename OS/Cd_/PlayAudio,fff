@@ -1,6 +1,6 @@
 CD_PlayAudio  (&4124B)
 #Parent CD_
-=>	R0 =	address mode of parameters
+=>	R0 =	<address mode=>CD_addresses> of parameters
 	R1 =	start address of section
 	R2 =	end address of section
 	R7 =	pointer to <CDFS control block=>CDFS_controlblock>

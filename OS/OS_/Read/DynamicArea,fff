@@ -12,5 +12,5 @@ This SWI reads the size of an area.
 logical size of the area, otherwise the behaviour is the same as before.
 In practice this means that this call can be used by the application
 without worrying whether virtual memory is active.
-#Line
-See <PRM 1, page 388=>PRM-1:388>.
+#Line;tab
+See	<PRM 1-388=>PRM-1:388>.

@@ -2,5 +2,9 @@ Joystick
 #Parent !Root
 #Prefix Joystick_
 <Read>
-
-This is only available on machines with the proper hardware.
+<CalibrateTopRight>
+<CalibrateBottomLeft>
+#line
+*Note*:	These are only available on machines with the proper hardware.
+#line;tab
+See also:	<PRM 5a-629=>PRM-5a:629>

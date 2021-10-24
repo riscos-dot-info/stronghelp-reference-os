@@ -20,7 +20,7 @@ repeat
   \{
     process buffer
   }
-} until (R4 \<> -1)
+} until (R4 = -1)
 
 as it is legal to return R3 = 0 before the end of the directory. Also, do *not* assume anything about the value in R4.
 # Note: The PRM lies when it says that if R6 points to an empty string "*" is used.

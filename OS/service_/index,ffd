@@ -42,7 +42,7 @@ Service calls
 55 <*Logon/*Bye (NetFS)=>Service_55>
 56 <Econet dying=>Service_56>
 57 <Wimp ReportError=>Service_57>
-58 Service_MIDI
+58 <Service_MIDI=>MiscSWIs:MIDI_Service_58>
 59 <ResourceFS started=>Service_59>
 5A <ResourceFS dying=>Service_5A>
 5B <ColourTrans calibration changed=>Service_5B>
@@ -107,6 +107,7 @@ Service calls
 9E <DCI frame type freed=>InetSWIs:Service_9E>
 9F DCI Protocol status
 A7 <URI operation=>InetSWIs:Service_A7>
+B0 <InternetStatus=>InetSWIs:Service_B0>
 B7 <UKCompression=>Service_B7>
 B9 <ModulePreInit=>Service_B9>
 10800 <ADFSPodule=>Service_10800>

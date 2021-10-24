@@ -4,17 +4,19 @@ OS SWIs
 #Table Columns 3
 <ADFS>
 <ATAPI>
+<Audio>
 <BasicTrans>
 <Buffer>
 <Cache>
 <CD>
 <CDFS>
-<ColourTrans>
 <ColourPicker=>Wimp:ColourPicker_>
+<ColourTrans>
 <Debugger>
 <DeviceFS>
 <DMA>
 <DOSFS>
+<DragAnObject=>Wimp:DragAnObject_>
 <DragASprite=>Wimp:DragASprite_>
 <Draw>
 <DrawFile>
@@ -41,12 +43,13 @@ OS SWIs
 <Podule>
 <Portable>
 <RamFS>
-<ResourceFS>
 <RemotePrinterSupport>
-<SCSI>
+<ResourceFS>
 <ScreenBlanker>
 <ScreenModes>
+<SCSI>
 <SharedCLibrary>
+<SharedSound>
 <Shell>
 <Sound>
 <Squash>
@@ -71,4 +74,4 @@ OS SWIs
 #EndTable
 #Line
 #align centre
-{/}<Operating System SWIs manual=>about>, v3.07 16-Jun-1999{/}
+{/}<Operating System SWIs manual=>about>, v3.08 26-Nov-1999{/}

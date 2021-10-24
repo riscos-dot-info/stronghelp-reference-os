@@ -1,0 +1,8 @@
+Bits Per Sample
+#parent Audio_
+#wrap off
+/Value/	/Meaning/
+4	4 bit ADPCM only
+8	8 bits (1 byte)
+12	12 bits (stereo only)
+16	16 bits (2 bytes)

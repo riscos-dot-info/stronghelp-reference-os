@@ -19,4 +19,5 @@ Mode	Meaning
 
 2	Physical block addressing
 	offset in blocks from the first block on the CD.
-
+#line
+The first readable audio block on a CD is usually 2 secs (150 blocks) into the data area - modes 0 and 1 may give an error if you try to access below this.

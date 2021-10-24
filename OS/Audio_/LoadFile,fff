@@ -1,0 +1,11 @@
+Audio_LoadFile (&452C9)
+#parent Audio_
+=>	R0 !	null-terminated filename
+\<=	R0 =	sample rate
+	R1 =	<sample type=>Audio_type>
+	R2 =	<channels>
+	R3 =	<bits>
+	R4 =	file length in bytes
+#line
+Load a file into memory for later playback.
+If the module recognises the file type then it will set the sample type parameters accordingly.

@@ -19,6 +19,7 @@ FindV				0D	File open (<OS_Find>)
 ReadLineV			0E	Read a line of text (<OS_ReadLine>)
 FSControlV			0F	Filing system control (<OS_FSControl>)
 <EventV=>vector_eventv>		10	Event vector (<OS_GenerateEvent>)
+<KeyV=>vector_keyv>		13	Key vector
 <InsV=>vector_insv>		14	Buffer insert (<OS_Byte 138=>OS_Byte138>)
 <RemV=>vector_remv>		15	Buffer remove (<OS_Byte 145=>OS_Byte145>)
 <CnpV=>vector_cnpv>		16	Count/Purge Buffer (OS_Byte <21=>OS_Byte021> & <152=>OS_Byte152>)

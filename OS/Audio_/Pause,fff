@@ -1,0 +1,9 @@
+Audio_Pause (&452C4)
+#parent Audio_
+=>	R0 =	boolean for pause on or off
+	 	0 	pause off
+	 	1	pause on
+	 	-1	read pause state
+\<=	R0 preserved, or pause state if R0 = -1 on entry.
+#line
+Pause playback

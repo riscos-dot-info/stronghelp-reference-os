@@ -1,6 +1,6 @@
 CD_DiscUsed  (&41253)
 #Parent CD_
-=>	R0 =	addressing mode for returned size in
+=>	R0 =	<addressing mode=>CD_addresses> for returned size in
 	R1 =	pointer to <8-byte block=>.block>
 	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
 

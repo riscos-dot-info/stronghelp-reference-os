@@ -1,6 +1,6 @@
 Keyboard IDs
 #Parent OS_InstallKeyHandler
-ID	Keyboard Type
+/ID/	/Keyboard Type/
 #Line
 1	standard Archimedes keyboard
-2	A4 internal keyboard, PC keyboard
+2	A4 internal keyboard, PC-AT keyboard

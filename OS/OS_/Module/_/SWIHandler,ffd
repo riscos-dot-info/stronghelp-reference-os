@@ -39,7 +39,7 @@ Recommended code to implement multiple SWIs :
 	ORRS	pc,r14,#1<<28
 
 .<EBlock=>swi_errorblock>\_UnknownSWI
-	EQUD	1<<6
+	EQUD	&1E6
 	EQUS	"BadSWI"+CHR$0
 	ALIGN
 #f;tab

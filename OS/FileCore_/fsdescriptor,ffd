@@ -19,4 +19,5 @@ Bit	Meaning when set
 5	Hard disc support poll change (ie the poll change call works for hard discs and returns a sensible value; also locking them gives a sensible result)
 6	Floppies support power eject
 7	Harddiscs support power eject
+8	Read drive flags is supported
 9	Sector addressing is possible (RISC OS 3.6 and later)

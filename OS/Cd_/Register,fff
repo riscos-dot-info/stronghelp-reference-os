@@ -1,21 +1,21 @@
 CD_Register  (&41260)
 #Parent CD_
-=>	R0 =	pointer to a <block=>CD_infoblock>
+{f25}Þ{f}	R0 =	pointer to a <block=>CD_infoblock>
 	R1 =	pointer to a 1-word special tag (&EE50EE50), followed by <handler code=>.code>
 	R2 =	pointer to workspace for the soft-loadable module (passed in R12 to the handler)
 
-<=	block at R0 updated
+{f25}Ü{f}	block at R0 updated
 
 This call registers the soft-loadable driver with the CDFSDriver module. The block pointed to by R0 on entry must be in RAM, whereas anything else, i.e. the code for each CD _SWI, can be in ROM. The block must stay put in the memory so that CDFSDriver can check it when detecting drive types.
 #Subpage code
 CDFSDriver handler code
-=>	R0-R6 as passed to SWI
+{f25}Þ{f}	R0-R6 as passed to SWI
 	R7 =	pointer to <control block=>.block>
-	R11 =	SWI number called
+	R11 =	SWI number called - 1
 	R12 =	workspace pointer
 	R13 =	1k stack
 	R14 =	return address
-<=	R0-R6 for return
+{f25}Ü{f}	R0-R6 for return
 	R7-R12, R14 corrupted exceptin
 #Subpage block
 CDFSDriver control block

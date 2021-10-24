@@ -12,10 +12,13 @@ See <PRM 2, page 459=>PRM-2:459>.
 #Subpage reasons
 OS_SerialOp reason codes
 #Parent OS_
-R0 =	<0 Read/write serial states=>OS_SerialOp0>
-	<1 Read/write data format=>OS_SerialOp1>
-	<2 Send break=>OS_SerialOp2>
-	<3 Send byte=>OS_SerialOp3>
-	<4 Get byte=>OS_SerialOp4>
-	<5 Read/write receive baud rate=>OS_SerialOp5>
-	<6 Read/write transmit baud rate=>OS_SerialOp6>
+R0 =	0	<Read/write serial states=>OS_SerialOp0>
+	1	<Read/write data format=>OS_SerialOp1>
+	2	<Send break=>OS_SerialOp2>
+	3	<Send byte=>OS_SerialOp3>
+	4	<Get byte=>OS_SerialOp4>
+	5	<Read/write receive baud rate=>OS_SerialOp5>
+	6	<Read/write transmit baud rate=>OS_SerialOp6>
+	7	Internal use only
+	8	<Read/write serial input buffer threshold value=>OS_SerialOp8>
+	9	<Enumerate available serial port speeds=>OS_SerialOp9>

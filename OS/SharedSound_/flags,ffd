@@ -1,0 +1,5 @@
+SharedSound_InstallHandler flags
+#parent SharedSound_
+#prefix SharedSound_
+/Bit/	/Meaning/
+0	if set then use <type> in R4 otherwise set type to default.

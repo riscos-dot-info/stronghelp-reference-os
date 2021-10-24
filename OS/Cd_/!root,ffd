@@ -5,7 +5,7 @@ CD_
 #        although ISTR that Eddie Edwards filled in a lot of the gaps
 #table Columns 3
 AudioControl
-AudioLevel
+<AudioLevel>
 <AudioPause>
 <AudioStatus>
 <ByteCopy>

@@ -7,3 +7,6 @@ FileCore_MiscOp 7
 <=	R0 =	flag, b0 set: drive locked
 
 This call read flags about the drive.
+#line;tab
+See <PRM 5a-175=>PRM-5a:175>.
+RISC OS 3.6 or later.

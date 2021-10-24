@@ -1,9 +1,12 @@
 CD_Inquiry  (&41255)
 #Parent CD_
-=>	R0 =	pointer to <36 byte buffer=>.buffer>
+{f25}Þ{f}	R0 =	pointer to <36 byte buffer=>.buffer>
 	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
 
 This SWI returns the CD-ROM device information - the same as returned by the SCSI Inquiry command.
+#line;tab
+*Note*:	Non-SCSI drivers fake this block as best they can. Do *not* rely too much on some of the SCSI specific values making sense.
+#
 #subpage buffer
 CD_Inquiry buffer
 #Parent CD_Inquiry
@@ -16,6 +19,7 @@ Offset	Contents
 8	vendor identification, space padded to 8 characters
 16	product identification, space padded to 16 characters
 32	product revision level, space padded to 4 characters
+#
 #Subpage type
 CD_Inquiry device type
 Bit	Meaning
@@ -39,8 +43,9 @@ Bit	Meaning
 	  1	Compatible with pre-SCSI I devices
 	  2	Follows SCSI II format
 28-29	reserved
-30	Device supports Terminate I/O process message
+30	Device supports Terminate I/O Process message
 31	Device supports asynchronous event notification
+#
 #Subpage flags
 CD interface flags
 Bit	Meaning
@@ -53,4 +58,3 @@ Bit	Meaning
 5	Supports 16 bit data transfers
 6	Supports 32 bit data transfers
 7	Supports relative addressing mode
-

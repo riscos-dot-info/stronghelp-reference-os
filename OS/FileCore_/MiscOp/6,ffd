@@ -6,3 +6,6 @@ FileCore_MiscOp 6
 <=	R0 =	pointer to <FileCore_Create> block, with addresses in place of offsets
 
 This call reads the FileCore_Create block used to initialise this filing system.
+#line;tab
+See <PRM 5a-174=>PRM-5a:174>.
+RISC OS 3.6 or later.

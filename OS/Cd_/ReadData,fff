@@ -4,7 +4,11 @@ CD_ReadData  (&41241)
 	R1 =	start address in given mode
 	R2 =	number of blocks to read
 	R3 =	pointer to destination buffer
-	R4 =	length of buffer
+	R4 =	length of buffer (see <note=>.note>)
 	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
 
 This SWI reads data from the CD, using the current mode (see <CD_SetParameters> and <CD_EnquireDataMode>).
+#
+#subpage note
+CD_ReadData R4 value note:
+Note for driver writers: the value supplied in R4 may not be valid when CDFS supplies it to the driver entry point.
