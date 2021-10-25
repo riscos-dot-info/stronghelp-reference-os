@@ -5,7 +5,7 @@ FileCore_DiscOp 0
 	R4 =	size to verify
 
 <=	R2 =	next disc address
-	R4 =	unverified
+	R4 =	size not unverified
 
 This call is used to verify sectors.
 Note: For RISC OS 3.60, the value in R2 will be rounded down to be sector aligned.

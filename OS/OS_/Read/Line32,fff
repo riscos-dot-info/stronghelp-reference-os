@@ -10,6 +10,7 @@ OS_ReadLine32  (&7D) (5.00+)
 	R1 =	chars read, excluding Return
 	R2 corrupted
 	R3 corrupted
+	R4 preserved
 	C set if Escape
 
 This SWI reads a line from the current input stream. Input is terminated with Return, Ctrl-J or Escape. Delete and Backspace deletes last char entered. Ctrl-U empties buffer.

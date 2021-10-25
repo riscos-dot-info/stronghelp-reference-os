@@ -7,6 +7,8 @@ Put sprite at coords  (34)
 	R4 =	y
 	R5 =	<action=>OS_SpriteOp_Action>
 
-This SWI plots the sprite specified at the co-ordinates given. Do not use if not in the same mode style (colours/resolution) as the sprite.
+This SWI plots the sprite specified at the co-ordinates given, using the plot action specified by R5.
+
+Do not use if not in the same mode style (colours/resolution) as the sprite.
 #Line
 See <PRM 1, page 785=>PRM-1:785>

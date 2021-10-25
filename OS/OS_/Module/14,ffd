@@ -2,6 +2,4 @@ OS_Module 14
 =>	R0 =	14 (reason code)
 	R1 =	pointer to a full name of new instantiation and any parameters for initialisation
 
-<=	R0,R1 preserved
-
 This creates new instantiations of existing modules, using the syntax 'module_title%instantiation'.

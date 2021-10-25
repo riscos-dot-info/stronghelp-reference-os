@@ -32,7 +32,7 @@ OS SWIs
 <FPEmulator>
 <Free=>Wimp:Free_>
 <FSLock>
-GPIO
+<GPIO=>GPIO:GPIO_>
 <Hourglass>
 <IIC>
 <InverseTable>
@@ -71,6 +71,7 @@ GPIO
 <Territory>
 <USBDriver>
 VFPSupport
+VideoOverlay
 <Wimp=>Wimp:Wimp_>
 #EndTable
 #Line
@@ -90,4 +91,4 @@ VFPSupport
 #EndTable
 #Line
 #align centre
-{/}<OS SWIs manual=>about> v3.38, 09 Nov 2016{/}
+{/}<OS SWIs manual=>about> v3.39, 12 Jul 2018{/}

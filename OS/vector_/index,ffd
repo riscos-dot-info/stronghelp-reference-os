@@ -47,5 +47,6 @@ GraphicsV				2A	Graphics hardware abstraction (5.00+)
 UnthreadV				2B	Call back after interrupt (5.08+)
 # UnthreadV actually appeared in 5.07, but was a bit broken, so 
 # I'm declaring it as 5.08.
-SeriousErrorV				2C	Pre handling of errors with <bit 31=>swi_errorblock> set
-Reserved				2D-2F
+Reserved				2C
+SeriousErrorV				2D	Pre handling of errors with <bit 31=>swi_errorblock> set
+Reserved				2E-2F

@@ -8,8 +8,16 @@ The following calls are deprecated in RISC OS 3.10 and higher:
 <OS_SetEnv>
 <OS_UnusedSWI>
 <CDFS_GiveFileType>
+<Wimp_SetPointerShape=>Wimp:Wimp_SetPointerShape>
 #EndTable
 
-Calling <OS_DynamicArea 0=>OS_DynamicArea0> with -1 in R5, to set an unlimited area size.
+The following calls are deprecated in RISC OS 3.50 and higher:
 
+#Table Columns 2
+<Wimp_ClaimFreeMemory=>Wimp:Wimp_ClaimFreeMemory>
+#EndTable
+
+The following calls are deprecated generally:
+
+Calling <OS_DynamicArea 0=>OS_DynamicArea0> with -1 in R5, to set an unlimited area size.
 Calling <OS_Word 14,1=>OS_Word.14,1> in situations where the century number is needed.

@@ -3,4 +3,4 @@ OS_Module 4
 =>	R0 =	4
 	R1 =	module name
 
-This SWI kills a module. This is equivilent to the *RMKill command.
+This SWI kills a module. This is equivalent to the *RMKill command.

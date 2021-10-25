@@ -1,0 +1,8 @@
+ScreenModes_Features  (&487C2) (5.23+)
+#Parent FileCore_
+<=	R0 =	bitmask of supported features
+	 	bit 0: ScreenModes supports EDID
+	 	bits 1-31: reserved, equal to zero
+
+This call returns additional features supported by ScreenModes without needing to rely on version number checking.
+#indent

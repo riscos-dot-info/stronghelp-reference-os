@@ -7,7 +7,6 @@ OS_Module 19/20
 =>	R0 =	19/20 (reason code)
 	R1 =	module number, or 0 to start
 	R2 =	<ROM section=>OS_ModuleROMSections>
-
 <=	R0 preserved
 	R1 =	module number of found module +1
 	R2 =	<ROM section=>OS_ModuleROMsections> of found module

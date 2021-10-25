@@ -34,7 +34,7 @@ OS_ReadSysInfo 1
 *Mode*
 =>	R0 =	1
 <=	R0 =	mode
-	R1 =	monitor type
+	R1 =	<monitor type=>OS_monitortypes>
 	R2 =	sync
 
 This call reads the configured screen settings.

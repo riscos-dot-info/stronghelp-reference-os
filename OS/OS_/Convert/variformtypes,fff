@@ -17,3 +17,4 @@ Number	Type	Example
 12	IPv6          	1234:0000:0000:0000:5678:0000:1111:abcd
 13	ShortestIPv6  	1234::5678:0000:1111:abcd
 14	HexLowercase  	deadbeef
+15	UUID          	12345678-abcd-abcd-abcd-0123456789ab

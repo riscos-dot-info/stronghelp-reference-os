@@ -3,4 +3,4 @@ OS_Module 1
 =>	R0 =	1
 	R1 =	pointer to filename (and optional parameters)
 
-This SWI loads a module. It is equivilent to the *{fCode}RMLoad{f} command.
+This SWI loads a module. It is equivalent to the *{fCode}RMLoad{f} command.

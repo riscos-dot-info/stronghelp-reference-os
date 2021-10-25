@@ -1,0 +1,8 @@
+OS_PlatformFeatures 35 (&6D)
+#Parent OS_
+=>	R0 =	35 (Read address of clear exclusive monitor)
+<=	R1 =	pointer to clear exclusive routine, or 0 if not required
+
+This reason is used to get the address of a routine to call that will reset/unlock the exclusive monitor implemented with LDREX/STREX and similar family of instructions. On a CPU that doesn't support these, zero is returned.
+
+Use this in preference to your own code so that any changes to the ARM architecture or bugs in the CPU can be updated centrally.

@@ -10,7 +10,7 @@ is and then performs the appropriate Read-Capacity
 Data returned as formatted text.
 
 The data returned is a zero terminated string of the same form as that
-printed by {fCode}*devices{f}, ie
+printed by {fCode}*SCSIDevices{f}, ie
 
 #fCode;wrap off
 "ddd    ttttttttttttttttt cccc Mbytes vvvvvvvv pppppppppppppppp rrrr ssssss"

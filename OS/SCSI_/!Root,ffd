@@ -11,6 +11,7 @@ SCSIFS :
 <FreeSpace64>
 <TestReady>
 <MiscOp>
+<Partitions>
 <SectorDiscOp>
 #EndTable
 # Vendor specific> Create ???
@@ -41,4 +42,4 @@ SCSIDriver :
 #EndTable
 #line
 #wrap on
-Third party vendors not using the standard <SCSISoft=>SCSI_SoftSCSI> model may not implement all of these calls.
+Third party vendors not using the standard <SCSISoft=>SCSI_SoftSCSI> model might not implement all of these calls.

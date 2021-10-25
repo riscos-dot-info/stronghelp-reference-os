@@ -21,5 +21,5 @@ Bit	Meaning when set
 7	Hard discs support power eject
 8	Read drive flags is supported
 9	Sector addressing is possible (3.60+)
-10	Module returs new-style errors (5.00+)
+10	Module returns new-style errors (5.00+)
 11	Floppy discs support mount like hard discs do (see <MiscOp 0=>FileCore_MiscOp0>) (5.20+)

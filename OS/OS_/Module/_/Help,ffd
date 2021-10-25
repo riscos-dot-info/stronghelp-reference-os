@@ -3,11 +3,11 @@ Module help string
 This should be in the format :
 
 #Wrap off;Indent 2
-{/}Module name{/}	v.vv (DD MMM YYYY)
+{/}Module name{/}	v.vv (DD Mmm YYYY)
 #indent
 or
 #indent 2
-{/}Module name{/}	v.vv (DD MMM YYYY) {/}Message{/}
+{/}Module name{/}	v.vv (DD Mmm YYYY) {/}Message{/}
 #Wrap;indent
 
 where /Module name/ may contain spaces, and is followed by one or two tabs to align the version number to column 16.
@@ -26,4 +26,4 @@ or
 /subset/ © {/}Author's name{/}
 #indent
 
-where /subset/ is a subset of the available modules describing this particular version, eg 'RO 3.10', 'ß2', 'English', 'Parallel', etc
+where /subset/ is a subset of the available modules describing this particular version, eg 'pro edition', 'ß2', 'English', etc

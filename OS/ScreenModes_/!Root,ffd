@@ -1,5 +1,8 @@
 ScreenModes  (&487C0) (3.50+)
 #Parent OS_
+#Prefix ScreenModes_
 #Table Columns 2
 ReadInfo
+EnumerateAudioFormats
+<Features>
 #EndTable

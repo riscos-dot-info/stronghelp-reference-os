@@ -12,10 +12,12 @@ Value	Font
 7	Homerton.Bold.Oblique
 8	Homerton.Medium
 9	Homerton.Medium.Oblique
-10	Trinity.Bold
-11	Trinity.Bold.Italic
-12	Trinity.Medium
-13	Trinity.Medium.Italic
-14	WIMPSymbol
+10	Sidney
+11	Trinity.Bold
+12	Trinity.Bold.Italic
+13	Trinity.Medium
+14	Trinity.Medium.Italic
+15	WIMPSymbol
 
-!Configure arranges for {fCode}Wimp$Font{f} to be set in {fCode}PreDesk.Configure.VRAM{f}.
+Values 2-15 are simply an enumeration of the fonts in {fCode}Resources:$.Fonts{f}, so may vary from system to system.
+For value 0, !Configure arranges for {fCode}Wimp$Font{f} to be set in {fCode}Choices:Boot.PreDesk.FontSetup{f}.

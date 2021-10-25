@@ -2,5 +2,8 @@ Keyboard IDs
 #Parent OS_InstallKeyHandler
 /ID/	/Keyboard Type/
 #Line
-1	standard Archimedes keyboard
-2	A4 internal keyboard, PC-AT keyboard
+0	Prototype A500 keyboard
+1	Standard Archimedes keyboard
+2	A4 portable internal keyboard, PC-AT keyboard
+3	Infrared remote RCMM
+4	Pandora portable internal keyboard

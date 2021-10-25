@@ -1,6 +1,5 @@
 OS_Module 5
 =>	R0 =	5 (reason code)
-
 <=	R0 preserved
 	R2 =	size of largest block available in bytes
 	R3 =	total amount free in RMA in bytes

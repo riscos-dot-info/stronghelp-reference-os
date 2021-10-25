@@ -4,6 +4,6 @@ Load sprite file  (10)
 	R1 =	<Sprite area=>os_spriteop_area>
 	R2 =	Pointer to pathname
 
-This loads the given sprite file into the given sprite area. NOTE this will over write any sprites that are already in the area.
+This loads the given sprite file into the given sprite area. NOTE this will overwrite any sprites that are already in the area.
 #Line
 See <PRM 1, page 768=>PRM-1:768>

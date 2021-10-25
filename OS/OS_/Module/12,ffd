@@ -3,7 +3,6 @@ OS_Module 12
 =>	R0 =	12
 	R1 =	module number
 	R2 =	instance number
-
 <=	R1 =	next module number
 	R2 =	next instance number
 	R3 =	pointer to <module=>OS_Module_Format>

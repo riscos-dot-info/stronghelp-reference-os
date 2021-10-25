@@ -7,8 +7,8 @@ OS_DynamicArea 0  (&66)
 	R3 =	-1 (or base of area; reserved for internal use)
 	R4 =	<area flags=>OS_DynamicAreaFlags>
 	R5 =	maximum size of area, in bytes <(-1 for unlimited)=>.deprec>
-	R6 =	<handler routine=>OS_DynamicAreaHandler>
-	R7 =	pointer to workspace for handler, or -1 for base of area
+	R6 =	<handler routine=>OS_DynamicAreaHandler>, or 0 if unused
+	R7 =	pointer to workspace for handler, or -1 for base of area, or 0 if unused
 	R8 =	pointer to name of area (limited to 31-chars in 3.80+)
 <=	R0, R2, R4, R6-R8 = preserved
 	R1 =	allocated area number

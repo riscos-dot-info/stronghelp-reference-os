@@ -5,6 +5,8 @@ Put sprite (28)
 	R2 =	Sprite name/pointer
 	R5 =	<Plot action=>os_spriteop_action>
 
-This plots the sprite with its bottom left hand corner at the graphics cursor. It uses the plot action specified by R5.
+This plots the sprite with its bottom left hand corner at the graphics cursor, using the plot action specified by R5.
+
+Do not use if not in the same mode style (colours/resolution) as the sprite.
 #Line
 See <PRM 1, page 779=>PRM-1:779>

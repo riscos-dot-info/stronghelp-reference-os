@@ -1,17 +1,19 @@
 SDIO
-#Prefix SDFS_
+#Prefix SDIO_
 #Parent !Root
 SDFS :
+# This table is a little odd in that it's the SDFS_ SWIs but follows
+# the pattern of ADFS and SCSIFS of keeping the FS and driver together
 #Table Columns 2
-<DescribeDisc>
-<DiscOp>
-<DiscOp64>
-<Drives>
-<FreeSpace>
-<FreeSpace64>
-<MiscOp>
-<ReadCardInfo>
-<SectorDiscOp>
+<DescribeDisc=>SDFS_DescribeDisc>
+<DiscOp=>SDFS_DiscOp>
+<DiscOp64=>SDFS_DiscOp64>
+<Drives=>SDFS_Drives>
+<FreeSpace=>SDFS_FreeSpace>
+<FreeSpace64=>SDFS_FreeSpace64>
+<MiscOp=>SDFS_MiscOp>
+<ReadCardInfo=>SDFS_ReadCardInfo>
+<SectorDiscOp=>SDFS_SectorDiscOp>
 #EndTable
 
 SDIODriver :

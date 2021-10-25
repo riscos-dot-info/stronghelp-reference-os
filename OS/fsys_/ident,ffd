@@ -39,4 +39,5 @@ Filing System numbers
 102 LanManFS
 118 CacheFS
 142 raFS
+153 HostFS (emulators)
 #EndTable

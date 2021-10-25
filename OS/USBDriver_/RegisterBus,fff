@@ -4,7 +4,7 @@ USBDriver_RegisterBus  (&54A40)
  	R1 =	version number the controller structure corresponds to
 <=	R0 =	HC bus handle
 
-This SWI registers a new host controller with USBDriver. If USBDriver knows that the API version in R1 incompatible with its current expectations, then the registration will be rejected.
+This SWI registers a new host controller with USBDriver. If USBDriver knows that the {*}RISCOS_USBDRIVER_API_VERSION{*} given in R1 incompatible with its current expectations, then the registration will be rejected.
 #subpage hostsoftc
 Host controller bus structure
 +0 	<usbd_bus=>USBDriver_headers> structure

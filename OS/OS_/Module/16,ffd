@@ -2,6 +2,4 @@ OS_Module 16
 =>	R0 =	16 (reason code)
 	R1 =	pointer to full module%instantiation name
 
-<=	R0,R1 preserved
-
 This enables you to select the preferred instantiation of a particular module.

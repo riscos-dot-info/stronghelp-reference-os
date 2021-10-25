@@ -1,0 +1,7 @@
+OS_Module 21 (5.00+)
+#Parent OS_Module
+=>	R0 =	21 (reason code)
+	R1 =	<ROM section=>OS_ModuleROMSections>
+<=	R2 =	pointer to first word after the module chain
+
+This call locates the end of the specified ROM module chain, though currently only the main system ROM (-1) is supported.

@@ -4,6 +4,4 @@ OS_Module 17
 	R2 =	chunk number
 	R3 =	<ROM section=>OS_ModuleROMsections>
 
-<=	R0-R3 preserved
-
-This allows expansion card and extension ROM modules to be added to the module list. Note that extension ROMs are not supported in RISC OS 2.0
+This allows expansion card and extension ROM modules to be added to the module list. Note that extension ROMs are not supported in RISC OS 2.00

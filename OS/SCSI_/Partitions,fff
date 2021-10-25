@@ -1,0 +1,25 @@
+SCSIFS_Partitions  (&40995) (5.09+)
+#Parent SCSI_
+=>	R0 =	<reason code=>.codes>
+	Other registers varying according to reason code.
+<=	Dependant on reason code.
+
+Supports splitting one physical drive into several logical drives.
+#Subpage codes
+SCSIFS_Partitions Reason Codes
+Code	Meaning
+#Line
+0	<Set sector offset for partition=>.partitions0>
+1	<Lookup drive number for id=>.partitions1>
+#Subpage partitions0
+SCSIFS_Partitions 0
+=>	R0 =	0
+ 	R1 =	SCSI ID
+ 	R2 =	Sector offset to partition start
+
+Should not be used after mounting the disc, otherwise loss of data is likely to occur.
+#Subpage partitions1
+SCSIFS_Partitions 1
+=>	R0 =	1
+ 	R1 =	SCSI ID
+<=	R2 =	SCSIFS drive number

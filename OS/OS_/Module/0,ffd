@@ -3,4 +3,4 @@ OS_Module 0
 =>	R0 =	0
 	R1 =	pointer to filename (and optional parameters)
 
-This SWI run a module, calling its start address. It is equivilent to the {fCode}*RMRun{f} command. Use <OS_Exit> or <OS_ExitAndDie> to leave.
+This SWI run a module, calling its start address. It is equivalent to the {fCode}*RMRun{f} command. Use <OS_Exit> or <OS_ExitAndDie> to leave.

@@ -1,8 +1,8 @@
 OS_PlatformFeatures 0 (&6D)
 #Parent OS_
-=>	R0 =	0 (Read code features) + flags (reserved)
+=>	R0 =	0 (Read code features)
 <=	R0 =	<flags=>.flags>
-	R1 =	pointer to IRQ routine (if b1 set)
+	R1 =	pointer to IRQ routine, or zero if not required
 
 This reason is used to determine what is required to run code on the current platform.
 

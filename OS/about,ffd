@@ -19,7 +19,7 @@ Thanks go to those mentioned in the <contributors=>OS:contributions> list.
 
 These manuals are kindly hosted by <www.riscos.info=>#url http://www.riscos.info/downloads/stronghelp/manuals/>
 #line
-<This page=>.hist338> gives history and credits.
+<This page=>.hist339> gives history and credits.
 #Subpage notes
 Notes on how the manual is structured
 These are some very incomplete notes on how the manual should be structured. If any part of it isn't then it will eventually be updated, or I'll change this specification. It's mostly here to remind me anyhow.
@@ -526,4 +526,25 @@ History for OS v3.38
 è	Added <Service_RTCSynchronised=>service_DD> and <Service_TimezoneChanged=>service_81080>
 è	Expanded the list of <error generators=>swi_errorblock.generators>
 #tab;line
-<Previous history=>.hist337>
+<Previous history=>.hist337>	<Next history=>.hist339>
+#subpage hist339
+History for OS v3.39
+#align right
+{/}12 Jul 2018{/}
+#align left
+#line
+è	OS_Module <subreason 21=>OS_Module21> added
+è	Lots of typing and grammatical errors fixed
+è	Added Wimp_ClaimFreeMemory and Wimp_SetPointerShape to list of <deprecated SWIs=>OS_deprecated>
+è	Added <OS_PlatformFeatures=>OS_PlatformFeatures.35> subreason 35
+è	Added <Service_IIC=>Service_81100>
+è	Added <ScreenModes_Features>
+è	Extra FS info word <bit 4=>fsys_extra_infoword> reserved
+è	OS_ConvertVariform <type 15=>OS_Convert.variformtypes> added for UUID numbers
+è	Added <SCSIFS_Partitions=>SCSI_Partitions>
+è	Copied warning about same mode from OS_SpriteOp <34=>os_spriteop_34> to <28=>os_spriteop_28>.
+è	Moved <SeriousErrorV=>vector_index> to vector &2D following the discovery of an allocations clash with RISC OS Select
+è	Type 15 and bit 31 of <Sprite Type=>OS_SpriteOp_Type> described
+è	Relationship between <ImageEntry_Args 9=>ImageEntry_Args9> and <ImageEntry_Close>, <FSEntry_Args 9=>FSEntry_Args9> and <FSEntry_Close> made
+#tab;line
+<Previous history=>.hist338>

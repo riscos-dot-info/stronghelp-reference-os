@@ -4,4 +4,4 @@ ImageEntry_Close
 	R2 =	new load address of file
 	R3 =	new exec address of file
 
-This entry point is called when files are being closed.
+This entry point is called when files are being closed. This entry point is called when files are being closed. If the value of R2 & R3 is zero the load and exec address of the file should not be changed (either because the FS said via <ImageEntry_Args 9=>ImageEntry_Args9> it's not possible, or FileSwitch knows it's not required).

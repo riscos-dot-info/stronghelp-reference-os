@@ -5,6 +5,6 @@ Sound_LinearHandler  (&40145)
 	R2 =	handler private word
 <=	R0 preserved
 	R1 =	pointer to previous handler code, or 0 if none installed
-	R2 =	handler private word, or -1 if none installed
+	R2 =	previous handler private word, or -1 if none installed
 
 This SWI reads, or changes, the current 16-bit linear handler. Do not call this SWI unless you have already determined that 16-bit sound is supported.

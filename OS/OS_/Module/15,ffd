@@ -3,6 +3,4 @@ OS_Module 15
 	R1 =	pointer to current module%instantiation name
 	R2 =	pointer to new postfix string
 
-<=	R0-R2 preserved
-
 This renames an existing instantiations of a module.

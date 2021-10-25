@@ -1,0 +1,12 @@
+Service_IIC  (&81100)
+#Parent Service_Index
+=>	R1 =	&81100 (reason code)
+	R2 =	subreason
+	 	0 - 	{*}lookup description{*}
+	 	 	R3 =	b0 always clear
+	 	 	 	b1-7 address of device
+	 	 	 	b24-31 IIC bus number
+	 	Return	R1 = 0 to claim
+	 	 	R2 = pointer to zero terminated string
+	 	 	R3 = preserved
+	 	others - {*}reserved for future expansion{*}

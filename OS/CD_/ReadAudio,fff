@@ -2,7 +2,7 @@ CD_ReadAudio  (&41266)
 #Parent CD_
 =>	R0 =	<addressing mode=>CD_addresses>
 	R1 =	start address of section to grab
-	R2 =	length of section to grab
+	R2 =	number of blocks to grab
 	R3 =	pointer to destination buffer (multiple of 256)
 	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
 

@@ -10,7 +10,7 @@ Module initialisation code
 <=	Preserve processor mode, interrupt state, V flag and R7-R11,R13
 	Can corrupt R0-R6,R12,R14 and flags, except V unless error is being returned
 
-This entry is called by RISC OS after the module has been loaded into RMA, before the Start code is called and before the module's SWIs (if it has any) are recognised.  During a module's initialisation code any calls to its own SWIs or *commands will provoke an 'I don't know what you're talking about' reaction from RISC OS.
+This entry is called by RISC OS after the module has been loaded into RMA, before the Start code is called and before the module's SWIs (if it has any) are recognised.  During a module's initialisation code any calls to its own SWIs or *commands will provoke an 'I don't know what you're talking about' reaction from RISC OS, if you need to call your own SWIs wait for the <ModulePostInit=>Service_DA> service call to do so.
 
 *Check* your private word is 0 before claiming workspace - if it is non-zero you've already been initialised (and this call is being made after a <non-fatal finalisation=>OS_Module_Final>).
 

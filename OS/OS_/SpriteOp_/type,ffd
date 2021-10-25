@@ -1,8 +1,8 @@
 Sprite Type Field
 #parent OS_SpriteOp_28
-Bits 27-31	Meaning
+Bits 27-30	Meaning
 #line
-0	Old format mode word. Mode is in bits 0-6 of the Mode Word
+0	Is an old format mode word (MODE number is in bits 0-6)
 1	1 bpp
 2	2 bpp
 3	4 bpp
@@ -11,13 +11,16 @@ Bits 27-31	Meaning
 6	32 bpp 16M colours in a 32 bit word
 7	32 bpp CMYK format
 8	24 bpp packed format (allocated to CC)
-9	JPEG format allocated
+9	JPEG format (allocated but unused)
 10	16 bpp (5:6:5 for 64k colours)
-11-31	For future expansion
+11-14	For future expansion
+15	Is a RISC OS 5 sprite type
 
-If bits 27-31 are non-zero, then bits 0-26 are:
+If bits 27-30 are non-zero, then bits 0-26 and 31 are:
+
 Bit(s)	Meaning
 #line
 0	Takes the value 1, to distinguish this from a so-called <mode specifier=>Wimp:Wimp_ModeSelect>
 1-13	Horizontal dots per inch of sprite
 14-26	Vertical dots per inch of sprite. Values of 180 (EX/EY0), 90 (EX/EY1), 45 (EX/EY2), 22.5 stored as 23 or 22 (EX/EY3) are supported.
+31	Has a 'wide' 8 bpp alpha mask when set, otherwise 1 bpp binary mask
