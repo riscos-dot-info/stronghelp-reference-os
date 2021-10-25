@@ -9,7 +9,7 @@ FSEntry_Func 23
 	R6 =	length of R4 buffer
 
 <=	R1 =	0, or pointer to canonical special field
-	R2 =	0, or pointer to canoncial disc name
+	R2 =	0, or pointer to canonical disc name
 	R3 =	bytes overflow from special field buffer
 	R4 =	bytes overflow from disc name buffer
 	R5,R6 preserved
@@ -18,14 +18,14 @@ FSEntry_Func 23
 This call is used to convert special field and disc name to canonical forms. It is called twice:
 
 #tab
-=>	R1,R2,R3,R4	= 0
+=>	R1-R4	= 0
 	R5,R6 don't matter
 
-<=	R1,R2 non zero
+<=	R1,R2 any non-zero value
 	R3 =	length of buffer for special field (excluding null terminator)
 	R4 =	length of buffer for disc name (excluding null terminator)
 
-alocate buffers
+FileSwitch then allocates buffers, and calls again with
 #tab
 
 =>	R1 =	pointer to special field
@@ -37,6 +37,46 @@ alocate buffers
 
 <=	R1 =	entry R3
 	R2 =	entry R4
-	R3,R4 =	0 (neither buffer overflowed)
+	R3,R4 = 0 (neither buffer overflowed)
 
-This entry point is only called if bit 23 of the filing system <information word=>fsys_infoword> is set.
+This entry point is only called if bit 23 of the filing system <information word=>fsys_infoword> is set - in this case you cannot just return an error, you must return sensible values. If your filing system doesn't use disc names or special fields, you could use this <example code=>.code>.
+#subpage code
+Example canonicalisation code
+This code is suitable if your filing system ignores special fields and disc names.
+
+#fCode
+{/}; special field{/}
+	TEQ	r1, #0
+	MOVEQ	r1, #0
+	MOVEQ	r3, #0
+	BEQ	%FT200
+
+	TEQ	r3, #0
+	MOVEQ	r1, #1
+	MOVEQ	r3, #0
+
+	MOVNE	r1, r3
+	MOVNE	r14, #0
+	STRNEB  r14, [r3]
+	MOVNE	r3, #0
+
+200
+{/}; disc name{/}
+	TEQ	r2, #0
+	MOVEQ	r2, #0
+	MOVEQ	r4, #0
+	BEQ	%FT300
+
+	TEQ	r4, #0
+	MOVEQ	r2, #1
+	MOVEQ	r4, #0
+
+	MOVNE	r1, r4
+	MOVNE	r14, #0
+	STRNEB	r14, [r4]
+	MOVNE	r4, #0
+
+300
+
+#f
+If you do want to use the fields, you will have to do more work to ensure the buffers don't overflow etc.

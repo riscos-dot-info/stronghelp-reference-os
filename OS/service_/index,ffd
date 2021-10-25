@@ -12,7 +12,7 @@ Service calls
 0B <Release FIQ=>Service_0B>
 0C <Claim FIQ=>Service_0C>
 11 <MEMC remap warning=>Service_11>
-12 <Start an FS (old)=>Service_12>
+12 <Start an FS=>Service_12>
 18 Service_PostHelp
 27 <Post-Reset=>Service_27>
 28 <Unknown *Configure=>Service_28>

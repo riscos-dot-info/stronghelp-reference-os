@@ -1,53 +1,53 @@
 Territory numbers
 #Parent Territory_
-Number	Territory
+#tab align right,align left,align right,align left
+Num	Territory            		Num	Territory
 #Line
-1	UK
-# 2	Master
-# 3	Compact
-4	Italy
-5	Spain
-6	France
-7	Germany
-8	Portugal
-9	Esperanto
-10	Greece
-11	Sweden
-12	Finland
+1	UK				128	Faroe
+2	Master				129	Albania
+3	Compact				130	Safrica (old)
+4	Italy				131	Bengal
+5	Spain				132	Bulgaria
+6	France				133	ByeloRuss
+7	Germany				134	Czech
+8	Portugal			135	Devenag
+9	Esperanto			136	Farsi
+10	Greece				137	Gujarati
+11	Sweden				138	Estonia
+12	Finland				139	Gaelic	
 # 13	Unused
-14	Denmark
-15	Norway
-16	Iceland
-17	Canada1
-18	Canada2
-19	Canada
-20	Turkey
-# 21	Arabic
-22	Ireland
-# 23	Hong Kong
-24	Russia
-# 25	Russia2
-26	Israel
-27	Mexico
-28	LatinAm
-29	Australia
-30	Austria
-31	Belgium
-32	Japan
-33	MiddleEast
+14	Denmark				140	GreeceAnct
+15	Norway				141	Greenland
+16	Iceland				142	Hungary
+17	Canada1				143	Lapp
+18	Canada2				144	Latvia
+19	Canada				145	Lithuania
+20	Turkey				146	Macedonia
+21	Arabic				147	Malta
+22	Ireland				148	Poland
+23	Hong Kong			149	Punjab
+24	Russia				150	Romania
+25	Russia2				151	SerboCroat
+26	Israel				152	Slovak
+27	Mexico				153	Slovene
+28	LatinAm				154	Tamil
+29	Australia			155	Ukraine
+30	Austria				156	Swiss1 (Swiss-French)
+31	Belgium				157	Swiss2 (Swiss-German)
+32	Japan				158	Swiss3 (Swiss-Italian)
+33	MiddleEast			159	Swiss4 (Swiss-Romansch)
 34	Netherlands
 35	Switzerland
 36	Wales
-49	Wales2
 48	USA
-49	China
-50	Brazil
-51	SAfrica
-52	Korea
-53	Taiwan
+49	Wales2
+50	China
+51	Brazil
+52	SAfrica
+53	Korea
+54	Taiwan
 70	DvorakUK
 71	DvorakUSA
 80	ISO1
 
-# cl> commented out ones are not in RISC OS 5's International module
 It appears that territory and country numbers share the same sequence.

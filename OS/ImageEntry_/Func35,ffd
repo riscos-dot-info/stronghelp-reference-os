@@ -1,0 +1,13 @@
+ImageEntry_Func 35
+#Parent ImageEntry_Func
+=>	R0 =	35 (Read free space 64)
+	R1 =	pointer to name of any object on image
+	R6 =	<image filing system's handle=>ImageEntry_Func21>
+
+<=	R0 =	bits 0 - 31 of free space
+	R1 =	bits 32 - 63 of free space
+	R2 =	size of largest object that can be created.
+	R3 =	bits 0 - 31 of size of disc
+	R4 =	bits 31 - 63 of size of disc
+
+This call reads the free space of an image, implementing <OS_FSControl 55=>OS_FSControl55>.

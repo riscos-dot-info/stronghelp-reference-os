@@ -4,7 +4,9 @@ Sound_QSchedule  (&401C1)
 	 	  -1		to synchronise with the previously scheduled event
 	 	  -2		immediately schedule
 	R1 =	0		Schedule <Sound_ControlPacked>
-	 	&F0XXXXXX	Schedule SWI number &XXXXXX
+	 	&yFxxxxxx	Schedule SWI number &xxxxxx (y irrelevant)
+# cl> R1 can also be the address of some code to call, though this isn't 
+#     documented and is probably for internal use only.
 	R2 =	R0 for SWI
 	R3 =	R1 for SWI
 <=	R0 =	0	success

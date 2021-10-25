@@ -2,7 +2,7 @@ Service_International 8
 #Parent Service_43
 =>	R1 =	&43 (reason code)
 	R2 =	8 (sub reason code)
-	R3 =	alphabet number
+	R3 =	<alphabet number=>Territory_anumbers>
 
 <=	R1 =	0 if claimed, preserved otherwise
 	R4 =	pointer to table if recognised, else preserved

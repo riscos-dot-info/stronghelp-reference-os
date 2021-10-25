@@ -1,5 +1,5 @@
 Declare fonts state for DrawFile
-#Parent Service_45541
+#Parent DrawFile_45541
 Offset	Contents
 #Line
 0	pointer to <object to be rendered=>DrawFile_format>

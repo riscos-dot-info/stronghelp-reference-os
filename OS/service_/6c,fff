@@ -1,7 +1,7 @@
 Service_DisplayFormatHelp (&6C)
 #Parent Service_Index
 =>	R0 =	0
-	R1 =	&69 (reason code)
+	R1 =	&6C (reason code)
 
 If no error then
 <=	R0,R1 preserved to pass on

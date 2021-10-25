@@ -6,6 +6,6 @@ PDriver_SetDriver  (&8015C)
 	R4 =	pointer to 256 bytes of <PDriverDP and dumper configuration data=>PDriver_SetDriverblock>
 	R5 =	<configuration word=>PDumper_configword> for dumper
 
-This SWI sets the current printer dumper by calling <PDumper_Reason_SetDriver>. The *Command in R2 is issued if the requested dumper is not currently loaded. The blocks in R3 and R4 are both copied by PDriverDP - hence the originals may be discarded. The R3 block contains the name of the palette file to use - this gets passed to the dumper module now, but is not really needed until <PDumper_StartJob>, which is usually called from <PDumperReason_StartJob>.
+This SWI sets the current printer dumper by calling <PDumper_Reason_SetDriver>. The *Command in R2 is issued if the requested dumper is not currently loaded. The blocks in R3 and R4 are both copied by PDriverDP - hence the originals may be discarded. The R3 block contains the name of the palette file to use - this gets passed to the dumper module now, but is not really needed until <PDumper_StartJob>, which is usually called from <PDumper_Reason_StartJob>.
 #Line
 See <PRM 3, page 656=>PRM-3:656>.

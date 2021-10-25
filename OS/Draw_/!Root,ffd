@@ -3,21 +3,21 @@ Draw
 #Prefix Draw_
 #Table Columns 2
 <Fill>
-FillFP
 <FillClipped>
-FillClippedFP
 <FlattenPath>
-FlattenPathFP
 <ProcessPath>
-ProcessPathFP
 <Stroke>
-StrokeFP
 <StrokeClipped>
-StrokeClippedFP
 <StrokePath>
-StrokePathFP
 <TransformPath>
-TransformPathFP
 #endtable
+# FillFP
+# FillClippedFP
+# FlattenPathFP
+# ProcessPathFP
+# StrokeFP
+# StrokeClippedFP
+# StrokePathFP
+# TransformPathFP
 #line
 <File format=>DrawFile_format>

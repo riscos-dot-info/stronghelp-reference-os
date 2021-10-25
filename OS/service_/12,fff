@@ -1,4 +1,4 @@
-Service_StartUp (&12)
+Service_StartUpFS (&12)
 #Parent Service_index
 =>	R1 =	&12 (reason code)
 	R2 =	<filing system number=>fsys_ident>

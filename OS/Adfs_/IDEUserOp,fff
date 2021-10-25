@@ -8,8 +8,8 @@ ADFS_IDEUserOp  (&4024B)
 	R12 =	pointer to static work space
 
 <=	R0 =	command status (0 or a disc error number)
-	R2 preserved
-	R3,R4 updated
+	R2,R3 preserved
+	R4 updated (number of bytes *not* transferred)
 	R5 corrupted
 
 This call provides the direct use interface for low-level IDE commands. It must not be called in background.

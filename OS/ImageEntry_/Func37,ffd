@@ -1,0 +1,8 @@
+ImageEntry_Func 37
+#Parent ImageEntry_Func
+=>	R0 =	37 (Add a defect 64)
+	R2 =	least significant word of defect address
+	R3 =	most significant word of defect address
+	R6 =	<image filing system's handle=>ImageEntry_Func21>
+
+This call implements <OS_FSControl 57=>OS_FSControl57>.

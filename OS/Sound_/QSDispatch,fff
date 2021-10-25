@@ -1,0 +1,5 @@
+Sound_QSDispatch  (&401C4)
+#Parent Sound_
+This SWI is for the exclusive use of the scheduler.
+#Line
+See <PRM 4, page 49=>PRM-4:49>.

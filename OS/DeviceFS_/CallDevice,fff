@@ -5,7 +5,7 @@ DeviceFS_CallDevice  (&42744)
 	 	or path,
 	 	or 0 to broadcast to all devices
 	R2-R7 are passed to device driver, and depend on reason code
-	R12 =	pointer to workspace
+# 	R12 =	pointer to workspace
 <=	depends on device and reason code
 
 This SWI calls the <device entry point=>DeviceFS_entry> specified by the reason code. The device(s) to call can be specfied by device handle, filename in the directory structure ({fCode}${f} may be used), or 0 to broadcast to all devices.

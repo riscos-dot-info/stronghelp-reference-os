@@ -1,6 +1,6 @@
 OS_UpCall 3 subreason code 3
 Writing execution address only
 #line
-=>	R1 !	filename
+=>	R1 =	pointer to filename
 	R3 =	execution address
-	R6 !	special field (or 0)
+	R6 =	pointer to special field, or 0

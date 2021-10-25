@@ -1,0 +1,26 @@
+Image FS extensions
+Bit 23 of the filing system information word tells FileSwitch that you are a host filing system willing to support image files on your media. This means you support
+
+FSEntry_Func calls:
+	<Canonicalise special field and disc name=>FSEntry_Func23>
+	<Resolve wildcard=>FSEntry_Func24>
+	<Read defect list=>FSEntry_Func25>
+	<Add defect=>FSEntry_Func26>
+	<Read boot option=>FSEntry_Func27>
+	<Write boot option=>FSEntry_Func28>
+	<Used space map=>FSEntry_Func29>
+	<Read free space=>FSEntry_Func30>
+	<Name image=>FSEntry_Func31>
+	<Stamp image=>FSEntry_Func32>
+	<Object at offset=>FSEntry_Func33>
+	(<Read free space 64=>FSEntry_Func35>)
+	(<Read defect list 64=>FSEntry_Func36>)
+	(<Add defect 64=>FSEntry_Func37>)
+
+FSEntry_Args calls:
+	<Update image stamp=>FSEntry_Args10>
+	
+FSEntry_File calls:
+	<Read block size=>FSEntry_File10>
+
+Note that if you set bit 23, you /must/ support these calls - you cannot simply return an error from them.

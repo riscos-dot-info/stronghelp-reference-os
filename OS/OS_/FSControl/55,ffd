@@ -2,10 +2,11 @@ OS_FSControl 55  (&37)
 #Parent OS_FSControl
 =>	R0 =	55 (Read free space for a large disc or image file)
 	R1 =	pointer to name of object
+
 <=	R0 =	least significant word of free space
 	R1 =	most significant word of free space
 	R2 =	size of largest object that can be created
 	R3 =	least significant word of disc size
 	R4 =	most significant word of disc size
 
-Reads the free space on a disc or image containing a named object. This call is only implemented in RISC OS 3.60 and later. See <OS_FSControl 49=>OS_FSControl49> for the prior implementation.
+Reads the free space on a disc or image containing a named object. This call is only implemented in RISC OS 3.60 and later - if an error is returned try <OS_FSControl 49=>OS_FSControl49> for the prior implementation.

@@ -1,8 +1,8 @@
 Font_CacheAddr  (&40080)
 #Parent Font_
 <=	R0 =	version number * 100
-	R1 =	size of font cache
-	R2 =	bytes used
+	R2 =	size of font cache
+	R3 =	bytes used
 
 This SWI returns version number of the font module, and information about the font cache.
 #Line

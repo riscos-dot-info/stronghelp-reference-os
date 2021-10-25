@@ -3,4 +3,4 @@ Portable BMU event
 =>	R0 =	28 (event number)
 	R1 =	<BMU flags=>Portable_BMUflags>
 
-This event is generated when an interrupts is received from the battery management unit.
+This event is generated when an interrupt is received from the battery management unit.

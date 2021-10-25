@@ -21,7 +21,7 @@ Thanks go to those mentioned in the <contributors=>OS:contributions> list.
 
 For comments, suggestions and submissions for these, please mail Christian Ludlam <christian@recoil.org=>#url mailto:christian@recoil.org> who is currently moderating the collection. These manuals will continue to be available from <http://sudden.recoil.org/stronghelp/=>#url>.
 #line
-<This page=>.hist330> gives history and credits.
+<This page=>.hist331> gives history and credits.
 #Subpage notes
 Notes on how the manual is structured
 These are some very incomplete notes on how the manual should be structured. If any part of it isn't then it will eventually be updated, or I'll change this specification. It's mostly here to remind me anyhow.
@@ -245,8 +245,8 @@ History for OS v3.07
 è	<OS_UpCall> 3 pages reformatted.
 è	<OS_SpriteOp> reason code list made more useful by including the versions required for various calls.
 è	<OS_FSControl> 13 updated.
-è	<CMOS Byte 222=>OS_Byte_cmos222> updated for Wimp 3.99+
-è	IDEFS added to <the filing systems list=>OS_fsys_ident>
+è	<CMOS Byte 222=>OS_Bytecmos222> updated for Wimp 3.99+
+è	IDEFS added to <the filing systems list=>OSfsys_ident>
 è	<FileCore_Create> r5 parameter corrected from 1076 to 1024.
 è	<ColourTrans_ConvertCMYKToRGB> exit r2 corrected to 'blue' from 'red'
 #tab;line
@@ -276,8 +276,8 @@ History for OS v3.20
 è	Lots of occurrences of 'recieved' corrected.
 è	<Podule_ReadInfo> and <Podule_SetSpeed> added at last!
 è	<SharedCLibrary=>SharedCLibrary_> new 32 bit SWIs added.
-è	<Printer types=>OS_Byte.printers> expanded.
-è	<Vector list=>Vector_.index> expanded.
+è	<Printer types=>OS_Byteprinters> expanded.
+è	<Vector list=>Vector_index> expanded.
 è	<FileCore_Features> and <FileCore_DiscOp64=>FileCore_DOp64> added.
 è	<FPEmulator=>FPEmulator_!Root> contexts details added.
 è	Extra <Service Calls=>Service_Index> added to table.
@@ -287,7 +287,7 @@ History for OS v3.20
 è	Other SWIs added, but don't have details of these yet (so you can't click on them)
 è	Made 32 bit compatible (!)
 
-è	Maintainer now Christian Ludlam
+è	Moderator now Christian Ludlam
 #tab;line
 <Previous history=>.hist308>	<Next history=>.hist325>
 #
@@ -361,4 +361,20 @@ History for OS v3.30
 è	Corrected <FileCore_DiscOp64> SWI number (Marco Baye)
 è	Updated DeviceFS <special field=>DeviceFS_special> validation string.
 #tab;line
-<Previous history=>.hist329>
+<Previous history=>.hist329>	<Next history=>.hist331>
+#subpage hist331
+History for OS v3.31
+#align right
+{/}18 November 04{/}
+#align left
+#line
+è	Corrected R1 in <Service 6C=>service_6c> (Justin Fletcher).
+è	Added RISC OS 3.6's 64 bit <FSEntry_Func> and <ImageEntry_Func> calls.
+è	Added some notes on what the 'image file extensions' flag means in filing system <information blocks=>FSEntry_> (Justin Fletcher).
+è	Corrected R1 in <Sound_QSchedule>, and corrected Sound_QDispatch to Sound_QSDispatch (Justin Fletcher).
+è	Corrected register numbers in <Font_CacheAddr>.
+è	Updated <Territory=>Territory_numbers> numbers.
+è	Updated <Alphabet=>Territory_anumbers> numbers, with their encodings standards.
+è	Corrected exit parameters in <ADFS_IDEUserOp> (Andrew Hill).
+#tab;line
+<Previous history=>.hist330>

@@ -1,0 +1,13 @@
+FSEntry_Func 35
+#Parent FSEntry_Func
+=>	R0 =	35 (Read free space 64)
+	R1 =	pointer to pathname of any object on disc
+	R6 =	pointer to special field, or 0 if none
+	
+<=	R0 =	bits 0 - 31 of free space
+	R1 =	bits 32 - 64 of free space
+	R2 =	size of largest object that can be created
+	R3 =	bits 0 - 31 of disc size
+	R4 =	bits 32 - 64 of disc size
+
+This call reads the free space on the disc, implementing <OS_FSControl 55=>OS_FSControl55>.

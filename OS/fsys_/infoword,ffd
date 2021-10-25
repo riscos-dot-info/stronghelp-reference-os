@@ -10,7 +10,7 @@ Bit	Meaning
 26	FS supports <FSEntry_File 9=>FSEntry_File9>
 25	FS supports <FSEntry_Func 20=>FSEntry_Func20>
 24	FS supports <FSEntry_Func 18=>FSEntry_Func18>
-23	FS supports image filing system extensions
+23	FS supports <image filing system extensions=>fsys_image_extensions>
 22	Pass & and % where appropriate
 21	Directories not required
 20	Use Open/GetBytes/Close instead of <FSEntry_File 255=>FSEntry_File255>

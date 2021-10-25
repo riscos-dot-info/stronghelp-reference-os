@@ -1,0 +1,11 @@
+Device driver Monitor TX/RX entry point (12/13)
+#Parent DeviceFS_CallDevice
+=>	R0 =	12 (MonitorTX) / 13 (MonitorRX)
+	R2 =	device driver stream handle
+
+<=	VC, or
+	VS and R0 = pointer to error block
+
+These entry points are called periodically by DeviceFS if a process has been blocking on your stream for some time. It allows devices to abort a blocking operation if there is an error with the device.
+
+For example, the parallel device driver uses this to abort printer operations when the printer reports an error.

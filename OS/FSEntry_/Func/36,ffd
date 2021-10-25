@@ -1,0 +1,12 @@
+FSEntry_Func 36
+#Parent FSEntry_Func
+=>	R0 =	36 (Read defect list 64)
+	R1 =	pointer to name of image
+	R2 =	pointer to buffer
+	R5 =	length of buffer
+	R6 =	pointer to special field, or 0 if not present
+
+<=	R1 =	number of defects added
+# 	all others preserved
+	
+This call fills the buffer with the defect list of an image. The buffer is filled with pairs of words (least significant first) giving byte offsets of defects. It implements <OS_FSControl 56=>OS_FSControl56>.

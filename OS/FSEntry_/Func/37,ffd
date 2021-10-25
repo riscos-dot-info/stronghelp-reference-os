@@ -1,0 +1,11 @@
+FSEntry_Func 37
+#Parent FSEntry_Func
+=>	R0 =	37 (Add a defect 64)
+	R1 =	pointer to name of image
+	R2 =	bits 0 - 31 of byte offset to start of defect
+	R3 =	bits 32 - 63 of byte offset to start of defect
+	R6 =	pointer to special field, or 0 if not present
+
+# <=	R0-R2, R6 preserved
+#
+This call implements <OS_FSControl 57=>OS_FSControl57>.

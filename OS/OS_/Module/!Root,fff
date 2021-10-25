@@ -22,5 +22,6 @@ OS_Module  (&1E)
 18	<Lookup module name=>os_module18>
 19	<Enumerate ROM modules=>OS_Module19-20>
 20	<Enumerate ROM modules with version=>OS_Module19-20>
+# 21	Find address of end of ROM modules
 #Line
 See <PRM 1, page 224=>PRM-1:224>.

@@ -2,11 +2,11 @@ Font_Paint Flags
 #Parent Font_Paint
 bit	meaning
 #Line
-0	1 = justify specifed by graphics cursor, 0 = not justified
-1	1 = rub-out box specifed by graphics cursor, 0 = don't rub-out
+0	1 = justify specified by graphics cursor, 0 = not justified
+1	1 = rub-out box specified by graphics cursor, 0 = don't rub-out
 4	1 = x and y are in OS, 0 = millipoints
-5	justify & rub-out specifed by block in R5 (bit 4 must be clear), 0 = use flags in bits 0,1
-6	<Transformation matrix=>Font_matrix> specifed by R6 (bit 4 must be clear)
+5	justify & rub-out specified by block in R5 (bit 4 must be clear), 0 = use flags in bits 0,1
+6	<Transformation matrix=>Font_matrix> specified by R6 (bit 4 must be clear)
 7	Given string length
 8	Given font
 9	Kern

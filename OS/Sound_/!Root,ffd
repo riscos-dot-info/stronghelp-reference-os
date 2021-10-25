@@ -19,7 +19,7 @@ Sound
 <QInterface>
 <QRemove>
 <QSchedule>
-<QDispatch>
+<QSDispatch>
 <QTempo>
 <ReadControlBlock>
 <RemoveVoice>

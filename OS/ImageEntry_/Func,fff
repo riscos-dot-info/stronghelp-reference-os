@@ -20,8 +20,11 @@ Reason	Meaning
 27	<Read boot option=>ImageEntry_Func27>
 28	<Write boot option=>ImageEntry_Func28>
 29	<Read used space map=>ImageEntry_Func29>
-30	<Read free space map=>ImageEntry_Func30>
+30	<Read free space=>ImageEntry_Func30>
 31	<Name image=>ImageEntry_Func31>
 32	<Stamp image=>ImageEntry_Func32>
+35	<Read free space 64=>ImageEntry_Func35>
+36	<Read defect list 64=>ImageEntry_Func36>
+37	<Add a defect 64=>ImageEntry_Func37>
 
 Other reasons are not used for ImageEntry calls (FSEntry only).

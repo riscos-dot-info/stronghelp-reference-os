@@ -1,20 +1,21 @@
 Module format
 #Parent OS_Module
+#tab align right, align left
 Offset	Contains
 #Line
-&00	<Start code=>OS_Module_Start>		(usr mode)
-&04	<Initialise code=>OS_Module_Init>	(svc mode)
-&08	<Finalise code=>OS_Module_Final>	(svc mode)
-&0C	<Service handler=>OS_Module_Service>	(svc or irq mode)
-&10	Title String
-&14	<Help String=>OS_Module_Help>
-&18	<Help/Command table=>OS_Module_ComTable>
-&1C	SWI base number
-&20	<SWI handler=>OS_Module_SWIHandler>	(svc mode)
-&24	<SWI decode table=>OS_Module_SWITable>
-&28	<SWI decode code=>OS_Module_SWIDec>	(svc mode)
-&2C	<MessageTrans=>MessageTrans_> file (RISC OS 3.60+)
-&30	Offset to <flags word=>OS_Module_Flags>
+0	<Start code=>OS_Module_Start>		(usr mode)
+4	<Initialise code=>OS_Module_Init>	(svc mode)
+8	<Finalise code=>OS_Module_Final>	(svc mode)
+12	<Service handler=>OS_Module_Service>	(svc or irq mode)
+16	Title String
+20	<Help String=>OS_Module_Help>
+24	<Help/Command table=>OS_Module_ComTable>
+28	SWI base number
+32	<SWI handler=>OS_Module_SWIHandler>	(svc mode)
+36	<SWI decode table=>OS_Module_SWITable>
+40	<SWI decode code=>OS_Module_SWIDec>	(svc mode)
+44	<MessageTrans=>MessageTrans_> file (RISC OS 3.60+)
+48	Offset to <flags word=>OS_Module_Flags>
 #tab
 
 <All=>.arcane> entries except &1C are offsets from the start of the module. Entries of 0, or those outside the module will be ignored. This means that if the module hasn't got any SWIs, the last five words *could* be used for something else, and if there is no MessageTrans filename, the last value could be used for something else.

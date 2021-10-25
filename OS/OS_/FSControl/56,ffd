@@ -4,7 +4,8 @@ OS_FSControl 56 (&38)
 	R1 =	pointer to name of object
 	R2 =	pointer to buffer
 	R3 =	length of buffer
+
 <=	R0 preserved
 	R1 =	number of defects placed in the buffer
 
-Reads the defects list for a large disc. The buffer consists of 64bit values (LSW first).
+Reads the defects list for a large disc. The buffer consists of 64 bit values (LSW first). If an error is returned try <OS_FSControl 41=>OS_FSControl41>.

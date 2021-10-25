@@ -1,23 +1,24 @@
 Alphabet numbers
 #Parent Territory_
-Number	Alphabet
+Number	Alphabet	Standard
 #Line
-# 100	BFont
-101	Latin1
-102	Latin2
-103	Latin3
-104	Latin4
-105	Cyrillic
-# 106	Arabic
-107	Greek
-108	Hebrew
-109	Latin5
-110	Welsh
-111	UTF8
-112	Latin9
-113	Latin6
-114	Latin7
-115	Latin8
-# 120	Cyrillic2
-# 
-# cl> commented out ones are not in RISC OS 5's International module
+100	BFont		BBC Master		œ
+101	Latin1		ISO 8859-1
+102	Latin2		ISO 8859-2
+103	Latin3		ISO 8859-3
+104	Latin4		ISO 8859-4
+105	Cyrillic	ISO 8859-5
+106	Arabic		ISO 8859-6		œ
+107	Greek		ISO 8859-7
+108	Hebrew		ISO 8859-8
+109	Latin5		ISO 8859-9
+110	Welsh		ISO IR-182
+111	UTF8		Unicode
+112	Latin9		ISO 8859-15
+113	Latin6		ISO 8859-10
+114	Latin7		ISO 8859-13
+115	Latin8		ISO 8859-14
+120	Cyrillic2 	DOS code page 866	œ
+
+#wrap on
+Alphabets marked by œ are assigned but not available in RISC OS 5's International module.

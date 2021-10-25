@@ -38,8 +38,11 @@ Reason	Meaning
 27	<Read boot option=>FSEntry_func27>
 28	<Write boot option=>FSEntry_func28>
 29	<Read used space map=>FSEntry_func29>
-30	<Read free space map=>FSEntry_func30>
+30	<Read free space=>FSEntry_func30>
 31	<Name image=>FSEntry_func31>
 32	<Stamp image=>FSEntry_func32>
 33	<Get usage of offset=>FSEntry_func33>
 34	<Notification of changed directory=>FSEntry_func34>
+35	<Read free space 64=>FSEntry_func35>
+36	<Read defect list 64=>FSEntry_func36>
+37	<Add a defect 64=>FSEntry_func37>

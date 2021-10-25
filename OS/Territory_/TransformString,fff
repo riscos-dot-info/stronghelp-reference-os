@@ -1,12 +1,12 @@
-Territory_ConvertTextToString  (&43061)
+Territory_TransformString  (&43061)
 #Parent Territory_
 =>	R0 =	<territory number=>Territory_numbers>, or -1 for current
 	R1 =	pointer to buffer to hold transformed string
 	R2 =	pointer to source string
-	R3 =	length of buffer
+	R3 =	length of buffer / 0 to find required length
 
 <=	R0 =	length of transformed string (excl. null)
 
-Transforms a string to allow a direct territory independent comparison.
+Transforms a string such that a byte-for-byte comparison of two output strings gives the same results as calling <Territory_Collate> on two source strings.
 #Line
 See <PRM 3, page 841=>PRM-3:841>.
