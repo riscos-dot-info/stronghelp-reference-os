@@ -1,0 +1,9 @@
+SoundCtrl_GetMix  (&50002)
+#Parent SoundCtrl_
+=>	R0 =	<system=>SoundCtrl_system>
+	R1 =	<category=>SoundCtrl_category>
+	R2 =	channel index
+<=	R3 =	mute (0/1)
+	R4 =	gain (1/16ths of a dB)
+#line
+Reads the current mixer settings.

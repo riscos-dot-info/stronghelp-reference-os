@@ -1,8 +1,6 @@
 OS SWIs manual
 #Align Centre
 {fh3}OS SWIs manual{f}
-{align centre;/}With additional notes from the wise and learned{/;align}
-# Gerph> You've got to have a giggle sometimes :-)
 #Line
 #Align Left
 This manual is part of a collection comprising the main public domain programming reference. The other manuals in the series are :
@@ -21,7 +19,7 @@ Thanks go to those mentioned in the <contributors=>OS:contributions> list.
 
 These manuals are kindly hosted by <www.riscos.info=>#url http://www.riscos.info/downloads/stronghelp/manuals/>
 #line
-<This page=>.hist337> gives history and credits.
+<This page=>.hist338> gives history and credits.
 #Subpage notes
 Notes on how the manual is structured
 These are some very incomplete notes on how the manual should be structured. If any part of it isn't then it will eventually be updated, or I'll change this specification. It's mostly here to remind me anyhow.
@@ -503,4 +501,29 @@ History for OS v3.37
 è	Broken links to PC in <OS_IntOn> and <OS_IntOff> pointed at PSR page
 è	Corrected <CD_LastError> as it does not return anything in R7
 #tab;line
-<Previous history=>.hist336>
+<Previous history=>.hist336>	<Next history=>.hist338>
+#subpage hist338
+History for OS v3.38
+#align right
+{/}09 Nov 2016{/}
+#align left
+#line
+è	Listed <SeriousErrorV=>vector_index> as vector &2C
+è	<BlendTable=>BlendTable_>'s SWIs documented
+è	Lots of typing and grammatical errors fixed
+è	Added ScreenBlanker_Control <subreason 5=>ScreenBlanker_Control.5>
+è	Added <OS_PlatformFeatures=>OS_PlatformFeatures.33> subreason 33
+è	Added <OS_PlatformFeatures=>OS_PlatformFeatures.0> subreason 0 extra flag bits
+è	<Territory_Collate> flags bit 2 documented
+è	Changed the example in <OS_EnterOS> to be 26/32 bit neutral, or prefer <OS_LeaveOS>
+è	Latin10 (also known as <alphabet 116=>Territory_anumbers>) listed
+è	Notes about Unicode handling for <Font_CacheAddr> and <Font_CharBBox> added
+è	Fleshed out <Service_Hardware=>Service_D9>
+è	Added <SoundCtrl=>SoundCtrl_> SWIs
+è	Added HAL entry <113=>OS_HAL113>
+è	Added <USBDriver=>USBDriver_> SWIs and corrected USB service call <block=>service_D2.block> speeds
+è	Removed 3rd party module <Audio=>MiscSWIs:Audio_> as it exists in MiscSWIs manual too
+è	Added <Service_RTCSynchronised=>service_DD> and <Service_TimezoneChanged=>service_81080>
+è	Expanded the list of <error generators=>swi_errorblock.generators>
+#tab;line
+<Previous history=>.hist337>

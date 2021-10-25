@@ -1,0 +1,22 @@
+OS_PlatformFeatures 33 (&6D) (5.23+)
+#Parent OS_
+=>	R0 =	33 (Read cache information) + flags (reserved)
+ 	R1 =	cache level, zero based
+<=	R0 =	flags
+	 	b0-2 =	0 - No cache
+	 	 	1 - I cache
+	 	 	2 - D cache
+	 	 	3 - Split I+D cache
+	 	 	4 - Unified I+D cache
+	 	 	5 - Reserved for future use
+	 	 	6 - Reserved for future use
+	 	 	7 - Reserved for future use
+	 	b3-31 =	Reserved
+	R1 =	D cache line size in bytes
+	R2 =	D cache size in bytes
+	R3 =	I cache line size in bytes
+	R4 =	I cache size in bytes
+
+Returns information about caches known to the ARM, other caches in the system not managed by the ARM will not be returned.
+
+To discover information about all levels, iterate from 0 upwards until R0 returns 0 (no cache present).

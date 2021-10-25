@@ -23,13 +23,17 @@ Bit	Meaning if set
 6	Operating system executes in 32 bit mode
 7	26 bit mode is not available
 8	Processor is M class (supports UMULL etc)
-9	Processor supports Thumb
+9	Processor supports Thumb mode
 10	Processor is E class (supports QADD etc)
-11-14	Reserved
+11	SWP/SWPB instructions not available
+12	Supports LDR/STREX semaphores
+13	Supports CLREX plus LDR/STREX[B|H|D] semaphores
+14	D cache cannot be safely disabled (<OS_MMUControl> forbids this)
 15	CPU supports extended small page L2 descriptors
 16	CPU doesn‘t have a Drain Write Buffer instruction 
 17	Aborts don‘t correctly follow the documented abort model (e.g. StrongARM pre rev-T; prevents lazy task swapping from being used) 
 18	CPU is an XScale 
 19	XScale JTAG is connected 
 20	High processor vectors are in use (vectors at &FFFF0000 instead of &0) 
-21-31	Reserved for future expansion
+21-30	Reserved for future expansion
+31	OS_PlatformFeatures stack imbalance bug is fixed

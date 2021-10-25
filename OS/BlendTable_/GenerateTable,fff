@@ -1,0 +1,33 @@
+BlendTable_GenerateTable  (&56280)
+#Parent BlendTable_
+=>	R0 =	flags	b0 =	R2 is a sprite address, not a name
+	 	 	b1 =	R4 is a sprite address, not a name
+	 	 	b2 =	lock the table after creation
+	R1 =	source mode or sprite area
+	R2 =	source palette or sprite
+	R3 =	destination mode or sprite area
+	R4 =	destination palette or sprite
+	R5 =	translucency 0-256
+	R6 =	buffer
+<=	R0 =	number of colours in source
+ 	R1 =	number of colours in destination
+ 	R2 =	size of buffer
+ 	R6 =	pointer to table if locking requested, else preserved
+
+This computes a lookup table to allow for the efficient blending of colours between a source and destination palette for a given level of transparency. 
+
+The register pairs R1/R2 and R3/R4 accept the same combinations that <ColourTrans_ReadPalette> does.
+
+The value in R5 is used to select proportions of two palette entries using the following equation
+#Wrap off; fCode
+  index = ((src * (256 - R5)) + (dst * R5)) / 256
+#f; wrap
+from which it can be seen that R5=0 gives a completely opaque source, and R5=256 is a completely transparent source.
+
+On entry the buffer in R6 can be 0 to determine the size, or a private buffer to return the table into (having found its size first), or is ignored when R0 b2 is set. For locked tables, BlendTable will allocate a buffer for you which you must later <release=>BlendTable_UnlockTable>.
+
+The table returned can be indexed by
+#Wrap off; fCode
+  index = table ? (src + (dst * number_of_colours_in_source))
+#f; wrap
+to find the palette index post blending.

@@ -28,21 +28,24 @@ Bits	Meaning
 #Line
 0-15	Machine type:
  	&0000	Reserved
- 	&0001	BBC				(OS 1 or 2)
+ 	&0001	BBC				(MOS 1 or 2)
  	&0002	Atom
  	&0003	System 3 or 4
  	&0004	System 5
- 	&0005	Master 128			(OS 3)
- 	&0006	Electron			(OS 0)
- 	&0007	Archimedes			(OS 6)
+ 	&0005	Master 128			(MOS 3)
+ 	&0006	Electron			(MOS 0)
+ 	&0007	Archimedes
  	&0008	Reserved
  	&0009	Acorn Communicator
- 	&000A	Master 128 Econet Terminal	(OS 4)
+ 	&000A	Master 128 Econet Terminal	(MOS 4)
  	&000B	Acorn Filestore
- 	&000C	Master 128 Compact		(OS 5)
+ 	&000C	Master 128 Compact		(MOS 5)
  	&000D	Acorn Ecolink card for Personal Computers
  	&000E	Acorn Unix box
  	&000F	Risc PC architecture
+# Reserved by ROL for Castle Iyonix, but not used
+ 	&0010	Reserved
+ 	&0011	A9
  	&FFF8	SJ Research GP server
  	&FFF9	SJ Research 80386 UNIX
  	&FFFA	SCSI interface

@@ -1,0 +1,20 @@
+USB headers
+#Parent USBDriver_
+The RISC OS USB stack is derived from the NetBSD USB stack, customised to work within a module, and the RISC OS execution model. USBDriver contains the higher level aspects of the USB stack and talks down to host controller (HC) drivers which sit between it and the HC hardware registers.
+
+Central to this arrangement are 5 header files exported by USBDriver for inclusion in HC drivers : 
+
+#Tab Align Left, Align Left, Align Left
+Header	Contents	Required by HC?
+#Line
+usb.h	Structure definitions relating to the USB standard	Required by usbdivar.h
+usbdi.h	Enumerated error numbers	Required by usbdivar.h
+usbdivar.h	Structures to communicate with USBDriver	Essential
+usb_port.h	Macros for porting from NetBSD to RISC OS	No
+usbdevs.h	Vendor/device ID database	No
+
+The most important is {/}usbdivar.h{/} which contains definitions of a usbd_bus, usbd_device, usbd_interface, usbd_pipe, and usbd_xfer all of which must agree in their layout to the matching definitions that USBDriver uses. The value of {*}RISCOS_USBDRIVER_API_VERSION{*} is defined to denote the current {/}usbdivar.h{/}, and this value is changed whenever incompatible changes are made to the header. The HC can check the value it assumed against the one USBDriver <assumes=>USBDriver_Version>.
+
+The {/}usb_port.h{/} header contains commonly used macros which may be helpful in porting source code written with the NetBSD stack in mind; your HC driver may choose to do this differently. The {/}usbdevs.h{/} database is a big table of all the known vendors and their devices; it is only likely to be useful to a HC driver if it needs to check for non compliant devices somehow or performs a dual host & device role. 
+
+For speed the interface between USBDriver and HC drivers use direct function pointers (referred to as "methods" in the above header files). However, because the two drivers reside in separate modules the function pointers will need to point to a small CMHG-like veneer to swap the value of R12 before continuing to the actual function.

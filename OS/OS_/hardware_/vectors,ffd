@@ -6,7 +6,7 @@ Address	Contents
 &08	<SWI=>os_hardware_swiv>
 &0C	Prefetch abort
 &10	Data abort
-&14	Address exception
+&14	Address exception (26 bit CPU modes only)
 &18	Interrupt (IRQ)
 &1C	Fast interrupt (FIQ)*
 

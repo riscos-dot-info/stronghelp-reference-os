@@ -120,9 +120,12 @@ B0 <InternetStatus=>InetSWIs:Service_B0>
 B7 <UKCompression=>Service_B7>
 B9 <ModulePreInit=>Service_B9>
 C3 <PCI=>Service_C3>
-D2 <USBDriver=>Service_D2>
-D9 Hardware
+D2 <USB=>Service_D2>
+D9 <Hardware=>Service_D9>
 DA <ModulePostInit=>Service_DA>
 DB <ModulePostFinal=>Service_DB>
-DD RTCSynchronised
+DD <RTCSynchronised=>Service_DD>
+DE Service_DisplayChanged
+DF Service_DisplayStatus
+E0 Reserved
 #EndTable

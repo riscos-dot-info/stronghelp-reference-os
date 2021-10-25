@@ -5,5 +5,6 @@ Territory_Register  (&43041)
 	R2 =	R12 for code
 
 Adds a territory to the list of active territories.
+Not all of the 43 entries are currently used by Territory Manager, any unused entries should point to a simple error returning function within the territory module.
 #Line
 See <PRM 3, page 793=>PRM-3:793>.

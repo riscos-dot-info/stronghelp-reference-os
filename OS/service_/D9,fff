@@ -1,0 +1,26 @@
+Service_Hardware  (&D9)
+#Parent Service_Index
+#wrap off
+=>	R1 =	&D9 (service code)
+	R0 =	subreason
+	 	b0-b7	0 - 	<device added=>.added>
+	 	 	1 - 	<device being removed=>.removed>
+	 	 	others - /reserved/
+	 	b8-b31 - flags dependent on subreason
+#Subpage added
+Added
+<=		R0 =	0 (reason code + flags)
+	R1 =	&D9 (service code)
+	R2 =	Pointer to HAL device descriptor
+
+A new device has been attached to the system, this service call announces its arrival for any drivers which may be interested in it.
+
+Do not claim this call, it is for information only.
+#Subpage removed
+Device being removed
+=>	R0 =	1 (reason code + flags)
+	R1 =	&D9 (service code)
+	R2 =	Pointer to HAL device descriptor
+<=	R1 =	0 to object to the removal, set R0 to point to a standard <error block=>swi_errorblock>
+
+This call is issued just before the device is removed from the system, and removal will occur provided R1 is not claimed.

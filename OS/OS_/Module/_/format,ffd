@@ -23,7 +23,7 @@ Offset	Contains
 String offsets have byte alignment, except for the MessageTrans file which must be word aligned to be considered valid.
 
 # Preach on
-Try not to store data in the body of your module, allocate workspace and store the pointer in the private word. The OS lets module code be re-used (multiply instantiated) to allow several copies of the module to run at once, and several copies would be storing different data in the same locations in the module code. If this causes your module to crash because it has been multiply instantiated, it is *your* module's fault, not the OS' or the user's.
+Try not to store data in the body of your module; allocate workspace and store the pointer in the private word. The OS lets module code be re-used (<multiply instantiated=>OS_Module.14>) to allow several copies of the module to run at once, and several copies would be storing different data in the same locations in the module code. If this causes your module to crash because it has been multiply instantiated, it is *your* module's fault, not the OS' or the user's.
 # Preach off
 #Subpage arcane
 Footnote for pedants

@@ -1,0 +1,5 @@
+BlendTable
+#Parent !Root
+#Prefix BlendTable_
+<GenerateTable>
+<UnlockTable>

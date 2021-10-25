@@ -8,7 +8,13 @@ Reason codes
 R0	Action
 #Line
 0	<Read capacity=>.0>
+1	<Read location=>.1>
 #Subpage 0
 SDFS_ReadCardInfo 0
 <=	R2 =	low 32 bits of capacity
  	R3 =	high 32 bits of capacity
+#Subpage 1
+SDFS_ReadCardInfo 1
+<=	R2 =	bits 0-7 = slot
+ 	 	bits 8-15 = bus
+ 	 	bits 16-31 = RCA

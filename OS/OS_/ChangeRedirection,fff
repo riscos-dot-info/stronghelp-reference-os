@@ -10,7 +10,7 @@ OS_ChangeRedirection  (&5E)
 <=	R0 =	old file handle for input (or 0 for standard input)
 	R1 =	old file handle for output (or 0 for standard output)
 
-This reads or writes the file handles used by <OS_CLI> to redirect in/output. It is mainly provided for the use of the TaskManager, but you may also find the call useful. Calling <OS_Exit> automatically removes any redirection (and closes the associated file handles) before control passes to the <exit handler=>OS_handlers_exit>.
+This reads or writes the file handles used by <OS_CLI> to redirect in/output. It is mainly provided for the use of the TaskWindow, but you may also find the call useful. Calling <OS_Exit> automatically removes any redirection (and closes the associated file handles) before control passes to the <exit handler=>OS_handlers_exit>.
 # N> Bah.
 # Gerph> Yes, I noticed that whilst writing squiggly pipes.
 #        It means that you can't usefully have two programs called with

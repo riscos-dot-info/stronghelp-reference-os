@@ -1,9 +1,0 @@
-Audio_MaxMem (&452CA)
-#parent Audio_
-=>	R0 =	Memory value
-	 	0	use available RMA
-	 	>0	set max to R0
-	 	-1	read current value
-\<=	R0 =	current memory value
-#line
-Set the maximum RAM to use for Load File.  If the file exceeds the maximum set here then play the data direct from the file.

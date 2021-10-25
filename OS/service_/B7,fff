@@ -1,6 +1,6 @@
 Service_UKCompression (&B7)
 #Parent service_index
-=>	R0 =	<sub-reason=>.subreason>
+=>	R0 =	<subreason=>.subreason>
 	R1 =	&B7 (reason code)
 	R2 =	<load address=>fsys_loadexec>
 	R3 =	size

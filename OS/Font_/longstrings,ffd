@@ -13,7 +13,6 @@ For example, the string "Hello" might be represented as follows:
 This allows access to characters outside the first 256. Control codes work as before, but have to be introduced by a character of the appropriate width. The <parameters=>.cparams> of control sequences are handled differently in 16 and 32-bit modes. See also the notes on the font's <encoding=>font_utf8>.
 
 Regardless of the setting of the 16/32-bit bits, string lengths continue to be in bytes (such as R7 on entry to <Font_Paint>).
-
 #subpage cparams
 Control code parameters
 #parent Font_Paint

@@ -1,0 +1,5 @@
+USBDriver_Version  (&54A45)
+#Parent USBDriver_
+<=	R0 =	version number * 100
+
+This SWI is intended to allow host controllers to check whether they are compatible with USBDriver prior to <registering=>USBDriver_RegisterBus>.

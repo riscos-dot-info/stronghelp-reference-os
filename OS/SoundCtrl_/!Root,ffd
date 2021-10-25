@@ -1,0 +1,6 @@
+Sound Control
+#Parent !Root
+#Prefix SoundCtrl_
+<ExamineMixer>
+<SetMix>
+<GetMix>

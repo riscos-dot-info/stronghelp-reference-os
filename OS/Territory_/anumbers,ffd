@@ -18,6 +18,7 @@ Number	Alphabet	Standard
 113	Latin6		ISO 8859-10
 114	Latin7		ISO 8859-13
 115	Latin8		ISO 8859-14
+116	Latin10		ISO 8859-16
 120	Cyrillic2 	DOS code page 866	œ
 
 #wrap on

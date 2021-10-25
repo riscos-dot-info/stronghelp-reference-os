@@ -1,5 +1,5 @@
 Variable types
-0	String		Pointer to string, which will be <GSTransed=>OS_GS1> now (will not be 0 terminated)
+0	String		Pointer to string, which will be <GSTrans=>OS_GS1>ed now (will not be 0 terminated)
 1	Number		4 byte integer
 2	Macro		Pointer to string, which will be GSTransed each time it is used
 3	Expanded	Expression which will be sent through <OS_EvaluateExpression>

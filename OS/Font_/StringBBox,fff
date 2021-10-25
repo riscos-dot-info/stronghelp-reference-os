@@ -6,7 +6,7 @@ Font_StringBBox  (&40097)
 	R3 =	max x, exclusive
 	R4 =	max y, exclusive
 
-This SWI returns the smallest possible box that covers the whole string. The box is returned in millipoints. This call can not, due to rounding and anti-aliasing, be used to find size on screen.
+This SWI returns the smallest possible box that covers the whole string. The box is returned in millipoints. This call cannot, due to rounding and anti-aliasing, be used to find size on screen.
 
 In RISC OS 3 and later it is recommended to use <Font_ScanString>.
 #Line

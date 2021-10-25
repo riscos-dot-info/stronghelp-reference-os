@@ -1,0 +1,4 @@
+Sound Control systems
+#Parent SoundCtrl_
+0	= motherboard mixer
+1+	= reserved for future use

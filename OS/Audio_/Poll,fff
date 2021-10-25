@@ -1,9 +1,0 @@
-Audio_Poll (&452CC)
-#parent Audio_
-=>	none
-\<=	R0 =	current position in data
-	R1 =	stop flag
-	 	0	still playing
-	 	1	stopped
-#line
-Used to keep track of playback and continue file playback if POLL is selected in <Audio_PlayFile>

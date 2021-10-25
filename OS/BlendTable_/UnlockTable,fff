@@ -1,0 +1,5 @@
+BlendTable_UnlockTable  (&56281)
+#Parent BlendTable_
+=>	R0 =	table pointer from <generate table=>BlendTable_GenerateTable>
+
+Unlocks a table previously requested as being locked.

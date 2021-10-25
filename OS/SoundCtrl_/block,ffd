@@ -1,0 +1,16 @@
+Sound Control examine block
+#Parent SoundCtrl_
+Size 4 :
+0-1	 flags	b0	=> fixed
+ 	 	b1	=> mono
+ 	 	b2	=> muted by default
+2-3	 <category=>SoundCtrl_category>
+
+Size 16 :
+0-1	 flags	b0	=> fixed
+ 	 	b1	=> mono
+ 	 	b2	=> muted by default
+2-3	 <category=>SoundCtrl_category>
+4-7	minimum gain (1/16ths of a dB)
+8-11	maximum gain (1/16ths of a dB)
+12-15	gain step granularity(1/16ths of a dB)

@@ -1,6 +1,6 @@
 SWI Error block
-0	Error number
-4..	Error string, zero terminated.
+0..3	Error number
+4..255	Error string, zero terminated.
 
 Bits in Error number
 #Line; tab
@@ -22,7 +22,8 @@ Error generators
 &120 - &13F	<OS_ReadVarVal>/<OS_SetVarVal> errors
 &140 - &15F	Redirection manager errors
 &160 - &17F	<OS_EvaluateExpression> errors
-&180 - &19F	<OS_Heap> errors
+&180 - &18F	<OS_Heap> errors
+&190 - &19F	<Territory=>Territory_> errors
 &1A0 - &1AF	<OS_Claim>/<OS_Release> errors
 &1B0 - &1BF	<OS_ChangeEnvironment> errors
 &1C0 - &1DF	<OS_ChangeDynamicArea> errors
@@ -46,7 +47,26 @@ Error generators
 &A80 - &ABF	<TaskWindow=>Wimp:TaskWindow_> errors
 &AC0 - &AFF	<MessageTrans=>MessageTrans_> errors
 &B00 - &B3F	Pinboard errors
-&B40 - &B4F	Portable module errors
+&B40 - &B4F	<Portable=>Portable_> module errors
+&B80 - &BBF	Filer errors
+&BC0 - &BDF	SCSITape module errors
+&BE0 - &BFF	<ScreenModes=>ScreenModes_> module errors
+&C00 - &C1F	DisplayManager errors
+&C20 - &C3F	<DMAManager=>DMA_> module errors
+&C40 - &C5F	ARM support module errors
+&C60 - &C7F	<HAL=>OS_Hardware> errors
 &1XX00 - &1XXFF	Errors from <filing system number &XX=>fsys_ident>
 &20000 - &200FF	<Sound=>Sound_> errors
-&20200 - &200FF	More podule errors
+&20100 - &201FF	<SCSIDriver=>SCSI_> module errors
+&20200 - &202FF	VideoCommands module errors
+&20300 - &203FF	<IIC=>IIC_> module errors
+&20400 - &204FF	MIDI module errors
+&20500 - &205FF	PCEmulator errors
+&20600 - &206FF	Desktop Development Environment errors
+&20700 - &207FF	<Buffer Manager=>Buffer_> errors
+&20800 - &20BFF	Reserved for Gold OS
+&20C00 - &20CFF	<DrawFile=>DrawFile_> render errors
+&20D00 - &20DFF	<ColourPicker=>Wimp:ColourPicker_> errors
+&20E00 - &20EFF	DCI4 networking errors
+&43F40 - &43F7F	<Joystick=>Joystick_> module errors
+&800000 -	3rd party authors

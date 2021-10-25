@@ -2,7 +2,7 @@ Extra filing system information word
 #Parent FSEntry_
 Bit	Meaning
 #Line
-0	FS supports FSEntry_Func 34
+0	FS supports <FSEntry_Func 34=>FSEntry_Func34>
 1	FS should be called to do *Cat
 2	FS should be called to do *Ex
 3	Filing system supports <FSEntry_Args 11=>FSEntry_Args11>

@@ -1,9 +1,0 @@
-Number of Channels
-#parent Audio_
-/Bits/	/Meaning/
-0..1	0	read the current number of channels
-	1	mono
-	2	stereo
-2..5	unused
-6	Stereo reversed flag
-7	Unused

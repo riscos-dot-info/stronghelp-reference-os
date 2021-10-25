@@ -5,5 +5,7 @@ Font_CacheAddr  (&40080)
 	R3 =	bytes used
 
 This SWI returns version number of the font module, and information about the font cache.
+
+Version 3.41 and later (ie. returning 341 in R0) are UCS Font Managers capable of handling Unicode fonts.
 #Line
 See <PRM 3, page 418=>PRM-3:418>.

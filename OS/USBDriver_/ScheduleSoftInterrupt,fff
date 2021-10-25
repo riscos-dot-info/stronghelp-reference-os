@@ -1,0 +1,7 @@
+USBDriver_ScheduleSoftInterrupt  (&54A44)
+#Parent USBDriver_
+=>	R0 =	pointer to <usbd_bus=>USBDriver_headers> that interrupted
+
+The host controller calls this SWI to inform the USBDriver that an interrupt occurred on the given bus. The host controller's interrupt handler should determine the cause, quickly acknowledge the interrupt in the controller hardware, then call this SWI.
+
+USBDriver will subsequently call the <soft interrupt=>USBDriver_headers> entry point for that bus to decode the interrupt cause completely, such as handling error conditions or determining which transaction completed. The use of this intermediate SWI (as opposed to the HC calling itself directly) allows USBDriver to keep bus use statistics and optionally defer work to another lower-than-interrupt priority if it is likely to take a long time or the overall system is busy.

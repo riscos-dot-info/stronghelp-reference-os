@@ -1,0 +1,12 @@
+Sound Control categories
+#Parent SoundCtrl_
+-4	 = aux out (a header on the board)
+-3	 = line out (not used on Iyonix)
+-2	 = headphones
+-1	 = speaker
+0	= system audio
+1	= mic
+2	= line in
+3	= aux in [index 0 usually CD-ROM]
+#line
+Output devices are negative, inputs positive. The special category 0 is the software <sound system=>Sound_>.

@@ -1,5 +1,5 @@
 Deprecated calls
-The following calls are deprecated in RISC OS 3.10 and higher :
+The following calls are deprecated in RISC OS 3.10 and higher:
 
 #Table Columns 2
 <OS_BreakCtrl>
@@ -10,8 +10,6 @@ The following calls are deprecated in RISC OS 3.10 and higher :
 <CDFS_GiveFileType>
 #EndTable
 
-The following call should also be considered deprecated as it does not return the century number:
+Calling <OS_DynamicArea 0=>OS_DynamicArea0> with -1 in R5, to set an unlimited area size.
 
-#Table Columns 1
-<OS_Word 14,1=>OS_Word.14,1>
-#EndTable
+Calling <OS_Word 14,1=>OS_Word.14,1> in situations where the century number is needed.

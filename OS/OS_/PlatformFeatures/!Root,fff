@@ -4,7 +4,10 @@ OS_PlatformFeatures  (&6D) (3.70+)
 	 	0	<Read code features=>OS_PlatformFeatures0>
 	 	1	Read MMU features
 	 	32	<Read vectors base=>OS_PlatformFeatures32>
+	 	33	<Read cache information=>OS_PlatformFeatures33>
 
 This SWI is used to find out what features the executing platform has, if any.
+
+Note that a stack imbalance meant that attempting to query subreasons other than 0 would cause an error even if the X bit in the SWI number was set, this bug was fixed when subreason 32 was added. Therefore, before trying nonzero subreasons check bit 31 of subreason 0 to be sure the bug is fixed.
 #line
-Provided by RISC OS 3.70+, and also the CallASWI module for earlier versions of RISC OS.
+Subreason 0 is provided by RISC OS 3.70+, and also the CallASWI module for earlier versions of RISC OS.

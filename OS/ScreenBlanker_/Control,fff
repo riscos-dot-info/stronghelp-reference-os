@@ -14,7 +14,8 @@ Reason	Meaning
 1	Unblank screen immediately
 2	<Flash screen=>.2>
 3	<Set blanking delay=>.3>
-4	<Get blanking delay=>.4>
+4	<Get blanking delay=>.4> in seconds
+5	<Get blanking delay=>.5> in centi-seconds
 #
 #Subpage 2
 ScreenBlanker_Control 2
@@ -32,5 +33,11 @@ ScreenBlanker_Control 3
 #Subpage 4
 ScreenBlanker_Control 4
 =>	R0 =	4 (Get blanking delay)
+<=	R0 =	internal blanking time
+	R1 =	delay in seconds, or 0 if disabled
+#
+#Subpage 5
+ScreenBlanker_Control 5  (4.00+)
+=>	R0 =	5 (Get blanking delay)
 <=	R0 =	internal blanking time
 	R1 =	delay in centi-seconds, or 0 if disabled

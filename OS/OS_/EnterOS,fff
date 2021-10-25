@@ -5,24 +5,12 @@ OS_EnterOS  (&16)
 
 This SWI sets the processor to Supervisor mode. Interrupt and Fast Interrupt status is unaltered. Note that SWI calls while in SVC mode will alter R14, and will use R13 as stack.
 
-To return to User mode on an ARM6 or later:
+To return to User mode call <OS_LeaveOS> which is present from RISC OS 5, or via the CallASWI module. Using this SWI has the advantage of triggering callbacks on the way back out of the kernel, but if neither of these are options, the following is safe to use in 26 or 32 bit mode:
 #tab ,fCode
-	<MSR=>Assembly:MSR>   CPSR_c,#0
-	MOV   R0,R0		;	Anything that doesn't use R8-R14
-or to return to user mode leaving the other PSR bits constant
-	<MRS=>Assembly:MRS>   R14,CPSR
-	BIC   R14,R14,#%11	; Only sets usermode
-	MSR   CPSR_cxsf,R14
-#tab
-
-To return to User mode pre ARM6 (deprecated):
-#tab ,fCode
-	<TEQP=>Assembly:P>  PC,#0
-	MOV   R0,R0		;	Anything that doesn't use R8-R14
-or to return to user mode leaving the other PSR bits constant
-	BIC   R14,PC,#%11	;	Only sets usermode.
-	TEQP  R14,#0
-	MOV   R0,R0
+	TEQ    PC,PC		; Determine 26 or 32 bit mode
+	<MSR=>Assembly:MSR>EQ  CPSR_c,#&10	; Sets USR32 system
+	<TEQ=>Assembly:P>NEP PC,#0		; Sets USR26 mode, also idempotent so works round StrongARM MSR bug
+	NOP			; Workaround ARMv2 banked register access after TEQP bug
 #tab
 #Line
 See <PRM 1, page 140=>PRM-1:140>.

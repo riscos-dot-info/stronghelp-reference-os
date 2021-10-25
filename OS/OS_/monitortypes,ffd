@@ -2,9 +2,16 @@ Monitor types
 #Parent Service_46
 Value	Meaning
 #Line
-0	Standard
+0	Television 50Hz
 1	Multi-frequency
 2	Hi-res mono
 3	VGA
 4	Super VGA
 5	LCD
+6	Reserved for 3rd party use
+7	File (for internal use only)
+8	Television 60Hz
+9-15	Unallocated
+16	From the monitor's EDID
+17-30	Reserved for future use
+31	Auto select monitor type

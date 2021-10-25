@@ -1,0 +1,5 @@
+USBDriver_DeregisterBus  (&54A41)
+#Parent USBDriver_
+=>	R0 =	HC bus handle
+
+This SWI deregisters a host controller bus previously <registered=>USBDriver_RegisterBus>.

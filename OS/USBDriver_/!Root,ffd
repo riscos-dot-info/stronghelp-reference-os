@@ -1,0 +1,17 @@
+USBDriver
+#Parent !Root
+#Prefix USBDriver_
+<RegisterBus>
+<DeregisterBus>
+<InsertTransfer>
+<TransferComplete>
+<ScheduleSoftInterrupt>
+<Version>
+
+<Service_USB=>Service_D2>
+#line
+The USBDriver module coordinates communication to peripherals connected via the Universal Serial Bus. 
+
+Its SWIs are intended for use by host controller drivers (such as OHCIDriver) and are of little use to applications or USB peripheral drivers which should use the <DeviceFS=>DeviceFS_> interface instead.
+
+USBDriver includes basic USB peripheral drivers for hubs, keyboards, and mice.

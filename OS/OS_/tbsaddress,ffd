@@ -1,0 +1,17 @@
+SWIs that should be used with care with top bit set addresses
+#Parent OS_
+Some SWIs use some bits 31-27 for flags. With the introduction of dynamic areas into the memory map on RISC OS 3.50, and the OS ROM itself moving up high in RISC OS 5.00, it is now possible for memory to be located at addresses with these bits set. Thus some SWIs are limited in the range of memory to which pointers can be passed, and will fail mysteriously (possibly overwriting other areas of memory) if a pointer to memory with these bits sets is unwittingly passed.
+
+This list may be incomplete:
+
+SWI					Register	Flag bits
+#Line
+<FileCore_DiscOp>			R1		0-7 (word aligned address is encoded in 26 bits)
+	 	and similarly for ADFS_DiscOp, RAMFS_DiscOp etc... Use <FileCore_DiscOp64=>FileCore_DOp64> instead.
+<FileCore_SectorDiscOp>			R1		0-7 (word aligned address is encoded in 26 bits)
+	 	and similarly for ADFS_SectorDiscOp, SCSI_SectorDiscOp etc... Use <FileCore_DiscOp64=>FileCore_DOp64> instead.
+<OS_HeapSort>				R1		29,30,31. Use <OS_HeapSort32> instead.
+<OS_ReadLine>				R0		30,31. Use <OS_ReadLine32> instead.
+<OS_SubstituteArgs>			R0		31. Use <OS_SubstituteArgs32> instead.
+<Wimp_SendMessage=>Wimp:Wimp_SendMessage>	R1	see SWI documentation.
+<Draw_ProcessPath>			R7		31 - use Draw v1.17 and R1 bit 26 instead.

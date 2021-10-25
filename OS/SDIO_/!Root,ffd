@@ -1,0 +1,27 @@
+SDIO
+#Prefix SDFS_
+#Parent !Root
+SDFS :
+#Table Columns 2
+<DescribeDisc>
+<DiscOp>
+<DiscOp64>
+<Drives>
+<FreeSpace>
+<FreeSpace64>
+<MiscOp>
+<ReadCardInfo>
+<SectorDiscOp>
+#EndTable
+
+SDIODriver :
+#Table Columns 2
+Initialise
+Control
+Enumerate
+ControllerFeatures
+ReadRegister
+Op
+#EndTable
+#Line
+SDFS is a <FileCore=>OS:FileCore_> filing system to access solid state memory cards such as MultiMedia Cards, Secure Digital, and others attached to an SDIO controller. It uses SDIODriver to talk to the controller hardware, and SDIODriver can itself be used to talk to other SDIO expansion bus devices.

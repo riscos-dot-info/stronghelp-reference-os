@@ -6,6 +6,6 @@ OS_CallAfter  (&3B)
 
 \<=	R0-R2 preserved
 #line
-ets a routine to be triggered after a specified delay has elapsed. The routine is entered in SVC mode with interrupts disabled. To remove, use <OS_RemoveTickerEvent>.
+Sets a routine to be triggered after a specified delay has elapsed. The routine is entered in SVC mode with interrupts disabled. To remove, use <OS_RemoveTickerEvent>.
 #Line;tab
 See <PRM 1, page 429=>PRM-1:429>.

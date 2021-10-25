@@ -1,0 +1,8 @@
+Service_TimeZoneChanged (&81080)
+#Parent Territory_
+=>	R1 =	&81080 (reason code)
+ 	R2 =	b0 =	DST is currently active
+ 	 	b1 =	DST is managed automatically
+ 	R3 =	new offset in (signed) cs
+
+This service is issued when the machine's timezone is changed. It is available from RISC OS 5.20 and later.

@@ -1,0 +1,5 @@
+USBDriver_TransferComplete  (&54A43)
+#Parent USBDriver_
+=>	R0 =	pointer to <usbd_xfer=>USBDriver_headers> that completed
+
+This SWI is used by the host controller driver to notify USBDriver that the given transfer has completed. 

@@ -6,3 +6,5 @@ RamFS
 <DiscOp64>
 <Drives>
 <FreeSpace>
+#line
+RamFS is a <FileCore=>OS:FileCore_> filing system to access a drive entirely held in the <RamFS dynamic area=>OS_areas>.

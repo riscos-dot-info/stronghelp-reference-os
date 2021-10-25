@@ -11,7 +11,7 @@ This call is made by a task that wants to sleep until some termination condition
 
 Control may return to the task before the poll word becomes non zero. While the task is sleeping other tasks will continue to be polled by the Wimp.
 
-If the termination condition can be recognised externally (ie in another Wimp task or under interrupt) hence causing the poll word to be set non zero, the calling task should set the poll word to zero on entry. Otherwise the poll word must be non zero on entry, so that the conrol will return to the calling task after each <Wimp Poll=>Wimp:Wimp_Poll>.
+If the termination condition can be recognised externally (ie in another Wimp task or under interrupt) hence causing the poll word to be set non zero, the calling task should set the poll word to zero on entry. Otherwise the poll word must be non zero on entry, so that the control will return to the calling task after each <Wimp Poll=>Wimp:Wimp_Poll>.
 
 Note that a task musn't use this UpCall if it's not re-entrant.
 

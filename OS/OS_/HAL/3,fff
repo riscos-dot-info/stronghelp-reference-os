@@ -2,4 +2,4 @@ HAL Entry 3
 #Parent OS_HALEntries
 void HAL_IRQClear(int device)
 #Line
-Clears the specified IRQ source, if it is latched in the interrupt controller, rather than the device. For certain low-level devices, such as the timer, the interrupt must be cleared with this call, however the hardware is implemented.
+Clears the specified IRQ source, if it is latched in the interrupt controller, rather than the device.

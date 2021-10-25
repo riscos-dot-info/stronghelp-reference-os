@@ -1,0 +1,10 @@
+SoundCtrl_ExamineMixer  (&50000)
+#Parent SoundCtrl_
+=>	R0 =	<system=>SoundCtrl_system>
+	R1 =	word aligned block for output
+	R2 =	size of the block (can be 0)
+<=	R2 =	decremented by number of bytes needed
+	R3 =	individual <block=>SoundCtrl_block> size
+	R4 =	number of blocks placed in the buffer
+#line
+Queries the details of a system mixer. Should be called twice, first to determine buffer size (R2=0), then again to fill in buffer.

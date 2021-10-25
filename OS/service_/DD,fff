@@ -1,0 +1,5 @@
+Service_RTCSynchronised (&DD)
+#Parent Service_index
+=>	R1 =	&DD (reason code)
+
+This service is issued when the real time clock has been updated following a successful <OS_ResyncTime>, as the time may have jumped.

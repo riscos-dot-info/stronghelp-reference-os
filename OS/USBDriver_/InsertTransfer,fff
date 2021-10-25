@@ -1,0 +1,5 @@
+USBDriver_InsertTransfer  (&54A42)
+#Parent USBDriver_
+=>	R0 =	pointer to <usbd_xfer=>USBDriver_headers> started
+
+This SWI is called by the host controller driver to notify USBDriver that a transfer has just started. When a transfer is requested by USBDriver via the <transfer=>USBDriver_headers> entry point for that bus, the host controller should perform any hardware specific steps to start the transfer then confirm success via this SWI. The use of this intermediate SWI (as opposed to the HC simply starting the transfer) allows USBDriver to keep bus use statistics or for the HC to schedule the transfer in a queue for later.

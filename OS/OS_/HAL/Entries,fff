@@ -21,6 +21,7 @@ HAL entries by number and name:
 16  <HAL_TimerSetPeriod=>OS_HAL16>
 17  <HAL_TimerPeriod=>OS_HAL17>
 18  <HAL_TimerReadCountdown=>OS_HAL18>
+113 <HAL_TimerIRQClear=>OS_HAL113>
 19  <HAL_CounterRate=>OS_HAL19>
 20  <HAL_CounterPeriod=>OS_HAL20>
 21  <HAL_CounterRead=>OS_HAL21>

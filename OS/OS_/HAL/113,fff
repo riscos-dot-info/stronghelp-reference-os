@@ -1,0 +1,6 @@
+HAL Entry 113
+#Parent OS_HALEntries
+void HAL_TimerIRQClear(int timer)
+#Line
+Clears the IRQ for the specified timer. 
+This call was added to support platforms where the timers keep their own latched interrupt flag, so to fully clear the timer interrupt call this entry first, then for compatibility with timers that latch the state in the interrupt controller also call <HAL_IRQClear=>OS_HAL3> second with the device number given by <HAL_TimerDevice=>OS_HAL13>.

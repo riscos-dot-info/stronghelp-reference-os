@@ -1,9 +1,0 @@
-Audio_Mute (&452C6)
-#parent Audio_
-=>	R0 =	Boolean for mute on or off
-	 	-1	read current value
-	 	0	mute off
-	 	1	mute on
-\<=	R0 =	current value
-#line
-Mute sound

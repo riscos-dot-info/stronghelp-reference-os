@@ -4,7 +4,7 @@ Bit(s)	Meaning
 #Line
 0 & 7	<Sync=>.sync>
 1	Disable LoadModeFile in !Boot
-2-6	<Monitor type=>.monitors>
+2-6	<Monitor type=>OS_monitortypes>
 #Subpage sync
 Monitor sync
 Value	Meaning
@@ -13,17 +13,3 @@ Value	Meaning
 1	Composite sync
 &80	Reserved
 &81	Auto select sync mode
-#Subpage monitors
-Monitor types
-Value	Meaning
-#Line
-0	TV
-1	Multi-frequency
-2	Hi-res mono
-3	VGA
-4	Super VGA
-5	LCD
-6	Reserved for 3rd party use
-7	File (for internal use only)
-8-15	Reserved for future use
-&1F	Auto select monitor type

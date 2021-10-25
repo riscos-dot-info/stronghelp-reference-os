@@ -15,7 +15,7 @@ This SWI adds a new routine to the list of routines to potentially be executed e
 Each time the RTSupport module gains control of the CPU, it scans its list of routines in decreasing priority order for routines that are unblocked (ie where the pollword is non-zero). If a real-time routine was interrupted, then routines of a higher priority are executed, followed by the interrupted routine, and then equal and lower priority routines are examined. (However, note that if and only if routines have their priorities changed dynamically, it is possible that while a routine is executing, a second routine at the same priority level may be in a pre-empted state.) If the RTSupport module encounters two unblocked routines at the same priority level, then the calling order is undefined.
 #Subpage priority
 Priority values
-The priority passed in R7 can be an integer from 1 (lowest priority) to   255 (highest priority). Priority 0 is reserved for the exclusive use of the foreground process.
+The priority passed in R7 can be an integer from 1 (lowest priority) to 255 (highest priority). Priority 0 is reserved for the exclusive use of the foreground process.
 #Subpage prioritystring
 Priority strings (preferred)
 The string is used to look up a priority in the file RTSupport:Priorities. This enables easy tuning of priority levels for a given system, without the need for each real-time component to be individually configurable. For example, the file might be as follows:

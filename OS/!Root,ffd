@@ -1,12 +1,13 @@
 OS SWIs
 #Parent StrongHelp:!Menu
 #Postfix _
+# Not listing SWIs in InetSWIs, Toolbox, MiscSWIs manuals.
+# We do cross link to the Wimp ones though. Hmm.
 #Table Columns 3
 <ADFS>
 <ATAPI>
-<Audio>
 <BASICTrans>
-BlendTable
+<BlendTable>
 <Buffer>
 <Cache>
 <CD>
@@ -31,6 +32,7 @@ BlendTable
 <FPEmulator>
 <Free=>Wimp:Free_>
 <FSLock>
+GPIO
 <Hourglass>
 <IIC>
 <InverseTable>
@@ -48,6 +50,7 @@ BlendTable
 <Podule>
 <Portable>
 <RamFS>
+<RedrawManager=>Wimp:Redraw_>
 <RemotePrinterSupport>
 <ResourceFS>
 <RTC>
@@ -55,24 +58,25 @@ BlendTable
 <ScreenBlanker>
 <ScreenModes>
 <SCSI>
-<SDFS>
-SDIODriver
+<SDIO>
 <SharedCLibrary>
 <SharedSound>
 <Shell>
 <Sound>
+<SoundCtrl>
 <Squash>
 <Super>
 <TaskManager=>Wimp:TaskManager_>
 <TaskWindow=>Wimp:TaskWindow_>
 <Territory>
+<USBDriver>
 VFPSupport
 <Wimp=>Wimp:Wimp_>
 #EndTable
 #Line
 #Table Columns 3
 <Error block=>swi_errorblock>
-<Dynamic area caveats=>da>
+<High address caveats=>OS_tbsaddress>
 <OS_Byte values=>OS_ByteIndex>
 <CMOS RAM bytes=>OS_ByteCMOS>
 <Service Calls=>Service_Index>
@@ -86,4 +90,4 @@ VFPSupport
 #EndTable
 #Line
 #align centre
-<OS SWIs manual=>about> {/}v3.37, 20 Jan 2016{/}
+{/}<OS SWIs manual=>about> v3.38, 09 Nov 2016{/}

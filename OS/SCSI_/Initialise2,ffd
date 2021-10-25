@@ -25,8 +25,8 @@ SCSI_Initialise 2, R2 buffer contents
 3	Reserved (reserved field returned by inquiry command)
 4	Additional length, extra data that could be obtained by an inquiry command
 5..7	Reserved (by device driver - currently zero) 
-8..11	word highest logical block number	(converted to normal)
-12..15	word block length			(ARM byte sex)
+8..11	word highest logical block number	} converted to normal
+12..15	word block length			} ARM byte sex
 #line;tab;wrap on
 Bytes 0..4 are the first 5 bytes returned by an inquiry command, byte 5 is
 provided to indicate how much additional data (vendor ID,product ID etc)

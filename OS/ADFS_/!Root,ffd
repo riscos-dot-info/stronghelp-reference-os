@@ -1,7 +1,8 @@
 ADFS
 #Prefix ADFS_
 #Parent !Root
-#Table Columns 2
+ADFS :
+#Table Columns 3
 <ControllerType>
 <DescribeDisc>
 <DiscOp>
@@ -23,9 +24,20 @@ IDEDeviceInfo
 <VetFormat>
 ATAPIOp
 #EndTable
-#line
-#Table Columns 2
+
 <Service_ADFSPodule=>ADFS_10800>
 <Service_ADFSPoduleIDE=>ADFS_10801>
 <Service_ADFSPoduleIDEDying=>ADFS_10802>
-#endtable
+
+ATADriver :
+#Table Columns 3
+Initialise
+Control
+Enumerate
+Op
+PacketOp
+#EndTable
+#Line
+ADFS is a <FileCore=>OS:FileCore_> filing system to access ATA and ATAPI devices connected via parallel cable (PATA) or serial cable (SATA), as well as floppy discs.
+
+From version 4 hardware interaction is performed via the ATADriver, an initial implementation of which uses SATADriver, with a PATADriver module planned. Earlier versions include the PATA driver embedded in the filing system module, ADFS, itself.

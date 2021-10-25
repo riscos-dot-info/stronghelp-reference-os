@@ -6,13 +6,15 @@ Territory_Collate  (&4305D)
 	R3 =	flags:
 	 	bit 0: ignore case
 	 	bit 1: ignore accents
-	 	bits 2-31: reserved (must be zero)
+	 	bit 2: interpret cardinals (5.22+)
+	 	bits 3-31: reserved (must be zero)
 
 <=	R0 =	\<0 if string1 \< string2
 	 	=0 if string1 = string2
 	 	\>0 if string1 \> string2
 	R1-R3 	preserved
 
-This call compares strings in the given territory's alphabet.
+This call compares strings in the given territory's alphabet. 
+Bit 2 of the flags is sometimes referred to as natural collation because it would consider "File10" \> "File9", even though "1" \< "9" in terms of ASCII code.
 #Line
 See <PRM 3, page 834=>PRM-3:834>.
