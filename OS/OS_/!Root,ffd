@@ -95,7 +95,7 @@ NVMemory
 <ReadVduVariables>
 <Release>
 <ReleaseDeviceVector>
-<ReleaseSWI=>ClaimOSSWI>
+<ReleaseSWI=>OS_ClaimOSSWI>
 <RelinkApplication>
 <RemoveCallBack>
 <RemoveCursors>

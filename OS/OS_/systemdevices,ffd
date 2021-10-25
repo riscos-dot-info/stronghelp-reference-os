@@ -5,7 +5,7 @@ Number	Device
 #Line
 0	Printer interrupt from 82C710/1
 1	Low battery warning
-2	Floppy disc indexer
+2	Floppy disc index pulse
 3	VSync Pulse
 4	Power on reset
 5	IOC Timer 0

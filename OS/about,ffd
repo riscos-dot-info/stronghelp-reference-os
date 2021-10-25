@@ -21,7 +21,7 @@ Thanks go to those mentioned in the <contributors=>OS:contributions> list.
 
 For comments, suggestions and submissions for these, please mail Christian Ludlam <christian@recoil.org=>#url mailto:christian@recoil.org> who is currently moderating the collection. These manuals will continue to be available from <http://sudden.recoil.org/stronghelp/=>#url>.
 #line
-<This page=>.hist333> gives history and credits.
+<This page=>.hist334> gives history and credits.
 #Subpage notes
 Notes on how the manual is structured
 These are some very incomplete notes on how the manual should be structured. If any part of it isn't then it will eventually be updated, or I'll change this specification. It's mostly here to remind me anyhow.
@@ -405,7 +405,7 @@ History for OS v3.32
 #subpage hist333
 History for OS v3.33
 #align right
-{/}27 November 2007{/}
+{/}30 November 2007{/}
 #align left
 #line
 è	Corrected <Draw_TransformPath> when R1 is 0 on input. (Justin Fletcher)
@@ -416,5 +416,18 @@ History for OS v3.33
 è	Updated <PaletteV=>vector_palettev>
 è	Corrected <Service_WimpSpritesMoved=>service_85> PRM reference
 è	Corrected registers in <ColourTrans_ConvertDeviceColour>
+è	Added more bits to <OS_PlatformFeatures=>OS_PlatformFeatures0> 0
+è	Added note about R9 from Usenet comments by Ben Avison for <module SWI handlers=>OS_Module_SWIHandler>
 #tab;line
-<Previous history=>.hist332>
+<Previous history=>.hist332>	<Next history=>.hist334>
+#subpage hist334
+History for OS v3.34
+#align right
+{/}18 May 2010{/}
+#align left
+#line
+è	Added bits 5-10 to <OS_PlatformFeatures=>OS_PlatformFeatures0> 0 (Sprow)
+è	Added note about R9 from Usenet comments by Ben Avison for <module SWI handlers=>OS_Module_SWIHandler> (Sprow)
+è	Lots of typing and grammatical errors fixed (Sprow)
+#tab;line
+<Previous history=>.hist333>

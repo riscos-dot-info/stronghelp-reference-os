@@ -1,6 +1,6 @@
 Module SWI handler code
 #Parent !Root
-=>	R0-R8 = 	passed from the caller of the SWI
+=>	R0-R9 = 	passed from the caller of the SWI
 	R11 =	SWI number - base number (ie SWINumber AND 63)
 	R12 =	pointer to private word
 	R13 =	supervisor stack pointer
@@ -10,6 +10,8 @@ Module SWI handler code
 	R10-R12 may be corrupted
 
 This entry is called when a SWI in your module's SWI chunk is called. SWI numbers outside those supported by your module should cause an error to be returned, as in <this example handler=>.example>.
+
+Note that prior to Select and RISC OS 5 a bug in the kernel meant that the caller's R9 was left on the stack and its value corrupted just before the SWI is passed to this handler. Therefore in effect only R0-R8 are available on old kernels, where it was also possible to corrupt R9 (as it would be restored to the original value from the stack on return) too.
 #Subpage example
 Example code for SWI handlers
 Recommended code to implement multiple SWIs :

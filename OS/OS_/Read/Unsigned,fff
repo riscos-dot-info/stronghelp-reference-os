@@ -1,13 +1,13 @@
 OS_ReadUnsigned  (&21)
 #Parent OS_
-=>	R0 =	base (2-36 Default 10) + <flags=>.flags>
+=>	R0 =	base (2-36) + <flags=>.flags>
 	R1 =	pointer to string to convert
 	R2 =	maximum value, if bit 29 set
 
 <=	R1 =	pointer to terminator char
 	R2 =	value converted
 
-This SWI converts a string into an integer. If string starts with &, base 16 is assumed. If string starts with base_, this base is used. If no base is given in string, the base in R0 is used, or 10 if that base is invalid.
+This SWI converts a string into an integer. If string starts with '&', base 16 is assumed. If string starts with 'base_' this base is used (which is faulted if invalid). If no base prefix is present and no ampersand is present the base in R0 is used (which is silently changed to 10 if invalid).
 
 The terminating character in the string to convert is the first character that is inconsistent with the base being used. e.g. F in base 10, 2 in base 2, etc.
 #Line

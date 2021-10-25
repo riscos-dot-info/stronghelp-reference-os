@@ -19,3 +19,10 @@ Bit	Meaning if set
 2	Hardware vectors are only readable in 32 bit mode
 3	When storing PC, PC+8 is stored (not PC+12)
 4	Data aborts occur with 'full early' timing
+5	CPU has separate I and D caches
+6	Operating system executes in 32 bit mode
+7	26 bit mode is not available
+8	Processor is M class (supports UMULL etc)
+9	Processor supports Thumb
+10	Processor is E class (supports QADD etc)
+11-31	Reserved for future expansion

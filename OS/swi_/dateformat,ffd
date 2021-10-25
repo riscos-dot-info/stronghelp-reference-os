@@ -8,7 +8,7 @@ Token	Meaning
 %MO	Month as long entry (April)
 %M3	Month as 3 letters (Apr)
 %WK	Week of year
-%DN	Day with in year (098)
+%DN	Day within year (098)
 %WN	Week day as number (7 = Saturday)
 %W3	Week day as 3 letters (Sat)
 %WE	Week day as long (Saturday)

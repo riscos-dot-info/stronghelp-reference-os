@@ -5,9 +5,8 @@ OS_Word 9
 		  2 Two byte y coord.
 <=	R1+4 contains logical colour of specified pixel.
 
-This SWI returns the logical colour at the specified pixel. &FF is returned if :
-  Screen is in a 256-colour mode.
-  Pixel is off screen
-  Mode is non-grapical
+This SWI returns the logical colour at the specified pixel. A value of &FF denotes that the pixel is off the screen or the current mode is text only.
+
+Additionally, from RISC OS 3.50 value &FF is returned for screen modes with 256+ colours.
 
 Don't use this SWI, use <OS_ReadPoint>

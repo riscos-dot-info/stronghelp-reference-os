@@ -6,4 +6,4 @@ Service_International 1
 <=	R1 =	0 to claim, preserved otherwise
 	R4 =	country number, or preserved if unrecognised
 
-This service converts a country name to number. If a module provides additional alphabets it should check this service - if the name matches (case insensitive, allow abbreviations with ".") one provided by the module it should claim this service.
+This service converts an alphabet name to number. If a module provides additional alphabets it should check this service - if the name matches (case insensitive, allow abbreviations with ".") one provided by the module it should claim this service.
