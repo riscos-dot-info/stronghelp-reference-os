@@ -10,7 +10,7 @@ This call converts a SWI name string to a SWI number. An error is given if the S
 #tab
 The conversion is as follows:
 è	A leading X is stripped. If present, it will cause &20000 to be added to the number returned (bit 17).
-è	System names are checked for. Note that the conversion of SWIs isn't very bidirectional: the name OS_WriteI+" " can be produced, but only OS_WriteI is recognized.
+è	System names are checked for. Note that the conversion of SWIs isn't very bidirectional: the name OS_WriteI+" " can be produced, but only OS_WriteI is recognised.
 è	Modules are scanned. If the module prefix matches the one given, and the suffix to the name is a number, then that number is added to the module's SWI 'chunk' base, and the sum returned. For example, Wimp_&23 returns &400E3, as the Wimp's chunk number is &400C0.
 è	If the suffix is a name, and this can be matched by the module, the appropriate number is returned. For example, <Wimp_Poll=>Wimp:Wimp_Poll> returns &400C7.
 #Line

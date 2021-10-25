@@ -73,7 +73,8 @@ OS SWIs
 <Hardware vectors=>os_hardware_vectors>
 <Deprecated calls=>OS_deprecated>
 <Module format=>OS_Module_format>
+<Upcalls=>OS_UpCallreasons>
 #EndTable
 #Line
 #align centre
-<OS SWIs manual=>about> {/}v3.28, 12 Oct 03{/}
+<OS SWIs manual=>about> {/}v3.29, 06 Jan 04{/}

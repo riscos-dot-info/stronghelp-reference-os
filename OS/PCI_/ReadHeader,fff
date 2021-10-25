@@ -1,7 +1,7 @@
 PCI_ReadHeader  (&50381)
 #Parent PCI_
 =>	R3 =	<function handle=>PCI_fhand>
-	R1 ->	buffer
+	R1 =	pointer to buffer
 	R2 =	number of bytes to read (4-256, must be multiple of 4)
 <=	Buffer updated
 

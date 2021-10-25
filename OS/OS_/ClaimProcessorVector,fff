@@ -8,9 +8,11 @@ OS_ClaimProcessorVector  (&69) (3.50+)
 {*}On release :{*}
 =>	R0 =	<Vector number=>.vectors>
 	R1 =	Address of original routine
-	R2 =	Address of our routine (??)
+	R2 =	Address of your routine
 
 This call is used to allow low-level code to claim the ARM's hardware vectors which are called when interrupts and aborts occur.
+
+The address off your routine must be provided on release to ensure claims and releases happen in the correct order. If the address currently on the vector differs from that in R2, an error is returned.
 #
 #Subpage vectors
 RO3.5 processor vectors

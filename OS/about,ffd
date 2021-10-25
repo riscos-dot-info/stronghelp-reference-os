@@ -21,7 +21,7 @@ Thanks go to those mentioned in the <contributors=>OS:contributions> list.
 
 For comments, suggestions and submissions for these, please mail Christian Ludlam <christian@recoil.org=>#url mailto:christian@recoil.org> who is currently moderating the collection. These manuals will continue to be available from <http://sudden.recoil.org/stronghelp/=>#url>.
 #line
-<This page=>.hist328> gives history and credits.
+<This page=>.hist329> gives history and credits.
 #Subpage notes
 Notes on how the manual is structured
 These are some very incomplete notes on how the manual should be structured. If any part of it isn't then it will eventually be updated, or I'll change this specification. It's mostly here to remind me anyhow.
@@ -310,7 +310,7 @@ History for OS v3.26
 #align left
 #line
 è	Module MessageTrans word is present from RISC OS 3.60, not 3.50.
-è	Added details of <HAL calls=>OS_Hardware>.
+è	Added details of <HAL calls=>OS_Hardware>. (Steve Revill)
 è	Corrections to DOSFS section
 #tab;line
 <Previous history=>.hist325>	<Next history=>.hist327>
@@ -335,4 +335,18 @@ History for OS v3.28
 è	Documented <Buffer_InternalInfo>
 è	Some grammatical changes
 #tab;line
-<Previous history=>.hist327>
+<Previous history=>.hist327>	<Next history=>.hist329>
+#subpage hist329
+History for OS v3.29
+#align right
+{/}06 January 2004{/}
+#align left
+#line
+è	Updated <Service_International=>Service_43>
+è	Updated <OS_Byte 202=>OS_Byte202>
+è	Updated <OS_ClaimDeviceVector>
+è	Updated <DeviceFS entry 0=>DeviceFS_entry0>
+è	Updated <CMOS RAM bytes=>OS_ByteCMOS>
+è	Some grammatical changes
+#tab;line
+<Previous history=>.hist328>

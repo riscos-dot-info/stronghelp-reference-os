@@ -24,7 +24,8 @@ Bit	Value	State	Meaning
 	1	on
 4	0	on	Caps Lock
 	1	off
-5	 	 	Normally set
+5	0	 	Kana lock (Hiragana entry)
+	1	 	Romanji lock (Latin entry, as in UK)
 6	0	off	Control
 	1	on
 7	0	off	Shift Enable

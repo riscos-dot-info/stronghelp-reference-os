@@ -1,0 +1,13 @@
+Service_International 7
+#Parent Service_43
+=>	R1 =	&43 (reason code)
+	R2 =	7 (sub reason code)
+	R3 =	character in system font to redefine
+	R4 =	UCS character number (&00000000 - &7FFFFFFF)
+
+<=	R1 =	0 if claimed, preserved otherwise
+	R2-R4 preserved
+
+Any module providing UCS character definitions should check to see if it can provide an 8x8 definition for the specified UCS character. If it can, it should claim the service call and define the character using <VDU 23=>VDU:23>, otherwise all registers should be preserved.
+
+This call is intended as an interim measure until the kernel supports large character sets. The International module provides several hundred character definitions - this call provides access to them.

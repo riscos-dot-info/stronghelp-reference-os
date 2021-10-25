@@ -6,6 +6,6 @@ Device driver End of Data entry point (10)
 <=	R3 =	0 if not end of data
 	 	-1 if end of data
 
-When DeviceFS is asked if EOF has been reached, it will respond false if a buffered stream still has buffered data, or an unbuffered stream has a non-empty RX/TX word. Otherwise it calls this entry point. Most devices will return -1 (EOF reached) but some ({/}e.g.{/} a scanner) may know that there is still data to dome).
+When DeviceFS is asked if EOF has been reached, it will respond false if a buffered stream still has buffered data, or an unbuffered stream has a non-empty RX/TX word. Otherwise it calls this entry point. Most devices will return -1 (EOF reached) but some ({/}e.g.{/} a scanner) may know that there is still data to come).
 #Line
 See <PRM 2, page 604=>PRM-2:604>.

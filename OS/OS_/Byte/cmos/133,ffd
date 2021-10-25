@@ -3,7 +3,7 @@ OS_Byte CMOS 133
 Bit(s)	Meaning
 #Line
 0 & 7	<Sync=>.sync>
-1	Top bit of mode (RO2 only, other bits in <Byte 10=>OS_ByteCMOS10>)
+1	Disable LoadModeFile in !Boot
 2-6	<Monitor type=>.monitors>
 #Subpage sync
 Monitor sync
@@ -23,5 +23,3 @@ Value	Meaning
 4	Super VGA
 5	LCD
 &1F	Auto select monitor type
-
-RISC OS 2 only supports values 0-3

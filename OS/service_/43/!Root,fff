@@ -1,0 +1,17 @@
+Service_International (&43)
+#Parent Service_Index
+This service provides a variety of conversion and infomation functions:
+
+R2	Service
+#Line
+0	<Convert country name to number=>service_43_0>
+1	<Convert alphabet name to number=>service_43_1>
+2	<Convert country number to name=>service_43_2>
+3	<Convert alphabet number to name=>service_43_3>
+4	<Convert country number to alphabet number=>service_43_4>
+5	<Define range of characters=>service_43_5>
+6	<Info - New keyboard selected=>service_43_6>
+7	<Define character from UCS=>service_43_7>
+8	<Return UCS conversion table=>service_43_8>
+#Line
+See <PRM 3, page 763=>PRM-3:763>

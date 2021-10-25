@@ -5,5 +5,3 @@ Bit(s)	Meaning
 0	3D Newlook enabled
 2-4	<WimpFont=>OS_Bytecmos140_fonts>
 7	Don't tile
-
-Under RISC OS 2 this byte was used to store PrinterDP settings.

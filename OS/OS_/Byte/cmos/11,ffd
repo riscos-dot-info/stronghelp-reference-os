@@ -1,9 +1,9 @@
 OS_Byte CMOS 11
 Bit(s)	Meaning
 #Line
-0,1,2	Drive number
-3,4,5	<Caps lock status=>.caps>
-6	Mount discs if set
+0-2	Default ADFS drive number
+3-5	<Caps lock status=>.caps>
+6	0: Dir  1: NoDir
 #Subpage caps
 Caps Lock status
 Value	Meaning

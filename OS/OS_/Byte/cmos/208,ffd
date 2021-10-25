@@ -2,4 +2,4 @@ OS_Byte CMOS 208
 Bit(s)	Meaning
 #Line
 0-2	SCSIFS discs
-3-5	SCSIFS drive
+3-5	default drive - 4

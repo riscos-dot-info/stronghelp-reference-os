@@ -1,0 +1,17 @@
+Service_International 8
+#Parent Service_43
+=>	R1 =	&43 (reason code)
+	R2 =	8 (sub reason code)
+	R3 =	alphabet number
+
+<=	R1 =	0 if claimed, preserved otherwise
+	R4 =	pointer to table if recognised, else preserved
+	R2-R3 preserved
+
+Any module providing additional alphabets should check to see if it can provide a conversion table for the given alphabet number. If it can, it should claim the service and return a pointer to the table in R4, otherwise return with all register preserved.
+
+The table has 256 32-bit entries, one for each character, giving the equivalent UCS code. If a character is not defined in the alphabet, its entry should contain &FFFFFFFF (not a valid UCS character).
+
+Characters 0-31 and 127 are control codes in RISC OS - their entries in the tables of all alphabets should be 0-31 and 127 to guarantee a sensible translation to UTF8.
+
+It is nonsensical to issue this service call for alphabet UTF8 (111). No module should claim such a call.

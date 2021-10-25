@@ -3,5 +3,5 @@ Bit(s)	Meaning
 #Line
 #Wrap off
 0-2	Number of floppy drives
-3-5	Number of hard drives
+3-5	Was number of hard drives
 6,7	Number of IDE drives

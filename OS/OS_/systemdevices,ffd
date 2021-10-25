@@ -1,6 +1,6 @@
 System Devices
 #Parent OS_ClaimDeviceVector
-All machines after the A3000 have these system device numbers:
+# All machines after the A3000 have these system device numbers:
 Number	Device
 #Line
 0	Printer interrupt from 82C710/1
@@ -16,8 +16,20 @@ Number	Device
 10	Serial port interrupt from 82C710/1 also mapped to FIQ device 4
 11	IDE hard disc interrupt
 12	Floppy disc interrupt from 82C710/1
+# cl> Note the PRMs have these the other way round - which is correct?
 13	Expansion card interrupt
 14	Keyboard serial transmit register empty
 15	Keyboard serial receive register full
+16	DMA channel 0
+17	DMA channel 1
+18	DMA channel 2
+19	DMA channel 3
+20	DMA sound channel 0
+21	DMA sound channel 1
+22	ARM 7500 mouse port receive register full
+23	ARM 7500 mouse port transmit register empty
+24	ARM 7500 joystick A-to-D completion
+25	ARM 7500 event 1
+26	ARM 7500 event 2
 
-For A3000 and earlier the functionality of each number is equivalent, but with ST506 in place of IDE and separate hardware instead of the 82C710/1 chip.
+PCI device numbers are allocated dynamically - see <PCI_ReadInfo> b11.

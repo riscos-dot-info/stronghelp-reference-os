@@ -35,9 +35,9 @@ Low-level internal key numbers
 32  Home
 33  Page Up
 34  Num Lock
-35  K /
-36  K *
-37  K #
+35  k/
+36  k*
+37  k#
 38  Tab
 39  Q
 40  W
@@ -49,16 +49,16 @@ Low-level internal key numbers
 46  I
 47  O
 48  P
-49  [/\{
-50  ]/}
+49  [ \{
+50  ] }
 51  \\
 52  Delete
 53  Copy
 54  Page down
-55  K 7
-56  K 8
-57  K 9
-58  K -
+55  k7
+56  k8
+57  k9
+58  k-
 59  L Ctrl
 60  A
 61  S
@@ -69,13 +69,13 @@ Low-level internal key numbers
 66  J
 67  K
 68  L
-69  ;/:
-70  '/"
+69  ; :
+70  ' "
 71  Return
-72  K 4
-73  K 5
-74  K 6
-75  K +
+72  k4
+73  k5
+74  k6
+75  k+
 76  L Shift
 77  (<extra key=>.extra>)
 78  Z
@@ -85,14 +85,14 @@ Low-level internal key numbers
 82  B
 83  N
 84  M
-85  ,/\<
-86  ./\>
-87  //?
+85  , \<
+86  . \>
+87  / ?
 88  R Shift
 89  Up
-90  K 1
-91  K 2
-92  K 3
+90  k1
+91  k2
+92  k3
 93  Caps Lock
 94  L Alt
 95  Space
@@ -101,21 +101,21 @@ Low-level internal key numbers
 98  Left
 99  Down
 100 Right
-101 K 0
-102 K .
+101 k0
+102 k.
 103 Enter
 112 Select
 113 Menu
 114 Adjust
 #EndTable
 
-Risc PC:	Key {fCode}'/@{f} is where {fCode}'/"{f} would be
-		Key {fCode}#/~{f} gives 51
-		Key {fCode}\\/|{f} gives 77 (extra key)
+Risc PC:	Key {fCode}' @{f} is where {fCode}' "{f} would be
+		Key {fCode}# ~{f} gives 51
+		Key {fCode}\\ |{f} gives 77 (extra key)
 #line;tab
 See	<PRM 1-156=>PRM-1:156>
 #subpage extra
 Key number 77
 Some national keyboards have an extra key between left shift and Z, which gives key number 77. This key is not present on the standard UK Archimedes keyboard, although a contact area for it is visible on the keyboard PCB.
 
-On Risc PC keyboards this is the \\/| key
+On Risc PC keyboards this is the {fCode}\\ |{f} key

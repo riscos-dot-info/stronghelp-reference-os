@@ -1,5 +1,5 @@
 OS_UpCall 15 - Device receive data present
 =>	R0 =	15 (Device receive data present)
-	R1 =	stream handle
+	R1 =	FileSwitch stream handle
 
 This service is issued when there is data entering a previously empty buffer.

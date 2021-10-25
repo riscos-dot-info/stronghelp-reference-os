@@ -9,7 +9,7 @@ OS_SWINumberToString  (&38)
 
 This call converts a SWI number to a string containing its SWI name. The returned string is null-terminated, and starts with an X if the SWI number has bit 17 set.
 
-SWI numbers \< &200 have an 'OS_' prefix to the main part, and a SWI-dependent end section (which is 'Undefined' for unkown OS SWIs).
+SWI numbers \< &200 have an 'OS_' prefix to the main part, and a SWI-dependent end section (which is 'Undefined' for unknown OS SWIs).
 
 SWI numbers in the range &100 to &1FF are converted in the form OS_WriteI+"A", or OS_WriteI+23 if the character is not a printable one.
 

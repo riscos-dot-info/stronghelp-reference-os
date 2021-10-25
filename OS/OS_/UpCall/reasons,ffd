@@ -15,7 +15,9 @@ R0	Description
 11	<DeviceFS stream closed=>os_upcall11>
 12	<Freeway=>InetSWIs:upcall_Freeway>
 13	{/}Reserved{/}
+# 13 UpCall_Online
 14	{/}Reserved{/}
+# 14 UpCall_Standby
 15	<Device receive data present=>os_upcall15>
 16	<Device threshold above=>os_upcall16>
 17	<Device threshold below=>os_upcall17>

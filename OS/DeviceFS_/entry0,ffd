@@ -4,6 +4,7 @@ Device driver initialise entry point (0)
 	R2 =	DeviceFS stream handle
 	R3 =	flags: bit 0 clear for RX, else TX
 # Gerph> In tests, I've got top bit set on these as well - what does this mean ?
+	R4 =	FileSwitch stream handle [OS 4.00+]
 	R6 =	pointer to <"special field control block"=>DeviceFS_special>
 <=	R2 =	device driver stream handle
 

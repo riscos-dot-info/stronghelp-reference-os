@@ -1,6 +1,6 @@
 OS_ClaimDeviceVector  (&4B)
 #Parent OS_
-=>	R0 =	<device number=>OS_systemdevices>
+=>	R0 =	<device number=>OS_systemdevices> + <flag=>.flag> in b31 [OS 5.00+]
 	R1 =	address of device driver routine
 	R2 =	value to be passed in R12 when driver is called
 	R3 =	address of interrupt status if R0 = podule "IRQ" or "FIQ as IRQ" on entry
@@ -36,3 +36,12 @@ You should ensure:
 #Indent
 #Line
 See <PRM 1, page 121=>PRM-1:121>.
+#subpage flag
+OS_ClaimDeviceVector flag [5.00]
+From RISC OS 5.00, if bit 31 of the device number is set when claiming a device vector, the interrupt will be passed on to earlier claimants of the vector unless your service code claims it. This is necessary on PCI systems where all interrupts can be shared.
+
+It is up to you to determine whether it is your device that has caused the interrupt. If it has, you should service it, then claim the vector by pulling the return address off the stack. If not, pass the service along by returning to the address in R14 on entry. If no handlers claim a particular interrupt, then RISC OS will disable that line.
+
+If you do not claim the interrupt, you must preserve R0 and R3. R1, R2 and R12 may be corrupted.
+
+It is critical that your choice of whether to claim is purely on the basis of whether your card is interrupting, and is accurate. Not claiming when your card is interrupting, or claiming when it isn't can both cause incorrect system behaviour.

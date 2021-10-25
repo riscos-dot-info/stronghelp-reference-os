@@ -30,6 +30,7 @@ Number	Territory
 26	Israel
 27	Mexico
 28	LatinAm
+32	Japan
 48	USA
 
 It appears that territory and country numbers share the same sequence.
