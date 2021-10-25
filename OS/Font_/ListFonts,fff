@@ -13,6 +13,7 @@ Font_ListFonts  (&40091)
 	R4 =	pointer to buffer for font name, or indirected data
 	R5 =	size of buffer in R4
 	R6 =	pointer to identifier to tick, or 0 for none, or 1 for 'System font'
+
 <=	R2 =	new counter, or -1 if no more
 	R3 =	required size of buffer in R1 if R1 = 0,
 	 	or 0 if building a menu and the menu is null

@@ -3,6 +3,4 @@ Upcall 4 - Media search end
 =>	R0 =	4 (Media search end)
 <=	R0 preserved
 
-This Upcall Informs your program that a missing filing medium has been supplied, or that an operation involving one has been cancelled
-
 This call is made by RISC OS to inform your program that a missing filing medium has been supplied, or that an operation involving one has been cancelled. It is always preceded by call(s) of <OS_UpCall 1=>OS_UpCall1> or <OS_UpCall 2=>OS_UpCall2>. This call is typically used to remove error messages displayed when OS_UpCall 1 or 2 was first generated.

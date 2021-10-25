@@ -1,5 +1,5 @@
-MessageTrans_FileInfo  (&41509)
+MessageTrans_Dictionary  (&41509)
 #Parent MessageTrans_
 <=	R0 =	Address of first byte of the kernel dictionary
 	
-Returns the address of first byte of the kernel dictionary
+Returns the address of first byte of the kernel dictionary.

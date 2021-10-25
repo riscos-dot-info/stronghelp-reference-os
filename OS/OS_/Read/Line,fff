@@ -13,6 +13,8 @@ OS_ReadLine  (&0E)
 	C set if Escape
 
 This SWI reads a line from the current input stream. Input is terminated with Return, Ctrl-J or Escape. Delete and Backspace deletes last char entered. Ctrl-U empties buffer.
+
+See also <OS_ReadLine32>.
 #Line
 See <PRM 1, page 910=>PRM-1:910>.
 #Subpage flags

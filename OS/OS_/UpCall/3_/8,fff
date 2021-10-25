@@ -1,8 +1,8 @@
 OS_UpCall 3 subreason code 8
 Creating directory
 #line
-=>	R1 !	directory name
+=>	R1 =	pointer to directory name
 	R2 =	load address (to be used as timestamp)
 	R3 =	execution address (to be used as timestamp)
 	R4 =	number of entries (0 for default)
-	R6 !	special field (or 0)
+	R6 =	pointer to special field (or 0)

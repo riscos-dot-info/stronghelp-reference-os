@@ -6,7 +6,7 @@ OS_UpCall 3 - Modifying file
 	R9 =	<Reason code=>OS_UpCall3_reasons>
 
 <=	All registers preserved
-#line
+
 Warns your program that a file is being modified. It is made when a program calls one of serveral SWI provided by FileSwitch module:
 #Tab;Indent 2
 	reason codes 0-8 are caused by calls to <OS_File>
@@ -25,4 +25,4 @@ The following general points apply:
 
 This UpCall is made before the operation, which may subsequently fail. For example, you may receive a rename UpCall for a locked file, which will sebsequently fail to rename (because it's locked). If a file name is invalid for a given operation (eg you try to create a file with a wildcarded leafname) FileSwitch will generate an error, and no UpCall will be generated.
 
-The call is used by the desktop filer to maintain its directory displays. It's provided for information only; if you wish to use this UpCall, you must not intercept it, nor must you alter the contents of any of these registers used to pass parameters!
+The call is used by the desktop filer to maintain its directory displays. It's provided for information only; if you wish to use this UpCall, you must not intercept it, nor must you alter the contents of any of these registers used to pass parameters.

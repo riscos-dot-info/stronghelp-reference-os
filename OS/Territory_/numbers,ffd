@@ -3,8 +3,8 @@ Territory numbers
 Number	Territory
 #Line
 1	UK
-2	Master
-3	Compact
+# 2	Master
+# 3	Compact
 4	Italy
 5	Spain
 6	France
@@ -14,7 +14,7 @@ Number	Territory
 10	Greece
 11	Sweden
 12	Finland
-13	Unused
+# 13	Unused
 14	Denmark
 15	Norway
 16	Iceland
@@ -22,15 +22,32 @@ Number	Territory
 18	Canada2
 19	Canada
 20	Turkey
-21	Arabic
+# 21	Arabic
 22	Ireland
-23	Hong Kong
+# 23	Hong Kong
 24	Russia
-25	Russia2
+# 25	Russia2
 26	Israel
 27	Mexico
 28	LatinAm
+29	Australia
+30	Austria
+31	Belgium
 32	Japan
+33	MiddleEast
+34	Netherlands
+35	Switzerland
+36	Wales
+49	Wales2
 48	USA
+49	China
+50	Brazil
+51	SAfrica
+52	Korea
+53	Taiwan
+70	DvorakUK
+71	DvorakUSA
+80	ISO1
 
+# cl> commented out ones are not in RISC OS 5's International module
 It appears that territory and country numbers share the same sequence.

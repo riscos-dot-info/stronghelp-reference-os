@@ -17,6 +17,7 @@ R0	Action
 8	<Read the amount of a specified sort of memory available=>.8>
 9	<Read controller presence and base address=>.9>
 10-12	Reserved for system use
+# 12 Recommend base page number for PCI shared access
 13	<Map in IO permanent=>.13>
 14	<Map in IO temporary=>.14>
 15	<Map out temporary IO=>.15>
@@ -25,21 +26,28 @@ R0	Action
 OS_Memory 0
 =>	R0 =	0 (reason code)
 	 	and <flags=>.0flags>
-	R1 =	pointer to page block (...)
+	R1 =	pointer to <page block=>.pageblock>
 	R2 =	number of entries in page block
 
-This call converts between the different memory spaces used to specify addresses in a page block.
+This call converts between the different memory spaces used to specify addresses in a page block, and can alter their cacheability. The addresses must be in RAM, but need not be page aligned. If a page is made uncacheable, the cache will be flushed. If there is an error processing any page in the block, the call has no effect on any pages.
+#subpage pageblock
+OS_Memory page blocks
+Offset	Contents
+#Line
+0	Physical page number
+4	Logical address
+8	Physical address
 #Subpage 0flags
 OS_Memory 0 flags
-Bits	Meaning
+Bits	Meaning when set
 #Line
 0-7	0 (reason code)
-8	set => physical page number provided
-9	set => logical address provided
-10	set => physical address provided
-11	set => physical page number will be filled in when set (if bit 8 clear)
-12	set => logical address will be filled in when set (if bit 9 clear)
-13	set => physical address will be filled in when set (if bit 10 clear)
+8	physical page number provided
+9	logical address provided
+10	physical address provided
+11	return physical page number (if bit 8 clear)
+12	return logical address (if bit 9 clear)
+13	return physical address (if bit 10 clear)
 14-15	cacheability control:
 	0,1 =>	no change
 	2 =>	disable cacheing on all specified pages

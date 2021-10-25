@@ -2,25 +2,25 @@ PCI
 #Parent StrongHelp:!Menu
 #Prefix PCI_
 #Table Columns 3
-<ReadID>
-<ReadHeader>
-<ReturnNumber>
-<EnumerateFunctions>
-<IORead>
-<IOWrite>
-<MemoryRead>
-<MemoryWrite>
 <ConfigurationRead>
 <ConfigurationWrite>
-<HardwareAddress>
-<ReadInfo>
-<SpecialCycle>
-<FindByLocation>
-<FindByID>
+<EnumerateFunctions>
 <FindByClass>
+<FindByID>
+<FindByLocation>
+<HardwareAddress>
+<IORead>
+<IOWrite>
+<LogicalAddress>
+<MemoryRead>
+<MemoryWrite>
 <RAMAlloc>
 <RAMFree>
-<LogicalAddress>
+<ReadHeader>
+<ReadID>
+<ReadInfo>
+<ReturnNumber>
+<SpecialCycle>
 #EndTable
 #Line
 <Service_PCI=>Service_C3>

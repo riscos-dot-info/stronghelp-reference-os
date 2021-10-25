@@ -1,6 +1,6 @@
 OS_UpCall 3 subreason code 521
 Setting attributes
 #line
-=>	R1 !	object name
-	R2 !	attribute string (control character terminated)
-	R6 !	special field (or 0)
+=>	R1 =	pointer to object name
+	R2 =	pointer to attribute string (control character terminated)
+	R6 =	pointer to special field (or 0)

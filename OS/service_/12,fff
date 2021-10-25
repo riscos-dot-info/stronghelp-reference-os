@@ -3,6 +3,6 @@ Service_StartUp (&12)
 =>	R1 =	&12 (reason code)
 	R2 =	<filing system number=>fsys_ident>
 
-This service is the old way of starting a filing system. Use <OS_FSControl 12=>OS_FSControl12> instead.
+This service is the old way of starting a filing system. Use <OS_FSControl 14=>OS_FSControl14> instead.
 #Line
 See <PRM 2, page 22=>PRM-2:22>

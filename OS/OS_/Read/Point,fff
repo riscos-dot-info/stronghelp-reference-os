@@ -7,6 +7,7 @@ OS_ReadPoint  (&32)
 	R3 =	Tint
 	R4 =	-1 if point was off screen, 0 otherwise
 
-This SWI returns the colour and tint of a point.
+This SWI returns the colour and tint of a point. If in a 16 or 32 bpp mode, this will return the 15 or 24 bit colour number in R2 and tint will be 0.
+# determined experimentally by cl
 #Line
 See <PRM 1, page 707=>PRM-1:707>.

@@ -3,4 +3,4 @@ Writing load address only
 #line
 =>	R1 =	pointer to filename
 	R2 =	load address
-	R6 !	special field (or 0)
+	R6 =	pointer to special field (or 0)

@@ -1,8 +1,8 @@
 PCI_ReadHeader  (&50381)
 #Parent PCI_
-=>	R3 =	<function handle=>PCI_fhand>
-	R1 =	pointer to buffer
+=>	R1 =	pointer to buffer
 	R2 =	number of bytes to read (4-256, must be multiple of 4)
+	R3 =	<function handle=>PCI_fhand>
 <=	Buffer updated
 
 This SWI reads as much of the header as requested, rather than the limited information returned by <PCI_ReadID>.

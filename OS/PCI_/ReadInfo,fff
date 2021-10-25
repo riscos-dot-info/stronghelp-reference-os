@@ -1,5 +1,5 @@
 PCI_ReadInfo  (&5038B)
-#Parent Podule_
+#Parent PCI_
 =>	R0 =	bit set of results required
 	R1 =	word aligned buffer to receive results (4 bytes each)
 	R2 =	length of buffer

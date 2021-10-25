@@ -6,4 +6,4 @@ SCSI_EEProm (&403C6)
 <=	R0 =	data read if R0 Bit 10 was set on entry
 	R0 =	preserved if R0 Bit 10 was clear on entry
 
-Reads/writes EEProm on the host, where available.
+Reads/writes EEPROM on the host, where available.

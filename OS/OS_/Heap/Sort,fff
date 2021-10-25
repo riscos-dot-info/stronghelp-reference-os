@@ -10,5 +10,7 @@ optional :
 	R6 =	workspace of R5 bytes (if R5>16K)
 
 This SWI sorts a list of objects, using the Heap Sort algorithm.
+
+See also <OS_HeapSort32>.
 #Line
 See <PRM 1, page 937=>PRM-1:937>.

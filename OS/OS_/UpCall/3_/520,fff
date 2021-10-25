@@ -1,7 +1,7 @@
 OS_UpCall 3 subreason code 520
 Renaming file
 #line
-=>	R1 !	current object name
-	R2 !	desired object name
-	R6 !	current special field
-	R7 !	desired special field
+=>	R1 =	pointer to current object name
+	R2 =	pointer to desired object name
+	R6 =	pointer to current special field
+	R7 =	pointer to desired special field

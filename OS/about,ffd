@@ -21,7 +21,7 @@ Thanks go to those mentioned in the <contributors=>OS:contributions> list.
 
 For comments, suggestions and submissions for these, please mail Christian Ludlam <christian@recoil.org=>#url mailto:christian@recoil.org> who is currently moderating the collection. These manuals will continue to be available from <http://sudden.recoil.org/stronghelp/=>#url>.
 #line
-<This page=>.hist329> gives history and credits.
+<This page=>.hist330> gives history and credits.
 #Subpage notes
 Notes on how the manual is structured
 These are some very incomplete notes on how the manual should be structured. If any part of it isn't then it will eventually be updated, or I'll change this specification. It's mostly here to remind me anyhow.
@@ -299,7 +299,7 @@ History for OS v3.25
 #line
 è	<SCSI=>SCSI_> overhauled. Added SCSISoft driver details.
 è	Some typos corrected, version numbers standardised.
-è	<IOCtl=>OS_Args9> calls detailed.
+è	<IOCtl=>OS_Args009> calls detailed.
 è	Some <UpCalls=>OS_UpCall> added.
 #tab;line
 <Previous history=>.hist320>	<Next history=>.hist326>
@@ -311,7 +311,7 @@ History for OS v3.26
 #line
 è	Module MessageTrans word is present from RISC OS 3.60, not 3.50.
 è	Added details of <HAL calls=>OS_Hardware>. (Steve Revill)
-è	Corrections to DOSFS section
+è	Corrections to <DOSFS=>DOSFS_> section
 #tab;line
 <Previous history=>.hist325>	<Next history=>.hist327>
 #subpage hist327
@@ -349,4 +349,16 @@ History for OS v3.29
 è	Updated <CMOS RAM bytes=>OS_ByteCMOS>
 è	Some grammatical changes
 #tab;line
-<Previous history=>.hist328>
+<Previous history=>.hist328>	<Next history=>.hist330>
+#subpage hist330
+History for OS v3.30
+#align right
+{/}29 June 04{/}
+#align left
+#line
+è	Updated <Territory=>Territory_numbers> and <Alphabet=>Territory_anumbers> numbers.
+è	Some grammatical changes and formatting improvements.
+è	Corrected <FileCore_DiscOp64> SWI number (Marco Baye)
+è	Updated DeviceFS <special field=>DeviceFS_special> validation string.
+#tab;line
+<Previous history=>.hist329>

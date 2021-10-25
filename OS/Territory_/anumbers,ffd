@@ -2,14 +2,22 @@ Alphabet numbers
 #Parent Territory_
 Number	Alphabet
 #Line
-100	BFont
+# 100	BFont
 101	Latin1
 102	Latin2
 103	Latin3
 104	Latin4
 105	Cyrillic
-106	Arabic
+# 106	Arabic
 107	Greek
 108	Hebrew
+109	Latin5
+110	Welsh
 111	UTF8
-120	Cyrillic2
+112	Latin9
+113	Latin6
+114	Latin7
+115	Latin8
+# 120	Cyrillic2
+# 
+# cl> commented out ones are not in RISC OS 5's International module

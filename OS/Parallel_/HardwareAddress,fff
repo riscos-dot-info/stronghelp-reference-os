@@ -4,5 +4,7 @@ Parallel_HardwareAddress  (&42EC0)
 	R1 =	Address of routine to be called in SVC mode to do: Parallel control register = (Old value AND R1) EOR R0 or preserved if R0 was returned as 0.
 
 This SWI reads the address which is used to control the parallel port in memory. This must be accessed in SVC mode.
+
+Note: this call is for internal use only and shouldn't be documented.
 #Line
 See <PRM 2, page 479=>PRM-2:479>.

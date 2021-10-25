@@ -1,4 +1,4 @@
-FileCore_DiscOp64  (&4054E) (5.00+)
+FileCore_DiscOp64  (&4054C) (5.00+)
 #Parent FileCore_
 =>	R1 =	bits 0-3 = reason code
 	 	bits 4-7 = option bits

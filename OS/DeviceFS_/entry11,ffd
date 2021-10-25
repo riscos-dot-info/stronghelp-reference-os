@@ -4,6 +4,6 @@ Device driver Stream created entry point (11)
 	R2 =	device driver stream handle
 	R3 =	buffer handle, or -1 for none
 
-This entry point is called when a stream generation is complete. Your device driver can now start recieving or transmitting.
+This entry point is called when a stream generation is complete. Your device driver can now start receiving or transmitting.
 #Line
 See <PRM 2, page 605=>PRM-2:605>.

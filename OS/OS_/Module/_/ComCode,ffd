@@ -1,6 +1,7 @@
 Command code entry
 #Parent OS_Module_ComTable
 For a conventional command (<Information word=>OS_Module_ComFlags> bit 30 clear)
+#indent 4
 
 =>	R0 =	pointer to command tail
 	R1 =	number of parameters
@@ -13,7 +14,9 @@ For a conventional command (<Information word=>OS_Module_ComFlags> bit 30 clear)
 
 OSCLI counts spaces as delimiting parameters, except when they occur within double quoted strings.
 
+#indent 0
 For a configuration command (<Information word=>OS_Module_ComFlags> bit 30 set)
+#indent 4
 
 =>	R0 =	0	{fCode}*Configure{f} with no options - print your syntax string
 	 	1	{fCode}*Status {/}option{/}{f} - print the status of your option

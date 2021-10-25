@@ -6,8 +6,8 @@ OS_DynamicArea 4  (&66)
 	R2 =	new area number
 <=	all preserved
 #line
-This call renumbers dynamic areas. and is intended for system use only.
+This call renumbers dynamic areas and is intended for system use only.
 
-Once the area has been renumbered Service_DynamicAreaRenumber is issued to inform the rest of the system about this change.
+On completion, Service_DynamicAreaRenumber is issued to inform the rest of the system about this change.
 
-An error is returned if the area specified by the old area number does not exist, or if the new number clashes with an existing area.
+An error is returned if the area specified by the old area number does not exist or if the new number clashes with an existing area.

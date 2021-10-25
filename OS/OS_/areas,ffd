@@ -3,6 +3,7 @@ Dynamic areas
 # Gerph> That is the most common place to look
 Area	Contents
 #Line
+-1	Application slot
 0	System Heap
 1	RMA
 2	Screen Area
@@ -10,6 +11,7 @@ Area	Contents
 4	Font Cache
 5	RAM Filing System
 6	Free pool (3.60+)
+# cl> 3.50 surely?
 7	VRAM rescue (3.80+)
 8	Kernel buffers (3.80+)
 

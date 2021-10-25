@@ -9,5 +9,5 @@ This OS_Word sets the date in the CMOS clock and its soft copy. The string forma
 #tab
 
 #wrap off
-  Day,DD MMM YYYY.HH::MM::SS    {/}e.g.{/} Mon,17 Feb 1992.17:35:04
+  Day,DD MMM YYYY.HH:MM:SS    {/}e.g.{/} Mon,17 Feb 1992.17:35:04
 #wrap

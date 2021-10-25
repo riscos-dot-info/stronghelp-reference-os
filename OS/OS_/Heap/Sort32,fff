@@ -10,7 +10,8 @@ optional :
 	R5 =	size of object in R4
 	R6 =	workspace of R5 bytes (if R5>16K)
 
-This SWI sorts a list of objects, using the Heap Sort algorithm.
+This SWI sorts a list of objects, using the Heap Sort algorithm. 
+
+The CallASWI module (version 0.03) allows this SWI to be used with RISC OS pre 5.00. See also <OS_HeapSort>.
 #Line
-The CallASWI module (version 0.03) allows this SWI to be used with RISC OS pre 5.00.
 See also <PRM 1, page 937=>PRM-1:937>.

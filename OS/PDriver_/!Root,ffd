@@ -33,5 +33,5 @@ JPEGSWI
 <SetPageSize>
 <SetPrinter>
 #EndTable
-
+#line
 <Printer driver numbers=>PDriver_printernumbers>

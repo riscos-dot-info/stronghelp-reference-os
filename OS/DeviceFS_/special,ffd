@@ -1,50 +1,50 @@
 Device driver special fields
 #Parent DeviceFS_Register
-(This is probably /the/ most poorly explained part of the entire PRM)
+# (This is probably /the/ most poorly explained part of the entire PRM)
 # Gerph> I contest that maybe the Sound drivers might be.
 #        Or the section on filecore documenting the formula required to
 #        actually find the disc map.
 #        Although, to be fair, this bit is pretty awful
-Special fields can be used to pass extra parameters to a device, and DeviceFS provides a mechanism to pass them, using a validation string. If a device does not want to use the DeviceFS mechanism, it should pass 0 as the validation string pointer, and be prepared to ignore unknown parameters in the special field.
+Special fields can be used to pass extra parameters to a device, and DeviceFS can sort them into a more useful format using a validation string. If a device does not want to use the DeviceFS mechanism it should pass 0 as the validation string pointer and be prepared to ignore unknown parameters in the special field.
 
 Validation strings consist of keywords and escapes of the form
 
-  {fCode}keyword[,keyword]/escape[/escape][;keyword[,keyword]/escape[/escape]]{f}
+  {fCode}\{keyword[,keyword]/escape[/escape]\}*{f}
 
 escape is permitted two values:
 
 /N	number
 /S	switch
 
-The special field itself is passed according to the validation string, and the results placed in a buffer. The buffer has one word per escape, which is set to &DEADDEAD if the keyword is absent from the special field. "<Parameters=>.parameters>" are terminated by a comma, or an out of place character ({/}e.g.{/} letter in a numeric field). Numbers are read with <OS_ReadUnsigned> and stored in the word. Switches store the state of the keyword - so a validation string of
+The special field is concatenated with the system variable DeviceFS${/}device{/}$Options, then parsed according to the validation string and the results placed into a buffer. The buffer has one word per escape, which is set to &DEADDEAD if the keyword is absent from the special field. "<Parameters=>.parameters>" are terminated by a comma, or an out of place character ({/}e.g.{/} letter in a numeric field), and keywords are separated with a semicolon.
 
-#Indent 2;fCode
-mike,dennis/S
-#indent;f
+Numbers are read with <OS_ReadUnsigned> and stored in the word, switches store the number of the parameter in the switch's validation string.
 
-will store 0 if "mike" is present in the special field, 1 if "dennis" is present.
-
-This means that :
-
-#indent 2;fCode
-mike;dennis/S/N
-#indent;f
-
-will store
-
-Offset	Value
-#Line
-0	7
-4	&DEADDEAD
-  for "mike=7"
-
-and
-
-0	&DEADDEAD
-4	16
-  for "dennis=16"
+See <an example=>.example>.
 
 The {*}special field control block{*} of the <Initialise entry point=>DeviceFS_entry0> is a pointer to this block. It is not possible to read the original string.
+#Subpage example
+DeviceFS special field example
+Given a device called Serial and a validation string of
+
+#wrap off
+  baud,rate/Nnohandshake,xon,rts,dtr/Snoparity,even,odd/Sdata/N  
+#wrap
+
+the file name {fCode}serial#baud19200;noparity:{f} would yield
+
+	0	19200		{/}number{/}
+	4	&DEADDEAD	{/}handshake keyword not supplied{/}
+	8	0		{/}noparity is first entry in switch{/}
+	12	&DEADDEAD	{/}data keyword not supplied{/}
+	
+and {fCode}serial#rate28800;dtr;even;data7:{f} would yield
+
+	0	28800		{/}rate is an alias for baud{/}
+	4	3		{/}dtr is fourth entry in switch{/}
+	8	1		{/}even is second entry in switch{/}
+	12	7		{/}number{/}
+	
 #Subpage parameters
 "Parameters"
 "Parameters are separated by commas", "keywords separated by semicolons" gives the impression that the system was intended to support string parameters in addition. Block devices are in the API, yet are unimplemented - was DeviceFS only partially implemented?

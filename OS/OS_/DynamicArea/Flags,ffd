@@ -18,7 +18,7 @@ Bit(s)	Meaning
 #
 #subpage virtualise
 Dynamic Area Flags, bit 31 - Virtualise
-#wrap off
+#wrap on
 Note that reading this flag bit only gives meaningful results if the
 Virtualise module is loaded at the time. This is because the OS is
 perfectly happy to maintain and return this bit itself.

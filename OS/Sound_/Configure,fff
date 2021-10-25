@@ -5,6 +5,7 @@ Sound_Configure  (&40140)
 	R2 =	sample period in µs (overall), or 0 to read
 	R3 =	pointer to <Channel Handler block=>Sound_handler_channel> (0 to preserve)
 	R4 =	pointer to <Scheduler=>Sound_handler_scheduler> (0 to preserve)
+#tab
 
 <=	R0-R4 =	previous values
                  

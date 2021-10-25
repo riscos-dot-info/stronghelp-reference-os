@@ -1,5 +1,5 @@
 OS_WriteI  (&100-&1FF)
 #Parent OS_
-This SWI writes the char contained in the bottom byte of the SWI, using <OS_WriteC>.
+This SWI writes the <character=>VDU:!Root> contained in the bottom byte of the SWI, using <OS_WriteC>.
 #Line
 See <PRM 1, page 523=>PRM-1:523>.

@@ -1,9 +1,9 @@
 OS_UpCall 3 subreason code 0
 Saving memory to file
 #line
-=>	R1 !	filename
+=>	R1 =	pointer to filename
 	R2 =	load address
 	R3 =	execution address
-	R4 !	start of buffer
-	R5 !	end of buffer
-	R6 !	special field (or 0)
+	R4 =	pointer to start of buffer
+	R5 =	pointer to end of buffer
+	R6 =	pointer to special field (or 0)

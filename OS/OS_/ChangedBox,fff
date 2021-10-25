@@ -15,6 +15,6 @@ OS_ChangedBox  (&5A)
 
 4-16 are only valid if the change box calculations were in an enabled state immediately after the call; otherwise they are undefined.
 
-This call checks, which areas of the screen were changed by VDU commands and returns the smallest rectangle which covers all changed pixels.
+This call checks which areas of the screen were changed by VDU commands and returns the smallest rectangle which covers all changed pixels.
 #Line
 See <PRM 1, page 724=>PRM-1:724>.

@@ -4,7 +4,7 @@ Some SWIs use some bits 31-27 for flags. With the introduction of dynamic areas 
 
 This list is incomplete, please mail additions to the moderator <christian@recoil.org=>#URL mailto:christian@recoil.org>:
 
-SWI					Register	Flag Bits
+SWI					Register	Flag bits
 #Line
 <FileCore_DiscOp>			R1		0-7 (word aligned address is encoded in 26 bits)
 	 	and similarly for ADFS_DiscOp, RAMFS_DiscOp etc... Use <FileCore_DiscOp64=>FileCore_DOp64> instead.
@@ -14,6 +14,6 @@ SWI					Register	Flag Bits
 <OS_ReadLine>				R0		30,31. Use <OS_ReadLine32> instead.
 <OS_SubstituteArgs>			R0		31. Use <OS_SubstituteArgs32> instead.
 <Wimp_SendMessage=>Wimp:Wimp_SendMessage>	R1	see SWI documentation
-<PlugIn string_value=>Wimp:Msg_PlugIn_string_value>	N/A	Checks must be (\>0 AND \< 256)
+<PlugIn string_value=>Wimp:Msg_PlugIn_string_value>	-	Checks must be (\> 0 AND \< 256, ie. unsigned)
 <Draw_ProcessPath>			R7		31 - use Draw v1.17 and R1 bit 26 instead
 

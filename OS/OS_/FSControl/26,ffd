@@ -12,4 +12,6 @@ OS_FSControl 26  (&29)
 
 This SWI allows you to copy files from one directory to another or as a new name. The destination leafname may not be wildcarded, unless it is "*" signifying "take destination leafname from source leafname".
 
+The start and end load and exec parameters give a range of date stamps to copy between. The filetype field is ignored.
+
 It is not possible to choose a combination of flags to perform the same operation as "no confirm" in the desktop, as the desktop *will* overwrite files without confirmation, but won't force the overwriting of locked files, whereas this SWI will only overwrite files if it either has force set, or confirm set and gets positive confirmation.

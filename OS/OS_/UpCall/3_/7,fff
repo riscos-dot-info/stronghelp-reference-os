@@ -1,9 +1,9 @@
 OS_UpCall 3 subreason code 7
 Creating empty file
 #line
-=>	R1 !	object name
+=>	R1 =	pointer to object name
 	R2 =	load address
 	R3 =	execution address
 	R4 =	start address
 	R5 =	end address
-	R6 !	special field (or 0)
+	R6 =	pointer to special field (or 0)

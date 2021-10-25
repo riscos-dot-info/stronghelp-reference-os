@@ -3,7 +3,7 @@ IIC_Control  (&240)
 =>	R0 =	device address, (bit 0 set to read, clear to write)
 	R1 =	pointer to block
 	R2 =	size of block (bytes)
-#Line
+
 Reads from or writes to the specified IIC device ({/}eg.{/} the clock chip and IIC compatible devices on podules).
 
 Possible errors include 'No acknowledge from IIC device' and 'IIC system busy' if reentered.

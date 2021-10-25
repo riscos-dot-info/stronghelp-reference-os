@@ -1,4 +1,4 @@
-SharedSound_CheckDriver (&4B44D)
+SharedSound_ControlWord (&4B44D)
 #parent SharedSound_
 #prefix SharedSound_
 <=	R0 =	Pointer to control word

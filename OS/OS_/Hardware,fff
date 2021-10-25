@@ -5,7 +5,6 @@ OS_Hardware  (&7A) (5.00+)
 	R9 =	<hardware call number=>OS_HALEntries>
 <=	depends on flags
 
-#Line
 This SWI is only available on machines running with a hardware abstraction layer allowing them to run on machines not based around Acorn custom chips.
 #Subpage HALreason
 OS_Hardware subreason codes

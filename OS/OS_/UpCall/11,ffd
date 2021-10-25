@@ -10,4 +10,4 @@ OS_UpCall 11 - Stream Closed
 
 DeviceFS issued this call when a stream is closed. It serves as a broadcast, and all registers should be preserved.
 
-This call is issued under RISC OS 2.
+This call is never issued under RISC OS 2.

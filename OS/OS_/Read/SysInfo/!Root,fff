@@ -7,6 +7,7 @@ OS_ReadSysInfo  (&58)
 	  3	<82C71x features=>.3>
 	  4	<Read machine ethernet address=>.4>
 	  5	<Read machine id raw=>.5>
+	  6	<Read kernel value=>.6>
 	  7	<Read info about last unexpected abort (data or prefetch)=>OS_ReadSysInfo7>
 	  8	<Platform class=>.8>
 	  9	<Read version information=>.9>
@@ -47,7 +48,7 @@ This call checks for the presence of various chips, returning flags. It also rea
 #
 #Subpage 3
 OS_ReadSysInfo 3
-*82C71x features*
+{*}82C71x features{*}
 =>	R0 =	3
 <=	R0 =	<82C710/82C711 basic features=>.main>
 	R1 =	82C710/82C711 extra features mask (reserved for upwards compatible additional functionality)
@@ -84,6 +85,25 @@ OS_ReadSysInfo 5
 =>	R0 =	5
 <=	R0 =	bottom 32 bits of machine unique id (raw)
 	R1 =	top  32 bits of machine unique id (raw)
+#
+#Subpage 6
+OS_ReadSysInfo 6 (4.00+)
+*Read kernal value*
+=>	R1 = 0
+	R2 = <item=>.6items>
+<=	R2 = value
+
+ or
+
+=>	R1 = pointer to <item=>.6items> list
+	R2 = pointer to result buffer
+#
+#subpage 6items
+OS_ReadSysInfo 6 items
+item	value
+#line
+16	address of top of SVC stack	[4.00+]
+18	address of SWI dispatch table	[5.00+]
 #
 #subpage 8
 OS_ReadSysInfo 8  (4.00+)

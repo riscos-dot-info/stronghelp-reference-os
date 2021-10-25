@@ -1,6 +1,6 @@
 OS_UpCall 3 subreason code 258
 Opening for update
 #line
-=>	R1 !	file name
+=>	R1 =	pointer to file name
 	R2 =	external handle that file will be given (if successfully opened)
-	R6 !	special field (or 0)
+	R6 =	pointer to special field (or 0)

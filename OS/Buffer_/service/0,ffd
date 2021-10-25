@@ -1,4 +1,4 @@
-Buffer service insert block
+Buffer service insert byte
 #Parent Buffer_service
 =>	R0 =	0 (reason code)
 	R1 =	internal buffer ID

@@ -5,6 +5,6 @@ ResourceFS
 <RegisterFiles>
 #line
 Service calls :
-	59	<ResourceFS started=>Service_59>
-	5A	<ResourceFS dying=>Service_5A>
-	60	<ResourceFS starting=>Service_60>
+59	<ResourceFS started=>Service_59>
+5A	<ResourceFS dying=>Service_5A>
+60	<ResourceFS starting=>Service_60>
