@@ -44,7 +44,7 @@ OS_ReadSysInfo 2
 	R3 =	low half of Id
 	R4 =	high half of Id
 
-This call checks for the presence of various chips, returning flags. It also reads the unique machine ID if a suitable chip is fitted to the computer; if none is, a ID of zero is returned.
+This call checks for the presence of various chips, returning flags. It also reads the unique machine ID if a suitable chip is fitted to the computer; if none is, an ID of zero is returned.
 #
 #Subpage 3
 OS_ReadSysInfo 3
@@ -104,11 +104,23 @@ item	value
 #line
 15	address of top of UND stack			(4.00+)
 16	address of top of SVC stack			(4.00+)
-18	address of kernel MessageTrans block + 4	(4.00+)
+#line
+18	address of kernel MessageTrans block	(Select)
 	address of SWI dispatch table			(5.00+)
-21	address of top of IRQ stack			(5.00+)
-
-Value 18 would appear to have a different meaning on different OS versions.
+21	address of timer 0 latch value			(Select)
+	address of top of IRQ stack			(5.00+)
+22	FastTickerV counts per second			(Select)
+	address of sound workspace			(5.00+)
+23	address of vector claimants table			(Select)
+	address of IRQ semaphore			(5.00+)
+#line
+64	address of SWI dispatch table			(5.17+)
+67	address of top of IRQ stack			(5.17+)
+68	address of sound workspace			(5.17+)
+69	address of IRQ semaphore			(5.17+)
+82	address of Escape status			(5.17+)
+Values 18-27 have conflicting use depending of the version used, use the higher numbered allocation where possible.
+Unlisted values may exist but are unlikely to be of interest to applications authors.
 #
 #subpage 8
 OS_ReadSysInfo 8  (4.00+)

@@ -4,5 +4,7 @@ Territory_ConvertTimeToUTCOrdinals  (&43049)
 	R2 =	pointer to buffer to hold <result=>Territory_Convert_time_block_out>
 	
 Returns the time block as a set of useful numbers.
+
+See <Territory_ConvertTimeFormats> for a more flexible SWI.
 #Line
 See <PRM 3, page 802=>PRM-3:802>.

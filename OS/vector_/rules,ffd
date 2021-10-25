@@ -4,7 +4,7 @@ If you write a routine that uses a vector, it must obey the same entry and exit 
 
 The processor mode in which your routine is entered depends on:
 è	Routines vectored through <IrqV=>Vector_IrqV> (Vector &02) are always executed in IRQ mode.
-è	Routines vectored through <EventV=>Vector_EventV>, <InsV=>Vector_InsV>, <RemV=>Vector_RemV>, <CnpV=>Vector_CnpV> (Vectors &10 to &16) and <Ticker=>Vector_TickerV> (&1C) are generally executed in IRQ mode, but may be executed in SVC mode if called using <OS_CallAVector>, and in certain unspecified circumstances.
+è	Routines vectored through <EventV=>Vector_EventV>, <InsV=>Vector_InsV>, <RemV=>Vector_RemV>, <CnpV=>Vector_CnpV> (Vectors &10 to &16) and <TickerV=>Vector_TickerV> (&1C) are generally executed in IRQ mode, but may be executed in SVC mode if called using <OS_CallAVector>, and in certain unspecified circumstances.
 è	all other routines are executed in SVC mode.
 
 You have to be careful when calling a SWI. Whether entered in SVC or IRQ mode you *must* save R14_svc before calling any SWI, and restore it afterwards to avoid corrupting either your own return address (you were entered in SVC mode) or R14_svc of an interrupted SWI call. Additional restrictions on SWIs exist for vectors executed in IRQ mode - see <OS_ClaimDeviceVector> for details of writing interrupt code.

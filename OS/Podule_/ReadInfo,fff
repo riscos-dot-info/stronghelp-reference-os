@@ -11,10 +11,10 @@ This SWI returns an array of grubby information about the given expansion card b
 Bit	Word returned
 #Line
 0	Expansion card/Extension ROM number
-1	Synchronous base address of card, or zero for none
+1	Synchronous base address of card (or NIC chip base address), or zero for none
 2	CMOS address
 3	CMOS size
-4	Extension ROM or NIC base address
+4	Extension ROM (or NIC ROM) base address
 5	Expansion card ID byte
 6	Product type
 7	Combined hardware address (Sync base OR'd CMOS address)
@@ -26,7 +26,7 @@ Bit	Word returned
 13	IRQ status register
 14	IRQ request register
 15	IRQ mask register
-16	IRQ bit within the above 3 registers
+16	IRQ bit mask to apply to the above 3 registers
 17	IRQ device number for OS_ClaimDeviceVector
 18	FIQ as IRQ status register
 19	FIQ as IRQ request register
@@ -36,7 +36,7 @@ Bit	Word returned
 23	FIQ status register
 24	FIQ request register
 25	FIQ mask register
-26	FIQ bit within the above 3 registers
+26	FIQ bit mask to apply to the above 3 registers
 27	Ethernet address, low 32 bits
 28	Ethernet address, remaining 16 bits
 29	MEMC address, or zero for none

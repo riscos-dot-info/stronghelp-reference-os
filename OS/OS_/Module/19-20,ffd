@@ -17,7 +17,7 @@ OS_Module 19/20
 	 	1	active
 	 	2	running
 	R5 =	chunk number of expansion card module
-	R6 =	<BCD versions number=>.BCD> for OS_Module 20
+	R6 =	<BCD version number=>.BCD> for OS_Module 20
 
 This call returns information on one module that is currently in ROM along with its status. The module found is the given number of modules on from start of the given ROM section. If there are insufficient modules in the ROM section then the search continues with the next section; so the fifth module in a four module section would in fact be the first module of the next section. The ROM sections are scanned in <this order=>OS_ModuleROMsections>. The values in R0-R2 are the correct ones to use this call to enumerate the next module; hence repeated calls will give a full enumeration of all ROM modules.
 #Subpage BCD

@@ -10,5 +10,9 @@ Create sprite (15)
 	R6 =	Mode number, or <sprite type=>OS_SpriteOp_Type>
 
 This creates a blank sprite.
+
+For a 256 entry palette on an 8bpp sprite, set bit 31 of R3. Otherwise a 64 entry VIDC1 compatible palette is assumed.
+
+When opting to include a palette, note that the palette used is derived from the first N colours of the current screen mode. Therefore, the result is only sensible when in the same screen mode as the sprite being created for - where different, exclude the palette at the creation step and make a subsequent call to <OS_SpriteOp 37=>os_spriteop_37> for the palette.
 #Line
 See <PRM 1, page 773=>PRM-1:773>

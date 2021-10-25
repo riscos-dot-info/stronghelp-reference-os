@@ -13,5 +13,6 @@ R2	Service
 6	<Info - New keyboard selected=>service_43_6>
 7	<Define character from UCS=>service_43_7>
 8	<Return UCS conversion table=>service_43_8>
+9	<Convert country number to ISO3166-1 alpha 2 name=>service_43_9>
 #Line
 See <PRM 3, page 763=>PRM-3:763>

@@ -18,7 +18,7 @@ Var	Name		Meaning
 5	YEigFactor	Screeny = osy >> YEigFactor
 6	LineLength	Bytelength of one pixel-line
 7	ScreenSize	Bytesize of entire screen
-8	YShftFactor	Kept for compability. Don't use.
+8	YShftFactor	Kept for compatibility. Don't use.
 9	Log2BPP		Bits per pixel = 1 \<\< Log2BPP
 10	Log2BPC		Bytes per char = 1 \<\< Log2BPC
 11	XWindLimit	Number of x pixels on screen -1

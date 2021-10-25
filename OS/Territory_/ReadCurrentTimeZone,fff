@@ -1,8 +1,13 @@
 Territory_ReadCurrentTimeZone  (&43048)
 #Parent Territory_
-<=	R0 =	pointer to name of the current time zone
-	R1 =	offset from UTC to current time zone in centi-seconds
-	
+=>	R2 =	"ZONE" (&454E4F5A) to return timezone within territory in R2
+<=	R0 =	pointer to name of the current timezone
+	R1 =	offset from UTC to current timezone in centi-seconds including DST if configured on
+	R2 =	standard timezone within territory
+
 Returns information on the current timezone.
+
+The timezone within territory is as used with <Territory_ReadTimeZones> where a territory, such as the USA, spans more than one timezone. A value of -1 means the configured timezone CMOS is unrecognised in this territory.
+If the API extension is not supported, R2 is preserved.
 #Line
 See <PRM 3, page 801=>PRM-3:801>.

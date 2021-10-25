@@ -1,4 +1,4 @@
-OS_FSControl 57 (&39)
+OS_FSControl 57 (&39) (3.60+)
 #Parent OS_FSControl
 =>	R0 =	57 (map out defect from large disc or image)
 	R1 =	pointer to name of object

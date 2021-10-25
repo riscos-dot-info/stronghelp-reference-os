@@ -14,11 +14,15 @@ Territory
 <ConvertStandardDateAndTime>
 <ConvertStandardTime>
 <ConvertTextToString>
+<ConvertTimeFormats>
 <ConvertTimeStringToOrdinals>
 <ConvertTimeToOrdinals>
 <ConvertTimeToUTCOrdinals>
+DaylightRules
+<DaylightSaving>
 <Deregister>
 <Exists>
+IME
 <LowerCaseTable>
 <NameToNumber>
 <Number>
@@ -30,6 +34,7 @@ Territory
 <ReadTimeZones>
 <Register>
 <RepresentationTable>
+<Select>
 <SelectAlphabet>
 <SelectKeyboardHandler>
 <SetTime>

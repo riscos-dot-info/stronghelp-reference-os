@@ -9,4 +9,4 @@ Service_International 2
 	R2-R4 preserved
 	R5 =	number of characters put into buffer, or preserved if unrecognised.
 
-This service converts a country name to number. If a module provides additional countries it should check this service - if the number matches one provided by the module it should claim this service.
+This service converts a country number to name. If a module provides additional countries it should check this service - if the number matches one provided by the module it should claim this service.

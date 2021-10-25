@@ -8,7 +8,7 @@ OS_FSControl 37  (&29)
 	R5 =	buffer size
 <=	R5 =	number of spare bytes in buffer (inc. term)
 
-This call takes a filename (which may contain wildcards) and converts it into a complete pathmame, including disc and directory name when not provided.
+This call takes a filename (which may contain wildcards) and converts it into a complete pathname, including disc and directory name when not provided.
 
 #tab
 *Example*:	{Fcode}fred{f} may convert to {Fcode}SCSI::Gamma.$.Utils.Fred{f}

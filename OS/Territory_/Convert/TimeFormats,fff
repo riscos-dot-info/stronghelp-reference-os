@@ -1,0 +1,25 @@
+Territory_ConvertTimeFormats (&43078) (5.20+)
+#Parent Territory_
+=>	R0 =	<territory number=>Territory_numbers>, or -1 for current
+	R1 =	pointer to input block
+	R2 =	pointer to output block
+	R3 =	format specifier and flags
+	 	b0-7  	= input <format=>.formats>
+	 	b8-15 	= output <format=>.formats>
+	 	b16   	= convert as though DST was in use
+	 	b17   	= if DST calculation fails use standard time instead of returning an error
+	 	b18   	= calculate b16 automatically
+	 	b19-31	= reserved, set to 0
+	R4 =	timezone within territory
+
+This SWI converts one time representation into another, accounting for local time if requested.
+
+Input ordinals need only be the <7 word format=>Territory_Convert_time_block_in>, but output will always be <9 word format=>Territory_Convert_time_block_out>.
+The territory, timezone, and DST flags are only needed for UTC to local/local to UTC conversions.
+#subpage formats
+Formats known
+0 	local ordinals
+1 	local 5 byte time
+2 	UTC ordinals
+3 	UTC 5 byte time
+4+	reserved for future use

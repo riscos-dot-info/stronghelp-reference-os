@@ -3,9 +3,11 @@ OS_ReadUnsigned  (&21)
 =>	R0 =	base (2-36) + <flags=>.flags>
 	R1 =	pointer to string to convert
 	R2 =	maximum value, if bit 29 set
+	R3 =	maximum value high word, if bit 29 & 28 set
 
 <=	R1 =	pointer to terminator char
 	R2 =	value converted
+	R3 =	high word of value converted, if bit 28 set
 
 This SWI converts a string into an integer. If string starts with '&', base 16 is assumed. If string starts with 'base_' this base is used (which is faulted if invalid). If no base prefix is present and no ampersand is present the base in R0 is used (which is silently changed to 10 if invalid).
 
@@ -20,3 +22,7 @@ Bit	Meaning
 31	Must terminate with control,space
 30	Must be in the range [0,255]
 29	Must be in the range [0,R2]
+28	Use 64 bit range and return 64 bit result with R2,R3 (5.17+)
+#wrap on
+
+Note: When using bit 28 the value of R4 must be set to &45444957 ("WIDE") because prior versions of this SWI didn't clear out the unused flag bits and would erroneously use bits 0 to 28 as the base number. On exit R4 will be set to the bitmask of flags understood by this kernel.

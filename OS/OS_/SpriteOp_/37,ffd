@@ -5,7 +5,7 @@ Create/Remove palette (37)
 	R2 =	Sprite name/pointer
 	R3 =	-1 => Read current palette size
 	 	0 => Remove palette
-	 	else => Create palette
+	 	else => Create default palette
 	 	If bit 31 set then use 256 entries. (Not RO2)
 
 <=	All registers preserved unless R3 =-1 on entry:

@@ -1,4 +1,4 @@
-OS_FSControl 56 (&38)
+OS_FSControl 56 (&38) (3.60+)
 #Parent OS_FSControl
 =>	R0 =	56 (Read defect list for a large disc or image file)
 	R1 =	pointer to name of object

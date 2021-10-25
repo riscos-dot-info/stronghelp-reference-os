@@ -1,0 +1,14 @@
+OS_ConvertVariform  (&ED) (5.18+)
+#Parent OS_Convert
+=>	R0 =	pointer to input value block
+	R1 =	pointer to buffer for resulting string
+	R2 =	size of buffer, or -ve to read required size
+	R3 =	bytes to use from input value block
+	R4 =	<conversion=>OS_Convertvariformtypes> to perform
+<=	R0 =	pointer to buffer (R1 on entry)
+	R1 =	pointer to terminator
+	R2 =	free bytes in buffer, or NOT(required size)
+
+This SWI converts multibyte input values from an input block into variform output representations. To find out how much output will be produced, call with R2 negative to get NOT of the size back excluding the terminating null.
+
+In the case of a conversion to hexadecimal, R3 is measured in nybbles not bytes.

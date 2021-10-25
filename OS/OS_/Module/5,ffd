@@ -5,4 +5,4 @@ OS_Module 5
 	R2 =	size of largest block available in bytes
 	R3 =	total amount free in RMA in bytes
 
-This reason code reads infos on the RMA.
+This reason code reads info on the RMA.

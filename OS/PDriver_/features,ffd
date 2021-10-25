@@ -1,6 +1,6 @@
 Printer driver features word
 #Parent PDriver_Info
-Bits	Meaining when clear					Meaning when set
+Bits	Meaning when clear					Meaning when set
 #Line
 0-2	<colours available=>.colours>				
 8	can handle filled shapes				can only outline filled shapes ({/}e.g.{/} XY plotter)
@@ -11,10 +11,10 @@ Bits	Meaining when clear					Meaning when set
 13	doesn't expect a flag byte				expects a flag byte in R0 for <PDriver_DrawPage> [3.60+]
 24	supports screen dumps					does not support screen dumps
 25	can only scale, translate and rotate by 90° or 180°	supports arbitary transformations
-26	does not support <PDriver_InsertIllustration>		does suport <PDriver_InsertIllustration>
-27	does not support <PDriver_MiscOp>			does suport <PDriver_MiscOp>
-28	does not support <PDriver_SetDriver>			does suport <PDriver_SetDriver>
-29	does not support <PDriver_DeclareFont>			does suport <PDriver_DeclareFont>
+26	does not support <PDriver_InsertIllustration>		does support <PDriver_InsertIllustration>
+27	does not support <PDriver_MiscOp>			does support <PDriver_MiscOp>
+28	does not support <PDriver_SetDriver>			does support <PDriver_SetDriver>
+29	does not support <PDriver_DeclareFont>			does support <PDriver_DeclareFont>
 #Subpage colours
 Printer driver colour bits
 #TAB align centre, align centre, align centre, align left

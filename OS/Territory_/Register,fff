@@ -1,7 +1,7 @@
 Territory_Register  (&43041)
 #Parent Territory_
 =>	R0 =	<territory number=>Territory_numbers>
-	R1 =	pointer to table of entry points
+	R1 =	pointer to table of 43 entry points
 	R2 =	R12 for code
 
 Adds a territory to the list of active territories.

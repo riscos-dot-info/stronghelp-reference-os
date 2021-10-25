@@ -5,6 +5,6 @@ Font_CurrentRGB  (&400A3)
 	R2 =	foreground colour	(&BBGGRR00)
 	R3 =	maximum colour offset (0 -> mono, otherwise anti-aliased)
 
-This SWI returns the current colour settings ater calling <Font_Paint>. If the colours were not set using RGB values it will generate the error 'Undefined RGB font colours'
+This SWI returns the current colour settings after calling <Font_Paint>. If the colours were not set using RGB values it will generate the error 'Undefined RGB font colours'
 #Line
 See <PRM 3, page 488=>PRM-3:488>.

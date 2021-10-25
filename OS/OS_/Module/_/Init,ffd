@@ -15,3 +15,5 @@ This entry is called by RISC OS after the module has been loaded into RMA, befor
 *Check* your private word is 0 before claiming workspace - if it is non-zero you've already been initialised (and this call is being made after a <non-fatal finalisation=>OS_Module_Final>).
 
 Note that you can corrupt quite a few registers in initialisation code - don't waste time stacking anything that the OS has already taken care of.
+
+If the initialisation code offset is actually (file size OR 1<<31) then the module is compressed and will be decompressed by the OS.

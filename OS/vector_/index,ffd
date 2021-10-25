@@ -6,7 +6,7 @@ UserV				00	User (reserved)
 ErrorV				01	Error (<OS_GenerateError>)
 <IrqV=>vector_irqv>		02	Unknown interrupt
 <WrchV=>vector_wrchv>		03	Write character (<OS_WriteC>)
-ReadCV				04	Read character (<OS_ReadC>)
+RdchV				04	Read character (<OS_ReadC>)
 CLIV				05	Command line interpreter (<OS_CLI>)
 ByteV				06	OS_Byte indirection (<OS_Byte>)
 WordV				07	OS_Word indirection (<OS_Word>)
@@ -42,5 +42,8 @@ FontV				25	Font manager
 TimeShareV				27	SkyNet
 LowPriorityEventV				28	For future expansion
 FastTickerV				29	Like TickerV, but faster
-GraphicsV				2A	Graphics hardware abstraction
-Reserved				2B-2F
+GraphicsV				2A	Graphics hardware abstraction (5.00+)
+UnthreadV				2B	Call back after interrupt (5.08+)
+# UnthreadV actually appeared in 5.07, but was a bit broken, so 
+# I'm declaring it as 5.08.
+Reserved				2C-2F

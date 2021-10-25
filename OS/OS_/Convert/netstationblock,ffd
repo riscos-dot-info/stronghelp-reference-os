@@ -2,5 +2,5 @@ OS_Convert(Fixed)NetStation block
 #Parent OS_ConvertNetStation
 Size	Value
 #Line
-4	network number
 4	station number
+4	network number

@@ -6,7 +6,7 @@ OS_CallASWI (&6F) (3.70+)
 #line
 This SWI allows a target SWI number to be determined at run time, and passed in a register. This removes the need for a common idiom of dynamic code, in language library SWI veneers for example. In an APCS-R library, use <OS_CallASWIR12>.
 
-Note that OS_CallASWI is merely an alias for calling the target SWI. It has no entry/exit conditions of its own, except for the special use of R10. To call a target SWI with X bit set, us the X form of the SWI number in R10; there is no distinction between OS_CallASWI and XOS_CallASWI.
+Note that OS_CallASWI is merely an alias for calling the target SWI. It has no entry/exit conditions of its own, except for the special use of R10. To call a target SWI with X bit set, use the X form of the SWI number in R10; there is no distinction between OS_CallASWI and XOS_CallASWI.
 
 You cannot call OS_CallASWI or <OS_CallASWIR12> via OS_CallASWI, since there is no defined final target SWI in this case.
 

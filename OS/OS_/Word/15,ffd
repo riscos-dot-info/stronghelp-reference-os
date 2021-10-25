@@ -3,6 +3,7 @@ OS_Word 15
 =>	R0 =	15
 	R1 =	pointer to parameter block
 	R1+0 = reason code :
+	  5 :	<Write CMOS clock and soft-copy time from 5-byte integer=>OS_Word15,5> (4.00+)
 	  8 :	<Write CMOS clock and soft-copy time from string=>OS_Word15,8>
 	  15 :	<Write CMOS clock and soft-copy date from string=>OS_Word15,15>
 	  24 :	<Write CMOS clock and soft-copy time and date from string=>OS_Word15,24>

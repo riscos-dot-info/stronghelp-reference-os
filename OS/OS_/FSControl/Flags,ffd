@@ -14,13 +14,10 @@ Bit	Use	Meaning
 10	C	{_}S{_}tamp files
 11	C	S{_}t{_}ructure copy only
 12	C	{_}N{_}ewer than destination
-13	C	<Use descriptor block=>OS_FSControlDescriptor> as workspace
+13	CN	Use descriptor block in R8
 14	C	{_}L{_}ook at destination first
 
-Usages :
-C	Copy
-W	Wipe
-N	Count (Number)
+Key: (C)opy / (W)ipe / cou(N)t
 
 Verbose will list every file it performs an operation on.
 Allow printing will print a summary of every directory it acts upon.

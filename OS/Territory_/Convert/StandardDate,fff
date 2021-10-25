@@ -3,13 +3,24 @@ Territory_ConvertStandardDate  (&4304D)
 =>	R0 =	<territory number=>Territory_numbers>, or -1 for current
 	R1 =	pointer to 5 byte UTC time
 	R2 =	pointer to output buffer
-	R3 =	size of buffer
+	R3 =	size of buffer and flags
+	 	b0-15	space in the buffer
+	 	b16-27	reserved, must be 0
+	 	b28	set to use DST offset of R5 timezone
+	 	 	clear to use NoDST offset of R5 timezone
+	 	b29	set to use R5 as timezone within territory
+	 	b30	set to use R5 as centiseconds offset from UTC
+	 	 	clear to use <Territory_ReadCurrentTimeZone> as the offset from UTC
+	 	b31	set to enable use of flags
+	 	 	clear to behave per RISC OS 3.10
+	R5 =	offset from UTC if flag bit 30 and 31 set
+	 	or timezone within territory if flag bit 29 and 31 set
 
 <=	R0 =	pointer to buffer (R2 on entry)
 	R1 =	pointer to terminating 0
 	R2 =	number of bytes free in buffer
-	R3 =	preserved
+	R3 =	b31 clear if flags in R3 used, else preserved
 
-Result is in local time, language, and alphabet
+Result is in local time, language, and alphabet using a format string that is territory specific.
 #Line
 See <PRM 3, page 811=>PRM-3:811>.

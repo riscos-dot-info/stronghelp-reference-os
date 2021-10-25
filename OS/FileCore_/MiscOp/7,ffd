@@ -1,4 +1,4 @@
-FileCore_MiscOp 7
+FileCore_MiscOp 7 (3.60+)
 #Parent FileCore_MiscOp
 =>	R0 =	7 (reason code)
 	R1 =	drive number
@@ -9,4 +9,3 @@ FileCore_MiscOp 7
 This call read flags about the drive.
 #line;tab
 See <PRM 5a-175=>PRM-5a:175>.
-RISC OS 3.60 or later.

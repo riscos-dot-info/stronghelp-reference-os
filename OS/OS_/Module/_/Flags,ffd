@@ -1,6 +1,6 @@
 Module flags word
 #Parent OS_Module_format
-This is a single word which informs RISC OS of the capabilities of your module.
+This is a single word which informs RISC OS of the capabilities of your module. The flags word should not be placed immediately after the offset to the flags word in the module header, incase the module header needs to be extended in the future.
 
 #tab
 /Bit/	/Meaning when set/

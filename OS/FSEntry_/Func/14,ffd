@@ -19,4 +19,4 @@ This call should fill the buffer in R2 with null terminated leaf names of entrie
 
 and there is no way to tell which is the case. :-(
 
-Only count leaf names that fit completely into the buffer. Return an error if the cataloged object is not found or a file, but return valid with R3=0, R4\<>1 for buffer overflow or more names to read, R3=0,R4=-1 if the previous call didn't detect the end but you now find that there are no more names.
+Only count leaf names that fit completely into the buffer. Return an error if the catalogued object is not found or a file, but return valid with R3=0, R4\<>1 for buffer overflow or more names to read, R3=0,R4=-1 if the previous call didn't detect the end but you now find that there are no more names.

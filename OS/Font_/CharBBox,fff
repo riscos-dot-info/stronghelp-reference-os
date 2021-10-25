@@ -9,6 +9,6 @@ Font_CharBBox  (&4008E)
 	R3 =	max x excl
 	R4 =	max y excl
 
-This SWI returns the bounding box for the given character of the given font. The bounding box is the smallest box neccessary to cover the character.
+This SWI returns the bounding box for the given character of the given font. The bounding box is the smallest box necessary to cover the character.
 #Line
 See <PRM 3, page 446=>PRM-3:446>.

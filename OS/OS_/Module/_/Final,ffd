@@ -17,3 +17,5 @@ You should set the private word to 0 if you free any workspace it pointed to. Fo
 The instantiation number is your current position in the list, hence it may not be the same value passed to your <initialise code=>OS_Module_Init>.
 
 Note that you can corrupt quite a few registers in finalisation code - don't waste time stacking anything that the OS has already taken care of.
+
+If the top bit of the finalisation code offset is set then the module's code area will not be freed after it is quit

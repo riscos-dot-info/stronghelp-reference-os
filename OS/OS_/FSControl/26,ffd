@@ -4,11 +4,11 @@ OS_FSControl 26  (&29)
 	R1 =	pointer to wildcarded filename of files to copy
 	R2 =	pointer to destination
 	R3 =	<flags=>OS_FSControlFlags>
-	R4 =	<start load=>fsys_loadexec>
-	R5 =	<start exec=>fsys_loadexec>
-	R6 =	<end load=>fsys_loadexec>
-	R7 =	<end exec=>fsys_loadexec>
-	R8 =	<pointer to descriptor=>OS_FSControlDescriptor>
+	R4 =	<start time=>fsys_loadexec>
+	R5 =	<high byte of start time=>fsys_loadexec>
+	R6 =	<end time=>fsys_loadexec>
+	R7 =	<high byte of end time=>fsys_loadexec>
+	R8 =	<pointer to descriptor=>OS_FSControlDescriptor26>
 
 This SWI allows you to copy files from one directory to another or as a new name. The destination leafname may not be wildcarded, unless it is "*" signifying "take destination leafname from source leafname".
 

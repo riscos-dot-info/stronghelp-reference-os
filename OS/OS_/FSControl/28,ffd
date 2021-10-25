@@ -3,13 +3,17 @@ OS_FSControl 28  (&29)
 =>	R0 =	28 (Count objects)
 	R1 =	pointer to wildcarded filename of files to count
 	R3 =	<flags=>OS_FSControlFlags>
-	R4 =	<start load=>fsys_loadexec>
-	R5 =	<start exec=>fsys_loadexec>
-	R6 =	<end load=>fsys_loadexec>
-	R7 =	<end exec=>fsys_loadexec>
-	R8 =	<pointer to descriptor=>OS_FSControlDescriptor>
+	R4 =	<start time=>fsys_loadexec>
+	R5 =	<high byte of start time=>fsys_loadexec>
+	R6 =	<end time=>fsys_loadexec>
+	R7 =	<high byte of end time=>fsys_loadexec>
+	R8 =	<pointer to descriptor=>OS_FSControlDescriptor28>
 
 <=	R2 =	total length
 	R3 =	number of files
 
 This SWI allows you to count files as in the {fCode}*Count{f} command.
+
+Note: The value in R2 is limited to reliably counting structures totalling less than 4 Gbytes, this SWI seems to have been missed in RISC OS 3.60 when all the other APIs were revised to deal with large discs.
+
+FileSwitch 2.72 and later allow an optional descriptor block to be supplied in R8 which returns the full count, and if the true counted length exceeded that which can be represented by R2 sets it to a large positive non zero value, rather than modulo 4 Gbytes like in earlier versions.

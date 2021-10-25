@@ -4,4 +4,5 @@ bit	meaning if set
 0	greyscale image (otherwise colour)
 1	transformed plots not supported
 2	pixel density is ratio (otherwise is in DPI)
+3-6	SOF image type (if requested)
 other	reserved (must be 0)

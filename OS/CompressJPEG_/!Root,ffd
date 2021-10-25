@@ -1,0 +1,8 @@
+CompressJPEG
+#Parent !Root
+#Prefix CompressJPEG_
+#Table Columns 1
+Start
+WriteLine
+Finish
+#EndTable

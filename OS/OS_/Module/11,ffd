@@ -5,4 +5,4 @@ OS_Module 11
 
 <=	R0,R2 preserved
 
-This takes a pointer to a block of memory, and checks its header field for validity. It then kills any duplicate module, copies the block into the RMA, initialises it and links it to the modules chain.
+This takes a pointer to a block of memory, and checks its header field for validity. It then kills any duplicate module, copies the block into the RMA, initialises it and links it to the module chain.

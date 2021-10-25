@@ -17,6 +17,7 @@ Bits in stream status word :
 8	Have written to it
 9	Next read gives EOF error
 10	Unbuffered
-11	Un-allocated
+11	Un-allocated (ie. not in use, so R2 is undefined)
 12	Critical
 13	Data have been lost
+14	Image file busy

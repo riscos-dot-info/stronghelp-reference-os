@@ -4,7 +4,7 @@ Debugger_DisassembleThumb  (&40381) (5.00+)
 	R1 =	address it came from
 
 <=	R1 =	pointer to zero terminated string
-	R2 =	length, including terminator
+	R2 =	length, excluding terminator
 
 This SWI disassembles a Thumb instruction. The address in R1 is needed for PC relative instructions (like BLX)
 #Line

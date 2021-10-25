@@ -6,6 +6,6 @@ Paint character scaled (51)
 	R4 =	y coordinate
 	R6 =	<Scale factors=>os_scalefactors>, or 0 for 1:1 scaling
 
-This plots the specified colour in the forground colour (using the given scaling factors) with the bottom left corner at the given coordinates. 
+This plots the specified character in the forground colour (using the given scaling factors) with the bottom left corner at the given coordinates. 
 #Line
 See <PRM 1, page 802=>PRM-1:802>

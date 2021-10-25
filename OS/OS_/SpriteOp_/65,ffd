@@ -1,0 +1,14 @@
+Tile sprite scaled (65)
+#Parent OS_SpriteOp_Reason
+=>	R0 =	<65, &41=>os_spriteop_reason2> (Tile sprite scaled)
+	R1 =	<Sprite area=>os_spriteop_area>
+	R2 =	Sprite name/pointer
+	R3 =	x origin (BLHC)
+	R4 =	y origin (BLHC)
+	R5 =	<Plot action=>os_spriteop_action>
+	R6 =	<Scale factors=>os_scalefactors>, or 0 for 1:1 scaling
+	R7 =	<Pixel translation table=>colourtrans_pixtrans>, or 0 for no translation
+
+This tiles the given sprite within the graphics window, which has the advantage of only validating the sprite once for multiple output. It may also optionally be passed to graphics hardware to plot faster.
+
+Requires SpriteExtend 1.74.

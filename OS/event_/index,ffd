@@ -37,3 +37,6 @@ Event numbers
 # Event_MNS_Tx            * 27    ; Copy of the Econet_Tx
 # Gerph> The question 'why?' springs to mind
 28	<Portable Battery Management Unit event=>event_28>
+29	Reserved for external developers
+30	Unallocated
+31	Unallocated

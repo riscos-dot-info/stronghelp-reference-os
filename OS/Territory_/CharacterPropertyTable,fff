@@ -4,7 +4,7 @@ Territory_CharacterPropertyTable  (&43056)
 	R1 =	code for required character property table
 <=	R0 =	pointer to character property table
 
-A character property table is a 256 bittable indicating whether or not each
+A character property table is a 256 bit table indicating whether or not each
 character in the given territory's alphabet has a particular property.
 
 #Tab

@@ -2,4 +2,5 @@ JPEG info operation flags
 bit	meaning if set
 #Line
 0	return dimensions
-other	reserved (must be 0)
+1	return SOF image type (SpriteExtend 1.36+)
+others	reserved (must be 0)

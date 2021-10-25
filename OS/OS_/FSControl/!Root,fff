@@ -4,41 +4,41 @@ This SWI controls the filing system manager and the filing systems themselves. A
 
 #Indent 1
 #Table Columns 2
-00 &00  <Set current dir=>os_fscontrol0>
-01 &01  <Set library dir=>os_fscontrol1>
-02 &02  <Inform of start of new app=>os_fscontrol2>
-03 &03  Internal (Run Type)
-04 &04  <Run a file=>os_fscontrol4>
-05 &05  <Catalogue a dir=>os_fscontrol5>
-06 &06  <Examine current dir=>os_fscontrol6>
-07 &07  <Catalogue library=>os_fscontrol7>
-08 &08  <Examine library=>os_fscontrol8>
-09 &09  <Examine objects=>os_fscontrol9>
-10 &0A  <Set FS options=>os_fscontrol10>
-11 &0B  <Set temporary FS=>os_fscontrol11>
-12 &0C  <Add a FS=>os_fscontrol12>
-13 &0D  <Check for FS=>os_fscontrol13>
-14 &0E  <Select FS=>os_fscontrol14>
-15 &0F  <Boot from FS=>os_fscontrol15>
-16 &10  <Remove FS=>os_fscontrol16>
-17 &11  <Add secondary module=>os_fscontrol17>
+00 &00  <Set current dir=>OS_FSControl0>
+01 &01  <Set library dir=>OS_FSControl1>
+02 &02  <Inform of start of new app=>OS_FSControl2>
+03 &03  Run type (same as <run a file=>OS_FSControl4>)
+04 &04  <Run a file=>OS_FSControl4>
+05 &05  <Catalogue a dir=>OS_FSControl5>
+06 &06  <Examine current dir=>OS_FSControl6>
+07 &07  <Catalogue library=>OS_FSControl7>
+08 &08  <Examine library=>OS_FSControl8>
+09 &09  <Examine objects=>OS_FSControl9>
+10 &0A  <Set FS options=>OS_FSControl10>
+11 &0B  <Set temporary FS=>OS_FSControl11>
+12 &0C  <Add a FS=>OS_FSControl12>
+13 &0D  <Check for FS=>OS_FSControl13>
+14 &0E  <Select FS=>OS_FSControl14>
+15 &0F  <Boot from FS=>OS_FSControl15>
+16 &10  <Remove FS=>OS_FSControl16>
+17 &11  <Add secondary module=>OS_FSControl17>
 18 &12  <Convert filetype number to name=>OS_FSControl18>
-19 &13  <Restore current FS=>os_fscontrol19>
-20 &14  <Read location of temp FS=>os_fscontrol20>
-21 &15  <Return a file handle=>os_fscontrol21>
-22 &16  <Close all open files=>os_fscontrol22>
-23 &17  <Shutdown FS=>os_fscontrol23>
-24 &18  <Set attributes of objects=>os_fscontrol24>
+19 &13  <Restore current FS=>OS_FSControl19>
+20 &14  <Read location of temp FS=>OS_FSControl20>
+21 &15  <Return a file handle=>OS_FSControl21>
+22 &16  <Close all open files=>OS_FSControl22>
+23 &17  <Shutdown FS=>OS_FSControl23>
+24 &18  <Set attributes of objects=>OS_FSControl24>
 25 &19  <Rename object=>OS_FSControl25>
 26 &1A  <Copy objects=>OS_FSControl26>
 27 &1B  <Wipe objects=>OS_FSControl27>
 28 &1C  <Count objects=>OS_FSControl28>
-29 &1D  Internal (Create Handle)
-30 &1E  <Read location of temporary FS secondary module=>os_fscontrol30>
+29 &1D  Reserved (was 'Create Handle')
+30 &1E  <Read location of temporary FS secondary module=>OS_FSControl30>
 31 &1F  <Convert filetype name to number=>OS_FSControl31>
 32 &20  <Output list of object names & info=>OS_FSControl32>
 33 &21  <Convert a filing system number to a name=>OS_FSControl33>
-34 &22  Reserved (Set Contexts)
+34 &22  Reserved (was 'Set Contexts')
 35 &23  <Add an image FS=>OS_FSControl35>
 36 &24  <Remove an image FS=>OS_FSControl36>
 37 &25  <Canonicalise path=>OS_FSControl37>
@@ -62,6 +62,11 @@ This SWI controls the filing system manager and the filing systems themselves. A
 55 &37  <Read free space for a large disc or image file=>OS_FSControl55>
 56 &38  <Read defect list for a large disc or image file=>OS_FSControl56>
 57 &39  <Map out defect from large disc or image=>OS_FSControl57>
+58 &3A  <Enumerate handles=>OS_FSControl58>
+59 &3B  FileSwitch info
+60 &3C  Run absolute file
+61 &3D  Run untyped file
+62 &3E  Run transient utility
 #EndTable
 #indent;line;tab
 See also:	<PRM 2-77=>PRM-2:77>, <5a-166=>PRM-5a:166>, <5a-663=>PRM-5a:663>

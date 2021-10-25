@@ -5,6 +5,6 @@ OS_BinaryToDecimal  (&28)
 	R2 =	size of buffer
 <=	R2 =	length of string
 
-This SWI converts a 32 bit integer to a string. Why we have this call, is a bit unclear, as <OS_ConvertInteger4=>OS_Convert> should do the same.
+This SWI converts a 32 bit integer to a string, much like <OS_ConvertInteger4=>OS_Convert>, except that no terminating 0 byte is placed at the end.
 #Line
 See <PRM 1, page 456=>PRM-1:456>.

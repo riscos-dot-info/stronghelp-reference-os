@@ -2,6 +2,9 @@ Contributions
 #Parent OS_
 Thanks go to all of the following individuals who have made invaluable contributions to the manual, but special thanks must go to êthe RISC OS programming communityë in general...
 
+#fH4:Moderator:
+As at 2009 <Christian Ludlam=>#url mailto:christian@recoil.org>
+
 #fH4:Thanks to (in a rather haphazard order, if any):
 #Table columns 4
 Guttorm Vik
@@ -18,7 +21,7 @@ Stuart Halliday
 Matthew Webster
 Chris Johns
 David McCormack
-Johnathan Duddington
+Jonathan Duddington
 Eddie Edwards
 Carl Elkins
 J.B.Blaukopf
@@ -42,7 +45,6 @@ Reuben Thomas
 Tony Houghton
 Vincent Sanders
 Robert Sprowson
-Christian Ludlam
 Steve Revill
 Maarten Bezemer
 Theo Markettos

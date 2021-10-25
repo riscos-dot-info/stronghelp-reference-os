@@ -106,6 +106,8 @@ Bit	Meaning
 	 	3 => VIDC20
 	 	4 => SSpace (5.00+)
 	 	5 => Extension ROMs (5.00+)
+	 	6 => Tube ULA (5.17+)
+	 	34=> 82C710 compatible SuperIO chip (5.19+)
 #Subpage 13
 OS_Memory 13 map in IO permanently (5.00+)
 =>	R0 =	13 (reason code)

@@ -1,0 +1,48 @@
+Territory_DaylightSaving  (&43077) (5.20+)
+#Parent Territory_
+=>	R0 =	<territory number=>Territory_numbers>, or -1 for current
+	R1 =	0 = <read current DST state=>.reason0>
+	    	1 = <write current DST state=>.reason1>
+	    	2 = <supported=>.reason2>
+	    	3 = <apply rule to ordinals=>.reason3>
+	    	4 = <apply rule to time=>.reason4>
+	    	5 = <get bounds for given year=>.reason5>
+#Line
+This call returns details on the daylight saving applicable in the given territory.
+#Subpage reason0
+Read current DST state
+<=	R0 =	state
+	 	b0 = DST active when set
+	 	b1 = DST managed automatically when set
+
+This is equivalent to the *STATUS command.
+#Subpage reason1
+Write current DST state
+=>	R2 =	new state
+	 	b0 = DST active when set
+	 	b1 = DST managed automatically when set
+
+This is equivalent to the *CONFIGURE command.
+#Subpage reason2
+Supported
+<=	R0 =	1 if the territory supports this API (error or 0 if not)
+#Subpage reason3
+Apply rule to ordinals
+=>	R2 =	timezone within territory
+	R3 =	buffer containing UTC <time ordinals=>Territory_Convert_time_block_in>
+<=	R0 =	state
+	 	b0 = DST active when set
+#Subpage reason4
+Apply rule to time
+=>	R2 =	timezone within territory
+	R3 =	buffer containing UTC time
+<=	R0 =	state
+	 	b0 = DST active when set
+#Subpage reason5
+Get bounds for given year
+=>	R2 =	timezone within territory
+  	R3 =	year
+  	R4 =	5 byte buffer for DST start time
+  	R5 =	5 byte buffer for DST end time
+
+Remember that in the southern hemisphere DST ends earlier in the year than it starts, don't assume the end time is greater than the start in that case.

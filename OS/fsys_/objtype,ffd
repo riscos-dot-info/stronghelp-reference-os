@@ -7,6 +7,6 @@ Type	Meaning
 0	Object not found
 1	File
 2	Directory
-3	Image
+3	Image (ie. both a file and a directory)
 
 Image files only exist under RISC OS 3. They are typed files which can be accessed as normal directories, and therefore have qualities of both files and directories. Images may be locked to prevent modification of their entire contents, and deletion will delete the whole tree without checking for locked files within the tree.

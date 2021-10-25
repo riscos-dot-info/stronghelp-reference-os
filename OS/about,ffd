@@ -19,9 +19,9 @@ This manual is part of a collection comprising the main public domain programmin
 
 Thanks go to those mentioned in the <contributors=>OS:contributions> list.
 
-For comments, suggestions and submissions for these, please mail Christian Ludlam <christian@recoil.org=>#url mailto:christian@recoil.org> who is currently moderating the collection. These manuals will continue to be available from <http://sudden.recoil.org/stronghelp/=>#url>.
+These manuals are kindly hosted by <www.riscos.info=>#url http://www.riscos.info/downloads/stronghelp/manuals/>
 #line
-<This page=>.hist334> gives history and credits.
+<This page=>.hist335> gives history and credits.
 #Subpage notes
 Notes on how the manual is structured
 These are some very incomplete notes on how the manual should be structured. If any part of it isn't then it will eventually be updated, or I'll change this specification. It's mostly here to remind me anyhow.
@@ -430,4 +430,25 @@ History for OS v3.34
 è	Added note about R9 from Usenet comments by Ben Avison for <module SWI handlers=>OS_Module_SWIHandler> (Sprow)
 è	Lots of typing and grammatical errors fixed (Sprow)
 #tab;line
-<Previous history=>.hist333>
+<Previous history=>.hist333>	<Next history=>.hist335>
+#subpage hist335
+History for OS v3.35
+#align right
+{/}21 Jul 2012{/}
+#align left
+#line
+è	UnthreadV listed in <vectors=>vector_index> 
+è	Extensions and clarifications to <Territory manager's=>Territory_> timezone handling
+è	Country <lookup for ISO3166-1=>Service_43> added
+è	Podule manager <read info=>Podule_ReadInfo> bits clarified
+è	Tile sprite scaled <documented=>os_spriteop_57>
+è	Operation of <OS_SpriteOp 15=>os_spriteop_15> detailed when in a different mode
+è	<OS_ReadSysInfo> allocations expanded
+è	Added bits 15-20 to <OS_PlatformFeatures=>OS_PlatformFeatures0> 0 
+è	Controller types for <OS_Memory> 8 expanded
+è	Availability of subreasons to <OS_FSControl> documented
+è	<JPEG_FileInfo> and <JPEG_Info> flags expanded
+è	FileCore disc record <extended=>FileCore_Disc> for big discs with long names
+è	Lots of typing and grammatical errors fixed 
+#tab;line
+<Previous history=>.hist334>

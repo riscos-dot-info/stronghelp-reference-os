@@ -4,6 +4,6 @@ FileCore_DescribeDisc  (&40545)
 	R1 =	<pointer to data block=>FileCore_disc>
 	R8 =	pointer to FileCore instance private word
 
-This call allows you to check the disc's format and internal structure. If the is specified is not in a drive it will be searched for and asked for in an error box or by prompt. If the disc name is that of a drive then if no disc is present then the Drive empty error will be reported.
+This call allows you to check the disc's format and internal structure. If the disc specified is not in a drive it will be searched for and asked for in an error box or by prompt. If the disc name is that of a drive then if no disc is present then the Drive empty error will be reported.
 #Line
 See <PRM 2, page 232=>PRM-2:232>.

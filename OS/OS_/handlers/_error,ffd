@@ -6,4 +6,4 @@ Offset	Contents
 #Line
 0	PC when error occurred
 4	<error number=>swi_errorblock>
-8	error string (up to 252 bytes)
+8	error string (up to 248 bytes)

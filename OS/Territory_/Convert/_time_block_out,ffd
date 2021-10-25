@@ -6,9 +6,9 @@ Offset	Contents		Base value	Notes
 4	second
 8	minute
 C	hour (out of 24)
-10	day within month	1		ANSI also uses 1
-14	month in year		1		ANSI uses 0
-18	year			0		ANSI uses 1900
-1C	day of the week		1		ANSI uses 0
-20	day of the year		1		ANSI uses 0
+10	day within month	1	ANSI also uses 1
+14	month in year		1	ANSI uses 0
+18	year			0	ANSI uses 1900
+1C	weekday (Sun=1)	1	ANSI uses 0
+20	day of the year		1	ANSI uses 0
 # Gerph> Check this one.

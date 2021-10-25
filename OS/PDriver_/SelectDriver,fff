@@ -6,6 +6,6 @@ PDriver_SelectDriver  (&80158)
 <=	R0 =	previous <printer driver number=>PDriver_printernumbers>
 	 	or -1 if there was no current driver
 
-This SWI specifes the current printer driver, and should only be used by the Printer application. If really feel the urge to use this call, read the current setting and try to restore it when you finish.
+This SWI specifes the current printer driver, and should only be used by the Printer application. If you really feel the urge to use this call, read the current setting and try to restore it when you finish.
 #Line
 See <PRM 3, page 643=>PRM-3:643>.

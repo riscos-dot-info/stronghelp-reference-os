@@ -1,4 +1,4 @@
-OS_FSControl 55  (&37)
+OS_FSControl 55  (&37) (3.60+)
 #Parent OS_FSControl
 =>	R0 =	55 (Read free space for a large disc or image file)
 	R1 =	pointer to name of object

@@ -1,0 +1,8 @@
+OS_Word 15,5 (4.00+)
+#Parent OS_Word
+=>	R0 =	15
+	R1 =	pointer to block containing :
+	 	 	0 = 5
+	 	 	1 = integer
+
+Where available, this subreason allows setting the clock to the soft-copy to the nearest centisecond, the CMOS hardware probably rounds to the nearest whole second.

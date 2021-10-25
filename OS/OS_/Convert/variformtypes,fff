@@ -1,0 +1,19 @@
+Variform types
+#Parent OS_ConvertVariform
+Number	Type	Example
+#Line
+0 	Hex           	DEADBEEF
+1 	Cardinal      	123
+2 	Integer       	-456
+3 	Binary        	11001111
+4 	SpacedCardinal	123 000
+5 	SpacedInteger 	-456 000
+6 	PunctCardinal 	123,000 (for UK territory)
+7 	PunctInteger  	-456,000 (for UK territory)
+8 	FixedFileSize 	"   4 kbytes"
+9 	FileSize      	"1 byte"
+10	IPv4          	10.66.1.1
+11	EUI           	00:A4:45:12:34:56
+12	IPv6          	1234:0000:0000:0000:5678:0000:1111:abcd
+13	ShortestIPv6  	1234::5678:0000:1111:abcd
+14	HexLowercase  	deadbeef

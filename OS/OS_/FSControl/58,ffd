@@ -1,0 +1,9 @@
+OS_FSControl 58  (&29) (5.17+)
+#Parent OS_FSControl
+=>	R0 =	58 (Enumerate handles)
+	R1 =	last handle, or -1 to start enumeration
+<=	R0 =	stream status word
+	R1 =	handle, or -1 if no more (R0 and R2 preserved)
+	R2 =	filing system info word
+
+This call is like <OS_Args 254=>os_args254> but without the guesswork or need to make assumptions about handle allocation policies within FileSwitch.

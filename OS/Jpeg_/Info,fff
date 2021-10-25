@@ -5,8 +5,8 @@ JPEG_Info  (&49980)
 	R2 =	length of image
 	
 <=	R0 =	<info flags=>JPEG_info_infoflags>
-	R2 =	width (in pixels)
-	R3 =	height (in pixels)
+	R2 =	width (in pixels) if requested
+	R3 =	height (in pixels) if requested
 	R4 =	x pixel density
 	R5 =	y pixel density
 	R6 =	workspace that would be required to plot (0=none)

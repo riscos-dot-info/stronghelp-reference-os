@@ -39,16 +39,21 @@ F  15 <Create sprite=>OS_SpriteOp_15>
 31 49 <Plot mask at user coords=>os_spriteop_49>
 32 50 <Plot mask scaled=>os_spriteop_50> *
 33 51 <Paint char scaled=>os_spriteop_51> *
-34 52 <Paint sprite scaled=>os_spriteop_52> *
+34 52 <Put sprite scaled=>os_spriteop_52> *
 35 53 <Put sprite grey scaled=>os_spriteop_53> *
 36 54 <Remove lefthand wastage=>os_spriteop_54>
 37 55 <Plot mask transformed=>os_spriteop_55> %*
 38 56 <Plot sprite transformed=>os_spriteop_56> %*
 39 57 <Insert/delete rows=>os_spriteop_57> %*
 3A 58 <Insert/delete columns=>os_spriteop_58> %*
+3B 59 Reserved
 3C 60 <Switch output to sprite=>os_spriteop_60>
 3D 61 <Switch output to mask=>os_spriteop_61>
 3E 62 <Read save area size=>os_spriteop_62>
+3F 63 Reserved
+40 64 Reserved
+41 65 <Tile sprite scaled=>os_spriteop_65> *
+
 #EndTable
 #line;tab
 *Note*:	Items marked with a \* require SpriteExtend to be loaded for them to work.
