@@ -1,0 +1,10 @@
+Buffer service remove byte
+#Parent Buffer_service
+=>	R0 =	2 (reason code)
+	R1 =	internal buffer ID
+	R12 =	value returned by <Buffer_InternalInfo>
+
+<=	R2 =	byte removed
+	C set if operation failed
+
+This removes a byte into a buffer.

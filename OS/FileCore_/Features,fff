@@ -9,7 +9,7 @@ This call returns additional features supported by FileCore and is only of use t
 Of course, with old versions of FileCore this will be an unknown SWI, so your code might go:
 #indent 2
 #tab fCode, fCode, fStd
-SWI	"FileCore_Features"
+SWI	"XFileCore_Features"
 MOVVS	R0, #0	; no new features at all
 :
 #indent

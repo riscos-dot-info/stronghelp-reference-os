@@ -7,12 +7,13 @@ Service_ResourceFSStarting (&60)
 
 This service is issued by ResourceFS when it (re)initialises. As it is not linked into the module chain at this point, its SWIs cannot be called, so programs should call the code addressed by R2 directly:
 
+#tab
 #wrap off
 #fCode
 STMFD   sp!, \{r0, lr}	; stack actual return address
-ADR     r0, files       ; pointer to <resource file block=>ResourceFS_fileblock>
-MOV     lr, pc          ; emulate BL
-MOV     pc, r2          ; call ResourceFS code
+ADR     r0, files	; pointer to <resource file block=>ResourceFS_fileblock>
+MOV     lr, pc		; emulate BL
+MOV     pc, r2		; call ResourceFS code
 LDMFD   sp!, \{r0, pc}	; and return
 #wrap
 #f

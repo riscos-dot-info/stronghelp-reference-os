@@ -2,9 +2,10 @@ Battery Management Unit Flags
 #Parent Portable_BMUvars
 Bit	Meaning when set
 #line
+0	Battery has been changed (threshold 3)
 1	lid open
-2	threshold 2 reached
-3	threshold 1 reached
+2	Battery flat (threshold 2 reached) [shutdown now]
+3	Battery low (threshold 1 reached) [warn user]
 4	fault in charging system
 5	charge state known
 6	battery present

@@ -3,7 +3,7 @@ FileCore_DiscOp64  (&4054E) (5.00+)
 =>	R1 =	bits 0-3 = reason code
 	 	bits 4-7 = option bits
 	 	bits 8-31 reserved
-	R2 ->	disc address
+	R2 =	pointer to disc address:
 	 	Word 0	bits 0-7: drive number
 	 	 	bits 8-31: reserved, must be zero
 	 	Word 1   byte address (low word)
@@ -19,7 +19,7 @@ FileCore_DiscOp64  (&4054E) (5.00+)
 	 	to the next byte to be transferred
 	R3 =	pointer to next buffer location to be transferred
 	R4 =	number of bytes not transferred
-#Line
+
 This call is just like <FileCore_DiscOp> except that it attacks a number of shortcomings in old versions of FileCore:
 
 	  1)	Alternative disc record pointers passed in to various SWIs currently only

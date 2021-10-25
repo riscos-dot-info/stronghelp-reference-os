@@ -1,0 +1,10 @@
+Buffer service insert block
+#Parent Buffer_service
+=>	R0 =	0 (reason code)
+	R1 =	internal buffer ID
+	R2 =	byte to insert
+	R12 =	value returned by <Buffer_InternalInfo>
+
+<=	C set if insertion failed
+
+This inserts a byte into a buffer.

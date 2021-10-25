@@ -1,4 +1,4 @@
-DOSFS_DiscFormat  (&41AC0)
+DOSFS_DiscFormat  (&44B00)
 #Parent DOSFS_
 =>	R0 =	pointer to <disc format structure=>FileCore_Format> to be filled in
 	R1 =	SWI number to call to vet disc format (eg. <ADFS_VetFormat>)
@@ -7,6 +7,8 @@ DOSFS_DiscFormat  (&41AC0)
 
 <=	R0-R3 preserved
 
-This call fills in the disc format structure pointed to by R0 with the 'prefect' parameters for the specified format, taking no account of the abilities of the available hardware that will have to perform the format. Once filled in, this SWI calls the vetting SWI to check the formay structure for achievability on the available hardware. The vetting SWI may generate an error if the format differs widely from what can be achieved; alternatively it may alter the format structure to the closest match that can be achieved. The vetting SWI then returns to this SWI, which checks whether the format block - as updated by the vetting SWI - is still an adequate match for the desired format. If it is, this SWI returns to its caller; otherwise it generates an error.
+This call fills in the disc format structure pointed to by R0 with the 'perfect' parameters for the specified format, taking no account of the abilities of the available hardware that will have to perform the format. Once filled in, this SWI calls the vetting SWI to check the format structure for achievability on the available hardware. The vetting SWI may generate an error if the format differs widely from what can be achieved; alternatively it may alter the format structure to the closest match that can be achieved. The vetting SWI then returns to this SWI, which checks whether the format block - as updated by the vetting SWI - is still an adequate match for the desired format. If it is, this SWI returns to its caller; otherwise it generates an error.
+
+Under RISC OS 3.00 this SWI erroneously had the SWI number &41AC0, do not support this in your code.
 #Line
 See <PRM 2, page 329=>PRM-2:329>.

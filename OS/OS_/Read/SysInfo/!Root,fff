@@ -61,15 +61,15 @@ This call reads features available in the 82C71x chip.
 The 82C710 chip family are composed of several sub units. Future chips in the family may have some sub units which are incompatible with earlier versions, while leaving the functionality of other sub units unchanged. This call returns a feature mask, sub fields within which show the 'compatibility level' of each sub unit. Differing values of a sub field indicate incompatible versions of the corresponding sub unit. A sub field of zero indicates that the sub unit is not present.
 
 The values are:
-Bits	Sub unit		710	711
+Bits	Sub unit		710	711	SMC '665
 #Line
-0-3	IDE hard disc interface	1	1
-4-7	floppy disc interface	1	1
-8-11	parallel port		1	1
-12-15	1st serial port		1	1
-16-19	2nd serial port		0	1
-20-23	chip configuration	1	2
-24-31	reserved		0	0
+0-3	IDE hard disc interface	1	1	1
+4-7	floppy disc interface	1	1	1
+8-11	parallel port		1	1	1
+12-15	1st serial port		1	1	1
+16-19	2nd serial port		0	1	1
+20-23	chip configuration	1	2	3
+24-31	reserved		0	0	0
 #
 #Subpage 4
 OS_ReadSysInfo 4

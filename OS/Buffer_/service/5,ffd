@@ -1,0 +1,13 @@
+Buffer service examine block
+#Parent Buffer_service
+=>	R0 =	5 (reason code)
+	R1 =	internal buffer ID
+	R2 =	pointer to destination
+	R3 =	number of bytes to examine
+	R12 =	value returned by <Buffer_InternalInfo>
+
+<=	R2 =	pointer to first free byte in destination
+	R3 =	number of bytes not removed
+	C set if unable to transfer all data (R3 \<> 0)
+
+This reads a block of data from a buffer without actually removing it.

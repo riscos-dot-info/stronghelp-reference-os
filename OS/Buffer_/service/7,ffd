@@ -1,0 +1,9 @@
+Buffer service return free space
+#Parent Buffer_service
+=>	R0 =	7 (reason code)
+	R1 =	internal buffer ID
+	R12 =	value returned by <Buffer_InternalInfo>
+
+<=	R2 =	number of bytes free in buffer
+
+This returns the number of free bytes in a buffer.

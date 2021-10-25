@@ -1,0 +1,13 @@
+Buffer service insert block
+#Parent Buffer_service
+=>	R0 =	1 (reason code)
+	R1 =	internal buffer ID
+	R2 =	pointer to data to insert
+	R3 =	number of bytes to insert
+	R12 =	value returned by <Buffer_InternalInfo>
+
+<=	R2 =	pointer to first byte not inserted
+	R3 =	number of bytes not inserted
+	C set if unable to transfer all data (R3 \<> 0)
+
+This inserts a block of data into a buffer. If the data has already been written to the buffer (R2 = buffer insertion address) then no data are copied but the buffer indicies are updated.

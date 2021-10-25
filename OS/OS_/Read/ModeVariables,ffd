@@ -2,15 +2,15 @@ Mode variable numbers
 #Parent OS_ReadModeVariable
 Var	Name		Meaning
 #Line
-0	ModeFlags	Bits of result:
-	 		  0  1 ->	non graphics mode
-	 		  1  1 ->	teletext mode
-	 		  2  1 ->	gap mode (gap betw. vdu4 lines)
-	 		  3  1 ->	'BBC' gap mode (3 & 6), 0 -> non gap
-	 		  4  1 ->	hi-res mono mode
-	 		  5  1 ->	double height VDU chars, 0 -> normal
-	 		  6  1 ->	hardware scroll never used
-	 		  7  1 ->	fully definable 8 bit palette
+0	ModeFlags	Bits of result when set:
+	 		  0  non graphics mode
+	 		  1  teletext mode
+	 		  2  gap mode (gap betw. vdu4 lines)
+	 		  3  'BBC' gap mode (3 & 6)
+	 		  4  hi-res mono mode
+	 		  5  double height VDU chars
+	 		  6  hardware scroll never used
+	 		  7  fully definable 8 bit palette
 1	ScrRCol		Number of textcolumns -1
 2	ScrBRow		Number of textrows -1
 3	NColour		<Maximum logical colour=>.colours>

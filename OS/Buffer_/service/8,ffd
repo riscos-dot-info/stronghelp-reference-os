@@ -1,0 +1,7 @@
+Buffer service purge
+#Parent Buffer_service
+=>	R0 =	8 (reason code)
+	R1 =	internal buffer ID
+	R12 =	value returned by <Buffer_InternalInfo>
+
+This removes all data from a buffer.

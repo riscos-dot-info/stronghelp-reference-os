@@ -9,7 +9,7 @@ OS_Byte 138  Insert byte into buffer
 
 This call inserts a byte into a buffer. While inserting 9 bytes into the mouse buffer you must disable interrupts to prevent a real mouse transition from being entered into the middle of your data.
 
-Note that characters 0 and 128-255 are inserted into the keyboard buffer as two byes 0,{/}n{/} to distinguish them from function keys - if you are inserting strings into the keyboard buffer you should be careful to check for top bit set characters and preced them with a 0 byte, else you may erroneously insert function key keypresses - '{fCode}Ì{f}' is equivalent to pressing F12, '{fCode}ü{f}' to pressing Control, Shift F12, which in the desktop *will* respectively generate a CLI prompt, and initiate desktop shutdown.
+Note that characters 0 and 128-255 are inserted into the keyboard buffer as two bytes 0,{/}n{/} to distinguish them from function keys - if you are inserting strings into the keyboard buffer you should be careful to check for top bit set characters and preceed them with a 0 byte, else you may erroneously insert function key keypresses - '{fCode}Ì{f}' is equivalent to pressing F12, '{fCode}ü{f}' to pressing Control, Shift F12, which in the desktop *will* respectively generate a CLI prompt, and initiate desktop shutdown.
 # If I don't make them {fCode} then 'Ì' looks like T, which is confusing.
 #Line
 See <PRM 1, page 168=>PRM-1:168>

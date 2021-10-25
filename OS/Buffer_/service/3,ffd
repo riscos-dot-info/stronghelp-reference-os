@@ -1,0 +1,13 @@
+Buffer service remove block
+#Parent Buffer_service
+=>	R0 =	3 (reason code)
+	R1 =	internal buffer ID
+	R2 =	pointer to destination
+	R3 =	number of bytes to remove
+	R12 =	value returned by <Buffer_InternalInfo>
+
+<=	R2 =	pointer to first free byte in destination
+	R3 =	number of bytes not removed
+	C set if unable to transfer all data (R3 \<> 0)
+
+This removes a block of data from a buffer.

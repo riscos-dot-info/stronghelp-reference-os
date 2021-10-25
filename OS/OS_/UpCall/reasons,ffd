@@ -6,15 +6,24 @@ R0	Description
 2	<Media not known=>os_upcall2>
 3	<Misc file changed information=>os_upcall3>
 4	<Media search end=>os_upcall4>
+5	{/}Reserved{/}
 6	<Taskwindow Sleep=>os_upcall6>
 7	<PipeFS sleep no more=>os_upcall7>
 8	<Buffer filling=>os_upcall8>
 9	<Buffer emptying=>os_upcall9>
-A	<DeviceFS stream created=>os_upcall10>
-B	<DeviceFS stream closed=>os_upcall11>
-C	<Freeway=>InetSWIs:upcall_Freeway>
-F	<Device receive data present=>os_upcall15>
-10	<Device threshold above=>os_upcall16>
-11	<Device threshold below=>os_upcall17>
-100	<New application=>os_upcall256>
-101	<Move memory request=>os_upcall257>
+10	<DeviceFS stream created=>os_upcall10>
+11	<DeviceFS stream closed=>os_upcall11>
+12	<Freeway=>InetSWIs:upcall_Freeway>
+13	{/}Reserved{/}
+14	{/}Reserved{/}
+15	<Device receive data present=>os_upcall15>
+16	<Device threshold above=>os_upcall16>
+17	<Device threshold below=>os_upcall17>
+18	{/}Reserved{/}
+19	{/}Reserved{/}
+20	Keyboard status change
+21	{/}Reserved{/}
+22	{/}Reserved{/}
+23	PDumper action
+256	<New application=>os_upcall256>
+257	<Move memory request=>os_upcall257>

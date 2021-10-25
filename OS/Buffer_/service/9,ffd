@@ -1,0 +1,14 @@
+Buffer service next filled block
+#Parent Buffer_service
+=>	R0 =	9 (reason code)
+	R1 =	internal buffer ID
+	R3 =	number of bytes read since last call
+	R12 =	value returned by <Buffer_InternalInfo>
+
+<=	R2 =	pointer to first byte in next block to be removed
+	R3 =	number of bytes in next block
+	C set if the buffer is empty
+
+This can be used to read data from a buffer without copying it. First call this with R3 set to 0 - the call returns a pointer to the next byte to be removed, and the number of contiguous bytes which can be read from that address. Subsequent calls should have R3 set to the number of bytes read, at which point the buffer indicies will be updated to purge the data and the call will return the next block of data.
+
+You must be sure that you are the only device using this call on a particular buffer.

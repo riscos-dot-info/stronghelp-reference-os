@@ -3,6 +3,6 @@ ResourceFS_DeregisterFiles  (&41B41)
 =>	R0 =	pointer to <resource file block=>ResourceFS_fileblock>
 <=	R0 corrupted
 
-This SWI should be called by a module to remove files from the ResourceFS structure before the memory containing the files is deallocated ({/}e.g.{/} it should be called before a module is killed). ResourceFS delinks the files and then issues <Service_ResourceFSStarting=>service_59> to announce to programs that the ResourceFS structure has changed. You do *not* need to deregister files explictly with this SWI upon receipt of <Service_ResourceFSDying=>service_5A>.
+This SWI should be called by a module to remove files from the ResourceFS structure before the memory containing the files is deallocated ({/}e.g.{/} it should be called before a module is killed). ResourceFS delinks the files and then issues <Service_ResourceFSStarted=>service_59> to announce to programs that the ResourceFS structure has changed. You do *not* need to deregister files explictly with this SWI upon receipt of <Service_ResourceFSDying=>service_5A>.
 #Line
 See <PRM 2, page 415=>PRM-2:415>.

@@ -11,9 +11,7 @@ Value	Meaning
 6	Conjoin Negation (AND with NOT sprite colour)
 7	Disjoin Negation (OR with NOT sprite colour)
 8-15	As 0-7, but with mask
-#Wrap off
-16	Use ECF 1	}
-32	Use ECF 2	} Only one of these may
-48	Use ECF 3	} be used
-64	Use ECF 4	}
-80	Use giant ECF	}
+16	Use palette instead of translation table			(3.50+)
+32	Translation table is 'wide'					(3.60+)
+64	Dither when plotting a 16 or 32bpp sprite into a reduced depth	(3.60+)
+128	Use colourmapping (16bpp / 32bpp only)				(Select 2)

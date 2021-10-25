@@ -1,0 +1,15 @@
+Buffer service routine
+#Parent Buffer_
+=>	R0 =	reason code
+	 	0 <insert byte=>Buffer_service0>
+	 	1 <insert block=>Buffer_service1>
+	 	2 <remove byte=>Buffer_service2>
+	 	3 <remove block=>Buffer_service3>
+	 	4 <examine byte=>Buffer_service4>
+	 	5 <examine block=>Buffer_service5>
+	 	6 <return used space=>Buffer_service6>
+	 	7 <return free space=>Buffer_service7>
+	 	8 <purge=>Buffer_service8>
+	 	9 <next filled block=>Buffer_service9>
+
+These calls modify a buffer.

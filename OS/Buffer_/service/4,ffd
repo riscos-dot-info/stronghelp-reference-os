@@ -1,0 +1,10 @@
+Buffer service examine byte
+#Parent Buffer_service
+=>	R0 =	4 (reason code)
+	R1 =	internal buffer ID
+	R12 =	value returned by <Buffer_InternalInfo>
+
+<=	R2 =	next byte to be removed
+	C set if operation failed
+
+This reads the next byte to be removed from a buffer without actually removing it.

@@ -1,0 +1,9 @@
+Buffer service return used space
+#Parent Buffer_service
+=>	R0 =	6 (reason code)
+	R1 =	internal buffer ID
+	R12 =	value returned by <Buffer_InternalInfo>
+
+<=	R2 =	number of bytes used in buffer
+
+This returns the number of bytes in a buffer.

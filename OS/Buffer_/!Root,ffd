@@ -4,7 +4,7 @@ Buffer
 <Create>
 <Deregister>
 <GetInfo>
-InternalInfo
+<InternalInfo>
 <LinkDevice>
 <ModifyFlags>
 <Remove>

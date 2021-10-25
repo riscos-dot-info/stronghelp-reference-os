@@ -1,0 +1,11 @@
+Buffer_InternalInfo  (&42949)  (3.50+)
+#Parent Buffer_
+=>	R0 =	Handle of buffer
+
+<=	R0 =	Internal buffer ID
+	R1 =	Address of <service code=>Buffer_service>
+	R2 =	Value to pass to service code in R12
+
+This converts a buffer handle into an internal buffer ID, and returns the address of a service routine that can be used to access the buffer quickly. The address of the routine and the R12 value are the same for all buffers.
+
+If an invalid buffer handle is passed, an error is returned but R1 and R2 will be correct.
