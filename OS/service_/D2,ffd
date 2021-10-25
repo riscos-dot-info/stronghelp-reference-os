@@ -1,0 +1,64 @@
+Service_USBDriver  (&D2)
+#Parent Service_Index
+#wrap off
+=>	R1 =	&D2 (service code)
+	R0 =	Reason
+	 	0 - 	<attach=>.attach>
+	 	1 - 	<connected=>.connected>
+	 	2 - 	/unused/
+	 	3 - 	<starting=>.starting>
+	 	4 - 	<dying=>.dying>
+	 	others - /reserved/
+#Subpage attach
+Attach
+<=		R0 =	0 (reason code)
+	R1 =	&D2 (service code)
+	R2 =	Pointer to <USBServiceCall=>.block> block
+
+A new USB device has been attached to the USB system, this service call announces its arrival for any drivers which may be interested in it.
+
+Do not claim this call, it is for information only.
+#Subpage connected
+Connected
+=>	R0 =	1 (reason code)
+	R1 =	&D2 (service code)
+	R2 =	0
+<=	R2 =	Pointer to linked list of <USBServiceCall=>.block> blocks
+
+Issued with OS_ServiceCall by any application or module which wishes to get information on all of the currently connected devices without needing to keep track of <Attach=>.attach> and <Detach=>OS:service_79>.
+
+It is the responsibility of the issuer of the call to free the memory used by the returned descriptors in the RMA.
+
+Do not claim this call, other USB drivers in the module chain may wish to add further blocks to the list.
+#Subpage starting
+Starting
+=>	R0 =	2 (reason code)
+	R1 =	&D2 (service code)
+
+Used to notify the (re)starting of the USB system and for any clients of USBDriver to (re)register themselves.
+
+Do not claim this call, it is for information only.
+#Subpage dying
+Dying
+=>	R0 =	3 (reason code)
+	R1 =	&D2 (service code)
+
+Used to notify that the USB system is shutting down.
+
+Do not claim this call, it is for information only.
+#Subpage block
+USBServiceCall block
+A USB device is completely described by the block (or list of blocks) pointed to by R2 in the USB service calls. The USBServiceCall includes a copy of the device descriptor, followed immediately by zero or more descriptors. A length byte of zero marks the end of the block, which is then padded with zeros to achieve word alignment.
+
+	+0	sum length of the block including the appended descriptors
+	+2	offset to the descriptors
+	+4	device name as appears in DeviceFS, NULL terminated
+	+24	bus number, 0-255
+	+25	usb address, 1-127
+	+26	usb address of upstream port 0-127
+	+27	port on host address
+	+28	device speed (0=full, 1=low, 2=high)
+	+29	reserved
+	+30	reserved
+	+31	reserved
+	+n	device descriptors per USB 1.1 specification <http://www.usb.org/=>#URL>.

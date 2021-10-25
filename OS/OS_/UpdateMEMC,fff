@@ -5,7 +5,7 @@ OS_UpdateMEMC  (&1A)
 
 <=	R0 =	Old register value
 
-This SWI programs individual bits in the <MEMC control register=>Machine:MEMC1>. Since the MEMC is write-only, this is done via a software copy, maintained by the OS.
+This SWI programs individual bits in the MEMC control register, on machines still supporting Acorn's custom chipsets. Since the MEMC is write-only, this is done via a software copy, maintained by the OS.
 
 Reg = (RegCopy AND NOT R1) OR (R0 AND R1)
 

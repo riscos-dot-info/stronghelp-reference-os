@@ -1,0 +1,16 @@
+OS_HeapSort32  (&7F) (5.0+)
+#Parent OS_
+=>	R0 =	number of elements
+	R1 =	pointer to word-array
+	R2 =	<type=>os_heapsort1> or <comparison routine=>os_heapsort2>
+	R7 =	<flags=>os_heapsort0>
+optional :
+	R3 =	workspace pointer
+	R4 =	array of actual objects
+	R5 =	size of object in R4
+	R6 =	workspace of R5 bytes (if R5>16K)
+
+This SWI sorts a list of objects, using the Heap Sort algorithm.
+#Line
+The CallASWI module (version 0.03) allows this SWI to be used with RISC OS pre 5.00.
+See also <PRM 1, page 937=>PRM-1:937>.

@@ -1,6 +1,6 @@
 Contributions
 #Parent OS_
-Iëve tried to list the majority of people who Iëm aware of that have contributed. If you have contributed but are not in the list Iëll try to add you. However, if this list gets too long, Iëll have to state simply the major contributors or just say that itës êThanks to the Acorn programming communityë...
+Thanks go to all of the following individuals who have made invaluable contributions to the manual, but special thanks must go to êthe RISC OS programming communityë in general...
 
 #fH4:Thanks to (in a rather haphazard order, if any):
 #Table columns 4
@@ -41,4 +41,6 @@ Matthew Somerville
 Reuben Thomas
 Tony Houghton
 Vincent Sanders
+Robert Sprowson
+Christian Ludlam
 #endtable

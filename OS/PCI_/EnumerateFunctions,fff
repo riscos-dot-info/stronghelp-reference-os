@@ -1,0 +1,12 @@
+PCI_EnumerateFunctions  (&50383)
+#Parent PCI_
+=>	R3 =	0 to start enumeration
+	 	or last value from PCI_EnumerateFunctions
+<=	R0 =	vendor ID (bits 0-15)
+	 	device ID (bits 16-31)
+	R1 =	subsystem vendor ID (bits 0-15)
+	 	subsystem ID (bits 16-31)
+	R2 =	class code
+	R3 =	<function handle=>PCI_fhand>
+
+This SWI itteratively reads through each of the PCI devices on each call, until an error is returned.

@@ -9,4 +9,5 @@ TerminateTransfer
 SuspendTransfer
 ResumeTransfer
 ExamineTransfer
+AllocateLogicalChannels
 #EndTable

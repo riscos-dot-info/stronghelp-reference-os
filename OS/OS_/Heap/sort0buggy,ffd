@@ -1,0 +1,9 @@
+Flags
+Bit	Meaning when set
+#Line
+29	Use R6 as workspace
+30	Build word array in R1 from R4+R5
+31	Sort R4 array after sorting pointers
+
+A long standing bug means bit 30 causes the documented functions of both bits
+30 and 31 to occur, while bit 31 is ineffective.

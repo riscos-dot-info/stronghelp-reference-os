@@ -1,0 +1,10 @@
+PCI_FindByID  (&5038E)
+#Parent PCI_
+=>	R3 =	0 to start, or R3 last found
+	R0 =	vendor ID (or -1 for wildcard)
+	R1 =	device ID (or -1 for wildcard)
+	R2 =	subsystem vendor ID (or -1 for wildcard)
+	R4 =	subsystem ID (or -1 for wildcard)
+<=	R3 =	<function handle=>PCI_fhand>
+
+Finds the function handle based on the wildcarded information passed in.

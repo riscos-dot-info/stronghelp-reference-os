@@ -2,3 +2,12 @@ FPEmulator
 #Parent !Root
 #Prefix FPEmulator_
 <Version>
+<DeactivateContext>
+<ActivateContext>
+<ChangeContext>
+<ContextLength>
+<InitContext>
+<ExceptionDump>
+<Abort>
+<SaveContext>
+<LoadContext>

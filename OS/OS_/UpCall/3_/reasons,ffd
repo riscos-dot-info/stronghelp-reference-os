@@ -12,6 +12,6 @@ R9	Meaning
 257	<Creating and opening for update=>OS_UpCall3_257>
 258	<Opening for update=>OS_UpCall3_258>
 259	<Closing file=>OS_UpCall3_259>
-512	<Ensure file suze=>OS_UpCall3_512>
+512	<Ensure file size=>OS_UpCall3_512>
 520	<Renaming file=>OS_UpCall3_520>
 521	<Setting attributes=>OS_UpCall3_521>

@@ -15,4 +15,4 @@ When bit 5 is set, the meaning of R3 (memory address) is altered. It doesn't poi
 
 On exit, R3 points to the first pair which wasn't fully used, and this pair is updated to reflect the new start address/bytes remaining, so that a subsequent call would continue from where this call has finished.
 
-This bit may only be set for reasom codes 0-2.
+This bit may only be set for reason codes 0-2.

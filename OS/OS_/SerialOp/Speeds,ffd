@@ -20,3 +20,4 @@ R1	Baud rate
 16	38400 (RPC or later only)
 17	57600 (RPC or later only)
 18	115200 (RPC or later only)
+19	230400

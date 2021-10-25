@@ -12,7 +12,7 @@ else
 This service is issued by DeviceFS when an open attempt on a device is frustrated because either:
 
 è	that device already has its maximum number of streams open
-è	a non-full-duplex device has one or more streams open in the conficting direction
+è	a non-full-duplex device has one or more streams open in the conflicting direction
 
 Hopefully sufficient blocking streams can be closed, which will allow the open request to be fulfilled. If you opened the stream in R2, and it need no longer be kept open, then you should close it and claim the service. The kernel responds to this service to close the printer and serial devices if it has implicitly opened them.
 #Line

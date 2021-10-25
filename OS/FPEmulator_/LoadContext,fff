@@ -1,0 +1,16 @@
+FPEmulator_LoadContext  (&40488)
+#Parent FPEmulator_
+=>	R0 =	<context=>FPEmulator_about> pointer (-2 for current context)
+	R1 =	pointer to 25-word area as described under <FPEmulator_SaveContext>
+#Line
+#wrap off
+This call allows the programmer to load a floating point context with a
+specified set of register and FPSR values, destroying any pending or
+incompletely processed exception in the process.
+
+This call should almost always be preceded by one to <FPEmulator_Abort>: you
+can create chaos in the floating point system by calling
+<FPEmulator_LoadContext> while there is a pending or incompletely processed
+exception.
+#line
+This call did not work correctly until version 4.17 of the FPEmulator module.

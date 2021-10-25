@@ -44,7 +44,10 @@ Bit	Meaning if set
 8	R0 is initial font handle
 9	perform kerning
 10	writing direction is Right to Left
-11-16	0 (reserved)
+11	0 (reserved)
+12	R1 points to <16-bit string=>font_longstrings> (bit 13 must be clear) (FontManager 3.41+)
+13	R1 points to <32-bit string=>font_longstrings> (bit 12 must be clear) (FontManager 3.41+)
+14-16	0 (Reserved)
 17	return nearest caret position (If x offset is less than half way through a char, we don't include this char)
 18	return bounding box in R5 (bit 5 must also be set)
 19	return updated matrix in R6 (bit 6 must also be set)

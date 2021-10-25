@@ -36,4 +36,11 @@ DrawV				20	Draw SWI (<Draw_xx=>Draw_>)
 <EconetV=>vector_econetv>	21	Econet activity (<Econet_xx=>Econet_>)
 <ColourV=>vector_colourv>	22	ColourTrans SWI (<ColourTrans_xx=>ColourTrans_>)
 <PaletteV=>vector_palettev>	23	Read/Write palette vector
-Serial				24	Serial operation (<OS_SerialOp>)
+SerialV				24	Serial operation (<OS_SerialOp>)
+FontV				25	Font manager
+PointerV				26	Mouse drivers
+TimeShareV				27	SkyNet
+LowPriorityEventV				28	For future expansion
+FastTickerV				29	Like TickerV, but faster
+GraphicsV				2A	Graphics hardware abstraction
+Reserved				2B-2F

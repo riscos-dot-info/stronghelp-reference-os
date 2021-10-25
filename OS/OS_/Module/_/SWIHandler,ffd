@@ -36,7 +36,10 @@ Recommended code to implement multiple SWIs :
 	STMFD	r13!,\{r14\}
 	SWI	"<XMessageTrans_ErrorLookup=>MessageTrans_ErrorLookup>"
 	LDMFD	r13!,\{r14\}
-	ORRS	pc,r14,#1<<28
+	TEQ	pc,pc
+	ORRNES	pc,r14,#1<<28
+	MSR	CPSR_f,#1<<28
+	MOV	pc,r14
 
 .<EBlock=>swi_errorblock>\_UnknownSWI
 	EQUD	&1E6

@@ -17,6 +17,6 @@ To prevent infinite loops if an error occurs in starting a task, modules should:
 4b	or set their taskhandle back to 0 on <Service_StartedFiler=>Service_4C> (failed to initialise)
 5	set their taskhandle back to 0 when they quit using <Wimp_CloseDown=>Wimp:Wimp_CloseDown>
 
-Filer tasks should also check for <Service_FilerDying=>Service_4F>, and close down if they recieve it.
+Filer tasks should also check for <Service_FilerDying=>Service_4F>, and close down if they receive it.
 #Line
 See <PRM 2, page 490=>PRM-2:490>

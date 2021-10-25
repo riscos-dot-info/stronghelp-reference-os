@@ -1,0 +1,9 @@
+PCI_MemoryRead  (&50386)
+#Parent PCI_
+=>	R0 =	PCI address (found with PCI_HardwareAddress)
+	R1 =	length of transfer (whole number of words)
+	R2 =	pointer to buffer
+	R4 =	flags (bit 3 => prefetchable)
+<=	Buffer updated
+
+Performs a Memory Read cycle of the denoted size.

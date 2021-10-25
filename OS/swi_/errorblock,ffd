@@ -1,6 +1,6 @@
-SWI Error block:
+SWI Error block
 0	Error number
-4..	Error string. Zero terminated.
+4..	Error string, zero terminated.
 
 Bits in Error number
 #Line; tab

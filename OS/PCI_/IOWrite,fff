@@ -1,0 +1,7 @@
+PCI_IOWrite  (&50385)
+#Parent PCI_
+=>	R0 =	PCI address (found with PCI_HardwareAddress)
+	R1 =	access size (1, 2 or 4 for byte/half word/word)
+	R2 =	value to write
+
+Performs an IO write cycle of the denoted size.

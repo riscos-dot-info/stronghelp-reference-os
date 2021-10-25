@@ -6,6 +6,7 @@ SCSI
 Create
 DescribeDisc
 DiscOp
+DiscOp64
 Drives
 FloppyStructure
 FreeSpace

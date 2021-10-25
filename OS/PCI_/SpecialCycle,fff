@@ -1,0 +1,7 @@
+PCI_SpecialCycle  (&5038C)
+#Parent PCI_
+=>	R0 =	bus
+	R1 =	message/data
+
+Issues a special cycle on the PCI bus.
+The value in R1 will be call specific.

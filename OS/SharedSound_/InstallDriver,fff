@@ -1,0 +1,11 @@
+SharedSound_InstallDriver (&4B447)
+#parent SharedSound_
+#prefix SharedSound_
+=>	R0 =	1 to install linear handler
+	 	2 to install log handler
+	 	or a pointer to a driver table address.
+	R1 = 	parameter to pass driver in R12 when called
+	R2 =	flags
+	R3 =	volume
+
+This is to allow other output devices to be installed. It is not implemented.

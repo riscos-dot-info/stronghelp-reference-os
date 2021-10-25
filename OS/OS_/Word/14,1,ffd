@@ -13,7 +13,7 @@ OS_Word 14,1
 	 	 	5 = minute		(0-59)
 	 	 	6 = second		(0-59)
 
-This OS_Word reads the time directly from the CMOS clock.
+In RISC OS 2 this OS_Word reads the time directly from the CMOS clock.
 #line
 *Note*:	This call is not Y2K compliant since it returns only a two-digit value for year. As such, this call is *deprecated*.
 #

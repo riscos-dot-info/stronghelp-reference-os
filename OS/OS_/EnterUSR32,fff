@@ -1,4 +1,4 @@
-OS_EnterUSR32 (&73) [3.8]
+OS_EnterUSR32  (&73) (3.8+)
 #Parent OS_
 {f25}Þ{f}	no parameters
 {f25}Ü{f}	registers preserved

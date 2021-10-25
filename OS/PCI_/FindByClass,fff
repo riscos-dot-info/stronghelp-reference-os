@@ -1,0 +1,9 @@
+PCI_FindByClass  (&5038F)
+#Parent PCI_
+=>	R3 =	0 to start, or R3 last found
+	R0 =	class code (24-bit)
+	R1 =	mask (matches if (function_class AND R1) = R0)
+<=	R3 =	<function handle=>PCI_fhand>
+
+Finds the function handle based on the class passed.Only the bits in R1 of the
+class code will be checked so a mask of -1 will search for an exact match.

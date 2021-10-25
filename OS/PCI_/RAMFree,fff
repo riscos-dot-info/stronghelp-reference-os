@@ -1,0 +1,5 @@
+PCI_RAMFree  (&50391)
+#Parent PCI_
+=>	R0 =	logical address returned by <PCI_RAMAlloc>
+
+Returns the block of memory pointed to by R0 (claimed earlier with PCI_RAMAlloc) to the PCI memory pool for others to use.

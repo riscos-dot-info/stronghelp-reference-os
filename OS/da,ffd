@@ -2,21 +2,18 @@ SWIs that should be used with care with dynamic areas
 #Parent OS_
 Some SWIs use some bits 31-27 for flags. With the introduction of dynamic areas into the memory map on RISC OS 3.5 or later, it is now possible for RAM to be located at addresses with these bits set. Thus some SWIs are limited in the range of memory to which pointers can be passed, and will fail mysteriously (possibly overwriting other areas of memory) if a pointer to memory with these bits sets is unwittingly passed.
 
-This list is incomplete, please mail additions to <the moderator=>#URL mailto:koschei@eh.org>:
+This list is incomplete, please mail additions to the moderator <christian@recoil.org=>#URL mailto:christian@recoil.org>:
 
 SWI					Register	Flag Bits
 #Line
-<Draw_ProcessPath>			R7		31
-<ADFS_DiscOp>				R1		as FileCore_DiscOp
-<ADFS_SectorOp>				R1		as FileCore_DiscOp
 <FileCore_DiscOp>			R1		0-7 (word aligned address is encoded in 26 bits)
+	 	and similarly for ADFS_DiscOp, RAMFS_DiscOp etc...
 <FileCore_SectorOp>			R1		0-7 (word aligned address is encoded in 26 bits)
-<OS_HeapSort>				R1		29,30,31
-<OS_ReadLine>				R0		30,31
-<OS_SubstituteArgs>			R0		31
-<RAMFS_DiscOp>				R1		as ADFS_DiscOp
-# Gerph> This doesn't exist ?
-# Koschei> apparently not.
-# <RAMFS_SectorOp>			R1		as ADFS_SectorOp
-<Wimp_SendMessage=>Wimp:Wimp_SendMessage>	R1	 (see SWI documentation)
+	 	and similarly for ADFS_SectorOp, SCSI_SectorOp etc...
+<OS_HeapSort>				R1		29,30,31. Use <OS_HeapSort32> instead.
+<OS_ReadLine>				R0		30,31. Use <OS_ReadLine32> instead.
+<OS_SubstituteArgs>			R0		31. Use <OS_SubstituteArgs32> instead.
+<Wimp_SendMessage=>Wimp:Wimp_SendMessage>	R1	see SWI documentation
 <PlugIn string_value=>Wimp:Msg_PlugIn_string_value>	N/A	Checks must be (\>0 AND \< 256)
+<Draw_ProcessPath>			R7		31 - use Draw v1.17 and R1 bit 26 instead
+

@@ -1,4 +1,4 @@
-OS_ScreenMode 5 (&65) (4.0)
+OS_ScreenMode 5  (&65) (4.0+)
 {*}Request a foreground screen clean{*}
 {f25}Þ{f}	R0 =	5
 {f25}Ü{f}	/Preserved/

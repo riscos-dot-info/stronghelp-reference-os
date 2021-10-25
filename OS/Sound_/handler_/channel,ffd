@@ -20,4 +20,4 @@ Channel handler fill code
 These values have been found by example only. It is the job of the channel handler to call the voice generators as required.
 #subpage fixup
 Channel handler overrun fixup
-This code is never called, but for safety you should make this point to {fCode}MOVS pc,link{f} which will return immediately if called.
+This code is never called, but for safety you should make this point to {fCode}MOV pc,link{f} which will return immediately if called.

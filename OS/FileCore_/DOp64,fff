@@ -1,0 +1,35 @@
+FileCore_DiscOp64  (&4054E) (5.0+)
+#Parent FileCore_
+=>	R1 =	bits 0-3 = reason code
+	 	bits 4-7 = option bits
+	 	bits 8-31 reserved
+	R2 ->	disc address
+	 	Word 0	bits 0-7: drive number
+	 	 	bits 8-31: reserved, must be zero
+	 	Word 1   byte address (low word)
+	 	Word 2   byte address (high word)
+	R3 =	pointer to buffer (or scatter list)
+	R4 =	length in bytes
+	R5 =	pointer to alternative disc record, or zero
+	R6 =	cache handle
+	R8 =	pointer to FileCore instance private word
+
+<=	R1 =	preserved
+	R2 =	preserved; disc address pointed to is updated to point
+	 	to the next byte to be transferred
+	R3 =	pointer to next buffer location to be transferred
+	R4 =	number of bytes not transferred
+#Line
+This call is just like <FileCore_DiscOp> except that it attacks a number of shortcomings in old versions of FileCore:
+
+	  1)	Alternative disc record pointers passed in to various SWIs currently only
+	 	have a 26-bit range so will not work in 32 bit systems
+	  2)	FileCore_SectorDiscOp limits discs to 2^29 sectors, ie. 256GB for drives
+	 	with 512 byte sectors.
+
+In the future, this will allow for up to 16 exbibytes (over 16 billion GB) per disc, and many more discs per filing system. 
+#Line
+As high (top-bit set) addresses are possible in a scatter list, only
+negative numbers smaller or equal to than -64K (ie >= unsigned &FFFF0000)
+should be interpreted as the end of list marker. This applies to any FileCore
+module for RISC OS 3.5 or later.

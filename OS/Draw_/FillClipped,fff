@@ -1,0 +1,11 @@
+Draw_FillClipped  (&4070C)
+#Parent Draw_
+=>	R0 =	pointer to <path block=>draw_pathblock>
+	R1 =	<fill style=>draw_fillstyle>, or 0 for <default=>.fill>
+	R2 =	pointer to <transformation matrix=>draw_transform>, or 0 for default
+	R3 =	flatness, or 0 for default
+	R4 =	pointer to <clip description=>draw_clipblock> block
+
+<=	R0 corrupt
+
+This SWI is used to draw a path and fill its inside, clipped to the path given.

@@ -17,7 +17,7 @@ KeyV reason codes
 2	<Key pressed=>.r1>
 3	<Notify driver of LED state=>.r3>
 4	<Enable keyboard device drivers=>.r4>
-5-10	Reserved for RISC OS Ltd. use
+5-11	Reserved for system use
 #
 #subpage r0
 KeyV 0

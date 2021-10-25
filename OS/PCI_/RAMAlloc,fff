@@ -1,0 +1,11 @@
+PCI_RAMAlloc  (&50390)
+#Parent PCI_
+=>	R0 =	size required
+	R1 =	alignment required (eg. &1000 if must be 4K aligned - 0 if none)
+	R2 =	boundary limitation (eg &10000 if mustn't cross 64K boundary - 0 if none)
+<=	R0 =	logical address
+	R1 =	PCI address
+#Line
+Allocates memory from a fixed, contiguous memory pool, suitable for access by other bus masters. This is provided for the convenience of drivers that only need a few simple data structures for communication with their PCI device, and don't want the complexity of dealing with cache coherency, memory fragmentation and physical page moving (Service_PagesUnsafe et al).
+
+Memory will be uncachable but bufferable - you must ensure that any writes you perform have taken place before another bus master reads the memory, by calling <OS_MMUControl> 1 with bit 29 of R0 set. The memory is not accessible from user mode.

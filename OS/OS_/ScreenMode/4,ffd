@@ -1,4 +1,4 @@
-OS_ScreenMode 4 (&65) (4.0)
+OS_ScreenMode 4  (&65) (4.0+)
 {*}Screen cache and screen cleaning{*}
 {f25}Þ{f}	R0 =	4
 	R1 =	-1, to read current control flags, or

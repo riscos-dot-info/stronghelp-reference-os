@@ -1,6 +1,6 @@
 PDumper config block
 #Parent PDumperReason_
-All byte valus are unsigned, all words are signed. String are stored as *byte* offsets to a <string structure=>.string>. An offset of 0 means there is no string. When <PDriver_SetDriver> copies this block it makes <these additions=>PDriver_SetDriverblock>.
+All byte valus are unsigned, all words are signed. Strings are stored as *byte* offsets to a <string structure=>.string> object, and an offset of 0 means there is no string. When <PDriver_SetDriver> copies this block it makes <these additions=>PDriver_SetDriverblock>.
 
 Offset	Type	PrintEdit name		Note
 #Line
@@ -43,3 +43,12 @@ Offset	Contents
 #Line
 0	length of string
 1	string ({*}un{*}terminated)
+
+If the 'length of string' byte is 0, this signifies that the string is longer than 255 characters long. In this case we have:
+
+Offset	Contents
+#Line
+0	0
+1-3	24 bit length of string
+4-7	pointer to the string
+

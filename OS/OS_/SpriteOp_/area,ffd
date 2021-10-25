@@ -6,6 +6,6 @@ Offset	Contents
 #Line
 0	Total size of sprite area
 4	Number of sprites in area
-8	Offset to 1st <sprite=>os_spriteop_ptr>
+8	Offset to 1st <sprite=>os_spriteop_ptr> from the area start
 12	Offset to 1st free word
 16..	Extension words (usually none)

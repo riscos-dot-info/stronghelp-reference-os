@@ -1,7 +1,7 @@
 DOSFS_DiscFormat  (&41AC0)
 #Parent DOSFS_
 =>	R0 =	pointer to <disc format structure=>FileCore_Format> to be filled in
-	R1 =	SWI number to call to vet disc format (eg <ADFS_VetFormat>)
+	R1 =	SWI number to call to vet disc format (eg. <ADFS_VetFormat>)
 	R2 =	parameter in R1 to use when calling vetting SWI
 	R3 =	<format specifier=>DOSFS_FormatSpec>
 

@@ -26,15 +26,23 @@ Value		Meaning
 1		Fill the path in one go
 2		Fill the path, doing one subpath at a time
 3		Calculate output buffer size requirements
-&80000000 + x	Output path's <bounding box=>swi_bbox> to block at x
+1<<31 + x	Output path's <bounding box=>swi_bbox> to block at x
+		*Note*: For 32 bit compatibility, use flags bits 25 and 26 instead.
 x		Output path to <block=>Draw_outpathblock> at x
 		The first item in this buffer should be 0, followed by a word denoting the size of the buffer
 #Subpage extrafill
 Extra fill path options for ProcessPath
 Bit	Meaning if set
 #Line
+25	Output bounding box instead of path (See <note=>.note>)
+26	Pointer in R7 is 32 bit
 27	Open subpaths are to be closed
 28	Path should be flattened
 29	Path should be thickened
 30	Path should be re-flattened after thinkening
 31	Use floating point output (not implemented at present)
+#subpage note
+Note
+Version 1.17 of the Draw module and later move the flag in bit 31 of the output pointer into R1, to allow the pointer to address the full memory range. Attempts to set the new flags on older versions of the module will cause the error 'Reserved bits non zero'.
+
+A BASIC patch will be available and freely distibutable that allows the new flags to work on all versions of the module.

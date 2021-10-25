@@ -1,7 +1,7 @@
 OS_HeapSort  (&4F)
 #Parent OS_
 =>	R0 =	number of elements
-	R1 =	pointer to word-array + <flags=>os_heapsort0>
+	R1 =	pointer to word-array + <flags=>os_heapsort0buggy>
 	R2 =	<type=>os_heapsort1> or <comparison routine=>os_heapsort2>
 optional :
 	R3 =	workspace pointer

@@ -5,7 +5,10 @@ OS_ReadSysInfo  (&58)
 	  1	<Mode=>.1>
 	  2	<Machine Id=>.2>
 	  3	<82C71x features=>.3>
-# 	  7	<Read info about last unexpected abort (data or prefetch)=>OS_ReadSysInfo7>
+	  4	<Read machine ethernet address=>.4>
+	  5	<Read machine id raw=>.5>
+	  7	<Read info about last unexpected abort (data or prefetch)=>OS_ReadSysInfo7>
+	  8	<Platform class=>.8>
 	  9	<Read version information=>.9>
 #line
 These calls read information about the current system.
@@ -64,19 +67,57 @@ Bits	Sub unit		710	711
 20-23	chip configuration	1	2
 24-31	reserved		0	0
 #
+#Subpage 4
+OS_ReadSysInfo 4
+*Read ethernet address*
+=>	R0 =	4
+<=	R0 =	bottom 32 bits of Ethernet address (0 for none)
+	R1 =	top 16 bits of Ethernet address (0 for none)
+#
+#Subpage 5
+OS_ReadSysInfo 5
+*Read raw id*
+=>	R0 =	5
+<=	R0 =	bottom 32 bits of machine unique id (raw)
+	R1 =	top  32 bits of machine unique id (raw)
+#
+#subpage 8
+OS_ReadSysInfo 8  (4.0+)
+*Read class*
+=>	R0 =	8
+<=	R0 =	platform class
+	 	0 =	unknown
+	 	1 =	Risc PC
+	 	2 =	A7000
+	 	3 =	A7000+
+	 	4 =	reserved
+	 	5 =	HAL
+	R1 =	32 other flags
+	 	bit 0 = podules supported
+	 	bit 1 = PCI supported
+	 	bit 2 = multiple processors supported
+	 	bit 3 = software control over PSU
+	 	bit 4 = OS runs from RAM
+	R2 =	mask of which bits in R1 are valid on this class
+#line
+Reads information about the class of this platform.
+#
 #subpage 9
-OS_ReadSysInfo 9
+OS_ReadSysInfo 9  (4.0+)
 *Read version information*
 =>	R0 =	9
 	R1 =	<subreason code=>.9c>
-<=	R0 =	relevant information
+<=	R0 =	relevant information, or zero if not implemented
 #line
 Reads information about which version of RISC OS is installed.
-#line;tab
-*Note*:	RISC OS 4+ only.
 #
 #subpage 9c
 OS_ReadSysInfo 9 reason codes
 /Value/	/Meaning/
 #line
-1	Read part number
+0	Read version number as string
+1	Read part number as string
+2	Read build date as string
+3	Dealer name as string
+4	Registered to...
+5	Registered address

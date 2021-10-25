@@ -11,4 +11,8 @@ Number	Printer
 6	Caspel graphics language
 # What?
 7	PDumper interface
+8	JP150 (crap Acorn inkjet)
+9	Risc Developments Deskjet
+10-19	Computer Concepts
+20	ArcFax
 99	Ace Computing Epson JX/Star LC10 driver or PaintJet driver

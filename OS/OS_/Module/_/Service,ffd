@@ -23,7 +23,7 @@ The following code will handle a few services :
   	TEQ	r1,#Service_One
 	TEQNE	r1,#Service_Two
 	TEQNE	r1,#Service_Three
-	MOVNES	pc,r14
+	MOVNE	pc,r14
 	STMFD	r13!,\{r0-r3,r14\}
 	TEQ	r1,#Service_Two
 	BEQ	Service_Two_Handler
@@ -31,4 +31,4 @@ The following code will handle a few services :
 	BEQ	Service_Three_Handler
 .Service_One_Handler
 	...
-	LDMFD	r13!,\{r0-r3,pc\}^
+	LDMFD	r13!,\{r0-r3,pc\}

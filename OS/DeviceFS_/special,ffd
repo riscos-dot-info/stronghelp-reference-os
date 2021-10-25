@@ -16,7 +16,6 @@ escape is permitted two values:
 /N	number
 /S	switch
 
-Within the actual special field itself, I have not been able to assign
 The special field itself is passed according to the validation string, and the results placed in a buffer. The buffer has one word per escape, which is set to &DEADDEAD if the keyword is absent from the special field. "<Parameters=>.parameters>" are terminated by a comma, or an out of place character ({/}e.g.{/} letter in a numeric field). Numbers are read with <OS_ReadUnsigned> and stored in the word. Switches store the state of the keyword - so a validation string of
 
 #Indent 2;fCode
@@ -58,7 +57,7 @@ The {*}special field control block{*} of the <Initialise entry point=>DeviceFS_e
 #        ok, so they are stupid ideas, but at present they are not sensibly
 #        possible because of certain 'failings' in DeviceFS.
 #        It appears that I cannot do anything useful at all with special
-#        fields because the documentation is do downright awful.
+#        fields because the documentation is downright awful.
 #        I've mailed Mr Walker, so maybe I can get this cleared up.
 #        Empirical tests have resulted in not a lot of useful info.
 #        Hacking has resulted in nothing useful whatsoever.

@@ -31,7 +31,7 @@ Event numbers
 23	Reserved for external developers
 # Event_WatfordPCCard     * 23    ; Watfords scanner driver for scanner activities
 # Gerph> So why does it mention a PC card then ?
-24	Driver recieved frame for Internet (DCI 2 only)
+24	Driver received frame for Internet (DCI 2 only)
 25	Driver completed Internet transmission request (DCI 2 only)
 # Event_MNS_Rx            * 26    ; Copy of the Econet_Rx
 # Event_MNS_Tx            * 27    ; Copy of the Econet_Tx

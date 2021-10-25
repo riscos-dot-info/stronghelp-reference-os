@@ -9,4 +9,7 @@ Enable
 Disable
 EnableUpcalls
 DisableUpcalls
+EnumerateUSBPrinters
 #EndTable
+#Line
+These calls are for private use by Printer manager only.

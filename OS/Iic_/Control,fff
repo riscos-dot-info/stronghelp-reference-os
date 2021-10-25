@@ -4,8 +4,8 @@ IIC_Control  (&240)
 	R1 =	pointer to block
 	R2 =	size of block (bytes)
 #Line
-Reads from or writes to the specified IIC device ({/}e.g.{/} the clock chip and IIC compatible devices on podules).
+Reads from or writes to the specified IIC device ({/}eg.{/} the clock chip and IIC compatible devices on podules).
 
-The possible error is 'No acknowledge from IIC device' (&20300).
+Possible errors include 'No acknowledge from IIC device' and 'IIC system busy' if reentered.
 #Line
 See <PRM 1, page 944=>PRM-1:944>.

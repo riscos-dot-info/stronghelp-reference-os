@@ -1,0 +1,26 @@
+FPEmulator_DeactivateContext  (&40481)
+#Parent FPEmulator_
+<=	R0 =	current context pointer
+#Line
+#wrap off
+This call deactivates the current floating point context, ensuring that
+everything about the context is held in memory. It returns the address of the
+current floating point context, or zero if the floating point system is in
+the completely disabled state described under <FPEmulator_ChangeContext>.
+
+You should normally use <FPEmulator_ChangeContext> in preference to this call.
+
+Note that these calls should be made in pairs, with an
+<FPEmulator_ActivateContext> call following each <FPEmulator_DeactivateContext>
+call, Also, you should not allow any floating point instructions to be
+executed between an <FPEmulator_DeactivateContext> call and the following
+<FPEmulator_ActivateContext> call, since executing a floating point instruction
+will re-activate the context and mean that the memory context may no longer
+be up-to-date.
+
+Exception: it is legitimate to leave out the call to
+<FPEmulator_DeactivateContext> in the above sequence, but only if the old
+context is never going to be used again: it is likely to be in an
+inconsistent state if the <FPEmulator_DeactivateContext> call is omitted.
+#Line
+<Contexts=>FPEmulator_about> are only available from FPEmulator 4.12 and later.

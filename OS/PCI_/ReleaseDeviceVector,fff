@@ -1,0 +1,9 @@
+PCI_LogicalAddress  (&49980)
+#Parent PCI_
+=>	R0 =	flags:	must be 0
+	R1 ->	handler routine
+	R2 =	handler R12 value
+	R3 =	<function handle=>PCI_fhand>
+
+Analogous to <OS_ReleaseDeviceVector> - see <PCI_ClaimDeviceVector>.
+After the last claimant for a function is released, MSI mode will be disabled, for backwards compatibility with device drivers that don't use these calls.

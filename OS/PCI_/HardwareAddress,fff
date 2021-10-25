@@ -1,0 +1,19 @@
+PCI_HardwareAddress  (&5038A)
+#Parent PCI_
+=>	R0 =	flags:	bits 3..0 = access privileges (if bit 9 set)
+	 	 	bit 4 => bufferable
+	 	 	bit 5 => cacheable
+	 	 	bits 8-6 => policy (see <OS_DynamicArea>)
+	 	 	bit 9 => access privileges specified
+	 	 	bit 31 => don't map, query PCI address only
+	R1 =	address index     (0-5 correspond to first 6 Base Address Registers;
+	 	a device with 3 64-bit addresses would use indexes 0,2,4 only
+	 	&100 corresponds to ROM) other values reserved
+	R3 =	<function handle=>PCI_fhand>
+<=	R0 =	flags 	bit 0 => IO if set, memory if clear
+	 	 	bit 3 => prefetchable
+	R1 =	PCI address
+	R2 =	area size
+	R4 =	logical address (if R0 bit 31 clear)
+
+Finds or defines how a PCI address maps into the logical memory map.

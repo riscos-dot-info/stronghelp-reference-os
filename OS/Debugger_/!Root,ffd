@@ -2,3 +2,4 @@ Debugger
 #Parent !Root
 #Prefix Debugger_
 <Disassemble>
+<DisassembleThumb>

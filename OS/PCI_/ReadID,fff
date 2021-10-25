@@ -1,0 +1,11 @@
+PCI_ReadID  (&50380)
+#Parent PCI_
+#wrap off
+=>	R3 =	<function handle=>PCI_fhand>
+<=	R0 =	vendor ID (bits 0-15)
+	 	device ID (bits 16-31)
+	R1 =	subsystem vendor ID (bits 0-15)
+	 	subsystem ID (bits 16-31)
+
+#wrap on
+This SWI returns the device and vendor info for the given PCI device.

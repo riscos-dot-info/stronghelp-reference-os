@@ -1,0 +1,49 @@
+Podule_ReadInfo  (&4028D) (3.5+)
+#Parent Podule_
+=>	R0 =	bit set of results required
+	R1 =	word aligned buffer to receive results (4 bytes each)
+	R2 =	length of buffer
+	R3 =	<ROM section=>OS_ModuleROMSections>
+<=	R2 =	length of results written
+
+This SWI returns an array of grubby information about the given expansion card based on the bit mask in R0.
+
+Bit	Word returned
+#Line
+0	Expansion card/Extension ROM number
+1	Synchronous base address of card, or zero for none
+2	CMOS address
+3	CMOS size
+4	Extension ROM or NIC base address
+5	Expansion card ID byte
+6	Product type
+7	Combined hardware address (Sync base OR'd CMOS address)
+8	Pointer to description string, or zero for none
+9	EASI address, or zero for none
+10	EASI size
+11	Primary DMA channel logical number (or -1 for none)
+12	Secondary DMA channel logical number (or -1 for none)
+13	IRQ status register
+14	IRQ request register
+15	IRQ mask register
+16	IRQ bit within the above 3 registers
+17	IRQ device number for OS_ClaimDeviceVector
+18	FIQ as IRQ status register
+19	FIQ as IRQ request register
+20	FIQ as IRQ mask register
+21	FIQ as IRQ bit within the above 3 registers
+22	FIQ as IRQ device number for OS_ClaimDeviceVector
+23	FIQ status register
+24	FIQ request register
+25	FIQ mask register
+26	FIQ bit within the above 3 registers
+27	Ethernet address, low 32 bits
+28	Ethernet address, remaining 16 bits
+29	MEMC address, or zero for none
+30	Reserved
+31	Reserved
+
+The string pointers returned point to temporary buffers in the Expansion Card Manager's workspace so you should take a local copy of the strings as they will be invalidated by the next call.
+
+#Line
+See <PRM 5, page 273=>PRM-5:273>.

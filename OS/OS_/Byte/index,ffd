@@ -23,7 +23,7 @@ OS_Byte Index
 25	&19	<Reset group of font definitions=>os_byte025>
 70	&46	<Read/Write country number=>os_byte070>
 71	&47	<Read/Write alphabet or keyboard number=>os_byte071>
-106	&6A	<Select pointer / Activate mouse=>os_byte106>
+106	&6A	<Select pointer/Activate mouse=>os_byte106>
 112	&70	<Write VDU driver screen bank=>os_byte112>
 113	&71	<Write display hardware screen bank=>os_byte113>
 114	&72	<Write shadow/non-shadow state=>os_byte114>
@@ -49,8 +49,8 @@ OS_Byte Index
 153	&99	<Insert char into input buffer=>os_byte153>
 156	&9C	<Read/Write serial port state=>os_byte156>
 160	&A0	<Read VDU variable value=>os_byte160>
-161	&A1	<Read battery backed RAM=>os_byte161>
-162	&A2	<Write battery backed RAM=>os_byte162>
+161	&A1	<Read non volatile CMOS memory=>os_byte161>
+162	&A2	<Write non volatile CMOS memory=>os_byte162>
 163	&A3	<Read/Write general graphics info=>os_byte163>
 165	&A5	<Read output cursor position=>os_byte165>
 176	&B0	<50 Hz counter=>os_byte176>

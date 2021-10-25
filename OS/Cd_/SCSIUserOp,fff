@@ -1,0 +1,23 @@
+CD_SCSIUserOp  (&4126B)
+#Parent CD_
+=>	R0 =	bits 24-25	= 0 => no data transfer
+	 	 	= 1 => read
+	 	 	= 2 => write
+	 	 	= 3 reserved
+	R1 =	length of control block
+	R2 ->	control block
+	R3 ->	buffer for data transfer
+	R4 =	length of transfer
+	R5 =	timeout in cs (0 = default)
+	R7 ->	CDFS control block
+<=	R3,R4 =	updated
+	R5-R9 =	preserved
+	NZC =	corrupted
+	If V set	R0-R2 are as for SWI SCSI_Op
+	 	or R0 -> error not in SCSI range and R1,R2 corrupt
+	else 	R0-R2 =	preserved
+
+CD_SCSIUserOp must not be called in the background (for compatibility with
+ATAPI drives).
+#Line
+Available from RISC OS 5.00 and later.

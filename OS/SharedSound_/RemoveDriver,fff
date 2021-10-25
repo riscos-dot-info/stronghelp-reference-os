@@ -1,0 +1,9 @@
+SharedSound_RemoveDriver (&4B448)
+#parent SharedSound_
+#prefix SharedSound_
+=>	R0 =	2 to remove log handler
+	 	or a pointer to a driver table address.
+
+This is to allow other output devices to be installed. You cannot uninstall the linear driver. 
+
+This SWI is not implemeted.

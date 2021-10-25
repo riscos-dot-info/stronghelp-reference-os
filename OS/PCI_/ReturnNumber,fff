@@ -1,0 +1,6 @@
+PCI_ReturnNumber  (&50382)
+#Parent PCI_
+<=	R0 =	number of <function handles=>PCI_fhand> that have been used
+
+This SWI returns the number of function handles that have been used.
+Device drivers may search handles 1 to R0 inclusive to find a device.

@@ -1,9 +1,9 @@
 Format specifier
 \#	Name	Size	OS		Type
 #Line
-0	DOS/Q	1.44M	MS-DOS 3.20	double sided
+0	DOS/Q	1440k	MS-DOS 3.20	double sided
 1	DOS/M	720k	MS-DOS 3.20	double sided
-2	DOS/H	1.20M	MS-DOS 3	double sided
+2	DOS/H	1200k	MS-DOS 3	double sided
 3	DOS/N	360k	MS-DOS 2,3	double sided
 4	DOS/P	180k	MS-DOS 2,3	single sided
 5	DOS/T	320k	MS-DOS 1,2,3	double sided

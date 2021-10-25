@@ -1,3 +1,6 @@
-OS_Reset  (&6A) (3.5)
+OS_Reset  (&6A) (3.5+)
 #Parent OS_
 This SWI does the equivalent of pressing the Reset button. Use with {*}extreme{*} caution.
+
+If <OS_ReadSysInfo 8=>OS_ReadSysInfo> states that the machine supports software power control then
+=>	R0 = 	"&OFF" (&46464F26) to turn the power off too.

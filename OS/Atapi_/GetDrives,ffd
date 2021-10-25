@@ -1,0 +1,3 @@
+ATAPI_GetDrives
+#Parent ATAPI_
+<=	R0 =	number of drives found

@@ -3,5 +3,6 @@ RamFS
 #Parent !Root
 <DescribeDisc>
 <DiscOp>
+<DiscOp64>
 <Drives>
 <FreeSpace>

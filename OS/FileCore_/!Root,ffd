@@ -8,6 +8,8 @@ FileCore
 <DiscFormat>
 <DiscOp>
 <Drives>
+<DiscOp64=>FileCore_DOp64>
+<Features>
 <FloppyStructure>
 <FreeSpace>
 <LayoutStructure>

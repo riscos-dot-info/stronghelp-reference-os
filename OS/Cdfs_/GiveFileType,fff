@@ -5,6 +5,5 @@ CDFS_GiveFileType  (&41E85)
 #line;tab
 This call converts the DOS extension of a filename into its corresponding Acorn numeric filetype - eg 'smith.jpg' is converted to &C85 (the JPEG filetype).
 
-{*}Note:{*}	Use of this SWI is deprecated by RISC OS Ltd.
-		You should use the <MimeMap=>InetSWIs:MimeMap_> module instead to perform filetype translations.
-	(nb. In RO4, MimeMap is used by this call).
+{*}Note:{*}	Use of this SWI is deprecated.
+		You should use the <MimeMap=>InetSWIs:MimeMap_> module instead to perform filetype translations - indeed in RO4, MimeMap is used by this call.

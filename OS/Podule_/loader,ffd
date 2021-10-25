@@ -1,6 +1,6 @@
 Expansion Card loader
 #Parent Podule_
-The loader provides a simple interface that lets the Expansion Card manager access the card's code space. The regiser usage is common to the 4 entry points.
+The loader provides a simple interface that lets the Expansion Card manager access the card's code space. The register usage is common to the 4 entry points.
 
 =>	R0	user data, or byte to read/write
 	R1	user data, or address
@@ -17,5 +17,9 @@ Offset	Code
 4	Write a byte
 8	Reset card
 12	<Podule_CallLoader>
+16	"32OK" (magic word indicating the loader can be run on a 32 bit system)
 
-Return with BICS pc, lr, #V_bit, or V set and an error in R0. An error pointer of 0 will generate a default error.
+#Line
+As the loader is (and has always been) entered with V clear the simplest non-error exit is {fCode}MOV pc,lr{f}.
+This is contrary to the RISC OS 3 PRM which recommends a {fCode}BICS pc,lr,#V_bit{f}, which then renders the loader only suitable for use on old systems where the ARM is running in 26 bit mode.
+Exit with V set and an error in R0 if you wish to return an error, but to save space in the loader ROM an error pointer of 0 will generate a default error.

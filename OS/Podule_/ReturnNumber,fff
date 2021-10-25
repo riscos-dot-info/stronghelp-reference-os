@@ -3,6 +3,6 @@ Podule_ReturnNumber  (&4028C)
 <=	R0 =	number of expansion cards
 	R1 =	number of extension ROMs
 
-This SWI reads the number of expansion cards and extension ROMs. Be prepared for any values ({/}e.g.{/} 0 expansion cards).
+This SWI reads the number of expansion cards and extension ROMs. Be prepared for any values ({/}eg.{/} 0 expansion cards).
 #Line
 See <PRM 4, page 156=>PRM-4:156>.

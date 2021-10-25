@@ -9,3 +9,12 @@ Number	Module		Printer
 3	PDumberIW	ImageWriter
 4	PDumber24	Dot reducing 24 pin
 5	PDumberDJ	Colour Deskjet
+6	PDumperE2	Epson ESC/P2
+7	PDumperLB	Laser beam
+8	PDumperAF	ArcFax
+9	?	Reserved
+10	PDumperFP	Fargo Primera (SpaceTech)
+11	PDumperCX	Canon Extended Mode
+12	PDumperCP	Canon Photo Realistic (SpaceTech)
+13	PDumperLM	Lexmark
+14	PDumperCX2	Canon Extended Mode 2

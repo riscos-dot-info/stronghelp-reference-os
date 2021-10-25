@@ -1,0 +1,6 @@
+SharedSound_CheckDriver (&4B44D)
+#parent SharedSound_
+#prefix SharedSound_
+<=	R0 =	Pointer to control word
+
+This is used by the Replay Sound16 codecs as part of the multi-tasking Replay implementation.  It provides a control word to both Replay and the Sound16 code allowing for a "1 audible handler of many" support.

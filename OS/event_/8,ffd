@@ -8,7 +8,7 @@ Econet UserRPC / OSProc events
 	R4 =	sending station's network
 <=	R0-R4 may be corrupted.
 
-These events are generated when the Econet recieves a UserRPC or OS Procedure call sent by another station calling <Econet_DoImmediate>.
+These events are generated when the Econet receives a UserRPC or OS Procedure call sent by another station calling <Econet_DoImmediate>.
 #SubPage RPC
 Econet OS Procedure Calls
 Number	Name

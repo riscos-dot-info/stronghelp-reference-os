@@ -1,4 +1,4 @@
-OS_ClaimProcessorVector  (&69) (3.5)
+OS_ClaimProcessorVector  (&69) (3.5+)
 #Parent OS_
 {*}On claim :{*}
 =>	R0 =	<Vector number=>.vectors> + 256

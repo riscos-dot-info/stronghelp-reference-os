@@ -19,5 +19,5 @@ See <PRM 1, page 910=>PRM-1:910>.
 OS_ReadLine flags
 Bit	Meaning if set
 #Line
-30	Echo character in R4 (password style)
 31	Echo only characters entering buffer
+30	Echo character in R4 (password style)

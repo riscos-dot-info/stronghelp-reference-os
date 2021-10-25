@@ -1,11 +1,23 @@
 Draw
 #Parent !Root
 #Prefix Draw_
+#Table Columns 2
 <Fill>
+FillFP
+<FillClipped>
+FillClippedFP
 <FlattenPath>
+FlattenPathFP
 <ProcessPath>
+ProcessPathFP
 <Stroke>
+StrokeFP
+<StrokeClipped>
+StrokeClippedFP
 <StrokePath>
+StrokePathFP
 <TransformPath>
+TransformPathFP
+#endtable
 #line
 <File format=>DrawFile_format>

@@ -1,0 +1,18 @@
+OS_SubstituteArgs32  (&7E) (5.0+)
+#Parent OS_
+=>	R0 =	pointer to argument list
+	R1 =	pointer to buffer for resulting string
+	R2 =	length of buffer
+	R3 =	pointer to template string
+	R4 =	length of template string
+	R5 =	flag bit in bit 31, bits 30-0 reserved
+<=	R0,R1 preserved
+	R2 =	length of result string (incl. terminator)
+	R3,R4,R5 preserved
+
+This call performs the hard work involved in substituting a list of arguments into a 'template' string. Its main use is in the processing of command Alias$... variables by the system. It's also useful in other situations, it has been made available to users. For example, FileSwitch uses it in the processing of Alias$LoadType_TTT variables.
+
+The argument list is a string consisting of space seperated items which will be substituted into the template string. Spaces within double quotation marks are not counted as argument seperators. Typically, the argument string will just be the tail of a *Command. It's control character terminated. The result of substituting the arguments into the template string is placed in the buffer. The length of the buffer is given so that the call can check for buffer overflow. The template string is copied into the result buffer char for char. However, when a '%' appears in the template string (even within quotation marks), it marks where an argument should be placed into the output buffer. The '%' is followed by a single digit from 0 - 9. %0 stands for the first argument in the argument list and so on. %% means a single %. Anything else following the '%' is not treated specially, ie both the % and the character are copied over. The template string doesn't have a terminator, instead its length is given. At the end of substitution, any arguments after the highest one mentioned in the template string are appended to the result string. To prevent this set the top bit of R5 on entry. If a non-existing argument is specified in the template string, then a null string is substituted, no error is given.
+#Line
+The CallASWI module (version 0.03) allows this SWI to be used with RISC OS pre 5.00.
+See also <PRM 1, page 463=>PRM-1:463>.

@@ -5,6 +5,7 @@ ADFS
 <ControllerType>
 <DescribeDisc>
 <DiscOp>
+<DiscOp64>
 <Drives>
 <ECCSAndRetries>
 <FlpProcessDCB>
@@ -12,6 +13,7 @@ ADFS
 <FreeSpace64>
 <HDC>
 <IDEUserOp>
+IDEDeviceInfo
 <LockIDE>
 <MiscOp>
 <PowerControl>
@@ -19,4 +21,5 @@ ADFS
 <SectorOp>
 <SetIDEController>
 <VetFormat>
+ATAPIOp
 #EndTable

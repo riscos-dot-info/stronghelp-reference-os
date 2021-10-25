@@ -9,15 +9,15 @@ This service is issued by ResourceFS when it (re)initialises. As it is not linke
 
 #wrap off
 #fCode
-STMFD   sp!, \{r0, lr}
+STMFD   sp!, \{r0, lr}	; stack actual return address
 ADR     r0, files       ; pointer to <resource file block=>ResourceFS_fileblock>
 MOV     lr, pc          ; emulate BL
 MOV     pc, r2          ; call ResourceFS code
-LDMFD   sp!, \{r0, pc}^
+LDMFD   sp!, \{r0, pc}	; and return
 #wrap
 #f
 
-Unlike <ResourceFS_RegisterFiles>, the routine addressed by R2 does not issue <Service_ResourceFSStarted=>service_59> for each block registered. Instead it issues one <Service_ResourceFSStarted=>service_59> after all modules have recieved this service call.
+Unlike <ResourceFS_RegisterFiles>, the routine addressed by R2 does not issue <Service_ResourceFSStarted=>service_59> for each block registered. Instead it issues one <Service_ResourceFSStarted=>service_59> after all modules have received this service call.
 # yeah. StudleyCaps RuleOK
 # Exactly how many hedgehogs have you been smoking today, sir ?
 #Line

@@ -9,9 +9,9 @@ Bit(s)	Meaning
 	1 {f25}Þ{f}	area may not be dragged by the user in Task Manager window (has green bar)
 8	0 {f25}Þ{f}	area does not require specific physical pages (ie R1 is undefined on entry to the <PreGrow=>OS_DynamicAreaHandler0> and <PostGrow=>OS_DynamicAreaHandler1> handlers)
 	1 {f25}Þ{f}	area may require specific physical pages (ie R1 points at a page block on entry to the <PreGrow=>OS_DynamicAreaHandler0> and <PostGrow=>OS_DynamicAreaHandler1> handlers)
-9	1 {f25}Þ{f}	area is <Shrinkable=>OS_dynamicareaShrinkable> [3.8]
-10	1 {f25}Þ{f}	area is <Sparse=>OS_dynamicareaSparse> [3.8]
-11	1 {f25}Þ{f}	area is <bound=>OS_DynamicAreaBinding> to client application [3.8]
+9	1 {f25}Þ{f}	area is <Shrinkable=>OS_dynamicareaShrinkable> (3.8+)
+10	1 {f25}Þ{f}	area is <Sparse=>OS_dynamicareaSparse> (3.8+)
+11	1 {f25}Þ{f}	area is <bound=>OS_DynamicAreaBinding> to client application (3.8+)
 12 - 30	reserved (must be zero)
 #tab
 31	/Virtualise/	Virtual memory is active for dynamic area. If this bit is set when the area is created then virtual memory is activated immediately. Note that no error is produced if it is not possible to start virtual memory for the new dynamic area. <Further notes=>.virtualise>

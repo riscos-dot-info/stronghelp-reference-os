@@ -14,7 +14,7 @@ Byte	Bit	Value	Meaning
 	 	2	32 bit width
 	1	1	<Interrupt Status Pointers=>Podule_isp> follow ECId (else not present)
 	0	1	<Chunk Directory=>Podule_chunkdir> follows interrupt Status Pointers (else not present)
-0	7	0	Acorn conformant expansion card
+0	7	0	Expansion card conforms to the Expansion Card Specification
  	6-3	0	extended ECId
 	2	0	not requesting FIQ (or FIQ relocated)
 	 	1	requesting FIQ

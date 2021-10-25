@@ -1,0 +1,42 @@
+String forms
+#parent Font_Paint
+The SWIs <Font_Paint> and <Font_ScanString> now accept strings in 8, 16 or 32-bit forms (all other SWIs only accept 8-bit strings). This is invoked by bits in the flags word in R2.
+
+A 16-bit string must be half-word aligned, and consists of a number of 16-bit halfwords. A 32-bit string must be word aligned, and consists of a number of 32-bit words.
+
+For example, the string "Hello" might be represented as follows:
+
+      8-bit	:	48 65 6C 6C 6F 00
+     16-bit	:	0048 0065 006C 006C 006F 0000
+     32-bit	:	00000048 00000065 0000006C 0000006C 0000006F 00000000
+
+This allows access to characters outside the first 256. Control codes work as before, but have to be introduced by a character of the appropriate width. The <parameters=>.cparams> of control sequences are handled differently in 16 and 32-bit modes. See also the notes on the font's <encoding=>font_utf8>.
+
+Regardless of the setting of the 16/32-bit bits, string lengths continue to be in bytes (such as R7 on entry to <Font_Paint>).
+
+#subpage cparams
+#parent Font_Paint
+Control code parameters
+16-bit parameter forms:
+  
+   9,11	:	dx/dy comprised of 2 16-bit words.
+   17	:	1 16-bit word
+   18	:	3 16-bit words
+   19	:	2 x (RR00, BBGG word pairs) + 1 16-bit word
+   21	:	sequence of 16-bit words, terminated by a word \< &0020
+   25	:	2 16-bit words
+   26	:	1 16-bit word
+   27	:	4 32-bit words (word-aligned)
+   28	:	6 32-bit words (word-aligned)
+
+32-bit parameter forms:
+  
+   9,11	:	1 32-bit words
+   17	:	1 32-bit word
+   18	:	3 32-bit words
+   19	:	3 32-bit words
+   21	:	sequence of 32-bit words, terminated by a word \< &00000020
+   25	:	2 32-bit words
+   26	:	1 32-bit word
+   27	:	4 32-bit words 
+   28	:	6 32-bit words

@@ -1,0 +1,12 @@
+Service_ModulePostInit (&DB) (5.0+)
+#Parent Service_Index
+=>	R1 =	&DB (reason code)
+	R0 =	module address
+	R2 =	pointer to module title
+	R3 =	0 for the base instantiation, else R3 = pointer to postfix string
+	R4 =	BCD version number (derived from module's help string)
+<=	R1 =	&DB (do not claim)
+
+This service call is made after a module has been finalised, including during a reinitialisation. The module is not linked into the module chain, so its SWIs etc are not available.
+
+This service call is intended to inform clients of a module that any registrations they made with it are no longer active, and any associated handles are stale.

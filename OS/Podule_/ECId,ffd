@@ -4,7 +4,7 @@ A simple ECId is one byte long:
 
 Bit	Meaning (when {*}clear{*})
 #Line
-7	Acorn conformant expansion card
+7	Expansion card conforms to the Expansion Card Specification
 6-3	ID number - zero means <extended ECId=>Podule_eECId>
 2	not requesting FIQ (or FIQ relocated)
 1	Expansion card present (must allways be zero, to allow hardware to detect the presence of a card)

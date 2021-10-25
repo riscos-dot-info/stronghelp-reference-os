@@ -1,0 +1,2 @@
+Encoding identifier
+If a font's encoding is {fCode}UTF8{f}, then rather than taking "straight" 8 and 16 bit strings, strings are decoded according to UTF-8 or UTF-16. For example, the byte sequence {fCode}C2 A3{f} in UTF-8 represents character &A3. The halfword sequence {fCode}D800 DC00{f} in UTF-16 represents character &10000. 32-bit strings are treated normally (hence the string is treated as UCS-4).

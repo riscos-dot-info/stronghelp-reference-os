@@ -1,0 +1,7 @@
+Draw clip block
+#Parent Draw_
+Offset	Contents
+#line
+0	Pointer to <path block=>draw_pathblock> to clip against
+4	<Fill style=>draw_fillstyle>
+8	Pointer to <transformation matrix=>draw_transform>

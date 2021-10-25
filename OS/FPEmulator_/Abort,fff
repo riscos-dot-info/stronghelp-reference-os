@@ -1,0 +1,60 @@
+FPEmulator_Abort  (&40487)
+#Parent FPEmulator_
+=>	R0 =	context pointer (-2 for current context)
+	R1 =	R12 value associated with context (only relevant if R2 indicates a PC value inside the floating point undefined instruction handlers)
+	R2 =	PC value associated with the context (e.g. the PC value the IRQ handler would normally return to)
+<=	R0 =	pointer to frame associated with original non-recursive entry to the floating point system if R2 indicated a PC value inside the floating point undefined instruction handlers, otherwise zero.
+#Line
+#tab
+#wrap on
+It is important in some cases that it should be possible to abort some
+partially complete floating point processing.
+
+Some examples:
+
+  	If an invalid address is given to an emulated LDF, STF, LFM or SFM instruction, it will result in an address exception or data abort occurring on a load or store instruction within the emulator. Had the address merely been that of a swapped-out piece of store, a virtual memory system could simply swap it in, take other standard remedial action and return to the offending instruction. However, since the address is actually invalid, this is not possible: typically, what is then wanted is that processing of the original LDF, STF, LFM or SFM should be abandoned and that some sort of error handler should be invoked, with the register values, etc., appropriate to the LDF, STF, LFM or SFM being made available to the error handler - not whatever values the emulator had in the registers at the time of the internal load or store instruction!
+
+  	If some sort of asynchronous signal is raised for a process while it is swapped out in the middle of some floating point processing, it may be important that you should be able to abandon the partially complete floating point processing.
+
+  	If FPEmulator_LoadContext is used to modify the values in a floating point context, any floating point processing associated with the old values in that context must be aborted. Failure to do this can result in all sorts of confusion within the floating point system - e.g. exceptions occurring on internal operations which simply shouldn't be able to occur and which therefore haven't been catered for.
+
+  	Some types of floating point exception handlers (e.g. Unix signals) don't have an IEEE-type trap handler interface, but instead want to look at the register values, etc., at the time the floating point exception was detected. Again, these shouldn't be the values that the floating point system happens to have in the registers when the trap handler code is called.
+
+	When floating point processing is to be abandoned, three important things may be required:
+
+  	Any pending exception must be cleared. A pending exception is one that has been detected by the hardware, but has not yet caused the undefined instruction vector to be entered. Note that if you're doing something like FPEmulator_LoadContext, this should be done even if there is no obvious floating point processing going on at the time. Also note that since there may be a pending exception on an internal calculation within the floating point system, it should also be done when there *is* some floating point processing going on at the time.
+
+	Finally, note that when a context is deactivated, any pending exception for it is stored away without causing the undefined instruction vector to be entered at the time: the actual processing will occur later. So it is possible for inactive contexts to contain pending exceptions, and not just for the currently active context.
+
+  	Any floating point processing that is currently going on should be abandoned. This means (a) that a suitable new value for the PC is required; (b) that any values put on the stack by the floating point system should be discarded; (c) that the values in the floating point context concerned should be made consistent with there being no current floating point processing.
+
+  	The register values at the time that the exception occurred must be made available.
+
+This call cancels any pending exception and aborts any incomplete floating
+point processing associated with a given floating point context. It returns
+the frame pointer associated with the original non-recursive entry to the
+floating point undefined instruction handler, and restores any floating point
+registers that have been used for internal calculations. It does *not*
+restore contents of this original frame, of other mode registers or of
+floating point registers that have been updated as a result of the partial
+processing of the original non-recursive floating point instruction.
+
+If register values are required, the stack frame has the following format:
+
+#wrap nojoin
+#tab
+	[R0, #-8]:	(on RISC OS 4 or later) Value of SPSR_undef immediately after entry to the undefined instruction handler - i.e. value of CPSR before entry to the undefined instruction handler;
+	[R0, #-4]:	(on RISC OS 4 or later) Value of CPSR immediately after entry to the undefined instruction handler;
+	[R0, #0]:	Value of user R0 immediately after entry to the undefined instruction handler;
+	[R0, #4]:	Value of user R1 immediately after entry to the undefined instruction handler;
+	[R0, #8]:	Value of user R2 immediately after entry to the undefined instruction handler;
+	[R0, #12]:	Value of user R3 immediately after entry to the undefined instruction handler;
+	:	:
+	:	:
+	:	:
+	[R0, #52]:	Value of user R13 immediately before entry to the undefined instruction handler;
+	[R0, #56]:	Value of user R14 immediately before entry to the undefined instruction handler;
+	[R0, #60]:	The return link from this undefined instruction call, including the PSR bits for RISC OS 3;
+	[R0, #64]:	This is the location pointed to by the stack pointer (R13_svc in RISC OS 3, R13_undef in RISC OS 4 or later) before entry to the undefined instruction handler.
+#Line
+<Contexts=>FPEmulator_about> are only available from FPEmulator 4.12 and later.

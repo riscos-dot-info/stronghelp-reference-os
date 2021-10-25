@@ -1,0 +1,42 @@
+Floating point contexts
+#Parent FPEmulator_
+#wrap off
+Multiple-context versions of the floating point system (version 4.12 or later
+of FPEmulator, indicated by an "M" suffix in the help string) allow rapid
+switching between processes using floating point, preserving the complete
+state of the system, including any pending asynchronous exceptions. A
+floating point context is an opaque block of memory used to hold the state of
+the system - an active context must be in an unpaged area of memory, such as
+the RMA. SWIs are provided to switch between contexts, and the floating point
+system provides a single default context which is activated when the module
+is loaded.
+
+In all calls that take or return a context pointer, -1 is used to represent
+the default context. 0 indicates no context - if no context is active, then
+floating point instructions will generate undefined instruction exceptions.
+Where specified, some calls also accept -2 to denote the current context.
+
+The contents of a floating point context should be regarded as a "black box":
+software outside the floating point system itself should neither assume that
+it knows how to interpret them, nor alter them directly. However, the system
+does provide some facilities to allow inspection and modification of a
+floating point context.
+
+Floating point context switching may be of use for performing floating point
+during interrupts or callbacks, or as part of threading schemes. But note
+that use of floating point instructions from SVC mode in versions of RISC OS
+prior to RISC OS 4 is only possible under the following constraints:
+
+    è The instruction must not use R13 or R14 in any way;
+    è R14 must be treated as a scratch register (ie. it will not
+      necessarily be preserved by a floating point instruction);
+    è R13 must point correctly to a Full Descending stack with a
+      sufficient amount of free space.
+
+This rules out the use of floating point via the C compiler.
+
+It should also be noted that on all versions of RISC OS floating point
+instructions will enable interrupts if they are handled by the emulator -
+this is possible even on systems fitted with hardware floating point.
+
+All the new SWIs corrupt the N Z and C flags.

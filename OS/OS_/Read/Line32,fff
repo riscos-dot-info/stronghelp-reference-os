@@ -1,0 +1,26 @@
+OS_ReadLine32  (&7D) (5.0+)
+#Parent OS_
+=>	R0 =	buffer
+	R1 =	size of buffer
+	R2 =	lowest char allowed
+	R3 =	highest char allowed
+	R4 =	<flags=>.flags> and character to output in bottom byte (if bit 30 set)
+
+<=	R0 corrupted
+	R1 =	chars read, excluding Return
+	R2 corrupted
+	R3 corrupted
+	C set if Escape
+
+This SWI reads a line from the current input stream. Input is terminated with Return, Ctrl-J or Escape. Delete and Backspace deletes last char entered. Ctrl-U empties buffer.
+#Line
+The CallASWI module (version 0.03) allows this SWI to be used with RISC OS pre 5.00.
+See <PRM 1, page 910=>PRM-1:910>.
+#Subpage flags
+OS_ReadLine flags
+Bit	Meaning if set
+#Line
+31	Echo only characters entering buffer
+30	Echo character in bottom 8 bits of R4 (password style)
+
+

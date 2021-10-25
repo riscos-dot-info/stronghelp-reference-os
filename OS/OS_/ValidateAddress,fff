@@ -6,7 +6,7 @@ OS_ValidateAddress  (&3A)
 <=	R0,R1 preserved
 	C flag is clear if the range is OK, set otherwise
 
-SWI checks the address range between R0 and R1-1 to see if the specified range lies in <logical RAM=>Machine:Logical> and has a mapping into physical RAM.
+SWI checks the address range between R0 and R1-1 to see if the specified range lies in logical RAM and has a mapping into physical RAM.
 
 Note: This does /not/ check that the memory actually exists, only that it ought to exist. If you have used <OS_SetMemMapEntries>, then this call will not work as expected.
 #Line

@@ -1,0 +1,15 @@
+SharedSound_DriverMixer (&4B44B)
+#parent SharedSound_
+#prefix SharedSound_
+=>	R0 =	Driver number
+	R1 =	Function
+	 	0	read
+	 	1	set
+	R2 =	Mixer number
+	R3 =	Value (set set)
+<=	R0 preserved
+	R1 =	number of mixers
+	R2 =	value
+	R3 =	Name
+
+This sets or reads the mixer values for a driver, where relevant. This SWI is not implemented.

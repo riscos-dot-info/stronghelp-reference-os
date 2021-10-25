@@ -1,0 +1,24 @@
+FPEmulator_InitContext  (&40485)
+#Parent FPEmulator_
+=>	R0 =	pointer to context
+#Line
+#wrap off
+This call should be made to initialise or re-initialise a floating point
+context. It puts the context into a standard starting state, in which:
+
+  All floating point registers contain zeros.
+
+  The FPSR has the OFL, DVZ and IVO exception trap enable bits set. All
+  other trap enable, system control and exception flag bits are clear.
+
+This call may also initialise other less obvious context variables. To
+initialise a floating point context with other registers and/or FPSR values,
+use <FPEmulator_InitContext> and then switch to the context and load the
+desired values with LDF and/or WFS instructions.
+
+Note that this call should not be made on a context that is currently active.
+If it is necessary to re-initialise the currently active context, make it no
+longer active (by using <FPEmulator_ActivateContext> or
+<FPEmulator_ChangeContext>), then re-initialise it, then reactivate it.
+#Line
+<Contexts=>FPEmulator_about> are only available from FPEmulator 4.12 and later.

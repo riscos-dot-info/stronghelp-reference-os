@@ -3,6 +3,6 @@ Service_ClaimFIQinBackground (&47)
 =>	R1 =	&47 (reason code)
 <=	R1 =	0 to claim, or preserved to pass on
 
-This service is issued by a module running as a backround task ({/}i.e.{/} IRQ) that wants to claim the FIQ hardware vector, or a foreground task that wants to poll availability of the vector. If you are the current owner and wish to release the vector, you should do so and signal this by claiming this service.
+This service is issued by a module running as a backround task ({/}ie.{/} IRQ) that wants to claim the FIQ hardware vector, or a foreground task that wants to poll availability of the vector. If you are the current owner and wish to release the vector, you should do so and signal this by claiming this service.
 #Line
 See <PRM 1, page 137=>PRM-1:137>

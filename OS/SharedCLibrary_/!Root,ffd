@@ -2,4 +2,6 @@ SharedCLibrary
 #Parent !Root
 LibInitAPCS_A
 LibInitAPCS_R
-LibInitModule  
+LibInitModule
+LibInitAPCS_32
+LibInitModuleAPCS_32

@@ -1,0 +1,22 @@
+FPEmulator_ActivateContext  (&40481)
+#Parent FPEmulator_
+=>	R0 =	new context pointer (or 0)
+#Line
+#wrap off
+his is the call that will actually install a suitable undefined instruction
+handler, depending on the state of the specified context, what undefined
+instruction handlers are available and the hardware present.
+
+This call also actually enables the floating point hardware if it is present
+and wanted; in this case, it also loads the context into the hardware.
+
+The argument may also be zero, to indicate that the floating point system
+should enter the completely inactive state described under
+<FPEmulator_ChangeContext>.
+
+You should normally use <FPEmulator_ChangeContext> in preference to this call.
+
+See the notes under <FPEmulator_DeactivateContext> relating to restrictions on
+this pair of SWIs.
+#Line
+<Contexts=>FPEmulator_about> are only available from FPEmulator 4.12 and later.

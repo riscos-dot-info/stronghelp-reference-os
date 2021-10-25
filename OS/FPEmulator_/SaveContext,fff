@@ -1,0 +1,42 @@
+FPEmulator_SaveContext  (&40489)
+#Parent FPEmulator_
+=>	R0 =	context pointer (-2 for current context)
+	R1 =	pointer to 25-word register dump
+	R2 =	PC value associated with the context
+<=	R0 =	non-zero if there is a pending or incompletely processed exception associated with the context, zero if there isn't
+#Line
+This call saves the register and FPSR values held in a floating point context to a specified 25-word area of memory, in the following format:
+
+#tab
+#indent 2
+	Offset	Value
+#Line 
+	0	FPSR value
+	4	F0 value, as an extended precision number
+	16	F1 value, as an extended precision number
+	28	F2 value, as an extended precision number
+	40	F3 value, as an extended precision number
+	52	F4 value, as an extended precision number
+	64	F5 value, as an extended precision number
+	76	F6 value, as an extended precision number
+	88	F7 value, as an extended precision number
+
+#indent 0
+#wrap on
+Note that it does this {*}without{*} processing any pending exceptions
+associated with the context, or completing the processing of any
+exception which is currently being processed. The routine returns a hint
+about whether there is a pending or incompletely processed exception
+associated with the context: if there is, the values returned may be
+rather odd and should {*}not{*} be relied upon as an accurate reflection of
+reality. For instance, if the FPA has a pending overflow exception, the
+destination register of the instruction concerned will often read as
+containing a very small number!
+
+This call might be used by a debugger to view the current FP register
+contents. The PC value passed in would then be the address at which
+execution was interrupted - it is used to detect whether the
+floating point system was interrupted in the middle of processing an
+exception.
+#Line
+<Contexts=>FPEmulator_about> are only available from FPEmulator 4.12 and later.

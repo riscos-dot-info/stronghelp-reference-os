@@ -1,0 +1,9 @@
+Podule_SetSpeed  (&4028E) (3.5+)
+#Parent Podule_
+=>	R0 =	speed or zero to read current
+	R3 =	expansion card number
+<=	R0 =	old speed setting
+
+This SWI sets the speed of the EASI cycles for the given expansion card.
+#Line
+See <PRM 5, page 276=>PRM-5:276>.

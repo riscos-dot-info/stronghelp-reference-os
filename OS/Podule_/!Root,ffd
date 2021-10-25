@@ -13,6 +13,8 @@ Podule
 <ReadChunk>
 <ReadHeader>
 <ReadID>
+<ReadInfo>
 <ReturnNumber>
+<SetSpeed>
 <WriteBytes>
 #EndTable

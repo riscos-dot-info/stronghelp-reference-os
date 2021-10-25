@@ -16,6 +16,11 @@ R0	Action
 7	<Read the physical memory arrangement table=>.7>
 8	<Read the amount of a specified sort of memory available=>.8>
 9	<Read controller presence and base address=>.9>
+10-12	Reserved for system use
+13	<Map in IO permanent=>.13>
+14	<Map in IO temporary=>.14>
+15	<Map out temporary IO=>.15>
+16	<Memory areas=>.16>
 #Subpage 0
 OS_Memory 0
 =>	R0 =	0 (reason code)
@@ -24,8 +29,6 @@ OS_Memory 0
 	R2 =	number of entries in page block
 
 This call converts between the different memory spaces used to specify addresses in a page block.
-
-(...)
 #Subpage 0flags
 OS_Memory 0 flags
 Bits	Meaning
@@ -57,8 +60,6 @@ OS_Memory 7
 	R1 =	pointer to table to be filled in
 
 This call reads the physical memory arrangement table, to get the size of this table, use <OS_Memory 6=>.6>
-
-(...)
 #Subpage 8
 OS_Memory 8
 =>	R0 =	8 (reason code)
@@ -77,6 +78,7 @@ Bits	Meaning
 	2 =>	VRAM
 	3 =>	ROM
 	4 =>	I/O (including all I/O, VIDC and EASI space)
+	5 =>	Soft ROM (5.0+)
 12-31	reserved, must be clear.
 #Subpage 9
 OS_Memory 9
@@ -92,7 +94,67 @@ Bit	Meaning
 #Line
 0-7	controller sequence number
 8-31	controller type:
-	 	0 => EASI card access speed control (for internal use only)
+	 	0 => EASI card ECTCR (for internal use only)
 	 	1 => EASI space (for internal use only)
 	 	2 => VIDC1
 	 	3 => VIDC20
+	 	4 => SSpace (5.0+)
+	 	5 => Extension ROMs (5.0+)
+#Subpage 13
+OS_Memory 13 map in IO permanently (5.0+)
+=>	R0 =	13 (reason code)
+	 	and <flags=>.mapinflags>
+	R1 =	physical address to map in
+	R2 =	size to map in
+<=	R3 =	logical address assigned
+
+Permanently maps in a region of IO memory at run time.
+#Subpage 14
+OS_Memory 14 map in IO temporarily (5.0+)
+=>	R0 =	14 (reason code)
+	 	bit 8 = 1 to map bufferable space, 0 for unbufferable
+	 	bits 9..31 = reserved, must be zero
+	R1 =	physical address to map in
+<=	R2 =	logical address assigned
+	R3 =	reference key (required when releasing)
+
+Temporarily maps in 1MByte of IO memory at run time.
+If multiple 1MByte chunks are required keep calling this until done, when ready to release it is only necessary to release the {*}first{*} reference key - the kernel will then free the rest for you.
+#Subpage 15
+OS_Memory 15 release IO region (5.0+)
+=>	R0 =	15 (reason code)
+	 	all flags bits reserved
+	R1 =	reference key (assigned when claimed)
+
+Frees up a region of IO memory previously mapped in at run time.
+#Subpage 16
+OS_Memory 16 get area info (5.0+)
+=>	R0 =	16 (reason code)
+	 	bits 8-15 =
+	 	  1 =	cursor/system/sound
+	  	  2 =	IRQ stack
+	  	  3 =	SVC stack
+	  	  4 =	ABT stack
+	  	  5 =	UND stack
+	  	  6 =	Soft CAM
+	  	  7 =	Level 1 page tables
+	  	  8 =	Level 2 page tables
+	  	  9 =	HAL workspace
+	  	  10 =	Kernel buffers
+	  	  11 =	HAL uncacheable workspace
+	 	bits 16-31 reserved, must be 0
+<=	R1 =	base of area
+	R2 =	address space allocated for area
+	R3 =	actual memory used by area
+
+Returns details on the selected area, rounded to a whole number of pages, or zero if not present.
+#Subpage mapinflags
+Flags
+Bit(s)	Meaning
+#Line
+8	1 to map bufferable space (0 is normal, non-bufferable)
+9	1 to map cacheable space (0 is normal, non-cacheable)
+16	1 to doubly map
+17	1 if access privileges specified
+24-27	access privileges (if bit 17 set)
+others reserved, must be zero

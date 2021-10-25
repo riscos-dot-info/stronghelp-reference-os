@@ -1,0 +1,9 @@
+OS_LeaveOS  (&7C) (5.0+)
+#Parent OS_
+This SWI returns the processor to User mode. Interrupt and Fast Interrupt status is unaltered.
+
+The advantage of OS_LeaveOS is that it will cause callbacks to occur which can massively improve applications where only a quick bit of work is required in supervisor mode, yet it may be some time before any callbacks are triggered.
+
+#Line
+The CallASWI module (version 0.03) allows this SWI to be used with RISC OS pre 5.00.
+See also <OS_EnterOS>.

@@ -20,9 +20,9 @@ Bit	Meaning
 0-2	Transmit bits 0-2
 3-5	Receive bits 0-2
 6	Receive bit 3
-7	Transmic bit 3
+7	Transmit bit 3
 
-where the 4 bit values encode the buad rates:
+where the 4 bit values encode the baud rates:
 
 #Tab
 Value	Baud rate

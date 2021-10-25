@@ -12,12 +12,12 @@ This SWI writes or reads the the <control register=>.bits> sent to the printer p
 To read, use R1=0, R2=&FFFFFFFF.
 #Subpage bits
 Control register bits
-Bit	Meaning
+Bit	Meaning		Port pin
 #Line
-0	Strobe
-1	Auto Feed
-2	Init (Reset)
-3	Select in
+0	nStrobe		1
+1	Auto Feed		14
+2	Init (Reset)		16
+3	Select in		17
 4	IRQ enable
 5	Direction
 6	reserved

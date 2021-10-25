@@ -3,18 +3,26 @@ OS_EnterOS  (&16)
 <=	R13 =	R13_svc
 	R14 =	R14_svc
 
-This SWI sets the processor to Supervisor mode. Interrupt and Fast Interrupt status is unaltered.
+This SWI sets the processor to Supervisor mode. Interrupt and Fast Interrupt status is unaltered. Note that SWI calls while in SVC mode will alter R14, and will use R13 as stack.
 
-To return to UserMode:
+To return to User mode on an ARM6 or later:
 #tab ,fCode
-	TEQP  PC,#0		;	Set Usermode, enable interrups
-	MOV   R0,R0		;	Anything that doesn't use 8-14
-or	
-	BIC   R14,PC,#%11	;	Only sets usermode.
-	TEQP  R14,#0		;	Interrupts & flags
-	MOV   R0,R0		;	are not affected.
-
+	<MSR=>Assembly:MSR>   CPSR_c,#0
+	MOV   R0,R0		;	Anything that doesn't use R8-R14
+or to return to user mode leaving the other PSR bits constant
+	<MRS=>Assembly:MRS>   R14,CPSR
+	BIC   R14,R14,#%11	; Only sets usermode
+	MSR   CPSR_cxsf,R14
 #tab
-Note:	SWI calls while in SVC, will alter R14, and will use R13 as stack.
+
+To return to User mode pre ARM6 (deprecated):
+#tab ,fCode
+	<TEQP=>Assembly:P>  PC,#0
+	MOV   R0,R0		;	Anything that doesn't use R8-R14
+or to return to user mode leaving the other PSR bits constant
+	BIC   R14,PC,#%11	;	Only sets usermode.
+	TEQP  R14,#0
+	MOV   R0,R0
+#tab
 #Line
 See <PRM 1, page 140=>PRM-1:140>.

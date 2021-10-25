@@ -1,0 +1,8 @@
+PCI_ConfigurationRead  (&50388)
+#Parent PCI_
+=>	R0 =	configuration space address (0-255) or bus/dev/fn/addr
+	R2 =	access size (1, 2 or 4 for byte/half word/word)
+	R3 =	<function handle=>PCI_fhand> or 0
+<=	R1 =	value read
+
+Performs a Configuration Read cycle of the denoted size.

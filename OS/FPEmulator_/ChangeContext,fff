@@ -1,0 +1,17 @@
+FPEmulator_ChangeContext  (&40483)
+#Parent FPEmulator_
+=>	R0 =	new context pointer (or 0)
+<=	R0 =	old context pointer
+#Line
+#wrap off
+This call is the standard way of changing context. A floating point context
+pointer is passed to it as an argument. It switches over to using this as the
+current context and returns a pointer to the previous floating point context.
+It is an atomic equivalent to <FPEmulator_DeactivateContext> followed by
+<FPEmulator_ActivateContext>.
+
+Either pointer may be zero: this indicates that the floating point system
+was/should be in a completely inactive state, with no current floating point
+context, its undefined instruction handlers not installed, etc.
+#Line
+<Contexts=>FPEmulator_about> are only available from FPEmulator 4.12 and later.

@@ -4,3 +4,9 @@ Value	Meaning
 0	Quadrature
 1	Microsoft serial
 2	MSC serial
+3	PS/2
+4	Reserved
+5	RCMM (eg. Bush Internet TV)
+6	Reserved
+7	USB
+8	Wheel

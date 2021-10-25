@@ -1,0 +1,12 @@
+PCI_LogicalAddress  (&50392)
+#Parent PCI_
+=>	R0 =	flags:	bit 4 => bufferable
+	 	 	bit 5 => cacheable
+	 	 	bits 8-6 => policy (see <OS_DynamicArea>)
+	 	 	bit 30 => IO else Memory
+	R1 =	PCI address
+	R2 =	length
+<=	R4 =	logical address
+
+This call maps in the given PCI address (found with PCI_HardwareAddress) into the logical memory map subject to the flags in bits 8 to 4 of R0.
+If bit 30 is set it will be marked as IO, else marked as Memory.

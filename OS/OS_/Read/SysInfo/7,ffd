@@ -1,5 +1,5 @@
-OS_ReadSysInfo 7 [3.8]
-{*}Read informatino for last unexpected abort (data or prefetch){*}
+OS_ReadSysInfo 7  (3.8+)
+{*}Read information for last unexpected abort (data or prefetch){*}
 
 {f25}Þ{f}	R0 =	7 (reason code)
 

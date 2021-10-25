@@ -1,12 +1,23 @@
 OS_Byte Printer driver types
 #Parent OS_Byte245
-The value of the printer driver, /n/, selects which {fCode}PrinterType${/}n{/}{f} variable is used as the path of the printer. The default values are:
+The value of the printer driver, /n/, selects which {fCode}PrinterType${/}n{/}{f} variable is used as the path of the printer. Values in the range 0-7 can be saved in CMOS:
 
 /n/	Printer			Note
 #Line
-0	Null:			(printer sink)
+0	Null printer sink
 1	Parallel device
 2	Serial device
-3	{fCode}PrinterType$3{f}	reserved for user printer driver
-4	Network printer
-5-255	/n/ for {fCode}PrinterType${/}n{/}{f} variable
+3	User printer driver
+4	Econet network printer
+5	To File
+6	NFS network printer
+7	Reserved
+8	Direct (eg. Computer Concepts' LaserDirect)
+9	Remote ShareFS printer
+10	Background printer (much like 'To File')
+11	LanMan network printer
+12	LanMan98 network printer
+13	USB printer
+14	LPR unix network print queue
+15	JetDirect
+16-255	Reserved

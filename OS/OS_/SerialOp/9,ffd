@@ -1,4 +1,4 @@
-OS_SerialOp 9
+OS_SerialOp 9  (3.5+)
 #parent OS_SerialOp
 {f25}Þ{f}	R0 =	9 (reason code)
 {f25}Ü{f}	R0 preserved
@@ -8,8 +8,8 @@ OS_SerialOp 9
 {*}Note:	Each entry in the table is in units of 0.5 bit/sec{*}
 #tab
 
-The index into the table (starting at 1) can be used in <OS_SerialOp 5=>OS_SerialOp5> and <6=>OS_SerialOp 6> calls to set the corresponding baud rate.
+The index into the table (starting at 1) can be used in <OS_SerialOp 5=>OS_SerialOp5> and <6=>OS_SerialOp 6> calls to set the corresponding baud rate. 
+As the hardware on a given machine may not support certain baud rate combinations the table may have 'holes' in it, represented by a zero word - this way the index into the table can still be used with <OS_SerialOp 5=>OS_SerialOp5>.
 
-This call is only available in RISC OS 3.5+
 #line
 See also:	<PRM 5a-224=>PRM=5a:224>

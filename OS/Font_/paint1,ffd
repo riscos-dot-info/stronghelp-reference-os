@@ -17,3 +17,5 @@ Some control characters have special meanings :
 9,11	The 3 byte print-position is given in millipoints
 25	pos & thickness is given in 1/256th of current font size - pos is sign extended, thickness is unsigned. Set thickness to 0 to turn off underlining. 
 27,28	The code must be followed by 0-3 null bytes to word align the <transformation matrix=>Font_matrix>.
+
+When using 16/32-bit characters, these take a slightly <different=>font_longstrings.cparams> form.

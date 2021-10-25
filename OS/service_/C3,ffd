@@ -1,0 +1,15 @@
+Service_PCI  (&C3)
+#Parent Service_Index
+=>	R1 =	&c3 (reason code)
+	R2 =	subreason
+	 	0 - 	{*}lookup description{*}
+	 	 	R3 = function handle to convert
+	 	Return	R1 = 0 to claim
+	 	 	R2 = pointer to zero terminated string
+	 	 	R3 = preserved
+	 	1 - 	{*}lookup vendor description{*}
+	 	 	R0 = vendor ID
+	 	Return	R1 = 0 to claim
+	 	 	R2 = pointer to zero terminated string
+	 	 	R0 = preserved
+	 	others - {*}reserved for future expansion{*}

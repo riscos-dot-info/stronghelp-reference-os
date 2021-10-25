@@ -7,7 +7,7 @@ OS_Byte 5  Write printer driver type
 	R1 =	previous printer driver type
 	R2 corrupted
 
-This call determines the path to use for printer output. The type may be read (and written) with <OS_Byte 245=>OS_Byte245>. The default type is set held within <CMOS byte 15=>OS_ByteCMOS15> and <*Configure Print=>StarCmds:CPrint>.
+This call determines the path to use for printer output. The type may be read (and written) with <OS_Byte 245=>OS_Byte245>. Values in the range 0-7 can be set as the default type in <CMOS byte 15=>OS_ByteCMOS15> and <*Configure Print=>StarCmds:CPrint>.
 
 If a serial printer is in use, setting bit 0 in <OS_Byte 3=>os_byte003> will mean that the characters are printed twice.
 #Line

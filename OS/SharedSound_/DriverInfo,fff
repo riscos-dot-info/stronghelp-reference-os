@@ -1,0 +1,11 @@
+SharedSound_DriverInfo (&4B449)
+#parent SharedSound_
+#prefix SharedSound_
+=>	R0 =	driver number
+<=	R0 =	number of next available driver or 0 for none
+	R1 =	flags
+	R2 =	name
+	R3 =	volume
+	R4 =	Overrun count
+
+This provides information for a particular driver. This SWI is not implemented.

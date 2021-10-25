@@ -1,7 +1,7 @@
 OS_Write0  (&02)
 #Parent OS_
 =>	R0 =	pointer to null-terminated string
-<=	R0 =	pointer to terminating zero
+<=	R0 =	pointer to the byte {*}after{*} the null
 
 This SWI sends the string pointed to by R0 to all <active output streams=>OS_Byte003>. It nominally uses <OS_WriteC> to write each character.
 #Line

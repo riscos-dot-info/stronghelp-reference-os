@@ -3,6 +3,6 @@ OS_MMUControl  (&6B)
 #wrap off
 {f25}Þ{f}	R0 =	reason code and flags
 	 	0	?
-	 	1	<Cache flush request=>OS_MMUControl1> [3.7]
+	 	1	<Cache flush request=>OS_MMUControl1> (3.7+)
 #wrap;line
 This call modifies the ARM MMU control register.

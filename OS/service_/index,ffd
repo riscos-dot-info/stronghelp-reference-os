@@ -12,13 +12,13 @@ Service calls
 0B <Release FIQ=>Service_0B>
 0C <Claim FIQ=>Service_0C>
 11 <MEMC remap warning=>Service_11>
-12 <Start a FS (old)=>Service_12>
+12 <Start an FS (old)=>Service_12>
 18 Service_PostHelp
 27 <Post-Reset=>Service_27>
 28 <Unknown *Configure=>Service_28>
 29 <Unknown *Status=>Service_29>
 2A <New application=>Service_2A>
-40 <FS re-init=>Service_40>
+40 <FS redeclare=>Service_40>
 41 <PDriver print=>Service_41>
 42 <Lookup filetype=>Service_42>
 43 <International service=>Service_43>
@@ -96,13 +96,20 @@ Service calls
 8C <Syntax error=>Service_8C>
 8D <Enumerate screen modes=>Service_8D>
 8E Pages unsafe
+8F Pages safe
 90 Created dynamic area
 91 Remove dynamic area
 92 Renumber dynamic area
 93 <Colour picker loaded=>Wimp:Service_93>
+94 ModeFile changed
 95 <Freeway starting=>InetSWIs:Service_95>
 96 <Freeway terminating=>InetSWIs:Service_96>
+97 ShareFS starting
+98 ShareFS terminating
+99 Reserved
+9A Reserved
 9B <Enumerate network drivers=>InetSWIs:Service_9B>
+9C Reserved
 9D <DCI driver status=>InetSWIs:Service_9D>
 9E <DCI frame type freed=>InetSWIs:Service_9E>
 9F DCI Protocol status
@@ -110,6 +117,11 @@ A7 <URI operation=>InetSWIs:Service_A7>
 B0 <InternetStatus=>InetSWIs:Service_B0>
 B7 <UKCompression=>Service_B7>
 B9 <ModulePreInit=>Service_B9>
+C3 <PCI=>Service_C3>
+D2 <USBDriver=>Service_D2>
+D9 Hardware
+DA <ModulePostInit=>Service_DA>
+DB <ModulePostFinal=>Service_DB>
 10800 <ADFSPodule=>Service_10800>
 10801 <ADFSPodule IDE=>Service_10801>
 10802 <ADFSPodule IDE dying=>Service_10802>

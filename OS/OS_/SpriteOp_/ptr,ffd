@@ -2,7 +2,7 @@ Format of sprite
 #Parent OS_SpriteOp_area
 Word	Offset	Contents
 #line
-0	0	Offset to next sprite
+0	0	Offset to next sprite from this sprite
 1	4	Sprite name (max 12 chars)
 4	16	Width in words - 1
 5	20	Height in scan lines - 1

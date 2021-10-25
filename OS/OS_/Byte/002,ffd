@@ -18,4 +18,4 @@ Value	Meaning
 1	Serial input
 2	Keyboard input with serial input buffer enabled
 
-The difference between 0 and 2 is that the latter allows characters to be recieved into the serial buffer under interrupts as the same time as the keyboard is being used as the primary input. If the input streams are subsequently switched to the serial device, then those characters can then be read.
+The difference between 0 and 2 is that the latter allows characters to be received into the serial buffer under interrupts as the same time as the keyboard is being used as the primary input. If the input streams are subsequently switched to the serial device, then those characters can then be read.

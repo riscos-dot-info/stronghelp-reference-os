@@ -6,11 +6,10 @@ SharedSound_InstallHandler (&4B440)
 	R2 =	<flags>
 	R3 =	name of handler
 	R4 =	<type>
-\<=	If successful V flag is clear and R0 holds a handler number
-	If unsuccessful V flag is set and R0 points to a SWI error block.
-#line
-This SWI is used to install multiple Sound <Handlers=>.handler> into the system.
-#
+\<=	R0 =	handler number
+
+This SWI is used to install multiple Sound Handlers into the system.
+
 #subpage handler
 SharedSound handlers
 Each handler is called with when the current driver is called if the handler is an immediate handler or on call back if the handler is either a call back or process handler. The handlers in each type are called in the order in which they were installed. Process handlers are called after call back handlers.
@@ -25,19 +24,123 @@ Each handler is passed a buffer to fill with the registers set as follows:
 	R5 =	sample period
 	R6 =	fractional step as specified by <SharedSound_SampleRate>
 	R7 =	LR volume
+	R8 =	Pointer to helpful <fill code=>.code> (1.00+)
 	R4, R5 and R6 are updated at the start of a buffer fill to represent the current sample frequency etc.
 <=	R3 contains flags as above, modified according to the action of the handler
+
+The important requirement on exit is that bit 0 of R3 should be set if any data has been written into the buffer. In fact, SharedSound cannot currently cope with no data being filled, so zeros should always be written.
 #
 #subpage flags2
 SharedSound Handler flags
 /Bits/	/Meaning/
-0	Mix. If set then data must be mixed otherwise overwrite.
-1	Quality. If set then use highest quality e.g. oversampling.
-3-7	0	No overrun
+#line
+0	Mix. If set then data must be mixed, otherwise overwrite.
+1	Quality. If set then use highest quality e.g. oversampling. {/}[Not implemented]{/}
+3-7	Overrun count {/}[Not implemented]{/}
+	0	No overrun
  	1˜30	times buffer has been overrun
  	31	Buffer overrun > 30
-29	Stereo. Reverse stereo if set.
+29	Stereo. Reverse stereo if set. {/}[Not implemented]{/}
 30	Set if to use volume in R7, otherwise use max volume
-31	Mute if set.
+31	Set if volume in R7 is zero, ie. muted.
 #line
 Only bit 0 of the above flags is implemented by SharedSound. The other flags are currently used by the Sound16 drivers.
+#subpage code
+Fill code
+On entry to the fill handler, R8 points to the following table:
+
+Offset	Value
+#line
+0	Flags word, currently 0
+4	Pointer to <silence fill=>.silence> routine
+8	Pointer to <data fill=>.data> routine
+
+This table may be extended in future to include more fill variants; the presence/absence of these routines will be indicated by bits in the flags word.
+
+Using these routines, the overall sound fill code in a client can therefore look something like <this=>.example> (assuming the client is filling from a cyclic buffer).
+#subpage silence
+Silence fill code
+=>	R1 =	Base address of buffer to be filled
+	R2 =	End of the buffer to be filled
+	R3 =	Flags (as on entry to the fill handler)
+	R4-R5	Unused
+	R6 =	Fractional step value
+	R7 =	LR volume
+	R9 =	Fractional accumulator
+<=	R0 =	New flags (to be returned from fill handler in R3)
+	R1 =	Next byte to be filled
+	R4 =	Next byte to fill from
+	R9 =	New Fractional accumulator
+	R2-R3,R5-R7,R8,R12 preserved
+	All other registers corrupted.
+#subpage data
+Data fill code
+=>	R1 =	Base address of buffer to be filled
+	R2 =	End of the buffer to be filled
+	R3 =	Flags (as on entry to the fill handler)
+	R4 =	Base of buffer to fill from
+	R5 =	End of buffer to fill from
+	R6 =	Fractional step value
+	R7 =	LR volume
+	R9 =	Fractional accumulator
+<=	R0 =	New flags (to be returned from fill handler in R3)
+	R1 =	Next byte to be filled
+	R4 =	Next byte to fill from
+	R9 =	New Fractional accumulator
+	R2-R3,R5-R7,R8,R12 preserved
+	All other registers corrupted.
+#subpage example
+Example fill code
+#fcode
+#wrap off
+fill    STMFD   r13!,\{r0-r2,r4-r12,r14\}
+
+        MOV     r12,r0
+        ; We are filling from play_ptr to where?
+        LDR     r4,play_ptr
+        LDR     r5,fill_ptr
+        LDR     r9,buffer_start
+        ADD     r4,r4,r9
+        ADD     r5,r5,r9
+        LDR     r9,accumulator
+        ; Are we wrapped, or unwrapped?
+        CMP     r4,r5
+        BEQ     out_of_data
+        BLO     unwrapped
+        ; |*****-------------------------********|
+        ;       ^fill ptr                ^play ptr
+        LDR     r5,buffer_end   ; Fill from fill ptr to buffer_end
+        ; Call the fill code
+        MOV     R14,PC
+        LDR     PC,[R8,#8]
+        ; Did we run out of data?
+        CMP     R4,R5           ;
+        LDRHS   R4,buffer_start ; If r4 >= r5 then we used all the
+                                ; data in the buffer.
+        CMP     R1,R2           ; Did we finish the fill?
+        BHS     finish          ; If r1 >= r2 then we finished.
+        LDR     R5,fill_ptr     ; No, so we ran out of data. Jump
+        CMP     R5,#0           ; Check if there any data there -
+        BEQ     out_of_data     ; If not, play silence.
+        ADD     R5,R5,R4
+unwrapped
+        ; |-----*************************--------|
+        ;       ^play ptr                ^fill ptr
+        ; Call the fill code
+        MOV     R14,PC
+        LDR     PC,[R8,#8]
+        ; Either we finished the fill, or we ran out of data.
+        CMP     R1,R2           ; Did we finish?
+        BEQ     finish
+out_of_data
+        ; Fill with silence
+        MOV     R14,PC
+        LDR     PC,[R8,#4]
+finish
+        LDR     r3,buffer_start
+        STR     R9,accumulator
+        SUB     r4,r4,r3
+        STR     R4,play_ptr
+        MOV     r3,r0
+
+        LDMFD   r13!,\{r0-r2,r4-r12,PC\}

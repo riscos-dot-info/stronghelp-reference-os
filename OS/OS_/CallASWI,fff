@@ -1,10 +1,9 @@
 OS_CallASWI (&6F)
-{f25}Þ{f}	R0-R9 =	as required for target SWI
+=>	R0-R9 =	as required for target SWI
 	R10 =	target SWI number
 
-{f25}Ü{f}	dependent on SWI called
+<=	dependent on SWI called
 #line
-#indent 4
 This SWI allows a target SWI number to be determined at run time, and passed in a register. This removes the need for a common idiom of dynamic code, in language library SWI veneers for example. In an APCS-R library, use <OS_CallASWIR12>.
 
 Note that OS_CallASWI is merely an alias for calling the target SWI. It has no entry/exit conditions of its own, except for the special use of R10. To call a target SWI with X bit set, us the X form of the SWI number in R10; there is no distinction between OS_CallASWI and XOS_CallASWI.
@@ -18,5 +17,5 @@ For future compatibility, you should always use this SWI in preference to any lo
 Note that this SWI calling mechanism is almost certainly faster than any other alternative implementation, including the original _kernel_swi and _swix code contained in older versions of the SharedCLibrary. The new SharedCLibrary now simply uses <OS_CallASWIR12> for _kernel_swi and _swix.
 
 OS_CallASWI cannot be called from BASIC as BASIC only passes registers R0-R7 via its SYS instruction. It would not be useful anyway.
-#indent;line;indent 4
+#line
 Provided by RISC OS 3.7+, and also the CallSWI module for earlier versions of RISC OS.

@@ -1,0 +1,16 @@
+FPEmulator_ExceptionDump  (&40486)
+#Parent FPEmulator_
+<=	R0 =	pointer to saved FP register dump
+#Line
+#wrap off
+When a floating point exception trap is generated, the floating point system
+stores the current FP registers in an internal exception dump using
+<FPEmulator_SaveContext>. This call returns a pointer to that register dump.
+The Debugger module provides a *ShowFPRegs command to view the dump contents.
+
+On a floating point trap, the integer registers are also stored in the
+current exception register dump (<OS_ChangeEnvironment> 13 - see <PRM 1, page 316=>PRM-1:316>,
+so they can be viewed using *ShowRegs. Note that floating point registers
+are not stored on other exceptions, such as data aborts.
+#Line
+<Contexts=>FPEmulator_about> are only available from FPEmulator 4.12 and later.

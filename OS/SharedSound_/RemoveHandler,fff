@@ -2,7 +2,5 @@ SharedSound_RemoveHandler (&4B441)
 #parent SharedSound_
 #prefix SharedSound_
 =>	R0 =	handler number
-\<=	If successful V flag is clear and R0 holds a handler number
-	If unsuccessful V flag is set and R0 points to a SWI error block.
-#line
+
 This SWI is used to remove a specific handler.

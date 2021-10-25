@@ -13,6 +13,5 @@ Errors are reported with returning the V flag set, and storing an error pointer 
 
 
 For returning from a vectored routine, there are two methods:
-è	Passing on the call	:	Return by {fCode}MOVS PC,R14{f} to the previous owner, because you must preserve the V and the C flags.
-è	Intercepting the call	:	You should pull an exit address (which has been set by RISC OS) from the stack with {fCode}LDMFD R13!,\{PC}{f}.
-# N> Eh? LDMFD R13!,{PC}^ surely, to preserve flags. (PRM wrong again?)
+è	Passing on the call	:	Return by {fCode}MOV PC,R14{f} to the previous owner, ensuring you preserve the V and the C flags.
+è	Intercepting the call	:	You should pull an exit address (which has been set by RISC OS) from the stack with {fCode}LDMFD R13!,\{PC}{f} with the exit flags as per the appropriate SWI definition.

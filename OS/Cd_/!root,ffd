@@ -37,6 +37,7 @@ AudioControl
 <ReadSubChannel>
 <Register>
 <Reset>
+<SCSIUserOp>
 <SeekTo>
 <SetParameters>
 <StopDisc>

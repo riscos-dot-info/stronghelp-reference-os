@@ -13,5 +13,5 @@ Bit(s)	Meaning
 4	Set:	alter background colour
 	Clear:	alter foreground colour
 5	Set:	R1 is pointer to ECF pattern
-	Clr:	R1 is colour number
+	Clear:	R1 is colour number
 6-31	reserved, must be zero

@@ -1,6 +1,6 @@
 Parallel_HardwareAddress  (&42EC0)
 #Parent Parallel_
-<=	R0 =	Address of parallel controller in memory map, or 0 if no hardware present (&30109E0 in most machines)
+<=	R0 =	Address of parallel controller in memory map, or 0 if no hardware present
 	R1 =	Address of routine to be called in SVC mode to do: Parallel control register = (Old value AND R1) EOR R0 or preserved if R0 was returned as 0.
 
 This SWI reads the address which is used to control the parallel port in memory. This must be accessed in SVC mode.

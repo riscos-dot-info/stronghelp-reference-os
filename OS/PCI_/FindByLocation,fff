@@ -1,0 +1,7 @@
+PCI_FindByLocation  (&5038D)
+#Parent PCI_
+=>	R0 =	bus
+	R1 =	dev/fn
+<=	R3 =	<function handle=>PCI_fhand>
+
+Finds the function handle based on the topology passed in R0 and R1. This topology will be platform specific and could vary if backplanes with bridges are inserted into the system.

@@ -1,0 +1,7 @@
+SharedSound_DriverVolume (&4B44A)
+#parent SharedSound_
+#prefix SharedSound_
+=>	R0 =	Driver number
+	R1 =	Volume
+
+This sets the volume for the driver. This SWI is not implemented.

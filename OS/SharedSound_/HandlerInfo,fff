@@ -1,14 +1,12 @@
 SharedSound_HandlerInfo (&4B442)
 #parent SharedSound_
 #prefix SharedSound_
-=>	R0 =	handler number
-\<=	If successful V flag is clear and
-	 	R0 =	number of next available handler or 0 for none
-	 	R1 =	<flags>
-	 	R2 =	name
-	 	R3 =	Sample frequency
-	 	R4 =	Sample type
-	 	R5 =	Volume
-	If unsuccessful V flag is set and R0 points to a SWI error block.
-#line
-This SWI is used to provide information on a specific handler.
+=>	R0 =	handler number, or 0 for first call
+<=	R0 =	number of next available handler or 0 for no more
+	R1 =	<flags>
+	R2 =	name
+	R3 =	Sample frequency
+	R4 =	<type>
+	R5 =	Volume
+
+This SWI is used to provide information on a specific handler, or to enumerate all installed handlers.

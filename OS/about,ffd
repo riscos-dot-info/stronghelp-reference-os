@@ -14,14 +14,14 @@ This manual is part of a collection comprising the main public domain programmin
 <InetSocket>	Internet socket calls
 <MiscSWIs>	Miscellaneous SWIs
 <VDU>		VDU commands
-<Toolbox>	Toolbox (by Neil Bingham)
+<Toolbox>	Toolbox
 #Indent
 
 Thanks go to those mentioned in the <contributors=>OS:contributions> list.
 
-For comments, suggestions and submissions for these, please mail iain truskett <\<koschei@eh.org\>=>#URL mailto:koschei@eh.org> who is currently moderating the collection. The primary location for these manuals will be <http://eh.org/~koschei/manuals/=>#url>, with another copy at <http://freenet.barnet.ac.uk/manuals/=>#URL>.
+For comments, suggestions and submissions for these, please mail Christian Ludlam <christian@recoil.org=>#url mailto:christian@recoil.org> who is currently moderating the collection. These manuals will continue to be available from <http://sudden.recoil.org/stronghelp/=>#url>.
 #line
-<This page=>.hist307> gives history and credits.
+<This page=>.hist320> gives history and credits.
 #Subpage notes
 Notes on how the manual is structured
 These are some very incomplete notes on how the manual should be structured. If any part of it isn't then it will eventually be updated, or I'll change this specification. It's mostly here to remind me anyhow.
@@ -237,6 +237,7 @@ OS History v3.06
 è	Some Y2K compliance revisions.
 è	Various minor amendments.
 #tab
+
 <Previous=>.hist305>	<Next history=>.hist307>
 #
 #subpage hist307
@@ -258,4 +259,43 @@ History for OS v.3.07
 è	<FileCore_Create> r5 parameter corrected from 1076 to 1024.
 è	<ColourTrans_ConvertCMYKToRGB> exit r2 corrected to 'blue' from 'red'
 #tab;line
-<Previous history=>.hist306>
+<Previous history=>.hist306>	<Next history=>.hist308>
+#
+#subpage hist308
+History for OS v.3.08
+#align right
+{/}26th November, 1999{/}
+#align left
+#line
+è	More RISC OS 4 APIs added
+#tab;line
+<Previous history=>.hist307>	<Next history=>.hist320>
+#
+#subpage hist320
+History for OS v.3.20
+#align right
+{/}21 May, 2003{/}
+#align left
+#line
+è	<CD_SCSIUserOp> added.
+è	<PCI=>PCI_> section added.
+è	<OS_HeapSort32> added.
+è	<OS_SubstituteArgs32> added.
+è	<OS_ReadLine32> added.
+è	Lots of occurrences of 'recieved' corrected.
+è	<Podule_ReadInfo> and <Podule_SetSpeed> added at last!
+è	<SharedCLibrary=>SharedCLibrary_> new 32 bit SWIs added.
+è	<Printer types=>OS_Byte.printers> expanded.
+è	<Vector list=>Vector_.index> expanded.
+è	<FileCore_Features> and <FileCore_DiscOp64=>FileCore_DOp64> added.
+è	<FPEmulator=>FPEmulator_!Root> contexts details added.
+è	Extra <Service Calls=>Service_Index> added to table.
+è	<UCS FontManager=>Font_> details added.
+è	<SharedSound=>SharedSound_> updated.
+è	<Draw=>Draw_> module updated.
+è	Other SWIs added, but don't have details of these yet (so you can't click on them)
+è	Made 32 bit comaptible (!)
+
+è	Maintainer now Christian Ludlam
+#tab;line
+<Previous history=>.hist308>

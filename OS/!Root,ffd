@@ -38,6 +38,7 @@ OS SWIs
 <NetPrint>
 <OS>
 <Parallel>
+<PCI>
 <PDriver>
 <PDumper>
 <Podule>
@@ -67,11 +68,12 @@ OS SWIs
 <CMOS RAM bytes=>OS_ByteCMOS>
 <Service Calls=>Service_Index>
 <Vectors=>vector_index>
-<Images=>ImageEntry_>
-<FileSystems=>FSEntry_>
+<Image filesystems=>ImageEntry_>
+<Filesystems=>FSEntry_>
 <Hardware vectors=>os_hardware_vectors>
 <Deprecated calls=>OS_deprecated>
+<Module format=>OS_Module_format>
 #EndTable
 #Line
 #align centre
-{/}<Operating System SWIs manual=>about>, v3.08 26-Nov-1999{/}
+<OS SWIs manual=>about> {/}v3.20, 21-May-03{/}

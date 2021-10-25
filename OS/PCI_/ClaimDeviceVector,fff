@@ -1,0 +1,37 @@
+PCI_ClaimDeviceVector  (&49980)
+#Parent PCI_
+=>	R0 =	flags:	must be 0
+	R1 ->	handler routine
+	R2 =	handler R12 value
+	R3 =	<function handle=>PCI_fhand>
+<=	R1 =	flags:	bit 0 => Unshared interrupt (ie if handler called, it was definitely your function interrupting)
+	 	 	bit 1 => MSI
+	R0 =	device number (to use when masking or unmasking)
+	R2 =	number of messages being used by device (see <PCI_ReadInfo> 16)
+
+In the simplest case, this call is analogous using OS_ClaimDeviceVector with the
+device vector number provided by PCI_ReadInfo 11, and bit 31 set. But using this
+call allows Message Signalled Interrupts (MSI) to be activated. MSI has the
+advantage that interrupt routing is faster - all MSI interrupts are effectively
+unshared, and there are no synchronisation issues with the PCI bus - it is
+no longer necessary to do a device read to ensure write buffers have been flushed.
+
+A device is automatically put into MSI mode when this call is made, if both
+the host system and the PCI device support it. If so, bit 1 of R1 is set on
+exit, and R2 indicates the number of messages being used by the device.
+
+Entry and exit conditions for the handler are the same as for OS_ClaimDeviceVector
+with bit 31 of R0 set, except that when using MSI, R0 on entry to the handler will
+be the message number (between 0 and <R2 on exit from PCI_ClaimDeviceVector>-1).
+MSI interrupt conditions are automatically cleared before the handler is called.
+
+Multiple claims per function operate in the same way as with OS_ClaimDeviceVector.
+It would thus be possible (though not efficient) to have multiple chained handlers
+to handle each message for an MSI device.
+
+The device number in R0 on exit from this call is what should be used to unmask
+(and mask temporarily, if necessary) the interrupt, as you would do with
+OS_ClaimDeviceVector. In the MSI case, this will most likely be a separate
+top-level MSI interrupt, rather than the value returned by PCI_ReadInfo. In
+both cases, masking the interrupt will potentially mask out other devices'
+interrupts as well as your own.

@@ -1,0 +1,27 @@
+Font_EnumerateCharacters  (&400A9)
+#Parent Font_
+=>	R0 =	font handle (0 for current)
+	R1 =	character code (0 to start)
+
+<=	R0	corrupt
+	R1 =	next character (-1 if this is the last)
+	R2 =	internal character code of this character (-1 if unmapped)
+
+This call can be used to determine which characters are present in a font, and which glyphs in the underlying font file characters map to. This call works only by looking at encoding files - it cannot guarantee that a given character is actually defined in a font file, but it can say which characters definitely aren't, by returning with R2 set to -1.
+
+#tab
+For example, for the font "\\FHomerton.Medium\\EUTF8", a call sequence might be:
+
+  On entry			On exit
+#line
+  R1 = 0			R1 = &20 (space)	R2 = -1
+  ...
+  R1 = &10F (d-caron)		R1 = &112 (E macron)	R2 = &151
+  R1 = &112 (E-macron)		R1 = &113 (e macron)	R2 = &185
+  R1 = &113 (e-macron)		R1 = &116 (E dot)	R2 = &195
+  ...
+  R1 = &FB02 (fl ligature)	R1 = -1			R2 = &FF
+
+So, in this example, we see that the fl ligature character (Unicode FB02) is character &FF within the Homerton.Medium font file.
+
+This call may be of use in conjuction with Font_ReadFontMetrics' kerning data. Also, it would allow a character map program to scan through the UCS space to find defined characters.

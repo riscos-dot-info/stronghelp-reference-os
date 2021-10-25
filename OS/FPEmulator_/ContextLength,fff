@@ -1,0 +1,12 @@
+FPEmulator_ContextLength  (&40484)
+#Parent FPEmulator_
+<=	R0 =	size of a floating point context
+#Line
+#wrap off
+This call returns the size of a floating point context. It is constant for any
+given implementation of the floating point system.
+
+To create your own context, allocate a block of this size in the RMA or some
+other unpaged area of memory, then call <FPEmulator_InitContext>.
+#Line
+<Contexts=>FPEmulator_about> are only available from FPEmulator 4.12 and later.

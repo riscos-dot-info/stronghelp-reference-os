@@ -1,4 +1,4 @@
-OS_ScreenMode 6 (&65) (4.0)
+OS_ScreenMode 6  (&65) (4.0+)
 {*}Force a screen clean, if needed{*}
 {f25}Þ{f}	R0 =	6
 {f25}Ü{f}	/Preserved/

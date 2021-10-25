@@ -1,0 +1,10 @@
+Module flags word
+#Parent OS_Module_format
+This is a single word which informs RISC OS of the capabilities of your module.
+
+#tab
+/Bit/	/Meaning when set/
+#line
+0	Module is 32 bit ARM compatible
+1-31	Reserved, must be 0
+# 31	Another flags word follows this one
