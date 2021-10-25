@@ -12,6 +12,8 @@ FileCore_MiscOp 0
 
 This call mounts a disc, reading in the data asked for.
 
+Note the disc address is always in bytes, as prior to mounting the sector size is not known so sector addressing cannot be used.
+
 For a floppy disc, and for a hard disc where bit 4 of the descriptor block flags is set, this call asks the given filing system to first identify the disc's format. The suggested density to try first is given in the disc record; if this is not successful, the filing system should then try other densities. The following order is suggested:
 
 #Indent 2
@@ -31,4 +33,4 @@ Once the filing system has identified the disc's format, it fills in the 'log2se
 
 Having filled in the disc record, the filing system then reads in the data asked for.
 
-For hard discs where bit 4 of the <descriptor block=>FileCore_fsdescriptor.flags> flags is clear, this merely asks the given filing system to read in the data asked for. This typically necessitates it reading the boot block of the disc; if the disc doesn't have one, the filing system generates one itself.
+For hard discs where bit 4 of the <descriptor block=>FileCore_fsdescriptor.flags> flags is clear, or floppy discs where bit 11 of the <descriptor block=>FileCore_fsdescriptor.flags> is set this merely asks the given filing system to read in the data asked for. This typically necessitates it reading the boot block of the disc; if the disc doesn't have one, the filing system generates one itself.

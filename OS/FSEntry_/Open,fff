@@ -7,7 +7,7 @@ FSEntry_Open
 
 <=	R0 =	<file information word=>.fileinfo>
 	R1 =	internal file handle, or 0 if unable to open
-	R2 =	buffer for FileSwitch to use, or 0 if unbuffered (powers of 2 from 64 to 1024)
+	R2 =	buffer for FileSwitch to use, or 0 if unbuffered (powers of 2 from 64 to 1024, plus 2048 from RISC OS 3.60+, plus 4096 from RISC OS 5.20+)
 	R3 =	file extent if buffered
 	R4 =	space allocated to file if buffered (must be a multiple of R2)
 	

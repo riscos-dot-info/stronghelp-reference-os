@@ -6,7 +6,7 @@ Service_UKCommand (&04)
 	R0 =	0 if command successful, else pointer to error
 	R1 =	0 (to claim service)
 
-This service is issued when a command is unknown, before the filing system us called to attempt to <run=>OS_FSControl4> the command. NetFS uses this service to implement file server commands.
+This service is issued when a command is unknown, before the filing system is called to attempt to <run=>OS_FSControl4> the command. NetFS uses this service to implement file server commands.
 
 Use the <command table=>OS_Module_ComTable> in a Relocatable Module if possible to implement new * Commands.
 #Line

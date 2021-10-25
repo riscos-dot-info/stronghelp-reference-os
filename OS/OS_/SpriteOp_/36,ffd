@@ -6,7 +6,7 @@ Set pointer shape  (36)
 	R3 =	<flags=>.flags>
 	R4 =	X offset of active point
 	R5 =	Y offset of active point
-	R6 =	<scale factors=>os_scalefactors>, or 0 for 1:1 scaling
+	R6 =	<scale factors=>os_scalefactors>, or 0 to autoscale for mode
 	R7 =	<pixel translation table=>colourtrans_pixtrans>
 
 This SWI sets one of the four pointer shapes. (R4,R5) is pixel-offset from top left corner.

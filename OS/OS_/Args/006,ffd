@@ -5,4 +5,4 @@ OS_Args 6
 	R2 =	size to ensure
 <=	R2 =	actual size
 
-This SWI ensures that the size of the file is not less than R2. Note that the extent is not altered.
+This SWI ensures that the space in the map for the file is not less than R2. Note that the extent is not altered.

@@ -9,7 +9,7 @@ OS_Byte CMOS settings
 7	&07	Unplugged modules byte 1
 9	&09	More Unplugged modules bits
 10	&0A	<Misc mode data=>os_bytecmos10>
-11	&0B	<Drive/Caps/Mount=>os_bytecmos11>
+11	&0B	<Drive/Caps/Mount/NumLock=>os_bytecmos11>
 12	&0C	Keyboard auto-repeat delay
 13	&0D	Keyboard auto-repeat time
 14	&0E	Printer ignore character

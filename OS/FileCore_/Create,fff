@@ -6,7 +6,7 @@ FileCore_Create  (&40541)
 	R3 =	<drives configuration=>.drives>
 	R4 =	suggested size for directory cache
 # (19990616) r5: 1076 -> 1024
-	R5 =	suggested number of 1024 byte buffers or file cache
+	R5 =	suggested number of 1024 byte buffers for file cache
 # gerph, paraphrased> 1076 is the actual size of memory allocated
 # on previous versions of FileCore and may change without notice.
 	R6 =	hard disc map sizes

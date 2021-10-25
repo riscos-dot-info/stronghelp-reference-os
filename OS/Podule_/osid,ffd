@@ -9,7 +9,12 @@ High Nybble	Low Nybble	Meaning
  		1		<Relocatable Module=>OS_Module>
  		2		BBC ROM
  		3		<Sprite=>OS_SpriteOP>
- 10		 		Acorn OS 2: Unix
+ 		4		File (generic)
+ 9		 		Acorn OS 1: ARX
+ 		0		Loader
+ 10		 		Acorn OS 2: RISCiX
+ 		0		Loader
+ 11		 		Acorn OS 3: Helios
  		0		Loader
  14		 		manufacturer defined
  		0-15		manufacturer specific
@@ -21,6 +26,9 @@ High Nybble	Low Nybble	Meaning
  		4		place of manufacture	(string)
  		5		description		(string)
  		6		part number		(string)
+ 		7		ethernet EUI48		(6 bytes)
+ 		8		hardware revision		(1 word)
+ 		9		cyclic redundancy check		(2 or 4 bytes)
  		15		empty chunk
 
-It is intended that the string values are for human inspection (rather than for programs to read)
+It is intended that the string values are for human inspection (rather than for programs to read). The first 'description' chunk encountered will be used in the listing for *PODULES and so is recommended as a minimum.

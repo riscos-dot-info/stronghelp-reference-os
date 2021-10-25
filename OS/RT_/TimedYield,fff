@@ -1,0 +1,8 @@
+RT_TimedYield (&575C3)
+#Parent RT_
+=>	R1 =	pointer to pollword
+	R2 =	monotonic time at which to return control even if pollword is unset
+
+Perform a time-limited sleep of the current thread and force a test of all pollwords.
+
+This SWI is similar to <RT_Yield> except that the sleep does not extend indefinitely.

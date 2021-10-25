@@ -41,7 +41,7 @@ Apply rule to time
 #Subpage reason5
 Get bounds for given year
 =>	R2 =	timezone within territory
-  	R3 =	year
+  	R3 =	year, or -1 for current
   	R4 =	5 byte buffer for DST start time
   	R5 =	5 byte buffer for DST end time
 

@@ -8,8 +8,8 @@ SWI					Register	Flag bits
 #Line
 <FileCore_DiscOp>			R1		0-7 (word aligned address is encoded in 26 bits)
 	 	and similarly for ADFS_DiscOp, RAMFS_DiscOp etc... Use <FileCore_DiscOp64=>FileCore_DOp64> instead.
-<FileCore_SectorOp>			R1		0-7 (word aligned address is encoded in 26 bits)
-	 	and similarly for ADFS_SectorOp, SCSI_SectorOp etc... Use <FileCore_DiscOp64=>FileCore_DOp64> instead.
+<FileCore_SectorDiscOp>			R1		0-7 (word aligned address is encoded in 26 bits)
+	 	and similarly for ADFS_SectorDiscOp, SCSI_SectorDiscOp etc... Use <FileCore_DiscOp64=>FileCore_DOp64> instead.
 <OS_HeapSort>				R1		29,30,31. Use <OS_HeapSort32> instead.
 <OS_ReadLine>				R0		30,31. Use <OS_ReadLine32> instead.
 <OS_SubstituteArgs>			R0		31. Use <OS_SubstituteArgs32> instead.

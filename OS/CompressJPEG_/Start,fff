@@ -1,0 +1,29 @@
+CompressJPEG_Start  (&4A500)
+#Parent CompressJPEG_
+=>	R0 =	pointer to buffer for JPEG data
+	R1 =	size of JPEG data buffer
+	R2 =	pointer to block of <parameters=>.parameters>
+	R3 =	pointer to workspace area, or 0 for the CompressJPEG module to allocate its own workspace from the RMA
+	R4 =	size of workspace area (if R3 is not 0)
+<=	R0 =	JPEG tag, to be passed to other CompressJPEG SWIs
+
+This call starts the JPEG compression process, setting up various parameters for it.
+
+The buffer for the JPEG data should be as large as possible, since the JPEG compression routines cannot guarantee to compress the image by a fixed amount.
+
+If you wish to supply your own workspace area, its required size for a colour (24 bit) image is:
+	20000 + ((image width rounded up to a multiple of 16) × 30)
+and its required size for a greyscale (8 bit) image is:
+	20000 + ((image width rounded up to a multiple of 16) × 9)
+
+An error is returned if the workspace area becomes full.
+#Subpage parameters
+Compress JPEG parameter block
+Offset	Contents
+#Line
+0	width of image in pixels
+4	height of image in pixels
+8	quality value (0 - 100): lower quality results in smaller image
+12	number if 8 bit components in source: 3 => 24 bit colour, 1 => 8 bit greyscale
+16	horizontal DPI of image, or 0 if unknown
+20	vertical DPI of image, or 0 if unknown

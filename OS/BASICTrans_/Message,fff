@@ -1,4 +1,4 @@
-BASICTrans_Message  (&42C812)
+BASICTrans_Message  (&42C82)
 #Parent BASICTrans_
 =>	R0 =	message number (0 - 25)
 	R1 =	message dependent value

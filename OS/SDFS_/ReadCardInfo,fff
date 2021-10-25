@@ -1,0 +1,14 @@
+SDFS_ReadCardInfo  (&59060)
+=>	R0 =	<reason code=>.reasons>
+ 	R1 =	drive number
+
+Queries miscellaneous card information from the given drive.
+#Subpage reasons
+Reason codes
+R0	Action
+#Line
+0	<Read capacity=>.0>
+#Subpage 0
+SDFS_ReadCardInfo 0
+<=	R2 =	low 32 bits of capacity
+ 	R3 =	high 32 bits of capacity

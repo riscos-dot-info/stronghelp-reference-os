@@ -15,8 +15,8 @@ For mode 0:
 #Indent 2
 Offset	Contents
 #line
-0	Size of CD
-4	Size of blocks on CD
+0	Size of CD measured in blocks
+4	Size of a block on this CD
 #indent
 
 For mode 1:

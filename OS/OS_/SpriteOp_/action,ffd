@@ -11,7 +11,7 @@ Value	Meaning
 6	Conjoin Negation (AND with NOT sprite colour)
 7	Disjoin Negation (OR with NOT sprite colour)
 8-15	As 0-7, but with mask
-16	Use palette instead of translation table			(3.50+)
+16	Use palette instead of translation table when plotting 1/2/4/8bpp to 16/32bpp	(3.50+)
 32	Translation table is 'wide'					(3.60+)
 64	Dither when plotting a 16 or 32bpp sprite into a reduced depth	(3.60+)
 128	Use colourmapping (16bpp / 32bpp only)				(Select 2)

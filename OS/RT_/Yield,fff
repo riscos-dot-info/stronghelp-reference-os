@@ -1,0 +1,10 @@
+RT_Yield (&575C2)
+#Parent RT_
+=>	R1 =	pointer to pollword
+
+Sleep the current thread and force a test of all pollwords.
+It is an error to make this call from interrupt context.
+
+This SWI has two uses: firstly it enables code in real-time context to sleep, and secondly it enables the foreground process to force a test of all pollwords (for example if the foreground sets the pollword of a thread, this may be used to wake the thread rather than having to wait for the next interrupt). The pollword is usually insignificant for the foreground process, because by definition control returns to it when no pollwords are set; however, it may be useful if the foreground is currently set to a priority above that of a real-time routine.
+
+While in real-time context, <UpCall 6=>os_upcall6> is interpreted as a call to this SWI (<UpCall 7=>os_upcall7> is also intercepted if an attempt is made to remove a pollword being used by the real-time system).

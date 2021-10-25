@@ -1,0 +1,10 @@
+RT_ChangePriority (&575C4)
+#Parent RT_
+=>	R0 =	flags (reserved, should be zero)
+	R1 =	routine handle returned from <RT_Register>, or 0 to change the priority of the foreground process
+	R2 =	new priority (as for <RT_Register>)
+<=	R0 =	previous priority level (as a number from 0-255)
+
+This SWI allows the priority setting of a routine to be changed on the fly, for example if process has become more time-critical, or if it is blocking a routine of a higher priority. It may cause a thread switch if a different thread is promoted above the priority of the current thread, or if the current thread is demoted below other unblocked threads.
+
+The priority level of the foreground process may be changed, but this is only intended for short-term use and not when the foreground is in USR mode (otherwise system callbacks will also be promoted above some real-time threads, which is undesirable behaviour).

@@ -2,7 +2,7 @@ OS_SetColour  (&61)
 #Parent OS_
 =>	R0 =	<flag word=>.flags>
 	R1 =	pointer to ECF pattern if R0 b5 = set
-	 	colour number if R0 b5 clear
+	 	colour number if R0 b5 = clear
 
 This call sets or reads the text and graphics colours.
 

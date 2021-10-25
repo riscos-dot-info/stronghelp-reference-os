@@ -123,4 +123,5 @@ D2 <USBDriver=>Service_D2>
 D9 Hardware
 DA <ModulePostInit=>Service_DA>
 DB <ModulePostFinal=>Service_DB>
+DD RTCSynchronised
 #EndTable

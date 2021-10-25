@@ -59,7 +59,7 @@ DeviceDriver
 <Heap>
 <HeapSort>
 <HeapSort32>
-IICOp
+<IICOp>
 <InstallKeyHandler>
 <IntOff>
 <IntOn>
@@ -69,7 +69,7 @@ IICOp
 <Module>
 <Mouse>
 <NewLine>
-NVMemory
+<NVMemory>
 <PlatformFeatures>
 <Plot>
 <Pointer>

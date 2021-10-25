@@ -8,13 +8,14 @@ Territory_ConvertStandardDateAndTime  (&4304C)
 	 	b16-27	reserved, must be 0
 	 	b28	set to use DST offset of R5 timezone
 	 	 	clear to use NoDST offset of R5 timezone
-	 	b29	set to use R5 as timezone within territory
-	 	b30	set to use R5 as centiseconds offset from UTC
+	 	b29	set to interpret R5 as timezone within territory
+	 	 	clear to interpret R5 as centiseconds offset from UTC
+	 	b30	set to use R5 
 	 	 	clear to use <Territory_ReadCurrentTimeZone> as the offset from UTC
 	 	b31	set to enable use of flags
 	 	 	clear to behave per RISC OS 3.10
 	R5 =	offset from UTC if flag bit 30 and 31 set
-	 	or timezone within territory if flag bit 29 and 31 set
+	 	or timezone within territory if flag bit 29 and 30 and 31 set
 
 <=	R0 =	pointer to buffer (R2 on entry)
 	R1 =	pointer to terminating 0

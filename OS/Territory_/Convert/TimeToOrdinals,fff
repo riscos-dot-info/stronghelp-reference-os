@@ -1,8 +1,8 @@
 Territory_ConvertTimeToOrdinals  (&4304F)
 #Parent Territory_
 =>	R0 =	<territory number=>Territory_numbers>, or -1 for current
-	R1 =	pointer to 5 byte time block
-	R2 =	pointer to buffer to hold <result=>Territory_Convert_time_block_out>
+	R1 =	pointer to 5 byte UTC time block
+	R2 =	pointer to buffer to hold local time <ordinals=>Territory_Convert_time_block_out> from the conversion
 	
 Returns the time block as a set of useful numbers.
 

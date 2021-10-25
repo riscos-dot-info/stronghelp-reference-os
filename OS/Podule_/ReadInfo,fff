@@ -27,12 +27,12 @@ Bit	Word returned
 14	IRQ request register
 15	IRQ mask register
 16	IRQ bit mask to apply to the above 3 registers
-17	IRQ device number for OS_ClaimDeviceVector
+17	IRQ device number for <OS_ClaimDeviceVector>
 18	FIQ as IRQ status register
 19	FIQ as IRQ request register
 20	FIQ as IRQ mask register
-21	FIQ as IRQ bit within the above 3 registers
-22	FIQ as IRQ device number for OS_ClaimDeviceVector
+21	FIQ as IRQ bit mask to apply to the above 3 registers
+22	FIQ as IRQ device number for <OS_ClaimDeviceVector>
 23	FIQ status register
 24	FIQ request register
 25	FIQ mask register

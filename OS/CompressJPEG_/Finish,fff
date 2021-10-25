@@ -1,0 +1,6 @@
+CompressJPEG_Finish  (&4A502)
+#Parent CompressJPEG_
+=>	R0 =	JPEG tag
+<=	R0 =	size of JPEG image within the buffer
+
+This call finishes the JPEG compression process, returning the size of the complete image.  Any workspace claimed by the CompressJPEG module for the compression is released.

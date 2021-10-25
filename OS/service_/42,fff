@@ -4,7 +4,7 @@ Service_LookupFiletype (&42)
 	R2 =	<filetype=>Filetypes:!Root>
 <=	R1 =	0 to claim (filetype known), preserved otherwise
 	R2 =	first four characters, if known
-	R3 =	last found characters, if known
+	R3 =	last four characters, if known
 
 This service is issued when a filetype lookup in the File$Type_### variable fails. You probably shouldn't be using this service as the system variables are more useful.
 #Line

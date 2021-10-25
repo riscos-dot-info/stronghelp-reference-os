@@ -1,5 +1,5 @@
 Hourglass_On  (&406C0)
 #Parent Hourglass_
-This shedules the hourglass to appear after 1/3 second. To turn off again, use <Hourglass_Off>. To decide the delay yourself, use <Hourglass_Start>.
+This schedules the hourglass to appear after 1/3 second. To turn off again, use <Hourglass_Off>. To decide the delay yourself, use <Hourglass_Start>.
 #Line
 See <PRM 2, page 734=>PRM-2:734>.

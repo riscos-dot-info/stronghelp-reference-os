@@ -9,8 +9,9 @@ Territory_ConvertTimeFormats (&43078) (5.20+)
 	 	b16   	= convert as though DST was in use
 	 	b17   	= if DST calculation fails use standard time instead of returning an error
 	 	b18   	= calculate b16 automatically
-	 	b19-31	= reserved, set to 0
-	R4 =	timezone within territory
+	 	b19   	= treat R4 as the signed centisecond timezone offset
+	 	b20-31	= reserved, set to 0
+	R4 =	timezone within territory (b19 clear) else centiseconds (b19 set)
 
 This SWI converts one time representation into another, accounting for local time if requested.
 

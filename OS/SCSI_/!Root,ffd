@@ -11,7 +11,7 @@ SCSIFS :
 <FreeSpace64>
 <TestReady>
 <MiscOp>
-<SectorOp>
+<SectorDiscOp>
 #EndTable
 # Vendor specific> Create ???
 # Vendor specific> FloppyStructure ???

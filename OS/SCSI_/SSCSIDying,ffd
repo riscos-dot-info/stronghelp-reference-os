@@ -2,4 +2,4 @@ Service_SCSIDying (&20101)
 #Parent SCSI_
 =>	R1 =	&20101 (reason code)
 
-Issued before SCSIdriver dies. The SCSI system is still alive at this point, but a hardware driver may have shut down if it received this service call before you.
+Issued before SCSIDriver dies. The SCSI system is still alive at this point, but a hardware driver may have shut down if it received this service call before you.

@@ -9,8 +9,8 @@ ColourTrans_SelectTable  (&40740)
 	R3 =	destination palette pointer, or -1 for current palette, or 0 for default for the mode
 	R4 =	pointer to <buffer=>colourtrans_pixtrans>, or 0 to return length
 	R5 =	<flags=>.flags> (only used if R0 >= 256)
-	R6 =	pointer to <transfer function=>.transferfunction> (if R0 => 256 and flags bit 2)
-	R7 =	pointer to transfer function workspace (R12) (if R0 => 256 and flags bit 2)
+	R6 =	pointer to transfer function workspace (R12) (if R0 => 256 and flags bit 2)
+	R7 =	pointer to <transfer function=>.transferfunction> (if R0 => 256 and flags bit 2)
 
 <=	R4 =	required buffer size if 0 on entry, else preserved
 	All other registers preserved

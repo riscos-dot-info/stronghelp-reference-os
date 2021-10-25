@@ -1,4 +1,4 @@
-Territory_ReadSymbols  (&4304E)
+Territory_ReadSymbols  (&4305E)
 #Parent Territory_
 =>	R0 =	<territory number=>Territory_numbers>, or -1 to use current territory
 	R1 =	reason code
@@ -15,7 +15,7 @@ Code	Meaning (strings are null terminated)
 	 	255	no further grouping
 	 	0	repeat last grouping for rest of number
 	 	other	size of current group; next byte contains size
-	 	 	of next more significant grup of digits.
+	 	 	of next more significant group of digits.
 3	Pointer to international currency symbol
 4	Pointer to local currency symbol
 5	Pointer to monetary decimal point string
@@ -25,7 +25,7 @@ Code	Meaning (strings are null terminated)
 	 	255	no further grouping
 	 	0	repeat last grouping for rest of number
 	 	other	size of current group; next byte contains size
-	 	 	of next more significant grup of digits.
+	 	 	of next more significant group of digits.
 8	Pointer to positive sign used for monetary quantities
 9	Pointer to negative sign used for monetary quantities
 10	Number of fractional digits to be displayed in a formatted

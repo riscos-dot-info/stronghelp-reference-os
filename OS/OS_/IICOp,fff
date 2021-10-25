@@ -1,0 +1,22 @@
+OS_IICOp  (&7B) (5.00+)
+#Parent OS_
+=>	R0 =	pointer to an array of <I²C transfer descriptors=>.iic_transfer>
+	R1 =	b0-23	number of descriptors
+	 	b24-31	bus number
+
+Reads from or writes to the specified I²C device on the specified bus.
+
+This is a more powerful version of <IIC_Control> which can only address bus 0, and doesn't support repeated starts. On RISC OS 5 <IIC_Control> internally calls OS_IICOp.
+#Subpage iic_transfer
+Format of an I²C transfer descriptor
+A complete operation is made from one or more transfer descriptors.
+
+Offset	Contents
+#Line
+0	b0-7	I²C address (bit 0 set to read, clear to write)
+ 	b8-b28	reserved for future use
+ 	b29	retry for response
+ 	b30	checksum read, fills offset 4 with the sum of read bytes
+ 	b31	continue transfer with no start or address sent
+4	pointer to block for data
+8	length of block

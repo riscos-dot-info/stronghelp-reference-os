@@ -21,7 +21,7 @@ Thanks go to those mentioned in the <contributors=>OS:contributions> list.
 
 These manuals are kindly hosted by <www.riscos.info=>#url http://www.riscos.info/downloads/stronghelp/manuals/>
 #line
-<This page=>.hist335> gives history and credits.
+<This page=>.hist336> gives history and credits.
 #Subpage notes
 Notes on how the manual is structured
 These are some very incomplete notes on how the manual should be structured. If any part of it isn't then it will eventually be updated, or I'll change this specification. It's mostly here to remind me anyhow.
@@ -451,4 +451,27 @@ History for OS v3.35
 è	FileCore disc record <extended=>FileCore_Disc> for big discs with long names
 è	Lots of typing and grammatical errors fixed 
 #tab;line
-<Previous history=>.hist334>
+<Previous history=>.hist334>	<Next history=>.hist336>
+#subpage hist336
+History for OS v3.36
+#align right
+{/}05 Apr 2014{/}
+#align left
+#line
+è	Added <OS_NVMemory>
+è	Lots of typing and grammatical errors fixed
+è	VIDC type 3 mode parameter list added to <Service_ModeExtension=>service_50.VIDC>
+è	<ADFS_SectorDiscOp> and <SCSIFS_SectorDiscOp=>SCSI_SectorDiscOp> renamed to match reality
+è	<OS_ChangeDynamicArea> area number -1 marked as 3.50 or later
+è	<FileCore_MiscOp7> return register corrected
+è	<FileCore_Create> flag bit 11 detailed
+è	<OS_Hardware> subreasons 2 to 5 now covered
+è	Bit definitions for <CMOS byte 140=>os_bytecmos140> corrected and extended
+è	Added notes about alignment requirements in the <module header=>os_module_format>
+è	<OS_IICOp> defined
+è	Added section for <SDFS=>OS:SDFS_>
+è	Added section for <InverseTable=>OS:InverseTable_>
+è	Linked <DDEUtils=>Wimp:DDEUtils_> from Wimp manual
+è	Added section for <RTSupport=>OS:RT_>
+#tab;line
+<Previous history=>.hist335>

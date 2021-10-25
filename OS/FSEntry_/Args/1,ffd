@@ -4,6 +4,6 @@ FSEntry_Args 1
 	R1 =	internal file handle returned by <FSEntry_Open>
 	R2 =	sequential pointer
 
-This call is made when FileSwitch needs to know how far into a file the current pointer is. This will only be called for unbuffered files.
+This call is made when FileSwitch needs to set how far into a file the current pointer is. This will only be called for unbuffered files.
 
 On systems with no concept of extents (eg streams) this should *not* return an error.

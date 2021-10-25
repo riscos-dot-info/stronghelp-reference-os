@@ -1,0 +1,47 @@
+OS_NVMemory (&76) (5.00+)
+#Parent OS_
+=>	R0 =	0 <Read byte size=>.sub0>
+	 	1 <Read byte=>.sub1>
+	 	2 <Write byte=>.sub2>
+	 	3 <Read block of bytes=>.sub3>
+	 	4 <Write block of bytes=>.sub4>
+	 	5 Reserved
+	 	6 <Read default value=>.sub6>
+
+Supports reading and writing of CMOS beyond the limit imposed by <OS_Byte 161=>OS_Byte161> and <OS_Byte 162=>OS_Byte162>.
+#Subpage sub0
+OS_NVMemory 0 (5.00+)
+=>	R0 =	0 (reason code)
+<=	R1 =	number of bytes of NV memory present
+
+#Subpage sub1
+OS_NVMemory 1 (5.00+)
+=>	R0 =	1 (reason code)
+	R1 =	logical offset to read
+<=	R2 =	byte read
+
+#Subpage sub2
+OS_NVMemory 2 (5.00+)
+=>	R0 =	2 (reason code)
+	R1 =	logical offset to write
+	R2 =	byte to write
+
+#Subpage sub3
+OS_NVMemory 3 (5.00+)
+=>	R0 =	3 (reason code)
+	R1 =	logical offset to start read from
+	R2 =	pointer to buffer
+	R3 =	number of entries to attempt to read
+
+#Subpage sub4
+OS_NVMemory 4 (5.00+)
+=>	R0 =	4 (reason code)
+	R1 =	logical offset to start writing to
+	R2 =	pointer to buffer
+	R3 =	number of entries to attempt to write
+
+#Subpage sub6
+OS_NVMemory 6 (5.20+)
+=>	R0 =	6 (reason code)
+	R1 =	logical offset to read
+<=	R2 =	default byte that would be used on a CMOS reset, or -1 if unknown/unset

@@ -6,6 +6,7 @@ OS SWIs
 <ATAPI>
 <Audio>
 <BASICTrans>
+BlendTable
 <Buffer>
 <Cache>
 <CD>
@@ -13,6 +14,7 @@ OS SWIs
 <ColourPicker=>Wimp:ColourPicker_>
 <ColourTrans>
 <CompressJPEG>
+<DDEUtils=>Wimp:DDEUtils_>
 <Debugger>
 <DeviceFS>
 <DMA>
@@ -31,6 +33,7 @@ OS SWIs
 <FSLock>
 <Hourglass>
 <IIC>
+<InverseTable>
 <Joystick>
 <JPEG>
 <MakePSFont>
@@ -47,9 +50,13 @@ OS SWIs
 <RamFS>
 <RemotePrinterSupport>
 <ResourceFS>
+RTC
+<RTSupport=>RT_>
 <ScreenBlanker>
 <ScreenModes>
 <SCSI>
+<SDFS>
+SDIODriver
 <SharedCLibrary>
 <SharedSound>
 <Shell>
@@ -59,6 +66,7 @@ OS SWIs
 <TaskManager=>Wimp:TaskManager_>
 <TaskWindow=>Wimp:TaskWindow_>
 <Territory>
+VFPSupport
 <Wimp=>Wimp:Wimp_>
 #EndTable
 #Line
@@ -78,4 +86,4 @@ OS SWIs
 #EndTable
 #Line
 #align centre
-<OS SWIs manual=>about> {/}v3.35, 21 Jul 2012{/}
+<OS SWIs manual=>about> {/}v3.36, 05 Apr 2014{/}

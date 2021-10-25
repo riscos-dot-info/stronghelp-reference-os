@@ -2,6 +2,7 @@ OS_Byte CMOS 16
 #Parent OS_Bytecmos
 Bit(s)	Meaning
 #Line
+0	Auto DST calculation (5.19+)
 1	Loud beep
 3	NoScroll (enable <scroll protection=>VDU:Scroll_Protection>)
 4	Boot from disc

@@ -1,0 +1,12 @@
+InverseTable_SpriteTable (&4BF41) (Select 4.32+, 5.22+)
+#Parent InverseTable_
+=>	R0 =	pointer to 1024 byte buffer
+ 	R1 =	pointer to 32768 byte buffer
+ 	R2 =	<sprite area=>os_spriteop_Area>, or mode number
+ 	R3 =	<sprite ptr=>os_spriteop_ptr>, or palette
+<=	R0 =	pointer to 256 entry table of 5:5:5 BGR values
+ 	R1 =	pointer to 32768 entry table of colour numbers
+
+This SWI calculates a pair of lookup tables for the given sprite or mode, remaining available until the next mode change. If the table has already been calculated for another caller the exit values of R0 and R1 may differ from those passed in to save time.
+
+As with <ColourTrans_ReadPalette> the mode and/or palette accepts -1 to mean the current one. If instead a sprite is supplied it must be referenced by address rather than name - use <OS_SpriteOp 24=>OS_SpriteOp_24> to get this.

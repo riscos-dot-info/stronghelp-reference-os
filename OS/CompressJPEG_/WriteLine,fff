@@ -1,0 +1,9 @@
+CompressJPEG_WriteLine  (&4A501)
+#Parent CompressJPEG_
+=>	R0 =	JPEG tag
+ 	R1 =	pointer to a row of pixels:
+ 	 	 	For colour: a buffer of continuous RGB values - ie a byte stream of the format R, G, B, R, G, B...
+ 	 	 	For greyscale: a buffer of continuous 8 bit grey values
+<= 	R0, R1 preserved
+
+This call compresses one row of source pixels into the JPEG buffer.  It should be called once for each row of the source data.  An error is returned if the JPEG buffer becomes full.

@@ -1,0 +1,5 @@
+SDFS_DescribeDisc  (&59045)
+#Parent SDFS_
+This SWI calls <FileCore_DescribeDisc>, after first setting R8 to point to the FileCore instance private word for SDFS.
+#Line
+See <PRM 2, page 286=>PRM-2:286>.

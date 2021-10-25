@@ -6,4 +6,4 @@ Sound_Mode 1  (&40144)
 <=	R0 preserved
 	R1 =	old state
 
-This SWI changes the oversampling flag. When oversampling, double the sample rate will be used and values between those returned from the handler will be averaged to interpollate between the two.
+This SWI changes the oversampling flag. When oversampling, double the sample rate will be used and values between those returned from the handler will be averaged to interpolate between the two.

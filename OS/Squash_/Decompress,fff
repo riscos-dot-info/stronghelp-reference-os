@@ -2,8 +2,8 @@ Squash_Decompress  (&42701)
 #Parent Squash_
 If R0 bit 3 is set:
 =>	R0 =	<flags=>.flags>
-	R1 =	input size (-1 means don't return max output size)
-<=	R0 =	required work space size
+	R1 =	input size, or -1 means don't return max output size
+<=	R0 =	required workspace size
 	R1 =	maximum output size (-1 means don't know/not asked)
 
 If R0 bit 3 is clear:
@@ -31,12 +31,12 @@ Bit	Meaning if set
 #Line
 0	Continuing existing operation
 1	More input remains after this
-2	Asssume all ouput will fit in buffer (if bits 0,1 clear a faster algorithm is used)
+2	Assume all ouput will fit in buffer (if bits 0,1 clear a faster algorithm is used)
 3	return workspace needed and max output size (all other bits must be 0)
 4-31	0 (reserved)
 #subpage Status
 Squash_Decompress statuses
-Value	Meaning if set
+Value	Meaning
 #Line
 0	Operation complete
 1	Input exhausted		(R3 \< 12)

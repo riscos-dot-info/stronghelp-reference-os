@@ -2,7 +2,7 @@ CompressJPEG
 #Parent !Root
 #Prefix CompressJPEG_
 #Table Columns 1
-Start
-WriteLine
-Finish
+<Start>
+<WriteLine>
+<Finish>
 #EndTable

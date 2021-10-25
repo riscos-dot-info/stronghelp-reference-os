@@ -1,0 +1,16 @@
+RT_ReadInfo (&575C5)
+#Parent RT_
+=>	R0 =	<reason code=>.subreason>
+<=	R0 =	returned value
+
+This SWI enables you to read current state variables.
+#Subpage subreason
+Read info subreason code
+R0	Returns
+#Line
+0	Get current routine
+	RTSupport handle for current routine, or 0 if in foreground, or -1 if in interrupt context
+1	Get current priority setting
+	Integer value, or -1 if in interrupt context
+2	Get base address of SVC stack
+	Base address of SVC stack for real-time routines

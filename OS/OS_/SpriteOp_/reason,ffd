@@ -17,7 +17,7 @@ F  15 <Create sprite=>OS_SpriteOp_15>
 19 25 <Delete sprite=>OS_SpriteOp_25>
 1A 26 <Rename sprite=>OS_SpriteOp_26>
 1B 27 <Copy sprite=>OS_SpriteOp_27>
-1C 28 <Put sprite to screen=>OS_SpriteOp_28>
+1C 28 <Put sprite=>OS_SpriteOp_28>
 1D 29 <Create mask=>OS_SpriteOp_29>
 1E 30 <Remove mask=>OS_SpriteOp_30>
 1F 31 <Insert row=>OS_SpriteOp_31>
@@ -35,11 +35,11 @@ F  15 <Create sprite=>OS_SpriteOp_15>
 2D 45 <Insert column=>os_spriteop_45>
 2E 46 <Delete column=>os_spriteop_46>
 2F 47 <Flip about y axis=>os_spriteop_47>
-30 48 <Plot sprite mask=>os_spriteop_48>
+30 48 <Plot mask=>os_spriteop_48>
 31 49 <Plot mask at user coords=>os_spriteop_49>
 32 50 <Plot mask scaled=>os_spriteop_50> *
 33 51 <Paint char scaled=>os_spriteop_51> *
-34 52 <Put sprite scaled=>os_spriteop_52> *
+34 52 <Paint sprite scaled=>os_spriteop_52> *
 35 53 <Put sprite grey scaled=>os_spriteop_53> *
 36 54 <Remove lefthand wastage=>os_spriteop_54>
 37 55 <Plot mask transformed=>os_spriteop_55> %*
@@ -52,7 +52,7 @@ F  15 <Create sprite=>OS_SpriteOp_15>
 3E 62 <Read save area size=>os_spriteop_62>
 3F 63 Reserved
 40 64 Reserved
-41 65 <Tile sprite scaled=>os_spriteop_65> *
+41 65 <Tile sprite scaled=>os_spriteop_65> %*
 
 #EndTable
 #line;tab

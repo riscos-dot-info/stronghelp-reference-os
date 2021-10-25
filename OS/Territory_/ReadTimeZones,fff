@@ -3,8 +3,8 @@ Territory_ReadTimeZones  (&4304A)
 =>	R0 =	<territory number=>Territory_numbers>, or -1 to use current territory
  	R1 =	timezone within territory
  	R4 =	"ZONE" (&454E4F5A) to enable use of R1
-<=	R0 =	pointer to name of standard time zone for territory
-	R1 =	pointer to name of summer time
+<=	R0 =	pointer to name of standard time for territory
+	R1 =	pointer to name of summer time for territory
 	R2 =	offset from UTC to standard time, in cs (signed 32-bit)
 	R3 =	offset from UTC to summer time, in cs (signed 32-bit)
 	R4 =	0 if extended API supported

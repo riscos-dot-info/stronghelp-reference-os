@@ -4,7 +4,8 @@ FileCore_MiscOp 7 (3.60+)
 	R1 =	drive number
 	R8 =	pointer to FileCore instance private word
 
-<=	R0 =	flag, b0 set: drive locked
+<=	R2 =	flags	b0 set: drive locked
+ 	 	 	b1 set: drive hidden from the iconbar
 
 This call read flags about the drive.
 #line;tab

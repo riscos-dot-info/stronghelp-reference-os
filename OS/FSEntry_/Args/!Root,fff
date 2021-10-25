@@ -21,5 +21,5 @@ Reason	Meaning
 6	<Flush modified data=>FSEntry_Args6>
 7	<Ensure file size=>FSEntry_Args7>
 8	<Zero pad file=>FSEntry_Args8>
-9	<Read datastamp=>FSEntry_Args9>
+9	<Read datestamp=>FSEntry_Args9>
 10	<Update image stamp=>FSEntry_Args10>

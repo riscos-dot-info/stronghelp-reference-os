@@ -1,6 +1,6 @@
 FileCore_LayoutStructure  (&40548)
 #Parent FileCore_
-=>	R0 =	<identifier=>FileCore_Disc> of particular format
+=>	R0 =	<disc record=>FileCore_Disc> of particular format
 	R1 =	pointer to <defect list=>FileCore_defectlist>
 	R2 =	pointer to null terminated disc name
 	R3 =	image file handle

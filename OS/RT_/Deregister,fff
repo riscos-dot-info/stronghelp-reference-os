@@ -1,0 +1,6 @@
+RT_Deregister (&575C1)
+#Parent RT_
+=>	R0 =	flags (reserved, should be zero)
+	R1 =	routine handle returned from <RT_Register>
+
+Remove a routine previously registered with the RTSupport module. If the routine in question is currently executing then this call does not return.

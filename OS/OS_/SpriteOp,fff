@@ -2,7 +2,7 @@ OS_SpriteOp  (&2E)
 #Parent OS_
 =>	R0 =	<reason code=>os_spriteop_Reason>
 
-This SWI controls the sprite system. R1 and R2 is often used to select a sprite. When they are, the following applies :
+This SWI controls the sprite system. R1 and R2 are often used to select a sprite. When they are, the following applies :
 
 {f*}R0 bits{f;Tab}
 8 & 9		R1				R2

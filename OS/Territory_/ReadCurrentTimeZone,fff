@@ -3,7 +3,7 @@ Territory_ReadCurrentTimeZone  (&43048)
 =>	R2 =	"ZONE" (&454E4F5A) to return timezone within territory in R2
 <=	R0 =	pointer to name of the current timezone
 	R1 =	offset from UTC to current timezone in centi-seconds including DST if configured on
-	R2 =	standard timezone within territory
+	R2 =	timezone within territory
 
 Returns information on the current timezone.
 

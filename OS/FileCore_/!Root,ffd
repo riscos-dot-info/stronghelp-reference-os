@@ -14,6 +14,6 @@ FileCore
 <FreeSpace>
 <LayoutStructure>
 <MiscOp>
-<SectorOp>
+<SectorDiscOp>
 <FreeSpace64>
 #EndTable

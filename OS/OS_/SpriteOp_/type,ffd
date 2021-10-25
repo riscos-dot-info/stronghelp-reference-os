@@ -18,6 +18,6 @@ Bits 27-31	Meaning
 If bits 27-31 are non-zero, then bits 0-26 are:
 Bit(s)	Meaning
 #line
-0	Takes the value 1, to distinguish this from a so-called <mode selector=>Wimp:Wimp_ModeSelect>
+0	Takes the value 1, to distinguish this from a so-called <mode specifier=>Wimp:Wimp_ModeSelect>
 1-13	Horizontal dots per inch of sprite
 14-26	Vertical dots per inch of sprite. Values of 180 (EX/EY0), 90 (EX/EY1), 45 (EX/EY2), 22.5 stored as 23 or 22 (EX/EY3) are supported.

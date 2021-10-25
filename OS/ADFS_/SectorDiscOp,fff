@@ -1,0 +1,3 @@
+ADFS_SectorDiscOp  (&4024D)
+#Parent ADFS_
+This SWI calls <FileCore_SectorDiscOp>, after first setting R8 to point to the FileCore instance private word for ADFS.

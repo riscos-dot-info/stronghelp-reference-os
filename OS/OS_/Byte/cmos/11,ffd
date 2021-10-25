@@ -4,6 +4,7 @@ Bit(s)	Meaning
 0-2	Default ADFS drive number
 3-5	<Caps lock status=>.caps>
 6	0: Dir  1: NoDir
+7	0: Num  1: NoNum
 #Subpage caps
 Caps Lock status
 Value	Meaning

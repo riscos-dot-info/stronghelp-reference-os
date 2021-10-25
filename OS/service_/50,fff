@@ -44,6 +44,32 @@ Size	Value
 4	<extended parameter=>.extend>
 	(repeat)
 4	-1 (terminator)
+
+VIDC list format 3 (Risc PC and later):
+
+Size	Value
+#Line
+4	3 (list format)
+4	log2bpp
+4	H sync width (in pixels)
+4	H back porch (in pixels)
+4	H left border (in pixels)
+4	H display size (in pixels)
+4	H right border (in pixels)
+4	H front porch (in pixels)
+4	V sync width (in rasters)
+4	V back porch (in rasters)
+4	V top border (in rasters)
+4	V display size (in rasters)
+4	V bottom border (in rasters)
+4	V front porch (in rasters)
+4	Pixel rate (in kHz)
+4	Sync polarity, set to invert (b0 = H, b1 = V, b2-31 reserved)
+	(then)
+8	extended parameter
+	(repeat)
+4	-1 (terminator)
+
 #SubPage extend
 VIDC extended parameters
 VIDC extended paramters are encoded as ({/}n{/} << 24 OR {/}value{/})

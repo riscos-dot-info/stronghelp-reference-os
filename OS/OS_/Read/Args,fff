@@ -40,9 +40,11 @@ example:
 #
 #Subpage output
 Output buffer
-For identifier x (named or not), word x in output buffer contains :
+For the Nth identifier (named or not), word N in output buffer contains :
 
-   switch	(/S)	:	non zero value if switch used
-   GSTransed	(/G)	:	pointer to block (0 if unused) with two-byte length and then string itself (not terminated)
-   Evaluated	(/E)	:	pointer to block (0 if unused) with one byte of type four bytes of value (int if type=0)
-   else		 	:	pointer to 0-terminated string.
+   Switch	(/S)	:	non zero value if switch used
+   GSTransed	(/G)	:	pointer to block (0 if unused) containing a two-byte length and then string itself (not terminated)
+   Evaluated	(/E)	:	pointer to block (0 if unused) containing a one-byte type then four bytes of value (integer if type=0)
+   else		 	:	pointer to NULL terminated string
+
+The results blocks pointed to are appended after the array of N words, therefore the output buffer must be at least N words long plus space to hold values/strings themselves.

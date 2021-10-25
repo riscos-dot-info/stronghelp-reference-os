@@ -1,0 +1,64 @@
+RT_Register (&575C0)
+#Parent RT_
+=>	R0 =	flags (reserved, should be zero)
+	R1 =	pointer to default <entry point=>.routine> for routine
+	R2 =	handle to pass in R0 to routine
+	R3 =	handle to pass in R12 to routine
+	R4 =	default pointer to pollword for routine
+	R5 =	initial value of R10 for routine
+	R6 =	initial value of R13_sys for routine
+	R7 =	initial <priority=>.priority> for routine: integer between 1-255, or a pointer <to a string=>.prioritystring>
+<=	R0 =	RTSupport module's handle for this routine
+
+This SWI adds a new routine to the list of routines to potentially be executed each time the interrupt dispatcher is unthreaded (but before transient and non-transient callbacks are executed, if the dispatcher is returning to USR mode). Each routine remains registered until removed by a call to <RT_Deregister>, but it may sleep for a time by use of a pollword. It is recommended that if it is known that a routine will sleep for an extended time, that a Deregister/Register pair should be used instead, to reduce cache thrashing during interrupt handling (when the RTSupport module has to check all possible pollwords).
+
+Each time the RTSupport module gains control of the CPU, it scans its list of routines in decreasing priority order for routines that are unblocked (ie where the pollword is non-zero). If a real-time routine was interrupted, then routines of a higher priority are executed, followed by the interrupted routine, and then equal and lower priority routines are examined. (However, note that if and only if routines have their priorities changed dynamically, it is possible that while a routine is executing, a second routine at the same priority level may be in a pre-empted state.) If the RTSupport module encounters two unblocked routines at the same priority level, then the calling order is undefined.
+#Subpage priority
+Priority values
+The priority passed in R7 can be an integer from 1 (lowest priority) to   255 (highest priority). Priority 0 is reserved for the exclusive use of the foreground process.
+#Subpage prioritystring
+Priority strings (preferred)
+The string is used to look up a priority in the file RTSupport:Priorities. This enables easy tuning of priority levels for a given system, without the need for each real-time component to be individually configurable. For example, the file might be as follows:
+
+	Critical:224
+	AudioFill:192
+	VideoPaint:160
+	Normal:128
+	AudioDecode:96
+	VideoDecode:64
+	Coroutine:32
+#Subpage routine
+An RT routine
+=>	R0  =	contents of R2 when registered
+	R10 =	first time, this is contents of R5 when registered; subsequently, it is preserved from the previous call
+	R11 =	0 (to support C code)
+	R12 =	contents of R3 when registered
+	R13_sys =	first time, this is contents of R6 when registered; subsequently, it is preserved from the previous call
+	R13_svc =	first time, this is the top of an 8K stack based at a megabyte boundary (the same logical address is used for all real-time routine SVC stacks, but it differs from the SVC stack address used by the foreground process); subsequently, it is preserved from the previous call. Note that static relocation offsets at base of SVC stack are undefined
+	R14_sys =	return address (only needed if using the callback model)
+	PSR =	SYS mode, IRQs and FIQs enabled; subsequently IRQ disable state is preserved
+<=	R0 =	flags:
+	         	bit 0 set =>	rescan all higher priority routines (for example,
+	         	            	if this routine unblocked a semaphore that a
+	         	            	higher priority routine may be sleeping on)
+	         	            	otherwise rescan all equal priority routines,
+	         	            	including this routine, before descending
+	         	bit 1 set =>	R1 contains new pollword pointer (otherwise the
+	         	            	pollword given at registration is used)
+	         	bit 2 set =>	R2 contains a monotonic time after which control
+	         	            	should be returned even if the pollword is not
+	         	            	set
+	         	bit 3 set =>	R14_sys contains the address to enter next time
+	         	            	(otherwise the address used at registration is
+	         	            	re-entered)
+	         	other bits are reserved and will currently be zero
+	R1 =	pollword pointer (if R0 bit 1 is set)
+	R2 =	timeout monotonic time (if R0 bit 2 is set)
+	R3-R9 =	may be corrupted
+	R10 =	value to use at next entry
+	R11-R12 =	may be corrupted
+	R13_sys =	value to use at next entry
+	R13_svc =	value to use at next entry; SVC stack may be non-empty
+	R14_sys =	next entry point (if R0 bit 3 is set)
+	R14_svc =	may be corrupted
+	PSR =	SYS mode, IRQs enabled or disabled, FIQs enabled, flags may be corrupted

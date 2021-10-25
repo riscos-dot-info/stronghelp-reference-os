@@ -1,0 +1,9 @@
+InverseTable_Calculate (&4BF40) (3.70+)
+#Parent InverseTable_
+<=	R0 =	pointer to 256 entry table of 5:5:5 BGR values
+ 	R1 =	pointer to 32768 entry table of colour numbers
+#tab
+
+This SWI calculates a pair of lookup tables for the current destination mode, remaining available until the next mode change. 
+
+The 256 entry table maps from a colour number to corresponding 5 bit component colours held as 256 words of 4 bytes each. The 32768 entry table performs the reverse mapping to get back to an 8 bit colour number.

@@ -8,14 +8,15 @@ Territory_ConvertDateAndTime  (&4304B)
 	 	b16-27	reserved, must be 0
 	 	b28	set to use DST offset of R5 timezone
 	 	 	clear to use NoDST offset of R5 timezone
-	 	b29	set to use R5 as timezone within territory
-	 	b30	set to use R5 as centiseconds offset from UTC
+	 	b29	set to interpret R5 as timezone within territory
+	 	 	clear to interpret R5 as centiseconds offset from UTC
+	 	b30	set to use R5 
 	 	 	clear to use <Territory_ReadCurrentTimeZone> as the offset from UTC
 	 	b31	set to enable use of flags
 	 	 	clear to behave per RISC OS 3.10
 	R4 =	pointer to null terminated <format string=>swi_dateformat>
 	R5 =	offset from UTC if flag bit 30 and 31 set
-	 	or timezone within territory if flag bit 29 and 31 set
+	 	or timezone within territory if flag bit 29 and 30 and 31 set
 <=	R0 =	pointer to buffer (R2 on entry)
 	R1 =	pointer to terminating 0
 	R2 =	number of bytes free in buffer
@@ -25,7 +26,7 @@ Territory_ConvertDateAndTime  (&4304B)
 
 Result is a string in local time, language, and alphabet.
 
-Note the behaviour with the all the flags clear is as per RISC OS 3.10, this uses <Territory_ReadCurrentTimeZone> internally to find the offset from UTC, which only makes sense if R0 is the current territory.
+Flags in R3 are available from RISC OS 5.20. Note the behaviour with the all the flags clear is as per RISC OS 3.10, this uses <Territory_ReadCurrentTimeZone> internally to find the offset from UTC, which only makes sense if R0 is the current territory.
 
 Using the %TZ specifier when R5 is an arbitrary offset will output no characters for that specifier.
 #Line

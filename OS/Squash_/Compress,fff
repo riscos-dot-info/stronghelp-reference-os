@@ -34,7 +34,7 @@ Bit	Meaning if set
 4-31	0 (reserved)
 #subpage Status
 Squash_Compress statuses
-Value	Meaning if set
+Value	Meaning
 #Line
 0	Operation complete
 1	Input exhausted		(R3 = 0)

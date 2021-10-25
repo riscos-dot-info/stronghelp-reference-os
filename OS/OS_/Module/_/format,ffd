@@ -12,13 +12,15 @@ Offset	Contains
 24	<Help/Command table=>OS_Module_ComTable>
 28	SWI base number
 32	<SWI handler=>OS_Module_SWIHandler>	(svc mode)
-36	<SWI decode table=>OS_Module_SWITable>
+36	<SWI name table=>OS_Module_SWITable>
 40	<SWI decode code=>OS_Module_SWIDec>	(svc mode)
 44	<MessageTrans=>MessageTrans_> file (3.60+)
-48	Offset to <flags word=>OS_Module_Flags> (5.00+)
+48	<Flags word=>OS_Module_Flags> (5.00+)
 #tab
 
 <All=>.arcane> entries except +28 are offsets from the start of the module. Entries of 0, or those outside the module will be ignored. This means that a 26 bit module with no SWIs could use the last six words for something else, though any modules requiring the flags word at +48 will need to pad to that point with zeros.
+
+String offsets have byte alignment, except for the MessageTrans file which must be word aligned to be considered valid.
 
 # Preach on
 Try not to store data in the body of your module, allocate workspace and store the pointer in the private word. The OS lets module code be re-used (multiply instantiated) to allow several copies of the module to run at once, and several copies would be storing different data in the same locations in the module code. If this causes your module to crash because it has been multiply instantiated, it is *your* module's fault, not the OS' or the user's.
