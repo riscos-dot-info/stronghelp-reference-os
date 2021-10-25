@@ -1,6 +1,6 @@
 IIC_Control  (&240)
 #Parent IIC_
-{f25}Þ{f}	R0 =	device address, (bit 0 set to read, clear to write)
+=>	R0 =	device address, (bit 0 set to read, clear to write)
 	R1 =	pointer to block
 	R2 =	size of block (bytes)
 #Line

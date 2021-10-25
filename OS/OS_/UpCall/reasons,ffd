@@ -13,5 +13,8 @@ R0	Description
 A	<DeviceFS stream created=>os_upcall10>
 B	<DeviceFS stream closed=>os_upcall11>
 C	<Freeway=>InetSWIs:upcall_Freeway>
+F	<Device receive data present=>os_upcall15>
+10	<Device threshold above=>os_upcall16>
+11	<Device threshold below=>os_upcall17>
 100	<New application=>os_upcall256>
 101	<Move memory request=>os_upcall257>

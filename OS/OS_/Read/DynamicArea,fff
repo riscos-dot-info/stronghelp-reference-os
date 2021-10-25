@@ -1,7 +1,7 @@
 OS_ReadDynamicArea  (&5C)
 #Parent OS_
-{f25}Þ{f}	R0 =	<area=>OS_Areas> to read, bit 7 set to read maximum size to R2
-{f25}Ü{f}	R0 =	pointer to start address of area
+=>	R0 =	<area=>OS_Areas> to read, bit 7 set to read maximum size to R2
+<=	R0 =	pointer to start address of area
 	R1 =	current number of bytes in area
 	R2 =	maximum size of area
 #tab;line

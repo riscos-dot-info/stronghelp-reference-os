@@ -10,7 +10,7 @@ DOSFS_LayoutStructure  (&41AC1)
 This call lays out in the specified image all necessary structures to have a valid, empty disc. It can be used:
 
 #Indent 2
-è to layout a structure on a black, formatted disc (in which case the specified image should be the whole disc image)
+è to layout a structure on a blank, formatted disc (in which case the specified image should be the whole disc image)
 è to layout a partition in a file on a disc that has already been formatted (for example for the PC emulator).
 #Indent
 

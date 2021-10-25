@@ -1,0 +1,35 @@
+SCSI_Reserve (&403C7)
+#Parent SCSI_
+=>	R0 =	0 - <claim=>.claim>
+	 	1 - <force claim=>.fclaim>
+	 	2 - <release=>.release>
+	Others =	Reason code specific
+
+This SWI allows the caller to claim exclusive use of a device and may prevent data corruption problems that may arise if a program (by accident or on purpose) issues a Write/Format/ModeSelect command to a device currently mounted by SCSIFS.
+
+It also provides for a clean change of device ownership from one user to another, as SCSIdm for example is entitled to modify your disc, (to map out defects/format/partition it etc) but must only do so once SCSIFS has closed down all open files and dismounted the disc.
+#Subpage claim
+Claim
+=>	R0 =	0
+	R1 =	device ID
+	R2 =	release address
+	R3 =	workspace pointer, to be passed in R12 when release address is called
+	R8 =	access key
+
+Will return a reservation error if unsuccessful.
+#Subpage fclaim
+Force Claim
+=>	R0 =	1
+	R1 =	device ID
+	R2 =	release address
+	R3 =	workspace pointer, to be passed in R12 when release address is called
+	R8 =	access key
+
+This call is similar to <claim=>.claim>, however, if the device is already claimed, it will ask the current claimant to release it, by calling the release address registered for that device.
+#Subpage release
+Release
+=>	R0 =	2
+	R1 =	device ID
+	R8 =	access key
+
+Releases the lock on the given device.

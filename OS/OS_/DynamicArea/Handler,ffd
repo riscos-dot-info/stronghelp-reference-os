@@ -1,6 +1,6 @@
 Dynamic area handler code
 #Parent OS_DynamicArea
-{f25}Þ{f}	R0 =	reason
+=>	R0 =	reason
 	R12 =	workspace pointer passed to <OS_DynamicArea 0=>OS_DynamicArea0>
 
 Dynamic handler code controls what happens to a dynamic area as it is modified by the system.

@@ -1,0 +1,11 @@
+SCSI_Register (&403FF)
+=>	R0 =	Bit 0:	0 => device, 1 => bus
+	 	Bits 8-15:  highest device number (if bus)
+	 	Bits 16-23: default host ID (if bus) - 255 signifies no host ID
+	 	other bits reserved
+	R1 -> <handler code=>SCSI_SoftHandler>
+	R2 =	value to pass in R12 to the handler
+	R3 =	value to pass in R8 to the handler
+<=	R0 =	device / bus ID (bus ID has LUN/Device fields 0)
+
+This call registers a hardware driver with the SCSI Switcher. 

@@ -1,7 +1,7 @@
 OS_Byte 129 - To scan the keyboard for a range of keys
-{f25}Þ{f}	R0 = 129
+=>	R0 = 129
 	R1 =	{*}&01-&7F{*}	lowest <internal key number=>OS_Byte121a> EOR &7F
 	R2 =	{*}&FF{*}
-{f25}Ü{f}	R1 =	internal key number
+<=	R1 =	internal key number
 	 	255 if none pressed
 	R2 corrupted

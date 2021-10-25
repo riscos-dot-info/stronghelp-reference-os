@@ -1,10 +1,10 @@
 OS_DynamicArea 4  (&66)
 #Parent OS_DynamicArea
 *Renumbers dynamic areas*
-{f25}Ş{f}	R0 =	4
+=>	R0 =	4
 	R1 =	old area number
 	R2 =	new area number
-{f25}Ü{f}	all preserved
+<=	all preserved
 #line
 This call renumbers dynamic areas. and is intended for system use only.
 

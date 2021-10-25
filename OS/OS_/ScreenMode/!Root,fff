@@ -1,4 +1,4 @@
-OS_ScreenMode  (&65) (3.5+)
+OS_ScreenMode  (&65) (3.50+)
 #Parent OS_
 =>	R0 =	<reason code=>.reasons>
 	other registers dependant on call

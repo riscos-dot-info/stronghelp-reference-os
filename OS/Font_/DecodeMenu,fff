@@ -1,5 +1,5 @@
-Font_DecodeMenu  (&400A0) (3.1+)
-{f25}Þ{f}	R0	=	<flags=>.flags>
+Font_DecodeMenu  (&400A0) (3.10+)
+=>	R0	=	<flags=>.flags>
 	R1	!	menu definition, as per <Font_ListFonts>
 	R2	!	menu selections, as per <Wimp_Poll=>Wimp:Wimp_Poll>
 	R3	!	buffer to contain result
@@ -7,7 +7,7 @@ Font_DecodeMenu  (&400A0) (3.1+)
 	R4	=	size of buffer (if R3 != 0)
 
 #tab
-{f25}Ü{f}	R0, R1, R3	 	preserved.
+<=	R0, R1, R3	 	preserved.
 	R2	!	rest of menu selections
 	R4	=	size of buffer required.
 			or 0 for no font selection.

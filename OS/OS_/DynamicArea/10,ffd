@@ -1,11 +1,11 @@
 OS_DynamicArea 10 (&66)
 #Parent OS_DynamicArea
 {*}Allows a region of a <Sparse=>OS_DynamicAreaSparse> area to be released as free memory{*}
-{f25}Þ{f}	R0 =	10
+=>	R0 =	10
 	R1 =	area number
 	R2 =	base of region to release
 	R3 =	size of region to release
-{f25}Ü{f}	R0 - R3 preserved.
+<=	R0 - R3 preserved.
 #line
 The region ( {/}base {f25}£{f} x {f25}£{f} size-1{/} ) must be entirely within the address range of the Sparse area. There are no restrictions on the distribution of any mapped memory within the region before the call.
 

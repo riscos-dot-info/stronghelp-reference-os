@@ -1,5 +1,5 @@
 OS_UpCall 3 subreason code 6
 Deleting file
 #line
-{f25}Þ{f}	R1 !	object name
+=>	R1 !	object name
 	R6 !	special field (or 0)

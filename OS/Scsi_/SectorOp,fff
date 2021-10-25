@@ -1,0 +1,3 @@
+SCSIFS_SectorOp  (&4098D)
+#Parent SCSI_
+This SWI calls <FileCore_SectorOp>, after first setting R8 to point to the FileCore instance private word for SCSIFS.

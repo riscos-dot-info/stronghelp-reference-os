@@ -1,7 +1,7 @@
 OS_DynamicArea  (&66)
 #Parent OS_
-{f25}Þ{f}	R0 =	reason code
-{f25}Ü{f}	R0 preserved
+=>	R0 =	reason code
+<=	R0 preserved
 
 Performs operations on user dynamic areas.
 

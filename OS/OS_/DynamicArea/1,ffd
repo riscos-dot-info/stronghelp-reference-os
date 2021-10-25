@@ -1,9 +1,9 @@
 OS_DynamicArea 1  (&66)
 #Parent OS_DynamicArea
 *Removes a previously created dynamic area*
-{f25}Ş{f}	R0 =	1
+=>	R0 =	1
 	R1 =	area number
-{f25}Ü{f}	all preserved
+<=	all preserved
 #line
 This call removes a previously created dynamic area. Before the area is removed, RISC OS attempts to shrink it to zero size.  This is done using <OS_ChangeDynamicArea>.
 

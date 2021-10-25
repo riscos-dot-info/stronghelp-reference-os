@@ -1,0 +1,10 @@
+About the SCSI Switcher system
+#Parent SCSI_
+#wrap on
+Previously numerous 3rd parties all implemented subtly incompatible entire SCSI systems for each of their podules, and maintained various incompatible filing systems (some called "SCSI::" and some called "SCSIFS::") and accompanying filers. This meant manufacturer's podules couldn't be mixed and applications programs had to tread carefully when interacting with the system.
+
+As an increasing number of devices are using SCSI command protocols over non-SCSI connections, for example ATAPI (SCSI-over-ATA); Iomega Zip drives (SCSI-over-Parallel); and USB Mass Storage devices (SCSI-over-USB), the centralised SCSI Switcher system was introduced to clear up all of the incompatibility problems.
+
+It works on the same principal as <CDFS=>CDFS_> and the CDFSSoft drivers, where a central filing system and filer talk to a generic driver which dispatches the SCSI SWIs to multiple SCSISoft hardware drivers. SCSI hardware drivers interfacing to the SCSI Switcher can be simpler than a full SCSIdriver module, as the Switcher itself handles many of the higher-level calls and details like device reservation.
+#line
+This feature is available from SCSIDriver 2.00 and later

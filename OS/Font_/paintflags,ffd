@@ -11,7 +11,7 @@ bit	meaning
 8	Given font
 9	Kern
 10	Right to left
-11	<Background blending=>.blend> (RISC OS 3.7 or later {*}only{*})
+11	<Background blending=>.blend> (RISC OS 3.70 or later {*}only{*})
 12	R1 points to <16-bit string=>font_longstrings> (bit 13 must be clear) (FontManager 3.41+)
 13	R1 points to <32-bit string=>font_longstrings> (bit 12 must be clear) (FontManager 3.41+)
 17	Return caret position

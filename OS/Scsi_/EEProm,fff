@@ -1,0 +1,9 @@
+SCSI_EEProm (&403C6)
+#Parent SCSI_
+=>	R0 =	Bits 0..3 address of 16 Bit word
+	 	Bit 10 set for write, clear for read
+	R1 =	Bits 0..15 write data (if R0 Bit 10 set)
+<=	R0 =	data read if R0 Bit 10 was set on entry
+	R0 =	preserved if R0 Bit 10 was clear on entry
+
+Reads/writes EEProm on the host, where available.

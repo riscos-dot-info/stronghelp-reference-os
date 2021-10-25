@@ -1,10 +1,10 @@
 OS_Word 14,1
 #Parent OS_Word
-{f25}Þ{f}	R0 =	14
+=>	R0 =	14
 	R1 =	pointer to 7-byte block containing :
 	 	 	0 = 1
 
-{f25}Ü{f}	R1 =	pointer to block containing :
+<=	R1 =	pointer to block containing :
 	 	 	0 = <year=>.year>		(0-99)
 	 	 	1 = month		(1-12)
 	 	 	2 = day of month	(1-31)

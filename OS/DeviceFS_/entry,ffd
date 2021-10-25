@@ -13,6 +13,7 @@ Device driver entry point
 	 	 	9	<Resume=>DeviceFS_entry9>
 	 	 	10	<End of data=>DeviceFS_entry10>
 	 	 	11	<Stream created=>DeviceFS_entry11>
+	 	 	14	<IOCtl=>DeviceFS_entry14>
 
 	R8 =	private word
 	R12 =	workspace pointer

@@ -5,6 +5,6 @@ Joystick
 <CalibrateTopRight>
 <CalibrateBottomLeft>
 #line
-*Note*:	These are only available on machines with the proper hardware.
+*Note*:	These are only available on machines with the appropriate hardware.
 #line;tab
 See also:	<PRM 5a-629=>PRM-5a:629>

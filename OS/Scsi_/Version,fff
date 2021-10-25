@@ -1,13 +1,12 @@
 SCSI_Version (&403C0)
-{f25}Þ{f}	none
-{f25}Ü{f}	R0 =	Bits 0..7	software minor version number, 0 for any release
-	 	Bits 8..31	software major version number eg 100 for 1.00
+<=	R0 =	Bits 0..7	software minor version number, 0 for any release
+	 	Bits 8..31	software major version number eg. 100 for 1.00
 	R1 =	Bitset of <software features=>.software>
 	R2 =	Bits 0..7	hardware minor version number, 0 for any release
-	 	Bits 8..31	hardware major version number eg 100 for 1.00
+	 	Bits 8..31	hardware major version number eg. 100 for 1.00
 	R3 =	Bitset of <hardware features=>.hardware>
-	R4 !	null terminated vendor string
-#line
+	R4 ->	null terminated vendor string
+
 This SWI is used to determine the version number of the drivers, whether it supports any particular later extension, and what particular hardware implementation is present.
 #
 #subpage software

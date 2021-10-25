@@ -1,4 +1,7 @@
-SCSI_Control 0 ''
-{f25}Þ{f}	R0 =	0
- 		R1 =	<host ID=>SCSI_devid>
-{f25}Ü{f}	successful exit: no results
+SCSI_Control 0
+{*}Abort device{*}
+=>	R0 =	0
+	R1 =	device ID
+	R8 =	access key
+
+Cancels all outstanding operations on a device. 'Abort op' should normally be used instead wherever possible.

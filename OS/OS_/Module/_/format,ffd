@@ -13,8 +13,8 @@ Offset	Contains
 &20	<SWI handler=>OS_Module_SWIHandler>	(svc mode)
 &24	<SWI decode table=>OS_Module_SWITable>
 &28	<SWI decode code=>OS_Module_SWIDec>	(svc mode)
-&2C	<MessageTrans=>MessageTrans_> file (RISC OS 3.5+)
-&30	Offset to <Flags word=>OS_Module_Flags>
+&2C	<MessageTrans=>MessageTrans_> file (RISC OS 3.50+)
+&30	Offset to <flags word=>OS_Module_Flags>
 #tab
 
 <All=>.arcane> entries except &1C are offsets from the start of the module. Entries of 0, or those outside the module will be ignored. This means that if the module hasn't got any SWIs, the last five words *could* be used for something else, and if there is no MessageTrans filename, the last value could be used for something else.

@@ -1,5 +1,5 @@
 PDumperReason_SetDriver (0)
-#Parent PDumperReason_
+#Parent PDumper_Reason_
 =>	R1 =	<printer dumper number=>PDumper_numbers>
 	R2 =	pointer to command to ensure dumper present
 	R3 =	pointer to 256 bytes of dumper configuration data

@@ -1,4 +1,22 @@
-SCSI_Control 0 ''
-{f25}Þ{f}	R0 =	0
- 		R1 =	<host ID=>SCSI_devid>
-{f25}Ü{f}	successful exit: no results
+SCSI_Control 6
+{*}Allow/Inhibit disconnect/reselect{*}
+=>	R0 =	6
+	R1 =	device ID
+	R2 =	0 =	allow disconnect/reselect
+	 	 	(ie when the bus selection phase is complete, the driver will attempt to send an IDENTIFY message with bit6 set, this tells the target that it may disconnect if it wants to).
+	 	1 =	inhibit disconnect/reselect, so that once started, a command will proceed to completion without allowing any other command to start/reconnect. (ie when the bus selection phase is complete the driver will attempt to send an IDENTIFY message with bit6 clear).
+	 	2 =	inhibit disconnect/reselect by not sending an identify message
+	 	-1 =	no action, return previous setting.
+	R8 =	access key
+<=	R2 =	previous setting
+
+Note codes 0/1 cause <SCSI_Op> to attempt to send an identify message once the bus selection phase is complete. The target may choose not to take the message (Not an error), in which case the driver proceedes to the command phase. The target may reply to the message with a message reject. 
+
+These two cases do not produce an error from <SCSI_Op>, as the command may still complete successfully, it will however remain connected all the time.
+
+Note: Applications/filing systems are {*}NOT{*} expected to issue this call, as all software/hardware should work happily regardless of any disconnections that occur.
+It should only be issued by:
+
+	1)	The user (in his boot file) if his/her particular device mis-behaves when sent messages.
+
+	2)	Application/filing system software specific to one vendors product that is known to mis-behave when sent messages.

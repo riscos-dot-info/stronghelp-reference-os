@@ -3,4 +3,4 @@ When a SWI instruction is decoded the processor will jump to this vector to find
 
 When the SWI is processed it is entirely possible to drop back into user mode and execute code as if you are running the users program. Returning from such calls should be transparent to the system and you should NOT modify registers without good reason.
 
-The default handler will check if the call belongs to the kernel and if so will branch through a table at &1F033FC. This table is not guaranteed to remain in this location, but due to the number of applications attaching themselves, it is unlikely to change.
+The default handler will check if the call belongs to the kernel and if so will branch through a table to the appropriate SWI handling code.

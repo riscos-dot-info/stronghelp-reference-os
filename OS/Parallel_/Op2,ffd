@@ -14,10 +14,10 @@ To read, use R1=0, R2=&FFFFFFFF.
 Control register bits
 Bit	Meaning		Port pin
 #Line
-0	nStrobe		1
-1	Auto Feed		14
-2	Init (Reset)		16
-3	Select in		17
+0	Not Strobe		1
+1	Not Autofeed		14
+2	Init		16
+3	Not SelectIn		17
 4	IRQ enable
 5	Direction
 6	reserved

@@ -1,4 +1,4 @@
-OS_Reset  (&6A) (3.5+)
+OS_Reset  (&6A) (3.50+)
 #Parent OS_
 This SWI does the equivalent of pressing the Reset button. Use with {*}extreme{*} caution.
 

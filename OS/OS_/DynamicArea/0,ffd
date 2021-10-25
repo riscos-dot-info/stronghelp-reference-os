@@ -1,16 +1,16 @@
 OS_DynamicArea 0  (&66)
 #Parent OS_DynamicArea
 *Creates a new dynamic area*
-{f25}Þ{f}	R0 =	0
-	R1 =	-1 (or new area number 128-255; reserved for Acorn)
+=>	R0 =	0
+	R1 =	-1 (or new area number 128-255; reserved for internal use)
 	R2 =	initial size of area, in bytes
-	R3 =	-1 (or base of area; reserved for Acorn)
+	R3 =	-1 (or base of area; reserved for internal use)
 	R4 =	<area flags=>OS_DynamicAreaFlags>
 	R5 =	maximum size of area, in bytes <(-1 for unlimited)=>.deprec>
 	R6 =	<handler routine=>OS_DynamicAreaHandler>
 	R7 =	pointer to workspace for handler, or -1 for base of area
-	R8 =	pointer to name of area {/}[limited to 31-chars in RO3.8+]{/}
-{f25}Ü{f}	R0, R2, R4, R6-R8 = preserved
+	R8 =	pointer to name of area (limited to 31-chars in 3.80+)
+<=	R0, R2, R4, R6-R8 = preserved
 	R1 =	allocated area number
 	R3 =	base of area
 	R5 =	maximum size of area

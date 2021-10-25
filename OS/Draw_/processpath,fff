@@ -45,4 +45,4 @@ Bit	Meaning if set
 Note
 Version 1.17 of the Draw module and later move the flag in bit 31 of the output pointer into R1, to allow the pointer to address the full memory range. Attempts to set the new flags on older versions of the module will cause the error 'Reserved bits non zero'.
 
-A BASIC patch will be available and freely distibutable that allows the new flags to work on all versions of the module.
+A BASIC patch will be available and freely distributable that allows the new flags to work on all versions of the module.

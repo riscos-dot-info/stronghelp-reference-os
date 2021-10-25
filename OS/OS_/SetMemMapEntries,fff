@@ -1,7 +1,7 @@
 OS_SetMemMapEntries  (&53)
 #Parent OS_
-{f25}Þ{f}	R0 =	pointer to <request block=>OS_memmaprequest>
-{f25}Ü{f}	block at R0 updated
+=>	R0 =	pointer to <request block=>OS_memmaprequest>
+<=	block at R0 updated
 #line;tab
 This SWI sets the logical to physical mapping of the memory pages.
 

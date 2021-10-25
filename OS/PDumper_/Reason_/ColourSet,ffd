@@ -1,5 +1,5 @@
 PDumperReason_ColourSet (2)
-#Parent PDumperReason_
+#Parent PDumper_Reason_
 =>	R0 =	physical colour (&BBGGRR00)
 	R2 =	<strip type=>PDumper_striptypes>
 	R3 =	job private word (see <PDumperReason_StartJob>)

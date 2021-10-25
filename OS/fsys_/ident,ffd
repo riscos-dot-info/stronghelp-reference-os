@@ -14,17 +14,17 @@ Filing System numbers
 19  Kbd
 20  RawKbd
 21  DeskFS
-22  C.C. RomFS
+22  Computer Concepts' RomFS
 23  RamFS
 24  RISCiXFS
 25  Streamer
-26  SCSI
+26  SCSIFS
 27  Digitiser
 28  Scanner
 29  MultiFS
 33  NFS
 37  CDFS
-38  C.C. CFS
+38  Computer Concepts' CFS
 43  DOSFS
 46  ResourceFS
 47  PipeFS
@@ -35,7 +35,7 @@ Filing System numbers
 66  SparkFS
 91  Memphis
 99  ShareFS
-101 C.C. PrintQFS
+101 Computer Concepts' PrintQFS
 118 CacheFS
 142 raFS
 #EndTable

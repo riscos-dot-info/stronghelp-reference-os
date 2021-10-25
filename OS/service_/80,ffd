@@ -3,6 +3,6 @@ Service_ShutDownComplete (&80)
 =>	R1 =	&80 (reason code)
 #Wrap off
 
-"Is is now safe to turn your computer off"
+"It is now safe to turn your computer off"
 #Line
 See <PRM 3, page 82=>PRM-3:82>

@@ -1,6 +1,6 @@
 FileCore_Create  (&40541)
 #Parent Filecore_
-{f25}Þ{f}	R0 =	pointer to <descriptor block=>FileCore_fsdescriptor>
+=>	R0 =	pointer to <descriptor block=>FileCore_fsdescriptor>
 	R1 =	pointer to calling module's base
 	R2 =	pointer to calling module's private word
 	R3 =	<drives configuration=>.drives>
@@ -10,7 +10,7 @@ FileCore_Create  (&40541)
 # gerph, paraphrased> 1076 is the actual size of memory allocated
 # on previous versions of FileCore and may change without notice.
 	R6 =	hard disc map sizes
-{f25}Ü{f}	R0 =	pointer to FileCore instance private word
+<=	R0 =	pointer to FileCore instance private word
 	R1 =	address to call after completing background floppy op
 	R2 =	address to call after completing background hard disc op
 	R3 =	address to call to release FIQ after low level op

@@ -22,11 +22,11 @@ Bit	When set supports
 Bitmask for reason codes
 Bit	When set supports
 #Line
-0	<PDumperReason_SetDriver>
-1	<PDumperReason_OutputDump>
-2	<PDumperReason_ColourSet>
-3	<PDumperReason_StartPage>
-4	<PDumperReason_EndPage>
-5	<PDumperReason_StartJob>
-6	<PDumperReason_AbortJob>
-7	<PDumperReason_MiscOp>
+0	<PDumper_Reason_SetDriver>
+1	<PDumper_Reason_OutputDump>
+2	<PDumper_Reason_ColourSet>
+3	<PDumper_Reason_StartPage>
+4	<PDumper_Reason_EndPage>
+5	<PDumper_Reason_StartJob>
+6	<PDumper_Reason_AbortJob>
+7	<PDumper_Reason_MiscOp>

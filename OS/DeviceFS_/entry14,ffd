@@ -1,0 +1,9 @@
+Device driver Stream created entry point (14)
+#Parent DeviceFS_CallDevice
+=>	R0 =	14
+	R1 =	file handle
+	R2 =	device driver stream handle
+	R3 =	<IOCtl parameter block=>OS_ArgsIOCtlBlock>
+<=	R0-R3 preserved
+
+This entry point is called for an IOCtl processing call.

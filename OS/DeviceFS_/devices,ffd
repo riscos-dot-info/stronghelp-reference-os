@@ -4,7 +4,7 @@ Devices are specified as a list of 24 byte blocks, terminated by a null word.
 
 Offset	Meaning
 #Line
-0	offset to device name from start of the devices block
+0	offset to zero terminated device name from start of this block
 4	flags:	bit 0 set for buffered
 	 	bit 1 set to create path variable ({/}e.g.{/} {fCode}Serial$Path{f} for a device {fCode}Serial{f})
 8	default RX <buffer flags=>Buffer_flags>

@@ -5,7 +5,7 @@ Bit(s)	Meaning
 5	Tube expansion card enabled
 6,7	Tube expansion podule
 
-Post RISC OS 3.5, bits 5-7 change their meaning:
+Post RISC OS 3.50, bits 5-7 change their meaning:
 7	Quality bit (do interpolation to maximise quality)
 5,6	16-Bit sound control, on VIDC20 machines including Risc PC.
 	0	no 16-bit sound output, use standard mu-law (default)

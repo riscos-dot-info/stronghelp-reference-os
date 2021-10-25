@@ -1,4 +1,4 @@
-Podule_ReadInfo  (&4028D) (3.5+)
+Podule_ReadInfo  (&4028D) (3.50+)
 #Parent Podule_
 =>	R0 =	bit set of results required
 	R1 =	word aligned buffer to receive results (4 bytes each)
@@ -44,6 +44,5 @@ Bit	Word returned
 31	Reserved
 
 The string pointers returned point to temporary buffers in the Expansion Card Manager's workspace so you should take a local copy of the strings as they will be invalidated by the next call.
-
 #Line
 See <PRM 5, page 273=>PRM-5:273>.

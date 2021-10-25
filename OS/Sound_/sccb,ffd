@@ -16,5 +16,5 @@ Offset	Value
 24	working R6
 28	working R7
 32	working R8
-36-63	reserved (Acorn)
+36-63	reserved for future expansion
 64-255	for user use

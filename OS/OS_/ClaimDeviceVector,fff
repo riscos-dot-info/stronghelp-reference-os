@@ -3,18 +3,18 @@ OS_ClaimDeviceVector  (&4B)
 =>	R0 =	<device number=>OS_systemdevices>
 	R1 =	address of device driver routine
 	R2 =	value to be passed in R12 when driver is called
-	R3 =	address of interrupt status if R0 = 8 or 13 on entry
-	R4 =	interrupt mask to use, if R0 = 8 or 13 on entry
+	R3 =	address of interrupt status if R0 = podule "IRQ" or "FIQ as IRQ" on entry
+	R4 =	interrupt mask to use, if R0 = podule "IRQ" or "FIQ as IRQ" on entry
 
 <=	R0-R4 preserved
 
-This installs the device driver. If the same driver has already been installed on the vector then the old copy is removed from the vector. This does *not* enable interrupts from the device. The previous driver is added to the list of earlier claimants. Your driver is called if the IOC chip receives an interrupt from the appropriate device, the corresponding IOC interrupt mask bit is set, and your driver was the last to claim the vector.
+This installs the device driver. If the same driver has already been installed on the vector then the old copy is removed from the vector. This does *not* enable interrupts from the device. The previous driver is added to the list of earlier claimants. Your driver is called if the IO controller receives an interrupt from the appropriate device, the corresponding interrupt mask bit is set, and your driver was the last to claim the vector.
 
 When your code is being called, you'll find the following entry conditions:
 #Indent 2
 #Tab
 	the ARM is in IRQ mode and interrupts are disabled
-	R3 points to the base of the IOC chip memory space
+	R3 points to the base of the IO controller chip memory space
 	R12 has R2's value when claiming the vector
 #Indent
 
@@ -28,10 +28,11 @@ Your routine should:
 You should ensure: 
 #Indent 2
 	a very high execution speed
-	if your routine takes more than 100µs, you should re-enable interrupts, if previously disabled, to ensure other devices' interrupts can be serviced - {/}e.g.{/} disc ops. With interrupts enabled your routine must cope with being re-entered.
+	if your routine takes more than 100µs, you should re-enable interrupts, if previously disabled, to ensure other devices' interrupts can be serviced - {/}eg.{/} disc ops. With interrupts enabled your routine must cope with being re-entered.
 	saving R14_svc to a stack before calling SWIs and reloading it after it returns to prevent double use of R14_svc
 	strictly avoiding the use of non re-entrant SWIs, because the supervisor stack would become corrupted if used
 	clearing the interrupt flags when finishing
 	you cope with SWI-error handling. You *must* use XSWIs. As there is no-one to pass the error on to, you must either handle it yourself or store an error indicator, so that the next SWI call (or the current, if already threaded) to this module will generate an error.
+#Indent
 #Line
 See <PRM 1, page 121=>PRM-1:121>.

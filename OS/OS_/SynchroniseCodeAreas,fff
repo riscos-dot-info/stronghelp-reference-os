@@ -1,6 +1,6 @@
 OS_SynchroniseCodeAreas  (&6E)
 #Parent OS_
-{f25}Þ{f}	R0 =	<flags=>.flags>
+=>	R0 =	<flags=>.flags>
 	if b0 set :
 	 R1 =	low address (word aligned)
 	 R2 =	high address (word aligned, inclusive)
@@ -9,7 +9,7 @@ This SWI is used to ensure that the code cache is up to date with memory - this 
 
 *Note*: Only use this where absolutely necessary.
 #indent;line;indent 4
-Provided by RISC OS 3.7+, and also the CallSWI module for earlier versions of RISC OS.
+Provided by RISC OS 3.70+, and also the CallSWI module for earlier versions of RISC OS.
 #
 #Subpage flags
 SynchroniseCodeAreas flags

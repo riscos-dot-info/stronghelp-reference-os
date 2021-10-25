@@ -1,11 +1,11 @@
 Dynamic area PreShrink
 #Parent OS_DynamicAreaHandler
-{f25}Þ{f}	R0 =	2
+=>	R0 =	2
 	R3 =	amount the area is shrinking by
 	R4 =	new size of area, in bytes
 	R5 =	page size, in bytes
 	R12 =	workspace pointer passed to <OS_DynamicArea 0=>OS_DynamicArea0> or base of area.
-{f25}Ü{f}	R3 =	amount area can shrink by
+<=	R3 =	amount area can shrink by
 	all others preserved, unless grow is disallowed
 #line
 This reason code is issued when a call to <OS_ChangeDynamicArea> results in an area shrinking, before any pages are moved. You can limit the amount of memory moved out of the area. If the permitted skrinkage you return is a non-page multiple, it will be rounded down to a page multiple.

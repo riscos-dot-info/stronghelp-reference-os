@@ -1,7 +1,7 @@
 OS_CLI  (&05)
 #Parent OS_
-{f25}Ş{f}	R0 =	pointer to string terminated by Null, Linefeed or Return
-{f25}Ü{f}	R0 preserved
+=>	R0 =	pointer to string terminated by Null, Linefeed or Return
+<=	R0 preserved
 
 This executes a string passed to it as if it has been typed in the CLI. When it is called, it performs the following actions:
 #Tab;Indent 2

@@ -1,4 +1,4 @@
-OS_SubstituteArgs32  (&7E) (5.0+)
+OS_SubstituteArgs32  (&7E) (5.00+)
 #Parent OS_
 =>	R0 =	pointer to argument list
 	R1 =	pointer to buffer for resulting string

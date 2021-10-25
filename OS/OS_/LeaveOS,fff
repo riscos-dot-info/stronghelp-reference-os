@@ -1,4 +1,4 @@
-OS_LeaveOS  (&7C) (5.0+)
+OS_LeaveOS  (&7C) (5.00+)
 #Parent OS_
 This SWI returns the processor to User mode. Interrupt and Fast Interrupt status is unaltered.
 

@@ -11,6 +11,6 @@ Module SWI decoding code
 
 <=	R0 =	SWI number AND 63 if SWI recognised, \<0 otherwise for text->number
 	R2 =	length of text, for number->text (RISC OS will write "\\0" here)
-	unused registers should be preserved
+	Unused registers should be preserved
 
 This entry is used as a alternative method of finding SWI numbers from names and vice versa. This code does not need to be re-entrant.

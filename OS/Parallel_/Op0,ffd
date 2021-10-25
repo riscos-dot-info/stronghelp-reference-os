@@ -16,4 +16,4 @@ Bit	Meaning		Port pin
 4	Select		13
 5	Paper error		12
 6	Acknowledge		10
-7	Busy		11
+7	Not Busy		11

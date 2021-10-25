@@ -11,7 +11,7 @@ Service_UKCompression (&B7)
 	R3 =	new size
 	R4 =	new execute address
 
-This service is used to provide patches for RISC OS 3.7 where required. It is called when an <Absolute=>FileTypes:FF8> file is run. Only if the file does not contain an AIF header will sub-reason 0 be called. After patching <OS_SynchroniseCodeAreas> will be called.
+This service is used to provide patches for RISC OS 3.70 where required. It is called when an <Absolute=>FileTypes:FF8> file is run. Only if the file does not contain an AIF header will sub-reason 0 be called. After patching <OS_SynchroniseCodeAreas> will be called.
 #
 #SubPage subreason
 UKCompression sub-reasons

@@ -6,7 +6,7 @@ OS_UpCall  (&33)
 <=	R0 preserved
 	All other registers depend on reason code
    
-This SWI calls the <vector UpCallV=>vector_UpCallV>. To use UpCalls, you must either claim the vector and install a routine on it, or install an UpCall handler.
+This SWI calls the vector <UpCallV=>vector_UpCallV>. To use UpCalls, you must either claim the vector and install a routine on it, or install an UpCall handler.
 
 They are called UpCalls because they are calls that RISC OS makes up to an application makes down to RISC OS. They generally occur in the foreground, and are hence different to Events, which occur in the background.
 

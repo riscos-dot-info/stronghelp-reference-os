@@ -1,0 +1,39 @@
+SCSI_Op (&403C3)
+#Parent SCSI_
+=>	R0 =	Bits 0..7	Device ID
+	 	Bits 24..25	00 => no data transfer, 01 => read, 10 => write, 11 => reserved
+	 	Bit 26	Scatter Bit, if set, R3 is a pointer to a scatter list.
+	 	Bit 27	If clear, poll escape during transfer and abort if escape pressed
+	 	Bit 28	If set, repeatedly retry on timeout
+	 	Bit 29	Set if a background transfer (possibly 0 length).
+	R1 =	Length of SCSI control block
+	R2 =	Ptr to SCSI control block
+	R3 =	RAM ptr for start of transfer or pointer to scatter list of address length
+	 	pairs if Bit 26 of R0 is set. After each chunk in the scatter list is
+	 	transferred the address should be incremented and the length set to 0.
+	R4 =	Length of transfer (in bytes).
+	R5 =	Timeout in centiseconds or 0 for default timeout
+	R6 =	Address to call back when transfer is complete if background Bit set.
+	 	The call is made in IRQ mode with IRQs disabled.
+	 	If an error has occurred, V is set, R0 points to a non-dynamic error
+	 	block, (ie a pointer to a fixed block in the module rather than built
+	 	up in a buffer), R1 indicates the cause of the error and R2 the logical
+	 	address on the device of where the error occured.
+	R7 =	Workspace pointer to pass in R12 for background call back.
+	R8 =	access key
+
+=>	V clear
+	R0 =	returns a 32 Bit id incremented for each operation. Used to cancel op.
+	R3 =	updated to indicate how much of transfer was successful (if scatter list, pointer to first unused/partially used entry).
+	R4 =	updated to the amount untransferred
+
+=>	V set
+	R0 =	points to an error block
+	R1 =	indicates the cause of the error
+	R2 =	hold the logical address on the device of where the error occured.
+	R3 =	updated to indicate how much of transfer was successful (if scatter
+	 	list, points to first unused entry, entry is updated to indicate amount
+	 	transfered).
+	R4 =	updated to the amount untransferred
+
+This SWI issues a SCSI command to a device and can be called in the background.

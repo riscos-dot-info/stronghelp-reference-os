@@ -1,0 +1,3 @@
+SCSIFS_FreeSpace64  (&40992)
+#Parent SCSI_
+This SWI calls <FileCore_FreeSpace64>, after first setting R8 to point to the FileCore instance private word for SCSIFS.

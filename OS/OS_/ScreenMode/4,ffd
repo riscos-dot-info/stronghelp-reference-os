@@ -1,6 +1,6 @@
-OS_ScreenMode 4  (&65) (4.0+)
+OS_ScreenMode 4  (&65) (4.00+)
 {*}Screen cache and screen cleaning{*}
-{f25}Þ{f}	R0 =	4
+=>	R0 =	4
 	R1 =	-1, to read current control flags, or
 	 	new control flags
 	 	 	bit 0	cached screen suspended for this mode if set
@@ -13,7 +13,7 @@ OS_ScreenMode 4  (&65) (4.0+)
 	 	3	VSync cleaner laziness 3 (clean on third VSync)
 	 	/other values undefined/
 
-{f25}Ü{f}	R1 =	current control flags (either read or newly set)
+<=	R1 =	current control flags (either read or newly set)
 	R2 =	current VSync laziness (either read or newly set)
 #line
 	<[Notes 1]=>.Notes>

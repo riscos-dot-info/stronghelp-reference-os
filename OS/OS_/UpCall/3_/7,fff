@@ -1,7 +1,7 @@
 OS_UpCall 3 subreason code 7
 Creating empty file
 #line
-{f25}Ş{f}	R1 !	object name
+=>	R1 !	object name
 	R2 =	load address
 	R3 =	execution address
 	R4 =	start address

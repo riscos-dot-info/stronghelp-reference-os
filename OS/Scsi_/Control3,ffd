@@ -1,4 +1,9 @@
-SCSI_Control 0 ''
-{f25}Þ{f}	R0 =	0
- 		R1 =	<host ID=>SCSI_devid>
-{f25}Ü{f}	successful exit: no results
+SCSI_Control 3
+{*}Set Timeout{*}
+=>	R0 =	3
+	R1 =	device ID
+	R2 =	timeout value in centi-seconds or zero for no timeout
+	R8 =	access key
+<=	R2 =	previous timeout setting
+
+This SWI sets the default timeout for a device

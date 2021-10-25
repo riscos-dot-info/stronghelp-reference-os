@@ -1,0 +1,23 @@
+Service_SCSIAttached (&20102)
+#Parent SCSI_
+=>	R1 =	&20102 (reason code)
+	R0 =	<device ID=>SCSI_devid>
+	R2 =	device ID mask
+
+Issued when a new device or bus is registered with SCSIdriver. A hardware driver may issue this itself to indicate that a device has been attached to an ID already registered with SCSIdriver.
+
+The mask indicates whether a bus, a device or a unit (potentially multiple) has been attached; someone wanting to rescan the bus should scan all devices with IDs such that \<device ID\> AND R2 = R0.
+
+Examples:
+#indent 2
+#table columns 3
+Bus 0, device 1 attached
+Bus 3, device 4, unit 5 attached
+Bus 2 attached
+R0 = &01 (0:1.0)
+R0 = &BC (3:4.5) 
+R0 = &10 (2:0.0)
+R2 = &1F (3:7.0)
+R2 = &FF (3:7.7)
+R2 = &18 (2:0.0)
+#endtable

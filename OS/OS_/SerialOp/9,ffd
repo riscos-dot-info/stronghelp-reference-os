@@ -1,14 +1,15 @@
-OS_SerialOp 9  (3.5+)
+OS_SerialOp 9  (3.50+)
 #parent OS_SerialOp
-{f25}Þ{f}	R0 =	9 (reason code)
-{f25}Ü{f}	R0 preserved
+=>	R0 =	9 (reason code)
+<=	R0 preserved
 	R1 =	pointer to word aligned table of <supported baud rates=>OS_SerialOpSpeeds>
 	R2 =	number of entries in table
 #tab;line
 {*}Note:	Each entry in the table is in units of 0.5 bit/sec{*}
 #tab
 
-The index into the table (starting at 1) can be used in <OS_SerialOp 5=>OS_SerialOp5> and <6=>OS_SerialOp 6> calls to set the corresponding baud rate. 
+The index into the table (starting at 1) can be used in <OS_SerialOp 5=>OS_SerialOp5> and <6=>OS_SerialOp6> calls to set the corresponding baud rate. 
+
 As the hardware on a given machine may not support certain baud rate combinations the table may have 'holes' in it, represented by a zero word - this way the index into the table can still be used with <OS_SerialOp 5=>OS_SerialOp5>.
 
 #line

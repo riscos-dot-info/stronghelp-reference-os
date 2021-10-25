@@ -2,8 +2,10 @@ Expansion Card Combined Hardware Address
 #Parent Podule_
 Bits	Meaning
 #Line
-0-11	base address of CMOS RAM (4 bytes)
-12-31	bits 12-31 of base address of expansion card (or extension ROM)
+0-9	base address of CMOS RAM (4 bytes)
+10-31	bits 10-31 of base address of expansion card (or extension ROM)
+
+Pre RISC OS 3.50 the split between CMOS base and expansion card base was at bit 11/12, but the split was moved to account for the NIC which need the bits back.
 
 In machines based around IOMD and IOC bits 26 to 31 of the base address are zero.
 

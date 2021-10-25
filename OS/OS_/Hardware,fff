@@ -1,4 +1,4 @@
-OS_Hardware  (&7A) (5.0+)
+OS_Hardware  (&7A) (5.00+)
 #Parent OS_
 =>	R0-R7 =	APCS registers as required by routine
 	R8 =	<reason code=>.HALreason> (bits 0-7) and flags (bits 8-31)

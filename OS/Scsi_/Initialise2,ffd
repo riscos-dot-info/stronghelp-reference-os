@@ -1,14 +1,15 @@
 SCSI_Initialise 2 'Determine Device'
-{f25}Þ{f}	R0 =	2
+=>	R0 =	2
 	R1 =	<device ID=>SCSI_devid>
-	R2 !	buffer for description, (16 bytes, word aligned).
-{f25}Ü{f}	success exit: <buffer=>.buffer> filled in
+	R2 ->	buffer for description, (16 bytes, word aligned).
+<=	<Buffer=>.buffer> filled in
 
 #tab
-errors:
+Potential errors:
   &00020105	- Invalid SCSI device ID
   &0002010A	- Timeout
-#line;wrap on;tab
+#wrap on;tab
+
 Performs an Inquiry command to see what type the device
 is and then performs the appropriate Read-Capacity
 command depending on the device type.

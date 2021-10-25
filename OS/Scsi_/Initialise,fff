@@ -1,9 +1,9 @@
 SCSI_Initialise (&403C1)
 #Parent SCSI_
-{f25}Þ{f}	R0 =	<reason code=>.codes>
+=>	R0 =	<reason code=>.codes>
 	Other registers varying according to reason code.
-{f25}Ü{f}	Dependant on reason code.
-#line
+<=	Dependant on reason code.
+
 Initialises various aspects of the SCSI system.
 #Subpage codes
 SCSI_Initialise Reason Codes

@@ -1,7 +1,7 @@
 OS_MMUControl 1
 #Parent OS_MMUControl
 #wrap off
-{f25}Þ{f}	R0 =	1 (cache flush request) + <flags=>.flags>
+=>	R0 =	1 (cache flush request) + <flags=>.flags>
 	R1 =	logical address, if bit 29 set
 #wrap;line
 This call is used to implement cache and TLB flushing.

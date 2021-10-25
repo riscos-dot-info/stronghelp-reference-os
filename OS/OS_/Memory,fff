@@ -5,7 +5,7 @@ OS_Memory (&68)
 
 Peforms miscellaneous operations for memory management.
 
-This call is only available from RISC OS 3.5 onwards.
+This call is only available from RISC OS 3.50 onwards.
 #Subpage reasons
 OS_Memory reason codes
 R0	Action
@@ -78,7 +78,7 @@ Bits	Meaning
 	2 =>	VRAM
 	3 =>	ROM
 	4 =>	I/O (including all I/O, VIDC and EASI space)
-	5 =>	Soft ROM (5.0+)
+	5 =>	Soft ROM (5.00+)
 12-31	reserved, must be clear.
 #Subpage 9
 OS_Memory 9
@@ -98,10 +98,10 @@ Bit	Meaning
 	 	1 => EASI space (for internal use only)
 	 	2 => VIDC1
 	 	3 => VIDC20
-	 	4 => SSpace (5.0+)
-	 	5 => Extension ROMs (5.0+)
+	 	4 => SSpace (5.00+)
+	 	5 => Extension ROMs (5.00+)
 #Subpage 13
-OS_Memory 13 map in IO permanently (5.0+)
+OS_Memory 13 map in IO permanently (5.00+)
 =>	R0 =	13 (reason code)
 	 	and <flags=>.mapinflags>
 	R1 =	physical address to map in
@@ -110,7 +110,7 @@ OS_Memory 13 map in IO permanently (5.0+)
 
 Permanently maps in a region of IO memory at run time.
 #Subpage 14
-OS_Memory 14 map in IO temporarily (5.0+)
+OS_Memory 14 map in IO temporarily (5.00+)
 =>	R0 =	14 (reason code)
 	 	bit 8 = 1 to map bufferable space, 0 for unbufferable
 	 	bits 9..31 = reserved, must be zero
@@ -121,14 +121,14 @@ OS_Memory 14 map in IO temporarily (5.0+)
 Temporarily maps in 1MByte of IO memory at run time.
 If multiple 1MByte chunks are required keep calling this until done, when ready to release it is only necessary to release the {*}first{*} reference key - the kernel will then free the rest for you.
 #Subpage 15
-OS_Memory 15 release IO region (5.0+)
+OS_Memory 15 release IO region (5.00+)
 =>	R0 =	15 (reason code)
 	 	all flags bits reserved
 	R1 =	reference key (assigned when claimed)
 
 Frees up a region of IO memory previously mapped in at run time.
 #Subpage 16
-OS_Memory 16 get area info (5.0+)
+OS_Memory 16 get area info (5.00+)
 =>	R0 =	16 (reason code)
 	 	bits 8-15 =
 	 	  1 =	cursor/system/sound

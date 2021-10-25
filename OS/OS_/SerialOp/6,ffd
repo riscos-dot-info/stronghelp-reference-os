@@ -1,6 +1,6 @@
 OS_SerialOp 6
 #parent OS_SerialOp
-{f25}Þ{f}	R0 =	6 (reason code)
+=>	R0 =	6 (reason code)
 	R1 =	-1 to read, or 0-19 to set a <value=>OS_SerialOpSpeeds>
-{f25}Ü{f}	R0 preserved
+<=	R0 preserved
 	R1 =	old transmit baud rate

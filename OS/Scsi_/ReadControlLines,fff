@@ -1,0 +1,20 @@
+SCSI_ReadControlLines (&403C5)
+#Parent SCSI_
+=>	R0 =	<host ID=>SCSI_devid>
+<=	R0 =	SCSI data bus
+	R1 =	Control lines, 1 = asserted :
+#fCode
+#wrap off
+	 	Bit  7   6   5   4   3   2   1   0
+	 	    RST BSY REQ MSG C/D I/O SEL DBP
+#wrap on
+#fStd
+	R2 =	Control lines, 1 = asserted : 
+#fCode
+#wrap off
+	 	Bit  7   6   5   4   3   2   1   0 
+	 	     X   X   X   X   X   X  ATN ACK       
+#wrap on
+#fStd
+
+Returns the raw state of the SCSI control lines, where available.

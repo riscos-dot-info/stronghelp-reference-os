@@ -1,0 +1,11 @@
+SCSI_Status (&403C4)
+#Parent SCSI_
+=>	R0 =	0
+	R1 =	<device ID=>SCSI_devid>
+<=	R0 =	status
+	 	1 is 'Idle'
+	 	2 is 'Busy'
+	 	4 is 'Error'
+	 	16 is 'Not available'
+
+This SWI issues various control commands determined by a reason code in R0, though only one subreason is defined at present.

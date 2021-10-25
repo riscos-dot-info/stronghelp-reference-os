@@ -1,6 +1,6 @@
-OS_ScreenMode 1  (&65) (3.5+)
+OS_ScreenMode 1  (&65) (3.50+)
 #Parent OS_ScreenMode
 =>	R0 =	1
 <=	R1 =	Mode number or pointer to a <mode specifier block=>Wimp:Wimp_ModeSelect>
 
-This SWI will return information about the current screen mode. To read the screen mode in RISC OS 3.1 use <OS_Byte 135=>OS_Byte135>.
+This SWI will return information about the current screen mode. To read the screen mode in RISC OS 3.10 use <OS_Byte 135=>OS_Byte135>.

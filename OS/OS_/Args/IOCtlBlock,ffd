@@ -1,0 +1,21 @@
+IOCtl parameter block
+#Parent OS_Args009
+Offsets	Contents
+#Line
+0-1	<IOCtl reason code=>.reasons>
+2	IOCtl group code
+3	b6 = read flag
+	b7 = write flag
+4-7	data to read or write
+#Subpage reasons
+IOCtl reason codes
+Reason	Meaning
+1	Set/read baud rate
+2	Set/read data format
+3	Set/read handshaking
+4	Set/read buffer size
+5	Set/read buffer thresholds
+6	Set/read control lines
+7	Set/read fifo trigger level
+8	read number of supported baud rates
+9	read baud rate index {/}data{/}

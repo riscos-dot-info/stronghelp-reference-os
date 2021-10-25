@@ -1,4 +1,12 @@
-SCSI_Control 0 ''
-{f25}Þ{f}	R0 =	0
- 		R1 =	<host ID=>SCSI_devid>
-{f25}Ü{f}	successful exit: no results
+SCSI_Control 4
+{*}Set Error Response{*}
+=>	R0 =	4
+	R1 =	device ID
+	R2 =	0 =	If device returns 'check condition', return that as an error message. This is for badly behaved devices with non-standard request sense return blocks.
+	 	1 =	If device returns 'check condition' do a request sense automaticaly, report the error.
+	 	2 =	If device returns 'check condition' do a request sense automaticaly, if 'unit attention', ignore it and reissue the command else report the error.
+	 	-1 =	no action, return previous setting.
+	R8 =	access key
+<=	R2 =	previous setting
+
+This SWI controls the behaviour of CHECK CONDITION status

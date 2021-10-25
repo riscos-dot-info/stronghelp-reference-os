@@ -1,0 +1,5 @@
+SCSIFS_DescribeDisc  (&40985)
+#Parent SCSI_
+This SWI calls <FileCore_DescribeDisc>, after first setting R8 to point to the FileCore instance private word for SCSIFS.
+#Line
+See <PRM 2, page 286=>PRM-2:286>.

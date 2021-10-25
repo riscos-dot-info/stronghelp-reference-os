@@ -1,6 +1,6 @@
 OS_Byte 129  Get buffer/mouse status
 #Parent OS_ByteIndex
-{f25}Þ{f}	R0 =	129 (&81)
+=>	R0 =	129 (&81)
 		R1,R2	vary depending upon operation
 #line;tab
 This call provides four distinct operations, distinguished by the values in *both* R1 and R2. These operations are:

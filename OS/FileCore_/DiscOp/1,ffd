@@ -10,4 +10,4 @@ FileCore_DiscOp 1
 	R4 =	unread
 
 This call will read sectors from disc.
-Note: For RISC OS 3.6, the value in R2 will be rounded down to be sector aligned.
+Note: For RISC OS 3.60, the value in R2 will be rounded down to be sector aligned.

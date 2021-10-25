@@ -15,8 +15,8 @@ This allows access to characters outside the first 256. Control codes work as be
 Regardless of the setting of the 16/32-bit bits, string lengths continue to be in bytes (such as R7 on entry to <Font_Paint>).
 
 #subpage cparams
-#parent Font_Paint
 Control code parameters
+#parent Font_Paint
 16-bit parameter forms:
   
    9,11	:	dx/dy comprised of 2 16-bit words.

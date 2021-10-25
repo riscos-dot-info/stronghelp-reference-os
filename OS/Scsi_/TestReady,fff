@@ -1,4 +1,4 @@
-SCSI_TestReady  (?)
+SCSIFS_TestReady  (&40986)
 #Parent SCSI_
 =>	R1 =	drive number
 <=	R0 =	1 if spun down, 2 if spun up

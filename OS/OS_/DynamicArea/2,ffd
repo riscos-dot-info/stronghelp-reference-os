@@ -1,9 +1,9 @@
 OS_DynamicArea 2  (&66)
 #Parent OS_DynamicArea
 *Returns information on a dynamic area*
-{f25}Ş{f}	R0 =	2
+=>	R0 =	2
 	R1 =	area number
-{f25}Ü{f}	R0, R1 preserved
+<=	R0, R1 preserved
 	R2 =	current size of area, in bytes
 	R3 =	base logical address of area
 	R4 =	<area flags=>OS_DynamicAreaFlags>

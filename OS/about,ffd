@@ -21,7 +21,7 @@ Thanks go to those mentioned in the <contributors=>OS:contributions> list.
 
 For comments, suggestions and submissions for these, please mail Christian Ludlam <christian@recoil.org=>#url mailto:christian@recoil.org> who is currently moderating the collection. These manuals will continue to be available from <http://sudden.recoil.org/stronghelp/=>#url>.
 #line
-<This page=>.hist320> gives history and credits.
+<This page=>.hist325> gives history and credits.
 #Subpage notes
 Notes on how the manual is structured
 These are some very incomplete notes on how the manual should be structured. If any part of it isn't then it will eventually be updated, or I'll change this specification. It's mostly here to remind me anyhow.
@@ -108,21 +108,13 @@ Page				Contents
 <draw_transformunits>		Draw transform units (&XXXX.XXXX)
 
 Many thanks to Nicholas Clark for helping develop the style used through out this manual.
-#Subpage hist235
-SWIs History v2.35
-è	Masses of extra entries
-è	Most of the RISC OS 3.6 SWIs added
-è	A few new wimp messages added
-è	Some RISC OS 3.7 SWIs added, a notable exception is CallASWI
-è	Window Manager 3.8 Wimp documentation added (Well, Wimp_OpenWindow, Wimp_CloseWindow, Wimp_GetWindowState - as I decrypt any others I'll add them...)
-è	Some ProFiler SWIs added
-è	NewsBase messages updated from 0.56 documentation
-è	ImageEntry added
-
-<Next history=>.hist300>
 #Subpage hist300
 OS History v3.00
-è	The name ! This is now the OS manual, most of this section should remain pretty static, the other sections, Wimp, Misc and Inet should be updated more regularly than the main operating system (hopefully)
+#Align Right
+{/}0 AD{/}
+#Align Left
+#line
+è	The name! This is now the OS manual, most of this section should remain pretty static, the other sections, Wimp, Misc and Inet should be updated more regularly than the main operating system (hopefully)
 è	A large number of new services and other little things added
 è	Reformatting of some pages more in line with the rest of the manual
 è	SpriteOps updated to include hex number, and new calls
@@ -130,28 +122,28 @@ OS History v3.00
 è	FileEntry added, incomplete at present; needs FileEntry_Func updating, and FileEntry_GBPB adding
 è	Removed obsolete '\\\<=' usage, expanded 'ptr', 'no' and added more descriptions
 è	Moved some blocks from OS to Wimp as it seems more appropriate.
-
-#Tab
-<Previous history=>.hist235>	<Next history=>.hist302>
+#Tab;line
+<Next history=>.hist302>
 #Subpage hist302
 OS History v3.02
 #Align Right
-{/}15 Nov 1997-10 Jan 1998{/}
+{/}10 Jan 1998{/}
 #Align Left
+#line
 è	KeyV updated with reference to the keyboard ID
 è	Updates to CD section (Dave Thomas)
 è	More updates to CD section (Eddie Edwards)
 è	Moved Service_A7 to InetSWIs as it's more logical; more similar changes may follow.
 è	Territory module completely documented (J.B.Blaukopf)
 è	Removed spurious ScreenModes documentation
-
-#Tab
+#Tab;line
 <Previous history=>.hist300>	<Next history=>.hist303>
 #Subpage hist303
 OS History v3.03
 #Align Right
 {/}22 Jan 1998{/}
 #Align Left
+#line
 è	Font routines now completely documented (Nicholas Clark)
 è	Modifications to various swis (Nicholas Clark)
 è	FPEmulator, Hourglass_Colours, IIC, MakePSFont, Super documented (Nicholas Clark)
@@ -164,14 +156,14 @@ OS History v3.03
 è	Reorganisation of certain parts of the manual, updates to services
 è	Released on ftp://freenet.barnet.ac.uk/manuals/j.fletcher/
 	Note: This /should/ have been a beta release, but I needed to release something on the manuals site.
-
-#Tab
+#Tab;line
 <Previous history=>.hist302>	<Next history=>.hist304>
 #Subpage hist304
 OS History v3.04
 #Align Right
-{/}09 Feb 1998-24 Mar 1998{/}
+{/}24 Mar 1998{/}
 #Align Left
+#line
 è	Many changes (Econet, Service, Event, Vector, Portable, etc) by Nicholas Clark
 è	More changes (NetFS, ResourceFS, Squash) by Nicholas Clark
 è	Finally plucked up courage to run StrongTst across it again. Most of the links should now be valid.
@@ -185,14 +177,14 @@ OS History v3.04
 è	Serious note in OS_File about non-return of 'load', and expansion of variable.
 è	NetPrint documented, updates to various OS SWIs and RPC keyboard diagram added (Nicholas Clark)
 è	Reformatted, links checked and clean copied for release (phew!)
-
-#Tab
+#Tab;line
 <Previous history=>.hist303>	<Next history=>.hist305>
 #Subpage hist305
 OS History v3.05
 #Align Right
-{/}25 Mar 1998-?{/}
+{/}25 Mar 1998{/}
 #Align Left
+#line
 è	Succombed to public pressure and added PRM references to some pages (OS_Bytes, Services and Vectors at present).
 è	Spelling corrections and a few minor updates to pages.
 è	Numerous additions of SWI and reason code numbers to page titles
@@ -211,14 +203,14 @@ OS History v3.05
 è	Added 'notfound_{/}manual{/}' pages, for StrongHelp 2.60.
 è	Added 16-bit sound system details (Alex Thoukydides)
 è	HTML-ification identified some parental problems
-#tab
-
+#tab;line
 <Previous history=>.hist304>	<Next history=>.hist306>
 #Subpage hist306
 OS History v3.06
 #Align Right
-{/}24th April - 17th May, 1999{/}
+{/}17 May 1999{/}
 #Align Left
+#line
 è	Moderator now iain truskett
 è	<FSLock=>FSLock_> details updated.
 è	CMOS byte 132 updated to reflect 16-bit audio (David Thomas and Thomas Olsson)
@@ -236,14 +228,13 @@ OS History v3.06
 è	Introduction of some <SCSI=>SCSI_> documentation.
 è	Some Y2K compliance revisions.
 è	Various minor amendments.
-#tab
-
+#tab;line
 <Previous=>.hist305>	<Next history=>.hist307>
 #
 #subpage hist307
-History for OS v.3.07
+History for OS v3.07
 #align right
-{/}16th June, 1999{/}
+{/}16 Jun 1999{/}
 #align left
 #line
 è	<CDFS_GiveFileType> page changed to mention deprecation.
@@ -262,9 +253,9 @@ History for OS v.3.07
 <Previous history=>.hist306>	<Next history=>.hist308>
 #
 #subpage hist308
-History for OS v.3.08
+History for OS v3.08
 #align right
-{/}26th November, 1999{/}
+{/}26 Nov 1999{/}
 #align left
 #line
 è	More RISC OS 4 APIs added
@@ -272,9 +263,9 @@ History for OS v.3.08
 <Previous history=>.hist307>	<Next history=>.hist320>
 #
 #subpage hist320
-History for OS v.3.20
+History for OS v3.20
 #align right
-{/}21 May, 2003{/}
+{/}21 May 2003{/}
 #align left
 #line
 è	<CD_SCSIUserOp> added.
@@ -294,8 +285,19 @@ History for OS v.3.20
 è	<SharedSound=>SharedSound_> updated.
 è	<Draw=>Draw_> module updated.
 è	Other SWIs added, but don't have details of these yet (so you can't click on them)
-è	Made 32 bit comaptible (!)
+è	Made 32 bit compatible (!)
 
 è	Maintainer now Christian Ludlam
 #tab;line
-<Previous history=>.hist308>
+<Previous history=>.hist308>	<Next history=>.hist325>
+#
+#subpage hist325
+History for OS v3.25
+#align right
+{/}27 Jun 2003{/}
+#align left
+#line
+è	<SCSI=>SCSI_> overhauled. Added SCSISoft driver details
+è	Some typos corrected, version numbers standardised
+#tab;line
+<Previous history=>.hist320>

@@ -3,9 +3,9 @@ CD_AudioLevel (&4125F)
 
 For a driver, this is the back door by which drive scanning happens. The driver's entry point for this SWI is called with:
 
-R0 {f25}畕f}	SCSI inquiry block if a device exists (0 otherwise)
-R7 {f25}畕f}	CDFS control block - says which device is being scanned
+=>	R0 ->	SCSI inquiry block if a device exists (0 otherwise)
+	R7 ->	CDFS control block - says which device is being scanned
 
  If the driver wishes to claim this device for itself, it should return with R2 > registers.
 
- If you are a non-SCSI driver, it is up to you which devices you claim - CDFS passes round all device/card/LUN combinations to drivers (all 8󫶜 > 256 of them), so you can attach yourself to any unused device.  It is a good idea to leave those with SCSI devices attached alone, so a SCSI driver can pick them up if it wishes.
+ If you are a non-SCSI driver, it is up to you which devices you claim - CDFS passes round all device/card/LUN combinations to drivers (all 8󫶜 \> 256 of them), so you can attach yourself to any unused device.  It is a good idea to leave those with SCSI devices attached alone, so a SCSI driver can pick them up if it wishes.

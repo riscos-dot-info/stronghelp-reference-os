@@ -21,6 +21,7 @@ For example in a 16 colour mode in the Wimp, background is 0, foreground is 1, f
 7	14
 8	&FF
 #tab
+
 This causes the mapping from the 16 colours the font is defined in to the 8 available:
 
 	In	Out	Threshold

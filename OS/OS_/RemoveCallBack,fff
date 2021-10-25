@@ -1,8 +1,8 @@
 OS_RemoveCallBack  (&5F)
 #Parent OS_
-{f25}Þ{f}	R0 =	pointer to code called
+=>	R0 =	pointer to code called
 	R1 =	value of R12 called with
-{f25}Ü{f}	Registers preserved.
+<=	Registers preserved.
 
 Removes a call back event, such as <OS_AddCallBack>.
 #Line

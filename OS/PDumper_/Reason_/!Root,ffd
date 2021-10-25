@@ -1,0 +1,12 @@
+PDumper reason codes
+#Parent PDumper_Code
+Number	Name
+#Line
+0	<PDumper_Reason_SetDriver>
+1	<PDumper_Reason_OutputDump>
+2	<PDumper_Reason_ColourSet>
+3	<PDumper_Reason_StartPage>
+4	<PDumper_Reason_EndPage>
+5	<PDumper_Reason_StartJob>
+6	<PDumper_Reason_AbortJob>
+7	<PDumper_Reason_MiscOp>

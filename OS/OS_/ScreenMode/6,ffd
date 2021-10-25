@@ -1,7 +1,7 @@
-OS_ScreenMode 6  (&65) (4.0+)
+OS_ScreenMode 6  (&65) (4.00+)
 {*}Force a screen clean, if needed{*}
-{f25}Þ{f}	R0 =	6
-{f25}Ü{f}	/Preserved/
+=>	R0 =	6
+<=	/Preserved/
 #line
 If a clean is needed, cleans the screen immediately and cancels any pending VSync clean. Otherwise, does nothing. The clean happens even if cleaning is suspended via  <OS_ScreenMode 4=>OS_screenmode4>.
 

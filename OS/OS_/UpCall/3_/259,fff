@@ -1,4 +1,4 @@
 OS_UpCall 3 subreason code 259
 Closing file
 #line
-{f25}Þ{f}	R1 =	external handle
+=>	R1 =	external handle

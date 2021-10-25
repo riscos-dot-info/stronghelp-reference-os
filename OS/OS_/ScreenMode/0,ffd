@@ -1,4 +1,4 @@
-OS_ScreenMode 0  (&65) (3.5+)
+OS_ScreenMode 0  (&65) (3.50+)
 #Parent OS_ScreenMode
 =>	R0 =	0
 	R1 =	Old style mode number or a <mode specifier block=>Wimp:Wimp_ModeSelect>

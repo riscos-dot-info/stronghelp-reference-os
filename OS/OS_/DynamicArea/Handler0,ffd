@@ -1,13 +1,13 @@
 Dynamic area PreGrow
 #Parent OS_DynamicAreaHandler
-{f25}Þ{f}	R0 =	0
+=>	R0 =	0
 	R1 =	pointer to page block
 	R2 =	number of entries in the block
 	R3 =	amount the area is growing by
 	R4 =	current size of area, in bytes
 	R5 =	page size, in bytes
 	R12 =	workspace pointer passed to <OS_DynamicArea 0=>OS_DynamicArea0> or base of area.
-{f25}Ü{f}	all preserved, unless grow is disallowed
+<=	all preserved, unless grow is disallowed
 #line
 This handler is called when a call to <OS_ChangeDynamicArea> results in an area growing, before any pages are actually moved. It is issued just before the pages themselves are allocated to the block.
 

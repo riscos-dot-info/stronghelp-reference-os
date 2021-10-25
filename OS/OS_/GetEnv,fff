@@ -1,6 +1,6 @@
 OS_GetEnv  (&10)
 #Parent OS_
-{f25}Ü{f}	R0 =	address of *command {/}[readonly]{/}
+<=	R0 =	address of *command {/}[readonly]{/}
 	R1 =	RAM limit
 	R2 =	pointer to 5-byte time of prog start
 

@@ -9,7 +9,7 @@ The purpose of this module is summarised as follows:
 
 SharedSound allows multiple sound handlers to output through one sound source. SharedSound can potentially provide a number of useful functions such as mixing, sample rate interpolation and volume scaling, however, current versions of the module simply pass these values onto the handlers to make use of.  Values are passed to the Handler fill routine which indicate the current state of play, in particular the current sample rate, along with associated values, as well as the current volume setting. The volume for a handler is calculated from the current system volume and the volume requested for the handler as well as scaling depending on the number of currently active handlers. This is passed as a Left and Right (Stereo) volume as two 16 bit words packed into a 32 bit word.
 
-SharedSound acts as a universal interface to any supported hardware.  This currently includes support for the Acorn 16 bit sound system and the Audio Dynamics DMI50/S card.
+SharedSound acts as a universal interface to any supported hardware.  This currently includes support for the Risc PC 16 bit sound system upgrade and the Audio Dynamics DMI50/S card.
 
 <Implementation=>.implementation>
 #

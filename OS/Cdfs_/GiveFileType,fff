@@ -1,9 +1,9 @@
 CDFS_GiveFileType  (&41E85)
 #Parent CDFS_
-{f25}Þ{f}	R0 =	pointer to file name in PC format eg 'fred.txt'
-{f25}Ü{f}	R1 =	numeric Acorn filetype (0 if not found)
+=>	R0 =	pointer to file name in PC format eg 'fred.txt'
+<=	R1 =	numeric filetype (0 if not found)
 #line;tab
-This call converts the DOS extension of a filename into its corresponding Acorn numeric filetype - eg 'smith.jpg' is converted to &C85 (the JPEG filetype).
+This call converts the DOS extension of a filename into its corresponding RISC OS filetype - eg 'smith.jpg' is converted to &C85 (the JPEG filetype).
 
 {*}Note:{*}	Use of this SWI is deprecated.
-		You should use the <MimeMap=>InetSWIs:MimeMap_> module instead to perform filetype translations - indeed in RO4, MimeMap is used by this call.
+		You should use the <MimeMap=>InetSWIs:MimeMap_> module instead to perform filetype translations.

@@ -1,5 +1,5 @@
 PDumperReason_EndPage (4)
-#Parent PDumperReason_
+#Parent PDumper_Reason_
 =>	R1 =	output file handle
 	R2 =	<strip type=>PDumper_striptypes>
 	R3 =	job private word (see <PDumperReason_StartJob>)

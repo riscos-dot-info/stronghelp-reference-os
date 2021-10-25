@@ -1,10 +1,10 @@
 PDumperReason_StartPage (3)
-#Parent PDumperReason_
+#Parent PDumper_Reason_
 =>	R0 =	copies
 	R1 =	output file handle
 	R2 =	<strip type=>PDumper_striptypes>
 	R3 =	blank pixel rows to skip before the data
-	R4 =	job private word (see <PDumperReason_StartJob>)
+	R4 =	job private word (see <PDumper_Reason_StartJob>)
 	R5 =	<config data=>PDumper_configblock>
 	R6 =	left margin (pixels)
 	R7 =	<resolution=>PDumper_resolution>

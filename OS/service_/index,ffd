@@ -70,6 +70,7 @@ Service calls
 71 <DeviceFS dying=>Service_71>
 72 <Switching output to sprite=>Service_72>
 73 <PostInit=>Service_73>
+74 Service_BASICHelp
 75 <Territory started=>Service_75>
 76 <Monitor lead translation=>Service_76>
 77 Service_SerialDevice
@@ -122,14 +123,4 @@ D2 <USBDriver=>Service_D2>
 D9 Hardware
 DA <ModulePostInit=>Service_DA>
 DB <ModulePostFinal=>Service_DB>
-10800 <ADFSPodule=>Service_10800>
-10801 <ADFSPodule IDE=>Service_10801>
-10802 <ADFSPodule IDE dying=>Service_10802>
-400C0 Wimp ErrorStarting
-400C1 Wimp ErrorButtonPressed
-400C2 Wimp ErrorEnding
-45540 <DrawFile ObjectRender=>Service_45540>
-45541 <DrawFile DeclareFonts=>Service_45541>
-80380 <SoundFile Identify Sound File=>Service_80380>
 #EndTable
-# 74 Service_BASICHelp

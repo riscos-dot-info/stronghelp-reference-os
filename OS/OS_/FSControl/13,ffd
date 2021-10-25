@@ -1,9 +1,9 @@
 OS_FSControl 13  (&29)
 #Parent OS_FSControl
-{f25}Þ{f}	R0 =	13 (Check for presence of FS)
+=>	R0 =	13 (Check for presence of FS)
 	R1 =	filing system number or pointer to name
 	R2 =	depends on R1
-{f25}Ü{f}	R0 preserved
+<=	R0 preserved
 	R1 =	<filing system number=>fsys_ident>
 	R2 =	pointer to filing system control block or 0 if not found
 #line;tab

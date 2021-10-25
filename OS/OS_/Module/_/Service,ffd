@@ -13,17 +13,22 @@ This entry is called when a <service call=>service_index> is issued. Service cal
 
 Since service calls are made very often they can cause significant slow-downs if not handled in a speed-conscious manner.  It is recommended that you write service handling code so as to be cache-line aligned for cache optimisation, and that on reception of service calls that are not catered for by your module your code returns as soon as possible. This means that the entry point for the service call code should be at 16n-4 from the base of the module (modules are always loaded at offset 4).
 
-<This example code=>.example> shows the recommended way to *rapidly* handle multiple services.
+From RISC OS 4, the kernel will look for a table of service numbers that the module wants to listen to. It is strongly recommended that this is provided; future versions of RISC OS may even refuse to load modules without it.
+
+<This example code=>.example> shows the recommended way to handle services.
 #Subpage example
-Example code to handle services
-The following code will handle a few services :
+Service entry
 #fCode;Tab fCode,fCode
 ]:P%=(P%+15) AND NOT 15:O%=(O%+15) AND NOT 15:[ OPT pass%
+
+	EQUD	ServiceTable		; offset of the service table
 .ServiceCode
+	MOV	r0,r0			; a magic word
   	TEQ	r1,#Service_One
 	TEQNE	r1,#Service_Two
 	TEQNE	r1,#Service_Three
 	MOVNE	pc,r14
+.ServiceDispatch
 	STMFD	r13!,\{r0-r3,r14\}
 	TEQ	r1,#Service_Two
 	BEQ	Service_Two_Handler
@@ -32,3 +37,16 @@ The following code will handle a few services :
 .Service_One_Handler
 	...
 	LDMFD	r13!,\{r0-r3,pc\}
+
+.ServiceTable
+	EQUD	0			; flag word, currently zero
+	EQUD	ServiceDispatch		; offset of service dispatch code
+	EQUD	Service_One
+	EQUD	Service_Two
+	EQUD	Service_Three
+	EQUD	0			; terminator
+
+#f
+The service call numbers *must* be in ascending order.
+# Gerph> If I had been doing this I'd have included the handler addresses too.
+#        The we'd not have to branch back to the dispatcher.

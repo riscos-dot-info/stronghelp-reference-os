@@ -1,35 +1,44 @@
 SCSI
 #Parent !Root
 #Prefix SCSI_
-#fH4:SCSIFS
+SCSIFS :
 #Table Columns 3
-Create
-DescribeDisc
-DiscOp
-DiscOp64
-Drives
-FloppyStructure
-FreeSpace
+<DescribeDisc>
+<DiscOp>
+<DiscOp64>
+<Drives>
+<FreeSpace>
+<FreeSpace64>
 <TestReady>
+<MiscOp>
+<SectorOp>
 #EndTable
+# Vendor specific> Create ???
+# Vendor specific> FloppyStructure ???
+# Vendor specific> TestMounted 40987
 
-#fH4:SCSI
+SCSIDriver :
 #Table Columns 3
-<Version>
-<Initialise>
 <Control>
-Op
-Status
-ReadControlLines
-EEProm
-Reserve
-List
-TargetControl
+<EEProm>
+<Initialise>
+<List>
+<Deregister>
+<Op>
+<Status>
+<ReadControlLines>
+<Register>
+<Reserve>
+<Version>
 #EndTable
-
-#fh4:Notes
+# Vendor specific> <TargetControl>
+#line
 #Table Columns 3
-<Device ID and Host ID=>SCSI_devid>
+<Service_SCSIStarting=>SCSI_SSCSIStarting>
+<Service_SCSIDying=>SCSI_SSCSIDying>
+<Service_SCSIAttached=>SCSI_SSCSIAttached>
+<Service_SCSIDetached=>SCSI_SSCSIDetached>
 #EndTable
 #line
-These notes are mostly cribbed from the Power-Tec RISC OS SCSI device driver docs. Actual implementation details may vary in different brands.
+#wrap on
+Third party vendors not using the standard <SCSISoft=>SCSI_SoftSCSI> model may not implement all of these calls.

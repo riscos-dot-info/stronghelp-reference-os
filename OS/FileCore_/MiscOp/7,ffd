@@ -9,4 +9,4 @@ FileCore_MiscOp 7
 This call read flags about the drive.
 #line;tab
 See <PRM 5a-175=>PRM-5a:175>.
-RISC OS 3.6 or later.
+RISC OS 3.60 or later.

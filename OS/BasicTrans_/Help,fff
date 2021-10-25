@@ -1,4 +1,4 @@
-BASICTrans_Help  (&42C80)
+BASICTrans_HELP  (&42C80)
 #Parent BASICTrans_
 =>	R0 =	pointer to help text (lexically analysed and CR terminated)
 	R1 =	pointer to name ('BASIC' or 'BASIC64')

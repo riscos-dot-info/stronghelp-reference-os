@@ -58,7 +58,7 @@ Joystick_Read 16 bit state
 #line;tab
 Applications which are only concerned with state (up, down, left, right) should not merely test bytes for postive, negative or zero. êAt restë should span a range such as 24576 (&6000) to 40960 (&A000) since analogue joysticks cannot be relied upon to produce a given value at rest.
 
-This reason code is available from RISC OS 3.6 onwards.
+This reason code is available from RISC OS 3.60 onwards.
 #line;tab
 See also:	<Note about analogue joysticks=>.analogue>
 		<PRM 5a-641=>PRM-5a:641>

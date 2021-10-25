@@ -1,4 +1,13 @@
-SCSI_Control 0 ''
-{f25}Þ{f}	R0 =	0
- 		R1 =	<host ID=>SCSI_devid>
-{f25}Ü{f}	successful exit: no results
+SCSI_Control 5
+{*}Set Queue Behaviour{*}
+=>	R0 =	5
+	R1 =	device ID
+	R2 =	0 =	ie if queue full loop until a slot becomes free if command operates totally in the background control returns to the caller as soon as the command is queued if the command operates in the forground, portion, control returns when the command completes.
+	 	1 =	Reject if queue full  ie command accepted only if it can be queued/run without waiting. If command operates totally in background, control returns to the caller as soon as the command is queued if the command operates in the forground, portion, control returns when the command completes.
+	 	2 =	Reject if device busy ie command accepted only there are no other or queue full) queued/running for this device.
+	 	3 =	Reject if hardware is busy ie accept command only if it will run immediatly
+	 	-1 =	no action, return previous setting.
+	R8 =	access key
+<=	R2 =	previous setting
+
+The driver supports disconnection/reselection and queueing of commands, this implies that when a command is issued, the hardware may be in servicing another command, a command maybe queued/running for the target or the queue may be full.

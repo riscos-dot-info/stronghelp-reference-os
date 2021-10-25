@@ -11,4 +11,4 @@ entry R1	Action
 1		never called - FileSwitch maintains settings
 4		set <boot file action=>fsys_opt4>
 
-Other options may be used, but should be allocated by Acorn.
+Other options may be used, but should be allocated centrally.

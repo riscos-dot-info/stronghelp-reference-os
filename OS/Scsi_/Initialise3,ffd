@@ -1,9 +1,10 @@
-SCSI_Initialise 2 'Enumerate Device'
-{f25}Þ{f}	R0 =	3
+SCSI_Initialise 3 'Enumerate Device'
+=>	R0 =	3
 	R1 =	<device ID=>SCSI_devid>
-	R2 !	buffer for description (word aligned).
+	R2 ->	buffer for description (word aligned).
 	R3 =	buffer size
-#line;tab;wrap on
+#tab;wrap on
+
 Performs an Inquiry command to see what type the device
 is and then performs the appropriate Read-Capacity
 Data returned as formatted text.

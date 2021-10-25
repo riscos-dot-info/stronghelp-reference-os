@@ -1,4 +1,4 @@
-RamFS_DiscOp  (&40785) (5.0+)
+RamFS_DiscOp  (&40785) (5.00+)
 #Parent RamFS_
 This SWI calls <FileCore_DiscOp64=>FileCore_DOp64>, after first setting R8 to point to the FileCore instance private word for RamFS.
 #Line

@@ -1,9 +1,9 @@
 SCSI_Control (&403C2)
 #Parent SCSI_
-{f25}Þ{f}	R0 =	<reason code=>.codes>
+=>	R0 =	<reason code=>.codes>
 	Other registers varying according to reason code.
-{f25}Ü{f}	Dependant on reason code.
-#line
+<=	Dependant on reason code.
+
 Issues various control commands determined by a reason code in R0.
 #Subpage codes
 SCSI_Control Reason Codes
@@ -11,10 +11,13 @@ Code	Meaning
 #Line
 0	<Abort device=>SCSI_Control0>
 1	<Abort op=>SCSI_Control1>
-2	<LED Control=>SCSI_Control2>
+2	Reserved
+# Vendor specific> 2	<LED Control=>SCSI_Control2>
 3	<Set Timeout=>SCSI_Control3>
 4	<Set Error Response=>SCSI_Control4>
 5	<Set Queue Behaviour=>SCSI_Control5>
 6	<Disconnect=>SCSI_Control6>
-7	<Transfer Type=>SCSI_Control7>
-8	<WideSCSI=>SCSI_Control8>
+7	Reserved
+8	Reserved
+# Vendor specific> 7	<Transfer Type=>SCSI_Control7>
+# Vendor specific> 8	<WideSCSI=>SCSI_Control8>

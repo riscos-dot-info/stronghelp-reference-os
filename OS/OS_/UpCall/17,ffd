@@ -1,0 +1,5 @@
+OS_UpCall 17 - Device threshold below
+=>	R0 =	17 (Device threshold below)
+	R1 =	stream handle
+
+This service is issued when the amount of data in a stream falls below the threshold.

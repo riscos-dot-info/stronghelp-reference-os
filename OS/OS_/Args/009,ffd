@@ -1,0 +1,7 @@
+OS_Args 9
+#Parent OS_Args
+=>	R0 =	9
+	R1 =	file handle
+	R2 =	<IOCtl parameter block=>OS_ArgsIOCtlBlock>
+
+This SWI will perform a IOCtl function.

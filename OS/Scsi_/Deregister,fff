@@ -1,0 +1,7 @@
+SCSI_Deregister (&403FE)
+=>	R0 =	device / bus ID
+	R1 ->	<handler code=>SCSI_SoftHandler>
+	R2 =	value of R12 registered with
+	R3 =	value of R8 registered with
+
+This call deregisters a hardware driver with the SCSI Switcher. Only the bus part of the ID is significant for bus drivers.

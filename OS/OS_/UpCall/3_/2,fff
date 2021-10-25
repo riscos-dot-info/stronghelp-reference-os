@@ -1,6 +1,6 @@
 OS_UpCall 3 subreason code 2
 Writing load address only
 #line
-{f25}Þ{f}	R1 =	pointer to filename
+=>	R1 =	pointer to filename
 	R2 =	load address
 	R6 !	special field (or 0)

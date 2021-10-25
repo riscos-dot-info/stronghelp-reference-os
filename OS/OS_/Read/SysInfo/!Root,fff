@@ -17,6 +17,7 @@ See <PRM 1, page 719=>PRM-1:719>.
 #
 #Subpage 0
 OS_ReadSysInfo 0
+*Screen size*
 =>	R0 =	0
 <=	R0 =	screen size
 
@@ -24,6 +25,7 @@ This call reads the size of screen memory.
 #
 #Subpage 1
 OS_ReadSysInfo 1
+*Mode*
 =>	R0 =	1
 <=	R0 =	mode
 	R1 =	monitor type
@@ -33,6 +35,7 @@ This call reads information about the current screen.
 #
 #Subpage 2
 OS_ReadSysInfo 2
+*Machine id*
 =>	R0 =	2
 <=	R0 =	IOEB ASIC presence flag
 	R1 =	82C710 presence flag
@@ -44,6 +47,7 @@ This call checks for the presence of various chips, returning flags. It also rea
 #
 #Subpage 3
 OS_ReadSysInfo 3
+*82C71x features*
 =>	R0 =	3
 <=	R0 =	<82C710/82C711 basic features=>.main>
 	R1 =	82C710/82C711 extra features mask (reserved for upwards compatible additional functionality)
@@ -82,7 +86,7 @@ OS_ReadSysInfo 5
 	R1 =	top  32 bits of machine unique id (raw)
 #
 #subpage 8
-OS_ReadSysInfo 8  (4.0+)
+OS_ReadSysInfo 8  (4.00+)
 *Read class*
 =>	R0 =	8
 <=	R0 =	platform class
@@ -103,7 +107,7 @@ OS_ReadSysInfo 8  (4.0+)
 Reads information about the class of this platform.
 #
 #subpage 9
-OS_ReadSysInfo 9  (4.0+)
+OS_ReadSysInfo 9  (4.00+)
 *Read version information*
 =>	R0 =	9
 	R1 =	<subreason code=>.9c>

@@ -7,14 +7,14 @@ Offset	Contents
 0	paper size {/}e.g.{/}	A3 = &400
  	 			A4 = &500
 	 			A5 = &600
-4	paper limits	meaning when bit set:
+4	paper limits	{/}meaning when bit set:{/}
 	 		0		show limits
 	 		4		landscape
 	 		8		default to printer limits
 	 		1-3,5-7,9-31	0 (reserved)
 8	grid spacing (floating point)
 16	grid division
-	 			zero:		non-zero:
+	 			{/}zero:{/}		{/}non-zero:{/}
 20	grid			rectangular	isometric
 24	auto-adjust		off		on
 28	grid shown		no		yes
@@ -33,5 +33,5 @@ Offset	Contents
 	6 text line
 	7 select
 56	bytes in undo buffer
-
-Personally I'd've packed words 20-52 in one word.
+#
+# Personally I'd've packed words 20-52 in one word.

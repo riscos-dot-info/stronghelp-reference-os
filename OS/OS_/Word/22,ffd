@@ -7,7 +7,7 @@ OS_Word 22
 
 This SWI sets up a new screen base address. It is given as the offset from the base of the screen. Offset must be divisible by 16.
 
-Note: This does not appear to work on RISC OS 3.6.
+Note: This does not appear to work on RISC OS 3.60.
 # Gerph> Well, I couldn't get it to...
 #subpage types
 Screen base address types

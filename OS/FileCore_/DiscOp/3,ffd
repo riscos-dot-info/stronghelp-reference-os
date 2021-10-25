@@ -2,9 +2,9 @@ FileCore_DiscOp 3
 #Parent FileCore_DiscOp
 {*}Read track (from floppy) or id (from hard disc){*}
 #line
-{f25}Þ{f}	R1 =	3 + <flags=>FileCore_DiscOp_flags>
+=>	R1 =	3 + <flags=>FileCore_DiscOp_flags>
 	R2 =	<disc address=>FileCore_discaddress>
-	R3 {f25}®{f}	block to read into
+	R3 ->	block to read into
 #line
 If the alternate defect list option bit (bit 4) is set in R1 on entry when reading a track/ID, then a whole track's worth of ID fields is read. This usage isn't available under RISC OS 2.
 

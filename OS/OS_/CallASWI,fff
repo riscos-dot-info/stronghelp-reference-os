@@ -18,4 +18,4 @@ Note that this SWI calling mechanism is almost certainly faster than any other a
 
 OS_CallASWI cannot be called from BASIC as BASIC only passes registers R0-R7 via its SYS instruction. It would not be useful anyway.
 #line
-Provided by RISC OS 3.7+, and also the CallSWI module for earlier versions of RISC OS.
+Provided by RISC OS 3.70+, and also the CallSWI module for earlier versions of RISC OS.

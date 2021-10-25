@@ -1,0 +1,9 @@
+Service_SCSIDying (&20103)
+#Parent SCSI_
+=>	R1 =	&20103 (reason code)
+	R0 =	<device ID=>SCSI_devid>
+	R2 =	device ID mask
+
+Issued when a new device or bus is deregistered with SCSIdriver. A hardware driver may issue this itself to indicate that a device has been detached without deregistering from SCSIdriver. 
+#line
+See <Service_SCSIAttached=>SCSI_SSCSIAttached> for details of the ID mask.

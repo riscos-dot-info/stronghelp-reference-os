@@ -5,7 +5,7 @@ OS SWIs
 <ADFS>
 <ATAPI>
 <Audio>
-<BasicTrans>
+<BASICTrans>
 <Buffer>
 <Cache>
 <CD>
@@ -40,7 +40,7 @@ OS SWIs
 <Parallel>
 <PCI>
 <PDriver>
-<PDumper>
+<PDumperSupport=>PDumper_>
 <Podule>
 <Portable>
 <RamFS>
@@ -76,4 +76,4 @@ OS SWIs
 #EndTable
 #Line
 #align centre
-<OS SWIs manual=>about> {/}v3.20, 21-May-03{/}
+<OS SWIs manual=>about> {/}v3.25, 27 Jun 2003{/}

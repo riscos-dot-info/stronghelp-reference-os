@@ -1,6 +1,6 @@
 PDumper reason code handler
 #Parent PDriver_MiscOp80000000
-=>	R11	<reason code=>PDumperReason_>
+=>	R11	<reason code=>PDumper_Reason_>
 	R12	private word pointer (from R3 in <PDriver_MiscOp 80000000=>PDriver_MiscOp80000000>)
 	Other registers depend on reason code
 <=	if error V set, error in R0

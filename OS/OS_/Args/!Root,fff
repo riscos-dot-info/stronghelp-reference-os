@@ -5,7 +5,7 @@ OS_Args  (&09)
 	R2 =	(attribute)
 #tab
 
-Note that Acorn fail to follow their own guidelines, as the filehandle given by (R1 {*}AND &FF{*}) is actually checked on current versions of RISC OS.
+Note that RISC OS fails to follow the notes in the PRMs, as the filehandle given by (R1 {*}AND &FF{*}) is actually checked on current versions of RISC OS.
 
 Reason codes :
 0	<Read pointer/FS=>os_args000>
@@ -17,6 +17,7 @@ Reason codes :
 6	<Reserve space=>os_args006>
 7	<Read pathname of open file=>os_args007>
 8	<Inform of changed image stamp=>os_args008>
+9	<IOCtl=>os_args009>
 254	<Read info on file handle=>os_args254>
 255	<Flush file(s)=>os_args255>
 #Line

@@ -17,6 +17,3 @@ Value	Meaning
 48	Use ECF 3	} be used
 64	Use ECF 4	}
 80	Use giant ECF	}
-
-#Wrap on
-In the Acorn Aasm header files I use for reference it also specifies that 32 may be used to mean Use sprite palette, but I cannot reconcile this with the rest of the table nor other literature.

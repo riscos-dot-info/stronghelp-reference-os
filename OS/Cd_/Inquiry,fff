@@ -1,6 +1,6 @@
 CD_Inquiry  (&41255)
 #Parent CD_
-{f25}Þ{f}	R0 =	pointer to <36 byte buffer=>.buffer>
+=>	R0 =	pointer to <36 byte buffer=>.buffer>
 	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
 
 This SWI returns the CD-ROM device information - the same as returned by the SCSI Inquiry command.

@@ -1,4 +1,4 @@
-FileCore_Features  (&4054D) (5.0+)
+FileCore_Features  (&4054D) (5.00+)
 #Parent FileCore_
 <=	R0 =	bitmask of supported features
 	 	bit 0: FileCore supports <new error=>FileCore_newerrors> scheme

@@ -1,5 +1,5 @@
 PDumperReason_MiscOp (7)
-#Parent PDumperReason_
+#Parent PDumper_Reason_
 =>	R0 =	PDriver_MiscOp <reason code=>PDriver_MiscOp.ops>
 	R11 =	7 (reason code)
 	R12 =	private word

@@ -1,9 +1,6 @@
-CDFS_
+CDFS
 #Parent !Root
 #Prefix CDFS_
-#spriteFile cddisc
-#SPRITE 0,f CDDISC
-#indent 7
 <ConvertDriveToDevice> 
 SetBufferSize        
 GetBufferSize        

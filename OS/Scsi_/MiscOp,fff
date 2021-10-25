@@ -1,0 +1,5 @@
+SCSIFS_MiscOp  (&4098C)
+#Parent SCSI_
+This SWI calls <FileCore_MiscOp>, after first setting R8 to point to the FileCore instance private word for SCSIFS.
+#Line
+See <PRM 2, page 296=>PRM-2:296>.

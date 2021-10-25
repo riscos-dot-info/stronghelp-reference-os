@@ -1,4 +1,4 @@
-OS_ReadLine32  (&7D) (5.0+)
+OS_ReadLine32  (&7D) (5.00+)
 #Parent OS_
 =>	R0 =	buffer
 	R1 =	size of buffer

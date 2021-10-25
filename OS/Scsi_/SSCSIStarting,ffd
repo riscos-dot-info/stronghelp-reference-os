@@ -1,0 +1,5 @@
+Service_SCSIStarting  (&20100)
+#Parent SCSI_
+=>	R1 =	&20100 (reason code)
+
+Issued as SCSIdriver initialises. The SWIs will not yet be available at this point - use a callback to call them if you need to.

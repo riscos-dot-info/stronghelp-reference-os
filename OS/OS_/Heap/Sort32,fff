@@ -1,4 +1,4 @@
-OS_HeapSort32  (&7F) (5.0+)
+OS_HeapSort32  (&7F) (5.00+)
 #Parent OS_
 =>	R0 =	number of elements
 	R1 =	pointer to word-array

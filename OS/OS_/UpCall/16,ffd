@@ -1,0 +1,5 @@
+OS_UpCall 16 - Device threshold above
+=>	R0 =	16 (Device threshold above
+	R1 =	stream handle
+
+This service is issued when the amount of data in a stream is exceeds the threshold.

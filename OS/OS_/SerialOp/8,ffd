@@ -1,8 +1,8 @@
 OS_SerialOp 8
 #parent OS_SerialOp
-{f25}Þ{f}	R0 =	8 (reason code)
+=>	R0 =	8 (reason code)
 		R1 =	-1 to read, or new threshold
-{f25}Ü{f}	R0 preserved
+<=	R0 preserved
 		R1 =	old threshold
 #line;tab
 This call reads or writes the <input buffer threshold value=>.full>.
@@ -11,7 +11,7 @@ This call reads or writes the <input buffer threshold value=>.full>.
 
 The default value on RISC OS 3.5 is 17 characters, but this is subject to change and should not be relied upon.
 
-This call is available in RISC OS 3.1 and later, despite its lack of inclusion in the 3.1 PRM.
+This call is available in RISC OS 3.10 and later, despite its lack of inclusion in the PRM.
 #line
 See also	<OS_Byte 203=>OS_Byte203>, <PRM 5a-683=>PRM-5a:683>
 #

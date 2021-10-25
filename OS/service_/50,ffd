@@ -14,7 +14,7 @@ This service is issued when a mode number that RISC OS does not provide is reque
 Mode	Use
 #Line
 0-63	<RISC OS=>VDU:22a>
-64-95	Third party applications (allocated by Acorn)
+64-95	Third party applications (allocated centrally)
 96-127	User defined modes
 
 VIDC parameters may differ for the same mode depending on monitor type, but workspace parameters *must* be constant.

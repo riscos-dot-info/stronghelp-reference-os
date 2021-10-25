@@ -1,4 +1,4 @@
-Service_ModulePostInit (&DA) (5.0+)
+Service_ModulePostInit (&DA) (5.00+)
 #Parent Service_Index
 =>	R1 =	&DA (reason code)
 	R0 =	module address

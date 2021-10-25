@@ -20,4 +20,4 @@ Bit	Meaning when set
 6	Floppies support power eject
 7	Harddiscs support power eject
 8	Read drive flags is supported
-9	Sector addressing is possible (RISC OS 3.6 and later)
+9	Sector addressing is possible (RISC OS 3.60 and later)

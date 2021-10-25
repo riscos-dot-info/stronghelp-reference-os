@@ -18,10 +18,10 @@ C-F	root		disc address of root directory
 16-1F	disc_name	disc name (spaced to 10 chars, no terminator)
 20-23	disctype	<filetype given to disc=>Filetypes:!Root>
 
-{*}'Small' discs (Pre-RISC OS 3.6) :{*}
+{*}'Small' discs (Pre-RISC OS 3.60) :{*}
 24-3F	 		reserved, must be 0
 
-{*}'Large' discs (RISC OS 3.6 and later) :{*}
+{*}'Large' discs (RISC OS 3.60 and later) :{*}
 24-27	disc_size2	high word of disc size
 28	share_size	b0-3: log2 share size granularity (in sectors)
 	 		b4-7: reserved, must be 0

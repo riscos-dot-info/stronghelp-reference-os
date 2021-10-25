@@ -1,4 +1,4 @@
-Service_ModulePostInit (&DB) (5.0+)
+Service_ModulePostInit (&DB) (5.00+)
 #Parent Service_Index
 =>	R1 =	&DB (reason code)
 	R0 =	module address

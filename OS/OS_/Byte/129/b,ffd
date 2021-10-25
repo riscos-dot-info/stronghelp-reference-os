@@ -1,8 +1,8 @@
 OS_Byte 129 - To read the OS version identifier
-{f25}Þ{f}	R0 =	129
+=>	R0 =	129
 	R1 =	{*}0{*}
 	R2 =	{*}&FF{*}
-{f25}Ü{f}	R1 =	<value identifying OS=>.identifier>
+<=	R1 =	<value identifying OS=>.identifier>
 	R2 =	0
 #subpage identifier
 OS_Byte 129 Operating System version identifiers

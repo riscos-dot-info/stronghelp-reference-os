@@ -1,5 +1,5 @@
 Deprecated calls
-The following calls are deprecated in RISC OS 3.1 and higher :
+The following calls are deprecated in RISC OS 3.10 and higher :
 
 #Table Columns 2
 <OS_BreakCtrl>
@@ -10,7 +10,7 @@ The following calls are deprecated in RISC OS 3.1 and higher :
 <CDFS_GiveFileType>
 #EndTable
 
-In order to be Y2K compliant, the following call should also be considered deprecated:
+The following call should also be considered deprecated as it does not return the century number:
 
 #Table Columns 1
 <OS_Word 14,1=>OS_Word.14,1>

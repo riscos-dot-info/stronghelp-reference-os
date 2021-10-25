@@ -1,11 +1,11 @@
 OS_UpCall 3 - Modifying file
 #Parent OS_UpcallReasons
-{f25}Þ{f}	R0 =	3 (Modifying file)
+=>	R0 =	3 (Modifying file)
 	R1-R7 vary, depending on the value of R9
 	R8 =	<filing system information word=>fsys_infoword>
 	R9 =	<Reason code=>OS_UpCall3_reasons>
 
-{f25}Ü{f}	All registers preserved
+<=	All registers preserved
 #line
 Warns your program that a file is being modified. It is made when a program calls one of serveral SWI provided by FileSwitch module:
 #Tab;Indent 2
