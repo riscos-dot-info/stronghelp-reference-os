@@ -1,11 +1,11 @@
 Draw_TransformPath  (&4070A)
 #Parent Draw_
 =>	R0 =	pointer to <path block=>draw_pathblock>
-	R1 =	pointer to <output path block=>draw_outpathblock>, or 0 to calcluate size
+	R1 =	pointer to <output path block=>draw_outpathblock>, or 0 to overwrite the input
 	R2 =	pointer to <transformation matrix=>draw_transform>, or 0 for default
 	R3 =	0
 
-<=	R0 =	R1 = 0	calulated output buffer size
+<=	R0 =	R1 = 0	R0 corrupted
 	 	else	pointer to end of <path marker=>draw_pathblock> in output path
 
 This SWI is a subset of <Draw_StrokePath>, in that it only transforms a path. This can save the time taken to repeatedly transform the same path, or reduce errors by transforming *before* dashing and thickening.

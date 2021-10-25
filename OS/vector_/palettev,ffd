@@ -7,6 +7,9 @@ Palette vector (35)
 	 	4	<set second flash state=>.3>
 	 	5	<set default palette=>.5>
 	 	6	<blank screen=>.6>
+	 	7	<read palette entries=>.7>
+	 	8	<write palette entries=>.8>
+	 	9	<set gamma correction tables=>.9>
 	Other registers dependent on call
 
 This vector is called whenever the palette is read or written. Set R4 = 0 to claim the call, and prevent RISC OS from performing the default action. It is used to indirect <VDU 19=>VDU:19>, <OS_Word 12=>OS_Word12>, <OS_ReadPalette>, <ColourTrans_ReadPalette> and <ColourTrans_WritePalette>. <PRM 1-105=>PRM-1:105> suggests that there may be other calls it indirects.
@@ -45,3 +48,28 @@ Blank screen
 	R4 =	6 (reason code)
 
 This call is used by the <ScreenBlanker=>ScreenBlanker_> module to blank and unblank the screen.
+#Subpage 7
+Read palette entries
+=>	R0 =	pointer to word aligned list of logical colours (words) or 0
+	R1 =	type and number of colours
+	 	bits 0-23	=	number of entries to read	
+	 	bits 24-31	=	<type of colour=>VDU:19a> (16,17,18,24,25)	
+	R2 =	pointer to buffer for first flash colour (&BBGGRRxx)
+	R3 =	pointer to buffer for second flash colour (&BBGGRRxx)
+	R4 =	7 (reason code)
+#Subpage 8
+Write palette entries
+=>	R0 =	pointer to word aligned list of logical colours (words) or 0
+	R1 =	type and number of colours
+	 	bits 0-23	=	number of entries to read	
+	 	bits 24-31	=	<type of colour=>VDU:19a> (16,17,18,24,25)	
+	R2 =	pointer to list of device colours
+	R4 =	8 (reason code)
+#Subpage 9
+Set gamma correction
+=>	R0 =	pointer to table for red
+	R1 =	pointer to table for green
+	R2 =	pointer to table for blue
+	R4 =	9 (reason code)
+
+This call sets the gamma correction tables. Each table is a word aligned array of 256 bytes giving the gamma corrected value when indexed by the normal colour value.

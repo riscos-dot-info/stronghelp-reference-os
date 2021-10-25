@@ -1,17 +1,25 @@
 OS_SetColour  (&61)
 #Parent OS_
 =>	R0 =	<flag word=>.flags>
-	R1 =	pointer to ECF pattern if R0's bit 5 = 1
-	 	colour number if R0's bit 5 = 0
+	R1 =	pointer to ECF pattern if R0 b5 = set
+	 	colour number if R0 b5 clear
 
-This call sets the fore and backgound text colour. Depending on R0's bits 0-3, this colour on the screen is changed.
+This call sets or reads the text and graphics colours.
+
+When writing colours, graphics colours may be set using a pattern block, text colours must be specified as a colour number.
+
+When reading the colours, text colours are returned as a colour number in R1, but you must supply a pattern block to read the graphics colours.
 #Line
 See <PRM 1, page 726=>PRM-1:726>.
 #Subpage flags
 Bit(s)	Meaning
 0-3	<Graphic plot action=>os_setcolouractions>
-4	Set:	alter background colour
-	Clear:	alter foreground colour
-5	Set:	R1 is pointer to ECF pattern
-	Clear:	R1 is colour number
+4	1	alter background colour
+	0	alter foreground colour
+5	1	R1 is pointer to ECF pattern
+	0	R1 is colour number
+6	1	set text colour		[3.50]
+	0	set graphics colour
+7	1	read colour		[3.50]
+	0	write colour
 6-31	reserved, must be zero

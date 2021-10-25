@@ -6,6 +6,6 @@ CD_ReadAudio  (&41266)
 	R3 =	pointer to destination buffer (multiple of 256)
 	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
 
-This SWI reads audio data from disc, if the sector is lies in an audio track.
+This SWI reads audio data from disc, if the sector lies in an audio track.
 #line
 *Note*:	Some drives and drivers do not support this, and hence it may fail.

@@ -4,8 +4,8 @@ OS_ReadSysInfo 7  (3.80+)
 =>	R0 =	7 (reason code)
 
 <=	R0 =	/preserved/
- 		R1 =	32-bit PC for last abort
- 		R2 =	32-bit PSR for last abort
- 		R3 =	fault address for last abort
-#line
+ 	R1 =	32-bit PC for last abort
+ 	R2 =	32-bit PSR for last abort
+ 	R3 =	fault address for last abort
+
 The fault address is the same as the 32-bit PC for a prefetch abort, but is the address that caused the abort for a data abort.

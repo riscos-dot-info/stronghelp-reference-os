@@ -11,8 +11,8 @@ OS_ReadSysInfo  (&58)
 	  7	<Read info about last unexpected abort (data or prefetch)=>OS_ReadSysInfo7>
 	  8	<Platform class=>.8>
 	  9	<Read version information=>.9>
-#line
-These calls read information about the current system.
+
+These calls read information about the system.
 #Line
 See <PRM 1, page 719=>PRM-1:719>.
 #
@@ -22,7 +22,7 @@ OS_ReadSysInfo 0
 =>	R0 =	0
 <=	R0 =	screen size
 
-This call reads the size of screen memory.
+This call reads the configured size of screen memory.
 #
 #Subpage 1
 OS_ReadSysInfo 1
@@ -32,7 +32,7 @@ OS_ReadSysInfo 1
 	R1 =	monitor type
 	R2 =	sync
 
-This call reads information about the current screen.
+This call reads the configured screen settings.
 #
 #Subpage 2
 OS_ReadSysInfo 2
@@ -115,21 +115,23 @@ OS_ReadSysInfo 8  (4.00+)
 *Read class*
 =>	R0 =	8
 <=	R0 =	platform class
-	 	0 =	unknown
-	 	1 =	Risc PC
-	 	2 =	A7000
-	 	3 =	A7000+
-	 	4 =	reserved
-	 	5 =	HAL
+	 	    0 =	unknown
+	 	    1 =	Risc PC
+	 	    2 =	A7000
+	 	    3 =	ARM7500FE (A7000+, RiscStation etc)
+	 	    4 =	reserved (Phoebe)
+	 	    5 =	HAL
+	 	    6 =	reserved (STD)
+	 	    7 =	A9home
 	R1 =	32 other flags
-	 	bit 0 = podules supported
-	 	bit 1 = PCI supported
-	 	bit 2 = multiple processors supported
-	 	bit 3 = software control over PSU
-	 	bit 4 = OS runs from RAM
+	 	    bit 0 = podules supported
+	 	    bit 1 = PCI supported
+	 	    bit 2 = multiple processors supported
+	 	    bit 3 = software control over PSU
+	 	    bit 4 = OS runs from RAM
 	R2 =	mask of which bits in R1 are valid on this class
-#line
-Reads information about the class of this platform.
+
+This call reads information about the class of this platform.
 #
 #subpage 9
 OS_ReadSysInfo 9  (4.00+)

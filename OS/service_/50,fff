@@ -60,7 +60,7 @@ Size	Value
 #Line
 4	0 (list format)
 4	Workspace base mode
-8	<Mode variable index=>OS_ReadModeVariable.variable>
+8	<Mode variable index=>OS_ReadModeVariables>
 	Mode variable value
 	(repeat)
 4	-1 (terminator)

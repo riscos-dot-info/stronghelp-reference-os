@@ -4,7 +4,7 @@ IIC_Control  (&240)
 	R1 =	pointer to block
 	R2 =	size of block (bytes)
 
-Reads from or writes to the specified IIC device ({/}eg.{/} the clock chip and IIC compatible devices on podules).
+Reads from or writes to the specified I²C device ({/}eg.{/} the clock chip and I²C compatible devices on podules).
 
 Possible errors include 'No acknowledge from IIC device' and 'IIC system busy' if reentered.
 #Line

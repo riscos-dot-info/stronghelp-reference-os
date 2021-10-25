@@ -1,3 +1,6 @@
 OS_AMBControl  (&70) (3.70+)
 #Parent OS_
 This SWI is for system use only; you must not use it in your own code.
+# => R0 = 5 (Lazy task swapping control)
+#    R1 = state (0 off,  1 on,  -1 to read)
+# <= R1 = current state if R1 = -1 on entry
