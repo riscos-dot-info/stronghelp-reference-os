@@ -7,6 +7,7 @@ R0	Description
 3	<Misc file changed information=>os_upcall3>
 4	<Media search end=>os_upcall4>
 # 5	{/}Reserved{/}
+# 5 UpCall_Password - never used
 6	<Taskwindow Sleep=>os_upcall6>
 7	<PipeFS sleep no more=>os_upcall7>
 8	<Buffer filling=>os_upcall8>
@@ -22,11 +23,8 @@ R0	Description
 16	<Device threshold above=>os_upcall16>
 17	<Device threshold below=>os_upcall17>
 # 18	{/}Reserved{/}
-# 19	{/}Reserved{/}
-# 19 MediaSearchEndMessage
-#    like UpCall 4, but updates the error box with the string pointed to by R1,
-#    useful in cases where there may be some time before the screen is 
-#    updated, eg during printing
+# 18 Reserved for ANC
+19	<Media search end with message=>os_upcall19>
 20	Keyboard status change
 # 21	{/}Reserved{/}
 # 22	{/}Reserved{/}

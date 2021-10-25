@@ -1,0 +1,9 @@
+Service_DynamicAreaRenumber (&92)
+#Parent Service_Index
+=>	R1 = &92 (reason code)
+	R2 = old area number
+	R3 = new area number
+
+This service tells the Task Manager when a dynamic area is being renumbered. It must not be claimed.
+#Line
+See <PRM 5a, page 52=>PRM-5a:52>

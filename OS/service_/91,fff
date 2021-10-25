@@ -1,0 +1,8 @@
+Service_DynamicAreaRemove (&91)
+#Parent Service_Index
+=>	R1 = &91 (reason code)
+	R2 = area number of dynamic area about to be removed
+
+This service tells the Task Manager when a dynamic area is about to be removed. It must not be claimed.
+#Line
+See <PRM 5a, page 51=>PRM-5a:51>

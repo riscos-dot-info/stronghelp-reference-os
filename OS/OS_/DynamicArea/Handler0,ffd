@@ -1,7 +1,7 @@
 Dynamic area PreGrow
 #Parent OS_DynamicAreaHandler
 =>	R0 =	0
-	R1 =	pointer to page block
+	R1 =	pointer to <page block=>OS_DynamicAreaPageBlock>
 	R2 =	number of entries in the block
 	R3 =	amount the area is growing by
 	R4 =	current size of area, in bytes

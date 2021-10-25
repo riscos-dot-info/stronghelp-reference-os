@@ -14,6 +14,8 @@ OS_ReadLine  (&0E)
 
 This SWI reads a line from the current input stream. Input is terminated with Return, Ctrl-J or Escape. Delete and Backspace deletes last char entered. Ctrl-U empties buffer.
 
+When the buffer is full, each successive attempt to enter a character results in a Ctrl-G 'beep'.
+
 See also <OS_ReadLine32>.
 #Line
 See <PRM 1, page 910=>PRM-1:910>.

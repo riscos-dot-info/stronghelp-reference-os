@@ -21,7 +21,7 @@ Thanks go to those mentioned in the <contributors=>OS:contributions> list.
 
 For comments, suggestions and submissions for these, please mail Christian Ludlam <christian@recoil.org=>#url mailto:christian@recoil.org> who is currently moderating the collection. These manuals will continue to be available from <http://sudden.recoil.org/stronghelp/=>#url>.
 #line
-<This page=>.hist331> gives history and credits.
+<This page=>.hist332> gives history and credits.
 #Subpage notes
 Notes on how the manual is structured
 These are some very incomplete notes on how the manual should be structured. If any part of it isn't then it will eventually be updated, or I'll change this specification. It's mostly here to remind me anyhow.
@@ -353,7 +353,7 @@ History for OS v3.29
 #subpage hist330
 History for OS v3.30
 #align right
-{/}29 June 04{/}
+{/}29 June 2004{/}
 #align left
 #line
 è	Updated <Territory=>Territory_numbers> and <Alphabet=>Territory_anumbers> numbers.
@@ -365,7 +365,7 @@ History for OS v3.30
 #subpage hist331
 History for OS v3.31
 #align right
-{/}18 November 04{/}
+{/}18 November 2004{/}
 #align left
 #line
 è	Corrected R1 in <Service 6C=>service_6c> (Justin Fletcher).
@@ -377,4 +377,28 @@ History for OS v3.31
 è	Updated <Alphabet=>Territory_anumbers> numbers, with their encodings standards.
 è	Corrected exit parameters in <ADFS_IDEUserOp> (Andrew Hill).
 #tab;line
-<Previous history=>.hist330>
+<Previous history=>.hist330>	<Next history=>.hist332>
+#subpage hist332
+History for OS v3.32
+#align right
+{/}7 January 2006{/}
+#align left
+#line
+è	Updated <UpCalls=>os_upcallReasons> and added PRM references (Justin Fletcher).
+è	Added details of the page blocks and service calls issued by <OS_DynamicArea>.
+è	Added <OS_ResyncTime>.
+è	Updated Printer drivers to show RISC OS 3.6's pre-scanning (Maarten Bezemer)
+è	Updated the flags to <ColourTrans_SelectTable> (Justin Fletcher)
+è	Updated <OS_ReadSysInfo 6=>OS_ReadSysInfo> (Justin Fletcher)
+è	Updated <KeyV=>Vector_KeyV> reason code 0.
+è	Added <PointerV=>vector_pointerv> (Theo Markettos)
+è	Added <OS_ClaimOSSWI> etc (Theo Markettos)
+è	Added <Event 21=>event_21> (Theo Markettos)
+è	Corrected <CMOS byte 24=>os_bytecmos24> (Justin Fletcher)
+è	Marked <OS_Control>, <OS_SetEnv>, <OS_CallBack>, <OS_BreakCtrl> and <OS_UnusedSWI> as obsolete but reinstated them to the front index. (Sprow)
+è	Resorted the OS_ SWIs alphabetically. (Sprow)
+è	Updated <OS_WriteS>, <OS_Write0> and <OS_WriteN> to reflect the kernel's unvectored approach. (Sprow)
+è	An assortment of small typos in OS_ SWIs fixed. (Sprow)
+è	Added the remaining missing OS_ SWIs to the index page, though some have never been let into the wild. (Sprow)
+#tab;line
+<Previous history=>.hist331>

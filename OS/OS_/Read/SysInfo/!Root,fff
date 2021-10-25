@@ -88,7 +88,7 @@ OS_ReadSysInfo 5
 #
 #Subpage 6
 OS_ReadSysInfo 6 (4.00+)
-*Read kernal value*
+*Read kernel value*
 =>	R1 = 0
 	R2 = <item=>.6items>
 <=	R2 = value
@@ -102,8 +102,13 @@ OS_ReadSysInfo 6 (4.00+)
 OS_ReadSysInfo 6 items
 item	value
 #line
-16	address of top of SVC stack	[4.00+]
-18	address of SWI dispatch table	[5.00+]
+15	address of top of UND stack			(4.00+)
+16	address of top of SVC stack			(4.00+)
+18	address of kernel MessageTrans block + 4	(4.00+)
+	address of SWI dispatch table			(5.00+)
+21	address of top of IRQ stack			(5.00+)
+
+Value 18 would appear to have a different meaning on different OS versions.
 #
 #subpage 8
 OS_ReadSysInfo 8  (4.00+)

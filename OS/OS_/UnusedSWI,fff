@@ -1,8 +1,10 @@
 OS_UnusedSWI  (&19)
 #Parent OS_
+{*}This SWI is obsolete.{*} Use <OS_ChangeEnvironment> instead.
+
 =>	R0 =	address of the unused SWI handler; or 0 to read
 <=	R0 =	address of the previous UnusedSWI handler
 
-This sets up the address of the UnusedSWI handler, but it's obsolete and only kept for backwards compatibility so use <OS_ChangeEnvironment> instead.
+This sets up the address of the UnusedSWI handler. Internally, OS_UnusedSWI just calls <OS_ChangeEnvironment>.
 #Line
 See <PRM 1, page 307=>PRM-1:307>.

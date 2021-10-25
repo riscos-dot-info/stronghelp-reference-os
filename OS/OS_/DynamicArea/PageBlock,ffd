@@ -1,0 +1,9 @@
+Page blocks
+Page blocks are arrays of 12-byte records mapping addresses and pages. Each entry takes the following format:
+
+	+0	Physical page number
+	+4	Logical address
+	+12	Physical address
+
+#line
+See <PRM 5a, page 42=>PRM-5a:42>

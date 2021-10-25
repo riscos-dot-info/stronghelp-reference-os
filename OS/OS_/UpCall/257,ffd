@@ -11,3 +11,6 @@ This Upcall informs your program that RISC OS would like to move memory
 This call is made just before <OS_ChangeDynamicArea> tries to move memory. The call is only made if the currently active object is in the application space. It calls the UpCall vector. By default (if you don't claim the vector) the memory isn't moved.
 
 Your routine must shuffle your application's workspace so that the memory can go ahead. It must then set R0 = 0, and pass on the call to the vector.
+
+#line
+See <PRM 1, page 194=>PRM-1:194> 

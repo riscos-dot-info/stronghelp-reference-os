@@ -8,7 +8,7 @@ PDriver_Info  (&80140)
 	R4 =	pointer to printer name (max 20 chars, null terminated)
 	R5 =	x halftone resolution in repeats/inch
 	R6 =	y halftone resolution in repeats/inch
-	R7 =	printer driver specific number (as set by <PDriver_SetInfo>, defult is 0)
+	R7 =	printer driver specific number (as set by <PDriver_SetInfo>, default is 0)
 
 This SWI describes the capabilities of the printer. If a job is selected they ae the values in force from when it was first selected, else they are the values that would be used on a new job. If halftoning is not used then R5=R2,R6=R3.
 #Line

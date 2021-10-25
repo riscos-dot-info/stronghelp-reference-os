@@ -8,4 +8,4 @@ OS_CallAfter  (&3B)
 #line
 Sets a CallBack routine to be triggered after a specified delay. See <OS_AddCallBack> for more details. To remove, use <OS_RemoveTickerEvent>.
 #Line;tab
-See <PRM 1-429=>PRM-1:429>.
+See <PRM 1, page 429=>PRM-1:429>.

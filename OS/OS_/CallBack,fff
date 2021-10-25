@@ -1,11 +1,13 @@
 OS_CallBack  (&15)
 #Parent OS_
+{*}This SWI is obsolete.{*} Use <OS_ChangeEnvironment> instead.
+
 =>	R0 =	address of the register save block, 0 to read
 	R1 =	address of the callback handler, 0 to read
 
 <=	R0 =	address of previous register save block
 	R1 =	address of previous callback handler
 
-This sets up the address of the CallBack handler and the register save block, zero for either value meaning no change - hence you can read the current value. This call is obsolete, <OS_ChangeEnvironment> provides the same, in fact OS_CallBack calls this and should therefore be used in preference. For informations on callbacks refer to <OS_AddCallBack>.
+This sets up the address of the CallBack handler and the register save block, zero for either value meaning no change - hence you can read the current value. For information on callbacks refer to <OS_AddCallBack>. Internally, OS_CallBack just calls <OS_ChangeEnvironment>.
 #Line
 See <PRM 1, page 304=>PRM-1:304>.

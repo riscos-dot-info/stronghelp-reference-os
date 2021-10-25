@@ -1,6 +1,6 @@
 Memory map request block
 #Parent OS_ReadMemMapEntries
-The request_ block is a list of 3 word entries, terminated by a single -1 word.
+The request block is a list of 3 word entries, terminated by a single -1 word.
 
 offset	contents
 #Line

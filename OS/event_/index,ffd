@@ -26,7 +26,7 @@ Event numbers
 19	<Internet event=>InetSocket:event_19>
 20	Reserved for external developers
 # Event_Fax               * 20    ; Computer Concepts Fax/Data modem
-21	Expansion event (sub-reason in r1)
+21	<Expansion event=>Event_21>
 22	<Device overrun event=>event_22>
 23	Reserved for external developers
 # Event_WatfordPCCard     * 23    ; Watfords scanner driver for scanner activities

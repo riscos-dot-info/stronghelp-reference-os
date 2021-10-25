@@ -1,8 +1,8 @@
-OS_PlatformFeatures  (&6D)
+OS_PlatformFeatures  (&6D) (3.70+)
 #Parent OS_
 =>	R0 =	reason code, and reason dependant flags
 	 	0	<Read code features=>OS_PlatformFeatures0>
 
 This SWI is used to find out what features the executing platform has, if any.
 #line
-Provided by RISC OS 3.70+, and also the CallSWI module for earlier versions of RISC OS.
+Provided by RISC OS 3.70+, and also the CallASWI module for earlier versions of RISC OS.

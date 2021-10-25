@@ -12,3 +12,6 @@ This call is made just before a new application is going to be started in the cu
 One reason to use this call is so that an application can tidy up itself before a new one is started, eg removing routines from vector.
 
 Another reason to use this UpCall is to prevent an application from starting. If you don't want the application to start, your routine should set R0 to 0, and intercept the call to the vector. This will cause the error 'Unable to start application' to be given. Otherwise, you must pass the call on with all reigsters preserved.
+
+#line
+See <PRM 1, page 193=>PRM-1:193> 

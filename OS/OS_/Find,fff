@@ -15,6 +15,8 @@ R0	Action
 &40	Open existing file with read-only access
 &80	Create empty file with read/write access
 &C0	Open existing file with read/write access
+#Line
+See <PRM 2, page 72=>PRM-2:72>.
 #
 #Subpage pathbits
 OS_Find path bits
@@ -28,5 +30,3 @@ Low bits	Meaning
 2		If 1 then error if open existing dir
 3		If 1 then error if file doesn't exist
 4-5		0
-#Line
-See <PRM 2, page 72=>PRM-2:72>.

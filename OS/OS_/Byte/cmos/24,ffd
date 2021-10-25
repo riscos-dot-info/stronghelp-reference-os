@@ -2,4 +2,4 @@ OS_Byte CMOS 24
 #Parent OS_Bytecmos
 Bit(s)	Meaning
 #Line
-0-7	<Territory number=>Territory_numbers> - 1
+0-7	<Territory number=>Territory_numbers> EOR 1

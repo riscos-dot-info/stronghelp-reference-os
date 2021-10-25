@@ -1,5 +1,7 @@
 OS_SetEnv  (&12)
 #Parent OS_
+{*}This SWI is obsolete.{*} Use <OS_ChangeEnvironment> instead.
+
 =>	R0 =	address of the handler for <OS_Exit>, 0 to read
 	R1 =	address of the memory limit for <OS_GetEnv>, 0 to read
 	R4 =	address for undefined instructions, 0 to read
@@ -9,6 +11,6 @@ OS_SetEnv  (&12)
 
 <=	The used registers contain the previous handlers.
 
-This sets several handlers, better use <OS_ChangeEnvironment>, because this call is obsolete and uses this newer version.
+Internally, OS_SetEnv just calls <OS_ChangeEnvironment>.
 #Line
 See <PRM 1, page 302=>PRM-1:302>.

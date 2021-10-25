@@ -3,6 +3,8 @@ OS_WriteN  (&46)
 =>	R0 =	pointer to string
 	R1 =	number of bytes to write
 
-This SWI sends the R1 bytes in R0 to all <active output streams=>OS_Byte003>. It nominally uses <OS_WriteC> to write each char.
+This SWI sends the R1 bytes in R0 to all <active output streams=>OS_Byte003>. 
+
+If <WrchV=>vector_wrchv> has not been intercepted with <OS_Claim> it will directly call the VDU driver which is faster, otherwise it calls <OS_WriteC> to write each character.
 #Line
 See <PRM 1, page 522=>PRM-1:522>.

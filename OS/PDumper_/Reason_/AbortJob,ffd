@@ -4,9 +4,13 @@ PDumperReason_AbortJob (6)
 	R1 =	output file handle
 	R2 =	<strip type=>PDumper_striptypes>
 	R3 =	0 for end of page, else end of document
+	 	b24 set to reset the printer
+	R4 =	pointer to copy of PDriverDP and dumper configuration data (only if R3 b24 set)
 	R11 =	6 (reason code)
 	R12 =	private word
 
 This is called at the end of each page, and at the end of the job. If an error occurs during printing this will be called as "end of job".
+
+If b24 of R3 is set the driver must output a suitable graphics termination sequence to ensure the printer is in a sensible state.
 
 <PDumper_TidyJob> may be useful here.

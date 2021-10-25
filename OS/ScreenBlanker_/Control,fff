@@ -19,8 +19,8 @@ Reason	Meaning
 #Subpage 2
 ScreenBlanker_Control 2
 =>	R0 =	2 (Flash screen)
-	R1 =	time to turn on in centi-seconds
-	R2 =	time to turn off in centi-seconds
+	R1 =	time to turn on in centiseconds
+	R2 =	time to turn off in centiseconds
 	R3 =	maximum number of flashes
 	R4 =	flags (not documented, see <Service_ScreenRestored=>Service_7B> and <Service_ScreenBlanked=>Service_7A>)
 #

@@ -4,4 +4,4 @@ Service_WimpRegisterFilers (&86)
 
 This service is issued when the Wimp resets the filter table to its default state. You should register any filters with <Wimp_RegisterFilter=>Wimp:Wimp_RegisterFilter>. It should only be used if you are a replacement to the Filter Manager.
 #Line
-See <PRM 3, page 77=>PRM-3:77>
+See <PRM 3, page 84=>PRM-3:84>

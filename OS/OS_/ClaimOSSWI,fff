@@ -1,0 +1,19 @@
+OS_ClaimOSSWI  (&77)  (Select)
+#Parent OS_
+# {*}For internal OS use only{*}
+=>	R0 =	0 to claim, 1 to release
+	R1 =	OS SWI number to claim
+	R2 =	pointer to handler routine
+	R3 =	value to pass in R12 to handler routine
+
+Register or deregister a routine to be called instead of the default handler when an OS SWI is issued.  
+
+On 26 bit systems the routine should return with {fCode}MOVS PC,R14{f}, so the flags should be in R14 *and* R15. On a 32 bit system the flags in the PSR on return are expected to be valid.
+
+RISC OS 3.50+ include SWIs OS_ClaimSWI and OS_ReleaseSWI, which return 'SWI not known' until Select, when:
+
+#tab
+{Fcode:SYS "OS_ClaimSWI",x,y,z}		calls {Fcode:SYS "OS_ClaimOSSWI",0,x,y,z}
+{Fcode:SYS "OS_ReleaseSWI",x,y,z}	calls {Fcode:SYS "OS_ClaimOSSWI",1,x,y,z}
+
+This describes behaviour in OSes current at Nov 2005.  It is likely to change in future OS versions (especially flag usage).

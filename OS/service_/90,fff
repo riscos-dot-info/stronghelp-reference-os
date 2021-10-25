@@ -1,0 +1,8 @@
+Service_DynamicAreaCreate (&90)
+#Parent Service_Index
+=>	R1 = &90 (reason code)
+	R2 = area number of dynamic area just created
+
+This service tells the Task Manager when a dynamic area has been created. It must not be claimed.
+#Line
+See <PRM 5a, page 50=>PRM-5a:50>

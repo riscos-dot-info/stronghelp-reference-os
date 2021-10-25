@@ -1,16 +1,21 @@
 PDriver_DrawPage  (&8014C)
 #Parent PDriver_
-=>	R0 =	number of copies to print
+=>	R0 =	bits 0 - 23 	number of copies to print
+	 	bit 24	application knows about pre-scan of rectangles by printer driver [3.60+]
+	 	bits 25-31 reserved (must be zero)
 	R1 =	pointer to 4 word block to receive <rectangle to print=>PDriver_rectangle>
 	R2 =	page number within the document (for user information) or 0
 	R3 =	pointer to <page number string=>.number> (or 0 for none)
 
 <=	R0 =	0 if finished
+	 	if bit 24 set, this rectangle is for pre-scan only
 	R1 preserved
 	R2 =	ID word for this rectangle
 	R3 preserved 
 
 This SWI is called after all rectangles have been specified with <PDriver_GiveRectangle>, and returns the first rectange to print. Subsequent rectangles are retrieved with <PDriver_GetRectangle>.
+
+Use <PDriver_Info> to check whether the flags byte in R0 is supported by the printer driver. If the printer driver doesn't expect the flags byte, you must not set bit 24. If it does, you should.
 
 If R0 is 0 on return then R2 and the buffer pointed to by R1 are undefined. Otherwise R0 gives the number of copies still to print - this is intended for display to users only, as it may not decrease smoothly.
 #Line

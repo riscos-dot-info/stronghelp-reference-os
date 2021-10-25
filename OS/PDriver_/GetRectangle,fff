@@ -3,11 +3,14 @@ PDriver_GetRectangle  (&8014D)
 =>	R1 =	pointer to 4 word block to receive <rectangle to print=>PDriver_rectangle>
 
 <=	R0 =	0 if finished
+	 	bit 24 set, this rectangle is for pre-scan only [3.60+]
 	R1 =	preserved
 	R2 =	ID word for this rectangle
 
 This SWI is called to get further rectangles to print.
 
 If R0 is 0 on return then R2 and the buffer pointed to by R1 are undefined. Otherwise R0 gives the number of copies still to print - this is intended for display to users only, as it may not decrease smoothly.
+
+Pre-scanning is used by the JPEG printer drivers to ascertain memory requirements, but should always be enabled when available for future compatibility. In general pre-scanning is transparent to applications, so bit 24 can be ignored.
 #Line
 See <PRM 3, page 628=>PRM-3:628>.

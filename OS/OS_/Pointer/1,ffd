@@ -1,0 +1,7 @@
+OS_Pointer 1  [3.50+]
+=>	R0 =	1 (reason code)
+	R1 =	<pointer device type=>OS_PointerDeviceType>
+
+<=	R0 preserved
+
+Sets the currently selected pointer device type.  This may be permanently set with *Configure MouseType \<n>

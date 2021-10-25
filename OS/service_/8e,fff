@@ -1,0 +1,9 @@
+Service_PagesUnsafe (&8E)
+#Parent Service_Index
+=>	R1 = &8E (reason code)
+	R2 = page block filled in by <PreGrow=>OS_DynamicAreaHandler0> routine
+	R3 = number of entries in page block
+	
+This service is broadcast to inform recipients that the pages specified are about to be swapped with different pages. DMA operations involving these pages should be suspended until <Service_PagesSafe=>Service_8F> is received. This call must not be claimed.
+#Line
+See <PRM 5a, page 48=>PRM-5a:48>

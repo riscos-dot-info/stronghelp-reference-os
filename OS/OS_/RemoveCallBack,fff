@@ -6,4 +6,4 @@ OS_RemoveCallBack  (&5F)
 
 Removes a call back event, such as <OS_AddCallBack>.
 #Line
-See <PRM 1-322=>PRM-1:322>.
+See <PRM 1, page 322=>PRM-1:322>.

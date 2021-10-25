@@ -15,8 +15,11 @@ This SWI registers a device driver (the hardware interface code) and associated 
 See <PRM 2, page 428=>PRM-2:428>.
 #subpage flags
 Meaning of bits in R0
-Bit	meaning if clear	if set
+Bit	meaning if set
 #line
-0	character device	block device (unimplemented)
-1	not full duplex		full duplex
+0	Block device (not implemented), else characterdevice
+1	Full duplex
+2	MonitorTX/RX available
+3	Monitor EOF on reading
+4	Issue device <UpCalls=>OS_UpCallReasons> 15 - 17.
 2-31	0 (reserved)

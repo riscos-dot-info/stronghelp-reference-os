@@ -1,0 +1,10 @@
+Pointer device types
+Type	Device
+#Line
+0	Quadrature mouse
+1	Microsoft mouse
+2	Mouse Systems mouse
+3	PS/2 mouse
+5	RCMM handset (NCOS)
+7	Castle USB mouse
+10	STD PS/2 to quadrature converter

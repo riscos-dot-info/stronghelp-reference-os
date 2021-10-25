@@ -26,3 +26,5 @@ The following general points apply:
 This UpCall is made before the operation, which may subsequently fail. For example, you may receive a rename UpCall for a locked file, which will sebsequently fail to rename (because it's locked). If a file name is invalid for a given operation (eg you try to create a file with a wildcarded leafname) FileSwitch will generate an error, and no UpCall will be generated.
 
 The call is used by the desktop filer to maintain its directory displays. It's provided for information only; if you wish to use this UpCall, you must not intercept it, nor must you alter the contents of any of these registers used to pass parameters.
+#line
+See <PRM 1, page 181=>PRM-1:181>

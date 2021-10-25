@@ -1,0 +1,5 @@
+OS_Pointer 0  [3.50+]
+=>	R0 =	0 (reason code)
+<=	R0 =	<pointer device type=>OS_PointerDeviceType>
+
+Get the currently selected pointer device type.

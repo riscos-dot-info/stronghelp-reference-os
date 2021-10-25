@@ -1,11 +1,9 @@
-OS_Memory (&68)
+OS_Memory (&68) (3.50+)
 #Parent OS_
 =>	R0 =	<reason code=>.reasons> (bits 0-7)
 	 	and flags (bits 8-31) which are reason code specific
 
 Peforms miscellaneous operations for memory management.
-
-This call is only available from RISC OS 3.50 onwards.
 #Subpage reasons
 OS_Memory reason codes
 R0	Action
@@ -57,7 +55,7 @@ Bits	Meaning when set
 OS_Memory 6
 =>	R0 =	6 (reason code)
 	 	all flags bits reserved
-=>	R1 =	table size (in bytes)
+<=	R1 =	table size (in bytes)
 	R2 =	page size (in bytes)
 
 This call reads the size of the physical memory arrangement table, as returned by <OS_Memory 7=>.7>

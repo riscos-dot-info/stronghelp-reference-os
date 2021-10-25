@@ -15,7 +15,7 @@ This call is used to allow low-level code to claim the ARM's hardware vectors wh
 The address off your routine must be provided on release to ensure claims and releases happen in the correct order. If the address currently on the vector differs from that in R2, an error is returned.
 #
 #Subpage vectors
-RO3.5 processor vectors
+Processor vectors (3.50+)
 \#	Vector
 #line
 0	Branch through zero

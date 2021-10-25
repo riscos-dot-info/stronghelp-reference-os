@@ -1,0 +1,92 @@
+Pointer vector (&26)
+#Parent vector_index
+=>	R0 =	reason code
+	 	0	<Request pointer device status=>.r0>
+	 	1	<Enumerate pointer device types=>.r1>
+	 	2	<Pointer device type selected=>.r2>
+	 	3	<Report=>.r3> (5.00+)
+	 	4	<Extended request=>.r4> (Select)
+
+Perform a pointer operation.
+#line
+See	<PRM 5a-238=>PRM-5a:238>.
+#subpage r0
+PointerV 0  (3.50+)
+# *Request pointer device status*
+=>	R0 =	0 (reason code)
+	R1 =	<pointer device type=>OS_PointerDeviceType>
+<=	R2 =	X movement since last call
+	R3 =	Y movement since last call
+	others preserved
+
+This reason is called by the kernel every VSync to obtain the latest pointer movement. The driver for the specified device type should intercept the call and return the movement of the device since the previous call of this reason code, otherwise the call should be passed on. Movements are signed 32 bit quantities.
+
+The kernel updates the pointer position with the returned values. The driver should issue <KeyV=>vector_keyv> requests for mouse buttons they provide.
+#
+#subpage r1
+PointerV 1  (3.50+)
+# *Enumerate pointer device types*
+=>	R0 =	1 (reason code)
+	R1 =	<linked list of driver records=>.driver_record>, or 0 if none yet
+<=	R1 =	updated driver record linked list
+
+A pointer device driver must claim this reason code and when called claim space for its record(s) in RMA.  It must set the /next record/ pointer of the last record it added to the value of R1 on entry, and pass on the call with R1 pointing to the first record it added.
+
+The caller is responsible for freeing the list after use. The call must not be intercepted.
+#
+#subpage driver_record
+Pointer device driver record
+Offset	Meaning
+#line
+0	pointer to next record
+4	flags (reserved; all bits must be 0)
+8	<device type=>OS_PointerDeviceType>
+9	name of pointer device, \< 31 chars, null terminated (for menus)
+#
+#subpage r2
+PointerV 2  (3.50+)
+# *Select pointer device type*
+=>	R0 =	2
+	R1 =	<device type=>OS_PointerDeviceType>
+
+The kernel calls PointerV 2 when a pointer device type is selected with OS_Pointer. A device driver should enable itself if it supports this device type, otherwise disable itself. The call must not be intercepted.
+#
+#subpage r3
+PointerV 3  (5.00+)
+# *Report*
+=>	R0 =	3 (reason code)
+	R1 =	<pointer type=>OS_PointerDeviceType>
+	R2 =	change in X position
+	R3 =	change in Y position
+
+This is called by the pointer driver to notify the kernel when a pointer movement is detected.  When called the kernel will stop polling and rely on the driver notifying further movements through this interface. Positions are signed 32-bit values.
+# #line
+# RISC OS 5.00+ (Iyonix/Castle/Tematic stream) only
+#subpage r4
+PointerV 4  (Select 4.32+)
+# *Request extended pointer device status*
+=>	R0 =	4 (reason code)
+	R1 =	<pointer type=>OS_PointerDeviceType>
+
+<=	R0 =	-1 (request claimed)
+	R2 =	change in X position
+	R3 =	change in Y position
+	R4 =	alternate device change in X position
+	R5 =	alternate device change in Y position
+	R6 =	<mouse buttons=>.mouse_buttons>
+
+This is called by the kernel to determine the position of the pointing device (it supersedes <PointerV 0=>.r0>). It should only be claimed by the driver for the requested pointer type.
+
+Positions are signed 32 bit values.  The 'alternate device' is usually a mouse scroll wheel, where the positive Y direction is pushing the wheel away from the user.
+
+A driver should not issue KeyV events for mouse buttons; the kernel will do this.  If a driver supports both old (PointerV 0) and new (PointerV 4) protocols it should issue KeyV events for buttons only when called via PointerV 0.
+# #line
+# RISC OS Select 4.32+.
+#subpage mouse_buttons
+PointerV mouse buttons
+Bit	Meaning
+#line
+0	Right button
+1	Middle button
+2	Left button
+3-7	Provided at the discretion of the driver

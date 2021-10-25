@@ -1,0 +1,10 @@
+Service_PagesSafe (&8F)
+#Parent Service_Index
+=>	R1 = &8F (reason code)
+	R2 = number of entries in each page block
+	R3 = pointer to page block before move
+	R4 = pointer to page block after move
+	
+This service is broadcast to inform recipients that the pages specified have been swapped for different pages. The logical addresses in both page blocks will match, and the page number and physical address fields give the pages which have moved. You must not claim this service call.
+#Line
+See <PRM 5a, page 49=>PRM-5a:49>

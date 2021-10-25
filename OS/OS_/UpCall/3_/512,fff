@@ -4,3 +4,6 @@ Ensuring a file's size
 =>	R1 =	external handle
 	R2 =	size to ensure
 	R8 =	filing system information word
+
+#line
+See <PRM 1, page 184=>PRM-1:184> 

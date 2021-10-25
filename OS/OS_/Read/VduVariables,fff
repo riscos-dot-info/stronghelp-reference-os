@@ -70,10 +70,10 @@ AB	171	GcolOraEorAddr	Addr of <colour blocks=>.gcoloraeoraddr> for current GCOLs
 
 AC	172	VIDCClockSpeed	VIDC clock speed in kHz (not RISC OS 2)
 
-AE	174	 		Left border size	[5.07]
-AF	175	 		Bottom border size	[5.07]
-B0	176	 		Right border size	[5.07]
-B1	177	 		Top border size		[5.07]
+AE	174	 		Left border size	(5.07+)
+AF	175	 		Bottom border size	(5.07+)
+B0	176	 		Right border size	(5.07+)
+B1	177	 		Top border size		(5.07+)
 
 100	256	WindowWidth	Width of text window in chars
 101	257	WindowHeight	Height of text window in chars

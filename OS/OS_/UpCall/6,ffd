@@ -16,3 +16,5 @@ If the termination condition can be recognised externally (ie in another Wimp ta
 Note that a task musn't use this UpCall if it's not re-entrant.
 
 The calling task must be running in a task window. The task window module intercepts this UpCall; you should not do so yourself. These two restrictions may be removed in future versions of RISC OS.
+#line
+See <PRM 1, page 187=>PRM-1:187> 

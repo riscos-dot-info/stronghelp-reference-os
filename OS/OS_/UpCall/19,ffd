@@ -1,0 +1,6 @@
+Upcall 19 - Media search end message
+#Parent OS_UpcallReasons
+=>	R0 =	19 (Media search end message)
+<=	R0 preserved
+
+This call identical to <UpCall 4=>os_upcall4> except the message pointed to by R1 is displayed. This is useful where there may be some time before other screen update, for example during printing.

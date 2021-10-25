@@ -11,3 +11,6 @@ This Upcall informs the TaskWindow module that an open pipe has been closed or d
 The Task Window module then traps this and objects if any of its tasks are currently waiting for the poll word related to that pipe to become non zero, by returning an error.
 
 This prevents a *Shut command from deleting the workspace which is being accessed by the Task Window, which could potentially cause address exceptions.
+
+#line
+See <PRM 1, page 188=>PRM-1:188> 

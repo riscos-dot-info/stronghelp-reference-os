@@ -12,8 +12,7 @@ Any routines on this vector should :
 è	intercept the vector with R0 = 0 if the time limit is reached, or if you say you have supplied the medium
 #Indent
 
-When you intercept the call to the vector, control passes back to the filing
-system routine that called <OS_UpCall>...
+When you intercept the call to the vector, control passes back to the filing system routine that called <OS_UpCall>...
 #Indent 2
 è	If R0 = -1, then the routine calls <OS_UpCall 4=>OS_UpCall4>; it then returns an error to say that the medium wasn't found.
 è	If R0 = 0, then the routine checks for you that the medium has been changed and the correct one supplied. If so, it calls OS_UpCall 4; otherwise it just calls OS_UpCall 1 or 2 again, after incrementing R4
@@ -21,4 +20,8 @@ system routine that called <OS_UpCall>...
 
 The timeout period in R5 is set to a small value for media that can detect when the medium has been changed (such a floppy disc drives) and to a large value (typically &FFFFFFFF) for other media. In the former case, this means that RISC OS will automatically detect that new medium has been supplied, and check that it is the correct one.
 
+If R1 is unchanged on exit, nobody handled the request. In general this should be treated by filing systems as the media not present error.
+
 The most common use of OS_UpCall 1 and 2 is to request that a floppy disc is inserted.
+#line
+See <PRM 1, page 179=>PRM-1:179>

@@ -1,0 +1,4 @@
+OS_ResyncTime (&6C)
+#Parent OS_
+This call resyncs the software copy of the time to the value containined in
+the RTC chip.

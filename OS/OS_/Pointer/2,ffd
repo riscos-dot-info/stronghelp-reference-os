@@ -1,0 +1,6 @@
+OS_Pointer 2  (Select 4.32+)
+=>	R0 =	2 (reason code)
+<=	R0 =	X position
+	R1 =	Y position
+
+This SWI reads the position of the pointer's alternate scrolling device, usually controlled by mouse scroll wheels or similar input devices.  Signed 32 bit values are returned which will reset to zero if wrapping occurs (ie increment from &7FFFFFFF resets to zero, as does decrement from -&80000000).  The positive Y direction of a scroll wheel means pushing the wheel away from the user.

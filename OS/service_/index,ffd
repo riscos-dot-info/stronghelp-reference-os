@@ -96,11 +96,11 @@ Service calls
 8B <Network driver status (DCI2)=>Service_8B>
 8C <Syntax error=>Service_8C>
 8D <Enumerate screen modes=>Service_8D>
-8E Pages unsafe
-8F Pages safe
-90 Created dynamic area
-91 Remove dynamic area
-92 Renumber dynamic area
+8E <Pages unsafe=>Service_8E>
+8F <Pages safe=>Service_8F>
+90 <Created dynamic area=>Service_90>
+91 <Remove dynamic area=>Service_91>
+92 <Renumber dynamic area=>Service_92>
 93 <Colour picker loaded=>Wimp:Service_93>
 94 ModeFile changed
 95 <Freeway starting=>InetSWIs:Service_95>

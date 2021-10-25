@@ -1,5 +1,7 @@
 OS_Control  (&0F)
 #Parent OS_
+{*}This SWI is obsolete.{*} Use <OS_ChangeEnvironment> instead.
+
 =>	R0 =	address of error handler, or 0 to read
 	R1 =	pointer to buffer for the error handler, or 0 to read
 	R2 =	address of escape state change handler, or 0 to read
@@ -10,6 +12,6 @@ OS_Control  (&0F)
 	R2 =	previous escape routine address
 	R3 =	previous event handler address
 
-This sets some of the exception handlers, but is obsolete and shouldn't be used in newer programs, because <OS_ChangeEnvironment> does the same, in fact OS_Control uses it.
+Internally, OS_Control just calls <OS_ChangeEnvironment>.
 #Line
 See <PRM 1, page 296=>PRM-1:296>.

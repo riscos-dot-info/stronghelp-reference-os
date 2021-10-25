@@ -1,0 +1,10 @@
+OS_Pointer  (&64)  [3.50+]
+#Parent OS_
+=>	R0 =	reason code:
+	 	0	<Get pointer type=>OS_Pointer0>
+	 	1	<Set pointer type=>OS_Pointer1>
+	 	2	<Read alternate position=>OS_Pointer2>	[Select]
+
+Perform a pointer operation.  The operation required, or reason code, is passed in R0. OS_Pointer is vectored via <PointerV=>vector_pointerv>.
+#Line
+See <PRM 5a, page 244=>PRM-5a:244>.

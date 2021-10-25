@@ -1,50 +1,41 @@
 Key vector (&13)
 #Parent vector_index
-=>	R0 =	<reason code=>.reason>
-	Other registers dependant on reason code.
-<=	All registers preserved.
+=>	R0 =	reason code:
+	 	0	<Keyboard present=>.r0>
+	 	1	<Key released=>.r1>
+	 	2	<Key pressed=>.r1>
+	 	3	<Notify driver of LED state=>.r3>
+	 	4	<Enable keyboard device drivers=>.r4>
+	 	5-11	Reserved for system use
 #line
-All of the KeyV calls should be passed on without being intercepted.
-#line
-See	<PRM 5a-238=>PRM-5a:238>.
-#
-#subpage reason
-KeyV reason codes
-{/}#{/}	/Meaning/
-#line
-0	<Keyboard present=>.r0>
-1	<Key released=>.r1>
-2	<Key pressed=>.r1>
-3	<Notify driver of LED state=>.r3>
-4	<Enable keyboard device drivers=>.r4>
-5-11	Reserved for system use
-#
+See <PRM 5a-238=>PRM-5a:238>.
 #subpage r0
 KeyV 0
 *Keyboard present*
-=>	R0 =	0
+=>	R0 =	0 (reason code)
 	R1 =	<ID=>OS_keyboardid>
-#line
-After a successful initialisation by the keyboard device driver, the driver notifies the kernel with this reason code.
+	R2 =	&4E6F4B64 ('NoKd') {/}[5.00+]{/}
+
+After a successful initialisation by the keyboard device driver, the driver notifies the kernel with this reason code. If R2 contains the magic word 'NoKd', the kernel will disable its debouncing allowing, for example, a barcode reader to input characters faster than 10-15 cps. Debouncing can be reenabled by issuing this call with R2 set to 0.
 #
 #subpage r1
 KeyV 1, 2
-*Key released* (1)
-*Key pressed* (2)
-=>	R0 =	1 or 2
+# *Key released* (1)
+# *Key pressed* (2)
+=>	R0 =	1 or 2 (reason code)
 	R1 =	<low-level internal key number=>event_keys>
-#line
+
 A device driver must inform the kernel of keys being released or pressed by using these reason codes. However, the kernel must <enable the device driver=>.r4> first.
 #line;tab
 See also:	<key transition event=>event_11>
 #
 #subpage r3
 KeyV 3
-*Notify driver of LED state*
-=>	R0 =	3
+# *Notify driver of LED state*
+=>	R0 =	3 (reason code)
 	R1 =	<LED status flags=>.leds>
-#line
-The kernel calls KeyV with this reason code when the state of the keyboard LEDs changes. Keyboard device drivers *must* claim Keyv and install a routine to handle these calls by setting the keyboard's LEDs as requested.
+
+The kernel calls KeyV with this reason code when the state of the keyboard LEDs changes. Keyboard device drivers *must* claim KeyV and install a routine to handle these calls by setting the keyboard's LEDs as requested.
 #
 #subpage leds
 LED status flags
@@ -57,9 +48,9 @@ LED status flags
 #
 #subpage r4
 KeyV 4
-*Enable keyboard device drivers*
-=>	R0 =	4
-#line
+# *Enable keyboard device drivers*
+=>	R0 =	4 (reason code)
+
 KeyV 4 is called by the kernel to enable keyboard device drivers. The <key released=>.r1> and <key pressed=>.r1> reason codes must not be used by the device driver until it receives this reason code.
 
 This is *not* a reset call and may be seen many times whilst the device driver is active. It *does* mean that the kernel has flushed its table of keys that are held down, so the device driver should do the same if appropriate.

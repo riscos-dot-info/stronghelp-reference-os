@@ -25,6 +25,8 @@ Bit	Meaning if set
 0	R1 = pointer to sprite (otherwise sprite name)
 1	use current palette if sprite doesn't have one (otherwise default palette)
 2	R6, R7 specify transfer function
+3	Return GCOL numbers instead of colour numbers
+4	Generate large translation tables when converting to a 16/32bpp mode [3.50+]
 24-31	Format of returned table :
 	 	0 =>	<pixtrans table=>colourtrans_pixtrans>
 	 	1 =>	physical palette table

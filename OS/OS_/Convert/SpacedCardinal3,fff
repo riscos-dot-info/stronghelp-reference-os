@@ -8,6 +8,6 @@ OS_ConvertSpacedCardinal3  (&E3)
 	R1 =	pointer to terminator
 	R2 =	free bytes in buffer
 
-This SWI converts a value into an unsigned string of decimal characters. The number can be 0 to 16 777 215 (10 characters).
+This SWI converts a value into an unsigned string of decimal characters with space separators every thousand. The number can be 0 to 16 777 215 (10 characters).
 #Line
 See <PRM 1, page 469=>PRM-1:469>.

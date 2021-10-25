@@ -14,6 +14,6 @@ This SWI allows you to fake starting an application. It
 
 2	issues <Service_NewApplication=>Service_2A> to inform modules. If the service is claimed, then the error cannot be returned to you (as your application will now have been killed) so the error "Unable to start application" is passed to <OS_GenerateError>, which results in the error being sent to your parent's <error handler=>OS_handlers_error>.
 
-3	if the <exit handler=>OS_handlers_exit> is below <memory limit=>OS_handlers_limit> then all handlers below memory limit are reset to their <defaults=>OS_ReadDefaultHandler>
+3	unless the <exit handler=>OS_handlers_exit> is below <memory limit=>OS_handlers_limit> then all handlers below memory limit are reset to their <defaults=>OS_ReadDefaultHandler>
 
 4	the <CAO=>OS_handlers_cao> is set; the current time and command tail <are set=>OS_WriteEnv>

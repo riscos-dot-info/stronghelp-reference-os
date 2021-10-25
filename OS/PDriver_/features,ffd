@@ -8,6 +8,7 @@ Bits	Meaining when clear					Meaning when set
 10	overwrites colours properly				can only overwrite colours onto background ({/}e.g.{/} a plotter with wet ink!)
 11	can't plot transfromed sprites				can plot transformed sprites
 12	does not support new FontManager features		does support these features ({/}e.g.{/} transforms and encodings)
+13	doesn't expect a flag byte				expects a flag byte in R0 for <PDriver_DrawPage> [3.60+]
 24	supports screen dumps					does not support screen dumps
 25	can only scale, translate and rotate by 90° or 180°	supports arbitary transformations
 26	does not support <PDriver_InsertIllustration>		does suport <PDriver_InsertIllustration>
