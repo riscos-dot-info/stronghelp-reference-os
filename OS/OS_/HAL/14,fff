@@ -1,0 +1,5 @@
+HAL Entry 14
+#Parent OS_HALEntries
+unsigned int HAL_TimerGranularity(int timer)
+#Line
+Returns basic granularity of timer n in ticks per second.

@@ -1,0 +1,5 @@
+HAL Entry 22
+#Parent OS_HALEntries
+void HAL_CounterDelay(unsigned int microseconds)
+#Line
+Delay for at least the specified number of microseconds.

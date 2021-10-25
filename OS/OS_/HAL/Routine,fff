@@ -1,0 +1,34 @@
+HAL Routines
+#Parent OS_Hardware
+RISC OS and the HAL are two separate entities, potentially linked separately. The HAL is defined with a set of callable routines for the OS/HAL interface. Each HAL entry is given a unique (arbitrary) number, starting at 0.
+
+Every entry (up to the declared maximum) must exist. If not implemented, a failure response must be returned, or the call ignored, as appropriate. Note that the OS interface for the HAL should not be confused with standard OS calls (SWIs) already defined for use in the OS itself.
+
+To permit high-level language use in the future, the procedure call standard in both directions is the ARM-Thumb Procedure Call Standard (ATPCS) as defined by ARM, with no use of floating point, no stack limit checking, no frame pointers, and no Thumb interworking. HAL code is expected to be ROPI and RWPI (i.e. all its read-only segments and read-write segments are position-independent). Hence the HAL is called with its static workspace base (sb) in r9. The OS kernel is neither ROPI nor RWPI (except for the pre-MMU calls, which are ROPI).
+
+The HAL will always be called in a privileged mode - if called in an interrupt mode, the corresponding interrupts will be disabled. The HAL should not change mode. HAL code should work in both 26-bit and 32-bit modes (but should assume 32-bit configuration).
+
+Routines can be conveniently specified in C language syntax. Typically they will be written in assembler. In detail, the ATPCS register usage for HAL calls is as follows:
+
+	{f*}ATPCS{f}	{f*}ARM{f}	{f*}Use{f}	{f*}At exit{f}
+	a1	r0	argument 1/return value	undefined or return value
+	a2	r1	argument 2/return value	undefined or return value
+	a3	r2	argument 3/return value	undefined or return value
+	a4	r3	argument 4/return value	undefined or return value
+	v1	r4	var 1	preserved
+	v2	r5	var 2	preserved
+	v3	r6	var 3	preserved
+	v4	r7	var 4	preserved
+	v5	r8	var 5	preserved
+	sb	r9	static workspace base	preserved
+	v7	r10	var 7	preserved
+	v8	r11	var 8	preserved
+	ip	r12	scratch	undefined
+	sp	r13	stack pointer	preserved
+	lr	r14	return link	undefined
+
+HAL calls must be assumed to corrupt all of r0-r3,r12,r14. A function return value may be in r0, or (less commonly) multiple return words in two or more of r0-r3.
+
+If there are more than 4 arguments to a HAL call, arguments 5 onwards must be pushed onto the stack before the call, and discarded after return. (The order of arguments is with argument 5 at top of stack, i.e. first to be pulled.)
+
+When using assembler, the register usage may seem somewhat restricted, and cumbersome for more than 4 arguments. However, it is typically a reasonable balance for function calls (as a PCS would aim to be), and does not preclude implementation in C for example. Old code may require register preserving overhead to insert HAL calls easily, but for most calls this is insignificant, compared to hardware access costs.

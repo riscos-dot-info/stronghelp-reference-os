@@ -4,7 +4,6 @@ Territory_ControlTable  (&43059)
 
 <=	R0 =	pointer to control table
 
-A character property table is a 256 byte table giving the value of each
-character if pressed with the Ctrl key depressed.
+A character property table is a 256 byte table giving the value of each character if pressed with the Ctrl key depressed.
 #Line
 See <PRM 3, page 830=>PRM-3:830>.

@@ -8,6 +8,6 @@ Service_SyntaxError (&8C)
 	R1 =	0 to claim, preserved otherwise
 	R2-R4 preserved
 
-This service is issued before a syntax error is returned from a *command resident in a module, which allows a module to localise messages for the current teritory. This might be the way in which RISC OS 3.50 translates the MessageTrans tokens to form a valid message.
+This service is issued before a syntax error is returned from a *command resident in a module, which allows a module to localise messages for the current teritory. This might be the way in which RISC OS 3.60 translates the MessageTrans tokens to form a valid message.
 #Line
 See <PRM 1, page 265=>PRM-1:265>

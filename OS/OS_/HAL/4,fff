@@ -1,0 +1,5 @@
+HAL Entry 4
+#Parent OS_HALEntries
+int HAL_IRQSource(void)
+#Line
+Returns the number of the highest priority asserted IRQ, or -1 if no IRQ is asserted.

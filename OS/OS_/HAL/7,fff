@@ -1,0 +1,5 @@
+HAL Entry 7
+#Parent OS_HALEntries
+int HAL_FIQDisable(int device)
+#Line
+Masks the specified FIQ source. Returns non-zero if the FIQ source was previously enabled.

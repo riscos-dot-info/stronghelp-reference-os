@@ -1,0 +1,5 @@
+HAL Entry 11
+#Parent OS_HALEntries
+int HAL_FIQStatus(int device)
+#Line
+Returns non-zero if the specified device is requesting an interrupt (independent of mask status).

@@ -1,0 +1,5 @@
+HAL Entry 19
+#Parent OS_HALEntries
+unsigned int HAL_CounterRate(void)
+#Line
+Returns the rate of the counter in ticks per second. Typically will equal HAL_TimerGranularity(0).

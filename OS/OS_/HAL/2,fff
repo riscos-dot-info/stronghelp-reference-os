@@ -1,0 +1,5 @@
+HAL Entry 2
+#Parent OS_HALEntries
+int HAL_IRQDisable(int device)
+#Line
+Masks the specified IRQ source. Returns non-zero if the IRQ source was previously enabled.

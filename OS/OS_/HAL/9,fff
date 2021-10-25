@@ -1,0 +1,5 @@
+HAL Entry 9
+#Parent OS_HALEntries
+void HAL_FIQClear(int device)
+#Line
+Clears the specified FIQ source, if it is latched in the interrupt controller, rather than the device.

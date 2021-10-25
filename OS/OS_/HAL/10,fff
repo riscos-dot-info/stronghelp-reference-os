@@ -1,0 +1,5 @@
+HAL Entry 10
+#Parent OS_HALEntries
+int HAL_FIQSource(void)
+#Line
+Returns the number of the highest priority asserted FIQ, or -1 if no FIQ is asserted.

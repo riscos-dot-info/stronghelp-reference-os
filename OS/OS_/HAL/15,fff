@@ -1,0 +1,5 @@
+HAL Entry 15
+#Parent OS_HALEntries
+unsigned int HAL_TimerMaxPeriod(int timer)
+#Line
+Returns maximum period of the timer, in units of Granularity. Will be 1 for a fixed rate timer.

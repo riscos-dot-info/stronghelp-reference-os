@@ -1,0 +1,5 @@
+HAL Entry 20
+#Parent OS_HALEntries
+unsigned int HAL_CounterPeriod(void)
+#Line
+Returns the period of the counter, in ticks. Typically will equal HAL_TimerPeriod(0).

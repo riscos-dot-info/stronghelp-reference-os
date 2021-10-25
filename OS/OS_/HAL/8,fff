@@ -1,0 +1,5 @@
+HAL Entry 8
+#Parent OS_HALEntries
+void HAL_FIQDisableAll(void)
+#Line
+Masks all FIQ sources.

@@ -4,7 +4,6 @@ Territory_LowerCaseTable  (&43057)
 
 <=	R0 =	pointer to lower case table
 
-A character property table is a 256 byte table with the lower case version of
-each character in the alphabet.
+A character property table is a 256 byte table with the lower case version of each character in the alphabet.
 #Line
 See <PRM 3, page 828=>PRM-3:828>.

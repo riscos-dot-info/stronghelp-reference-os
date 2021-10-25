@@ -1,0 +1,28 @@
+HAL Entries
+#Parent OS_Hardware
+HAL entries by number and name:
+#Line
+#Table Columns 2
+1   <HAL_IRQEnable=>OS_HAL1>
+2   <HAL_IRQDisable=>OS_HAL2>
+3   <HAL_IRQClear=>OS_HAL3>
+4   <HAL_IRQSource=>OS_HAL4>
+5   <HAL_IRQStatus=>OS_HAL5>
+6   <HAL_FIQEnable=>OS_HAL6>
+7   <HAL_FIQDisable=>OS_HAL7>
+8   <HAL_FIQDisableAll=>OS_HAL8>
+9   <HAL_FIQClear=>OS_HAL9>
+10  <HAL_FIQSource=>OS_HAL10>
+11  <HAL_FIQStatus=>OS_HAL11>
+12  <HAL_Timers=>OS_HAL12>
+13  <HAL_TimerDevice=>OS_HAL13>
+14  <HAL_TimerGranularity=>OS_HAL14>
+15  <HAL_TimerMaxPeriod=>OS_HAL15>
+16  <HAL_TimerSetPeriod=>OS_HAL16>
+17  <HAL_TimerPeriod=>OS_HAL17>
+18  <HAL_TimerReadCountdown=>OS_HAL18>
+19  <HAL_CounterRate=>OS_HAL19>
+20  <HAL_CounterPeriod=>OS_HAL20>
+21  <HAL_CounterRead=>OS_HAL21>
+22  <HAL_CounterDelay=>OS_HAL22>
+#EndTable

@@ -1,0 +1,5 @@
+HAL Entry 21
+#Parent OS_HALEntries
+unsigned int HAL_CounterRead(void)
+#Line
+Reads the current counter value. Typically will equal HAL_TimerReadCountdown(0).

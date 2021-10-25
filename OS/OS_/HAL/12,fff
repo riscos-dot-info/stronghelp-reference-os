@@ -1,0 +1,5 @@
+HAL Entry 12
+#Parent OS_HALEntries
+int HAL_Timers(void)
+#Line
+Returns number of timers. Timers are numbered from 0 upwards. Timer 0 must exist. RISC OS uses timer 0 for its centisecond clock - other timers (if available) may be used by other applications, as in IOC/IOMD versions of the OS.

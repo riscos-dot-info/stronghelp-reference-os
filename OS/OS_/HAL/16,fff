@@ -1,0 +1,5 @@
+HAL Entry 16
+#Parent OS_HALEntries
+void HAL_TimerSetPeriod(int timer, unsigned int period)
+#Line
+Sets period of timer n. If period > 0, the timer will generate interrupts every (period / granularity) seconds. If period = 0, the timer may be stopped. This may not be possible on some hardware, so the corresponding interrupt should be masked in addition to calling this function with period 0. If period > maxperiod, behaviour is undefined.

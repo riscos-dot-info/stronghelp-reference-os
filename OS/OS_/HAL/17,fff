@@ -1,0 +1,5 @@
+HAL Entry 17
+#Parent OS_HALEntries
+unsigned int HAL_TimerPeriod(int timer)
+#Line
+Reads period of timer n. This should be the actual period in use by the hardware, so if for example period 0 was requested and impossible, the actual current period should be reported.

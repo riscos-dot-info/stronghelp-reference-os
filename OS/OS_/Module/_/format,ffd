@@ -13,7 +13,7 @@ Offset	Contains
 &20	<SWI handler=>OS_Module_SWIHandler>	(svc mode)
 &24	<SWI decode table=>OS_Module_SWITable>
 &28	<SWI decode code=>OS_Module_SWIDec>	(svc mode)
-&2C	<MessageTrans=>MessageTrans_> file (RISC OS 3.50+)
+&2C	<MessageTrans=>MessageTrans_> file (RISC OS 3.60+)
 &30	Offset to <flags word=>OS_Module_Flags>
 #tab
 

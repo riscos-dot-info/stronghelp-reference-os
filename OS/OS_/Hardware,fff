@@ -1,8 +1,8 @@
 OS_Hardware  (&7A) (5.00+)
 #Parent OS_
-=>	R0-R7 =	APCS registers as required by routine
+=>	R0-R7 =	APCS registers as required by <routine=>OS_HALRoutine>
 	R8 =	<reason code=>.HALreason> (bits 0-7) and flags (bits 8-31)
-	R9 =	hardware call number
+	R9 =	<hardware call number=>OS_HALEntries>
 <=	depends on flags
 
 #Line
@@ -15,6 +15,6 @@ R8	Operation
 0	Call hardware call number given in R9. The hardware abstraction layer doesn't return errors itself with the V flag set, any error will be marked in some call specific way in R0-R3
 	<= R0-R3 =	updated by call
 	<= R4-R9 =	preserved
-1	Get routine address for hardware call number given in R9
+1	Get routine address for <hardware call number=>OS_HALEntries> given in R9
 	<= R0 =	routine address
 	<= R1 =	static base value for routine

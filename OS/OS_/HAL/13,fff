@@ -1,0 +1,5 @@
+HAL Entry 13
+#Parent OS_HALEntries
+int HAL_TimerDevice(int timer)
+#Line
+Returns IRQ device number of timer n. The timer will generate an interrupt on this device when it wraps. The interrupt should be cleared with HAL_IRQClear.

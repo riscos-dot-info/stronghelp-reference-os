@@ -1,0 +1,5 @@
+HAL Entry 18
+#Parent OS_HALEntries
+unsigned int HAL_TimerReadCountdown(int timer)
+#Line
+Returns the time until the next interrupt in units of granularity, rounded down. If not available, 0 is returned.
