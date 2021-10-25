@@ -26,6 +26,6 @@ ATAPIOp
 #line
 #Table Columns 2
 <Service_ADFSPodule=>ADFS_10800>
-<Service_ADFSPodule IDE=>ADFS_10801>
-<Service_ADFSPodule IDE dying=>ADFS_10802>
+<Service_ADFSPoduleIDE=>ADFS_10801>
+<Service_ADFSPoduleIDEDying=>ADFS_10802>
 #endtable

@@ -2,7 +2,8 @@ FileCore_Features  (&4054D) (5.00+)
 #Parent FileCore_
 <=	R0 =	bitmask of supported features
 	 	bit 0: FileCore supports <new error=>FileCore_newerrors> scheme
-	 	bits 1-31: reserved, equal to zero
+	 	bit 1: FileCore supports bit 11 of <disc flags=>FileCore_fsdescriptor.flags>
+	 	bits 2-31: reserved, equal to zero
 
 This call returns additional features supported by FileCore and is only of use to filing systems which register with FileCore as a FileCore filing system.
 

@@ -13,10 +13,14 @@ Econet
 <DeAllocatePort>
 <DoImmediate>
 <DoTransmit>
+<EnumerateMap>
 <EnumerateReceive>
 <EnumerateTransmit>
 <ExamineReceive>
+<HardwareAddresses>
+<InetRxDirect>
 <NetworkState>
+<NetworkParameters>
 <PacketSize>
 <PollTransmit>
 <PrintBanner>

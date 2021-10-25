@@ -42,6 +42,9 @@ Bits	Meaning
  	&000C	Master 128 Compact		(OS 5)
  	&000D	Acorn Ecolink card for Personal Computers
  	&000E	Acorn Unix box
+ 	&000F	Risc PC architecture
+ 	&FFF8	SJ Research GP server
+ 	&FFF9	SJ Research 80386 UNIX
  	&FFFA	SCSI interface
  	&FFFB	SJ Research IBM PC Econet interface
  	&FFFC	Nascom 2

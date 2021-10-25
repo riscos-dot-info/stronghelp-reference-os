@@ -7,4 +7,4 @@ CD_ByteCopy  (&41262)
 
 Fast memory copy routine, providing efficient way of copying any number of bytes, word-aligned or not.
 
-{*}Note{*}: It is recommended that you do not use this, as the overhead for calling the SWI is probably greater than any possibly gain.
+{*}Note{*}: It is recommended that you do not use this, as the overhead for calling the SWI is probably greater than any possible gain.

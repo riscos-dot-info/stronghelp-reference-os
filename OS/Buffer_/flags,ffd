@@ -6,4 +6,4 @@ Bit	Meaning
 1	Generate <event=>event_0> on empty
 2	Generate <event=>event_1> on full
 3	<UpCall=>OS_UpCallreasons> on threshold
-# b4	Buffer need not be word aligned (?)
+4	Buffer requires word aligned inserts

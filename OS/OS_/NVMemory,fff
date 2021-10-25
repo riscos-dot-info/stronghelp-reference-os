@@ -7,6 +7,7 @@ OS_NVMemory (&76) (5.00+)
 	 	4 <Write block of bytes=>.sub4>
 	 	5 Reserved
 	 	6 <Read default value=>.sub6>
+	 	7 <Set station=>.sub7>
 
 Supports reading and writing of CMOS beyond the limit imposed by <OS_Byte 161=>OS_Byte161> and <OS_Byte 162=>OS_Byte162>.
 #Subpage sub0
@@ -45,3 +46,11 @@ OS_NVMemory 6 (5.20+)
 =>	R0 =	6 (reason code)
 	R1 =	logical offset to read
 <=	R2 =	default byte that would be used on a CMOS reset, or -1 if unknown/unset
+
+#Subpage sub7
+OS_NVMemory 7 (5.22+)
+=>	R0 =	7 (reason code)
+	R1 =	pointer to pass phrase
+	R2 =	byte to write
+
+Ordinarily the Econet station number is protected against writes, this reason code allows the byte to be written provided the correct pass phrase is given.

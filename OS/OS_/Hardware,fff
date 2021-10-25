@@ -12,7 +12,7 @@ OS_Hardware subreason codes
 R8	Operation
 #Line
 0	Call hardware call number (5.00) 
-	=>	R0-R2 =	as required by call
+	=>	R0-R3 =	as required by call
 	  	R9 =	<hardware call number=>OS_HALEntries>
 	<=	R0-R3 =	updated by call
 	  	R4-R9 =	preserved

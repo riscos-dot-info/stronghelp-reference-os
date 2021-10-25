@@ -5,5 +5,5 @@ Bit	Meaning
 0	FS supports FSEntry_Func 34
 1	FS should be called to do *Cat
 2	FS should be called to do *Ex
-3	Filing system supports OS_Args IOCtl (9)
+3	Filing system supports <FSEntry_Args 11=>FSEntry_Args11>
 4-31	Reserved, must be zero

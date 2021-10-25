@@ -1,4 +1,4 @@
-OS_Byte 128  Get buffer/mouse status
+OS_Byte 128  Read ADC or mouse channel/get buffer status
 #Parent OS_ByteIndex
 =>	R0 =	128
 	R1 =	<reason code=>.reason>
@@ -7,15 +7,24 @@ OS_Byte 128  Get buffer/mouse status
 	R1 =	bits 0-7 give LSB of answer
 	R2 =	bits 0-23 give bits 8-31 of answer
 
-This call checks the (buffered) mouse position or the free space in system buffers, depending on the reason code passed in R1. It is recommended to use <OS_Mouse> to read the mouse position, as this reads the current (unbuffered) position.
+This call returns the ADC conversion or checks the (buffered) mouse position or the free space in system buffers, depending on the reason code passed in R1. It is recommended to use <OS_Mouse> to read the mouse position, as this reads the current (unbuffered) position. 
+
+The ADC conversion was previously used on the BBC Microcomputer for the joystick and fire buttons. It is typically emulated by the joystick driver, but it is recommended to use <Joystick_Read> instead.
 #Line
 See <PRM 1, page 166=>PRM-1:166>
 #subpage reason
 OS_Byte 128 reason codes
 entry R1	value returned
 #Line
+0		R1 = fire buttons
+ 		R2 = most recent ADC channel to complete, or 0 if no conversions running
+1-4		R1 = low 8 bits of ADC conversion for that channel
+ 		R2 = high 8 bits of ADC conversion for that channel
+5		Reserved for use with VFS (mouse x threshold)
+6		Reserved for use with VFS (mouse y threshold)
 7		mouse x
 8		mouse y
+9		Reserved for use with VFS (mouse buttons)
 246		free bytes in mouse buffer
 252		free bytes in printer buffer
 253		free bytes in serial output buffer

@@ -114,6 +114,7 @@ Service calls
 9D <DCI driver status=>InetSWIs:Service_9D>
 9E <DCI frame type freed=>InetSWIs:Service_9E>
 9F DCI Protocol status
+A2 MbufManager status
 A7 <URI operation=>InetSWIs:Service_A7>
 B0 <InternetStatus=>InetSWIs:Service_B0>
 B7 <UKCompression=>Service_B7>

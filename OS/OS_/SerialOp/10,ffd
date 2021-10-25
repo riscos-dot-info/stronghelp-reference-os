@@ -1,0 +1,7 @@
+OS_SerialOp 10  (5.19+)
+#parent OS_SerialOp
+=>	R0 =	10 (reason code)
+<=	R0 preserved
+	R1 =	pointer to name
+#tab;line
+This call returns the name of the device in DeviceFS to which OS_SerialOps will be directed. eg. the name "Serial5" would correspond to "Devices:Serial5".

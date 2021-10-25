@@ -3,6 +3,6 @@ PCI_MemoryWrite  (&50387)
 =>	R0 =	PCI address (found with PCI_HardwareAddress)
 	R1 =	length of transfer (whole number of words)
 	R2 =	pointer to buffer
-	R4 =	flags (bit 3 => prefetchable)
+	R4 =	flags (bits 0-31 reserved => 0)
 
 Performs a Memory Write cycle of the denoted size.

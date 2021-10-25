@@ -9,8 +9,8 @@ FSLock
 #
 #subpage cmos
 FSLock CMOS usage
-Bytes 233-238 of CMOS RAM: five 'FSLock password bytes'.
+Bytes 233-238 of CMOS RAM: six 'FSLock password bytes'.
 
-FSLock allows more than five characters in a password, ergo, it is supposed
-that you could thus brute-force a password to match that CRC, and FSUnlock since all possible passwords would be one-way hashed to a five byte value.
+FSLock allows more than six characters in a password, ergo, it is supposed
+that you could brute-force a password to match that hash, and FSUnlock since all possible passwords would be one-way hashed to a six byte value.
 # supposition from James MacDonald <trill@netbook.demon.co.uk>

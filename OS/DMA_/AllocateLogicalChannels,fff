@@ -1,0 +1,6 @@
+DMA_AllocateLogicalChannels (&46147) (5.07+)
+#Parent DMA_
+=>	R0 =	number of logical channels to allocate
+<=	R0 =	number of first logical channel (any others are in a contiguous range above this number)
+
+Since DMA controllers can now be added by third parties, a method of allocating logical channel numbers is required - this is what this SWI achieves. The range of logical channels from &1000 upwards is reserved for dynamic allocation, and this SWI will allocate one or more channels from this range. The logical channels are guaranteed to be unique within this session, even across reinitialisations of the DMAManager.                               

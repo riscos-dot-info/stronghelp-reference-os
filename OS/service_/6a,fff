@@ -21,7 +21,7 @@ Offset	Meaning
 16	R3 parameter for this SWI
 20	SWI to call to lay down disc structure
 24	R0 parameter for this SWI
-28	Flags:	bit 0 set for native ADFS format.
+28	Flags:	bit 0 set for native FileCore format.
 	 	other bits 0 (reserved)
 
 The block should be built in this order:

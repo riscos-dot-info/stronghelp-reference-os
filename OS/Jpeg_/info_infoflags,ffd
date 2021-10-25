@@ -5,4 +5,4 @@ bit	meaning if set
 1	transformed plots not supported
 2	pixel density is ratio (otherwise is in DPI)
 3-6	SOF image type (if requested)
-other	reserved (must be 0)
+others	reserved (must be 0)

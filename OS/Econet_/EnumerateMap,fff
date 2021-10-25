@@ -1,0 +1,15 @@
+Econet_EnumerateMap  (&4001E) (3.50+)
+#Parent Econet_
+=>	R0 =	flags, all 0
+ 	R4 =	enumeration key, or 0 to start
+<=	R1 =	net number
+ 	R2 =	pointer to net name, or 0
+ 	R3 =	IP subnet address
+ 	R4 =	enumeration key, or -1 for no more
+
+This SWI enumerates the sub networks defined in the AUN map file for an AUN gateway.
+
+The values of R1-R3 are not valid when the enumeration key is returned as -1; all subnets have been enumerated.
+With native Econet R4 is always returned as -1.
+#Line
+See <PRM 5a, page 272=>PRM-5a:272>.

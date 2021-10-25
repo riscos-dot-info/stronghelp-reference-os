@@ -2,34 +2,39 @@ Internal Keys
 #Parent OS_Byte121
 #wrap off
 #tab align right,align left,align right,align left,align right,align left,align right,align left,align right,align left
-32	Print     	69	J          	19	5		61	Insert			106	kp 0
-113	F1		70	K		52	6		62	Home			107	kp 1
-114	F2		86	L		36	7		63	Pg Up			124	kp 2
-115	F3		101	M		21	8		78	Pg Down			108	kp 3
-20	F4		85	N		38	9		79	"			122	kp 4
-116	F5		54	O		102	,		0	Shift			123	kp 5
-117	F6		55	P		23	-		1	Ctrl			26	kp 6
-22	F7		16	Q		103	.		2	Alt			27	kp 7
-118	F8		51	R		104	/		3	Left Shift		42	kp 8
-119	F9		81	S		56	[		4	Left Ctrl		43	kp 9
-30	F10		35	T		120	\\		5	Left Alt		58	kp +
-28	F11		53	U		88	]		6	Right Shift      	59	kp -
-29	F12		99	V		87	;		7	Right Ctrl		76	kp .
-65	A		33	W		112	ESC		8	Right Alt		74	kp /
-100	B		66	X		96	TAB		98	Space			90	kp #
-82	C		68	Y		64	Caps		89	Delete			91	kp *
-50	D		97	Z		31	ScrollL     	73	Return			60	kp Enter
-34	E		39	0		77	NumL		105	Copy			9	Left mouse
-67	F		48	1		44	Break		57	up			10	Center mouse
-83	G		49	2		45	~		121	right			11	Right mouse
-84	H		17	3		46	£		25	left			94	extra key
-37	I		18	4		47	\<-|		41	down			93	+
-
-<Diagram of the standard Archimedes keyboard=>.a5000>
-<Diagram of RiscPC keyboard=>.rpc>
+32	Print		70	K		36	7		61	Insert			106	kp 0
+113	F1		86	L		21	8		62	Home			107	kp 1
+114	F2		101	M		38	9		63	Pg Up			124	kp 2
+115	F3		85	N		102	,		78	Pg Down			108	kp 3
+20	F4		54	O		23	-		79	"			122	kp 4
+116	F5		55	P		103	.		0	Shift			123	kp 5
+117	F6		16	Q		104	/		1	Ctrl			26	kp 6
+22	F7		51	R		56	[		2	Alt			27	kp 7
+118	F8		81	S		120	\\		3	Left Shift		42	kp 8
+119	F9		35	T		88	]		4	Left Ctrl		43	kp 9
+30	F10		53	U		87	;		5	Left Alt		58	kp +
+28	F11		99	V		112	ESC		6	Right Shift		59	kp -
+29	F12		33	W		96	TAB		7	Right Ctrl		76	kp .
+65	A		66	X		64	Caps		8	Right Alt		74	kp /
+100	B		68	Y		31	ScrollL		98	Space			90	kp #
+82	C		97	Z		77	NumL		89	Delete			91	kp *
+50	D		39	0		44	Break		73	Return			60	kp Enter
+34	E		48	1		45	~		105	End (Copy)		9	Left mouse
+67	F		49	2		46	£		57	up			10	Center mouse
+83	G		17	3		47	\<-|		121	right			11	Right mouse
+84	H		18	4		125	Win Logo left	25	left			93	+
+37	I		19	5		126	Win Logo right	41	down
+69	J		52	6		127	Win Menu	94	extra key
+                        
+<Diagram of the Archimedes keyboard=>.a5000>
+<Diagram of the RiscPC keyboard=>.rpc>
+<Diagram of a PC keyboard=>.pc>
 #Subpage a5000
 Diagram of standard Archimedes keyboard
 #draw c,f OS_Byte121a_A5000
 #Subpage rpc
 Diagram of RiscPC keyboard
 #draw c,f OS_Byte121a_RPC
+#Subpage pc
+Diagram of PC keyboard
+#draw c,f OS_Byte121a_PC

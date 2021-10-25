@@ -14,7 +14,7 @@ Read catalogue info for named stamped object
 	R3 =	<exec address=>fsys_loadexec>
 	R4 =	object length
 	R5 =	<object attributes=>fsys_objattr>
-	R6 =	<filetype=>Filetypes:!Root>	(images and directories report as 4096,
-	 	 				 applications as 8192)
+	R6 =	<filetype=>Filetypes:!Root>	(images and directories report as &1000,
+	 	 				 applications as &2000, untyped files as -1)
 
 PRM doesn't say so, but it would be wise to assume R2-R6 corrupted if object not found.

@@ -8,7 +8,7 @@ machine, and will use the PCI slot number, in commands like *Unplug or
 Device drivers use a PCI handle - each function of each PCI device in the
 system is given a unique, permanent non-zero handle when it is discovered.
 Handles remain constant as long as the device remains present in the system,
-but can change when  the system is rebooted, or if a card is removed and
+but can change when the system is rebooted, or if a card is removed and
 reinserted (if the system supports hot-plugging). 
 
 Handles do not change if the PCI Manager is reloaded. Handles are assigned

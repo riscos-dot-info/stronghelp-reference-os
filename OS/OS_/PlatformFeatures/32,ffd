@@ -1,0 +1,7 @@
+OS_PlatformFeatures 32 (&6D) (5.23+)
+#Parent OS_
+=>	R0 =	32 (Read vector base) + flags (reserved)
+<=	R0 =	address of ARM processor vectors
+	R1 =	space reserved for ARM processor vectors
+
+This reason is used to determine the size and address of the ARM vectors. Historically these values would be 256 and &00000000 respectively, the values are only likely to be of interest to authors of FIQ handlers.

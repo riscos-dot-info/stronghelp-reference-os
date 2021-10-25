@@ -1,0 +1,5 @@
+Econet_InetRxDirect  (&4001D)
+#Parent Econet_
+This call is for internal use only.
+#Line
+See <PRM 5a, page 271=>PRM-5a:271>.

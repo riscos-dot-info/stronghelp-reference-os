@@ -9,17 +9,21 @@ Bit(s)	Meaning
 Monitor sync
 Value	Meaning
 #Line
-0	Vertical sync
+0	Separate syncs
 1	Composite sync
+&80	Reserved
 &81	Auto select sync mode
 #Subpage monitors
 Monitor types
 Value	Meaning
 #Line
-0	Standard
+0	TV
 1	Multi-frequency
 2	Hi-res mono
 3	VGA
 4	Super VGA
 5	LCD
+6	Reserved for 3rd party use
+7	File (for internal use only)
+8-15	Reserved for future use
 &1F	Auto select monitor type

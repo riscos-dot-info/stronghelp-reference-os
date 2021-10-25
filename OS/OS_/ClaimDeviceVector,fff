@@ -28,7 +28,7 @@ Your routine should:
 You should ensure: 
 #Indent 2
 è	a very high execution speed
-è	if your routine takes more than 100µs, you should re-enable interrupts, if previously disabled, to ensure other devices' interrupts can be serviced - {/}eg.{/} disc ops. With interrupts enabled your routine must cope with being re-entered.
+è	if your routine takes more than 100µs, you should re-enable interrupts, if previously disabled, to ensure other devices' interrupts can be serviced - {/}eg.{/} sound buffer fills. With interrupts enabled your routine must cope with being re-entered.
 è	saving R14_svc to a stack before calling SWIs and reloading it after it returns to prevent double use of R14_svc
 è	strictly avoiding the use of non re-entrant SWIs, because the supervisor stack would become corrupted if used
 è	clearing the interrupt flags when finishing

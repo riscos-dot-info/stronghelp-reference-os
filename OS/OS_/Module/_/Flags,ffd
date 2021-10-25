@@ -6,5 +6,6 @@ This is a single word which informs RISC OS of the capabilities of your module. 
 /Bit/	/Meaning when set/
 #line
 0	Module is 32 bit ARM compatible
-1-31	Reserved, must be 0
+1	Module is used for early ROM startup (for RISC OS Select internal use only)
+2-31	Reserved, must be 0
 # 31	Another flags word follows this one

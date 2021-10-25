@@ -1,7 +1,7 @@
 CD_EnquireDataMode  (&4124A)
 #Parent CD_
 =>	R0 =	<address mode=>CD_addresses>
-	R1 =	cd address
+	R1 =	CD address
 	R7 =	pointer to <CDFS control block=>CDFS_controlblock>
 <=	R0 =	<Data mode=>.datamode>
 

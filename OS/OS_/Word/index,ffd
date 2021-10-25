@@ -5,6 +5,10 @@ OS_Word index
 2	&02	<Write system clock=>os_word2>
 3	&03	<Read interval timer=>os_word3>
 4	&04	<Write interval timer=>os_word4>
+5	&05	Read I/O processor memory (BBC Micro)
+6	&06	Write I/O processor memory (BBC Micro)
+7	&07	SOUND
+8	&08	ENVELOPE
 9	&09	<Read pixel logical colour=>os_word9>
 10	&0A	<Read a character definition=>os_word10>
 11	&0B	<Read palette=>os_word11>

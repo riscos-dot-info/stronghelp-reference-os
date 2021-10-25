@@ -10,7 +10,7 @@ This SWI modifies the buffer's <flag word=>buffer_flags>.
 
    NewVal = (OldVal AND R2) EOR R1
 
-Ensure that you do not modifiy reserved bits with this call - reserved bits should be clear in R1, set in R2.
+Ensure that you do not modify reserved bits with this call - reserved bits should be clear in R1, set in R2.
 #tab
 To read:	R1 = 0		R2 = &0000000F
 To set:		R1 = new value	R2 = &FFFFFFF0

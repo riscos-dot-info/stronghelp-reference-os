@@ -1,4 +1,3 @@
 FSLock_Version (&44780)
-=>	-
 <=	R0 =	FSLock version × 100
 	R1 =	FSLock private word

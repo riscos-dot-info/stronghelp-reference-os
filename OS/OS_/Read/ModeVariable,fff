@@ -6,6 +6,8 @@ OS_ReadModeVariable  (&35)
 <=	R2 =	value of variable
 	C is set if variable or mode were invalid
 
-This SWI allows you to read information about a particular mode without having to change into that mode. See also <OS_ReadVduVariables>.
+This SWI allows you to read information about a particular mode without having to change into that mode. See also <OS_ReadVduVariables>. 
+
+From RISC OS 3.50 onwards, the mode number in R0 can also be a pointer to mode selector or a sprite's <mode word=>OS_SpriteOp_Type>.
 #Line
 See <PRM 1, page 709=>PRM-1:709>.

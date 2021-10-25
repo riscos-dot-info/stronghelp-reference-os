@@ -7,6 +7,6 @@ Service_Memory (&11)
 
 This service is issued just before memory is remapped to change the size of the application space. When <Wimp_Initialise=>Wimp:Wimp_Initialise> is called the Wimp inspects the CAO - if it is outside application space the Wimp will issue this service prior to reducting the application space to 0. If it is unclaimed the memory change will take place. If you are a module who wants to use application space ({/}e.g.{/} a module task) then you should check the CAO - if it is your start address in the RMA you should claim the service to stop the change, and hence retain the memory.
 
-An conventional application's CAO is within application workspace, so the Wimp will not attempt to issue this service, or change the memory map.
+A conventional application's CAO is within application workspace, so the Wimp will not attempt to issue this service, nor change the memory map.
 #Line
 See <PRM 3, page 68=>PRM-3:68>

@@ -1,0 +1,9 @@
+Econet_HardwareAddresses  (&40020) (3.50+)
+#Parent Econet_
+<=	R0 =	address of 68B54
+ 	R1 =	address of FIQ mask
+ 	R2 =	bit map to apply to FIQ mask
+
+This SWI provides details of the hardware interface, for use with diagnostic tools only. An error is returned if the network is not using native Econet as the transport.
+#Line
+See <PRM 5a, page 276=>PRM-5a:276>.

@@ -3,10 +3,10 @@ Initialise area  (9)
 =>	R0 =	<9, &9=>OS_spriteop_reason2> (Initialise area)
 	R1 =	<Sprite area=>OS_SpriteOp_Area>
 
-This SWI clears all sprites from the sprite area specified. To start using a sprite area set the area block :
-0	Size of area
-4	0 (number of sprites)
-8	16 (pointer to first sprite)
-12	16 (pointer to first free word)
+This SWI clears all sprites from the sprite area specified by setting the number of sprites to 0 (at +4) and copying the first sprite pointer (at +8) to the first free pointer (at +12). 
+
+Therefore to start using a sprite area, assuming no extension area, call this SWI having set the <area block=>OS_SpriteOp_Area> to:
++0	Size of area in bytes
++8	16
 #Line
 See <PRM 1, page 767=>PRM-1:767>

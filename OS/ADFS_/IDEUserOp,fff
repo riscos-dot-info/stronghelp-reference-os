@@ -5,7 +5,6 @@ ADFS_IDEUserOp  (&4024B)
 	R3 =	pointer to buffer
 	R4 =	length to transfer
 	R5 =	timeout in centiseconds (0 => use default)
-	R12 =	pointer to static work space
 
 <=	R0 =	command status (0 or a disc error number)
 	R2,R3 preserved

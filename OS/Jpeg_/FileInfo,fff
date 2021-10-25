@@ -8,7 +8,7 @@ JPEG_FileInfo  (&49981)
 	R3 =	height (in pixels) if requested
 	R4 =	x pixel density
 	R5 =	y pixel density
-	R6 =	workspace that would be required to plot (0=none)
+	R6 =	extra workspace that would be required to plot (0=none)
 
 This SWI returns information about a JPEG held in a file. It checks the header enough to return the width and height, and does a partial validation of the data.  It returns an error if the image appears to be invalid; if no error is returned you may assume the data is a JPEG image.
 

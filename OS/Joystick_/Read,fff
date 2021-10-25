@@ -7,7 +7,7 @@ Joystick_Read  (&43F40)
 	 	bits 16-31	reserved (must be zero)
 <=	Dependant upon reason code
 #line
-This SWI reads the current state of the joystick.
+This SWI reads the current state of the joystick, assuming the Joystick module is loaded and hardware present.
 #Line
 See <PRM 4-208=>PRM-4:208>, <PRM 5a-638=>PRM-5a:638>
 #
@@ -67,8 +67,8 @@ See also:	<Note about analogue joysticks=>.analogue>
 16 bit joystick position
 /Bits/	/Value/
 #line
-0-15	signed Y value in the range 0 (down) to 65535 (up)
-15-31	signed X value in the range 0 (left) to 65535 (right)
+0-15	unsigned Y value in the range 0 (down) to 65535 (up)
+15-31	unsigned X value in the range 0 (left) to 65535 (right)
 #
 #subpage 16switch
 16 bit switch state
@@ -79,4 +79,4 @@ See also:	<Note about analogue joysticks=>.analogue>
 #
 #subpage analogue
 Note about analogue joysticks
-For analogue joysticks, <Joystick_Read> reads the last conversion made, but does not force a conversion itself. Conversions are not started until the first callof <Joystick_Read>, hence the first call to <Joystick_Read> results in X = 0, Y = 0 with no closed switches since there is no completed conversion to read.
+For analogue joysticks, <Joystick_Read> reads the last conversion made, but does not force a conversion itself. Conversions are not started until the first call of <Joystick_Read>, hence the first call to <Joystick_Read> results in X = 0, Y = 0 with no closed switches since there is no completed conversion to read.

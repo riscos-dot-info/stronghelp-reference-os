@@ -11,6 +11,11 @@ OS_ReadSysInfo  (&58)
 	  7	<Read info about last unexpected abort (data or prefetch)=>OS_ReadSysInfo7>
 	  8	<Platform class=>.8>
 	  9	<Read version information=>.9>
+	 10	Read OS version
+	 11	<Read debug I/O function pointers=>.11>
+	 12	<Read extended machine id=>.12>
+	 13	<Validate key handler=>.13>
+	 14	<Read IIC bus count=>.14>
 
 These calls read information about the system.
 #Line
@@ -123,7 +128,7 @@ Values 18-27 have conflicting use depending of the version used, use the higher 
 Unlisted values may exist but are unlikely to be of interest to applications authors.
 #
 #subpage 8
-OS_ReadSysInfo 8  (4.00+)
+OS_ReadSysInfo 8 (4.00+)
 *Read class*
 =>	R0 =	8
 <=	R0 =	platform class
@@ -146,7 +151,7 @@ OS_ReadSysInfo 8  (4.00+)
 This call reads information about the class of this platform.
 #
 #subpage 9
-OS_ReadSysInfo 9  (4.00+)
+OS_ReadSysInfo 9 (4.00+)
 *Read version information*
 =>	R0 =	9
 	R1 =	<subreason code=>.9c>
@@ -158,9 +163,38 @@ Reads information about which version of RISC OS is installed.
 OS_ReadSysInfo 9 reason codes
 /Value/	/Meaning/
 #line
-0	Read version number as string
-1	Read part number as string
-2	Read build date as string
+0	OS name as string
+1	Part number as string
+2	Build date as string
 3	Dealer name as string
 4	Registered to...
 5	Registered address
+6	Printable OS description string
+7	Hardware platform description string
+#
+#Subpage 11
+OS_ReadSysInfo 11 (5.18+)
+*Read debug IO function pointers*
+=>	R0 =	11
+<=	R0 =	Function pointer to {fCode}void debug_transmit(char);{f}
+	R1 =	Function pointer to {fCode}int debug_receive(void);{f}
+#
+#Subpage 12
+OS_ReadSysInfo 12 (5.18+)
+*Read extended id*
+=>	R0 =	12
+  	R1 =	Buffer, or 0 to read size
+<=	R0 =	Size of extended id (and buffer filled if appropriate)
+#
+#Subpage 13
+OS_ReadSysInfo 13 (5.20+)
+*Validate key handler*
+=>	R0 =	13
+  	R1 =	Key handler address, or 0 to read known flags
+<=	R0 =	Key handler flags
+#
+#Subpage 14
+OS_ReadSysInfo 14 (5.22+)
+*Read IIC bus count*
+=>	R0 =	14
+<=	R0 =	Number of buses

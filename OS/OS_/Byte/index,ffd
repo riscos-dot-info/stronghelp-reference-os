@@ -36,7 +36,7 @@ OS_Byte Index
 125	&7D	<Set escape condition=>os_byte125>
 126	&7E	<Acknowledge escape condition=>os_byte126>
 127	&7F	<Check for end of file=>os_byte127>
-128	&80	<Get buffer/mouse status=>os_byte128>
+128	&80	<Read ADC or mouse channel/get buffer status=>os_byte128>
 129	&81	<Scan for a particular key=>os_byte129>
 134	&86	<Read text cursor position=>os_byte134>
 135	&87	<Read char at text cursor, and screen mode=>os_byte135>

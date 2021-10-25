@@ -1,0 +1,10 @@
+Econet_NetworkParameters  (&40021) (3.50+)
+#Parent Econet_
+<=	R0 =	Clock period in 0.25µs steps, eg. 10µs = 40, or 0 if no clock
+ 	R1 =	Clock frequency in kHz, eg. 100kHz = 100, or 0 if no clock
+ 	R2 =	corrupted
+ 	R3 =	corrupted
+
+This SWI provides details on the network clock. An error is returned if the network is not using native Econet as the transport.
+#Line
+See <PRM 5a, page 277=>PRM-5a:277>.

@@ -8,6 +8,6 @@ OS_ConvertFixedFileSize  (&EB)
 	R1 =	pointer to terminator
 	R2 =	free bytes in buffer
 
-This SWI converts a value to a amount of space available in the form x bytes, x Kbytes, or x Mbytes. This is the fixed string length version of <OS_ConvertFileSize>, with the start padded with spaces.
+This SWI converts a value to a amount of space available in the form x bytes, x kbytes, or x Mbytes. This is the fixed string length version of <OS_ConvertFileSize>, with the start padded with spaces.
 #Line
 See <PRM 1, page 477=>PRM-1:477>.

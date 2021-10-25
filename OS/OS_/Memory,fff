@@ -136,7 +136,7 @@ OS_Memory 15 release IO region (5.00+)
 
 Frees up a region of IO memory previously mapped in at run time.
 #Subpage 16
-OS_Memory 16 get area info (5.00+)
+OS_Memory 16 get system area info (5.00+)
 =>	R0 =	16 (reason code)
 	 	bits 8-15 =
 	 	  1 =	cursor/system/sound

@@ -4,7 +4,7 @@ Parallel_Op 0
 <=	R1 =	data register contents
 	R2 =	<status register contents=>.bits>
         
-This SWI reads the data and status registers taken from the printer port. The data register is eiter the current value on the port, or the last value written if output is enabled.
+This SWI reads the data and status registers taken from the printer port. The data register is either the current value on the port, or the last value written if output is enabled.
 #Subpage bits
 Status register bits
 Bit	Meaning		Port pin

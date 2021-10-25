@@ -1,6 +1,6 @@
 Command help code entry
 #Parent OS_Module_ComTable
-=>	R0 =	ponter to buffer
+=>	R0 =	pointer to buffer
 	R1 =	buffer length
 (assumed)
 	R12 =	pointer to private word for this instance

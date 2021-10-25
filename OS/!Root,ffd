@@ -50,7 +50,7 @@ BlendTable
 <RamFS>
 <RemotePrinterSupport>
 <ResourceFS>
-RTC
+<RTC>
 <RTSupport=>RT_>
 <ScreenBlanker>
 <ScreenModes>
@@ -86,4 +86,4 @@ VFPSupport
 #EndTable
 #Line
 #align centre
-<OS SWIs manual=>about> {/}v3.36, 05 Apr 2014{/}
+<OS SWIs manual=>about> {/}v3.37, 20 Jan 2016{/}

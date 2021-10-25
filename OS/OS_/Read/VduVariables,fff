@@ -75,6 +75,8 @@ AF	175	 		Bottom border size	(5.07+)
 B0	176	 		Right border size	(5.07+)
 B1	177	 		Top border size		(5.07+)
 
+C0	192	 		Current GraphicsV driver number		(5.21+)
+
 100	256	WindowWidth	Width of text window in chars
 101	257	WindowHeight	Height of text window in chars
 #Subpage hlineaddr

@@ -2,7 +2,7 @@ OS_DynamicArea 0  (&66)
 #Parent OS_DynamicArea
 *Creates a new dynamic area*
 =>	R0 =	0
-	R1 =	-1 (or new area number 128-255; reserved for internal use)
+	R1 =	-1 (or new area number; 128-255 are reserved for internal use)
 	R2 =	initial size of area, in bytes
 	R3 =	-1 (or base of area; reserved for internal use)
 	R4 =	<area flags=>OS_DynamicAreaFlags>

@@ -1,5 +1,5 @@
 OS_IntOn  (&13)
 #Parent OS_
-This call enables interrupts and returns to caller with processor mode and registers unchanged. It does this be switching the corresponding bits in the <PSR=>Assembly:PC> on.
+This call enables interrupts and returns to caller with processor mode and registers unchanged. It does this be switching the corresponding bits in the <PSR=>Assembly:PSR> on.
 #Line
 See <PRM 1, page 138=>PRM-1:138>.

@@ -1,0 +1,23 @@
+Portable_ReadSensor  (&42FD2)
+#Parent Portable_
+=>	R0 =	sensor type
+	 	0 - <Temperature=>.0>
+	 	others - reserved
+	R1 =	unit type (varies by sensor type)
+	R2 =	unit index
+<=	R0 =	value (varies by sensor type)
+
+This call reads one of Portable's sensors. Not all platforms implement all sensor types and unit types, resulting in an error which can be presumed to be a missing sensor.
+#
+#Subpage 0
+Portable_ReadSensor 0
+*Temperature*
+=>	R0 =	0
+ 	R1 =	0 - CPU die temperature
+ 	 	1 - BMU temperature
+ 	 	2 - harddisc temperature
+ 	 	3 - GPU temperature
+ 	 	4 - DRAM temperature
+ 	 	others - reserved
+ 	R2 =	unit index
+<=	R0 =	absolute temperature in 0.1K steps

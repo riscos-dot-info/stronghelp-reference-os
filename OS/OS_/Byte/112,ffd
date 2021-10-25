@@ -7,6 +7,6 @@ OS_Byte 112  Write VDU driver screen bank
 	R1 =	previous bank number
 	R2 corrupted
 
-This call selects the bank of screen memory which is to be used by the VDU drivers according to R1, where 0 means the default for the current mode (1 or 2). Any other value means to set the screenbank which starts at Screenstart+(R1*Modesize). The maximum bank number is TotalScreensize/ModeSize. The default bank is for a non-shadow mode 1, for a shadow mode 2.
+This call selects the bank of screen memory which is to be used by the VDU drivers according to R1, where 0 means the default for the current mode (1 or 2). Any other value means to set the screenbank which starts at Screenstart+(R1*Modesize). The maximum bank number is TotalScreensize/ModeSize. The default bank for a non-shadow mode is 1, for a shadow mode is 2.
 #Line
 See <PRM 1, page 639=>PRM-1:639>

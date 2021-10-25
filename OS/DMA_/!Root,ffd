@@ -9,5 +9,5 @@ TerminateTransfer
 SuspendTransfer
 ResumeTransfer
 ExamineTransfer
-AllocateLogicalChannels
+<AllocateLogicalChannels>
 #EndTable

@@ -17,7 +17,7 @@ See <PRM 2, page 428=>PRM-2:428>.
 Meaning of bits in R0
 Bit	meaning if set
 #line
-0	Block device (not implemented), else characterdevice
+0	Block device (not implemented), else character device
 1	Full duplex
 2	MonitorTX/RX available
 3	Monitor EOF on reading

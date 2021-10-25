@@ -2,7 +2,7 @@ CD data parameters block
 #Parent CD_GetParameters
 Offset	Contents
 #line
-0	Log spin-down delay 0-15 (0 equivilent to 16, 1 = shortest)
-4	Number of retries
+0	Log spin-down delay 0-15 (0 equivalent to 16, 1 = shortest)
+4	Number of read retries
 8	Read mode (0, 1 and 3 for data, 2 for audio)
 12	Speed in multiples of 'standard' speed

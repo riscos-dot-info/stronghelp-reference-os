@@ -6,4 +6,4 @@ JPEG_PlotFileScaled  (&49983)
 	R3 =	<scale factors=>os_scalefactors>, or 0 for 1:1 scaling
 	R4 =	<plotting flags=>JPEG_plotflags>
 
-This SWI decompresses, scales and plots on the screen a JPEG image held in a file. This is identical to the <JPEG_PlotScaled> call, except that memory is claimed in a Dynamic Area for the file.
+This SWI decompresses, scales and plots on the screen a JPEG image held in a file. This is identical to the <JPEG_PlotScaled> call, except that memory is claimed in the RMA for the file.

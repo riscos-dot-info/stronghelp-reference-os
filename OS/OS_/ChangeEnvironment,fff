@@ -2,8 +2,8 @@ OS_ChangeEnvironment  (&40)
 #Parent OS_
 =>	R0 =	<handler number=>OS_handlers>
 	R1 =	new address, or 0 to read
-	R2 =	value of R12 when code is called
-	R3 =	pointer to buffer if appropriate or 0 to read
+	R2 =	value of R12 when code is called, or 0 to read
+	R3 =	pointer to buffer if appropriate, or 0 to read
 
 <=	R0 preserved
 	R1 =	previous address

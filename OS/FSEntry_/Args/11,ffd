@@ -1,0 +1,7 @@
+FSEntry_Args 11
+#Parent FSEntry_Args
+=>	R0 =	11 (IOCtl)
+	R1 =	internal file handle returned by <FSEntry_Open>
+	R2 =	<IOCtl parameter block=>OS_ArgsIOCtlBlock>
+
+This call is made to implement the IOCtl operation defined in the parameter block on an open file.

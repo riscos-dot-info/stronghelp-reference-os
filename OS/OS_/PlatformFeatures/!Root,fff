@@ -2,6 +2,8 @@ OS_PlatformFeatures  (&6D) (3.70+)
 #Parent OS_
 =>	R0 =	reason code, and reason dependant flags
 	 	0	<Read code features=>OS_PlatformFeatures0>
+	 	1	Read MMU features
+	 	32	<Read vectors base=>OS_PlatformFeatures32>
 
 This SWI is used to find out what features the executing platform has, if any.
 #line

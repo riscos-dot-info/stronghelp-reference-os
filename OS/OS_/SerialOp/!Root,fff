@@ -22,3 +22,4 @@ R0 =	0	<Read/write serial states=>OS_SerialOp0>
 	7	Internal use only
 	8	<Read/write serial input buffer threshold value=>OS_SerialOp8>
 	9	<Enumerate available serial port speeds=>OS_SerialOp9>
+	10	<Read DeviceFS name=>OS_SerialOp10>

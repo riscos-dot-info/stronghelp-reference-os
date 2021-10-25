@@ -19,3 +19,13 @@ Code	OS	Action
 8	3.80+	<Set maximum size clamps=>OS_DynamicArea8>
 9	3.80+	<Ensure Sparse area is mapped to valid memory=>OS_DynamicArea9>
 10	3.80+	<Release a region of a Sparse area=>OS_DynamicArea10>
+11	Select	Reserved.
+12	Select	Reserved.
+13	Select	Reserved.
+14	Select	Reserved.
+15	Select	Reserved.
+16	Select	Reserved.
+17	Select	Reserved.
+18	Select	Reserved.
+19	Select	Reserved.
+20	5.23+	<Locate area number from address=>OS_DynamicArea20>

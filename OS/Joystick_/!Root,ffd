@@ -4,7 +4,5 @@ Joystick
 <Read>
 <CalibrateTopRight>
 <CalibrateBottomLeft>
-#line
-*Note*:	These are only available on machines with the appropriate hardware.
-#line;tab
-See also:	<PRM 5a-629=>PRM-5a:629>
+Info
+Calibrate

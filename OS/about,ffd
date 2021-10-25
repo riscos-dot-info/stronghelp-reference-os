@@ -21,7 +21,7 @@ Thanks go to those mentioned in the <contributors=>OS:contributions> list.
 
 These manuals are kindly hosted by <www.riscos.info=>#url http://www.riscos.info/downloads/stronghelp/manuals/>
 #line
-<This page=>.hist336> gives history and credits.
+<This page=>.hist337> gives history and credits.
 #Subpage notes
 Notes on how the manual is structured
 These are some very incomplete notes on how the manual should be structured. If any part of it isn't then it will eventually be updated, or I'll change this specification. It's mostly here to remind me anyhow.
@@ -474,4 +474,33 @@ History for OS v3.36
 è	Linked <DDEUtils=>Wimp:DDEUtils_> from Wimp manual
 è	Added section for <RTSupport=>OS:RT_>
 #tab;line
-<Previous history=>.hist335>
+<Previous history=>.hist335>	<Next history=>.hist337>
+#subpage hist337
+History for OS v3.37
+#align right
+{/}20 Jan 2016{/}
+#align left
+#line
+è	Noted that <OS_File 20=>OS_File20> and friends can return -1 for untyped files
+è	Lots of typing and grammatical errors fixed
+è	<OS_Byte 128=>os_byte128> now includes details of its ADVAL usage too
+è	<OS_Byte 121=>os_byte121a> has the Windows logo and menu keys shown on the key layout
+è	<RTC=>OS:RTC_> page added, though these SWIs are for internal use only
+è	Removed <the note=>OS_File12> about filetype F95 automatically flushing the I cache, this was the intent, but Acorn Application Note 295 specifically states that it was not implemented - and still isn't
+è	Added <OS_SerialOp 10=>OS_SerialOp10>
+è	Added <DMA_AllocateLogicalChannels>
+è	Added <OS_ReadSysInfo> subreasons 11 to 14 inclusive
+è	Added <OS_DynamicArea=>OS_DynamicArea.20> subreason 20
+è	Added <OS_PlatformFeatures=>OS_PlatformFeatures.32> subreason 32
+è	VDU variables 192/256/257 <documented=>OS_ReadVduVariables.variables>
+è	Econet <machine peek=>Econet_immediate.MPeek> values &F/&FFF8/&FFF9 added to table
+è	Added <Econet_NetworkParameters>, <Econet_HardwareAddresses>, <Econet_EnumerateMap> and <Econet_InetRxDirect>
+è	Rephrased <OS_SpriteOp 9=>os_spriteop_9> to only write the area block entries that the SWI doesn't itself write for you
+è	<Monitor type list=>os_bytecmos133.monitors> expanded
+è	FSEntry Args 11 for <IOCtl=>FSEntry_Args11> added
+è	<CompressJPEG_Comment> added
+è	<Portable_ReadSensor> added
+è	Broken links to PC in <OS_IntOn> and <OS_IntOff> pointed at PSR page
+è	Corrected <CD_LastError> as it does not return anything in R7
+#tab;line
+<Previous history=>.hist336>

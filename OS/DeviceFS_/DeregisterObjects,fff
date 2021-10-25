@@ -3,6 +3,6 @@ DeviceFS_DeregisterObjects  (&42743)
 =>	R0 =	device driver's handle
 	R1 =	pointer to name of device to remove
 
-This SWI deregisters a *single* additional device from an device driver. It appears to be misnamed.
+This SWI deregisters a *single* additional device from a device driver. It appears to be misnamed.
 #Line
 See <PRM 2, page 433=>PRM-2:433>.

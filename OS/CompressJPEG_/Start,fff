@@ -14,7 +14,7 @@ The buffer for the JPEG data should be as large as possible, since the JPEG comp
 If you wish to supply your own workspace area, its required size for a colour (24 bit) image is:
 	20000 + ((image width rounded up to a multiple of 16) × 30)
 and its required size for a greyscale (8 bit) image is:
-	20000 + ((image width rounded up to a multiple of 16) × 9)
+	20000 + ((image width rounded up to a multiple of 8) × 9)
 
 An error is returned if the workspace area becomes full.
 #Subpage parameters

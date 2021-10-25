@@ -2,6 +2,6 @@ OS_Args 4
 #Parent OS_Args
 =>	R0 =	4
 	R1 =	file handle
-<=	R2 =	new extent
+<=	R2 =	current allocation in bytes
 
-This SWI returns the actual size of the file. This will be equal to or larger than its extent.
+This SWI returns the space reserved on the media for this file. This will be equal to or larger than its extent.

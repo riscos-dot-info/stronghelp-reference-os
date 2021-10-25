@@ -7,6 +7,6 @@ OS_ConvertFileSize  (&EC)
 	R1 =	pointer to terminator
 	R2 =	free bytes in buffer
 
-This SWI converts a value to an amount of space in the form x bytes, x Kbytes, or x Mbytes.
+This SWI converts a value to an amount of space in the form x bytes, x kbytes, or x Mbytes.
 #Line
 See <PRM 1, page 479=>PRM-1:479>.

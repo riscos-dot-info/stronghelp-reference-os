@@ -4,9 +4,9 @@ OS_File 12,14,16 and 255
 	R1 =	pointer to filename
 	 	if R3 AND &FF = 0 :
 	 	  R2 = load address
-	 	  (if R3 b31 set then the file is code and will be synchronised)
 	 	else :
 	 	  load at file's load address
+	 	if R3 b31 set then the file is code and will be synchronised
 	 	if R0 = 255 :	use File$Path
 	 	if R0 = 12 :	R4 = pointer to path string
 	 	if R0 = 14 :	R4 = pointer to path variable
@@ -25,5 +25,7 @@ If the file is stamped, and loading at load address (R3 AND &FF \<> 0) the varia
 #        All in all, this oversight took a Chris and me about 5 hours to find!
 #        This feature is present in RO3.10 and is still in RO3.60
 
-{*}Note 1:{*}	R3 b31 is not supported (or necessary) before RO3.70
-{*}Note 2:{*}	If filetype is Code (&F95), then it will be automatically synchronised, but not before RO3.7
+The flag in b31 of R3 is not supported (or necessary) before RO3.70.
+# RPS> The previous note here stating that filetype F95 automatically flushes the I cache
+#      is not true, indeed Acorn App Note 295 specifically says that although the filetype
+#      was allocated RO3.70 doesn't do anything special with it

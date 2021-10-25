@@ -4,7 +4,8 @@ FileCore_MiscOp 4
 	R1 =	drive
 	R8 =	pointer to FileCore instance private word
 
-<=	R5 =	minimum polling period (in centiseconds), or -1 if changed doesn't work
+<=	R5 =	minimum polling period (in centiseconds), or 0 if disc swapping is not
+supported, or -1 if disc changed doesn't work
 	R6 =	pointer to media type string (eg. 'disc' for ADFS)
 
 This call informs FileCore of the minimum period between polling for disc insertion under the given filing system. This is so that drive lights don't remain continously illuminated.

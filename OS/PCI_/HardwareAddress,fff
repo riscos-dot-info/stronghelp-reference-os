@@ -1,9 +1,9 @@
 PCI_HardwareAddress  (&5038A)
 #Parent PCI_
-=>	R0 =	flags:	bits 3..0 = access privileges (if bit 9 set)
+=>	R0 =	flags:	bits 0-3 = access privileges (if bit 9 set)
 	 	 	bit 4 => bufferable
 	 	 	bit 5 => cacheable
-	 	 	bits 8-6 => policy (see <OS_DynamicArea>)
+	 	 	bits 6-8 => policy (see <OS_DynamicArea>)
 	 	 	bit 9 => access privileges specified
 	 	 	bit 31 => don't map, query PCI address only
 	R1 =	address index     (0-5 correspond to first 6 Base Address Registers;

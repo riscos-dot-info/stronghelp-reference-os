@@ -1,0 +1,11 @@
+CompressJPEG_Comment  (&4A503)
+#Parent CompressJPEG_
+=>	R0 =	JPEG tag
+	R1 =	flags:	bit 0 = set if string is given
+	 	 	bits 1-31 reserved
+	R2 =	pointer to data
+	R3 =	length, if bit 0 of flags clear
+
+This call adds a comment marker to the JPEG output stream, allowing extra information such as which camera the image was taken with to be stored. It must be called after <CompressJPEG_Start> but before any lines are written, calling it multiple times adds multiple comment markers.
+
+If bit 0 of the flags are set the data will be considered as a control terminated string and its length counted in order to fill in R3. <Newline=>VDU:10> and <tab=>VDU:9> are allowed to pass, any other control character terminates.

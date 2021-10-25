@@ -1,0 +1,9 @@
+OS_DynamicArea 20 (&66)
+#Parent OS_DynamicArea
+{*}Locates which area an address is within{*}
+=>	R0 =	20
+	R1 =	logical address
+<=	R0 =	area number is a <dynamic area=>OS_Areas> (0) or <system area=>OS_Memory.16> (1)
+	R1 =	area number
+#line
+The kernel searches its lists of known memory areas and returns the area number of the match, or an error if the given address is neither in a dynamic area nor one of the system areas.

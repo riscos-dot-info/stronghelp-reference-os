@@ -7,6 +7,7 @@ Buffer_Create  (&42940)
 
 This claims an area of the RMA and registers it as a buffer. It can at most hold R1-1 bytes.
 If R2 \<>-1, the given number is checked for uniqueness, if it already exists, a new one is generated.
+
 Note that you do not need any complicated calculations to write data into the buffer - it's a simply a block of memory. Get the address with <Buffer_GetInfo> and write to the buffer.
 #Line
 See <PRM 4, page 86=>PRM-4:86>.
